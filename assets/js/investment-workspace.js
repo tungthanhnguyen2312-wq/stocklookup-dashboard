@@ -32,6 +32,11 @@
     return null;
   }
 
+  function getInvestigationWorkbench() {
+    if (typeof window !== "undefined" && window.VSInvestigationWorkbench) return window.VSInvestigationWorkbench;
+    return null;
+  }
+
   function getWorkspaceCardPresentation() {
     if (typeof window !== "undefined" && window.VSWorkspaceCardPresentation) return window.VSWorkspaceCardPresentation;
     if (typeof require === "function") {
@@ -1237,6 +1242,10 @@
       let WORKSPACE_VIEW = "opportunities";
       let SIGNAL_SNAPSHOT_PROMISE = null;
       const VALID_VIEWS = ["opportunities", "portfolio", "watchlist", "explore", "technical"];
+      // INVESTOR_EVIDENCE_INVESTIGATION_WORKBENCH_V1: dossier / compare / journal share the same
+      // index fetch and selected-ticker state; investigation-workbench.js renders their panels.
+      const WORKBENCH_VIEWS = ["dossier", "compare", "journal"];
+      const ALL_VIEWS = VALID_VIEWS.concat(WORKBENCH_VIEWS);
 
       function effectivePortfolio(ticker, card) {
         if (PORTFOLIO_OVERRIDE) return joinPortfolioResearch(ticker, card.sector, PORTFOLIO_OVERRIDE);
@@ -1345,8 +1354,8 @@
 
       // ---- View switcher: internal views share one data fetch, one cards
       // universe and one selected-ticker state -- only the visible container changes.
-      function setView(view) {
-        const next = VALID_VIEWS.includes(view) ? view : "opportunities";
+      function setView(view, opts) {
+        const next = ALL_VIEWS.includes(view) ? view : "opportunities";
         WORKSPACE_VIEW = next;
         const focusSection = document.getElementById("decision-focus-section");
         if (focusSection) focusSection.hidden = next !== "opportunities";
@@ -1360,6 +1369,8 @@
         if (next === "explore") renderAnalysisView();
         if (next === "portfolio") renderPortfolioView();
         if (next === "technical") renderTechnicalView();
+        const workbench = getInvestigationWorkbench();
+        if (workbench && WORKBENCH_VIEWS.includes(next)) workbench.renderView(next, { focus: Boolean(opts && opts.focus) });
         try {
           const url = new URL(window.location.href);
           const currentParam = url.searchParams.get("view") || "opportunities";
@@ -1447,6 +1458,8 @@
         if (drawerTicker) drawerTicker.textContent = ticker;
         const drawerBadge = document.getElementById("decision-drawer-badge");
         if (drawerBadge) drawerBadge.innerHTML = actionPostureHtml(thin);
+        const dossierLink = document.getElementById("drawer-dossier-link");
+        if (dossierLink) dossierLink.href = `investment-workspace.html?view=dossier&ticker=${encodeURIComponent(ticker)}`;
         const exploreLink = document.getElementById("drawer-screener-link");
         if (exploreLink) {
           exploreLink.href = `investment-workspace.html?view=explore&ticker=${encodeURIComponent(ticker)}`;
@@ -1519,6 +1532,8 @@
         renderList();
         renderDecisionFocus();
         if (WORKSPACE_VIEW === "technical") renderTechnicalView();
+        const workbench = getInvestigationWorkbench();
+        if (workbench && WORKSPACE_VIEW === "dossier") workbench.renderView("dossier", { focus: Boolean(opts && opts.focusDossier) });
 
         try {
           const url = new URL(window.location.href);
@@ -1558,7 +1573,32 @@
         renderFilterChips();
         renderList();
         renderDecisionFocus();
+        const workbench = getInvestigationWorkbench();
+        if (workbench) {
+          workbench.attach({
+            getWorkspace: () => WORKSPACE,
+            readModel: getWorkspaceReadModel(),
+            getSelectedTicker: () => SELECTED_TICKER,
+            getView: () => WORKSPACE_VIEW,
+            setView: (view) => setView(view, { focus: true }),
+            openDrawer: (t) => selectTicker(t, { openDrawer: true }),
+            openDossier: (t) => {
+              if (!WORKSPACE.cards[t]) return;
+              closeDrawer();
+              SELECTED_TICKER = t;
+              setView("dossier");
+              selectTicker(t, { focusDossier: true });
+            },
+          });
+        }
         const queryView = new URLSearchParams(window.location.search).get("view");
+        const workbenchDeepLink = WORKBENCH_VIEWS.includes(queryView);
+        if (workbenchDeepLink) {
+          // A dossier deep link names its ticker; select it before the view renders so the
+          // dossier opens on that ticker instead of the default one, without the drawer.
+          const linkTicker = selectedTickerForDeepLink(Object.keys(data.cards), new URLSearchParams(window.location.search).get("ticker"));
+          if (queryView === "dossier" && new URLSearchParams(window.location.search).get("ticker") && linkTicker) SELECTED_TICKER = linkTicker;
+        }
         setView(queryView === "analysis" ? "explore" : queryView);
         const select = document.getElementById("ticker-select");
         const tickers = Object.keys(data.cards).sort();
@@ -1584,10 +1624,11 @@
         const requestedTicker = queryTicker || hashTicker;
         const targetTicker = selectedTickerForDeepLink(tickers, requestedTicker);
         if (targetTicker) {
-          selectTicker(targetTicker, { openDrawer: Boolean(queryTicker || hashTicker), scrollIntoView: false });
+          selectTicker(targetTicker, { openDrawer: !workbenchDeepLink && Boolean(queryTicker || hashTicker), scrollIntoView: false });
         } else if (requestedTicker) {
           showTickerNotFound(requestedTicker);
-          openDrawer();
+          // The dossier view renders its own explicit not-found state; it never opens the drawer.
+          if (!workbenchDeepLink) openDrawer();
         }
 
         document.getElementById("filter-chips").addEventListener("click", (e) => {
@@ -1623,7 +1664,7 @@
         });
 
         document.querySelectorAll(".ws-view-tab").forEach((tab) => {
-          tab.addEventListener("click", () => setView(tab.dataset.view));
+          tab.addEventListener("click", () => setView(tab.dataset.view, { focus: false }));
           tab.addEventListener("keydown", (event) => {
             if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
             event.preventDefault();
@@ -1636,7 +1677,17 @@
           });
         });
 
-        select.addEventListener("change", () => selectTicker(select.value, { openDrawer: true }));
+        select.addEventListener("change", () => selectTicker(select.value, { openDrawer: !WORKBENCH_VIEWS.includes(WORKSPACE_VIEW) }));
+
+        const drawerDossierLink = document.getElementById("drawer-dossier-link");
+        if (drawerDossierLink) {
+          drawerDossierLink.addEventListener("click", (e) => {
+            if (!SELECTED_TICKER || e.ctrlKey || e.metaKey || e.shiftKey || e.button === 1) return;
+            e.preventDefault();
+            closeDrawer();
+            setView("dossier", { focus: true });
+          });
+        }
 
         const openSelectedBtn = document.getElementById("ws-open-selected-drawer");
         if (openSelectedBtn) {
