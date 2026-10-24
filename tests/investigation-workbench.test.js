@@ -355,3 +355,14 @@ test("investment-workspace.html wires the workbench script and stylesheet with t
   assert.ok(html.indexOf("investigation-workbench.js") < html.indexOf("assets/js/investment-workspace.js"));
   assert.match(html, /id="drawer-dossier-link"/);
 });
+
+test("selecting a ticker without opening its details does not fetch a detail shard", () => {
+  // Detail shards are 10-18 MB of JSON each (about 1.6-2.2 MB gzip). The default selection on a
+  // plain Cơ hội visit must not download one; the drawer, print and workbench views fetch on demand.
+  const src = read("assets/js/investment-workspace.js");
+  assert.match(src, /showDecisionCard\(ticker, \{ deferDetail: !\(opts && opts\.openDrawer\) \}\)/);
+  assert.match(src, /if \(ticker && WORKSPACE && WORKSPACE\.cards\[ticker\] && DETAIL_LOADED_FOR !== ticker\) showDecisionCard\(ticker\);/);
+  assert.match(src, /addEventListener\("beforeprint"/);
+  // The read model shares one in-flight/settled request per shard, so repeat opens never refetch.
+  assert.match(read("assets/js/workspace-read-model.js"), /if \(!shardCache\.has\(shardKey\)\)/);
+});

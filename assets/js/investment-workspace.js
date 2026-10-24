@@ -1419,6 +1419,8 @@
         const drawer = document.getElementById("decision-drawer");
         if (!backdrop || !drawer) return;
         lastFocusedElement = document.activeElement;
+        // The full card (a 10-18 MB detail shard) is fetched only when it is actually shown.
+        if (ticker && WORKSPACE && WORKSPACE.cards[ticker] && DETAIL_LOADED_FOR !== ticker) showDecisionCard(ticker);
         backdrop.hidden = false;
         drawer.hidden = false;
         requestAnimationFrame(() => {
@@ -1449,8 +1451,12 @@
       // fetch for the previous one is still in flight, the stale response must never overwrite
       // what is now on screen for the newly-selected ticker.
       let DECISION_CARD_REQUEST_TOKEN = 0;
+      // Which ticker's full card has been requested into the drawer/print surfaces. Selecting a
+      // ticker without opening its details only updates the header and links: a plain visit to
+      // Cơ hội must not download a multi-megabyte detail shard nobody asked to see.
+      let DETAIL_LOADED_FOR = null;
 
-      function showDecisionCard(ticker) {
+      function showDecisionCard(ticker, opts) {
         const thin = WORKSPACE.cards[ticker];
         const inPageEl = document.getElementById("decision-card");
         const drawerEl = document.getElementById("decision-drawer-body");
@@ -1471,6 +1477,15 @@
           exploreLink.href = `investment-workspace.html?view=explore&ticker=${encodeURIComponent(ticker)}`;
           if (typeof exploreLink.removeAttribute === "function") exploreLink.removeAttribute("aria-disabled");
         }
+        if (opts && opts.deferDetail) {
+          DETAIL_LOADED_FOR = null;
+          DECISION_CARD_REQUEST_TOKEN++;
+          const deferredHtml = '<div class="cockpit-note" data-detail-deferred="true">Mở chi tiết mã để tải thẻ đầy đủ.</div>';
+          if (drawerEl) drawerEl.innerHTML = deferredHtml;
+          if (inPageEl) inPageEl.innerHTML = deferredHtml;
+          return;
+        }
+        DETAIL_LOADED_FOR = ticker;
         const loadingHtml = '<div class="cockpit-note">Đang tải chi tiết…</div>';
         if (drawerEl) drawerEl.innerHTML = loadingHtml;
         if (inPageEl) inPageEl.innerHTML = loadingHtml;
@@ -1534,7 +1549,7 @@
         const select = document.getElementById("ticker-select");
         if (select) select.value = ticker;
         if (select && typeof select.removeAttribute === "function") select.removeAttribute("aria-invalid");
-        showDecisionCard(ticker);
+        showDecisionCard(ticker, { deferDetail: !(opts && opts.openDrawer) });
         renderList();
         renderDecisionFocus();
         if (WORKSPACE_VIEW === "technical") renderTechnicalView();
@@ -1716,6 +1731,11 @@
           }
         });
 
+        // The print-only card needs the selected ticker's detail; fetch it if it was deferred.
+        window.addEventListener("beforeprint", () => {
+          if (SELECTED_TICKER && DETAIL_LOADED_FOR !== SELECTED_TICKER) showDecisionCard(SELECTED_TICKER);
+        });
+
         window.addEventListener("popstate", () => {
           const qTicker = new URLSearchParams(window.location.search).get("ticker");
           if (qTicker && WORKSPACE && WORKSPACE.cards[qTicker]) {
@@ -1762,7 +1782,7 @@
               renderList();
               renderDecisionFocus();
               renderPortfolioView();
-              if (SELECTED_TICKER) showDecisionCard(SELECTED_TICKER);
+              if (SELECTED_TICKER && DETAIL_LOADED_FOR === SELECTED_TICKER) showDecisionCard(SELECTED_TICKER);
             } catch (err) {
               alert("Tệp dữ liệu danh mục không hợp lệ");
             }
