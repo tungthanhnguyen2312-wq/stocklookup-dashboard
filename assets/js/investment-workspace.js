@@ -1374,6 +1374,12 @@
         try {
           const url = new URL(window.location.href);
           const currentParam = url.searchParams.get("view") || "opportunities";
+          if (next !== "compare" && (url.searchParams.has("tickers") || url.searchParams.has("session"))) {
+            // Comparison deep-link state belongs to the comparison view only.
+            url.searchParams.delete("tickers");
+            url.searchParams.delete("session");
+            if (currentParam === next) window.history.replaceState({ view: next }, "", url.toString());
+          }
           if (currentParam !== next) {
             if (next === "opportunities") url.searchParams.delete("view"); else url.searchParams.set("view", next);
             window.history.replaceState({ view: next }, "", url.toString());
