@@ -62,12 +62,22 @@ jobs:
       - name: Investigation workbench tests
         run: node --test tests/workspace-read-model.test.js tests/investigation-workbench.test.js
 
+      - name: Portfolio evidence and risk workspace tests
+        run: node --test tests/portfolio-research-model.test.js
+
       - name: Real-data workbench browser performance and reliability
         timeout-minutes: 10
         run: |
           export CHROME_PATH="$(command -v google-chrome)"
           test -x "$CHROME_PATH"
           node tests/workbench-browser-benchmark.cjs reports/workbench-hosted
+
+      - name: Portfolio evidence browser acceptance
+        timeout-minutes: 10
+        run: |
+          export CHROME_PATH="$(command -v google-chrome)"
+          test -x "$CHROME_PATH"
+          node tests/portfolio-research-browser.cjs reports/portfolio-research-browser
 
       - name: Analysis/product surface tests
         run: node --test tests/product-surface-convergence.test.js
@@ -131,6 +141,8 @@ jobs:
           node --check assets/js/value-format.js
           node --check assets/js/investment-workspace.js
           node --check assets/js/investigation-workbench.js
+          node --check assets/js/portfolio-research-model.js
+          node --check portfolio.js
           node --check assets/js/workspace-read-model.js
           node --check assets/js/workspace-card-presentation.js
           node --check assets/js/dashboard-product-summary.js
