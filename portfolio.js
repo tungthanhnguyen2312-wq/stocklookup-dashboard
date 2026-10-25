@@ -452,6 +452,14 @@
   });
 
   $("save").onclick = () => {
+    if (!allowPersist) {
+      const status = $("save-status");
+      if (status) {
+        status.style.display = "block";
+        status.textContent = `${pr.issueMessage("CORRUPT")} Bản hỏng chưa bị xóa.`;
+      }
+      return;
+    }
     const identity = pr.updateIdentity(model, $("portfolio-id").value, $("cash").value === "" ? 0 : $("cash").value);
     if (!identity.ok) {
       setStatus("form-status", identity.message, true);

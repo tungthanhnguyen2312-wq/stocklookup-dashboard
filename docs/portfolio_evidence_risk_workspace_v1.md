@@ -7,12 +7,11 @@ Enter holdings, read the current published posture, see source-backed gaps, open
 ## Lineage
 
 - Repository: `tungthanhnguyen2312-wq/stocklookup-dashboard`
-- Worktree: `T:\StockLookup-Implementation\dashboard-portfolio-evidence-risk-v1`
 - Branch: `feature/portfolio-evidence-risk-workspace-v1`
-- Base: Dashboard PR #16 `455e627b5ab6977601725fcd4fdded52145e6b13`
+- Parent: Dashboard PR #16 `455e627b5ab6977601725fcd4fdded52145e6b13`
 - PR #16 is stacked on PR #15 `13600821c5c6f610e04672a15112c6d576100fa0`
 - Published session used for acceptance: `2026-10-23` (`workspace_index/v1`, 1,683 tickers)
-- No push, pull request, merge or deploy
+- Not merged and not deployed. The review diff against `main` includes the unmerged parent commits.
 
 ## What the page uses
 
