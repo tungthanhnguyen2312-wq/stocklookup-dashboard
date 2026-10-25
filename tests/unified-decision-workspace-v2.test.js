@@ -46,9 +46,16 @@ test("analysis.html redirects to investment-workspace.html?view=analysis, preser
   assert.equal(simulateAnalysisRedirect("?ticker=HPG", "#lineage"), "investment-workspace.html?ticker=HPG&view=analysis#lineage");
 });
 
-test("Workspace declares five internal views with opportunities as the default", () => {
+test("Workspace declares five core views plus the three investigation-workbench views, with opportunities as the default", () => {
   const viewIds = [...wsHtml.matchAll(/id="ws-view-([a-z]+)"/g)].map((m) => m[1]);
-  assert.deepEqual(viewIds.sort(), ["explore", "opportunities", "portfolio", "technical", "watchlist"]);
+  // INVESTOR_EVIDENCE_INVESTIGATION_WORKBENCH_V1 adds dossier / compare / journal alongside the
+  // five original views; they share the same single index fetch and selected-ticker state.
+  assert.deepEqual(viewIds.sort(), ["compare", "dossier", "explore", "journal", "opportunities", "portfolio", "technical", "watchlist"]);
+  for (const view of ["dossier", "compare", "journal"]) {
+    assert.match(wsHtml, new RegExp(`id="ws-view-${view}" data-ws-view role="tabpanel" aria-labelledby="ws-tab-${view}" hidden>`));
+    assert.match(wsHtml, new RegExp(`id="ws-tab-${view}"[^>]*role="tab"[^>]*aria-controls="ws-view-${view}"`));
+  }
+  assert.match(wsJs, /WORKBENCH_VIEWS = \["dossier", "compare", "journal"\]/);
   // Only the default view starts visible; other modes start hidden until selected. Each panel
   // is aria-labelledby its own tab button (see the ws-tab-* ids in the tablist above).
   assert.match(wsHtml, /id="ws-view-opportunities" data-ws-view role="tabpanel" aria-labelledby="ws-tab-opportunities">/);
