@@ -15,7 +15,7 @@ cross-security statistic is computed only if the index declares it in
 
 ## Data loading cost
 
-Per-ticker detail lives in 25 shard files (`data/workspace_detail/<letter>.json`) of 0.1–18 MB
+Per-ticker detail lives in 25 shard files (`data/workspace_detail/<letter>.json`) of 0.2–18 MB
 each (2026-10-23 release: 162 MB raw in total, about 20 MB gzip). Measured for that release:
 
 | Action | Shards fetched | Raw JSON | Gzip on the wire |
