@@ -109,11 +109,13 @@ async function main() {
             if (await evaluate(`Boolean(${expression})`)) return;
           } catch (err) {
             last = String(err.message || err);
-            if (!last.includes("navigated") && !last.includes("context")) throw err;
+            if (!/navigated|context|Cannot read properties of null|documentElement/i.test(last)) throw err;
           }
           await new Promise((resolve) => setTimeout(resolve, 100));
         }
-        throw new Error(`${expression} :: ${last}`);
+        let location = "";
+        try { location = await evaluate("String(location.href)"); } catch (err) { location = String(err.message || err); }
+        throw new Error(`${expression} :: ${last} :: ${location}`);
       };
       await send("Page.enable");
       await send("Runtime.enable");
@@ -123,7 +125,7 @@ async function main() {
       await send("Emulation.setDeviceMetricsOverride", { width, height: 900, deviceScaleFactor: 1, mobile: width < 768 });
       const before = requests.length;
       await send("Page.navigate", { url: `http://127.0.0.1:${port}/portfolio.html` });
-      await wait("document.documentElement.dataset.portfolioReady === '1'");
+      await wait("document.documentElement && document.documentElement.dataset.portfolioReady === '1'");
       let bootErrors = [];
       try { bootErrors = await evaluate("window.__errors || []"); }
       catch (err) { console.log("boot evaluate failed", requests.slice(-12)); throw err; }
