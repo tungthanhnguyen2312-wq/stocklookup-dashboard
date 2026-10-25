@@ -60,7 +60,7 @@ jobs:
       # INVESTOR_EVIDENCE_INVESTIGATION_WORKBENCH_V1: dossier / comparison / journal / export
       # contracts over every committed published ticker (no fixtures).
       - name: Investigation workbench tests
-        run: node --test tests/investigation-workbench.test.js
+        run: node --test tests/workspace-read-model.test.js tests/investigation-workbench.test.js
 
       - name: Analysis/product surface tests
         run: node --test tests/product-surface-convergence.test.js
@@ -124,6 +124,7 @@ jobs:
           node --check assets/js/value-format.js
           node --check assets/js/investment-workspace.js
           node --check assets/js/investigation-workbench.js
+          node --check assets/js/workspace-read-model.js
           node --check assets/js/workspace-card-presentation.js
           node --check assets/js/dashboard-product-summary.js
           node --check assets/js/screener-master.js

@@ -1877,13 +1877,35 @@ ${arr(d.dossiers).map(dossierSection).join("")}${cmpSection}${notesSection}
   // ---------------------------------------------------------------------------------------
   // Browser wiring
   // ---------------------------------------------------------------------------------------
-  const UI = { ctx: null, bound: false, journal: emptyJournal(), journalStatus: "empty", compare: [], dossier: null, dossierCard: null, dossierToken: 0, compareToken: 0, comparison: null, history: {}, hypothesisTimer: null };
+  const UI = { ctx: null, bound: false, journal: emptyJournal(), journalStatus: "empty", compare: [], dossier: null, dossierKey: null, dossierPending: null, dossierToken: 0, compareToken: 0, comparison: null, comparisonKey: null, comparePending: null, history: {}, hypothesisTimer: null, journalDirty: false, dirtyEntries: new Set(), importToken: 0 };
 
   function wsDoc() { return UI.ctx && UI.ctx.getWorkspace ? UI.ctx.getWorkspace() : null; }
   function persist() {
     const ok = saveJournal(null, UI.journal);
+    if (ok) { UI.journalDirty = false; UI.dirtyEntries.clear(); }
     if (!ok && UI.journalStatus !== "corrupt") UI.journalStatus = "unavailable";
     return ok;
+  }
+  function flushJournal() {
+    clearTimeout(UI.hypothesisTimer);
+    if (UI.journalDirty) persist();
+  }
+  function releaseKey(doc) { return JSON.stringify([doc.as_of_session, doc.source_artifact_identity]); }
+  function currentView(view, doc) { return wsDoc() === doc && (!UI.ctx.getView || UI.ctx.getView() === view); }
+  function invalidateComparison() {
+    UI.compareToken++; UI.comparePending = null; UI.comparison = null; UI.comparisonKey = null;
+    const out = document.getElementById("wb-compare-result");
+    if (out) out.innerHTML = '<p class="cockpit-note">Danh sách đã đổi. Chọn So sánh để tải đúng các mã hiện tại.</p>';
+  }
+  function paintDossier(doc, partial, focus) {
+    flushJournal();
+    const model = UI.dossier, root = document.getElementById("wb-dossier");
+    const entry = findEntry(UI.journal, entryIdFor("dossier", [model.ticker]));
+    root.innerHTML = `${partial ? '<div class="vs-alert vs-alert-warning" role="status">Tạm chưa tải được dữ liệu chi tiết; hồ sơ chỉ dựng từ phần tóm tắt nên nhiều mục được đánh dấu thiếu. <button type="button" data-wb-action="dossier-retry" class="btn btn-sm btn-outline-light">Thử lại chi tiết</button></div>' : ""}${dossierHtml(model, {
+      journalEntry: entry, inCompare: UI.compare.includes(model.ticker), stale: entry ? entryStaleness(entry, doc) : null,
+      historyHtml: UI.history[model.ticker] ? historyHtml(UI.history[model.ticker]) : null,
+    })}`;
+    if (focus) focusHeading("wb-dossier-heading");
   }
   function download(filename, text, type) {
     const blob = new Blob([text], { type });
@@ -1914,13 +1936,19 @@ ${arr(d.dossiers).map(dossierSection).join("")}${cmpSection}${notesSection}
     if (el && typeof el.focus === "function") el.focus({ preventScroll: false });
   }
 
-  function renderDossierView(focus) {
+  function renderDossierView(focus, retry) {
     const root = document.getElementById("wb-dossier");
     const doc = wsDoc();
     if (!root || !doc) return;
     const params = new URLSearchParams(window.location.search);
     const requested = (UI.ctx.getSelectedTicker && UI.ctx.getSelectedTicker()) || params.get("ticker") || "";
     const ticker = normTicker(requested);
+    const key = releaseKey(doc) + ticker;
+    if (!retry && UI.dossier && UI.dossierKey === key) { paintDossier(doc, false, focus); return; }
+    if (UI.dossierPending && UI.dossierPending.key === key) { UI.dossierPending.focus ||= focus; return; }
+    flushJournal();
+    const token = ++UI.dossierToken;
+    UI.dossier = null; UI.dossierKey = null; UI.dossierPending = null;
     if (!ticker) {
       root.innerHTML = '<p class="cockpit-note">Chọn một mã ở ô "Mã" phía trên, hoặc mở "Xem luận điểm" từ danh sách, để lập hồ sơ điều tra.</p>';
       return;
@@ -1929,24 +1957,22 @@ ${arr(d.dossiers).map(dossierSection).join("")}${cmpSection}${notesSection}
       root.innerHTML = `<div class="cockpit-note" data-dossier-unavailable="true">Không tìm thấy mã "${h(requested)}" trong dữ liệu phiên ${h(doc.as_of_session)}. Không chọn mã thay thế.</div>`;
       return;
     }
-    const token = ++UI.dossierToken;
-    if (!UI.dossier || UI.dossier.ticker !== ticker) root.innerHTML = `<p class="cockpit-note" role="status">Đang tải hồ sơ ${h(ticker)}…</p>`;
+    const pending = { key, focus };
+    UI.dossierPending = pending;
+    root.innerHTML = `<p class="cockpit-note" role="status">Đang tải hồ sơ ${h(ticker)}…</p>`;
     const readModel = UI.ctx.readModel;
     const resolve = readModel ? readModel.getTickerDetail(ticker, doc) : Promise.resolve({ status: "unavailable" });
     resolve.then((result) => {
-      if (token !== UI.dossierToken) return;
+      if (token !== UI.dossierToken || !currentView("dossier", doc)
+          || (UI.ctx.getSelectedTicker && normTicker(UI.ctx.getSelectedTicker()) !== ticker)) return;
+      UI.dossierPending = null;
       let card = result && result.status === "ok" ? result.card : null;
       let partial = false;
       if (!card) { card = doc.cards[ticker]; partial = true; }
       const model = buildDossier(card, { ticker, session: doc.as_of_session, sourceArtifactIdentity: doc.source_artifact_identity, decisionSource: obj(doc.decision_authority).primary_action_decision_source });
       UI.dossier = model;
-      UI.dossierCard = card;
-      const entry = findEntry(UI.journal, entryIdFor("dossier", [ticker]));
-      root.innerHTML = `${partial ? '<div class="vs-alert vs-alert-warning" role="status">Tạm chưa tải được dữ liệu chi tiết; hồ sơ chỉ dựng từ phần tóm tắt nên nhiều mục được đánh dấu thiếu.</div>' : ""}${dossierHtml(model, {
-        journalEntry: entry, inCompare: UI.compare.includes(ticker), stale: entry ? entryStaleness(entry, doc) : null,
-        historyHtml: UI.history[ticker] ? historyHtml(UI.history[ticker]) : null,
-      })}`;
-      if (focus) focusHeading("wb-dossier-heading");
+      UI.dossierKey = partial ? null : key;
+      paintDossier(doc, partial, pending.focus);
     });
   }
 
@@ -1966,6 +1992,7 @@ ${arr(d.dossiers).map(dossierSection).join("")}${cmpSection}${notesSection}
     if (!out || !doc) return;
     const validation = validateComparisonRequest(tickers, doc, requestedSession);
     if (!validation.ok) {
+      UI.compareToken++; UI.comparePending = null;
       UI.comparison = null;
       out.innerHTML = refusalHtml(validation);
       const alertEl = out.querySelector("[role=alert]");
@@ -1975,12 +2002,21 @@ ${arr(d.dossiers).map(dossierSection).join("")}${cmpSection}${notesSection}
     UI.compare = validation.tickers.slice();
     renderCompareTray();
     setUrl({ view: "compare", tickers: validation.tickers.join(","), session: validation.session, ticker: null });
+    const key = releaseKey(doc) + validation.tickers.join(",");
+    if (UI.comparison && UI.comparisonKey === key && !UI.comparison.detailMissing.length) {
+      out.innerHTML = comparisonHtml(UI.comparison, { saved: Boolean(findEntry(UI.journal, entryIdFor("comparison", validation.tickers))) });
+      if (focus) focusHeading("wb-compare-heading");
+      return;
+    }
+    if (UI.comparePending === key) return;
     const token = ++UI.compareToken;
+    UI.comparePending = key; UI.comparison = null; UI.comparisonKey = null;
     out.innerHTML = `<p class="cockpit-note" role="status">Đang tải dữ liệu chi tiết cho ${h(validation.tickers.join(", "))}…</p>`;
     const readModel = UI.ctx.readModel;
     Promise.all(validation.tickers.map((t) => (readModel ? readModel.getTickerDetail(t, doc) : Promise.resolve({ status: "unavailable" })).then((r) => ({ ticker: t, thin: doc.cards[t], detail: r && r.status === "ok" ? r.card : null }))))
       .then((entries) => {
-        if (token !== UI.compareToken) return;
+        if (token !== UI.compareToken || !currentView("compare", doc)) return;
+        UI.comparePending = null;
         const detailSessions = new Set(entries.filter((e) => e.detail).map((e) => str(e.detail.as_of_session)));
         if (detailSessions.size > 1 || (detailSessions.size === 1 && !detailSessions.has(validation.session))) {
           UI.comparison = null;
@@ -1988,8 +2024,10 @@ ${arr(d.dossiers).map(dossierSection).join("")}${cmpSection}${notesSection}
           return;
         }
         UI.comparison = buildComparison(entries, { session: validation.session, indexDoc: doc });
+        UI.comparisonKey = key;
         const saved = Boolean(findEntry(UI.journal, entryIdFor("comparison", validation.tickers)));
-        out.innerHTML = comparisonHtml(UI.comparison, { saved });
+        out.innerHTML = comparisonHtml(UI.comparison, { saved }) + (UI.comparison.detailMissing.length
+          ? '<button type="button" class="btn btn-sm btn-outline-light" data-wb-action="compare-run">Thử lại chi tiết còn thiếu</button>' : "");
         if (focus) focusHeading("wb-compare-heading");
       });
   }
@@ -2018,6 +2056,9 @@ ${arr(d.dossiers).map(dossierSection).join("")}${cmpSection}${notesSection}
   }
 
   function renderView(view, opts) {
+    flushJournal();
+    if (view !== "dossier") { UI.dossierToken++; UI.dossierPending = null; UI.dossier = null; UI.dossierKey = null; }
+    if (view !== "compare") { UI.compareToken++; UI.comparePending = null; }
     const focus = Boolean(opts && opts.focus);
     if (view === "dossier") renderDossierView(focus);
     else if (view === "compare") renderCompareView(focus);
@@ -2036,6 +2077,7 @@ ${arr(d.dossiers).map(dossierSection).join("")}${cmpSection}${notesSection}
   }
 
   function exportFor(kind) {
+    flushJournal();
     const doc = wsDoc();
     if (kind === "dossier" && UI.dossier) {
       const entry = currentDossierEntry(false);
@@ -2049,8 +2091,10 @@ ${arr(d.dossiers).map(dossierSection).join("")}${cmpSection}${notesSection}
   }
 
   function handleAction(action, el) {
+    flushJournal();
     const doc = wsDoc();
     switch (action) {
+      case "dossier-retry": { renderDossierView(true, true); return; }
       case "save": { if (!UI.dossier) return; upsertEntry(UI.journal, "dossier", [UI.dossier.ticker], UI.dossier.session); persist(); renderDossierView(false); setTimeout(() => focusHeading("wb-hypothesis"), 0); return; }
       case "unsave": { if (!UI.dossier) return; const entry = currentDossierEntry(false); if (entry && (entry.hypothesis || entry.questions.length || entry.conditions.length) && !window.confirm(`Xóa hồ sơ ${UI.dossier.ticker} và mọi ghi chú khỏi sổ nghiên cứu?`)) return; removeEntry(UI.journal, entryIdFor("dossier", [UI.dossier.ticker])); persist(); renderDossierView(false); return; }
       case "compare-add": case "compare-remove": {
@@ -2058,7 +2102,7 @@ ${arr(d.dossiers).map(dossierSection).join("")}${cmpSection}${notesSection}
         const t = UI.dossier.ticker;
         if (action === "compare-add" && !UI.compare.includes(t)) { if (UI.compare.length >= MAX_COMPARE) { window.alert(COMPARE_REFUSALS.TOO_MANY); return; } UI.compare.push(t); }
         if (action === "compare-remove") UI.compare = UI.compare.filter((x) => x !== t);
-        renderCompareTray(); renderDossierView(false); return;
+        invalidateComparison(); renderCompareTray(); renderDossierView(false); return;
       }
       case "export-json": case "compare-export-json": {
         const out = exportFor(action === "export-json" ? "dossier" : "compare"); if (!out) return;
@@ -2083,21 +2127,21 @@ ${arr(d.dossiers).map(dossierSection).join("")}${cmpSection}${notesSection}
         const t = UI.dossier.ticker;
         UI.history[t] = { status: "loading" };
         const sec = document.querySelector("#wb-sec-history .wb-section-body"); if (sec) sec.innerHTML = historyHtml(UI.history[t]);
-        loadPublicHistory(t, doc.as_of_session).then((r) => { UI.history[t] = r; const s = document.querySelector("#wb-sec-history .wb-section-body"); if (s && UI.dossier && UI.dossier.ticker === t) s.innerHTML = historyHtml(r); });
+        loadPublicHistory(t, doc.as_of_session).then((r) => { if (wsDoc() !== doc) return; UI.history[t] = r; const s = document.querySelector("#wb-sec-history .wb-section-body"); if (s && currentView("dossier", doc) && UI.dossier && UI.dossier.ticker === t) s.innerHTML = historyHtml(r); });
         return;
       }
-      case "tray-remove": { UI.compare = UI.compare.filter((x) => x !== el.dataset.ticker); renderCompareTray(); return; }
+      case "tray-remove": { UI.compare = UI.compare.filter((x) => x !== el.dataset.ticker); invalidateComparison(); renderCompareTray(); return; }
       case "compare-run": { runComparison(UI.compare, "", true); return; }
-      case "compare-clear": { UI.compare = []; UI.comparison = null; renderCompareTray(); setUrl({ tickers: null, session: null }); const out = document.getElementById("wb-compare-result"); if (out) out.innerHTML = ""; return; }
+      case "compare-clear": { UI.compareToken++; UI.comparePending = null; UI.compare = []; UI.comparison = null; UI.comparisonKey = null; renderCompareTray(); setUrl({ tickers: null, session: null }); const out = document.getElementById("wb-compare-result"); if (out) out.innerHTML = ""; return; }
       case "compare-save": { if (!UI.comparison) return; upsertEntry(UI.journal, "comparison", UI.comparison.tickers, UI.comparison.session); persist(); document.getElementById("wb-compare-result").innerHTML = comparisonHtml(UI.comparison, { saved: true }); return; }
       case "compare-unsave": { if (!UI.comparison) return; removeEntry(UI.journal, entryIdFor("comparison", UI.comparison.tickers)); persist(); document.getElementById("wb-compare-result").innerHTML = comparisonHtml(UI.comparison, { saved: false }); return; }
       case "journal-export": { download(`so-nghien-cuu-${(doc && doc.as_of_session) || "phien"}.json`, JSON.stringify(exportJournal(UI.journal), null, 2), "application/json"); return; }
       case "journal-remove": {
         const id = el.dataset.entryId; const entry = findEntry(UI.journal, id); if (!entry) return;
         if (!window.confirm(`Xóa ${entry.tickers.join(", ")} và mọi ghi chú khỏi sổ nghiên cứu?`)) return;
-        removeEntry(UI.journal, id); persist(); renderJournalView(false); focusHeading("wb-journal-heading"); return;
+        UI.importToken++; removeEntry(UI.journal, id); persist(); renderJournalView(false); focusHeading("wb-journal-heading"); return;
       }
-      case "journal-reset": { if (!window.confirm("Xóa dữ liệu sổ nghiên cứu bị hỏng trong trình duyệt này?")) return; clearJournal(); UI.journal = emptyJournal(); UI.journalStatus = "empty"; renderJournalView(true); return; }
+      case "journal-reset": { if (!window.confirm("Xóa dữ liệu sổ nghiên cứu bị hỏng trong trình duyệt này?")) return; UI.importToken++; clearJournal(); UI.journal = emptyJournal(); UI.journalStatus = "empty"; renderJournalView(true); return; }
       default:
     }
   }
@@ -2112,6 +2156,7 @@ ${arr(d.dossiers).map(dossierSection).join("")}${cmpSection}${notesSection}
     if (UI.compare.includes(t)) { say(`${t} đã có trong danh sách.`); return false; }
     if (UI.compare.length >= MAX_COMPARE) { say(COMPARE_REFUSALS.TOO_MANY); return false; }
     UI.compare.push(t);
+    invalidateComparison();
     say(`Đã thêm ${t}.`);
     renderCompareTray();
     return true;
@@ -2154,40 +2199,57 @@ ${arr(d.dossiers).map(dossierSection).join("")}${cmpSection}${notesSection}
       if (!field) return;
       const entry = currentDossierEntry(false);
       if (!entry) return;
+      // Draft state changes synchronously; only the storage write is debounced.
+      // Re-render/export/import can no longer read the previous hypothesis.
+      setHypothesis(entry, field.value);
+      UI.journalDirty = true;
+      UI.dirtyEntries.add(entry.id);
       clearTimeout(UI.hypothesisTimer);
       const status = document.querySelector("[data-wb-save-status]");
       if (status) status.textContent = "Đang lưu…";
-      UI.hypothesisTimer = setTimeout(() => { setHypothesis(entry, field.value); const ok = persist(); if (status) status.textContent = ok ? "Đã lưu trong trình duyệt này." : "Không lưu được vào trình duyệt; hãy xuất tệp để giữ ghi chú."; }, 400);
+      UI.hypothesisTimer = setTimeout(() => { const ok = persist(); if (status && status.isConnected) status.textContent = ok ? "Đã lưu trong trình duyệt này." : "Không lưu được vào trình duyệt; hãy xuất tệp để giữ ghi chú."; }, 400);
     });
     document.addEventListener("change", (e) => {
       const input = e.target.closest("[data-wb-import]");
       if (!input || !input.files || !input.files[0]) return;
+      flushJournal();
+      const importToken = ++UI.importToken;
       const file = input.files[0];
       const reportEl = () => document.querySelector("[data-wb-import-report]");
       if (file.size > LIMITS.importBytes) { const r = reportEl(); if (r) r.innerHTML = importReportHtml({ ok: false, error: "FILE_TOO_LARGE" }); input.value = ""; return; }
       const reader = new FileReader();
       reader.onload = () => {
+        if (importToken !== UI.importToken) return;
+        flushJournal();
         const { journal, report } = importJournal(UI.journal, String(reader.result || ""), { indexDoc: wsDoc() });
         if (report.ok) { UI.journal = journal; if (UI.journalStatus !== "unavailable") UI.journalStatus = "ok"; persist(); }
-        renderJournalView(false);
+        if (UI.ctx.getView() === "journal") renderJournalView(false);
         const r = reportEl(); if (r) r.innerHTML = importReportHtml(report);
       };
-      reader.onerror = () => { const r = reportEl(); if (r) r.innerHTML = importReportHtml({ ok: false, error: "NOT_JSON" }); };
+      reader.onerror = () => { if (importToken !== UI.importToken) return; const r = reportEl(); if (r) r.innerHTML = importReportHtml({ ok: false, error: "NOT_JSON" }); };
       reader.readAsText(file);
       input.value = "";
     });
     window.addEventListener("storage", (e) => {
       if (e.key !== JOURNAL_STORAGE_KEY) return;
       const loaded = loadJournal();
-      UI.journal = loaded.journal;
+      if (loaded.status === "corrupt" || loaded.status === "unavailable") { UI.journalStatus = loaded.status; return; }
+      const drafts = { entries: UI.journal.entries.filter(entry => UI.dirtyEntries.has(entry.id)) };
+      UI.journal = UI.journalDirty ? importJournal(loaded.journal, JSON.stringify(exportJournal(drafts))).journal : loaded.journal;
       UI.journalStatus = loaded.status;
+      flushJournal();
       const view = UI.ctx && UI.ctx.getView ? UI.ctx.getView() : "";
       if (view === "journal") renderJournalView(false);
+      if (view === "dossier" && UI.dossier) paintDossier(wsDoc(), UI.dossierKey === null, false);
     });
+    window.addEventListener("pagehide", flushJournal);
   }
 
   function attach(ctx) {
+    flushJournal(); UI.dossierToken++; UI.compareToken++; UI.importToken++;
+    UI.dossier = null; UI.dossierKey = null; UI.dossierPending = null; UI.comparison = null; UI.comparisonKey = null; UI.comparePending = null;
     UI.ctx = ctx;
+    UI.history = {};
     const loaded = loadJournal();
     UI.journal = loaded.journal;
     UI.journalStatus = loaded.status;
