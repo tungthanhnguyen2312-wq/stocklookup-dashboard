@@ -37,6 +37,11 @@
     return null;
   }
 
+  function getCaseDeskReview() {
+    if (typeof window !== "undefined" && window.VSCaseDeskReview) return window.VSCaseDeskReview;
+    return null;
+  }
+
   function getWorkspaceCardPresentation() {
     if (typeof window !== "undefined" && window.VSWorkspaceCardPresentation) return window.VSWorkspaceCardPresentation;
     if (typeof require === "function") {
@@ -1244,7 +1249,9 @@
       const VALID_VIEWS = ["opportunities", "portfolio", "watchlist", "explore", "technical"];
       // INVESTOR_EVIDENCE_INVESTIGATION_WORKBENCH_V1: dossier / compare / journal share the same
       // index fetch and selected-ticker state; investigation-workbench.js renders their panels.
-      const WORKBENCH_VIEWS = ["dossier", "compare", "journal"];
+      // INVESTOR_CASE_DESK_LOCAL_REVIEW_INTEGRATION_V1: "case" shows one browser-local Consumer
+      // Case Desk case next to the published session; case-desk-review.js owns that panel.
+      const WORKBENCH_VIEWS = ["dossier", "compare", "journal", "case"];
       const ALL_VIEWS = VALID_VIEWS.concat(WORKBENCH_VIEWS);
 
       function effectivePortfolio(ticker, card) {
@@ -1371,6 +1378,8 @@
         if (next === "technical") renderTechnicalView();
         const workbench = getInvestigationWorkbench();
         if (workbench) workbench.renderView(next, { focus: Boolean(opts && opts.focus) });
+        const caseDesk = getCaseDeskReview();
+        if (caseDesk && next === "case") caseDesk.render(Boolean(opts && opts.focus));
         try {
           const url = new URL(window.location.href);
           const currentParam = url.searchParams.get("view") || "opportunities";
@@ -1558,6 +1567,8 @@
         if (WORKSPACE_VIEW === "technical") renderTechnicalView();
         const workbench = getInvestigationWorkbench();
         if (workbench && WORKSPACE_VIEW === "dossier") workbench.renderView("dossier", { focus: Boolean(opts && opts.focusDossier) });
+        const caseDesk = getCaseDeskReview();
+        if (caseDesk && WORKSPACE_VIEW === "case") caseDesk.focusTicker(ticker);
 
         try {
           const url = new URL(window.location.href);
@@ -1598,6 +1609,22 @@
         renderList();
         renderDecisionFocus();
         const workbench = getInvestigationWorkbench();
+        const caseDesk = getCaseDeskReview();
+        const openDossier = (t) => {
+          if (!WORKSPACE.cards[t]) return;
+          closeDrawer();
+          SELECTED_TICKER = t;
+          setView("dossier");
+          selectTicker(t, { focusDossier: true });
+        };
+        if (caseDesk) {
+          caseDesk.attach({
+            getWorkspace: () => WORKSPACE,
+            getSelectedTicker: () => SELECTED_TICKER,
+            setView: (view) => setView(view, { focus: true }),
+            openDossier,
+          });
+        }
         if (workbench) {
           workbench.attach({
             getWorkspace: () => WORKSPACE,
@@ -1606,13 +1633,8 @@
             getView: () => WORKSPACE_VIEW,
             setView: (view) => setView(view, { focus: true }),
             openDrawer: (t) => selectTicker(t, { openDrawer: true }),
-            openDossier: (t) => {
-              if (!WORKSPACE.cards[t]) return;
-              closeDrawer();
-              SELECTED_TICKER = t;
-              setView("dossier");
-              selectTicker(t, { focusDossier: true });
-            },
+            openDossier,
+            localCaseNoticeHtml: (t) => (caseDesk ? caseDesk.dossierNoticeHtml(caseDesk.currentModel(), t, WORKSPACE) : ""),
           });
         }
         const queryView = new URLSearchParams(window.location.search).get("view");
