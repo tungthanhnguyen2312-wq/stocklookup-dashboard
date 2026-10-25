@@ -1370,7 +1370,7 @@
         if (next === "portfolio") renderPortfolioView();
         if (next === "technical") renderTechnicalView();
         const workbench = getInvestigationWorkbench();
-        if (workbench && WORKBENCH_VIEWS.includes(next)) workbench.renderView(next, { focus: Boolean(opts && opts.focus) });
+        if (workbench) workbench.renderView(next, { focus: Boolean(opts && opts.focus) });
         try {
           const url = new URL(window.location.href);
           const currentParam = url.searchParams.get("view") || "opportunities";
@@ -1550,8 +1550,11 @@
         if (select) select.value = ticker;
         if (select && typeof select.removeAttribute === "function") select.removeAttribute("aria-invalid");
         showDecisionCard(ticker, { deferDetail: !(opts && opts.openDrawer) });
-        renderList();
-        renderDecisionFocus();
+        // Selection changes only a row class. Rebuilding the hidden 1,683-row
+        // table and unchanged focus cards here dominated rapid dossier navigation.
+        document.querySelectorAll("[data-row-ticker]").forEach((row) => {
+          row.classList.toggle("ws-row-selected", row.dataset.rowTicker === ticker);
+        });
         if (WORKSPACE_VIEW === "technical") renderTechnicalView();
         const workbench = getInvestigationWorkbench();
         if (workbench && WORKSPACE_VIEW === "dossier") workbench.renderView("dossier", { focus: Boolean(opts && opts.focusDossier) });

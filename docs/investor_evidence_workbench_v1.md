@@ -29,10 +29,16 @@ each (2026-10-23 release: 162 MB raw in total, about 20 MB gzip). Measured for t
 
 - Shards are fetched only on demand (opening a ticker's details, a dossier, a comparison, or
   printing). Selecting a ticker without opening its details fetches nothing.
-- `workspace-read-model.js` keeps one in-flight/settled request per shard for the life of the
-  page, so a shard is never requested twice; tickers sharing a first letter share one download.
-- The parse cost (up to ~79 MB of JSON for a worst-case comparison) is the remaining limit. Reducing
-  it needs a smaller per-ticker or comparison-subset detail file from the Producer.
+- `workspace-read-model.js` shares downloads and concurrent parses per shard/release. It keeps
+  lossless source Blobs (natively gzipped after the requesting view is built) and an LRU of 32
+  original ticker cards, instead of retaining every parsed ticker in a shard. Failed transfers
+  and malformed/identity-mismatched responses can be retried explicitly.
+- The original full detail remains accessible. Opening an uncached ticker or revisiting an
+  evicted card reparses retained local bytes, without a second successful shard download.
+  Browsers without native compression keep original Blobs. Initial transfer/parse volume is
+  unchanged: the index lacks the detailed method/period/scope operands needed for comparison.
+- [Measured performance and interaction acceptance](investigation_workbench_performance_v1.md)
+  records the real-data results, memory/latency tradeoffs and reproducible browser commands.
 
 ## Public history
 

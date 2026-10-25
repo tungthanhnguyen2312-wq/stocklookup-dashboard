@@ -1,0 +1,1122 @@
+{
+  "date": "2026-10-25",
+  "source_sha256": {
+    "assets/js/workspace-read-model.js": "786c4bc46dd8a0effa4d602a603a408715081a15a3046352f501d93d70590715",
+    "assets/js/investigation-workbench.js": "c2378ba9b3d4d6f21278ee3797e7b1bdbad7c1d05769ea257c74b2ceae8f86a2",
+    "assets/js/investment-workspace.js": "4a655f624d816a6560e7cbf220c657f4f92cb993ce0ec4b1a18febfe9803bc43"
+  },
+  "before": {
+    "base": "13600821c5c6f610e04672a15112c6d576100fa0",
+    "session": "2026-10-23",
+    "tickers": 1683,
+    "browser": "Chrome/155.0.8059.86",
+    "baselineCode": true,
+    "instrumentation": "Response.json -> text + timed JSON.parse; post-GC JS heap and live native Blob sizes, not total browser RSS. 2s cache-compression settling after latency measurement. Local gzip, no network throttling.",
+    "cases": [
+      {
+        "width": 375,
+        "plainHeap": 5153828,
+        "plainDetailRequests": 0,
+        "fiveShardMs": 2029,
+        "fiveHeap": 82124508,
+        "liveBlobBytes": 0,
+        "fiveParse": [
+          {
+            "chars": 17954926,
+            "ms": 125,
+            "contract": "workspace_detail_shard/v1"
+          },
+          {
+            "chars": 17232751,
+            "ms": 131,
+            "contract": "workspace_detail_shard/v1"
+          },
+          {
+            "chars": 15511933,
+            "ms": 80.7999999821186,
+            "contract": "workspace_detail_shard/v1"
+          },
+          {
+            "chars": 14998009,
+            "ms": 87.09999999403954,
+            "contract": "workspace_detail_shard/v1"
+          },
+          {
+            "chars": 13275005,
+            "ms": 65.59999999403954,
+            "contract": "workspace_detail_shard/v1"
+          }
+        ],
+        "fiveRequests": [
+          {
+            "id": "21112.40",
+            "url": "/data/workspace_detail/V.json",
+            "encoded": 2234626
+          },
+          {
+            "id": "21112.41",
+            "url": "/data/workspace_detail/S.json",
+            "encoded": 2154872
+          },
+          {
+            "id": "21112.42",
+            "url": "/data/workspace_detail/T.json",
+            "encoded": 1908522
+          },
+          {
+            "id": "21112.43",
+            "url": "/data/workspace_detail/P.json",
+            "encoded": 1872734
+          },
+          {
+            "id": "21112.44",
+            "url": "/data/workspace_detail/H.json",
+            "encoded": 1637249
+          }
+        ],
+        "comparisonExportParity": true,
+        "repeatedDossierMs": 2685,
+        "repeatedHeap": 82661212,
+        "dossierRenders": 35,
+        "sameShardMs": 1007,
+        "sameShardRequests": [
+          {
+            "id": "21112.81",
+            "url": "/data/workspace_detail/S.json",
+            "encoded": 2154872
+          }
+        ],
+        "sameShardHeap": 22169896,
+        "sameShardParse": [
+          {
+            "chars": 17232751,
+            "ms": 65.90000000596046,
+            "contract": "workspace_detail_shard/v1"
+          }
+        ],
+        "rapidMs": 1769,
+        "rapidFinal": "VNM Doanh nghiệp",
+        "rapidRequests": [
+          {
+            "id": "21112.84",
+            "url": "/data/workspace_detail/H.json",
+            "encoded": 1637249
+          },
+          {
+            "id": "21112.85",
+            "url": "/data/workspace_detail/F.json",
+            "encoded": 323933
+          },
+          {
+            "id": "21112.86",
+            "url": "/data/workspace_detail/P.json",
+            "encoded": 1872734
+          },
+          {
+            "id": "21112.87",
+            "url": "/data/workspace_detail/N.json",
+            "encoded": 886563
+          },
+          {
+            "id": "21112.88",
+            "url": "/data/workspace_detail/V.json",
+            "encoded": 2234626
+          }
+        ],
+        "longTasks": [
+          397,
+          69,
+          75,
+          832,
+          58,
+          82,
+          110,
+          95,
+          104,
+          118
+        ],
+        "overflow": false,
+        "reliability": {
+          "draftSurvivesRender": false,
+          "immediateExport": false,
+          "clearCancelsPending": false,
+          "invalidRequestCancelsPending": false,
+          "leavingViewCancelsPending": true,
+          "importRace": false,
+          "httpRetry": false,
+          "malformedRetry": false,
+          "identityRetry": false,
+          "sessionRetry": false,
+          "offlineRetry": false,
+          "keyboard": true
+        }
+      },
+      {
+        "width": 768,
+        "plainHeap": 5158804,
+        "plainDetailRequests": 0,
+        "fiveShardMs": 1471,
+        "fiveHeap": 82127764,
+        "liveBlobBytes": 0,
+        "fiveParse": [
+          {
+            "chars": 13275005,
+            "ms": 64.39999997615814,
+            "contract": "workspace_detail_shard/v1"
+          },
+          {
+            "chars": 15511933,
+            "ms": 95.90000000596046,
+            "contract": "workspace_detail_shard/v1"
+          },
+          {
+            "chars": 14998009,
+            "ms": 91.80000001192093,
+            "contract": "workspace_detail_shard/v1"
+          },
+          {
+            "chars": 17954926,
+            "ms": 86.5,
+            "contract": "workspace_detail_shard/v1"
+          },
+          {
+            "chars": 17232751,
+            "ms": 133.59999999403954,
+            "contract": "workspace_detail_shard/v1"
+          }
+        ],
+        "fiveRequests": [
+          {
+            "id": "24468.39",
+            "url": "/data/workspace_detail/V.json",
+            "encoded": 2234626
+          },
+          {
+            "id": "24468.40",
+            "url": "/data/workspace_detail/S.json",
+            "encoded": 2154872
+          },
+          {
+            "id": "24468.41",
+            "url": "/data/workspace_detail/T.json",
+            "encoded": 1908522
+          },
+          {
+            "id": "24468.42",
+            "url": "/data/workspace_detail/P.json",
+            "encoded": 1872734
+          },
+          {
+            "id": "24468.43",
+            "url": "/data/workspace_detail/H.json",
+            "encoded": 1637249
+          }
+        ],
+        "comparisonExportParity": true,
+        "repeatedDossierMs": 2827,
+        "repeatedHeap": 82661564,
+        "dossierRenders": 35,
+        "sameShardMs": 1101,
+        "sameShardRequests": [
+          {
+            "id": "24468.80",
+            "url": "/data/workspace_detail/S.json",
+            "encoded": 2154872
+          }
+        ],
+        "sameShardHeap": 22178584,
+        "sameShardParse": [
+          {
+            "chars": 17232751,
+            "ms": 101.7000000178814,
+            "contract": "workspace_detail_shard/v1"
+          }
+        ],
+        "rapidMs": 1696,
+        "rapidFinal": "VNM Doanh nghiệp",
+        "rapidRequests": [
+          {
+            "id": "24468.83",
+            "url": "/data/workspace_detail/H.json",
+            "encoded": 1637249
+          },
+          {
+            "id": "24468.84",
+            "url": "/data/workspace_detail/F.json",
+            "encoded": 323933
+          },
+          {
+            "id": "24468.85",
+            "url": "/data/workspace_detail/P.json",
+            "encoded": 1872734
+          },
+          {
+            "id": "24468.86",
+            "url": "/data/workspace_detail/N.json",
+            "encoded": 886563
+          },
+          {
+            "id": "24468.87",
+            "url": "/data/workspace_detail/V.json",
+            "encoded": 2234626
+          }
+        ],
+        "longTasks": [
+          439,
+          74,
+          72,
+          113,
+          862,
+          55,
+          74,
+          81,
+          66,
+          80,
+          110
+        ],
+        "overflow": false,
+        "reliability": {
+          "draftSurvivesRender": false,
+          "immediateExport": false,
+          "clearCancelsPending": false,
+          "invalidRequestCancelsPending": false,
+          "leavingViewCancelsPending": true,
+          "importRace": false,
+          "httpRetry": false,
+          "malformedRetry": false,
+          "identityRetry": false,
+          "sessionRetry": false,
+          "offlineRetry": false,
+          "keyboard": true
+        }
+      },
+      {
+        "width": 1024,
+        "plainHeap": 5159936,
+        "plainDetailRequests": 0,
+        "fiveShardMs": 1272,
+        "fiveHeap": 82128996,
+        "liveBlobBytes": 0,
+        "fiveParse": [
+          {
+            "chars": 13275005,
+            "ms": 72.09999999403954,
+            "contract": "workspace_detail_shard/v1"
+          },
+          {
+            "chars": 15511933,
+            "ms": 79.89999997615814,
+            "contract": "workspace_detail_shard/v1"
+          },
+          {
+            "chars": 14998009,
+            "ms": 70,
+            "contract": "workspace_detail_shard/v1"
+          },
+          {
+            "chars": 17954926,
+            "ms": 51.400000005960464,
+            "contract": "workspace_detail_shard/v1"
+          },
+          {
+            "chars": 17232751,
+            "ms": 85.7999999821186,
+            "contract": "workspace_detail_shard/v1"
+          }
+        ],
+        "fiveRequests": [
+          {
+            "id": "13276.39",
+            "url": "/data/workspace_detail/V.json",
+            "encoded": 2234626
+          },
+          {
+            "id": "13276.40",
+            "url": "/data/workspace_detail/S.json",
+            "encoded": 2154872
+          },
+          {
+            "id": "13276.41",
+            "url": "/data/workspace_detail/T.json",
+            "encoded": 1908522
+          },
+          {
+            "id": "13276.42",
+            "url": "/data/workspace_detail/P.json",
+            "encoded": 1872734
+          },
+          {
+            "id": "13276.43",
+            "url": "/data/workspace_detail/H.json",
+            "encoded": 1637249
+          }
+        ],
+        "comparisonExportParity": true,
+        "repeatedDossierMs": 2355,
+        "repeatedHeap": 82662712,
+        "dossierRenders": 35,
+        "sameShardMs": 1053,
+        "sameShardRequests": [
+          {
+            "id": "13276.80",
+            "url": "/data/workspace_detail/S.json",
+            "encoded": 2154872
+          }
+        ],
+        "sameShardHeap": 22174308,
+        "sameShardParse": [
+          {
+            "chars": 17232751,
+            "ms": 109,
+            "contract": "workspace_detail_shard/v1"
+          }
+        ],
+        "rapidMs": 1706,
+        "rapidFinal": "VNM Doanh nghiệp",
+        "rapidRequests": [
+          {
+            "id": "13276.83",
+            "url": "/data/workspace_detail/H.json",
+            "encoded": 1637249
+          },
+          {
+            "id": "13276.84",
+            "url": "/data/workspace_detail/F.json",
+            "encoded": 323933
+          },
+          {
+            "id": "13276.85",
+            "url": "/data/workspace_detail/P.json",
+            "encoded": 1872734
+          },
+          {
+            "id": "13276.86",
+            "url": "/data/workspace_detail/N.json",
+            "encoded": 886563
+          },
+          {
+            "id": "13276.87",
+            "url": "/data/workspace_detail/V.json",
+            "encoded": 2234626
+          }
+        ],
+        "longTasks": [
+          391,
+          81,
+          80,
+          118,
+          861,
+          79,
+          68,
+          54,
+          63,
+          55,
+          97,
+          125
+        ],
+        "overflow": false,
+        "reliability": {
+          "draftSurvivesRender": false,
+          "immediateExport": false,
+          "clearCancelsPending": false,
+          "invalidRequestCancelsPending": false,
+          "leavingViewCancelsPending": true,
+          "importRace": false,
+          "httpRetry": false,
+          "malformedRetry": false,
+          "identityRetry": false,
+          "sessionRetry": false,
+          "offlineRetry": false,
+          "keyboard": true
+        }
+      },
+      {
+        "width": 1440,
+        "plainHeap": 5158792,
+        "plainDetailRequests": 0,
+        "fiveShardMs": 1372,
+        "fiveHeap": 82127768,
+        "liveBlobBytes": 0,
+        "fiveParse": [
+          {
+            "chars": 13275005,
+            "ms": 83.09999999403954,
+            "contract": "workspace_detail_shard/v1"
+          },
+          {
+            "chars": 15511933,
+            "ms": 69.19999998807907,
+            "contract": "workspace_detail_shard/v1"
+          },
+          {
+            "chars": 14998009,
+            "ms": 72.19999998807907,
+            "contract": "workspace_detail_shard/v1"
+          },
+          {
+            "chars": 17954926,
+            "ms": 80,
+            "contract": "workspace_detail_shard/v1"
+          },
+          {
+            "chars": 17232751,
+            "ms": 85.5,
+            "contract": "workspace_detail_shard/v1"
+          }
+        ],
+        "fiveRequests": [
+          {
+            "id": "20512.39",
+            "url": "/data/workspace_detail/V.json",
+            "encoded": 2234626
+          },
+          {
+            "id": "20512.40",
+            "url": "/data/workspace_detail/S.json",
+            "encoded": 2154872
+          },
+          {
+            "id": "20512.41",
+            "url": "/data/workspace_detail/T.json",
+            "encoded": 1908522
+          },
+          {
+            "id": "20512.42",
+            "url": "/data/workspace_detail/P.json",
+            "encoded": 1872734
+          },
+          {
+            "id": "20512.43",
+            "url": "/data/workspace_detail/H.json",
+            "encoded": 1637249
+          }
+        ],
+        "comparisonExportParity": true,
+        "repeatedDossierMs": 2808,
+        "repeatedHeap": 82661580,
+        "dossierRenders": 35,
+        "sameShardMs": 969,
+        "sameShardRequests": [
+          {
+            "id": "20512.80",
+            "url": "/data/workspace_detail/S.json",
+            "encoded": 2154872
+          }
+        ],
+        "sameShardHeap": 22172848,
+        "sameShardParse": [
+          {
+            "chars": 17232751,
+            "ms": 99.09999999403954,
+            "contract": "workspace_detail_shard/v1"
+          }
+        ],
+        "rapidMs": 1688,
+        "rapidFinal": "VNM Doanh nghiệp",
+        "rapidRequests": [
+          {
+            "id": "20512.83",
+            "url": "/data/workspace_detail/H.json",
+            "encoded": 1637249
+          },
+          {
+            "id": "20512.84",
+            "url": "/data/workspace_detail/F.json",
+            "encoded": 323933
+          },
+          {
+            "id": "20512.85",
+            "url": "/data/workspace_detail/P.json",
+            "encoded": 1872734
+          },
+          {
+            "id": "20512.86",
+            "url": "/data/workspace_detail/N.json",
+            "encoded": 886563
+          },
+          {
+            "id": "20512.87",
+            "url": "/data/workspace_detail/V.json",
+            "encoded": 2234626
+          }
+        ],
+        "longTasks": [
+          388,
+          56,
+          79,
+          110,
+          787,
+          88,
+          72,
+          98,
+          102,
+          170
+        ],
+        "overflow": false,
+        "reliability": {
+          "draftSurvivesRender": false,
+          "immediateExport": false,
+          "clearCancelsPending": false,
+          "invalidRequestCancelsPending": false,
+          "leavingViewCancelsPending": true,
+          "importRace": false,
+          "httpRetry": false,
+          "malformedRetry": false,
+          "identityRetry": false,
+          "sessionRetry": false,
+          "offlineRetry": false,
+          "keyboard": true
+        }
+      }
+    ]
+  },
+  "after": {
+    "base": "13600821c5c6f610e04672a15112c6d576100fa0",
+    "session": "2026-10-23",
+    "tickers": 1683,
+    "browser": "Chrome/155.0.8059.86",
+    "baselineCode": false,
+    "instrumentation": "Response.json -> text + timed JSON.parse; post-GC JS heap and live native Blob sizes, not total browser RSS. 2s cache-compression settling after latency measurement. Local gzip, no network throttling.",
+    "cases": [
+      {
+        "width": 375,
+        "plainHeap": 5296224,
+        "plainDetailRequests": 0,
+        "fiveShardMs": 1791,
+        "fiveHeap": 5990264,
+        "liveBlobBytes": 9806868,
+        "fiveParse": [
+          {
+            "chars": 17954926,
+            "ms": 109.59999999403954,
+            "contract": "workspace_detail_shard/v1"
+          },
+          {
+            "chars": 17232751,
+            "ms": 105.30000001192093,
+            "contract": "workspace_detail_shard/v1"
+          },
+          {
+            "chars": 15511933,
+            "ms": 62.79999998211861,
+            "contract": "workspace_detail_shard/v1"
+          },
+          {
+            "chars": 14998009,
+            "ms": 88.7000000178814,
+            "contract": "workspace_detail_shard/v1"
+          },
+          {
+            "chars": 13275005,
+            "ms": 77.69999998807907,
+            "contract": "workspace_detail_shard/v1"
+          }
+        ],
+        "fiveRequests": [
+          {
+            "id": "15496.40",
+            "url": "/data/workspace_detail/V.json",
+            "encoded": 2234626
+          },
+          {
+            "id": "15496.41",
+            "url": "/data/workspace_detail/S.json",
+            "encoded": 2154872
+          },
+          {
+            "id": "15496.42",
+            "url": "/data/workspace_detail/T.json",
+            "encoded": 1908522
+          },
+          {
+            "id": "15496.43",
+            "url": "/data/workspace_detail/P.json",
+            "encoded": 1872734
+          },
+          {
+            "id": "15496.44",
+            "url": "/data/workspace_detail/H.json",
+            "encoded": 1637249
+          }
+        ],
+        "comparisonExportParity": true,
+        "repeatedDossierMs": 550,
+        "repeatedHeap": 6484316,
+        "dossierRenders": 35,
+        "sameShardMs": 792,
+        "sameShardRequests": [
+          {
+            "id": "15496.81",
+            "url": "/data/workspace_detail/S.json",
+            "encoded": 2154872
+          }
+        ],
+        "sameShardHeap": 5962968,
+        "sameShardParse": [
+          {
+            "chars": 17232751,
+            "ms": 95.5,
+            "contract": "workspace_detail_shard/v1"
+          }
+        ],
+        "rapidMs": 763,
+        "rapidFinal": "VNM Doanh nghiệp",
+        "rapidRequests": [
+          {
+            "id": "15496.84",
+            "url": "/data/workspace_detail/H.json",
+            "encoded": 1637249
+          },
+          {
+            "id": "15496.85",
+            "url": "/data/workspace_detail/F.json",
+            "encoded": 323933
+          },
+          {
+            "id": "15496.86",
+            "url": "/data/workspace_detail/P.json",
+            "encoded": 1872734
+          },
+          {
+            "id": "15496.87",
+            "url": "/data/workspace_detail/N.json",
+            "encoded": 886563
+          },
+          {
+            "id": "15496.88",
+            "url": "/data/workspace_detail/V.json",
+            "encoded": 2234626
+          }
+        ],
+        "longTasks": [
+          225,
+          146,
+          102,
+          63,
+          99,
+          110
+        ],
+        "overflow": false,
+        "reliability": {
+          "draftSurvivesRender": true,
+          "immediateExport": true,
+          "clearCancelsPending": true,
+          "invalidRequestCancelsPending": true,
+          "leavingViewCancelsPending": true,
+          "olderTickerCannotReplaceNewer": true,
+          "importRace": true,
+          "httpRetry": true,
+          "malformedRetry": true,
+          "identityRetry": true,
+          "sessionRetry": true,
+          "offlineRetry": true,
+          "keyboard": true
+        }
+      },
+      {
+        "width": 768,
+        "plainHeap": 5300336,
+        "plainDetailRequests": 0,
+        "fiveShardMs": 1143,
+        "fiveHeap": 5993288,
+        "liveBlobBytes": 9806868,
+        "fiveParse": [
+          {
+            "chars": 13275005,
+            "ms": 70.19999998807907,
+            "contract": "workspace_detail_shard/v1"
+          },
+          {
+            "chars": 14998009,
+            "ms": 102.60000002384186,
+            "contract": "workspace_detail_shard/v1"
+          },
+          {
+            "chars": 15511933,
+            "ms": 87.5,
+            "contract": "workspace_detail_shard/v1"
+          },
+          {
+            "chars": 17954926,
+            "ms": 100.09999999403954,
+            "contract": "workspace_detail_shard/v1"
+          },
+          {
+            "chars": 17232751,
+            "ms": 113.2999999821186,
+            "contract": "workspace_detail_shard/v1"
+          }
+        ],
+        "fiveRequests": [
+          {
+            "id": "8472.39",
+            "url": "/data/workspace_detail/V.json",
+            "encoded": 2234626
+          },
+          {
+            "id": "8472.40",
+            "url": "/data/workspace_detail/S.json",
+            "encoded": 2154872
+          },
+          {
+            "id": "8472.41",
+            "url": "/data/workspace_detail/T.json",
+            "encoded": 1908522
+          },
+          {
+            "id": "8472.42",
+            "url": "/data/workspace_detail/P.json",
+            "encoded": 1872734
+          },
+          {
+            "id": "8472.43",
+            "url": "/data/workspace_detail/H.json",
+            "encoded": 1637249
+          }
+        ],
+        "comparisonExportParity": true,
+        "repeatedDossierMs": 573,
+        "repeatedHeap": 6487228,
+        "dossierRenders": 35,
+        "sameShardMs": 753,
+        "sameShardRequests": [
+          {
+            "id": "8472.80",
+            "url": "/data/workspace_detail/S.json",
+            "encoded": 2154872
+          }
+        ],
+        "sameShardHeap": 5964740,
+        "sameShardParse": [
+          {
+            "chars": 17232751,
+            "ms": 81.30000001192093,
+            "contract": "workspace_detail_shard/v1"
+          }
+        ],
+        "rapidMs": 805,
+        "rapidFinal": "VNM Doanh nghiệp",
+        "rapidRequests": [
+          {
+            "id": "8472.83",
+            "url": "/data/workspace_detail/H.json",
+            "encoded": 1637249
+          },
+          {
+            "id": "8472.84",
+            "url": "/data/workspace_detail/F.json",
+            "encoded": 323933
+          },
+          {
+            "id": "8472.85",
+            "url": "/data/workspace_detail/P.json",
+            "encoded": 1872734
+          },
+          {
+            "id": "8472.86",
+            "url": "/data/workspace_detail/N.json",
+            "encoded": 886563
+          },
+          {
+            "id": "8472.87",
+            "url": "/data/workspace_detail/V.json",
+            "encoded": 2234626
+          }
+        ],
+        "longTasks": [
+          235,
+          128,
+          64,
+          107,
+          122,
+          167
+        ],
+        "overflow": false,
+        "reliability": {
+          "draftSurvivesRender": true,
+          "immediateExport": true,
+          "clearCancelsPending": true,
+          "invalidRequestCancelsPending": true,
+          "leavingViewCancelsPending": true,
+          "olderTickerCannotReplaceNewer": true,
+          "importRace": true,
+          "httpRetry": true,
+          "malformedRetry": true,
+          "identityRetry": true,
+          "sessionRetry": true,
+          "offlineRetry": true,
+          "keyboard": true
+        }
+      },
+      {
+        "width": 1024,
+        "plainHeap": 5298992,
+        "plainDetailRequests": 0,
+        "fiveShardMs": 1722,
+        "fiveHeap": 5991376,
+        "liveBlobBytes": 9806868,
+        "fiveParse": [
+          {
+            "chars": 13275005,
+            "ms": 52.5,
+            "contract": "workspace_detail_shard/v1"
+          },
+          {
+            "chars": 14998009,
+            "ms": 56,
+            "contract": "workspace_detail_shard/v1"
+          },
+          {
+            "chars": 17232751,
+            "ms": 85.10000002384186,
+            "contract": "workspace_detail_shard/v1"
+          },
+          {
+            "chars": 17954926,
+            "ms": 107.5,
+            "contract": "workspace_detail_shard/v1"
+          },
+          {
+            "chars": 15511933,
+            "ms": 87.09999999403954,
+            "contract": "workspace_detail_shard/v1"
+          }
+        ],
+        "fiveRequests": [
+          {
+            "id": "22196.39",
+            "url": "/data/workspace_detail/V.json",
+            "encoded": 2234626
+          },
+          {
+            "id": "22196.40",
+            "url": "/data/workspace_detail/S.json",
+            "encoded": 2154872
+          },
+          {
+            "id": "22196.41",
+            "url": "/data/workspace_detail/T.json",
+            "encoded": 1908522
+          },
+          {
+            "id": "22196.42",
+            "url": "/data/workspace_detail/P.json",
+            "encoded": 1872734
+          },
+          {
+            "id": "22196.43",
+            "url": "/data/workspace_detail/H.json",
+            "encoded": 1637249
+          }
+        ],
+        "comparisonExportParity": true,
+        "repeatedDossierMs": 470,
+        "repeatedHeap": 6485316,
+        "dossierRenders": 35,
+        "sameShardMs": 802,
+        "sameShardRequests": [
+          {
+            "id": "22196.80",
+            "url": "/data/workspace_detail/S.json",
+            "encoded": 2154872
+          }
+        ],
+        "sameShardHeap": 5963084,
+        "sameShardParse": [
+          {
+            "chars": 17232751,
+            "ms": 80.19999998807907,
+            "contract": "workspace_detail_shard/v1"
+          }
+        ],
+        "rapidMs": 862,
+        "rapidFinal": "VNM Doanh nghiệp",
+        "rapidRequests": [
+          {
+            "id": "22196.83",
+            "url": "/data/workspace_detail/H.json",
+            "encoded": 1637249
+          },
+          {
+            "id": "22196.84",
+            "url": "/data/workspace_detail/F.json",
+            "encoded": 323933
+          },
+          {
+            "id": "22196.85",
+            "url": "/data/workspace_detail/P.json",
+            "encoded": 1872734
+          },
+          {
+            "id": "22196.86",
+            "url": "/data/workspace_detail/N.json",
+            "encoded": 886563
+          },
+          {
+            "id": "22196.87",
+            "url": "/data/workspace_detail/V.json",
+            "encoded": 2234626
+          }
+        ],
+        "longTasks": [
+          219,
+          119,
+          72,
+          119,
+          89,
+          149
+        ],
+        "overflow": false,
+        "reliability": {
+          "draftSurvivesRender": true,
+          "immediateExport": true,
+          "clearCancelsPending": true,
+          "invalidRequestCancelsPending": true,
+          "leavingViewCancelsPending": true,
+          "olderTickerCannotReplaceNewer": true,
+          "importRace": true,
+          "httpRetry": true,
+          "malformedRetry": true,
+          "identityRetry": true,
+          "sessionRetry": true,
+          "offlineRetry": true,
+          "keyboard": true
+        }
+      },
+      {
+        "width": 1440,
+        "plainHeap": 5297924,
+        "plainDetailRequests": 0,
+        "fiveShardMs": 1988,
+        "fiveHeap": 5990344,
+        "liveBlobBytes": 9806868,
+        "fiveParse": [
+          {
+            "chars": 13275005,
+            "ms": 55.80000001192093,
+            "contract": "workspace_detail_shard/v1"
+          },
+          {
+            "chars": 14998009,
+            "ms": 57,
+            "contract": "workspace_detail_shard/v1"
+          },
+          {
+            "chars": 15511933,
+            "ms": 97.5,
+            "contract": "workspace_detail_shard/v1"
+          },
+          {
+            "chars": 17232751,
+            "ms": 129.7000000178814,
+            "contract": "workspace_detail_shard/v1"
+          },
+          {
+            "chars": 17954926,
+            "ms": 195.40000000596046,
+            "contract": "workspace_detail_shard/v1"
+          }
+        ],
+        "fiveRequests": [
+          {
+            "id": "13664.39",
+            "url": "/data/workspace_detail/V.json",
+            "encoded": 2234626
+          },
+          {
+            "id": "13664.40",
+            "url": "/data/workspace_detail/S.json",
+            "encoded": 2154872
+          },
+          {
+            "id": "13664.41",
+            "url": "/data/workspace_detail/T.json",
+            "encoded": 1908522
+          },
+          {
+            "id": "13664.42",
+            "url": "/data/workspace_detail/P.json",
+            "encoded": 1872734
+          },
+          {
+            "id": "13664.43",
+            "url": "/data/workspace_detail/H.json",
+            "encoded": 1637249
+          }
+        ],
+        "comparisonExportParity": true,
+        "repeatedDossierMs": 485,
+        "repeatedHeap": 6484252,
+        "dossierRenders": 35,
+        "sameShardMs": 956,
+        "sameShardRequests": [
+          {
+            "id": "13664.80",
+            "url": "/data/workspace_detail/S.json",
+            "encoded": 2154872
+          }
+        ],
+        "sameShardHeap": 5956796,
+        "sameShardParse": [
+          {
+            "chars": 17232751,
+            "ms": 73.59999999403954,
+            "contract": "workspace_detail_shard/v1"
+          }
+        ],
+        "rapidMs": 798,
+        "rapidFinal": "VNM Doanh nghiệp",
+        "rapidRequests": [
+          {
+            "id": "13664.83",
+            "url": "/data/workspace_detail/H.json",
+            "encoded": 1637249
+          },
+          {
+            "id": "13664.84",
+            "url": "/data/workspace_detail/F.json",
+            "encoded": 323933
+          },
+          {
+            "id": "13664.85",
+            "url": "/data/workspace_detail/P.json",
+            "encoded": 1872734
+          },
+          {
+            "id": "13664.86",
+            "url": "/data/workspace_detail/N.json",
+            "encoded": 886563
+          },
+          {
+            "id": "13664.87",
+            "url": "/data/workspace_detail/V.json",
+            "encoded": 2234626
+          }
+        ],
+        "longTasks": [
+          279,
+          134,
+          105,
+          73,
+          107
+        ],
+        "overflow": false,
+        "reliability": {
+          "draftSurvivesRender": true,
+          "immediateExport": true,
+          "clearCancelsPending": true,
+          "invalidRequestCancelsPending": true,
+          "leavingViewCancelsPending": true,
+          "olderTickerCannotReplaceNewer": true,
+          "importRace": true,
+          "httpRetry": true,
+          "malformedRetry": true,
+          "identityRetry": true,
+          "sessionRetry": true,
+          "offlineRetry": true,
+          "keyboard": true
+        }
+      }
+    ]
+  }
+}
