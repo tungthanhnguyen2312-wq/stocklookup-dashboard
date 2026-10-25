@@ -4,13 +4,28 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Danh mục | Stock Lookup</title>
-  <meta name="description" content="Trình biên tập danh mục nội bộ trên trình duyệt .">
+  <meta name="description" content="Danh mục cá nhân trên trình duyệt và đối chiếu bằng chứng nghiên cứu đã công bố.">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.css?v=2026-10-23-c80b389-551e7ba11b">
   <link rel="stylesheet" href="assets/css/shell.css?v=2026-10-23-c80b389-551e7ba11b">
+  <link rel="stylesheet" href="assets/css/investigation-workbench.css?v=2026-10-23-c80b389-551e7ba11b">
   <style>
     .portfolio-weight-bar { height: 28px; border-radius: 6px; overflow: hidden; display: flex; background: var(--surface); border: 1px solid var(--border); }
     .portfolio-weight-segment { display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700; color: #031014; transition: width 0.3s ease; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; padding: 0 4px; }
+    .pf-holding { border: 1px solid var(--border); border-radius: 8px; padding: .75rem; margin-bottom: .75rem; min-width: 0; }
+    .pf-holding-head, .pf-actions { display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; justify-content: space-between; }
+    .pf-actions { justify-content: flex-start; margin: .35rem 0; }
+    .pf-grid { display: grid; grid-template-columns: 1fr; gap: .35rem .75rem; }
+    .pf-grid p { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+    .pf-note { overflow-wrap: anywhere; }
+    .pf-columns { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+    #pf-detail:focus, #pf-detail-heading:focus { outline: 2px solid var(--primary, #7dd3fc); outline-offset: 3px; }
+    @media (min-width: 768px) { .pf-grid { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 1024px) { .pf-columns { grid-template-columns: minmax(0, 1.4fr) minmax(16rem, .8fr); } }
+    @media print {
+      .vs-topbar, #portfolio-form, #pf-compare-panel, .pf-actions { display: none !important; }
+      body { background: #fff; color: #111; }
+    }
   </style>
 </head>
 <body class="bg-bg text-white" data-page="portfolio">
@@ -26,15 +41,18 @@
     <main class="vs-content">
       <div class="section-eyebrow">Danh mục cá nhân</div>
       <h1 class="h3">Danh mục</h1>
-      <p class="text-muted">Chỉ lưu trên trình duyệt này. Trình biên tập không gửi danh mục lên máy chủ, không tối ưu hóa danh mục và không tạo khuyến nghị.</p>
+      <p class="text-muted">Chỉ lưu trên trình duyệt này. Trang không gửi vị thế, tiền mặt hay ghi chú đi đâu cả, không tối ưu danh mục và không tạo khuyến nghị.</p>
+      <div id="pf-storage-alert" class="vs-alert vs-alert-warning" role="alert" hidden></div>
+      <p id="storage-status" class="cockpit-note text-danger" role="status" hidden></p>
+      <button id="pf-recover-storage" class="btn btn-sm btn-outline-light mb-3" type="button" hidden>Xóa dữ liệu hỏng</button>
 
       <div class="card mb-4">
-        <div class="card-header"><h5>Thông tin &amp; Thêm vị thế</h5></div>
+        <div class="card-header"><h2 class="h5 mb-0">Thông tin &amp; Thêm vị thế</h2></div>
         <div class="card-body">
-          <form id="portfolio-form" class="row g-3 align-items-end">
+          <form id="portfolio-form" class="row g-3 align-items-end" onsubmit="event.preventDefault()">
             <div class="col-md-3 col-sm-6">
               <label class="form-label" for="portfolio-id">Mã danh mục</label>
-              <input id="portfolio-id" class="form-control form-control-sm" required value="local-portfolio">
+              <input id="portfolio-id" class="form-control form-control-sm" required value="local-portfolio" maxlength="64">
             </div>
             <div class="col-md-2 col-sm-6">
               <label class="form-label" for="cash">Tiền mặt (VND)</label>
@@ -42,7 +60,7 @@
             </div>
             <div class="col-md-2 col-sm-4">
               <label class="form-label" for="ticker">Mã cổ phiếu</label>
-              <input id="ticker" class="form-control form-control-sm text-uppercase font-monospace" placeholder="VD: HPG" maxlength="12">
+              <input id="ticker" class="form-control form-control-sm text-uppercase font-monospace" placeholder="VD: HPG" maxlength="12" autocomplete="off">
             </div>
             <div class="col-md-3 col-sm-4">
               <label class="form-label" for="amount">Số lượng hoặc tỷ trọng</label>
@@ -55,21 +73,28 @@
                 <option value="quantity">Khối lượng</option>
               </select>
             </div>
+            <div class="col-12">
+              <label class="form-label" for="position-note">Ghi chú của bạn cho vị thế này</label>
+              <input id="position-note" class="form-control form-control-sm" maxlength="500" autocomplete="off">
+            </div>
             <div class="col-12 d-flex flex-wrap gap-2 pt-2">
               <button class="vs-btn vs-btn-primary" type="submit" id="add-position" title="Thêm vị thế">Thêm vị thế</button>
               <button id="save" class="vs-btn" type="button">Lưu trên trình duyệt</button>
               <button id="export" class="vs-btn" type="button" title="Xuất dữ liệu">Xuất dữ liệu</button>
-              <label class="vs-btn mb-0" style="cursor: pointer;" title="Nhập dữ liệu">Nhập dữ liệu <input id="import" type="file" accept="application/json" hidden></label>
+              <label class="vs-btn mb-0" style="cursor: pointer;" title="Nhập dữ liệu">Nhập dữ liệu <input id="import" type="file" accept="application/json,.json" hidden></label>
               <button id="clear" class="vs-btn text-danger" type="button" title="Xóa danh mục">Xóa danh mục</button>
             </div>
           </form>
+          <p class="cockpit-note mt-2 mb-0">Số từ 0 đến 1 được hiểu là tỷ lệ do bạn nhập (0,15 = 15%). Số lớn hơn 1 và không quá 100 được hiểu là phần trăm. Khối lượng không bị đổi thành tỷ trọng.</p>
+          <div id="form-status" class="cockpit-note mt-2" role="alert" hidden></div>
+          <div id="import-status" class="cockpit-note mt-2" role="alert" hidden></div>
           <div id="save-status" class="cockpit-note mt-2 text-success" style="display:none;">Đã lưu trên trình duyệt</div>
         </div>
       </div>
 
       <div class="card mb-4">
         <div class="card-header d-flex justify-content-between align-items-center">
-          <h5 class="mb-0">Các vị thế nắm giữ</h5>
+          <h2 class="h5 mb-0">Các vị thế nắm giữ</h2>
           <span id="pos-count" class="badge-soft bs-blue">0 vị thế</span>
         </div>
         <div class="card-body p-0">
@@ -89,22 +114,76 @@
         </div>
       </div>
 
-      <!-- Trực quan hóa phân bổ danh mục -->
       <div class="card mb-4" id="allocation-card">
-        <div class="card-header"><h5>Trực quan hóa phân bổ tỷ trọng</h5></div>
+        <div class="card-header"><h2 class="h5 mb-0">Trực quan hóa phân bổ tỷ trọng</h2></div>
         <div class="card-body" id="allocation-body">
           <div class="cockpit-note">Chưa có vị thế nào trong danh mục.</div>
         </div>
       </div>
 
-      <!-- Giới hạn năng lực nghiên cứu -->
+      <section class="card mb-4" aria-labelledby="pf-research-heading">
+        <div class="card-header"><h2 id="pf-research-heading" class="h5 mb-0">Bằng chứng đã công bố cho các mã đang nhập</h2></div>
+        <div class="card-body" id="portfolio-research">
+          <p class="cockpit-note">Thêm vị thế để xem bằng chứng đã công bố.</p>
+        </div>
+      </section>
+
+      <section class="card mb-4" id="pf-detail-card" aria-labelledby="pf-detail-card-heading">
+        <div class="card-header"><h2 id="pf-detail-card-heading" class="h5 mb-0">Hồ sơ đang mở</h2></div>
+        <div class="card-body" id="pf-detail">
+          <p class="cockpit-note">Chọn “Xem bằng chứng” trên một mã khi bạn muốn tải hồ sơ chi tiết. Lượt xem danh mục thông thường không tải hồ sơ đó.</p>
+        </div>
+      </section>
+
+      <section class="card mb-4" id="pf-compare-panel" aria-labelledby="pf-compare-heading">
+        <div class="card-header"><h2 id="pf-compare-heading" class="h5 mb-0">So sánh với mã khác</h2></div>
+        <div class="card-body">
+          <p class="cockpit-note">Mã đối chiếu không bị ghi là sở hữu. So sánh từ chối các chỉ tiêu khác loại hình, kỳ, phạm vi, cơ sở cổ phiếu hoặc phương pháp.</p>
+          <div id="pf-compare-tray" class="d-flex flex-wrap gap-2 mb-3"></div>
+          <div class="row g-2 align-items-end">
+            <div class="col-sm-6">
+              <label class="form-label" for="pf-alternative">Thêm mã đối chiếu, không phải vị thế</label>
+              <input id="pf-alternative" class="form-control form-control-sm text-uppercase font-monospace" maxlength="12" autocomplete="off">
+            </div>
+            <div class="col-sm-6 d-flex flex-wrap gap-2">
+              <button id="pf-add-alternative" class="btn btn-sm btn-outline-light" type="button">Thêm vào so sánh</button>
+              <button id="pf-run-compare" class="btn btn-sm btn-outline-light" type="button">So sánh trên trang này</button>
+              <a id="pf-compare-link" class="btn btn-sm btn-outline-light" href="investment-workspace.html?view=compare" hidden>Mở màn so sánh</a>
+            </div>
+          </div>
+          <p id="pf-compare-status" class="cockpit-note" role="status" hidden></p>
+          <div id="pf-compare-result" class="mt-3"></div>
+        </div>
+      </section>
+
+      <section class="card mb-4" aria-labelledby="pf-journal-heading">
+        <div class="card-header"><h2 id="pf-journal-heading" class="h5 mb-0">Câu hỏi nghiên cứu của bạn</h2></div>
+        <div class="card-body">
+          <label class="form-label" for="review-note">Ghi chú chung của bạn</label>
+          <textarea id="review-note" class="form-control form-control-sm mb-3" rows="3" maxlength="500"></textarea>
+          <div id="pf-journal"></div>
+        </div>
+      </section>
+
+      <section class="card mb-4" aria-labelledby="pf-review-heading">
+        <div class="card-header"><h2 id="pf-review-heading" class="h5 mb-0">Bản xem lại nghiên cứu</h2></div>
+        <div class="card-body">
+          <p class="cockpit-note">Bản xem lại gom tư thế, bằng chứng bất lợi, khoảng trống và ghi chú của bạn. Đây không phải định giá đã kiểm toán và không phải khuyến nghị. Tệp được tải trên máy bạn.</p>
+          <div class="d-flex flex-wrap gap-2">
+            <button id="pf-review-json" class="btn btn-sm btn-outline-light" type="button">Tải JSON</button>
+            <button id="pf-review-html" class="btn btn-sm btn-outline-light" type="button">Tải HTML</button>
+            <button id="pf-review-print" class="btn btn-sm btn-outline-light" type="button">In</button>
+          </div>
+        </div>
+      </section>
+
       <details class="card mb-4">
         <summary class="card-header">Dữ liệu &amp; phương pháp</summary>
         <div class="card-body">
           <div id="portfolio-evaluation-state" class="mb-3">
             <div class="vs-alert vs-alert-warning mb-2">
-              <b>Chưa có phân tích danh mục</b>
-              <p class="mb-0 mt-1">Dữ liệu danh mục trên trình duyệt là dữ liệu nhập cục bộ. Để hiển thị các thước đo rủi ro liên hợp, ma trận tương quan và độ biến động, danh mục phải được đối soát và đánh giá bằng dữ liệu tính toán đầy đủ.</p>
+              <b>Không tính rủi ro danh mục</b>
+              <p class="mb-0 mt-1">Phần bằng chứng ở trên chỉ nhóm đúng trạng thái đã công bố. Trang không tính độ biến động, tương quan, mức sụt giảm hay một điểm rủi ro tổng hợp.</p>
             </div>
           </div>
           <p class="text-muted mb-3">Thanh khoản nghiên cứu mang tính mô tả khi có sẵn bằng chứng tính toán trước. Năng lực thực hiện lệnh chính xác vẫn được tách biệt hoặc chặn độc lập cho tới khi đủ bằng chứng. Độ biến động, tương quan và chân trời rủi ro liên hợp chỉ hiển thị khi đã được tính toán và đối soát đầy đủ.</p>
@@ -117,6 +196,11 @@
     </footer>
   </div>
 </div>
+<script src="assets/js/value-format.js?v=2026-10-23-c80b389-551e7ba11b"></script>
+<script src="assets/js/workspace-card-presentation.js?v=2026-10-23-c80b389-551e7ba11b"></script>
+<script src="assets/js/workspace-read-model.js?v=2026-10-23-c80b389-551e7ba11b"></script>
+<script src="assets/js/investigation-workbench.js?v=2026-10-23-c80b389-551e7ba11b"></script>
+<script src="assets/js/portfolio-research-model.js?v=2026-10-23-c80b389-551e7ba11b"></script>
 <script src="portfolio.js?v=2026-10-23-c80b389-551e7ba11b"></script>
 </body>
 </html>
