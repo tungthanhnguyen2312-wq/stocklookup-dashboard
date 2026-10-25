@@ -62,6 +62,13 @@ jobs:
       - name: Investigation workbench tests
         run: node --test tests/workspace-read-model.test.js tests/investigation-workbench.test.js
 
+      - name: Real-data workbench browser performance and reliability
+        timeout-minutes: 10
+        run: |
+          export CHROME_PATH="$(command -v google-chrome)"
+          test -x "$CHROME_PATH"
+          node tests/workbench-browser-benchmark.cjs reports/workbench-hosted
+
       - name: Analysis/product surface tests
         run: node --test tests/product-surface-convergence.test.js
 

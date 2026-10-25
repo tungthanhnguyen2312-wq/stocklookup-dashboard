@@ -2,8 +2,9 @@
 
 Continuation of `INVESTOR_EVIDENCE_INVESTIGATION_WORKBENCH_V1`, from exact PR15
 commit `13600821c5c6f610e04672a15112c6d576100fa0`. Branch:
-`feature/investigation-workbench-performance-v1`. PR15 is unchanged. No push, PR,
-merge, deploy, generated-data rewrite or Producer/Consumer modification.
+`feature/investigation-workbench-performance-v1`. PR15 is unchanged. The performance
+PR targets main and includes the parent feature until PR15 merges. No merge,
+deploy, generated-data rewrite or Producer/Consumer modification.
 
 ## What changed
 
@@ -124,8 +125,14 @@ output directory. No production services or browser profile are used.
 
 ## Local disposition
 
-Bounded Workbench performance/reliability continuation is ready for local review;
-working tree checkpoint only. Existing unrelated Home-test debt is explicit above.
+The release workflow runs this existing browser harness on hosted Chrome at all
+four widths, in addition to the Node contracts. Its assertions enforce parity,
+request counts and interaction reliability; local timings above are evidence,
+not hardware-independent latency thresholds. The browser step has a ten-minute
+limit and does not deploy or rewrite published data.
+
+Bounded Workbench performance/reliability continuation is prepared for stacked
+review. Existing unrelated Home-test debt is explicit above.
 Cold full-shard bandwidth/parse cost, local reparse on LRU miss and native gzip
 CPU work remain limits. A smaller published comparison payload would require a
 separate Producer-owned contract; it is not implemented or assumed here.
