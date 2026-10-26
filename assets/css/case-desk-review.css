@@ -1,0 +1,20 @@
+/* INVESTOR_CASE_DESK_LOCAL_REVIEW_INTEGRATION_V1: browser-local Case Desk case viewer.
+   Reuses the investigation-workbench (.wb-*) sections, items and evidence-kind badges. */
+
+.cdr-root { min-width: 0; }
+.cdr-code { font-size: .72rem; color: var(--text-muted); overflow-wrap: anywhere; word-break: break-word; }
+.cdr-members { display: flex; flex-wrap: wrap; gap: .35rem; margin-top: .75rem; }
+.cdr-members .cockpit-chip.active { border-color: var(--primary); background: var(--primary-soft); }
+.cdr-compare { margin-top: .6rem; }
+.cdr-compare-table, .cdr-conditions { width: 100%; font-size: .8rem; }
+.cdr-compare-table th[scope="row"] { font-weight: 600; color: var(--text-muted); white-space: nowrap; }
+.cdr-conditions td, .cdr-compare-table td { overflow-wrap: anywhere; }
+.cdr-sublist { margin: .3rem 0 .6rem; padding-left: 1.1rem; font-size: .8rem; overflow-wrap: anywhere; }
+.cdr-topic { padding: .6rem .7rem; border: 1px solid var(--border-soft); border-radius: var(--radius-sm); margin-bottom: .6rem; }
+.cdr-topic-text { margin: .35rem 0; font-size: .86rem; overflow-wrap: anywhere; }
+.cdr-dossier-notice { margin-bottom: .75rem; }
+.cdr-dossier-notice .btn { margin-left: .35rem; }
+
+@media (max-width: 640px) {
+  .cdr-compare-table, .cdr-conditions { display: block; overflow-x: auto; }
+}

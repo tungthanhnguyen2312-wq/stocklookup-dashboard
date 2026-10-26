@@ -62,6 +62,11 @@ jobs:
       - name: Investigation workbench tests
         run: node --test tests/workspace-read-model.test.js tests/investigation-workbench.test.js
 
+      # INVESTOR_CASE_DESK_LOCAL_REVIEW_INTEGRATION_V1: browser-local Case Desk case viewer over
+      # sanitized excerpts of the Consumer PR #12 HPG / NVL / five-company acceptance cases.
+      - name: Case Desk local review tests
+        run: node --test tests/case-desk-review.test.js
+
       - name: Portfolio evidence and risk workspace tests
         run: node --test tests/portfolio-research-model.test.js
 
@@ -141,6 +146,7 @@ jobs:
           node --check assets/js/value-format.js
           node --check assets/js/investment-workspace.js
           node --check assets/js/investigation-workbench.js
+          node --check assets/js/case-desk-review.js
           node --check assets/js/portfolio-research-model.js
           node --check portfolio.js
           node --check assets/js/workspace-read-model.js

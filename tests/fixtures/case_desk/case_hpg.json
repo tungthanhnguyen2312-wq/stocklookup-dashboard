@@ -1,0 +1,3253 @@
+{
+ "authority_boundary": {
+  "causal_attribution": "NOT_MADE",
+  "consumer_evaluates_boundary_conditions": false,
+  "consumer_recomputes_values": false,
+  "depends_on": "session_thesis_change_explanation/v1",
+  "holding_inference": "NOT_MADE",
+  "is_actionable": false,
+  "producer_is_sole_factual_and_numerical_authority": true,
+  "prohibited_outputs": [
+   "score",
+   "ranking",
+   "winner",
+   "probability",
+   "expected_return",
+   "target_price",
+   "position_size",
+   "trade_instruction"
+  ],
+  "ranking_or_selection": "NOT_MADE",
+  "research_role_is_not_holding_fact": true,
+  "shared_code_does_not_prove_common_exposure": true
+ },
+ "case_identity": "investment_case:245d19e2ee211f110f92b9383fa64bf2bdd69b9cb5a4a2fb86b60c5cfc511c56",
+ "comparisons": [
+  {
+   "pairs": [],
+   "session": "2026-10-23"
+  }
+ ],
+ "conclusion_limits": [
+  "NO_STRENGTH_ORDERING_OF_POSTURES",
+  "REVISION_CAVEAT_IS_NOT_PROOF_OF_REVISION_ONLY_CAUSE",
+  "ABSENCE_IS_NOT_NEGATIVE_EVIDENCE",
+  "HISTORICAL_GROWTH_IS_NOT_CURRENT_MOMENTUM",
+  "PROFIT_IS_NOT_CASH_FLOW_OR_FREE_CASH_FLOW",
+  "CONDITIONS_ARE_NOT_VERIFIED_OUTCOMES",
+  "NO_PROSPECTIVE_OR_HISTORICAL_PIT_AUTHORITY_CREATED"
+ ],
+ "contract_version": "investment_research_case/v1",
+ "coverage": {
+  "delivered_issuer_sessions": 4,
+  "requested_issuer_sessions": 4
+ },
+ "current_profiles": [
+  {
+   "economics": {
+    "entity_class": "corporate",
+    "evidence_ref": "current_daily_decision_research.peer_context",
+    "observed": {
+     "current_daily_decision_research.fundamental_research_context.official_income.entity_class": "corporate"
+    },
+    "peer_group": "Tài nguyên Cơ bản",
+    "peer_group_level": "RETAINED_PROVIDER_DESCRIPTIVE_INDUSTRY",
+    "peer_group_size": 40
+   },
+   "evidence_limits": {
+    "missing_evidence": [
+     {
+      "code": "MATERIAL_UNCERTAINTY",
+      "evidence_ref": "current_daily_decision_research.integrated_decision_v1.material_uncertainties",
+      "source_value": "SHARE_BASIS_PROXY_CURRENT_SHARE_RESEARCH_PROXY"
+     },
+     {
+      "code": "MATERIAL_UNCERTAINTY",
+      "evidence_ref": "current_daily_decision_research.integrated_decision_v1.material_uncertainties",
+      "source_value": "P_B_IS_RESEARCH_TOTAL_EQUITY_NCI_NOT_DEDUCTED_NOT_COMMON_SHAREHOLDER"
+     },
+     {
+      "code": "STRICT_VALUATION_UNAVAILABLE",
+      "evidence_ref": "current_daily_decision_research.valuation_context",
+      "source_value": {
+       "peer_valuation_status": "PEER_RELATIVE_RESEARCH_IN_INTEGRATED_DECISION",
+       "shadow_authority": "SHADOW_RESEARCH_ONLY",
+       "strict_valuation_status": "UNAVAILABLE"
+      }
+     }
+    ],
+    "narrative_guards": [
+     "NO_FREE_CASH_FLOW_CLAIM",
+     "NO_PROFIT_AS_OPERATING_CASH_CLAIM",
+     "NO_POSITION_AS_EARNINGS_QUALITY_CLAIM",
+     "NO_CASH_GENERATION_CONFIRMATION",
+     "NO_BUSINESS_WIDE_IMPROVEMENT_CLAIM",
+     "UNKNOWNS_MUST_BE_ACKNOWLEDGED",
+     "NO_MISSING_AS_NEGATIVE_EVIDENCE_CLAIM"
+    ]
+   },
+   "research_role": "COMPARISON_ONLY",
+   "ticker": "HPG"
+  }
+ ],
+ "decision_distinctions": [
+  {
+   "conditions": [
+    {
+     "kind": "TECHNICAL_TRIGGER",
+     "outcome_across_sessions": "NO_GOVERNED_OUTCOME_SUPPLIED",
+     "producer_state": null,
+     "producer_trigger_type": null,
+     "state_status": "NO_PRODUCER_STATE_REPORTED"
+    },
+    {
+     "kind": "TECHNICAL_INVALIDATION",
+     "outcome_across_sessions": "NO_GOVERNED_OUTCOME_SUPPLIED",
+     "producer_state": null,
+     "producer_trigger_type": null,
+     "state_status": "NO_PRODUCER_STATE_REPORTED"
+    },
+    {
+     "kind": "INTEGRATED_DECISION_TRIGGER",
+     "outcome_across_sessions": "PRODUCER_STATE_VARIES:BELOW_TRIGGER|APPROACHING|APPROACHING|BELOW_TRIGGER",
+     "producer_state": "BELOW_TRIGGER",
+     "producer_trigger_type": "NO_TRIGGER",
+     "state_status": "PRODUCER_REPORTED_STATE"
+    },
+    {
+     "kind": "INTEGRATED_DECISION_INVALIDATION",
+     "outcome_across_sessions": "NO_GOVERNED_OUTCOME_SUPPLIED",
+     "producer_state": null,
+     "producer_trigger_type": null,
+     "state_status": "NO_PRODUCER_STATE_REPORTED"
+    },
+    {
+     "kind": "FUNDAMENTAL_INVALIDATION",
+     "outcome_across_sessions": "PRODUCER_STATE_UNKNOWN_IN_EVERY_SESSION",
+     "producer_state": "UNKNOWN",
+     "producer_trigger_type": null,
+     "state_status": "NO_PRODUCER_STATE_REPORTED"
+    }
+   ],
+   "interpretation": "SEPARATED_SOURCE_STATES_NOT_A_VERDICT_SCORE_OR_INSTRUCTION",
+   "profit_vs_cash_conversion": {
+    "evidence": [
+     "case_evidence:32b112d235b1770e71899a851f4d24cfd39b7c90e0de020e73418706c8a0aa25",
+     "case_evidence:855bb9fc8bcf286bcd31a846c28f6aaa5cba9e040be6da3ccfef8898a0ccdfa3",
+     "case_evidence:50183818a98a3438eafc2e957bb81c009940232e1c1015b546697df61fdfcfe4",
+     "case_evidence:a80ead18a873e617ca366e403a942736fff312a5c37f51801d1a137a6242ddea"
+    ],
+    "status": "UNKNOWN"
+   },
+   "profit_vs_comprehensive_income": {
+    "reported_income_lines": [
+     {
+      "citation_id": "703f3b51683204b9f69f6a316daba4005af23582b283b60ba4562563625b8bd1",
+      "line_code": "10",
+      "metric": "revenue",
+      "reporting_period": "2025",
+      "statement_scope": "consolidated"
+     },
+     {
+      "citation_id": "c9c24b64898e69a1550470ea1716fc701f7d895015b83b7d449d9de640204728",
+      "line_code": "60",
+      "metric": "net_income",
+      "reporting_period": "2025",
+      "statement_scope": "consolidated"
+     }
+    ],
+    "status": "COMPREHENSIVE_INCOME_NOT_SUPPLIED_BY_PRODUCER"
+   },
+   "reported_vs_non_recurring_earnings": {
+    "evidence": [
+     "case_evidence:38e9842b49339c1807ae12870c57b68370e9c0168abd5b8ec52b3f1908f4da8a"
+    ],
+    "recurrence_assessment": null,
+    "status": "UNKNOWN"
+   },
+   "session": "2026-10-23",
+   "source_inference_vs_evidence": {
+    "attributed_source_inferences": [
+     "case_evidence:28616016e08f8bfeb49ab04d267f156e90e7a2651b6cbf5c7cd49fb76b39c38a",
+     "case_evidence:f15867f73c207e532ee67e87c9832a4a39fa7b7cb2f308385abbec34583c43ac"
+    ],
+    "qualified_observations": [
+     "case_evidence:ba45314e80ee46b4af79e109f6b5bbaaadea21b3ed90fd8acba33aa3cc420d2b",
+     "case_evidence:f5bc5317e93fbe68be53f05a247d30687c8b4ad676a0833e60631f7e97ec0fbe"
+    ],
+    "rule": "SOURCE_INFERENCE_IS_ATTRIBUTED_ARGUMENT_NOT_CAUSAL_PROOF"
+   },
+   "ticker": "HPG",
+   "valuation_applicability": {
+    "cross_economics_refusals": [],
+    "entity_class": "corporate",
+    "evidence": [
+     "case_evidence:46b5825103f05319056cf2e7d3a4576506263dc0e5142cd01d5aea12ca9de528"
+    ],
+    "peer_valuation_status": "PEER_RELATIVE_RESEARCH_IN_INTEGRATED_DECISION",
+    "strict_valuation_status": "UNAVAILABLE"
+   }
+  }
+ ],
+ "evidence_catalogue": [
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "HPG"
+   },
+   "domain": "OPERATING",
+   "evidence_identity": "case_evidence:1f4f71cb646d64a0e69d3fb1efaa1dc9b3bf9288cdfffe17fc2b78b2024050b6",
+   "observation": {
+    "evidence_basis_state": "BUSINESS_AND_POSITION",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context",
+    "financial_composite_state": "FUNDAMENTALS_IMPROVING",
+    "statement_code": "COMPOSITE_VERDICT_INCLUDES_BUSINESS_DIMENSIONS"
+   },
+   "relation": "RELATED_INSUFFICIENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.fundamental_research_context",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "HPG"
+   },
+   "domain": "CASH_BALANCE",
+   "evidence_identity": "case_evidence:3d4f15720e0db3cf6473510a1230dc2cfe21248c24df3cabdb2726d79d90e71a",
+   "observation": {
+    "economics_status": null,
+    "state": "UNKNOWN",
+    "statement_code": "OLDER_CARD_HAS_NO_INCOME_TO_CASH_CONTEXT"
+   },
+   "relation": "RELATED_INSUFFICIENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.valuation_context",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "HPG"
+   },
+   "domain": "VALUATION",
+   "evidence_identity": "case_evidence:b0ba1580e68be0d83304f4c9b6968a6124a72604ba13332308859a0272cd0853",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.valuation_context",
+    "peer_valuation_status": "VALUATION_PEER_CONTEXT_UNAVAILABLE",
+    "shadow_authority": "SHADOW_RESEARCH_ONLY",
+    "strict_valuation_status": "UNAVAILABLE"
+   },
+   "relation": "RELATED_INSUFFICIENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "HPG"
+   },
+   "domain": "TECHNICAL",
+   "evidence_identity": "case_evidence:fc11e7175bc9659ca2255a84b866d7be5b0bf47a8c4cbcf009db028e25940c33",
+   "observation": {
+    "decision_identity": "decision:HPG:54dd798057e985b6",
+    "entry_action": "WAIT",
+    "entry_state": "SIDEWAYS_NEUTRAL",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1",
+    "posture_condition_class": "BEARISH_STRUCTURE_ADVERSE",
+    "research_action_posture": "AVOID",
+    "tactical_phase": "BREAKDOWN",
+    "use": "TECHNICAL_RESEARCH_LABEL_NOT_INVESTMENT_QUALITY_OR_INSTRUCTION"
+   },
+   "relation": "TECHNICAL_CONTEXT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.why_it_is_on_radar.evidence_for",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "HPG"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:24c33cbc5cf4442f5eea2ee1a27a7187b270876d4a16f165adffb9b1f57295ca",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.why_it_is_on_radar.evidence_for",
+    "text": "Price is above its 20-day moving average."
+   },
+   "relation": "SUPPORTING_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.why_it_is_on_radar.evidence_for",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "HPG"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:035f28601cbd04fcabebdc2c921c81a566193e47234c61487758f1407eff1a5e",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.why_it_is_on_radar.evidence_for",
+    "text": "20-day momentum ranks in the UPPER_MIDDLE of the same-session market cohort."
+   },
+   "relation": "SUPPORTING_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.why_it_is_on_radar.evidence_for",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "HPG"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:a0c0364f7f096937299e369b728e13c3c7db6c9381c2a459ced5b5a9cd6a65cc",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.why_it_is_on_radar.evidence_for",
+    "text": "Today's session return is positive (0.0072)."
+   },
+   "relation": "SUPPORTING_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.why_it_is_on_radar.evidence_for",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "HPG"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:02bd875fde919aacf787c8c9a7fbbf31ef74573c0c4aa3bdcc6e095b8fba9e41",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.why_it_is_on_radar.evidence_for",
+    "text": "20-day volatility is below the same-session market median (contemporaneous cross-section only, not a historical compression regime)."
+   },
+   "relation": "SUPPORTING_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.why_it_is_on_radar.evidence_for",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "HPG"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:aae6223b4f7256c36bfd28526143077dd99dcf77b7674587766be9f6e00b4f77",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.why_it_is_on_radar.evidence_for",
+    "text": "20-day momentum ranks in the UPPER_MIDDLE of its own same-session sector cohort."
+   },
+   "relation": "SUPPORTING_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.why_it_is_on_radar.evidence_for",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "HPG"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:376f36774eadb15514b863cc6c746b12db777476ce4495ab99e740e37b1a918b",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.why_it_is_on_radar.evidence_for",
+    "text": "Current-session descriptive liquidity is eligible (board-composition reading available)."
+   },
+   "relation": "SUPPORTING_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.what_argues_against.evidence_against",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "HPG"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:09a4d1d974e354abe974a8a05a9a67f8e8e67bdd2a27ced0bb7bd5c0b62bf56c",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.what_argues_against.evidence_against",
+    "text": "20-day momentum is negative (-0.0095)."
+   },
+   "relation": "CHALLENGING_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.what_argues_against.evidence_against",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "HPG"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:4b28188cd864ad9459722d040e982eaf47d7aabc24afa358ccd788e6feb083e0",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.what_argues_against.evidence_against",
+    "text": "Provider-relative volume is at or below the same-session cohort median today."
+   },
+   "relation": "CHALLENGING_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.trigger",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "HPG"
+   },
+   "domain": "TECHNICAL",
+   "evidence_identity": "case_evidence:c40b4887fdc0bd6142b4be53ec9781f305991b8fcbe506ef0c39b1b837cb580c",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.trigger",
+    "kind": "TECHNICAL_TRIGGER",
+    "text": "A decisive move away from the 20-day moving average combined with a same-session momentum quartile extreme (top or bottom) would resolve the current lack of a directional edge."
+   },
+   "relation": "PRODUCER_CONDITION_NOT_CONSUMER_OUTCOME"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.invalidation",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "HPG"
+   },
+   "domain": "TECHNICAL",
+   "evidence_identity": "case_evidence:bb51cc319835e3bddfc462b270c5f8407a3c5c6df754ce6050177a9925f13c50",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.invalidation",
+    "kind": "TECHNICAL_INVALIDATION",
+    "text": "A move to a same-session momentum quartile extreme (top or bottom) combined with price moving decisively away from the 20-day moving average would invalidate the neutral read."
+   },
+   "relation": "PRODUCER_CONDITION_NOT_CONSUMER_OUTCOME"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.invalidation",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "HPG"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:a732ffdb1832738ea7f5caeca6a78f388340a7e247ba0c4f084b54d68a48e8f0",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.invalidation",
+    "kind": "INTEGRATED_DECISION_INVALIDATION",
+    "text": {
+     "activation_semantics": "FIRST_LATER_COMPLETED_SESSION_WITH_RETAINED_CLOSE_SATISFIES_FIXED_T0_BOUNDARY",
+     "authority_boundary": "RETAINED_RESEARCH_BOUNDARY_NOT_EXECUTION_OR_STOP_LOSS",
+     "condition_identity": "retained_strategy_boundary_condition:68d2bfd3b6e78399e52688286c64363ffa1b3859edb5b3d171317ffa3d61d8ad",
+     "condition_version": "retained_strategy_boundary_condition/v1",
+     "narrative_reason": "Fixed T0 structural close boundary; analytical research only.",
+     "operator": ">",
+     "reason_codes": [
+      "EXISTING_READY_FIXED_T0_CLOSE_BOUNDARY"
+     ],
+     "reference_field": "close",
+     "reference_level": 21.55,
+     "required_state": "CONFIRMED_SWING_HIGH_BY_RULE_OR_V1_RESISTANCE_FALLBACK",
+     "role": "invalidation",
+     "source_boundary_status": "READY",
+     "source_boundary_type": "CONFIRMED_SWING_HIGH_BY_RULE_OR_V1_RESISTANCE_FALLBACK",
+     "source_lineage": {
+      "as_of_session": "2026-10-16",
+      "source_artifact_identity": "market_structure_breakout_product_projection/v1:88b6cf58cfa21648b0bc976d6405cb88052eeef6567f8a0512fe8e7bee32be10"
+     },
+     "source_method": "market_structure_breakout_product_projection/v1",
+     "source_metric": "invalidation_level",
+     "source_rule": null,
+     "source_strategy_identity": "market_structure_breakout_product_projection/v1:88b6cf58cfa21648b0bc976d6405cb88052eeef6567f8a0512fe8e7bee32be10",
+     "status": "MACHINE_EVALUABLE",
+     "strategy_operator": "FUTURE_CLOSE_GT_STRUCTURAL_LEVEL"
+    }
+   },
+   "relation": "PRODUCER_CONDITION_NOT_CONSUMER_OUTCOME"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.fundamental_invalidation",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "HPG"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:b942877d035aac35ee398bbd38b01fb822e6d0393a34dc2b9873fc489c562ab6",
+   "observation": {
+    "current_trigger_state": "UNKNOWN",
+    "evidence_ref": "current_daily_decision_research.fundamental_invalidation",
+    "kind": "FUNDAMENTAL_INVALIDATION",
+    "metric_or_axis": "COMPATIBLE_PROFITABILITY_QUALITY_DETERIORATION",
+    "source_artifact_identity": "shadow_security_recommendation:d6d3e323d6e88a0ba86a6e8512af3e716ab09768e24d16a7661f8c341a31c1eb",
+    "status": "CONDITIONAL",
+    "text": "A related profitability axis exists but no compatible numeric margin baseline is retained."
+   },
+   "relation": "PRODUCER_CONDITION_NOT_CONSUMER_OUTCOME"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.thesis_counter_thesis.questions_to_verify",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "HPG"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:7bee97c35326debc5ba69484b8fa59915c81c0682643ced078e44c083f7d0525",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.thesis_counter_thesis.questions_to_verify",
+    "kind": "CARD_QUESTION_TO_VERIFY",
+    "text": "A decisive move away from the 20-day moving average combined with a same-session momentum quartile extreme (top or bottom) would resolve the current lack of a directional edge."
+   },
+   "relation": "PRODUCER_RESEARCH_QUESTION_NOT_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.corporate_intelligence_context.what_to_verify",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "HPG"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:29e43ce44ff7e634c078313d1f434d51050ffd6406c34ecbccd02002d1487605",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.corporate_intelligence_context.what_to_verify",
+    "kind": "CORPORATE_WHAT_TO_VERIFY",
+    "text": "Verify whether later retained official disclosure changes this event's status or current relevance."
+   },
+   "relation": "PRODUCER_RESEARCH_QUESTION_NOT_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.fundamental_context",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "HPG"
+   },
+   "domain": "CASH_BALANCE",
+   "evidence_identity": "case_evidence:e3f40f86f4f237f8f293226025ae12b0d415eb6da0c57acd0cf82f23d2e09ff4",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.fundamental_context",
+    "kind": "NEEDS_QUALIFIED_SAME_PERIOD_PROFIT_AND_OPERATING_CASH",
+    "text": null
+   },
+   "relation": "PRODUCER_RESEARCH_QUESTION_NOT_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.thesis_counter_thesis.counter_thesis",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "HPG"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:d5d402591347c1955680d48e593f6e5bc57006461b2938bfb32a090c19f43f68",
+   "observation": {
+    "code": "CARD_DATA_GAP",
+    "evidence_field": "peer_relative.data_gaps",
+    "evidence_ref": "current_daily_decision_research.thesis_counter_thesis.counter_thesis",
+    "source_value": "VALUATION_PEER_CONTEXT_UNAVAILABLE"
+   },
+   "relation": "RELATED_INSUFFICIENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.material_uncertainties",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "HPG"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:56db61ce63c0551156f91903d4ab37f5a127e51767801b09ef7266483f9170e5",
+   "observation": {
+    "code": "MATERIAL_UNCERTAINTY",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.material_uncertainties",
+    "source_value": "SHARE_BASIS_PROXY_CURRENT_SHARE_RESEARCH_PROXY"
+   },
+   "relation": "RELATED_INSUFFICIENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.material_uncertainties",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "HPG"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:08f0171bfa85ca072d559bcc64b5155850c39e3952df38c9193bde7feeb5c327",
+   "observation": {
+    "code": "MATERIAL_UNCERTAINTY",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.material_uncertainties",
+    "source_value": "P_B_IS_RESEARCH_TOTAL_EQUITY_NCI_NOT_DEDUCTED_NOT_COMMON_SHAREHOLDER"
+   },
+   "relation": "RELATED_INSUFFICIENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.valuation_context",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "HPG"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:05b4e0e670d7b25a4f2ee78add27089df65ebe0b82a9be892cbaee2df2b468f4",
+   "observation": {
+    "code": "STRICT_VALUATION_UNAVAILABLE",
+    "evidence_ref": "current_daily_decision_research.valuation_context",
+    "source_value": {
+     "peer_valuation_status": "VALUATION_PEER_CONTEXT_UNAVAILABLE",
+     "shadow_authority": "SHADOW_RESEARCH_ONLY",
+     "strict_valuation_status": "UNAVAILABLE"
+    }
+   },
+   "relation": "RELATED_INSUFFICIENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "HPG"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:3ef58b8ad5e308745edfd40e2414a743e3bd4013c46ae40d2f1583e8343e0b26",
+   "observation": {
+    "code": "VALUATION_REASON_CODE_WHILE_PEER_VALUATION_UNAVAILABLE",
+    "consumer_effect": "NEITHER_FIELD_IS_UPGRADED_OR_DISCARDED",
+    "evidence_refs": [
+     "current_daily_decision_research.integrated_decision_v1.financial_composite_context",
+     "current_daily_decision_research.valuation_context"
+    ],
+    "source_value": {
+     "peer_valuation_status": "VALUATION_PEER_CONTEXT_UNAVAILABLE",
+     "reason_codes": [
+      "VALUATION_IN_LINE_WITH_PEERS"
+     ]
+    }
+   },
+   "relation": "SOURCE_CONFLICT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.valuation_context",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "HPG"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:08381a269b178519ed5994ee481818a6355aae56e9d0ee24f0703424e9289c1f",
+   "observation": {
+    "code": "VALUATION_REASON_CODE_WHILE_PEER_VALUATION_UNAVAILABLE",
+    "consumer_effect": "NEITHER_FIELD_IS_UPGRADED_OR_DISCARDED",
+    "evidence_refs": [
+     "current_daily_decision_research.integrated_decision_v1.financial_composite_context",
+     "current_daily_decision_research.valuation_context"
+    ],
+    "source_value": {
+     "peer_valuation_status": "VALUATION_PEER_CONTEXT_UNAVAILABLE",
+     "reason_codes": [
+      "VALUATION_IN_LINE_WITH_PEERS"
+     ]
+    }
+   },
+   "relation": "SOURCE_CONFLICT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "c2b5aec1f842539a9a281fc60f74000744554727af225cf7248e6603d91074b8",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context",
+    "producer_head": "1bb8106232d078fa5d475cab953b54462d57711e",
+    "product_identity": "current_daily_decision_research_product:669b5968e703adfe88297878b481f1ecd0d4327706f4cee10a79296235735d72",
+    "run_identity": "daily_producer_run:d4a2e4247511c56c4a91686bdf1e272861c57bb6f720c637400a1cc36900c27d",
+    "session": "2026-10-21",
+    "ticker": "HPG"
+   },
+   "domain": "OPERATING",
+   "evidence_identity": "case_evidence:348960498942f47abac85f584541c2f87ee4e3fdfd2ebd6cad9f1f95eb9cc28e",
+   "observation": {
+    "evidence_basis_state": "FINANCIAL_POSITION_ONLY",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context",
+    "financial_composite_state": "FUNDAMENTALS_IMPROVING",
+    "statement_code": "COMPOSITE_VERDICT_DESCRIBES_FINANCIAL_POSITION_NOT_BUSINESS_PROFITABILITY"
+   },
+   "relation": "RELATED_INSUFFICIENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "c2b5aec1f842539a9a281fc60f74000744554727af225cf7248e6603d91074b8",
+    "evidence_ref": "current_daily_decision_research.fundamental_research_context",
+    "producer_head": "1bb8106232d078fa5d475cab953b54462d57711e",
+    "product_identity": "current_daily_decision_research_product:669b5968e703adfe88297878b481f1ecd0d4327706f4cee10a79296235735d72",
+    "run_identity": "daily_producer_run:d4a2e4247511c56c4a91686bdf1e272861c57bb6f720c637400a1cc36900c27d",
+    "session": "2026-10-21",
+    "ticker": "HPG"
+   },
+   "domain": "CASH_BALANCE",
+   "evidence_identity": "case_evidence:61f86d0af44a1eeea990cf09b7d7cdf364b92b2652504909e7bb8114f0d6682f",
+   "observation": {
+    "economics_status": null,
+    "state": "UNKNOWN",
+    "statement_code": "OLDER_CARD_HAS_NO_INCOME_TO_CASH_CONTEXT"
+   },
+   "relation": "RELATED_INSUFFICIENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "c2b5aec1f842539a9a281fc60f74000744554727af225cf7248e6603d91074b8",
+    "evidence_ref": "current_daily_decision_research.valuation_context",
+    "producer_head": "1bb8106232d078fa5d475cab953b54462d57711e",
+    "product_identity": "current_daily_decision_research_product:669b5968e703adfe88297878b481f1ecd0d4327706f4cee10a79296235735d72",
+    "run_identity": "daily_producer_run:d4a2e4247511c56c4a91686bdf1e272861c57bb6f720c637400a1cc36900c27d",
+    "session": "2026-10-21",
+    "ticker": "HPG"
+   },
+   "domain": "VALUATION",
+   "evidence_identity": "case_evidence:6fb9184285623f07225a486ceb90dd7b98cb19ea301927d40060ecff6016928a",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.valuation_context",
+    "peer_valuation_status": "VALUATION_PEER_CONTEXT_UNAVAILABLE",
+    "shadow_authority": "SHADOW_RESEARCH_ONLY",
+    "strict_valuation_status": "UNAVAILABLE"
+   },
+   "relation": "RELATED_INSUFFICIENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "c2b5aec1f842539a9a281fc60f74000744554727af225cf7248e6603d91074b8",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1",
+    "producer_head": "1bb8106232d078fa5d475cab953b54462d57711e",
+    "product_identity": "current_daily_decision_research_product:669b5968e703adfe88297878b481f1ecd0d4327706f4cee10a79296235735d72",
+    "run_identity": "daily_producer_run:d4a2e4247511c56c4a91686bdf1e272861c57bb6f720c637400a1cc36900c27d",
+    "session": "2026-10-21",
+    "ticker": "HPG"
+   },
+   "domain": "TECHNICAL",
+   "evidence_identity": "case_evidence:1bd69ca5ac454fb56b0fd0d2d8343cadedfd744a731c7e75ee6730854a5ce737",
+   "observation": {
+    "decision_identity": "decision:HPG:8198a1ec3c30f408",
+    "entry_action": "WAIT",
+    "entry_state": "UPTREND_CONFIRMED",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1",
+    "posture_condition_class": "PENDING_DEFINED_CONFIRMATION",
+    "research_action_posture": "WAIT_FOR_CONFIRMATION",
+    "tactical_phase": "BREAKOUT_SETUP",
+    "use": "TECHNICAL_RESEARCH_LABEL_NOT_INVESTMENT_QUALITY_OR_INSTRUCTION"
+   },
+   "relation": "TECHNICAL_CONTEXT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "c2b5aec1f842539a9a281fc60f74000744554727af225cf7248e6603d91074b8",
+    "evidence_ref": "current_daily_decision_research.trigger",
+    "producer_head": "1bb8106232d078fa5d475cab953b54462d57711e",
+    "product_identity": "current_daily_decision_research_product:669b5968e703adfe88297878b481f1ecd0d4327706f4cee10a79296235735d72",
+    "run_identity": "daily_producer_run:d4a2e4247511c56c4a91686bdf1e272861c57bb6f720c637400a1cc36900c27d",
+    "session": "2026-10-21",
+    "ticker": "HPG"
+   },
+   "domain": "TECHNICAL",
+   "evidence_identity": "case_evidence:0fc7f7e05a68028aa53724a651769102423fdf6228dc198bfd530de42507683a",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.trigger",
+    "kind": "TECHNICAL_TRIGGER",
+    "text": "The trend is already confirmed; the ongoing trigger is simply continued price above the 20-day moving average with 20-day momentum staying positive."
+   },
+   "relation": "PRODUCER_CONDITION_NOT_CONSUMER_OUTCOME"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "c2b5aec1f842539a9a281fc60f74000744554727af225cf7248e6603d91074b8",
+    "evidence_ref": "current_daily_decision_research.invalidation",
+    "producer_head": "1bb8106232d078fa5d475cab953b54462d57711e",
+    "product_identity": "current_daily_decision_research_product:669b5968e703adfe88297878b481f1ecd0d4327706f4cee10a79296235735d72",
+    "run_identity": "daily_producer_run:d4a2e4247511c56c4a91686bdf1e272861c57bb6f720c637400a1cc36900c27d",
+    "session": "2026-10-21",
+    "ticker": "HPG"
+   },
+   "domain": "TECHNICAL",
+   "evidence_identity": "case_evidence:83d338f40db38a6ef9d606f1e1a442237bc2e6a10e78cf4b9ed6ceb3acae9193",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.invalidation",
+    "kind": "TECHNICAL_INVALIDATION",
+    "text": "20-day momentum turning negative while price is still above the 20-day moving average invalidates this classification (see DISTRIBUTION_RISK)."
+   },
+   "relation": "PRODUCER_CONDITION_NOT_CONSUMER_OUTCOME"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "c2b5aec1f842539a9a281fc60f74000744554727af225cf7248e6603d91074b8",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.invalidation",
+    "producer_head": "1bb8106232d078fa5d475cab953b54462d57711e",
+    "product_identity": "current_daily_decision_research_product:669b5968e703adfe88297878b481f1ecd0d4327706f4cee10a79296235735d72",
+    "run_identity": "daily_producer_run:d4a2e4247511c56c4a91686bdf1e272861c57bb6f720c637400a1cc36900c27d",
+    "session": "2026-10-21",
+    "ticker": "HPG"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:93218cff7328d7ddd54762ce6ba72c97e4ec6a721a28fc5414513d8aed90176a",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.invalidation",
+    "kind": "INTEGRATED_DECISION_INVALIDATION",
+    "text": {
+     "activation_semantics": "FIRST_LATER_COMPLETED_SESSION_WITH_RETAINED_CLOSE_SATISFIES_FIXED_T0_BOUNDARY",
+     "authority_boundary": "RETAINED_RESEARCH_BOUNDARY_NOT_EXECUTION_OR_STOP_LOSS",
+     "condition_identity": "retained_strategy_boundary_condition:f2e1a524b5b64cb98641af80465c6a9d850966abafff1e879b03b5934cb60e09",
+     "condition_version": "retained_strategy_boundary_condition/v1",
+     "narrative_reason": "Fixed T0 structural close boundary; analytical research only.",
+     "operator": ">",
+     "reason_codes": [
+      "EXISTING_READY_FIXED_T0_CLOSE_BOUNDARY"
+     ],
+     "reference_field": "close",
+     "reference_level": 21.55,
+     "required_state": "CONFIRMED_SWING_HIGH_BY_RULE_OR_V1_RESISTANCE_FALLBACK",
+     "role": "invalidation",
+     "source_boundary_status": "READY",
+     "source_boundary_type": "CONFIRMED_SWING_HIGH_BY_RULE_OR_V1_RESISTANCE_FALLBACK",
+     "source_lineage": {
+      "as_of_session": "2026-10-21",
+      "source_artifact_identity": "market_structure_breakout_product_projection/v1:1d111ebee9f8da879f2176a316faa99cdfadaa12236f4af351df227b2f5438df"
+     },
+     "source_method": "market_structure_breakout_product_projection/v1",
+     "source_metric": "invalidation_level",
+     "source_rule": null,
+     "source_strategy_identity": "market_structure_breakout_product_projection/v1:1d111ebee9f8da879f2176a316faa99cdfadaa12236f4af351df227b2f5438df",
+     "status": "MACHINE_EVALUABLE",
+     "strategy_operator": "FUTURE_CLOSE_GT_STRUCTURAL_LEVEL"
+    }
+   },
+   "relation": "PRODUCER_CONDITION_NOT_CONSUMER_OUTCOME"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "c2b5aec1f842539a9a281fc60f74000744554727af225cf7248e6603d91074b8",
+    "evidence_ref": "current_daily_decision_research.fundamental_invalidation",
+    "producer_head": "1bb8106232d078fa5d475cab953b54462d57711e",
+    "product_identity": "current_daily_decision_research_product:669b5968e703adfe88297878b481f1ecd0d4327706f4cee10a79296235735d72",
+    "run_identity": "daily_producer_run:d4a2e4247511c56c4a91686bdf1e272861c57bb6f720c637400a1cc36900c27d",
+    "session": "2026-10-21",
+    "ticker": "HPG"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:fecf5b040d58c86e4e6b4243e03226f84f285d8da66b2a63b6b19b1df2bd387a",
+   "observation": {
+    "current_trigger_state": "UNKNOWN",
+    "evidence_ref": "current_daily_decision_research.fundamental_invalidation",
+    "kind": "FUNDAMENTAL_INVALIDATION",
+    "metric_or_axis": "COMPATIBLE_PROFITABILITY_QUALITY_DETERIORATION",
+    "source_artifact_identity": "shadow_security_recommendation:83a6086f56180f366ac79ea516340f11a988297392311c81bd59a72906b2a0a4",
+    "status": "CONDITIONAL",
+    "text": "A related profitability axis exists but no compatible numeric margin baseline is retained."
+   },
+   "relation": "PRODUCER_CONDITION_NOT_CONSUMER_OUTCOME"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "c2b5aec1f842539a9a281fc60f74000744554727af225cf7248e6603d91074b8",
+    "evidence_ref": "current_daily_decision_research.thesis_counter_thesis.questions_to_verify",
+    "producer_head": "1bb8106232d078fa5d475cab953b54462d57711e",
+    "product_identity": "current_daily_decision_research_product:669b5968e703adfe88297878b481f1ecd0d4327706f4cee10a79296235735d72",
+    "run_identity": "daily_producer_run:d4a2e4247511c56c4a91686bdf1e272861c57bb6f720c637400a1cc36900c27d",
+    "session": "2026-10-21",
+    "ticker": "HPG"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:8a7e62056ef6d1f7365059dcf2b98af05120665fd154ce8f06a5a3f7eafb04a4",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.thesis_counter_thesis.questions_to_verify",
+    "kind": "CARD_QUESTION_TO_VERIFY",
+    "text": "The trend is already confirmed; the ongoing trigger is simply continued price above the 20-day moving average with 20-day momentum staying positive."
+   },
+   "relation": "PRODUCER_RESEARCH_QUESTION_NOT_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "c2b5aec1f842539a9a281fc60f74000744554727af225cf7248e6603d91074b8",
+    "evidence_ref": "current_daily_decision_research.corporate_intelligence_context.what_to_verify",
+    "producer_head": "1bb8106232d078fa5d475cab953b54462d57711e",
+    "product_identity": "current_daily_decision_research_product:669b5968e703adfe88297878b481f1ecd0d4327706f4cee10a79296235735d72",
+    "run_identity": "daily_producer_run:d4a2e4247511c56c4a91686bdf1e272861c57bb6f720c637400a1cc36900c27d",
+    "session": "2026-10-21",
+    "ticker": "HPG"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:ea662f0d70af6583b1d51c846188d68e50f3b499c661670826db7255a0a2a3ab",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.corporate_intelligence_context.what_to_verify",
+    "kind": "CORPORATE_WHAT_TO_VERIFY",
+    "text": "Verify whether later retained official disclosure changes this event's status or current relevance."
+   },
+   "relation": "PRODUCER_RESEARCH_QUESTION_NOT_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "c2b5aec1f842539a9a281fc60f74000744554727af225cf7248e6603d91074b8",
+    "evidence_ref": "current_daily_decision_research.fundamental_context",
+    "producer_head": "1bb8106232d078fa5d475cab953b54462d57711e",
+    "product_identity": "current_daily_decision_research_product:669b5968e703adfe88297878b481f1ecd0d4327706f4cee10a79296235735d72",
+    "run_identity": "daily_producer_run:d4a2e4247511c56c4a91686bdf1e272861c57bb6f720c637400a1cc36900c27d",
+    "session": "2026-10-21",
+    "ticker": "HPG"
+   },
+   "domain": "CASH_BALANCE",
+   "evidence_identity": "case_evidence:77f7478247a6761bfa9dbe4d83a99afc473c742fb496afd72ba84e0c91b9325c",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.fundamental_context",
+    "kind": "NEEDS_QUALIFIED_SAME_PERIOD_PROFIT_AND_OPERATING_CASH",
+    "text": null
+   },
+   "relation": "PRODUCER_RESEARCH_QUESTION_NOT_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "c2b5aec1f842539a9a281fc60f74000744554727af225cf7248e6603d91074b8",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context",
+    "producer_head": "1bb8106232d078fa5d475cab953b54462d57711e",
+    "product_identity": "current_daily_decision_research_product:669b5968e703adfe88297878b481f1ecd0d4327706f4cee10a79296235735d72",
+    "run_identity": "daily_producer_run:d4a2e4247511c56c4a91686bdf1e272861c57bb6f720c637400a1cc36900c27d",
+    "session": "2026-10-21",
+    "ticker": "HPG"
+   },
+   "domain": "OPERATING",
+   "evidence_identity": "case_evidence:5bab324da6bf0fbe231d40fad7553c4fe224dcec402099ccfe6862591887d8ff",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context",
+    "kind": "NEEDS_QUALIFIED_COMPARABLE_REVENUE_AND_EARNINGS",
+    "text": null
+   },
+   "relation": "PRODUCER_RESEARCH_QUESTION_NOT_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "c2b5aec1f842539a9a281fc60f74000744554727af225cf7248e6603d91074b8",
+    "evidence_ref": "current_daily_decision_research.thesis_counter_thesis.counter_thesis",
+    "producer_head": "1bb8106232d078fa5d475cab953b54462d57711e",
+    "product_identity": "current_daily_decision_research_product:669b5968e703adfe88297878b481f1ecd0d4327706f4cee10a79296235735d72",
+    "run_identity": "daily_producer_run:d4a2e4247511c56c4a91686bdf1e272861c57bb6f720c637400a1cc36900c27d",
+    "session": "2026-10-21",
+    "ticker": "HPG"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:cfb64c845f0c878ab91a58531590d0e7ddfcc1fa29eddef9c2709191cc993dbd",
+   "observation": {
+    "code": "CARD_DATA_GAP",
+    "evidence_field": "peer_relative.data_gaps",
+    "evidence_ref": "current_daily_decision_research.thesis_counter_thesis.counter_thesis",
+    "source_value": "VALUATION_PEER_CONTEXT_UNAVAILABLE"
+   },
+   "relation": "RELATED_INSUFFICIENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "c2b5aec1f842539a9a281fc60f74000744554727af225cf7248e6603d91074b8",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.material_uncertainties",
+    "producer_head": "1bb8106232d078fa5d475cab953b54462d57711e",
+    "product_identity": "current_daily_decision_research_product:669b5968e703adfe88297878b481f1ecd0d4327706f4cee10a79296235735d72",
+    "run_identity": "daily_producer_run:d4a2e4247511c56c4a91686bdf1e272861c57bb6f720c637400a1cc36900c27d",
+    "session": "2026-10-21",
+    "ticker": "HPG"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:75a109e272453ba351fb796391f03ba421b00e6ab07975cf96bc88d1339488f4",
+   "observation": {
+    "code": "MATERIAL_UNCERTAINTY",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.material_uncertainties",
+    "source_value": "SHARE_BASIS_PROXY_CURRENT_SHARE_RESEARCH_PROXY"
+   },
+   "relation": "RELATED_INSUFFICIENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "c2b5aec1f842539a9a281fc60f74000744554727af225cf7248e6603d91074b8",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context",
+    "producer_head": "1bb8106232d078fa5d475cab953b54462d57711e",
+    "product_identity": "current_daily_decision_research_product:669b5968e703adfe88297878b481f1ecd0d4327706f4cee10a79296235735d72",
+    "run_identity": "daily_producer_run:d4a2e4247511c56c4a91686bdf1e272861c57bb6f720c637400a1cc36900c27d",
+    "session": "2026-10-21",
+    "ticker": "HPG"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:99c8da7db3c35b466eeb630b81717949c581d4550f65a1392439b0f8276a6bcd",
+   "observation": {
+    "code": "VALUATION_REASON_CODE_WHILE_PEER_VALUATION_UNAVAILABLE",
+    "consumer_effect": "NEITHER_FIELD_IS_UPGRADED_OR_DISCARDED",
+    "evidence_refs": [
+     "current_daily_decision_research.integrated_decision_v1.financial_composite_context",
+     "current_daily_decision_research.valuation_context"
+    ],
+    "source_value": {
+     "peer_valuation_status": "VALUATION_PEER_CONTEXT_UNAVAILABLE",
+     "reason_codes": [
+      "VALUATION_IN_LINE_WITH_PEERS"
+     ]
+    }
+   },
+   "relation": "SOURCE_CONFLICT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "c2b5aec1f842539a9a281fc60f74000744554727af225cf7248e6603d91074b8",
+    "evidence_ref": "current_daily_decision_research.valuation_context",
+    "producer_head": "1bb8106232d078fa5d475cab953b54462d57711e",
+    "product_identity": "current_daily_decision_research_product:669b5968e703adfe88297878b481f1ecd0d4327706f4cee10a79296235735d72",
+    "run_identity": "daily_producer_run:d4a2e4247511c56c4a91686bdf1e272861c57bb6f720c637400a1cc36900c27d",
+    "session": "2026-10-21",
+    "ticker": "HPG"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:755743a27e708bbb3ae13d4049b96110e596a2d07a5d26e3d1ee330087c36337",
+   "observation": {
+    "code": "VALUATION_REASON_CODE_WHILE_PEER_VALUATION_UNAVAILABLE",
+    "consumer_effect": "NEITHER_FIELD_IS_UPGRADED_OR_DISCARDED",
+    "evidence_refs": [
+     "current_daily_decision_research.integrated_decision_v1.financial_composite_context",
+     "current_daily_decision_research.valuation_context"
+    ],
+    "source_value": {
+     "peer_valuation_status": "VALUATION_PEER_CONTEXT_UNAVAILABLE",
+     "reason_codes": [
+      "VALUATION_IN_LINE_WITH_PEERS"
+     ]
+    }
+   },
+   "relation": "SOURCE_CONFLICT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "02740143933e612bb6edd871074d33215c2b97fb688a929f9fc109ee70e3c509",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context",
+    "producer_head": "20a97427c2a0aec1a6b5538a34b32fd16f048dfe",
+    "product_identity": "current_daily_decision_research_product:de3a5d91c69ad70dc8979b25e21db46cb0b218f074e0c28f450938c844076287",
+    "run_identity": "daily_producer_run:78211b58dd804b5514ed76203ba6cdb465dc34dda735eae17b16f7b5da3cfab1",
+    "session": "2026-10-22",
+    "ticker": "HPG"
+   },
+   "domain": "OPERATING",
+   "evidence_identity": "case_evidence:ff8ca76be1cdc5d95a8f4466bb539fd4627b6def387b0a1d2ed468267873246d",
+   "observation": {
+    "evidence_basis_state": "FINANCIAL_POSITION_ONLY",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context",
+    "financial_composite_state": "FUNDAMENTALS_IMPROVING",
+    "statement_code": "COMPOSITE_VERDICT_DESCRIBES_FINANCIAL_POSITION_NOT_BUSINESS_PROFITABILITY"
+   },
+   "relation": "RELATED_INSUFFICIENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "02740143933e612bb6edd871074d33215c2b97fb688a929f9fc109ee70e3c509",
+    "evidence_ref": "current_daily_decision_research.fundamental_research_context",
+    "producer_head": "20a97427c2a0aec1a6b5538a34b32fd16f048dfe",
+    "product_identity": "current_daily_decision_research_product:de3a5d91c69ad70dc8979b25e21db46cb0b218f074e0c28f450938c844076287",
+    "run_identity": "daily_producer_run:78211b58dd804b5514ed76203ba6cdb465dc34dda735eae17b16f7b5da3cfab1",
+    "session": "2026-10-22",
+    "ticker": "HPG"
+   },
+   "domain": "CASH_BALANCE",
+   "evidence_identity": "case_evidence:e40dd3efc699e482cd9c0569238396a9db9a768fd3476f4715ebcb1218eb0db2",
+   "observation": {
+    "economics_status": null,
+    "state": "UNKNOWN",
+    "statement_code": "OLDER_CARD_HAS_NO_INCOME_TO_CASH_CONTEXT"
+   },
+   "relation": "RELATED_INSUFFICIENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "02740143933e612bb6edd871074d33215c2b97fb688a929f9fc109ee70e3c509",
+    "evidence_ref": "current_daily_decision_research.valuation_context",
+    "producer_head": "20a97427c2a0aec1a6b5538a34b32fd16f048dfe",
+    "product_identity": "current_daily_decision_research_product:de3a5d91c69ad70dc8979b25e21db46cb0b218f074e0c28f450938c844076287",
+    "run_identity": "daily_producer_run:78211b58dd804b5514ed76203ba6cdb465dc34dda735eae17b16f7b5da3cfab1",
+    "session": "2026-10-22",
+    "ticker": "HPG"
+   },
+   "domain": "VALUATION",
+   "evidence_identity": "case_evidence:d2ef49442cd5655bea3aefaad6a554be4ad8279bbe87fa2079bc7197a7b96b12",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.valuation_context",
+    "peer_valuation_status": "VALUATION_PEER_CONTEXT_UNAVAILABLE",
+    "shadow_authority": "SHADOW_RESEARCH_ONLY",
+    "strict_valuation_status": "UNAVAILABLE"
+   },
+   "relation": "RELATED_INSUFFICIENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "02740143933e612bb6edd871074d33215c2b97fb688a929f9fc109ee70e3c509",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1",
+    "producer_head": "20a97427c2a0aec1a6b5538a34b32fd16f048dfe",
+    "product_identity": "current_daily_decision_research_product:de3a5d91c69ad70dc8979b25e21db46cb0b218f074e0c28f450938c844076287",
+    "run_identity": "daily_producer_run:78211b58dd804b5514ed76203ba6cdb465dc34dda735eae17b16f7b5da3cfab1",
+    "session": "2026-10-22",
+    "ticker": "HPG"
+   },
+   "domain": "TECHNICAL",
+   "evidence_identity": "case_evidence:f039414d87ceba7b55a0b4163a2fd1ad9ccee5a2a30694a55305b74eefc374d7",
+   "observation": {
+    "decision_identity": "decision:HPG:7e1a30900588b9a1",
+    "entry_action": "WAIT",
+    "entry_state": "UPTREND_CONFIRMED",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1",
+    "posture_condition_class": "PENDING_DEFINED_CONFIRMATION",
+    "research_action_posture": "WAIT_FOR_CONFIRMATION",
+    "tactical_phase": "BREAKOUT_SETUP",
+    "use": "TECHNICAL_RESEARCH_LABEL_NOT_INVESTMENT_QUALITY_OR_INSTRUCTION"
+   },
+   "relation": "TECHNICAL_CONTEXT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "02740143933e612bb6edd871074d33215c2b97fb688a929f9fc109ee70e3c509",
+    "evidence_ref": "current_daily_decision_research.what_argues_against.evidence_against",
+    "producer_head": "20a97427c2a0aec1a6b5538a34b32fd16f048dfe",
+    "product_identity": "current_daily_decision_research_product:de3a5d91c69ad70dc8979b25e21db46cb0b218f074e0c28f450938c844076287",
+    "run_identity": "daily_producer_run:78211b58dd804b5514ed76203ba6cdb465dc34dda735eae17b16f7b5da3cfab1",
+    "session": "2026-10-22",
+    "ticker": "HPG"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:b57ce0e7f538947ca4852abd0ec81bc67c1642e54766783bc31545a92c8b01c9",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.what_argues_against.evidence_against",
+    "text": "Provider-relative volume is at or below the same-session cohort median today."
+   },
+   "relation": "CHALLENGING_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "02740143933e612bb6edd871074d33215c2b97fb688a929f9fc109ee70e3c509",
+    "evidence_ref": "current_daily_decision_research.trigger",
+    "producer_head": "20a97427c2a0aec1a6b5538a34b32fd16f048dfe",
+    "product_identity": "current_daily_decision_research_product:de3a5d91c69ad70dc8979b25e21db46cb0b218f074e0c28f450938c844076287",
+    "run_identity": "daily_producer_run:78211b58dd804b5514ed76203ba6cdb465dc34dda735eae17b16f7b5da3cfab1",
+    "session": "2026-10-22",
+    "ticker": "HPG"
+   },
+   "domain": "TECHNICAL",
+   "evidence_identity": "case_evidence:057ef397fca65dd0633ca94152c7ff4cc2739f242ced938bd60646385fc2c0d4",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.trigger",
+    "kind": "TECHNICAL_TRIGGER",
+    "text": "The trend is already confirmed; the ongoing trigger is simply continued price above the 20-day moving average with 20-day momentum staying positive."
+   },
+   "relation": "PRODUCER_CONDITION_NOT_CONSUMER_OUTCOME"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "02740143933e612bb6edd871074d33215c2b97fb688a929f9fc109ee70e3c509",
+    "evidence_ref": "current_daily_decision_research.invalidation",
+    "producer_head": "20a97427c2a0aec1a6b5538a34b32fd16f048dfe",
+    "product_identity": "current_daily_decision_research_product:de3a5d91c69ad70dc8979b25e21db46cb0b218f074e0c28f450938c844076287",
+    "run_identity": "daily_producer_run:78211b58dd804b5514ed76203ba6cdb465dc34dda735eae17b16f7b5da3cfab1",
+    "session": "2026-10-22",
+    "ticker": "HPG"
+   },
+   "domain": "TECHNICAL",
+   "evidence_identity": "case_evidence:d35edd2bc8ebf362095d2da8f1d8be81ba8539ac64c071603589753127b26fd1",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.invalidation",
+    "kind": "TECHNICAL_INVALIDATION",
+    "text": "20-day momentum turning negative while price is still above the 20-day moving average invalidates this classification (see DISTRIBUTION_RISK)."
+   },
+   "relation": "PRODUCER_CONDITION_NOT_CONSUMER_OUTCOME"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "02740143933e612bb6edd871074d33215c2b97fb688a929f9fc109ee70e3c509",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.invalidation",
+    "producer_head": "20a97427c2a0aec1a6b5538a34b32fd16f048dfe",
+    "product_identity": "current_daily_decision_research_product:de3a5d91c69ad70dc8979b25e21db46cb0b218f074e0c28f450938c844076287",
+    "run_identity": "daily_producer_run:78211b58dd804b5514ed76203ba6cdb465dc34dda735eae17b16f7b5da3cfab1",
+    "session": "2026-10-22",
+    "ticker": "HPG"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:bf5a5eddeb3d9fc19258b69281ab3747c1af70584927fb621caa28d56afca925",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.invalidation",
+    "kind": "INTEGRATED_DECISION_INVALIDATION",
+    "text": {
+     "activation_semantics": "FIRST_LATER_COMPLETED_SESSION_WITH_RETAINED_CLOSE_SATISFIES_FIXED_T0_BOUNDARY",
+     "authority_boundary": "RETAINED_RESEARCH_BOUNDARY_NOT_EXECUTION_OR_STOP_LOSS",
+     "condition_identity": "retained_strategy_boundary_condition:0227c8ce970aed6d7bbef4bc285026a22b44d53c97be0a43d77518ec5c11720b",
+     "condition_version": "retained_strategy_boundary_condition/v1",
+     "narrative_reason": "Fixed T0 structural close boundary; analytical research only.",
+     "operator": ">",
+     "reason_codes": [
+      "EXISTING_READY_FIXED_T0_CLOSE_BOUNDARY"
+     ],
+     "reference_field": "close",
+     "reference_level": 21.55,
+     "required_state": "CONFIRMED_SWING_HIGH_BY_RULE_OR_V1_RESISTANCE_FALLBACK",
+     "role": "invalidation",
+     "source_boundary_status": "READY",
+     "source_boundary_type": "CONFIRMED_SWING_HIGH_BY_RULE_OR_V1_RESISTANCE_FALLBACK",
+     "source_lineage": {
+      "as_of_session": "2026-10-22",
+      "source_artifact_identity": "market_structure_breakout_product_projection/v1:eb72d6cd2b7ac83ea2688065ebec6f2709cb943b4d9a9a39d3f22f7248a22701"
+     },
+     "source_method": "market_structure_breakout_product_projection/v1",
+     "source_metric": "invalidation_level",
+     "source_rule": null,
+     "source_strategy_identity": "market_structure_breakout_product_projection/v1:eb72d6cd2b7ac83ea2688065ebec6f2709cb943b4d9a9a39d3f22f7248a22701",
+     "status": "MACHINE_EVALUABLE",
+     "strategy_operator": "FUTURE_CLOSE_GT_STRUCTURAL_LEVEL"
+    }
+   },
+   "relation": "PRODUCER_CONDITION_NOT_CONSUMER_OUTCOME"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "02740143933e612bb6edd871074d33215c2b97fb688a929f9fc109ee70e3c509",
+    "evidence_ref": "current_daily_decision_research.fundamental_invalidation",
+    "producer_head": "20a97427c2a0aec1a6b5538a34b32fd16f048dfe",
+    "product_identity": "current_daily_decision_research_product:de3a5d91c69ad70dc8979b25e21db46cb0b218f074e0c28f450938c844076287",
+    "run_identity": "daily_producer_run:78211b58dd804b5514ed76203ba6cdb465dc34dda735eae17b16f7b5da3cfab1",
+    "session": "2026-10-22",
+    "ticker": "HPG"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:5775b299eee6d350eafa2f4f57216e8957d25c631fe72e29b432801e44cb7889",
+   "observation": {
+    "current_trigger_state": "UNKNOWN",
+    "evidence_ref": "current_daily_decision_research.fundamental_invalidation",
+    "kind": "FUNDAMENTAL_INVALIDATION",
+    "metric_or_axis": "COMPATIBLE_PROFITABILITY_QUALITY_DETERIORATION",
+    "source_artifact_identity": "shadow_security_recommendation:1b15df365a350a19b39e1b1db1dcc775a0b597e364532e560f83faa8cff500d8",
+    "status": "CONDITIONAL",
+    "text": "A related profitability axis exists but no compatible numeric margin baseline is retained."
+   },
+   "relation": "PRODUCER_CONDITION_NOT_CONSUMER_OUTCOME"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "02740143933e612bb6edd871074d33215c2b97fb688a929f9fc109ee70e3c509",
+    "evidence_ref": "current_daily_decision_research.thesis_counter_thesis.questions_to_verify",
+    "producer_head": "20a97427c2a0aec1a6b5538a34b32fd16f048dfe",
+    "product_identity": "current_daily_decision_research_product:de3a5d91c69ad70dc8979b25e21db46cb0b218f074e0c28f450938c844076287",
+    "run_identity": "daily_producer_run:78211b58dd804b5514ed76203ba6cdb465dc34dda735eae17b16f7b5da3cfab1",
+    "session": "2026-10-22",
+    "ticker": "HPG"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:ff04315b9b1772c3b79e30775d6330d075fe17b41fbfb45f30c9a023fe526c09",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.thesis_counter_thesis.questions_to_verify",
+    "kind": "CARD_QUESTION_TO_VERIFY",
+    "text": "The trend is already confirmed; the ongoing trigger is simply continued price above the 20-day moving average with 20-day momentum staying positive."
+   },
+   "relation": "PRODUCER_RESEARCH_QUESTION_NOT_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "02740143933e612bb6edd871074d33215c2b97fb688a929f9fc109ee70e3c509",
+    "evidence_ref": "current_daily_decision_research.corporate_intelligence_context.what_to_verify",
+    "producer_head": "20a97427c2a0aec1a6b5538a34b32fd16f048dfe",
+    "product_identity": "current_daily_decision_research_product:de3a5d91c69ad70dc8979b25e21db46cb0b218f074e0c28f450938c844076287",
+    "run_identity": "daily_producer_run:78211b58dd804b5514ed76203ba6cdb465dc34dda735eae17b16f7b5da3cfab1",
+    "session": "2026-10-22",
+    "ticker": "HPG"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:13763535d26c43237cb34b887fc6fd31de72a3d2fc66676051ce34c6b494e5bf",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.corporate_intelligence_context.what_to_verify",
+    "kind": "CORPORATE_WHAT_TO_VERIFY",
+    "text": "Verify whether later retained official disclosure changes this event's status or current relevance."
+   },
+   "relation": "PRODUCER_RESEARCH_QUESTION_NOT_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "02740143933e612bb6edd871074d33215c2b97fb688a929f9fc109ee70e3c509",
+    "evidence_ref": "current_daily_decision_research.fundamental_context",
+    "producer_head": "20a97427c2a0aec1a6b5538a34b32fd16f048dfe",
+    "product_identity": "current_daily_decision_research_product:de3a5d91c69ad70dc8979b25e21db46cb0b218f074e0c28f450938c844076287",
+    "run_identity": "daily_producer_run:78211b58dd804b5514ed76203ba6cdb465dc34dda735eae17b16f7b5da3cfab1",
+    "session": "2026-10-22",
+    "ticker": "HPG"
+   },
+   "domain": "CASH_BALANCE",
+   "evidence_identity": "case_evidence:5b54f6096dceff569c07e38c109c09e5f57b9bfbfa41c42c1243378a046c0187",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.fundamental_context",
+    "kind": "NEEDS_QUALIFIED_SAME_PERIOD_PROFIT_AND_OPERATING_CASH",
+    "text": null
+   },
+   "relation": "PRODUCER_RESEARCH_QUESTION_NOT_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "02740143933e612bb6edd871074d33215c2b97fb688a929f9fc109ee70e3c509",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context",
+    "producer_head": "20a97427c2a0aec1a6b5538a34b32fd16f048dfe",
+    "product_identity": "current_daily_decision_research_product:de3a5d91c69ad70dc8979b25e21db46cb0b218f074e0c28f450938c844076287",
+    "run_identity": "daily_producer_run:78211b58dd804b5514ed76203ba6cdb465dc34dda735eae17b16f7b5da3cfab1",
+    "session": "2026-10-22",
+    "ticker": "HPG"
+   },
+   "domain": "OPERATING",
+   "evidence_identity": "case_evidence:77c84d957a883d5fe7379bce8cf602a762764b856b1dafd2333eac1c799fc678",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context",
+    "kind": "NEEDS_QUALIFIED_COMPARABLE_REVENUE_AND_EARNINGS",
+    "text": null
+   },
+   "relation": "PRODUCER_RESEARCH_QUESTION_NOT_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "02740143933e612bb6edd871074d33215c2b97fb688a929f9fc109ee70e3c509",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context",
+    "producer_head": "20a97427c2a0aec1a6b5538a34b32fd16f048dfe",
+    "product_identity": "current_daily_decision_research_product:de3a5d91c69ad70dc8979b25e21db46cb0b218f074e0c28f450938c844076287",
+    "run_identity": "daily_producer_run:78211b58dd804b5514ed76203ba6cdb465dc34dda735eae17b16f7b5da3cfab1",
+    "session": "2026-10-22",
+    "ticker": "HPG"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:7d41082253d5da4ca102076d94929d09b19c16951bcdaeb24288c33e2b885ab8",
+   "observation": {
+    "code": "VALUATION_REASON_CODE_WHILE_PEER_VALUATION_UNAVAILABLE",
+    "consumer_effect": "NEITHER_FIELD_IS_UPGRADED_OR_DISCARDED",
+    "evidence_refs": [
+     "current_daily_decision_research.integrated_decision_v1.financial_composite_context",
+     "current_daily_decision_research.valuation_context"
+    ],
+    "source_value": {
+     "peer_valuation_status": "VALUATION_PEER_CONTEXT_UNAVAILABLE",
+     "reason_codes": [
+      "VALUATION_IN_LINE_WITH_PEERS"
+     ]
+    }
+   },
+   "relation": "SOURCE_CONFLICT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "02740143933e612bb6edd871074d33215c2b97fb688a929f9fc109ee70e3c509",
+    "evidence_ref": "current_daily_decision_research.valuation_context",
+    "producer_head": "20a97427c2a0aec1a6b5538a34b32fd16f048dfe",
+    "product_identity": "current_daily_decision_research_product:de3a5d91c69ad70dc8979b25e21db46cb0b218f074e0c28f450938c844076287",
+    "run_identity": "daily_producer_run:78211b58dd804b5514ed76203ba6cdb465dc34dda735eae17b16f7b5da3cfab1",
+    "session": "2026-10-22",
+    "ticker": "HPG"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:23937b3916c779067ed9fcc001eb38a6113a092c57594bb8f519546f86d80231",
+   "observation": {
+    "code": "VALUATION_REASON_CODE_WHILE_PEER_VALUATION_UNAVAILABLE",
+    "consumer_effect": "NEITHER_FIELD_IS_UPGRADED_OR_DISCARDED",
+    "evidence_refs": [
+     "current_daily_decision_research.integrated_decision_v1.financial_composite_context",
+     "current_daily_decision_research.valuation_context"
+    ],
+    "source_value": {
+     "peer_valuation_status": "VALUATION_PEER_CONTEXT_UNAVAILABLE",
+     "reason_codes": [
+      "VALUATION_IN_LINE_WITH_PEERS"
+     ]
+    }
+   },
+   "relation": "SOURCE_CONFLICT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.fundamental_research_context.official_income.facts",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "HPG"
+   },
+   "domain": "OPERATING",
+   "evidence_identity": "case_evidence:ba45314e80ee46b4af79e109f6b5bbaaadea21b3ed90fd8acba33aa3cc420d2b",
+   "observation": {
+    "assurance": "audited",
+    "citation_id": "703f3b51683204b9f69f6a316daba4005af23582b283b60ba4562563625b8bd1",
+    "currency": "VND",
+    "evidence_ref": "current_daily_decision_research.fundamental_research_context.official_income.facts",
+    "knowledge_available_at": "2026-10-07T15:33:12Z",
+    "metric": "revenue",
+    "period_end": "2025-12-31",
+    "period_start": "2025-01-01",
+    "period_type": "annual",
+    "reporting_period": "2025",
+    "research_cutoff": "2026-10-23T15:00:00+07:00",
+    "source_identity": "official-document:f38c5f75becf7d3f145d27183eec81f119fd4f75e378b983a2763ddc3f7e0c07",
+    "statement_scope": "consolidated",
+    "temporal_status": "HISTORICAL_OFFICIAL_FACT",
+    "unit_scale": 1,
+    "value": 156116094618482
+   },
+   "relation": "QUALIFIED_OBSERVATION"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.fundamental_research_context.official_income.facts",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "HPG"
+   },
+   "domain": "OPERATING",
+   "evidence_identity": "case_evidence:f5bc5317e93fbe68be53f05a247d30687c8b4ad676a0833e60631f7e97ec0fbe",
+   "observation": {
+    "assurance": "audited",
+    "citation_id": "c9c24b64898e69a1550470ea1716fc701f7d895015b83b7d449d9de640204728",
+    "currency": "VND",
+    "evidence_ref": "current_daily_decision_research.fundamental_research_context.official_income.facts",
+    "knowledge_available_at": "2026-10-07T15:33:12Z",
+    "metric": "net_income",
+    "period_end": "2025-12-31",
+    "period_start": "2025-01-01",
+    "period_type": "annual",
+    "reporting_period": "2025",
+    "research_cutoff": "2026-10-23T15:00:00+07:00",
+    "source_identity": "official-document:f38c5f75becf7d3f145d27183eec81f119fd4f75e378b983a2763ddc3f7e0c07",
+    "statement_scope": "consolidated",
+    "temporal_status": "HISTORICAL_OFFICIAL_FACT",
+    "unit_scale": 1,
+    "value": 15514931571606
+   },
+   "relation": "QUALIFIED_OBSERVATION"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.fundamental_research_context.official_income.earnings_quality_context",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "HPG"
+   },
+   "domain": "OPERATING",
+   "evidence_identity": "case_evidence:38e9842b49339c1807ae12870c57b68370e9c0168abd5b8ec52b3f1908f4da8a",
+   "observation": {
+    "components": [],
+    "comprehensive_income": "NOT_SUPPLIED_BY_PRODUCER",
+    "earnings_quality_scope": "CURRENT_REPORTED_INCOME",
+    "earnings_quality_status": "UNKNOWN",
+    "excluded_post_cutoff_or_untimed_components": [],
+    "interpretation": "REPORTED_PROFIT_NOT_ESTABLISHED_AS_RECURRING_OR_COMPREHENSIVE_INCOME",
+    "normalization_status": null,
+    "reason": "NO_QUALIFIED_NON_RECURRING_LINE_EVIDENCE",
+    "recurrence_assessment": null,
+    "reported_income_lines": [
+     {
+      "citation_id": "703f3b51683204b9f69f6a316daba4005af23582b283b60ba4562563625b8bd1",
+      "line_code": "10",
+      "metric": "revenue",
+      "reporting_period": "2025",
+      "statement_scope": "consolidated"
+     },
+     {
+      "citation_id": "c9c24b64898e69a1550470ea1716fc701f7d895015b83b7d449d9de640204728",
+      "line_code": "60",
+      "metric": "net_income",
+      "reporting_period": "2025",
+      "statement_scope": "consolidated"
+     }
+    ]
+   },
+   "relation": "PRODUCER_EARNINGS_QUALITY_CONTEXT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "HPG"
+   },
+   "domain": "OPERATING",
+   "evidence_identity": "case_evidence:f9fac45d7d2d1dd5fc928c884b2201dc747f3491f7ae661a3def4eca89893a95",
+   "observation": {
+    "evidence_basis_state": "FINANCIAL_POSITION_ONLY",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context",
+    "financial_composite_state": "FUNDAMENTALS_IMPROVING",
+    "statement_code": "COMPOSITE_VERDICT_DESCRIBES_FINANCIAL_POSITION_NOT_BUSINESS_PROFITABILITY"
+   },
+   "relation": "RELATED_INSUFFICIENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.fundamental_research_context",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "HPG"
+   },
+   "domain": "CASH_BALANCE",
+   "evidence_identity": "case_evidence:32b112d235b1770e71899a851f4d24cfd39b7c90e0de020e73418706c8a0aa25",
+   "observation": {
+    "economics_status": null,
+    "state": "UNKNOWN",
+    "statement_code": "OLDER_CARD_HAS_NO_INCOME_TO_CASH_CONTEXT"
+   },
+   "relation": "RELATED_INSUFFICIENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.valuation_context",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "HPG"
+   },
+   "domain": "VALUATION",
+   "evidence_identity": "case_evidence:46b5825103f05319056cf2e7d3a4576506263dc0e5142cd01d5aea12ca9de528",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.valuation_context",
+    "peer_valuation_status": "PEER_RELATIVE_RESEARCH_IN_INTEGRATED_DECISION",
+    "shadow_authority": "SHADOW_RESEARCH_ONLY",
+    "strict_valuation_status": "UNAVAILABLE"
+   },
+   "relation": "RELATED_INSUFFICIENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "HPG"
+   },
+   "domain": "TECHNICAL",
+   "evidence_identity": "case_evidence:b4ffa55b6c378ee95da29e83b0a7cf311b072be02e5a5b8a670ad16c41dec911",
+   "observation": {
+    "decision_identity": "decision:HPG:02dea863decc1278",
+    "entry_action": "WAIT",
+    "entry_state": "SIDEWAYS_NEUTRAL",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1",
+    "posture_condition_class": "DISTRIBUTION_RISK_NO_FRESH_ENTRY",
+    "research_action_posture": "WAIT_FOR_CONFIRMATION",
+    "tactical_phase": "DISTRIBUTION_RISK",
+    "use": "TECHNICAL_RESEARCH_LABEL_NOT_INVESTMENT_QUALITY_OR_INSTRUCTION"
+   },
+   "relation": "TECHNICAL_CONTEXT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.why_it_is_on_radar.evidence_for",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "HPG"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:9f1c3c20e12c7560d2e17dc468a8b62c088fa2573bb8254b0ac98eae84b715d9",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.why_it_is_on_radar.evidence_for",
+    "text": "Price is above its 20-day moving average."
+   },
+   "relation": "SUPPORTING_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.why_it_is_on_radar.evidence_for",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "HPG"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:00ee54371b03716ce36e1c11c7e21bf8252b4ae469e8eea8a157d992c5bbd490",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.why_it_is_on_radar.evidence_for",
+    "text": "20-day momentum is positive (0.0371)."
+   },
+   "relation": "SUPPORTING_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.why_it_is_on_radar.evidence_for",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "HPG"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:03a4440ada2a9ceb97017eec9109bad00bcd8c40efac925d9780fb088b1f1b67",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.why_it_is_on_radar.evidence_for",
+    "text": "20-day momentum ranks in the UPPER_MIDDLE of the same-session market cohort."
+   },
+   "relation": "SUPPORTING_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.why_it_is_on_radar.evidence_for",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "HPG"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:95a1fd5bd825623b19d6d214dc718c8a96eaeaaf967bf14b571c78a27c64feb7",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.why_it_is_on_radar.evidence_for",
+    "text": "20-day volatility is below the same-session market median (contemporaneous cross-section only, not a historical compression regime)."
+   },
+   "relation": "SUPPORTING_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.why_it_is_on_radar.evidence_for",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "HPG"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:ad011f0f44577e97c47044c142f9f194e94df15ba52b0eefa6b4bd6a3ba304ed",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.why_it_is_on_radar.evidence_for",
+    "text": "20-day momentum ranks in the UPPER_QUARTILE of its own same-session sector cohort."
+   },
+   "relation": "SUPPORTING_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.why_it_is_on_radar.evidence_for",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "HPG"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:4da38b9dac7c3ade4c27cf58889e0712078a7b1bf97deb0479c49843ce9d28ab",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.why_it_is_on_radar.evidence_for",
+    "text": "Current-session descriptive liquidity is eligible (board-composition reading available)."
+   },
+   "relation": "SUPPORTING_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context.supporting_reason_codes",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "HPG"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:6188f63d9de80e7fdc1fee699512e96decb8a691172f2e0d0e0df9341a1e89cb",
+   "observation": {
+    "code": "BALANCE_SHEET_STRENGTHENING",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context.supporting_reason_codes",
+    "source_value": null
+   },
+   "relation": "SUPPORTING_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context.supporting_reason_codes",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "HPG"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:8febb9818477305a585692862b9b6f027c1915d20e71c9b94802294fdd0c6c3a",
+   "observation": {
+    "code": "DEBT_TO_EQUITY_DECREASING",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context.supporting_reason_codes",
+    "source_value": null
+   },
+   "relation": "SUPPORTING_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context.supporting_reason_codes",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "HPG"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:53e33128388a6e36dd95e2d9425de6c33cbae93afb9c1364b09230c3533f4cfb",
+   "observation": {
+    "code": "CURRENT_RATIO_IMPROVING",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context.supporting_reason_codes",
+    "source_value": null
+   },
+   "relation": "SUPPORTING_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context.supporting_reason_codes",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "HPG"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:4108ba32d2b1918f7fb0b0c9d7165a91b7019b37f4f31c9a3a116b7192bb6ceb",
+   "observation": {
+    "code": "VALUATION_IN_LINE_WITH_PEERS",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context.supporting_reason_codes",
+    "source_value": null
+   },
+   "relation": "SUPPORTING_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.what_argues_against.evidence_against",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "HPG"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:e831411ca3ac712cfa5df60070d0b09048d1253bc3ca94664561f266cc442ad7",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.what_argues_against.evidence_against",
+    "text": "Today's session return is negative (-0.0141)."
+   },
+   "relation": "CHALLENGING_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.what_argues_against.evidence_against",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "HPG"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:61805d4b3f19f9ebc539c03d60b5462be79bb7b532ab73e8b31793faea602064",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.what_argues_against.evidence_against",
+    "text": "Provider-relative volume is at or below the same-session cohort median today."
+   },
+   "relation": "CHALLENGING_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.trigger",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "HPG"
+   },
+   "domain": "TECHNICAL",
+   "evidence_identity": "case_evidence:f5da9ed541e3f52bdbf02f43b83b65c8e1e7054481400adb519f6d5e9acf37c7",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.trigger",
+    "kind": "TECHNICAL_TRIGGER",
+    "text": "A decisive move away from the 20-day moving average combined with a same-session momentum quartile extreme (top or bottom) would resolve the current lack of a directional edge."
+   },
+   "relation": "PRODUCER_CONDITION_NOT_CONSUMER_OUTCOME"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.invalidation",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "HPG"
+   },
+   "domain": "TECHNICAL",
+   "evidence_identity": "case_evidence:0e0449f82e988acb3c1e757845e30bb8813d61a513809aab3d983fc8b731f0a0",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.invalidation",
+    "kind": "TECHNICAL_INVALIDATION",
+    "text": "A move to a same-session momentum quartile extreme (top or bottom) combined with price moving decisively away from the 20-day moving average would invalidate the neutral read."
+   },
+   "relation": "PRODUCER_CONDITION_NOT_CONSUMER_OUTCOME"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.invalidation",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "HPG"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:ff28aa6028cf46117fdccf7592482153a21c8b47b8618b55b2287ee716cc5aa2",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.invalidation",
+    "kind": "INTEGRATED_DECISION_INVALIDATION",
+    "text": {
+     "activation_semantics": "FIRST_LATER_COMPLETED_SESSION_WITH_RETAINED_CLOSE_SATISFIES_FIXED_T0_BOUNDARY",
+     "authority_boundary": "RETAINED_RESEARCH_BOUNDARY_NOT_EXECUTION_OR_STOP_LOSS",
+     "condition_identity": "retained_strategy_boundary_condition:ca07c0366157e918a6c5de9084af7315c4b4e9aa33fa99cbd73c6b7c306cd032",
+     "condition_version": "retained_strategy_boundary_condition/v1",
+     "narrative_reason": "Fixed T0 structural close boundary; analytical research only.",
+     "operator": ">",
+     "reason_codes": [
+      "EXISTING_READY_FIXED_T0_CLOSE_BOUNDARY"
+     ],
+     "reference_field": "close",
+     "reference_level": 21.55,
+     "required_state": "CONFIRMED_SWING_HIGH_BY_RULE_OR_V1_RESISTANCE_FALLBACK",
+     "role": "invalidation",
+     "source_boundary_status": "READY",
+     "source_boundary_type": "CONFIRMED_SWING_HIGH_BY_RULE_OR_V1_RESISTANCE_FALLBACK",
+     "source_lineage": {
+      "as_of_session": "2026-10-23",
+      "source_artifact_identity": "market_structure_breakout_product_projection/v1:4e7ac0a0a9e50c2e8f3064a720588db15c065ee3f441663282f096d96752f5f6"
+     },
+     "source_method": "market_structure_breakout_product_projection/v1",
+     "source_metric": "invalidation_level",
+     "source_rule": null,
+     "source_strategy_identity": "market_structure_breakout_product_projection/v1:4e7ac0a0a9e50c2e8f3064a720588db15c065ee3f441663282f096d96752f5f6",
+     "status": "MACHINE_EVALUABLE",
+     "strategy_operator": "FUTURE_CLOSE_GT_STRUCTURAL_LEVEL"
+    }
+   },
+   "relation": "PRODUCER_CONDITION_NOT_CONSUMER_OUTCOME"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.fundamental_invalidation",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "HPG"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:f5f804da5855b934e46cd2f20dc0263f570c37ae54d6925ce92910e1bd4ed43b",
+   "observation": {
+    "current_trigger_state": "UNKNOWN",
+    "evidence_ref": "current_daily_decision_research.fundamental_invalidation",
+    "kind": "FUNDAMENTAL_INVALIDATION",
+    "metric_or_axis": "COMPATIBLE_PROFITABILITY_QUALITY_DETERIORATION",
+    "source_artifact_identity": "shadow_security_recommendation:f5ec7815e36af91ea390c0bb12c7252a5fc380130ba435dfbc322eca4d50ed93",
+    "status": "CONDITIONAL",
+    "text": "A related profitability axis exists but no compatible numeric margin baseline is retained."
+   },
+   "relation": "PRODUCER_CONDITION_NOT_CONSUMER_OUTCOME"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.thesis_counter_thesis.questions_to_verify",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "HPG"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:988fe03f79d6906eedaff0c709d0f20918269b36f00d55122d360182a089af16",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.thesis_counter_thesis.questions_to_verify",
+    "kind": "CARD_QUESTION_TO_VERIFY",
+    "text": "A decisive move away from the 20-day moving average combined with a same-session momentum quartile extreme (top or bottom) would resolve the current lack of a directional edge."
+   },
+   "relation": "PRODUCER_RESEARCH_QUESTION_NOT_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.corporate_intelligence_context.what_to_verify",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "HPG"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:6f58c90d72326872580e5c63c45df3b08fdb36d36d585f675767922bbeb272a4",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.corporate_intelligence_context.what_to_verify",
+    "kind": "CORPORATE_WHAT_TO_VERIFY",
+    "text": "Verify whether later retained official disclosure changes this event's status or current relevance."
+   },
+   "relation": "PRODUCER_RESEARCH_QUESTION_NOT_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.fundamental_research_context",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "HPG"
+   },
+   "domain": "CASH_BALANCE",
+   "evidence_identity": "case_evidence:855bb9fc8bcf286bcd31a846c28f6aaa5cba9e040be6da3ccfef8898a0ccdfa3",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.fundamental_research_context",
+    "kind": "NEEDS_QUALIFIED_SAME_PERIOD_PROFIT_AND_OPERATING_CASH",
+    "text": null
+   },
+   "relation": "PRODUCER_RESEARCH_QUESTION_NOT_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "HPG"
+   },
+   "domain": "OPERATING",
+   "evidence_identity": "case_evidence:101bbf3e04e6ed9f1d541a70d2bf5da3cef6af158170b3501ba6b67bf3546bb0",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context",
+    "kind": "NEEDS_QUALIFIED_COMPARABLE_REVENUE_AND_EARNINGS",
+    "text": null
+   },
+   "relation": "PRODUCER_RESEARCH_QUESTION_NOT_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "HPG"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:8942c2f757a9c8b60dc41b20bb948e246cdab830f9f697e7d4fa2b91576445da",
+   "observation": {
+    "code": "VALUATION_REASON_CODE_WHILE_PEER_VALUATION_UNAVAILABLE",
+    "consumer_effect": "NEITHER_FIELD_IS_UPGRADED_OR_DISCARDED",
+    "evidence_refs": [
+     "current_daily_decision_research.integrated_decision_v1.financial_composite_context",
+     "current_daily_decision_research.valuation_context"
+    ],
+    "source_value": {
+     "peer_valuation_status": "PEER_RELATIVE_RESEARCH_IN_INTEGRATED_DECISION",
+     "reason_codes": [
+      "VALUATION_IN_LINE_WITH_PEERS"
+     ]
+    }
+   },
+   "relation": "SOURCE_CONFLICT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.valuation_context",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "HPG"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:adc777f23a24436d9567dfae9b944114768b453c4d6eb7854eb9509be099deb1",
+   "observation": {
+    "code": "VALUATION_REASON_CODE_WHILE_PEER_VALUATION_UNAVAILABLE",
+    "consumer_effect": "NEITHER_FIELD_IS_UPGRADED_OR_DISCARDED",
+    "evidence_refs": [
+     "current_daily_decision_research.integrated_decision_v1.financial_composite_context",
+     "current_daily_decision_research.valuation_context"
+    ],
+    "source_value": {
+     "peer_valuation_status": "PEER_RELATIVE_RESEARCH_IN_INTEGRATED_DECISION",
+     "reason_codes": [
+      "VALUATION_IN_LINE_WITH_PEERS"
+     ]
+    }
+   },
+   "relation": "SOURCE_CONFLICT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.fundamental_research_context",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "HPG"
+   },
+   "domain": "OPERATING",
+   "evidence_identity": "case_evidence:71d7536912c13f66def9a6a42ea7a6fa2ff9bfe2a9c05abbc342e34a61c02bb8",
+   "observation": {
+    "basis_source": "VOTE_DIMENSIONS_OF_OLDER_CARD",
+    "business_dimensions": [
+     "PROFITABILITY"
+    ],
+    "items": [
+     {
+      "code": "FUNDAMENTAL_VOTE_DIMENSIONS",
+      "evidence_ref": "current_daily_decision_research.integrated_decision_v1.evidence_axes.FUNDAMENTAL.context",
+      "source_value": {
+       "adverse_votes": [],
+       "favorable_votes": [
+        "CAPITAL_STRUCTURE.DIRECTION",
+        "PROFITABILITY.LEVEL"
+       ]
+      }
+     },
+     {
+      "code": "COMPOSITE_STATE_AND_REASONS",
+      "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context",
+      "reason_code_categories": {
+       "BALANCE_SHEET_STRENGTHENING": "FINANCIAL_POSITION",
+       "CURRENT_RATIO_IMPROVING": "FINANCIAL_POSITION",
+       "DEBT_TO_EQUITY_DECREASING": "FINANCIAL_POSITION",
+       "PROFITABLE_CORE_OPERATIONS": "BUSINESS",
+       "VALUATION_IN_LINE_WITH_PEERS": "VALUATION"
+      },
+      "source_value": {
+       "contradicting_reason_codes": [],
+       "financial_composite_state": "FUNDAMENTALS_IMPROVING",
+       "supporting_reason_codes": [
+        "PROFITABLE_CORE_OPERATIONS",
+        "BALANCE_SHEET_STRENGTHENING",
+        "DEBT_TO_EQUITY_DECREASING",
+        "CURRENT_RATIO_IMPROVING",
+        "VALUATION_IN_LINE_WITH_PEERS"
+       ]
+      }
+     }
+    ],
+    "position_dimensions": [
+     "CAPITAL_STRUCTURE"
+    ],
+    "state": "BUSINESS_AND_POSITION",
+    "statement_code": "COMPOSITE_VERDICT_INCLUDES_BUSINESS_DIMENSIONS"
+   },
+   "relation": "CONSUMER_CLASSIFICATION_NOT_NEW_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.fundamental_research_context",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "HPG"
+   },
+   "domain": "CASH_BALANCE",
+   "evidence_identity": "case_evidence:60d0aaa09685dc665eebeb5f4cfa635e21ce59e86e3b7408c3e4ac1517b76ad8",
+   "observation": {
+    "items": [
+     {
+      "code": "LEGACY_DIRECTIONS",
+      "evidence_ref": "current_daily_decision_research.fundamental_context",
+      "source_value": {
+       "earnings_direction": null,
+       "operating_cash_flow_direction": null,
+       "revenue_direction": null
+      }
+     }
+    ],
+    "state": "UNKNOWN",
+    "statement_code": "OLDER_CARD_HAS_NO_INCOME_TO_CASH_CONTEXT"
+   },
+   "relation": "CONSUMER_CLASSIFICATION_NOT_NEW_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.fundamental_research_context",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "HPG"
+   },
+   "domain": "CASH_BALANCE",
+   "evidence_identity": "case_evidence:a80efe29e28d464658dde1994c74c228b56bb695454e41537a21e802ee193340",
+   "observation": {
+    "items": [],
+    "state": "FREE_CASH_FLOW_NOT_SUPPLIED",
+    "statement_code": "NO_PRODUCER_CAPEX_OR_FREE_CASH_FLOW_FIELD"
+   },
+   "relation": "CONSUMER_CLASSIFICATION_NOT_NEW_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.fundamental_research_context",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "HPG"
+   },
+   "domain": "OPERATING",
+   "evidence_identity": "case_evidence:cfdad47e741ab47982fd8085fd2142ea517655451006935ce25c7e64b8e517d7",
+   "observation": {
+    "cautions": [
+     {
+      "code": "OLDER_CARD_ALIGNMENT_UNAVAILABLE",
+      "evidence_ref": "current_daily_decision_research.fundamental_context.revenue_vs_earnings_alignment",
+      "source_value": {
+       "reason": "NO_PROVIDER_TRAJECTORY_PROMOTION_TO_OFFICIAL",
+       "status": "UNAVAILABLE"
+      }
+     }
+    ],
+    "matched": [],
+    "refused": [],
+    "refused_metrics": [],
+    "state": "NO_MATCHED_COMPARISON",
+    "statement_code": "ONLY_PRODUCER_MATCHED_COMPARISONS_ARE_GROWTH_EVIDENCE"
+   },
+   "relation": "CONSUMER_CLASSIFICATION_NOT_NEW_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.fundamental_research_context",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "HPG"
+   },
+   "domain": "OPERATING",
+   "evidence_identity": "case_evidence:139a649cc156731d5e3642e78bbf0739eb03a981fba526adf4f26672e46e8d88",
+   "observation": {
+    "management_forecast": "NOT_SUPPLIED_BY_PRODUCER",
+    "planned_or_pending": [],
+    "reported": [
+     {
+      "code": "REPORTED_EVENT_EXECUTED",
+      "evidence_ref": "current_daily_decision_research.corporate_intelligence_context.confirmed.corporate_intelligence_event:a288cd8c92daa7694a96c6939400a98b8e9c774f242ba819b9f24ce37a7dc62d",
+      "source_value": {
+       "evidence_identity": "event_evidence:1d6dd0b7d3b3ac28ce847e94d487969a56550440144de07f2420607747b34cfd",
+       "status": "EXECUTED"
+      }
+     }
+    ],
+    "state": "NO_PLANNED_ITEMS_SUPPLIED",
+    "statement_code": "PLANNED_APPROVED_OR_FORECAST_ITEMS_ARE_NOT_REPORTED_RESULTS",
+    "unreviewed_releases": []
+   },
+   "relation": "CONSUMER_CLASSIFICATION_NOT_NEW_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.counter_thesis",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "HPG"
+   },
+   "domain": "TECHNICAL",
+   "evidence_identity": "case_evidence:82daf23dcc8a7fad058a35258b222a313188c81f51befc968c1790a129cad578",
+   "observation": {
+    "category": "TECHNICAL",
+    "code": "PRODUCER_COUNTER_THESIS_CODE",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.counter_thesis",
+    "source_value": "STRUCTURE_DOWNTREND_CONFIRMED"
+   },
+   "relation": "GROUNDED_COUNTER_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.counter_thesis",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "HPG"
+   },
+   "domain": "TECHNICAL",
+   "evidence_identity": "case_evidence:4928844414fd80a85c45ec86ca3febdcf9c6de1e2c8a5ac95ef4e9d1fea361ad",
+   "observation": {
+    "category": "TECHNICAL",
+    "code": "PRODUCER_COUNTER_THESIS_CODE",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.counter_thesis",
+    "source_value": "LOWER_SWING_HIGHS"
+   },
+   "relation": "GROUNDED_COUNTER_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.counter_thesis",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "HPG"
+   },
+   "domain": "TECHNICAL",
+   "evidence_identity": "case_evidence:a4e4d79835072bc076c8547eb43e29b08aac8594af6e192fab908e5dbe4e4586",
+   "observation": {
+    "category": "TECHNICAL",
+    "code": "PRODUCER_COUNTER_THESIS_CODE",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.counter_thesis",
+    "source_value": "LOWER_SWING_LOWS"
+   },
+   "relation": "GROUNDED_COUNTER_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.counter_thesis",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "HPG"
+   },
+   "domain": "TECHNICAL",
+   "evidence_identity": "case_evidence:5c47f9844cd80f2a7496bd649778e24763a29f4263235602b3eda109bcacfbd3",
+   "observation": {
+    "category": "TECHNICAL",
+    "code": "PRODUCER_COUNTER_THESIS_CODE",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.counter_thesis",
+    "source_value": "MA20_SLOPE_FALLING"
+   },
+   "relation": "GROUNDED_COUNTER_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.thesis_counter_thesis.counter_thesis",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "HPG"
+   },
+   "domain": "TECHNICAL",
+   "evidence_identity": "case_evidence:1d0a035d075a2e45157e2e9ced7b6001ed7ceb8a675e576784c2c6009a561fb7",
+   "observation": {
+    "authority": "CURRENT_DETERMINISTIC_RESEARCH",
+    "category": "TECHNICAL",
+    "code": "CARD_COUNTER_CLAIM_INFERENCE",
+    "evidence_field": "tactical.evidence_against",
+    "evidence_ref": "current_daily_decision_research.thesis_counter_thesis.counter_thesis",
+    "source_value": "20-day momentum is negative (-0.0095)."
+   },
+   "relation": "GROUNDED_COUNTER_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.thesis_counter_thesis.counter_thesis",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "HPG"
+   },
+   "domain": "TECHNICAL",
+   "evidence_identity": "case_evidence:a963f04f0303c73b2c0f306ceed3613f8920bab6f2e1c77e699e7cde94e6ac3a",
+   "observation": {
+    "authority": "CURRENT_DETERMINISTIC_RESEARCH",
+    "category": "TECHNICAL",
+    "code": "CARD_COUNTER_CLAIM_INFERENCE",
+    "evidence_field": "tactical.evidence_against",
+    "evidence_ref": "current_daily_decision_research.thesis_counter_thesis.counter_thesis",
+    "source_value": "Provider-relative volume is at or below the same-session cohort median today."
+   },
+   "relation": "GROUNDED_COUNTER_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "c2b5aec1f842539a9a281fc60f74000744554727af225cf7248e6603d91074b8",
+    "evidence_ref": "current_daily_decision_research.fundamental_research_context",
+    "producer_head": "1bb8106232d078fa5d475cab953b54462d57711e",
+    "product_identity": "current_daily_decision_research_product:669b5968e703adfe88297878b481f1ecd0d4327706f4cee10a79296235735d72",
+    "run_identity": "daily_producer_run:d4a2e4247511c56c4a91686bdf1e272861c57bb6f720c637400a1cc36900c27d",
+    "session": "2026-10-21",
+    "ticker": "HPG"
+   },
+   "domain": "OPERATING",
+   "evidence_identity": "case_evidence:ec4b776ae4ae5bee139724100b5ce24bcd3e2d1aba813d66f80048d4df49ba51",
+   "observation": {
+    "basis_source": "VOTE_DIMENSIONS_OF_OLDER_CARD",
+    "business_dimensions": [],
+    "items": [
+     {
+      "code": "FUNDAMENTAL_VOTE_DIMENSIONS",
+      "evidence_ref": "current_daily_decision_research.integrated_decision_v1.evidence_axes.FUNDAMENTAL.context",
+      "source_value": {
+       "adverse_votes": [],
+       "favorable_votes": [
+        "CAPITAL_STRUCTURE.DIRECTION"
+       ]
+      }
+     },
+     {
+      "code": "COMPOSITE_STATE_AND_REASONS",
+      "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context",
+      "reason_code_categories": {
+       "BALANCE_SHEET_STRENGTHENING": "FINANCIAL_POSITION",
+       "CURRENT_RATIO_IMPROVING": "FINANCIAL_POSITION",
+       "DEBT_TO_EQUITY_DECREASING": "FINANCIAL_POSITION",
+       "VALUATION_IN_LINE_WITH_PEERS": "VALUATION"
+      },
+      "source_value": {
+       "contradicting_reason_codes": [],
+       "financial_composite_state": "FUNDAMENTALS_IMPROVING",
+       "supporting_reason_codes": [
+        "BALANCE_SHEET_STRENGTHENING",
+        "DEBT_TO_EQUITY_DECREASING",
+        "CURRENT_RATIO_IMPROVING",
+        "VALUATION_IN_LINE_WITH_PEERS"
+       ]
+      }
+     }
+    ],
+    "position_dimensions": [
+     "CAPITAL_STRUCTURE"
+    ],
+    "state": "FINANCIAL_POSITION_ONLY",
+    "statement_code": "COMPOSITE_VERDICT_DESCRIBES_FINANCIAL_POSITION_NOT_BUSINESS_PROFITABILITY"
+   },
+   "relation": "CONSUMER_CLASSIFICATION_NOT_NEW_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "c2b5aec1f842539a9a281fc60f74000744554727af225cf7248e6603d91074b8",
+    "evidence_ref": "current_daily_decision_research.fundamental_research_context",
+    "producer_head": "1bb8106232d078fa5d475cab953b54462d57711e",
+    "product_identity": "current_daily_decision_research_product:669b5968e703adfe88297878b481f1ecd0d4327706f4cee10a79296235735d72",
+    "run_identity": "daily_producer_run:d4a2e4247511c56c4a91686bdf1e272861c57bb6f720c637400a1cc36900c27d",
+    "session": "2026-10-21",
+    "ticker": "HPG"
+   },
+   "domain": "CASH_BALANCE",
+   "evidence_identity": "case_evidence:9b906798a528cac018e22d8e93ae18b0b714705d92a626a89ac8955f51788c57",
+   "observation": {
+    "items": [
+     {
+      "code": "LEGACY_DIRECTIONS",
+      "evidence_ref": "current_daily_decision_research.fundamental_context",
+      "source_value": {
+       "earnings_direction": null,
+       "operating_cash_flow_direction": null,
+       "revenue_direction": null
+      }
+     }
+    ],
+    "state": "UNKNOWN",
+    "statement_code": "OLDER_CARD_HAS_NO_INCOME_TO_CASH_CONTEXT"
+   },
+   "relation": "CONSUMER_CLASSIFICATION_NOT_NEW_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "c2b5aec1f842539a9a281fc60f74000744554727af225cf7248e6603d91074b8",
+    "evidence_ref": "current_daily_decision_research.fundamental_research_context",
+    "producer_head": "1bb8106232d078fa5d475cab953b54462d57711e",
+    "product_identity": "current_daily_decision_research_product:669b5968e703adfe88297878b481f1ecd0d4327706f4cee10a79296235735d72",
+    "run_identity": "daily_producer_run:d4a2e4247511c56c4a91686bdf1e272861c57bb6f720c637400a1cc36900c27d",
+    "session": "2026-10-21",
+    "ticker": "HPG"
+   },
+   "domain": "CASH_BALANCE",
+   "evidence_identity": "case_evidence:8ba2bd400f25d1245e7f4c6874d044ac780316d517371bc32158455b6a199fdf",
+   "observation": {
+    "items": [],
+    "state": "FREE_CASH_FLOW_NOT_SUPPLIED",
+    "statement_code": "NO_PRODUCER_CAPEX_OR_FREE_CASH_FLOW_FIELD"
+   },
+   "relation": "CONSUMER_CLASSIFICATION_NOT_NEW_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "c2b5aec1f842539a9a281fc60f74000744554727af225cf7248e6603d91074b8",
+    "evidence_ref": "current_daily_decision_research.fundamental_research_context",
+    "producer_head": "1bb8106232d078fa5d475cab953b54462d57711e",
+    "product_identity": "current_daily_decision_research_product:669b5968e703adfe88297878b481f1ecd0d4327706f4cee10a79296235735d72",
+    "run_identity": "daily_producer_run:d4a2e4247511c56c4a91686bdf1e272861c57bb6f720c637400a1cc36900c27d",
+    "session": "2026-10-21",
+    "ticker": "HPG"
+   },
+   "domain": "OPERATING",
+   "evidence_identity": "case_evidence:99eacdfd00fede8423014ac532d3fcce5de1629ed72a854653f530e470327680",
+   "observation": {
+    "cautions": [
+     {
+      "code": "OLDER_CARD_ALIGNMENT_UNAVAILABLE",
+      "evidence_ref": "current_daily_decision_research.fundamental_context.revenue_vs_earnings_alignment",
+      "source_value": {
+       "reason": "NO_PROVIDER_TRAJECTORY_PROMOTION_TO_OFFICIAL",
+       "status": "UNAVAILABLE"
+      }
+     }
+    ],
+    "matched": [],
+    "refused": [],
+    "refused_metrics": [],
+    "state": "NO_MATCHED_COMPARISON",
+    "statement_code": "ONLY_PRODUCER_MATCHED_COMPARISONS_ARE_GROWTH_EVIDENCE"
+   },
+   "relation": "CONSUMER_CLASSIFICATION_NOT_NEW_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "c2b5aec1f842539a9a281fc60f74000744554727af225cf7248e6603d91074b8",
+    "evidence_ref": "current_daily_decision_research.fundamental_research_context",
+    "producer_head": "1bb8106232d078fa5d475cab953b54462d57711e",
+    "product_identity": "current_daily_decision_research_product:669b5968e703adfe88297878b481f1ecd0d4327706f4cee10a79296235735d72",
+    "run_identity": "daily_producer_run:d4a2e4247511c56c4a91686bdf1e272861c57bb6f720c637400a1cc36900c27d",
+    "session": "2026-10-21",
+    "ticker": "HPG"
+   },
+   "domain": "OPERATING",
+   "evidence_identity": "case_evidence:28605a3998337e74703a1d828239569cc45bb317de2b59750d2eb70f06954b00",
+   "observation": {
+    "management_forecast": "NOT_SUPPLIED_BY_PRODUCER",
+    "planned_or_pending": [],
+    "reported": [
+     {
+      "code": "REPORTED_EVENT_EXECUTED",
+      "evidence_ref": "current_daily_decision_research.corporate_intelligence_context.confirmed.corporate_intelligence_event:a288cd8c92daa7694a96c6939400a98b8e9c774f242ba819b9f24ce37a7dc62d",
+      "source_value": {
+       "evidence_identity": "event_evidence:1d6dd0b7d3b3ac28ce847e94d487969a56550440144de07f2420607747b34cfd",
+       "status": "EXECUTED"
+      }
+     }
+    ],
+    "state": "NO_PLANNED_ITEMS_SUPPLIED",
+    "statement_code": "PLANNED_APPROVED_OR_FORECAST_ITEMS_ARE_NOT_REPORTED_RESULTS",
+    "unreviewed_releases": []
+   },
+   "relation": "CONSUMER_CLASSIFICATION_NOT_NEW_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "02740143933e612bb6edd871074d33215c2b97fb688a929f9fc109ee70e3c509",
+    "evidence_ref": "current_daily_decision_research.fundamental_research_context",
+    "producer_head": "20a97427c2a0aec1a6b5538a34b32fd16f048dfe",
+    "product_identity": "current_daily_decision_research_product:de3a5d91c69ad70dc8979b25e21db46cb0b218f074e0c28f450938c844076287",
+    "run_identity": "daily_producer_run:78211b58dd804b5514ed76203ba6cdb465dc34dda735eae17b16f7b5da3cfab1",
+    "session": "2026-10-22",
+    "ticker": "HPG"
+   },
+   "domain": "CASH_BALANCE",
+   "evidence_identity": "case_evidence:f250b0864288a285927cc0dcc47483fbaa3bc23cce26b78b173c428094e0757c",
+   "observation": {
+    "items": [
+     {
+      "code": "LEGACY_DIRECTIONS",
+      "evidence_ref": "current_daily_decision_research.fundamental_context",
+      "source_value": {
+       "earnings_direction": null,
+       "operating_cash_flow_direction": null,
+       "revenue_direction": null
+      }
+     }
+    ],
+    "state": "UNKNOWN",
+    "statement_code": "OLDER_CARD_HAS_NO_INCOME_TO_CASH_CONTEXT"
+   },
+   "relation": "CONSUMER_CLASSIFICATION_NOT_NEW_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "02740143933e612bb6edd871074d33215c2b97fb688a929f9fc109ee70e3c509",
+    "evidence_ref": "current_daily_decision_research.fundamental_research_context",
+    "producer_head": "20a97427c2a0aec1a6b5538a34b32fd16f048dfe",
+    "product_identity": "current_daily_decision_research_product:de3a5d91c69ad70dc8979b25e21db46cb0b218f074e0c28f450938c844076287",
+    "run_identity": "daily_producer_run:78211b58dd804b5514ed76203ba6cdb465dc34dda735eae17b16f7b5da3cfab1",
+    "session": "2026-10-22",
+    "ticker": "HPG"
+   },
+   "domain": "CASH_BALANCE",
+   "evidence_identity": "case_evidence:b711096086230b2608070ac6b23caea74649e14bf438c4f513e357c2c2597195",
+   "observation": {
+    "items": [],
+    "state": "FREE_CASH_FLOW_NOT_SUPPLIED",
+    "statement_code": "NO_PRODUCER_CAPEX_OR_FREE_CASH_FLOW_FIELD"
+   },
+   "relation": "CONSUMER_CLASSIFICATION_NOT_NEW_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.fundamental_research_context",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "HPG"
+   },
+   "domain": "CASH_BALANCE",
+   "evidence_identity": "case_evidence:50183818a98a3438eafc2e957bb81c009940232e1c1015b546697df61fdfcfe4",
+   "observation": {
+    "items": [
+     {
+      "code": "LEGACY_DIRECTIONS",
+      "evidence_ref": "current_daily_decision_research.fundamental_context",
+      "source_value": {
+       "earnings_direction": null,
+       "operating_cash_flow_direction": null,
+       "revenue_direction": null
+      }
+     }
+    ],
+    "state": "UNKNOWN",
+    "statement_code": "OLDER_CARD_HAS_NO_INCOME_TO_CASH_CONTEXT"
+   },
+   "relation": "CONSUMER_CLASSIFICATION_NOT_NEW_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.fundamental_research_context",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "HPG"
+   },
+   "domain": "CASH_BALANCE",
+   "evidence_identity": "case_evidence:a80ead18a873e617ca366e403a942736fff312a5c37f51801d1a137a6242ddea",
+   "observation": {
+    "items": [],
+    "state": "FREE_CASH_FLOW_NOT_SUPPLIED",
+    "statement_code": "NO_PRODUCER_CAPEX_OR_FREE_CASH_FLOW_FIELD"
+   },
+   "relation": "CONSUMER_CLASSIFICATION_NOT_NEW_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.counter_thesis",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "HPG"
+   },
+   "domain": "TECHNICAL",
+   "evidence_identity": "case_evidence:8e00c7aa1fd3233ead23fc5195dc849aac26cf5d903c8b618ef3dd16f1c65cca",
+   "observation": {
+    "category": "TECHNICAL",
+    "code": "PRODUCER_COUNTER_THESIS_CODE",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.counter_thesis",
+    "source_value": "EARLY_BEARISH_REVERSAL_STRUCTURE"
+   },
+   "relation": "GROUNDED_COUNTER_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.counter_thesis",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "HPG"
+   },
+   "domain": "TECHNICAL",
+   "evidence_identity": "case_evidence:9e4ea977909adf229b53fbb0d703779d239c198b4be56d25b4b3766a034782e8",
+   "observation": {
+    "category": "TECHNICAL",
+    "code": "PRODUCER_COUNTER_THESIS_CODE",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.counter_thesis",
+    "source_value": "LOWER_SWING_HIGHS"
+   },
+   "relation": "GROUNDED_COUNTER_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.thesis_counter_thesis.counter_thesis",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "HPG"
+   },
+   "domain": "TECHNICAL",
+   "evidence_identity": "case_evidence:28616016e08f8bfeb49ab04d267f156e90e7a2651b6cbf5c7cd49fb76b39c38a",
+   "observation": {
+    "authority": "CURRENT_DETERMINISTIC_RESEARCH",
+    "category": "TECHNICAL",
+    "code": "CARD_COUNTER_CLAIM_INFERENCE",
+    "evidence_field": "tactical.evidence_against",
+    "evidence_ref": "current_daily_decision_research.thesis_counter_thesis.counter_thesis",
+    "source_value": "Today's session return is negative (-0.0141)."
+   },
+   "relation": "GROUNDED_COUNTER_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.thesis_counter_thesis.counter_thesis",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "HPG"
+   },
+   "domain": "TECHNICAL",
+   "evidence_identity": "case_evidence:f15867f73c207e532ee67e87c9832a4a39fa7b7cb2f308385abbec34583c43ac",
+   "observation": {
+    "authority": "CURRENT_DETERMINISTIC_RESEARCH",
+    "category": "TECHNICAL",
+    "code": "CARD_COUNTER_CLAIM_INFERENCE",
+    "evidence_field": "tactical.evidence_against",
+    "evidence_ref": "current_daily_decision_research.thesis_counter_thesis.counter_thesis",
+    "source_value": "Provider-relative volume is at or below the same-session cohort median today."
+   },
+   "relation": "GROUNDED_COUNTER_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.trigger",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "HPG"
+   },
+   "domain": "TECHNICAL",
+   "evidence_identity": "case_evidence:6980d69c76726a41a8b4a428c5a320044ef58e7fad5c2bfbcaa1dec28b28c503",
+   "observation": {
+    "kind": "TECHNICAL_TRIGGER",
+    "outcome_scope": "SEE_EXPLICIT_PRODUCER_STATE_ONLY",
+    "source_occurrence": {
+     "session": "2026-10-23",
+     "text": "A decisive move away from the 20-day moving average combined with a same-session momentum quartile extreme (top or bottom) would resolve the current lack of a directional edge."
+    }
+   },
+   "relation": "PRODUCER_CONDITION_NOT_CONSUMER_OUTCOME"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.invalidation",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "HPG"
+   },
+   "domain": "TECHNICAL",
+   "evidence_identity": "case_evidence:f431bb5d7d4872b31cf73be33d2722df84924155322cf56f7ba5a1520d846e0e",
+   "observation": {
+    "kind": "TECHNICAL_INVALIDATION",
+    "outcome_scope": "SEE_EXPLICIT_PRODUCER_STATE_ONLY",
+    "source_occurrence": {
+     "session": "2026-10-23",
+     "text": "A move to a same-session momentum quartile extreme (top or bottom) combined with price moving decisively away from the 20-day moving average would invalidate the neutral read."
+    }
+   },
+   "relation": "PRODUCER_CONDITION_NOT_CONSUMER_OUTCOME"
+  }
+ ],
+ "grouped_next_investigation": [
+  {
+   "domain": "OPERATING",
+   "input_needed": "Doanh thu, lợi nhuận, biên lợi nhuận và giải trình hoạt động cùng kỳ, cùng phạm vi báo cáo; không suy nguyên nhân từ tăng trưởng.",
+   "producer_questions": [
+    "case_evidence:101bbf3e04e6ed9f1d541a70d2bf5da3cef6af158170b3501ba6b67bf3546bb0"
+   ]
+  },
+  {
+   "domain": "CASH_BALANCE",
+   "input_needed": "Lợi nhuận và dòng tiền hoạt động cùng kỳ; biến động vốn lưu động, nợ, nhu cầu vốn và tính áp dụng theo loại hình doanh nghiệp. Không suy FCF từ lợi nhuận.",
+   "producer_questions": [
+    "case_evidence:855bb9fc8bcf286bcd31a846c28f6aaa5cba9e040be6da3ccfef8898a0ccdfa3"
+   ]
+  },
+  {
+   "domain": "VALUATION",
+   "input_needed": "Giá, cơ sở cổ phiếu, mẫu số tài chính và phương pháp đủ điều kiện. Giá trị nội tại cần đầu vào và kết quả evaluator được Producer quản lý.",
+   "producer_questions": []
+  },
+  {
+   "domain": "BUSINESS_RISK",
+   "input_needed": "Bằng chứng nguồn để kiểm tra từng phản luận, cơ chế kinh tế và các giả định chưa được xác nhận.",
+   "producer_questions": [
+    "case_evidence:988fe03f79d6906eedaff0c709d0f20918269b36f00d55122d360182a089af16",
+    "case_evidence:6f58c90d72326872580e5c63c45df3b08fdb36d36d585f675767922bbeb272a4"
+   ]
+  },
+  {
+   "domain": "TECHNICAL",
+   "input_needed": "Điều kiện và outcome do đúng chủ thể báo cáo; đổi trạng thái không chứng minh điều kiện đã xảy ra.",
+   "producer_questions": []
+  },
+  {
+   "domain": "TEMPORAL",
+   "input_needed": "Phiên giao chính xác, knowledge time, kỳ báo cáo và revision để tách thay đổi kinh tế khỏi đổi cách biểu diễn hoặc thiếu giao dữ liệu.",
+   "producer_questions": []
+  },
+  {
+   "domain": "COMPARISON",
+   "input_needed": "Cùng loại hình kinh tế, kỳ, phạm vi, tiền tệ, đơn vị, phương pháp và cơ sở cổ phiếu; các giá trị khác cơ sở được xem riêng.",
+   "producer_questions": []
+  }
+ ],
+ "overview": [
+  {
+   "conditions_without_verified_outcome": 3,
+   "delivered_sessions": 4,
+   "latest_research_action_posture": "WAIT_FOR_CONFIRMATION",
+   "latest_session": "2026-10-23",
+   "newly_delivered_old_evidence": 2,
+   "persisting_risks": 3,
+   "posture_value_changes": 1,
+   "status": "LONGITUDINAL_VIEW",
+   "supplied_sessions": 4,
+   "ticker": "HPG"
+  }
+ ],
+ "question_investigations": [
+  {
+   "direct_reference_links": [],
+   "domains": [
+    "CASH_BALANCE",
+    "OPERATING",
+    "TECHNICAL",
+    "VALUATION"
+   ],
+   "evidence_links": [],
+   "interpretation": "HUMAN_FRAMING_NOT_VERIFIED_FACT",
+   "investigation": {
+    "CASH_BALANCE": {
+     "evidence_by_relation": {
+      "CONSUMER_CLASSIFICATION_NOT_NEW_FACT": [
+       "case_evidence:60d0aaa09685dc665eebeb5f4cfa635e21ce59e86e3b7408c3e4ac1517b76ad8",
+       "case_evidence:a80efe29e28d464658dde1994c74c228b56bb695454e41537a21e802ee193340",
+       "case_evidence:9b906798a528cac018e22d8e93ae18b0b714705d92a626a89ac8955f51788c57",
+       "case_evidence:8ba2bd400f25d1245e7f4c6874d044ac780316d517371bc32158455b6a199fdf",
+       "case_evidence:f250b0864288a285927cc0dcc47483fbaa3bc23cce26b78b173c428094e0757c",
+       "case_evidence:b711096086230b2608070ac6b23caea74649e14bf438c4f513e357c2c2597195"
+      ],
+      "PRODUCER_RESEARCH_QUESTION_NOT_FACT": [
+       "case_evidence:e3f40f86f4f237f8f293226025ae12b0d415eb6da0c57acd0cf82f23d2e09ff4",
+       "case_evidence:77f7478247a6761bfa9dbe4d83a99afc473c742fb496afd72ba84e0c91b9325c",
+       "case_evidence:5b54f6096dceff569c07e38c109c09e5f57b9bfbfa41c42c1243378a046c0187",
+       "case_evidence:855bb9fc8bcf286bcd31a846c28f6aaa5cba9e040be6da3ccfef8898a0ccdfa3"
+      ],
+      "RELATED_INSUFFICIENT": [
+       "case_evidence:3d4f15720e0db3cf6473510a1230dc2cfe21248c24df3cabdb2726d79d90e71a",
+       "case_evidence:61f86d0af44a1eeea990cf09b7d7cdf364b92b2652504909e7bb8114f0d6682f",
+       "case_evidence:e40dd3efc699e482cd9c0569238396a9db9a768fd3476f4715ebcb1218eb0db2",
+       "case_evidence:32b112d235b1770e71899a851f4d24cfd39b7c90e0de020e73418706c8a0aa25"
+      ]
+     },
+     "input_needed": "Lợi nhuận và dòng tiền hoạt động cùng kỳ; biến động vốn lưu động, nợ, nhu cầu vốn và tính áp dụng theo loại hình doanh nghiệp. Không suy FCF từ lợi nhuận."
+    },
+    "OPERATING": {
+     "evidence_by_relation": {
+      "CONSUMER_CLASSIFICATION_NOT_NEW_FACT": [
+       "case_evidence:71d7536912c13f66def9a6a42ea7a6fa2ff9bfe2a9c05abbc342e34a61c02bb8",
+       "case_evidence:cfdad47e741ab47982fd8085fd2142ea517655451006935ce25c7e64b8e517d7",
+       "case_evidence:139a649cc156731d5e3642e78bbf0739eb03a981fba526adf4f26672e46e8d88",
+       "case_evidence:ec4b776ae4ae5bee139724100b5ce24bcd3e2d1aba813d66f80048d4df49ba51",
+       "case_evidence:99eacdfd00fede8423014ac532d3fcce5de1629ed72a854653f530e470327680",
+       "case_evidence:28605a3998337e74703a1d828239569cc45bb317de2b59750d2eb70f06954b00"
+      ],
+      "PRODUCER_EARNINGS_QUALITY_CONTEXT": [
+       "case_evidence:38e9842b49339c1807ae12870c57b68370e9c0168abd5b8ec52b3f1908f4da8a"
+      ],
+      "PRODUCER_RESEARCH_QUESTION_NOT_FACT": [
+       "case_evidence:5bab324da6bf0fbe231d40fad7553c4fe224dcec402099ccfe6862591887d8ff",
+       "case_evidence:77c84d957a883d5fe7379bce8cf602a762764b856b1dafd2333eac1c799fc678",
+       "case_evidence:101bbf3e04e6ed9f1d541a70d2bf5da3cef6af158170b3501ba6b67bf3546bb0"
+      ],
+      "QUALIFIED_OBSERVATION": [
+       "case_evidence:ba45314e80ee46b4af79e109f6b5bbaaadea21b3ed90fd8acba33aa3cc420d2b",
+       "case_evidence:f5bc5317e93fbe68be53f05a247d30687c8b4ad676a0833e60631f7e97ec0fbe"
+      ],
+      "RELATED_INSUFFICIENT": [
+       "case_evidence:1f4f71cb646d64a0e69d3fb1efaa1dc9b3bf9288cdfffe17fc2b78b2024050b6",
+       "case_evidence:348960498942f47abac85f584541c2f87ee4e3fdfd2ebd6cad9f1f95eb9cc28e",
+       "case_evidence:ff8ca76be1cdc5d95a8f4466bb539fd4627b6def387b0a1d2ed468267873246d",
+       "case_evidence:f9fac45d7d2d1dd5fc928c884b2201dc747f3491f7ae661a3def4eca89893a95"
+      ]
+     },
+     "input_needed": "Doanh thu, lợi nhuận, biên lợi nhuận và giải trình hoạt động cùng kỳ, cùng phạm vi báo cáo; không suy nguyên nhân từ tăng trưởng."
+    },
+    "TECHNICAL": {
+     "evidence_by_relation": {
+      "GROUNDED_COUNTER_ARGUMENT": [
+       "case_evidence:82daf23dcc8a7fad058a35258b222a313188c81f51befc968c1790a129cad578",
+       "case_evidence:4928844414fd80a85c45ec86ca3febdcf9c6de1e2c8a5ac95ef4e9d1fea361ad",
+       "case_evidence:a4e4d79835072bc076c8547eb43e29b08aac8594af6e192fab908e5dbe4e4586",
+       "case_evidence:5c47f9844cd80f2a7496bd649778e24763a29f4263235602b3eda109bcacfbd3",
+       "case_evidence:1d0a035d075a2e45157e2e9ced7b6001ed7ceb8a675e576784c2c6009a561fb7",
+       "case_evidence:a963f04f0303c73b2c0f306ceed3613f8920bab6f2e1c77e699e7cde94e6ac3a"
+      ],
+      "PRODUCER_CONDITION_NOT_CONSUMER_OUTCOME": [
+       "case_evidence:c40b4887fdc0bd6142b4be53ec9781f305991b8fcbe506ef0c39b1b837cb580c",
+       "case_evidence:bb51cc319835e3bddfc462b270c5f8407a3c5c6df754ce6050177a9925f13c50",
+       "case_evidence:0fc7f7e05a68028aa53724a651769102423fdf6228dc198bfd530de42507683a",
+       "case_evidence:83d338f40db38a6ef9d606f1e1a442237bc2e6a10e78cf4b9ed6ceb3acae9193",
+       "case_evidence:057ef397fca65dd0633ca94152c7ff4cc2739f242ced938bd60646385fc2c0d4",
+       "case_evidence:d35edd2bc8ebf362095d2da8f1d8be81ba8539ac64c071603589753127b26fd1"
+      ],
+      "TECHNICAL_CONTEXT": [
+       "case_evidence:fc11e7175bc9659ca2255a84b866d7be5b0bf47a8c4cbcf009db028e25940c33",
+       "case_evidence:1bd69ca5ac454fb56b0fd0d2d8343cadedfd744a731c7e75ee6730854a5ce737",
+       "case_evidence:f039414d87ceba7b55a0b4163a2fd1ad9ccee5a2a30694a55305b74eefc374d7",
+       "case_evidence:b4ffa55b6c378ee95da29e83b0a7cf311b072be02e5a5b8a670ad16c41dec911"
+      ]
+     },
+     "input_needed": "Điều kiện và outcome do đúng chủ thể báo cáo; đổi trạng thái không chứng minh điều kiện đã xảy ra."
+    },
+    "VALUATION": {
+     "evidence_by_relation": {
+      "RELATED_INSUFFICIENT": [
+       "case_evidence:b0ba1580e68be0d83304f4c9b6968a6124a72604ba13332308859a0272cd0853",
+       "case_evidence:6fb9184285623f07225a486ceb90dd7b98cb19ea301927d40060ecff6016928a",
+       "case_evidence:d2ef49442cd5655bea3aefaad6a554be4ad8279bbe87fa2079bc7197a7b96b12",
+       "case_evidence:46b5825103f05319056cf2e7d3a4576506263dc0e5142cd01d5aea12ca9de528"
+      ]
+     },
+     "input_needed": "Giá, cơ sở cổ phiếu, mẫu số tài chính và phương pháp đủ điều kiện. Giá trị nội tại cần đầu vào và kết quả evaluator được Producer quản lý."
+    }
+   },
+   "kind": "QUESTION",
+   "mapping_status": "EXPLICIT_DOMAIN_SCOPE_NOT_ENTAILMENT_VERIFIED",
+   "text": "HPG có cấu trúc kỹ thuật đáng chú ý: bằng chứng hoạt động, dòng tiền và định giá thực sự hỗ trợ được điều gì?",
+   "topic_identity": "case_topic:b2dfd738e34447be9d21052778e7e3b89408f02d916e65cef84392f09f71f9f1",
+   "verdict": "UNANSWERED_NO_AUTOMATIC_THESIS_CONFIRMATION"
+  },
+  {
+   "direct_reference_links": [],
+   "domains": [],
+   "evidence_links": [],
+   "interpretation": "HUMAN_FRAMING_NOT_VERIFIED_FACT",
+   "investigation": {
+    "BUSINESS_RISK": {
+     "evidence_by_relation": {
+      "CHALLENGING_ARGUMENT": [
+       "case_evidence:09a4d1d974e354abe974a8a05a9a67f8e8e67bdd2a27ced0bb7bd5c0b62bf56c",
+       "case_evidence:4b28188cd864ad9459722d040e982eaf47d7aabc24afa358ccd788e6feb083e0",
+       "case_evidence:b57ce0e7f538947ca4852abd0ec81bc67c1642e54766783bc31545a92c8b01c9",
+       "case_evidence:e831411ca3ac712cfa5df60070d0b09048d1253bc3ca94664561f266cc442ad7",
+       "case_evidence:61805d4b3f19f9ebc539c03d60b5462be79bb7b532ab73e8b31793faea602064"
+      ],
+      "PRODUCER_CONDITION_NOT_CONSUMER_OUTCOME": [
+       "case_evidence:a732ffdb1832738ea7f5caeca6a78f388340a7e247ba0c4f084b54d68a48e8f0",
+       "case_evidence:b942877d035aac35ee398bbd38b01fb822e6d0393a34dc2b9873fc489c562ab6",
+       "case_evidence:93218cff7328d7ddd54762ce6ba72c97e4ec6a721a28fc5414513d8aed90176a",
+       "case_evidence:fecf5b040d58c86e4e6b4243e03226f84f285d8da66b2a63b6b19b1df2bd387a",
+       "case_evidence:bf5a5eddeb3d9fc19258b69281ab3747c1af70584927fb621caa28d56afca925",
+       "case_evidence:5775b299eee6d350eafa2f4f57216e8957d25c631fe72e29b432801e44cb7889"
+      ],
+      "PRODUCER_RESEARCH_QUESTION_NOT_FACT": [
+       "case_evidence:7bee97c35326debc5ba69484b8fa59915c81c0682643ced078e44c083f7d0525",
+       "case_evidence:29e43ce44ff7e634c078313d1f434d51050ffd6406c34ecbccd02002d1487605",
+       "case_evidence:8a7e62056ef6d1f7365059dcf2b98af05120665fd154ce8f06a5a3f7eafb04a4",
+       "case_evidence:ea662f0d70af6583b1d51c846188d68e50f3b499c661670826db7255a0a2a3ab",
+       "case_evidence:ff04315b9b1772c3b79e30775d6330d075fe17b41fbfb45f30c9a023fe526c09",
+       "case_evidence:13763535d26c43237cb34b887fc6fd31de72a3d2fc66676051ce34c6b494e5bf"
+      ],
+      "RELATED_INSUFFICIENT": [
+       "case_evidence:d5d402591347c1955680d48e593f6e5bc57006461b2938bfb32a090c19f43f68",
+       "case_evidence:56db61ce63c0551156f91903d4ab37f5a127e51767801b09ef7266483f9170e5",
+       "case_evidence:08f0171bfa85ca072d559bcc64b5155850c39e3952df38c9193bde7feeb5c327",
+       "case_evidence:05b4e0e670d7b25a4f2ee78add27089df65ebe0b82a9be892cbaee2df2b468f4",
+       "case_evidence:cfb64c845f0c878ab91a58531590d0e7ddfcc1fa29eddef9c2709191cc993dbd",
+       "case_evidence:75a109e272453ba351fb796391f03ba421b00e6ab07975cf96bc88d1339488f4"
+      ],
+      "SOURCE_CONFLICT": [
+       "case_evidence:3ef58b8ad5e308745edfd40e2414a743e3bd4013c46ae40d2f1583e8343e0b26",
+       "case_evidence:08381a269b178519ed5994ee481818a6355aae56e9d0ee24f0703424e9289c1f",
+       "case_evidence:99c8da7db3c35b466eeb630b81717949c581d4550f65a1392439b0f8276a6bcd",
+       "case_evidence:755743a27e708bbb3ae13d4049b96110e596a2d07a5d26e3d1ee330087c36337",
+       "case_evidence:7d41082253d5da4ca102076d94929d09b19c16951bcdaeb24288c33e2b885ab8",
+       "case_evidence:23937b3916c779067ed9fcc001eb38a6113a092c57594bb8f519546f86d80231"
+      ],
+      "SUPPORTING_ARGUMENT": [
+       "case_evidence:24c33cbc5cf4442f5eea2ee1a27a7187b270876d4a16f165adffb9b1f57295ca",
+       "case_evidence:035f28601cbd04fcabebdc2c921c81a566193e47234c61487758f1407eff1a5e",
+       "case_evidence:a0c0364f7f096937299e369b728e13c3c7db6c9381c2a459ced5b5a9cd6a65cc",
+       "case_evidence:02bd875fde919aacf787c8c9a7fbbf31ef74573c0c4aa3bdcc6e095b8fba9e41",
+       "case_evidence:aae6223b4f7256c36bfd28526143077dd99dcf77b7674587766be9f6e00b4f77",
+       "case_evidence:376f36774eadb15514b863cc6c746b12db777476ce4495ab99e740e37b1a918b"
+      ]
+     },
+     "input_needed": "Bằng chứng nguồn để kiểm tra từng phản luận, cơ chế kinh tế và các giả định chưa được xác nhận."
+    },
+    "CASH_BALANCE": {
+     "evidence_by_relation": {
+      "CONSUMER_CLASSIFICATION_NOT_NEW_FACT": [
+       "case_evidence:60d0aaa09685dc665eebeb5f4cfa635e21ce59e86e3b7408c3e4ac1517b76ad8",
+       "case_evidence:a80efe29e28d464658dde1994c74c228b56bb695454e41537a21e802ee193340",
+       "case_evidence:9b906798a528cac018e22d8e93ae18b0b714705d92a626a89ac8955f51788c57",
+       "case_evidence:8ba2bd400f25d1245e7f4c6874d044ac780316d517371bc32158455b6a199fdf",
+       "case_evidence:f250b0864288a285927cc0dcc47483fbaa3bc23cce26b78b173c428094e0757c",
+       "case_evidence:b711096086230b2608070ac6b23caea74649e14bf438c4f513e357c2c2597195"
+      ],
+      "PRODUCER_RESEARCH_QUESTION_NOT_FACT": [
+       "case_evidence:e3f40f86f4f237f8f293226025ae12b0d415eb6da0c57acd0cf82f23d2e09ff4",
+       "case_evidence:77f7478247a6761bfa9dbe4d83a99afc473c742fb496afd72ba84e0c91b9325c",
+       "case_evidence:5b54f6096dceff569c07e38c109c09e5f57b9bfbfa41c42c1243378a046c0187",
+       "case_evidence:855bb9fc8bcf286bcd31a846c28f6aaa5cba9e040be6da3ccfef8898a0ccdfa3"
+      ],
+      "RELATED_INSUFFICIENT": [
+       "case_evidence:3d4f15720e0db3cf6473510a1230dc2cfe21248c24df3cabdb2726d79d90e71a",
+       "case_evidence:61f86d0af44a1eeea990cf09b7d7cdf364b92b2652504909e7bb8114f0d6682f",
+       "case_evidence:e40dd3efc699e482cd9c0569238396a9db9a768fd3476f4715ebcb1218eb0db2",
+       "case_evidence:32b112d235b1770e71899a851f4d24cfd39b7c90e0de020e73418706c8a0aa25"
+      ]
+     },
+     "input_needed": "Lợi nhuận và dòng tiền hoạt động cùng kỳ; biến động vốn lưu động, nợ, nhu cầu vốn và tính áp dụng theo loại hình doanh nghiệp. Không suy FCF từ lợi nhuận."
+    },
+    "COMPARISON": {
+     "evidence_by_relation": {},
+     "input_needed": "Cùng loại hình kinh tế, kỳ, phạm vi, tiền tệ, đơn vị, phương pháp và cơ sở cổ phiếu; các giá trị khác cơ sở được xem riêng."
+    },
+    "OPERATING": {
+     "evidence_by_relation": {
+      "CONSUMER_CLASSIFICATION_NOT_NEW_FACT": [
+       "case_evidence:71d7536912c13f66def9a6a42ea7a6fa2ff9bfe2a9c05abbc342e34a61c02bb8",
+       "case_evidence:cfdad47e741ab47982fd8085fd2142ea517655451006935ce25c7e64b8e517d7",
+       "case_evidence:139a649cc156731d5e3642e78bbf0739eb03a981fba526adf4f26672e46e8d88",
+       "case_evidence:ec4b776ae4ae5bee139724100b5ce24bcd3e2d1aba813d66f80048d4df49ba51",
+       "case_evidence:99eacdfd00fede8423014ac532d3fcce5de1629ed72a854653f530e470327680",
+       "case_evidence:28605a3998337e74703a1d828239569cc45bb317de2b59750d2eb70f06954b00"
+      ],
+      "PRODUCER_EARNINGS_QUALITY_CONTEXT": [
+       "case_evidence:38e9842b49339c1807ae12870c57b68370e9c0168abd5b8ec52b3f1908f4da8a"
+      ],
+      "PRODUCER_RESEARCH_QUESTION_NOT_FACT": [
+       "case_evidence:5bab324da6bf0fbe231d40fad7553c4fe224dcec402099ccfe6862591887d8ff",
+       "case_evidence:77c84d957a883d5fe7379bce8cf602a762764b856b1dafd2333eac1c799fc678",
+       "case_evidence:101bbf3e04e6ed9f1d541a70d2bf5da3cef6af158170b3501ba6b67bf3546bb0"
+      ],
+      "QUALIFIED_OBSERVATION": [
+       "case_evidence:ba45314e80ee46b4af79e109f6b5bbaaadea21b3ed90fd8acba33aa3cc420d2b",
+       "case_evidence:f5bc5317e93fbe68be53f05a247d30687c8b4ad676a0833e60631f7e97ec0fbe"
+      ],
+      "RELATED_INSUFFICIENT": [
+       "case_evidence:1f4f71cb646d64a0e69d3fb1efaa1dc9b3bf9288cdfffe17fc2b78b2024050b6",
+       "case_evidence:348960498942f47abac85f584541c2f87ee4e3fdfd2ebd6cad9f1f95eb9cc28e",
+       "case_evidence:ff8ca76be1cdc5d95a8f4466bb539fd4627b6def387b0a1d2ed468267873246d",
+       "case_evidence:f9fac45d7d2d1dd5fc928c884b2201dc747f3491f7ae661a3def4eca89893a95"
+      ]
+     },
+     "input_needed": "Doanh thu, lợi nhuận, biên lợi nhuận và giải trình hoạt động cùng kỳ, cùng phạm vi báo cáo; không suy nguyên nhân từ tăng trưởng."
+    },
+    "TECHNICAL": {
+     "evidence_by_relation": {
+      "GROUNDED_COUNTER_ARGUMENT": [
+       "case_evidence:82daf23dcc8a7fad058a35258b222a313188c81f51befc968c1790a129cad578",
+       "case_evidence:4928844414fd80a85c45ec86ca3febdcf9c6de1e2c8a5ac95ef4e9d1fea361ad",
+       "case_evidence:a4e4d79835072bc076c8547eb43e29b08aac8594af6e192fab908e5dbe4e4586",
+       "case_evidence:5c47f9844cd80f2a7496bd649778e24763a29f4263235602b3eda109bcacfbd3",
+       "case_evidence:1d0a035d075a2e45157e2e9ced7b6001ed7ceb8a675e576784c2c6009a561fb7",
+       "case_evidence:a963f04f0303c73b2c0f306ceed3613f8920bab6f2e1c77e699e7cde94e6ac3a"
+      ],
+      "PRODUCER_CONDITION_NOT_CONSUMER_OUTCOME": [
+       "case_evidence:c40b4887fdc0bd6142b4be53ec9781f305991b8fcbe506ef0c39b1b837cb580c",
+       "case_evidence:bb51cc319835e3bddfc462b270c5f8407a3c5c6df754ce6050177a9925f13c50",
+       "case_evidence:0fc7f7e05a68028aa53724a651769102423fdf6228dc198bfd530de42507683a",
+       "case_evidence:83d338f40db38a6ef9d606f1e1a442237bc2e6a10e78cf4b9ed6ceb3acae9193",
+       "case_evidence:057ef397fca65dd0633ca94152c7ff4cc2739f242ced938bd60646385fc2c0d4",
+       "case_evidence:d35edd2bc8ebf362095d2da8f1d8be81ba8539ac64c071603589753127b26fd1"
+      ],
+      "TECHNICAL_CONTEXT": [
+       "case_evidence:fc11e7175bc9659ca2255a84b866d7be5b0bf47a8c4cbcf009db028e25940c33",
+       "case_evidence:1bd69ca5ac454fb56b0fd0d2d8343cadedfd744a731c7e75ee6730854a5ce737",
+       "case_evidence:f039414d87ceba7b55a0b4163a2fd1ad9ccee5a2a30694a55305b74eefc374d7",
+       "case_evidence:b4ffa55b6c378ee95da29e83b0a7cf311b072be02e5a5b8a670ad16c41dec911"
+      ]
+     },
+     "input_needed": "Điều kiện và outcome do đúng chủ thể báo cáo; đổi trạng thái không chứng minh điều kiện đã xảy ra."
+    },
+    "TEMPORAL": {
+     "evidence_by_relation": {},
+     "input_needed": "Phiên giao chính xác, knowledge time, kỳ báo cáo và revision để tách thay đổi kinh tế khỏi đổi cách biểu diễn hoặc thiếu giao dữ liệu."
+    },
+    "VALUATION": {
+     "evidence_by_relation": {
+      "RELATED_INSUFFICIENT": [
+       "case_evidence:b0ba1580e68be0d83304f4c9b6968a6124a72604ba13332308859a0272cd0853",
+       "case_evidence:6fb9184285623f07225a486ceb90dd7b98cb19ea301927d40060ecff6016928a",
+       "case_evidence:d2ef49442cd5655bea3aefaad6a554be4ad8279bbe87fa2079bc7197a7b96b12",
+       "case_evidence:46b5825103f05319056cf2e7d3a4576506263dc0e5142cd01d5aea12ca9de528"
+      ]
+     },
+     "input_needed": "Giá, cơ sở cổ phiếu, mẫu số tài chính và phương pháp đủ điều kiện. Giá trị nội tại cần đầu vào và kết quả evaluator được Producer quản lý."
+    }
+   },
+   "kind": "HYPOTHESIS",
+   "mapping_status": "UNMAPPED_HUMAN_TEXT_REQUIRES_INVESTIGATION",
+   "text": "Giả thuyết nhà đầu tư: cấu trúc kỹ thuật có thể đi cùng cải thiện kinh doanh; cần bằng chứng độc lập để kiểm tra.",
+   "topic_identity": "case_topic:8a8d383b2c3e06e2956c6433b3931d65efd34337317af0e08448edb956f35ca9",
+   "verdict": "UNANSWERED_NO_AUTOMATIC_THESIS_CONFIRMATION"
+  }
+ ],
+ "request": {
+  "contract_version": "investment_research_case_request/v1",
+  "members": [
+   {
+    "research_role": "COMPARISON_ONLY",
+    "ticker": "HPG"
+   }
+  ],
+  "sessions": [
+   {
+    "expected_bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "expected_run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16"
+   },
+   {
+    "expected_bundle_sha256": "c2b5aec1f842539a9a281fc60f74000744554727af225cf7248e6603d91074b8",
+    "expected_run_identity": "daily_producer_run:d4a2e4247511c56c4a91686bdf1e272861c57bb6f720c637400a1cc36900c27d",
+    "session": "2026-10-21"
+   },
+   {
+    "expected_bundle_sha256": "02740143933e612bb6edd871074d33215c2b97fb688a929f9fc109ee70e3c509",
+    "expected_run_identity": "daily_producer_run:78211b58dd804b5514ed76203ba6cdb465dc34dda735eae17b16f7b5da3cfab1",
+    "session": "2026-10-22"
+   },
+   {
+    "expected_bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "expected_run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23"
+   }
+  ],
+  "topics": [
+   {
+    "domains": [
+     "CASH_BALANCE",
+     "OPERATING",
+     "TECHNICAL",
+     "VALUATION"
+    ],
+    "evidence_links": [],
+    "interpretation": "HUMAN_FRAMING_NOT_VERIFIED_FACT",
+    "kind": "QUESTION",
+    "text": "HPG có cấu trúc kỹ thuật đáng chú ý: bằng chứng hoạt động, dòng tiền và định giá thực sự hỗ trợ được điều gì?",
+    "topic_identity": "case_topic:b2dfd738e34447be9d21052778e7e3b89408f02d916e65cef84392f09f71f9f1"
+   },
+   {
+    "domains": [],
+    "evidence_links": [],
+    "interpretation": "HUMAN_FRAMING_NOT_VERIFIED_FACT",
+    "kind": "HYPOTHESIS",
+    "text": "Giả thuyết nhà đầu tư: cấu trúc kỹ thuật có thể đi cùng cải thiện kinh doanh; cần bằng chứng độc lập để kiểm tra.",
+    "topic_identity": "case_topic:8a8d383b2c3e06e2956c6433b3931d65efd34337317af0e08448edb956f35ca9"
+   }
+  ]
+ },
+ "session_basis": [
+  {
+   "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+   "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+   "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+   "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+   "session": "2026-10-16",
+   "ticker_count": 1
+  },
+  {
+   "bundle_sha256": "c2b5aec1f842539a9a281fc60f74000744554727af225cf7248e6603d91074b8",
+   "producer_head": "1bb8106232d078fa5d475cab953b54462d57711e",
+   "product_identity": "current_daily_decision_research_product:669b5968e703adfe88297878b481f1ecd0d4327706f4cee10a79296235735d72",
+   "run_identity": "daily_producer_run:d4a2e4247511c56c4a91686bdf1e272861c57bb6f720c637400a1cc36900c27d",
+   "session": "2026-10-21",
+   "ticker_count": 1
+  },
+  {
+   "bundle_sha256": "02740143933e612bb6edd871074d33215c2b97fb688a929f9fc109ee70e3c509",
+   "producer_head": "20a97427c2a0aec1a6b5538a34b32fd16f048dfe",
+   "product_identity": "current_daily_decision_research_product:de3a5d91c69ad70dc8979b25e21db46cb0b218f074e0c28f450938c844076287",
+   "run_identity": "daily_producer_run:78211b58dd804b5514ed76203ba6cdb465dc34dda735eae17b16f7b5da3cfab1",
+   "session": "2026-10-22",
+   "ticker_count": 1
+  },
+  {
+   "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+   "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+   "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+   "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+   "session": "2026-10-23",
+   "ticker_count": 1
+  }
+ ],
+ "status": "COMPLETE_COVERAGE",
+ "thesis_challenges": [
+  {
+   "cannot_conclude": [
+    "NO_FREE_CASH_FLOW_CLAIM",
+    "NO_PROFIT_AS_OPERATING_CASH_CLAIM",
+    "NO_POSITION_AS_EARNINGS_QUALITY_CLAIM",
+    "NO_CASH_GENERATION_CONFIRMATION",
+    "NO_BUSINESS_WIDE_IMPROVEMENT_CLAIM",
+    "UNKNOWNS_MUST_BE_ACKNOWLEDGED"
+   ],
+   "conditions": [
+    "case_evidence:f5da9ed541e3f52bdbf02f43b83b65c8e1e7054481400adb519f6d5e9acf37c7",
+    "case_evidence:0e0449f82e988acb3c1e757845e30bb8813d61a513809aab3d983fc8b731f0a0",
+    "case_evidence:ff28aa6028cf46117fdccf7592482153a21c8b47b8618b55b2287ee716cc5aa2",
+    "case_evidence:f5f804da5855b934e46cd2f20dc0263f570c37ae54d6925ce92910e1bd4ed43b",
+    "case_evidence:6980d69c76726a41a8b4a428c5a320044ef58e7fad5c2bfbcaa1dec28b28c503",
+    "case_evidence:f431bb5d7d4872b31cf73be33d2722df84924155322cf56f7ba5a1520d846e0e"
+   ],
+   "contradictions": [
+    "case_evidence:8942c2f757a9c8b60dc41b20bb948e246cdab830f9f697e7d4fa2b91576445da",
+    "case_evidence:adc777f23a24436d9567dfae9b944114768b453c4d6eb7854eb9509be099deb1"
+   ],
+   "positive_hypotheses": [
+    "case_topic:b2dfd738e34447be9d21052778e7e3b89408f02d916e65cef84392f09f71f9f1",
+    "case_topic:8a8d383b2c3e06e2956c6433b3931d65efd34337317af0e08448edb956f35ca9"
+   ],
+   "producer_support": [
+    "case_evidence:9f1c3c20e12c7560d2e17dc468a8b62c088fa2573bb8254b0ac98eae84b715d9",
+    "case_evidence:00ee54371b03716ce36e1c11c7e21bf8252b4ae469e8eea8a157d992c5bbd490",
+    "case_evidence:03a4440ada2a9ceb97017eec9109bad00bcd8c40efac925d9780fb088b1f1b67",
+    "case_evidence:95a1fd5bd825623b19d6d214dc718c8a96eaeaaf967bf14b571c78a27c64feb7",
+    "case_evidence:ad011f0f44577e97c47044c142f9f194e94df15ba52b0eefa6b4bd6a3ba304ed",
+    "case_evidence:4da38b9dac7c3ade4c27cf58889e0712078a7b1bf97deb0479c49843ce9d28ab"
+   ],
+   "status": "INVESTIGATION_NOT_VERDICT",
+   "strongest_grounded_counter_thesis": {
+    "category": "TECHNICAL",
+    "evidence": [
+     "case_evidence:8e00c7aa1fd3233ead23fc5195dc849aac26cf5d903c8b618ef3dd16f1c65cca",
+     "case_evidence:9e4ea977909adf229b53fbb0d703779d239c198b4be56d25b4b3766a034782e8",
+     "case_evidence:28616016e08f8bfeb49ab04d267f156e90e7a2651b6cbf5c7cd49fb76b39c38a",
+     "case_evidence:f15867f73c207e532ee67e87c9832a4a39fa7b7cb2f308385abbec34583c43ac"
+    ],
+    "selection_rule": "FIXED_CATEGORY_PRECEDENCE_NOT_A_STRENGTH_SCORE",
+    "status": "SOURCE_GROUNDED_ARGUMENTS"
+   },
+   "support_qualifications": [
+    {
+     "evidence": "case_evidence:6188f63d9de80e7fdc1fee699512e96decb8a691172f2e0d0e0df9341a1e89cb",
+     "qualifiers": [
+      "FINANCIAL_POSITION_BASIS_NOT_PROFITABILITY_OR_CASH"
+     ]
+    },
+    {
+     "evidence": "case_evidence:8febb9818477305a585692862b9b6f027c1915d20e71c9b94802294fdd0c6c3a",
+     "qualifiers": [
+      "FINANCIAL_POSITION_BASIS_NOT_PROFITABILITY_OR_CASH"
+     ]
+    },
+    {
+     "evidence": "case_evidence:53e33128388a6e36dd95e2d9425de6c33cbae93afb9c1364b09230c3533f4cfb",
+     "qualifiers": [
+      "FINANCIAL_POSITION_BASIS_NOT_PROFITABILITY_OR_CASH"
+     ]
+    },
+    {
+     "evidence": "case_evidence:4108ba32d2b1918f7fb0b0c9d7165a91b7019b37f4f31c9a3a116b7192bb6ceb",
+     "qualifiers": [
+      "CONTESTED_BY_PRODUCER_SOURCE_CONFLICT:VALUATION_REASON_CODE_WHILE_PEER_VALUATION_UNAVAILABLE",
+      "FINANCIAL_POSITION_BASIS_NOT_PROFITABILITY_OR_CASH"
+     ]
+    }
+   ],
+   "ticker": "HPG"
+  }
+ ]
+}

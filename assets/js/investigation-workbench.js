@@ -1901,7 +1901,8 @@ ${arr(d.dossiers).map(dossierSection).join("")}${cmpSection}${notesSection}
     flushJournal();
     const model = UI.dossier, root = document.getElementById("wb-dossier");
     const entry = findEntry(UI.journal, entryIdFor("dossier", [model.ticker]));
-    root.innerHTML = `${partial ? '<div class="vs-alert vs-alert-warning" role="status">Tạm chưa tải được dữ liệu chi tiết; hồ sơ chỉ dựng từ phần tóm tắt nên nhiều mục được đánh dấu thiếu. <button type="button" data-wb-action="dossier-retry" class="btn btn-sm btn-outline-light">Thử lại chi tiết</button></div>' : ""}${dossierHtml(model, {
+    const caseNotice = UI.ctx.localCaseNoticeHtml ? UI.ctx.localCaseNoticeHtml(model.ticker) : "";
+    root.innerHTML = `${caseNotice}${partial ? '<div class="vs-alert vs-alert-warning" role="status">Tạm chưa tải được dữ liệu chi tiết; hồ sơ chỉ dựng từ phần tóm tắt nên nhiều mục được đánh dấu thiếu. <button type="button" data-wb-action="dossier-retry" class="btn btn-sm btn-outline-light">Thử lại chi tiết</button></div>' : ""}${dossierHtml(model, {
       journalEntry: entry, inCompare: UI.compare.includes(model.ticker), stale: entry ? entryStaleness(entry, doc) : null,
       historyHtml: UI.history[model.ticker] ? historyHtml(UI.history[model.ticker]) : null,
     })}`;

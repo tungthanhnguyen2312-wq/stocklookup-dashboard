@@ -1,0 +1,3252 @@
+{
+ "authority_boundary": {
+  "causal_attribution": "NOT_MADE",
+  "consumer_evaluates_boundary_conditions": false,
+  "consumer_recomputes_values": false,
+  "depends_on": "session_thesis_change_explanation/v1",
+  "holding_inference": "NOT_MADE",
+  "is_actionable": false,
+  "producer_is_sole_factual_and_numerical_authority": true,
+  "prohibited_outputs": [
+   "score",
+   "ranking",
+   "winner",
+   "probability",
+   "expected_return",
+   "target_price",
+   "position_size",
+   "trade_instruction"
+  ],
+  "ranking_or_selection": "NOT_MADE",
+  "research_role_is_not_holding_fact": true,
+  "shared_code_does_not_prove_common_exposure": true
+ },
+ "case_identity": "investment_case:a201c3742efd6c74e7cdf4ba7a7dfc4a57293ac81bd1ae737e46aea1f9dc8af3",
+ "comparisons": [
+  {
+   "pairs": [],
+   "session": "2026-10-23"
+  }
+ ],
+ "conclusion_limits": [
+  "NO_STRENGTH_ORDERING_OF_POSTURES",
+  "REVISION_CAVEAT_IS_NOT_PROOF_OF_REVISION_ONLY_CAUSE",
+  "ABSENCE_IS_NOT_NEGATIVE_EVIDENCE",
+  "HISTORICAL_GROWTH_IS_NOT_CURRENT_MOMENTUM",
+  "PROFIT_IS_NOT_CASH_FLOW_OR_FREE_CASH_FLOW",
+  "CONDITIONS_ARE_NOT_VERIFIED_OUTCOMES",
+  "NO_PROSPECTIVE_OR_HISTORICAL_PIT_AUTHORITY_CREATED"
+ ],
+ "contract_version": "investment_research_case/v1",
+ "coverage": {
+  "delivered_issuer_sessions": 4,
+  "requested_issuer_sessions": 4
+ },
+ "current_profiles": [
+  {
+   "economics": {
+    "entity_class": "corporate",
+    "evidence_ref": "current_daily_decision_research.peer_context",
+    "observed": {
+     "current_daily_decision_research.fundamental_research_context.official_income.entity_class": "corporate"
+    },
+    "peer_group": "Bất động sản",
+    "peer_group_level": "RETAINED_PROVIDER_DESCRIPTIVE_INDUSTRY",
+    "peer_group_size": 71
+   },
+   "evidence_limits": {
+    "missing_evidence": [
+     {
+      "code": "MATERIAL_UNCERTAINTY",
+      "evidence_ref": "current_daily_decision_research.integrated_decision_v1.material_uncertainties",
+      "source_value": "SHARE_BASIS_PROXY_CURRENT_SHARE_RESEARCH_PROXY"
+     },
+     {
+      "code": "MATERIAL_UNCERTAINTY",
+      "evidence_ref": "current_daily_decision_research.integrated_decision_v1.material_uncertainties",
+      "source_value": "P_B_IS_RESEARCH_TOTAL_EQUITY_NCI_NOT_DEDUCTED_NOT_COMMON_SHAREHOLDER"
+     },
+     {
+      "code": "STRICT_VALUATION_UNAVAILABLE",
+      "evidence_ref": "current_daily_decision_research.valuation_context",
+      "source_value": {
+       "peer_valuation_status": "PEER_RELATIVE_RESEARCH_IN_INTEGRATED_DECISION",
+       "shadow_authority": "SHADOW_RESEARCH_ONLY",
+       "strict_valuation_status": "UNAVAILABLE"
+      }
+     }
+    ],
+    "narrative_guards": [
+     "NO_FREE_CASH_FLOW_CLAIM",
+     "NO_PROFIT_AS_OPERATING_CASH_CLAIM",
+     "NO_POSITION_AS_EARNINGS_QUALITY_CLAIM",
+     "NO_CASH_GENERATION_CONFIRMATION",
+     "NO_BUSINESS_WIDE_IMPROVEMENT_CLAIM",
+     "UNKNOWNS_MUST_BE_ACKNOWLEDGED",
+     "NO_MISSING_AS_NEGATIVE_EVIDENCE_CLAIM"
+    ]
+   },
+   "research_role": "COMPARISON_ONLY",
+   "ticker": "NVL"
+  }
+ ],
+ "decision_distinctions": [
+  {
+   "conditions": [
+    {
+     "kind": "TECHNICAL_TRIGGER",
+     "outcome_across_sessions": "NO_GOVERNED_OUTCOME_SUPPLIED",
+     "producer_state": null,
+     "producer_trigger_type": null,
+     "state_status": "NO_PRODUCER_STATE_REPORTED"
+    },
+    {
+     "kind": "TECHNICAL_INVALIDATION",
+     "outcome_across_sessions": "NO_GOVERNED_OUTCOME_SUPPLIED",
+     "producer_state": null,
+     "producer_trigger_type": null,
+     "state_status": "NO_PRODUCER_STATE_REPORTED"
+    },
+    {
+     "kind": "INTEGRATED_DECISION_TRIGGER",
+     "outcome_across_sessions": "PRODUCER_REPORTS_TRIGGERED_IN_EVERY_SESSION",
+     "producer_state": "TRIGGERED",
+     "producer_trigger_type": "PIVOT_BREAKOUT_TRIGGER",
+     "state_status": "PRODUCER_REPORTED_STATE"
+    },
+    {
+     "kind": "INTEGRATED_DECISION_INVALIDATION",
+     "outcome_across_sessions": "NO_GOVERNED_OUTCOME_SUPPLIED",
+     "producer_state": null,
+     "producer_trigger_type": null,
+     "state_status": "NO_PRODUCER_STATE_REPORTED"
+    },
+    {
+     "kind": "FUNDAMENTAL_INVALIDATION",
+     "outcome_across_sessions": "PRODUCER_STATE_UNKNOWN_IN_EVERY_SESSION",
+     "producer_state": "UNKNOWN",
+     "producer_trigger_type": null,
+     "state_status": "NO_PRODUCER_STATE_REPORTED"
+    }
+   ],
+   "interpretation": "SEPARATED_SOURCE_STATES_NOT_A_VERDICT_SCORE_OR_INSTRUCTION",
+   "profit_vs_cash_conversion": {
+    "evidence": [
+     "case_evidence:35f0f8108ca91579386a863f52a4789fe65b9cfc0652922a772278850a0bd5af",
+     "case_evidence:1dd2f9d8a213b409a77799af3ffa70d7f7008271e1a26278d3806986b2cecf62",
+     "case_evidence:a54a3ecf3b0740f305dfe845b37bdd04bac910df967240d5260132210af54efd",
+     "case_evidence:b8a3c78775a70c87cf896704d2d6f7ff6c4a3d85caa68943711c3a140888d1ab"
+    ],
+    "status": "UNKNOWN"
+   },
+   "profit_vs_comprehensive_income": {
+    "reported_income_lines": [],
+    "status": "COMPREHENSIVE_INCOME_NOT_SUPPLIED_BY_PRODUCER"
+   },
+   "reported_vs_non_recurring_earnings": {
+    "evidence": [
+     "case_evidence:6215ae5020dcc286e5646d9abec99a1d0de29b29c1d451042c88449168eb7cb5"
+    ],
+    "recurrence_assessment": null,
+    "status": "UNKNOWN"
+   },
+   "session": "2026-10-23",
+   "source_inference_vs_evidence": {
+    "attributed_source_inferences": [
+     "case_evidence:2111141d162a784bb81258750a7fc9354ea18d554f63fddbfb3b290fd14bb91c",
+     "case_evidence:d837e714174312d27da71c7108fdbb3040d74014578ffb7e995fe1c971235af9",
+     "case_evidence:b5b9efd3c62a68defcd29beead5e6ec6dee59adad5a6b7e908816fcc85dabc3e",
+     "case_evidence:507a13d12dbc8065b25302a14922c9da8522eb4b62ffb97d960541370b306b8e",
+     "case_evidence:ad42ddb7296b99225274a16050358e99f8f0b2adbabc2bb8d42fc1c7e71857f4",
+     "case_evidence:ccb1ef02a6df3981415528be20d40f9cd538c22e58bd4b18ca6ea40ae6af93b3",
+     "case_evidence:b3ce270ce80acdfe5e4bc60412ca8cd561d19ca27e6116c59c180f7ba543b391"
+    ],
+    "qualified_observations": [],
+    "rule": "SOURCE_INFERENCE_IS_ATTRIBUTED_ARGUMENT_NOT_CAUSAL_PROOF"
+   },
+   "ticker": "NVL",
+   "valuation_applicability": {
+    "cross_economics_refusals": [],
+    "entity_class": "corporate",
+    "evidence": [
+     "case_evidence:6f650c219ff873cd11b206e40ab37eb9a1c33d9ccd14982fc67966b52e9cd83d"
+    ],
+    "peer_valuation_status": "PEER_RELATIVE_RESEARCH_IN_INTEGRATED_DECISION",
+    "strict_valuation_status": "UNAVAILABLE"
+   }
+  }
+ ],
+ "evidence_catalogue": [
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "NVL"
+   },
+   "domain": "OPERATING",
+   "evidence_identity": "case_evidence:b7683ea9487ad4cd9fb1a942a18d70d53d7ad28275a1f3be11fbf521cf770884",
+   "observation": {
+    "evidence_basis_state": "BUSINESS_AND_POSITION",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context",
+    "financial_composite_state": "FUNDAMENTALS_IMPROVING",
+    "statement_code": "COMPOSITE_VERDICT_INCLUDES_BUSINESS_DIMENSIONS"
+   },
+   "relation": "RELATED_INSUFFICIENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.fundamental_research_context",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "NVL"
+   },
+   "domain": "CASH_BALANCE",
+   "evidence_identity": "case_evidence:45d62928d4bb15d25f6c2914b92ff7f640cfbc39a72f703c28228ef077b705f9",
+   "observation": {
+    "economics_status": null,
+    "state": "UNKNOWN",
+    "statement_code": "OLDER_CARD_HAS_NO_INCOME_TO_CASH_CONTEXT"
+   },
+   "relation": "RELATED_INSUFFICIENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.valuation_context",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "NVL"
+   },
+   "domain": "VALUATION",
+   "evidence_identity": "case_evidence:01f0cd1f966a33777b9e58cabfa64af1c1469695e2b07b28d3edc120f3c3679f",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.valuation_context",
+    "peer_valuation_status": "VALUATION_PEER_CONTEXT_UNAVAILABLE",
+    "shadow_authority": "SHADOW_RESEARCH_ONLY",
+    "strict_valuation_status": "UNAVAILABLE"
+   },
+   "relation": "RELATED_INSUFFICIENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "NVL"
+   },
+   "domain": "TECHNICAL",
+   "evidence_identity": "case_evidence:ad80bf23b79bbfaeb3f6d172e77d4d0f91f8f1260512627a4beec0097dd32208",
+   "observation": {
+    "decision_identity": "decision:NVL:f385d51ef68fff6d",
+    "entry_action": "AVOID",
+    "entry_state": "DOWNTREND",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1",
+    "posture_condition_class": "FRESH_ENTRY_TRIGGER",
+    "research_action_posture": "INITIATE_ON_BREAKOUT",
+    "tactical_phase": "BREAKOUT_CONFIRMED",
+    "use": "TECHNICAL_RESEARCH_LABEL_NOT_INVESTMENT_QUALITY_OR_INSTRUCTION"
+   },
+   "relation": "TECHNICAL_CONTEXT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.why_it_is_on_radar.evidence_for",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "NVL"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:b45b7a96c94f80d46dc6ec89fac198f02bb2f8f014fe1972fc037c372483e73c",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.why_it_is_on_radar.evidence_for",
+    "text": "Current-session descriptive liquidity is eligible (board-composition reading available)."
+   },
+   "relation": "SUPPORTING_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.why_it_is_on_radar.evidence_for",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "NVL"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:3e73bad7235c0fd481dfdd01361ad2975d5e942973b02c0c529f5458c1f5a429",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.why_it_is_on_radar.evidence_for",
+    "text": "Official-tier fundamental evidence is available (readiness: PARTIAL)."
+   },
+   "relation": "SUPPORTING_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context.supporting_reason_codes",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "NVL"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:82ce2287d74c124a1c54ce093bf5acc719b87c5e090e5807713de11f81384518",
+   "observation": {
+    "code": "PROFITABLE_CORE_OPERATIONS",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context.supporting_reason_codes",
+    "source_value": null
+   },
+   "relation": "SUPPORTING_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context.supporting_reason_codes",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "NVL"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:c765d8bbdfaec794740672f5b20b3ecc11f909670da6da2226e8f3b6d5010d98",
+   "observation": {
+    "code": "BALANCE_SHEET_STRENGTHENING",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context.supporting_reason_codes",
+    "source_value": null
+   },
+   "relation": "SUPPORTING_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context.supporting_reason_codes",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "NVL"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:ac1a94ab3ea1d1efef030fa8855292cb2a60d97b77652745dd3cb869b504288e",
+   "observation": {
+    "code": "DEBT_TO_EQUITY_DECREASING",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context.supporting_reason_codes",
+    "source_value": null
+   },
+   "relation": "SUPPORTING_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context.supporting_reason_codes",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "NVL"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:e39524be796d496806e722e8410a21ab850efc140fabe67f4b105ce8914eb201",
+   "observation": {
+    "code": "CURRENT_RATIO_IMPROVING",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context.supporting_reason_codes",
+    "source_value": null
+   },
+   "relation": "SUPPORTING_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.what_argues_against.evidence_against",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "NVL"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:107aa18f3eb40fb4fd61ace161a62ac4493107c436d13662d1a45133fcacf704",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.what_argues_against.evidence_against",
+    "text": "Price is at or below its 20-day moving average."
+   },
+   "relation": "CHALLENGING_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.what_argues_against.evidence_against",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "NVL"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:79509c63a5f97bd0f1dee2f56bc1a04828b1c79e76414ca3c1b0ada14ff0e687",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.what_argues_against.evidence_against",
+    "text": "20-day momentum is negative (-0.1521)."
+   },
+   "relation": "CHALLENGING_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.what_argues_against.evidence_against",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "NVL"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:21630990be4e9dde8159b719f45047e5ff0f846c7cd0655cb163a6876d93fa10",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.what_argues_against.evidence_against",
+    "text": "20-day momentum ranks in the LOWER_QUARTILE of the same-session market cohort."
+   },
+   "relation": "CHALLENGING_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.what_argues_against.evidence_against",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "NVL"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:0a36e381beff2cfdcdeddc8642bf3d741065751e2c27967702115cc9a4fcc1e1",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.what_argues_against.evidence_against",
+    "text": "Today's session return is negative (-0.0047)."
+   },
+   "relation": "CHALLENGING_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.what_argues_against.evidence_against",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "NVL"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:213a5f7d5048f3874279e2e13df0c70ccdae09c4c4c9e93561e9a46d75f8abe9",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.what_argues_against.evidence_against",
+    "text": "Provider-relative volume is at or below the same-session cohort median today."
+   },
+   "relation": "CHALLENGING_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.what_argues_against.evidence_against",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "NVL"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:97e6c4c1ff7412f4efa6b41873af90e0047091181b223177c8d801bf203e586a",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.what_argues_against.evidence_against",
+    "text": "20-day volatility is at or above the same-session market median."
+   },
+   "relation": "CHALLENGING_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.trigger",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "NVL"
+   },
+   "domain": "TECHNICAL",
+   "evidence_identity": "case_evidence:1f5180a004055b10c51a86784de971d097f4a9c3421ad29bd442deedc2c0f476",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.trigger",
+    "kind": "TECHNICAL_TRIGGER",
+    "text": "A 20-day momentum flip to positive (even before price reclaims the 20-day moving average) would be the first deterministic sign of stabilization."
+   },
+   "relation": "PRODUCER_CONDITION_NOT_CONSUMER_OUTCOME"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.invalidation",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "NVL"
+   },
+   "domain": "TECHNICAL",
+   "evidence_identity": "case_evidence:aa93a3fc1c8591ef773fb0504a3dac6b7ccfdaf8e88ce7032a622e7d232e0225",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.invalidation",
+    "kind": "TECHNICAL_INVALIDATION",
+    "text": "A 20-day momentum flip to positive invalidates the downtrend classification (see EARLY_REVERSAL_CANDIDATE); this state itself carries no bullish thesis to invalidate."
+   },
+   "relation": "PRODUCER_CONDITION_NOT_CONSUMER_OUTCOME"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.invalidation",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "NVL"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:adfd0b136c3f1813e0b26b2d49d6f11417fe3487d68d6bec577858ea7b43df16",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.invalidation",
+    "kind": "INTEGRATED_DECISION_INVALIDATION",
+    "text": {
+     "activation_semantics": "FIRST_LATER_COMPLETED_SESSION_WITH_RETAINED_CLOSE_SATISFIES_FIXED_T0_BOUNDARY",
+     "authority_boundary": "RETAINED_RESEARCH_BOUNDARY_NOT_EXECUTION_OR_STOP_LOSS",
+     "condition_identity": "retained_strategy_boundary_condition:46f69a11e43cec81b62c524fc90bebdc00c915b79960ac0e54da83f2a74a210a",
+     "condition_version": "retained_strategy_boundary_condition/v1",
+     "narrative_reason": "Fixed T0 structural close boundary; analytical research only.",
+     "operator": ">",
+     "reason_codes": [
+      "EXISTING_READY_FIXED_T0_CLOSE_BOUNDARY"
+     ],
+     "reference_field": "close",
+     "reference_level": 10.55,
+     "required_state": "CONFIRMED_SWING_HIGH_BY_RULE_OR_V1_RESISTANCE_FALLBACK",
+     "role": "invalidation",
+     "source_boundary_status": "READY",
+     "source_boundary_type": "CONFIRMED_SWING_HIGH_BY_RULE_OR_V1_RESISTANCE_FALLBACK",
+     "source_lineage": {
+      "as_of_session": "2026-10-16",
+      "source_artifact_identity": "market_structure_breakout_product_projection/v1:88b6cf58cfa21648b0bc976d6405cb88052eeef6567f8a0512fe8e7bee32be10"
+     },
+     "source_method": "market_structure_breakout_product_projection/v1",
+     "source_metric": "invalidation_level",
+     "source_rule": null,
+     "source_strategy_identity": "market_structure_breakout_product_projection/v1:88b6cf58cfa21648b0bc976d6405cb88052eeef6567f8a0512fe8e7bee32be10",
+     "status": "MACHINE_EVALUABLE",
+     "strategy_operator": "FUTURE_CLOSE_GT_STRUCTURAL_LEVEL"
+    }
+   },
+   "relation": "PRODUCER_CONDITION_NOT_CONSUMER_OUTCOME"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.fundamental_invalidation",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "NVL"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:a01fd5b6029733a8579dbd84a57ed1ad6589db6bbb4a1ae8444139ea6cc7585d",
+   "observation": {
+    "current_trigger_state": "UNKNOWN",
+    "evidence_ref": "current_daily_decision_research.fundamental_invalidation",
+    "kind": "FUNDAMENTAL_INVALIDATION",
+    "metric_or_axis": "COMPATIBLE_PROFITABILITY_QUALITY_DETERIORATION",
+    "source_artifact_identity": "shadow_security_recommendation:d6d3e323d6e88a0ba86a6e8512af3e716ab09768e24d16a7661f8c341a31c1eb",
+    "status": "CONDITIONAL",
+    "text": "A related profitability axis exists but no compatible numeric margin baseline is retained."
+   },
+   "relation": "PRODUCER_CONDITION_NOT_CONSUMER_OUTCOME"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.thesis_counter_thesis.questions_to_verify",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "NVL"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:3c26562bef64491a218eee8a7490292ab043dac9aceb3cc364d8130cca92751c",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.thesis_counter_thesis.questions_to_verify",
+    "kind": "CARD_QUESTION_TO_VERIFY",
+    "text": "A 20-day momentum flip to positive (even before price reclaims the 20-day moving average) would be the first deterministic sign of stabilization."
+   },
+   "relation": "PRODUCER_RESEARCH_QUESTION_NOT_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.corporate_intelligence_context.what_to_verify",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "NVL"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:032077ca86c2683f7c817c5aa59c1dadd2639c6112c9d1fee59799eeb6389663",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.corporate_intelligence_context.what_to_verify",
+    "kind": "CORPORATE_WHAT_TO_VERIFY",
+    "text": "NO_RETAINED_INTELLIGENCE_IS_A_DATA_GAP_NOT_ZERO_CORPORATE_ACTIVITY"
+   },
+   "relation": "PRODUCER_RESEARCH_QUESTION_NOT_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.fundamental_context",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "NVL"
+   },
+   "domain": "CASH_BALANCE",
+   "evidence_identity": "case_evidence:af7675f10bd3ded71f276f0a9a3dc351d42be758d7701172b9e1fde9e5598a04",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.fundamental_context",
+    "kind": "NEEDS_QUALIFIED_SAME_PERIOD_PROFIT_AND_OPERATING_CASH",
+    "text": null
+   },
+   "relation": "PRODUCER_RESEARCH_QUESTION_NOT_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.thesis_counter_thesis.counter_thesis",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "NVL"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:f3949cf02ee8b3775692cd786145c0402281714b3bbf9491aba741349fd34fd4",
+   "observation": {
+    "code": "CARD_DATA_GAP",
+    "evidence_field": "peer_relative.data_gaps",
+    "evidence_ref": "current_daily_decision_research.thesis_counter_thesis.counter_thesis",
+    "source_value": "VALUATION_PEER_CONTEXT_UNAVAILABLE"
+   },
+   "relation": "RELATED_INSUFFICIENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.material_uncertainties",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "NVL"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:0a923dff0e9d11ffdce62290f0700e6333da7c2d391ae0f455eb695f07f470f6",
+   "observation": {
+    "code": "MATERIAL_UNCERTAINTY",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.material_uncertainties",
+    "source_value": "SHARE_BASIS_PROXY_CURRENT_SHARE_RESEARCH_PROXY"
+   },
+   "relation": "RELATED_INSUFFICIENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.material_uncertainties",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "NVL"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:f90f57c1950708b0a7913c749326df8fc17efe6df63c0caf09f0156cb4d18415",
+   "observation": {
+    "code": "MATERIAL_UNCERTAINTY",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.material_uncertainties",
+    "source_value": "P_B_IS_RESEARCH_TOTAL_EQUITY_NCI_NOT_DEDUCTED_NOT_COMMON_SHAREHOLDER"
+   },
+   "relation": "RELATED_INSUFFICIENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.valuation_context",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "NVL"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:6d8f38d88f1784e08764977cca50ec5723b9e26a5b6bbfb124e680a1f0784753",
+   "observation": {
+    "code": "STRICT_VALUATION_UNAVAILABLE",
+    "evidence_ref": "current_daily_decision_research.valuation_context",
+    "source_value": {
+     "peer_valuation_status": "VALUATION_PEER_CONTEXT_UNAVAILABLE",
+     "shadow_authority": "SHADOW_RESEARCH_ONLY",
+     "strict_valuation_status": "UNAVAILABLE"
+    }
+   },
+   "relation": "RELATED_INSUFFICIENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "NVL"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:172a704f43daae2ceb418262909d293cefc8364e0263bcecae7f6c6439e88b99",
+   "observation": {
+    "code": "VALUATION_REASON_CODE_WHILE_PEER_VALUATION_UNAVAILABLE",
+    "consumer_effect": "NEITHER_FIELD_IS_UPGRADED_OR_DISCARDED",
+    "evidence_refs": [
+     "current_daily_decision_research.integrated_decision_v1.financial_composite_context",
+     "current_daily_decision_research.valuation_context"
+    ],
+    "source_value": {
+     "peer_valuation_status": "VALUATION_PEER_CONTEXT_UNAVAILABLE",
+     "reason_codes": [
+      "ATTRACTIVE_RELATIVE_RESEARCH_PEER_VALUATION"
+     ]
+    }
+   },
+   "relation": "SOURCE_CONFLICT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.valuation_context",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "NVL"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:a4a52d22eb3b026d6664f908c5839c306ee200cc2d94f5642c218dce671a0054",
+   "observation": {
+    "code": "VALUATION_REASON_CODE_WHILE_PEER_VALUATION_UNAVAILABLE",
+    "consumer_effect": "NEITHER_FIELD_IS_UPGRADED_OR_DISCARDED",
+    "evidence_refs": [
+     "current_daily_decision_research.integrated_decision_v1.financial_composite_context",
+     "current_daily_decision_research.valuation_context"
+    ],
+    "source_value": {
+     "peer_valuation_status": "VALUATION_PEER_CONTEXT_UNAVAILABLE",
+     "reason_codes": [
+      "ATTRACTIVE_RELATIVE_RESEARCH_PEER_VALUATION"
+     ]
+    }
+   },
+   "relation": "SOURCE_CONFLICT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "c2b5aec1f842539a9a281fc60f74000744554727af225cf7248e6603d91074b8",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context",
+    "producer_head": "1bb8106232d078fa5d475cab953b54462d57711e",
+    "product_identity": "current_daily_decision_research_product:669b5968e703adfe88297878b481f1ecd0d4327706f4cee10a79296235735d72",
+    "run_identity": "daily_producer_run:d4a2e4247511c56c4a91686bdf1e272861c57bb6f720c637400a1cc36900c27d",
+    "session": "2026-10-21",
+    "ticker": "NVL"
+   },
+   "domain": "OPERATING",
+   "evidence_identity": "case_evidence:8e8556073bd9ecb4e5aab2c128107af4c58b7b067eb737a195a15b870e473c80",
+   "observation": {
+    "evidence_basis_state": "FINANCIAL_POSITION_ONLY",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context",
+    "financial_composite_state": "FUNDAMENTALS_IMPROVING",
+    "statement_code": "COMPOSITE_VERDICT_DESCRIBES_FINANCIAL_POSITION_NOT_BUSINESS_PROFITABILITY"
+   },
+   "relation": "RELATED_INSUFFICIENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "c2b5aec1f842539a9a281fc60f74000744554727af225cf7248e6603d91074b8",
+    "evidence_ref": "current_daily_decision_research.fundamental_research_context",
+    "producer_head": "1bb8106232d078fa5d475cab953b54462d57711e",
+    "product_identity": "current_daily_decision_research_product:669b5968e703adfe88297878b481f1ecd0d4327706f4cee10a79296235735d72",
+    "run_identity": "daily_producer_run:d4a2e4247511c56c4a91686bdf1e272861c57bb6f720c637400a1cc36900c27d",
+    "session": "2026-10-21",
+    "ticker": "NVL"
+   },
+   "domain": "CASH_BALANCE",
+   "evidence_identity": "case_evidence:d2d1a403aed365dba9316cc51cdebeceba7ed421913666dce7c783b8a3017e72",
+   "observation": {
+    "economics_status": null,
+    "state": "UNKNOWN",
+    "statement_code": "OLDER_CARD_HAS_NO_INCOME_TO_CASH_CONTEXT"
+   },
+   "relation": "RELATED_INSUFFICIENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "c2b5aec1f842539a9a281fc60f74000744554727af225cf7248e6603d91074b8",
+    "evidence_ref": "current_daily_decision_research.valuation_context",
+    "producer_head": "1bb8106232d078fa5d475cab953b54462d57711e",
+    "product_identity": "current_daily_decision_research_product:669b5968e703adfe88297878b481f1ecd0d4327706f4cee10a79296235735d72",
+    "run_identity": "daily_producer_run:d4a2e4247511c56c4a91686bdf1e272861c57bb6f720c637400a1cc36900c27d",
+    "session": "2026-10-21",
+    "ticker": "NVL"
+   },
+   "domain": "VALUATION",
+   "evidence_identity": "case_evidence:345c8ce42d6aac74fdf62ddef75e7189392c58abcf5ec96f6502f49a8f56d179",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.valuation_context",
+    "peer_valuation_status": "VALUATION_PEER_CONTEXT_UNAVAILABLE",
+    "shadow_authority": "SHADOW_RESEARCH_ONLY",
+    "strict_valuation_status": "UNAVAILABLE"
+   },
+   "relation": "RELATED_INSUFFICIENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "c2b5aec1f842539a9a281fc60f74000744554727af225cf7248e6603d91074b8",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1",
+    "producer_head": "1bb8106232d078fa5d475cab953b54462d57711e",
+    "product_identity": "current_daily_decision_research_product:669b5968e703adfe88297878b481f1ecd0d4327706f4cee10a79296235735d72",
+    "run_identity": "daily_producer_run:d4a2e4247511c56c4a91686bdf1e272861c57bb6f720c637400a1cc36900c27d",
+    "session": "2026-10-21",
+    "ticker": "NVL"
+   },
+   "domain": "TECHNICAL",
+   "evidence_identity": "case_evidence:70e3ab69648405561f3b6f6716390ad05aa44019c82919466052d84cf8176852",
+   "observation": {
+    "decision_identity": "decision:NVL:596c3896d9ba5ef9",
+    "entry_action": "AVOID",
+    "entry_state": "DOWNTREND",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1",
+    "posture_condition_class": "FRESH_ENTRY_TRIGGER",
+    "research_action_posture": "INITIATE_ON_BREAKOUT",
+    "tactical_phase": "BREAKOUT_CONFIRMED",
+    "use": "TECHNICAL_RESEARCH_LABEL_NOT_INVESTMENT_QUALITY_OR_INSTRUCTION"
+   },
+   "relation": "TECHNICAL_CONTEXT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "c2b5aec1f842539a9a281fc60f74000744554727af225cf7248e6603d91074b8",
+    "evidence_ref": "current_daily_decision_research.trigger",
+    "producer_head": "1bb8106232d078fa5d475cab953b54462d57711e",
+    "product_identity": "current_daily_decision_research_product:669b5968e703adfe88297878b481f1ecd0d4327706f4cee10a79296235735d72",
+    "run_identity": "daily_producer_run:d4a2e4247511c56c4a91686bdf1e272861c57bb6f720c637400a1cc36900c27d",
+    "session": "2026-10-21",
+    "ticker": "NVL"
+   },
+   "domain": "TECHNICAL",
+   "evidence_identity": "case_evidence:c85f12587bd2fb1a114297c14e5832cd8f8c71c7959e04cb94685010433f5065",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.trigger",
+    "kind": "TECHNICAL_TRIGGER",
+    "text": "A 20-day momentum flip to positive (even before price reclaims the 20-day moving average) would be the first deterministic sign of stabilization."
+   },
+   "relation": "PRODUCER_CONDITION_NOT_CONSUMER_OUTCOME"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "c2b5aec1f842539a9a281fc60f74000744554727af225cf7248e6603d91074b8",
+    "evidence_ref": "current_daily_decision_research.invalidation",
+    "producer_head": "1bb8106232d078fa5d475cab953b54462d57711e",
+    "product_identity": "current_daily_decision_research_product:669b5968e703adfe88297878b481f1ecd0d4327706f4cee10a79296235735d72",
+    "run_identity": "daily_producer_run:d4a2e4247511c56c4a91686bdf1e272861c57bb6f720c637400a1cc36900c27d",
+    "session": "2026-10-21",
+    "ticker": "NVL"
+   },
+   "domain": "TECHNICAL",
+   "evidence_identity": "case_evidence:dd1088deb8fbd7adb9030a36b280db098eb593d3d4a04ad629c7b41772cd0817",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.invalidation",
+    "kind": "TECHNICAL_INVALIDATION",
+    "text": "A 20-day momentum flip to positive invalidates the downtrend classification (see EARLY_REVERSAL_CANDIDATE); this state itself carries no bullish thesis to invalidate."
+   },
+   "relation": "PRODUCER_CONDITION_NOT_CONSUMER_OUTCOME"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "c2b5aec1f842539a9a281fc60f74000744554727af225cf7248e6603d91074b8",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.invalidation",
+    "producer_head": "1bb8106232d078fa5d475cab953b54462d57711e",
+    "product_identity": "current_daily_decision_research_product:669b5968e703adfe88297878b481f1ecd0d4327706f4cee10a79296235735d72",
+    "run_identity": "daily_producer_run:d4a2e4247511c56c4a91686bdf1e272861c57bb6f720c637400a1cc36900c27d",
+    "session": "2026-10-21",
+    "ticker": "NVL"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:21eddfe88163333ebe0c005db2a1045db4037378fa1e53718e28249b11b94197",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.invalidation",
+    "kind": "INTEGRATED_DECISION_INVALIDATION",
+    "text": {
+     "activation_semantics": "FIRST_LATER_COMPLETED_SESSION_WITH_RETAINED_CLOSE_SATISFIES_FIXED_T0_BOUNDARY",
+     "authority_boundary": "RETAINED_RESEARCH_BOUNDARY_NOT_EXECUTION_OR_STOP_LOSS",
+     "condition_identity": "retained_strategy_boundary_condition:e355b1a01f07f95ed1d9db438dd8e061afd31ceae4858db0af6acecdf5efd242",
+     "condition_version": "retained_strategy_boundary_condition/v1",
+     "narrative_reason": "Fixed T0 structural close boundary; analytical research only.",
+     "operator": ">",
+     "reason_codes": [
+      "EXISTING_READY_FIXED_T0_CLOSE_BOUNDARY"
+     ],
+     "reference_field": "close",
+     "reference_level": 10.55,
+     "required_state": "CONFIRMED_SWING_HIGH_BY_RULE_OR_V1_RESISTANCE_FALLBACK",
+     "role": "invalidation",
+     "source_boundary_status": "READY",
+     "source_boundary_type": "CONFIRMED_SWING_HIGH_BY_RULE_OR_V1_RESISTANCE_FALLBACK",
+     "source_lineage": {
+      "as_of_session": "2026-10-21",
+      "source_artifact_identity": "market_structure_breakout_product_projection/v1:1d111ebee9f8da879f2176a316faa99cdfadaa12236f4af351df227b2f5438df"
+     },
+     "source_method": "market_structure_breakout_product_projection/v1",
+     "source_metric": "invalidation_level",
+     "source_rule": null,
+     "source_strategy_identity": "market_structure_breakout_product_projection/v1:1d111ebee9f8da879f2176a316faa99cdfadaa12236f4af351df227b2f5438df",
+     "status": "MACHINE_EVALUABLE",
+     "strategy_operator": "FUTURE_CLOSE_GT_STRUCTURAL_LEVEL"
+    }
+   },
+   "relation": "PRODUCER_CONDITION_NOT_CONSUMER_OUTCOME"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "c2b5aec1f842539a9a281fc60f74000744554727af225cf7248e6603d91074b8",
+    "evidence_ref": "current_daily_decision_research.fundamental_invalidation",
+    "producer_head": "1bb8106232d078fa5d475cab953b54462d57711e",
+    "product_identity": "current_daily_decision_research_product:669b5968e703adfe88297878b481f1ecd0d4327706f4cee10a79296235735d72",
+    "run_identity": "daily_producer_run:d4a2e4247511c56c4a91686bdf1e272861c57bb6f720c637400a1cc36900c27d",
+    "session": "2026-10-21",
+    "ticker": "NVL"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:f0dbcf54aad629184f717e5390410c23845746577187a395da025e0d2e8ae2d5",
+   "observation": {
+    "current_trigger_state": "UNKNOWN",
+    "evidence_ref": "current_daily_decision_research.fundamental_invalidation",
+    "kind": "FUNDAMENTAL_INVALIDATION",
+    "metric_or_axis": "COMPATIBLE_PROFITABILITY_QUALITY_DETERIORATION",
+    "source_artifact_identity": "shadow_security_recommendation:83a6086f56180f366ac79ea516340f11a988297392311c81bd59a72906b2a0a4",
+    "status": "CONDITIONAL",
+    "text": "A related profitability axis exists but no compatible numeric margin baseline is retained."
+   },
+   "relation": "PRODUCER_CONDITION_NOT_CONSUMER_OUTCOME"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "c2b5aec1f842539a9a281fc60f74000744554727af225cf7248e6603d91074b8",
+    "evidence_ref": "current_daily_decision_research.thesis_counter_thesis.questions_to_verify",
+    "producer_head": "1bb8106232d078fa5d475cab953b54462d57711e",
+    "product_identity": "current_daily_decision_research_product:669b5968e703adfe88297878b481f1ecd0d4327706f4cee10a79296235735d72",
+    "run_identity": "daily_producer_run:d4a2e4247511c56c4a91686bdf1e272861c57bb6f720c637400a1cc36900c27d",
+    "session": "2026-10-21",
+    "ticker": "NVL"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:4ba41ea8644d9fe0a9a7bf102e13a07fe3fbd4b7096792b6000f2a7c449c85e9",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.thesis_counter_thesis.questions_to_verify",
+    "kind": "CARD_QUESTION_TO_VERIFY",
+    "text": "A 20-day momentum flip to positive (even before price reclaims the 20-day moving average) would be the first deterministic sign of stabilization."
+   },
+   "relation": "PRODUCER_RESEARCH_QUESTION_NOT_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "c2b5aec1f842539a9a281fc60f74000744554727af225cf7248e6603d91074b8",
+    "evidence_ref": "current_daily_decision_research.corporate_intelligence_context.what_to_verify",
+    "producer_head": "1bb8106232d078fa5d475cab953b54462d57711e",
+    "product_identity": "current_daily_decision_research_product:669b5968e703adfe88297878b481f1ecd0d4327706f4cee10a79296235735d72",
+    "run_identity": "daily_producer_run:d4a2e4247511c56c4a91686bdf1e272861c57bb6f720c637400a1cc36900c27d",
+    "session": "2026-10-21",
+    "ticker": "NVL"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:cbfc7a1c9a754a5bd7d27ecba306e7a7f44a0bb1ec6ac9b16bea763c3f168f44",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.corporate_intelligence_context.what_to_verify",
+    "kind": "CORPORATE_WHAT_TO_VERIFY",
+    "text": "NO_RETAINED_INTELLIGENCE_IS_A_DATA_GAP_NOT_ZERO_CORPORATE_ACTIVITY"
+   },
+   "relation": "PRODUCER_RESEARCH_QUESTION_NOT_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "c2b5aec1f842539a9a281fc60f74000744554727af225cf7248e6603d91074b8",
+    "evidence_ref": "current_daily_decision_research.fundamental_context",
+    "producer_head": "1bb8106232d078fa5d475cab953b54462d57711e",
+    "product_identity": "current_daily_decision_research_product:669b5968e703adfe88297878b481f1ecd0d4327706f4cee10a79296235735d72",
+    "run_identity": "daily_producer_run:d4a2e4247511c56c4a91686bdf1e272861c57bb6f720c637400a1cc36900c27d",
+    "session": "2026-10-21",
+    "ticker": "NVL"
+   },
+   "domain": "CASH_BALANCE",
+   "evidence_identity": "case_evidence:ae04cdaf33cdb22bfc2fe45c6c882e4150f9c83adf96a9cca221395c7b3b164d",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.fundamental_context",
+    "kind": "NEEDS_QUALIFIED_SAME_PERIOD_PROFIT_AND_OPERATING_CASH",
+    "text": null
+   },
+   "relation": "PRODUCER_RESEARCH_QUESTION_NOT_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "c2b5aec1f842539a9a281fc60f74000744554727af225cf7248e6603d91074b8",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context",
+    "producer_head": "1bb8106232d078fa5d475cab953b54462d57711e",
+    "product_identity": "current_daily_decision_research_product:669b5968e703adfe88297878b481f1ecd0d4327706f4cee10a79296235735d72",
+    "run_identity": "daily_producer_run:d4a2e4247511c56c4a91686bdf1e272861c57bb6f720c637400a1cc36900c27d",
+    "session": "2026-10-21",
+    "ticker": "NVL"
+   },
+   "domain": "OPERATING",
+   "evidence_identity": "case_evidence:b343651f73d1bddd3aa449a806634df8e84fcf80305f805ae52f61fc383ea57e",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context",
+    "kind": "NEEDS_QUALIFIED_COMPARABLE_REVENUE_AND_EARNINGS",
+    "text": null
+   },
+   "relation": "PRODUCER_RESEARCH_QUESTION_NOT_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "c2b5aec1f842539a9a281fc60f74000744554727af225cf7248e6603d91074b8",
+    "evidence_ref": "current_daily_decision_research.thesis_counter_thesis.counter_thesis",
+    "producer_head": "1bb8106232d078fa5d475cab953b54462d57711e",
+    "product_identity": "current_daily_decision_research_product:669b5968e703adfe88297878b481f1ecd0d4327706f4cee10a79296235735d72",
+    "run_identity": "daily_producer_run:d4a2e4247511c56c4a91686bdf1e272861c57bb6f720c637400a1cc36900c27d",
+    "session": "2026-10-21",
+    "ticker": "NVL"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:005656d97d1b2a5d44749793e0ed6ea862c30b245f4173d6987f96bca0db512d",
+   "observation": {
+    "code": "CARD_DATA_GAP",
+    "evidence_field": "peer_relative.data_gaps",
+    "evidence_ref": "current_daily_decision_research.thesis_counter_thesis.counter_thesis",
+    "source_value": "VALUATION_PEER_CONTEXT_UNAVAILABLE"
+   },
+   "relation": "RELATED_INSUFFICIENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "c2b5aec1f842539a9a281fc60f74000744554727af225cf7248e6603d91074b8",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.material_uncertainties",
+    "producer_head": "1bb8106232d078fa5d475cab953b54462d57711e",
+    "product_identity": "current_daily_decision_research_product:669b5968e703adfe88297878b481f1ecd0d4327706f4cee10a79296235735d72",
+    "run_identity": "daily_producer_run:d4a2e4247511c56c4a91686bdf1e272861c57bb6f720c637400a1cc36900c27d",
+    "session": "2026-10-21",
+    "ticker": "NVL"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:f18c2d9e94fd9b53c15a5bf8a00505a018ebaf56b5b5407a76fcd6e8b2c7e4e7",
+   "observation": {
+    "code": "MATERIAL_UNCERTAINTY",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.material_uncertainties",
+    "source_value": "SHARE_BASIS_PROXY_CURRENT_SHARE_RESEARCH_PROXY"
+   },
+   "relation": "RELATED_INSUFFICIENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "c2b5aec1f842539a9a281fc60f74000744554727af225cf7248e6603d91074b8",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context",
+    "producer_head": "1bb8106232d078fa5d475cab953b54462d57711e",
+    "product_identity": "current_daily_decision_research_product:669b5968e703adfe88297878b481f1ecd0d4327706f4cee10a79296235735d72",
+    "run_identity": "daily_producer_run:d4a2e4247511c56c4a91686bdf1e272861c57bb6f720c637400a1cc36900c27d",
+    "session": "2026-10-21",
+    "ticker": "NVL"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:16728edf62330a8986076cbebc12d36a8de31010b2614649561a3fe080fcb831",
+   "observation": {
+    "code": "VALUATION_REASON_CODE_WHILE_PEER_VALUATION_UNAVAILABLE",
+    "consumer_effect": "NEITHER_FIELD_IS_UPGRADED_OR_DISCARDED",
+    "evidence_refs": [
+     "current_daily_decision_research.integrated_decision_v1.financial_composite_context",
+     "current_daily_decision_research.valuation_context"
+    ],
+    "source_value": {
+     "peer_valuation_status": "VALUATION_PEER_CONTEXT_UNAVAILABLE",
+     "reason_codes": [
+      "ATTRACTIVE_RELATIVE_RESEARCH_PEER_VALUATION"
+     ]
+    }
+   },
+   "relation": "SOURCE_CONFLICT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "c2b5aec1f842539a9a281fc60f74000744554727af225cf7248e6603d91074b8",
+    "evidence_ref": "current_daily_decision_research.valuation_context",
+    "producer_head": "1bb8106232d078fa5d475cab953b54462d57711e",
+    "product_identity": "current_daily_decision_research_product:669b5968e703adfe88297878b481f1ecd0d4327706f4cee10a79296235735d72",
+    "run_identity": "daily_producer_run:d4a2e4247511c56c4a91686bdf1e272861c57bb6f720c637400a1cc36900c27d",
+    "session": "2026-10-21",
+    "ticker": "NVL"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:211592c5c0cd4697f9996b1bf2e596df1ff6fbe16b9c46927365dc15a6857d60",
+   "observation": {
+    "code": "VALUATION_REASON_CODE_WHILE_PEER_VALUATION_UNAVAILABLE",
+    "consumer_effect": "NEITHER_FIELD_IS_UPGRADED_OR_DISCARDED",
+    "evidence_refs": [
+     "current_daily_decision_research.integrated_decision_v1.financial_composite_context",
+     "current_daily_decision_research.valuation_context"
+    ],
+    "source_value": {
+     "peer_valuation_status": "VALUATION_PEER_CONTEXT_UNAVAILABLE",
+     "reason_codes": [
+      "ATTRACTIVE_RELATIVE_RESEARCH_PEER_VALUATION"
+     ]
+    }
+   },
+   "relation": "SOURCE_CONFLICT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "02740143933e612bb6edd871074d33215c2b97fb688a929f9fc109ee70e3c509",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context",
+    "producer_head": "20a97427c2a0aec1a6b5538a34b32fd16f048dfe",
+    "product_identity": "current_daily_decision_research_product:de3a5d91c69ad70dc8979b25e21db46cb0b218f074e0c28f450938c844076287",
+    "run_identity": "daily_producer_run:78211b58dd804b5514ed76203ba6cdb465dc34dda735eae17b16f7b5da3cfab1",
+    "session": "2026-10-22",
+    "ticker": "NVL"
+   },
+   "domain": "OPERATING",
+   "evidence_identity": "case_evidence:d3ab5f7101dea47641d66bf65161a319d7c8db16f08318ec7a62b860a21127b1",
+   "observation": {
+    "evidence_basis_state": "FINANCIAL_POSITION_ONLY",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context",
+    "financial_composite_state": "FUNDAMENTALS_IMPROVING",
+    "statement_code": "COMPOSITE_VERDICT_DESCRIBES_FINANCIAL_POSITION_NOT_BUSINESS_PROFITABILITY"
+   },
+   "relation": "RELATED_INSUFFICIENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "02740143933e612bb6edd871074d33215c2b97fb688a929f9fc109ee70e3c509",
+    "evidence_ref": "current_daily_decision_research.fundamental_research_context",
+    "producer_head": "20a97427c2a0aec1a6b5538a34b32fd16f048dfe",
+    "product_identity": "current_daily_decision_research_product:de3a5d91c69ad70dc8979b25e21db46cb0b218f074e0c28f450938c844076287",
+    "run_identity": "daily_producer_run:78211b58dd804b5514ed76203ba6cdb465dc34dda735eae17b16f7b5da3cfab1",
+    "session": "2026-10-22",
+    "ticker": "NVL"
+   },
+   "domain": "CASH_BALANCE",
+   "evidence_identity": "case_evidence:60ab7d2e255822c355888e49315168818236f70b31d4197c41cb72d1fb9c6c3c",
+   "observation": {
+    "economics_status": null,
+    "state": "UNKNOWN",
+    "statement_code": "OLDER_CARD_HAS_NO_INCOME_TO_CASH_CONTEXT"
+   },
+   "relation": "RELATED_INSUFFICIENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "02740143933e612bb6edd871074d33215c2b97fb688a929f9fc109ee70e3c509",
+    "evidence_ref": "current_daily_decision_research.valuation_context",
+    "producer_head": "20a97427c2a0aec1a6b5538a34b32fd16f048dfe",
+    "product_identity": "current_daily_decision_research_product:de3a5d91c69ad70dc8979b25e21db46cb0b218f074e0c28f450938c844076287",
+    "run_identity": "daily_producer_run:78211b58dd804b5514ed76203ba6cdb465dc34dda735eae17b16f7b5da3cfab1",
+    "session": "2026-10-22",
+    "ticker": "NVL"
+   },
+   "domain": "VALUATION",
+   "evidence_identity": "case_evidence:51be90b5ddafab17c71c63a658950110cb60c26d5792c7460b7ffecadcedfbd4",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.valuation_context",
+    "peer_valuation_status": "VALUATION_PEER_CONTEXT_UNAVAILABLE",
+    "shadow_authority": "SHADOW_RESEARCH_ONLY",
+    "strict_valuation_status": "UNAVAILABLE"
+   },
+   "relation": "RELATED_INSUFFICIENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "02740143933e612bb6edd871074d33215c2b97fb688a929f9fc109ee70e3c509",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1",
+    "producer_head": "20a97427c2a0aec1a6b5538a34b32fd16f048dfe",
+    "product_identity": "current_daily_decision_research_product:de3a5d91c69ad70dc8979b25e21db46cb0b218f074e0c28f450938c844076287",
+    "run_identity": "daily_producer_run:78211b58dd804b5514ed76203ba6cdb465dc34dda735eae17b16f7b5da3cfab1",
+    "session": "2026-10-22",
+    "ticker": "NVL"
+   },
+   "domain": "TECHNICAL",
+   "evidence_identity": "case_evidence:b49ded5d291a3e9293d7952a3b34c55759d95f0450e41994422d829190f774ca",
+   "observation": {
+    "decision_identity": "decision:NVL:bc4982c9b35ddce8",
+    "entry_action": "WAIT",
+    "entry_state": "DISTRIBUTION_RISK",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1",
+    "posture_condition_class": "FRESH_ENTRY_TRIGGER",
+    "research_action_posture": "INITIATE_ON_BREAKOUT",
+    "tactical_phase": "BREAKOUT_CONFIRMED",
+    "use": "TECHNICAL_RESEARCH_LABEL_NOT_INVESTMENT_QUALITY_OR_INSTRUCTION"
+   },
+   "relation": "TECHNICAL_CONTEXT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "02740143933e612bb6edd871074d33215c2b97fb688a929f9fc109ee70e3c509",
+    "evidence_ref": "current_daily_decision_research.trigger",
+    "producer_head": "20a97427c2a0aec1a6b5538a34b32fd16f048dfe",
+    "product_identity": "current_daily_decision_research_product:de3a5d91c69ad70dc8979b25e21db46cb0b218f074e0c28f450938c844076287",
+    "run_identity": "daily_producer_run:78211b58dd804b5514ed76203ba6cdb465dc34dda735eae17b16f7b5da3cfab1",
+    "session": "2026-10-22",
+    "ticker": "NVL"
+   },
+   "domain": "TECHNICAL",
+   "evidence_identity": "case_evidence:1be2f666331853fae6db60dba4e36d5a519a9763484f1fad883098b3e332937c",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.trigger",
+    "kind": "TECHNICAL_TRIGGER",
+    "text": "A session close below the 20-day moving average would confirm the momentum rollover already visible in the 20-day reading."
+   },
+   "relation": "PRODUCER_CONDITION_NOT_CONSUMER_OUTCOME"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "02740143933e612bb6edd871074d33215c2b97fb688a929f9fc109ee70e3c509",
+    "evidence_ref": "current_daily_decision_research.invalidation",
+    "producer_head": "20a97427c2a0aec1a6b5538a34b32fd16f048dfe",
+    "product_identity": "current_daily_decision_research_product:de3a5d91c69ad70dc8979b25e21db46cb0b218f074e0c28f450938c844076287",
+    "run_identity": "daily_producer_run:78211b58dd804b5514ed76203ba6cdb465dc34dda735eae17b16f7b5da3cfab1",
+    "session": "2026-10-22",
+    "ticker": "NVL"
+   },
+   "domain": "TECHNICAL",
+   "evidence_identity": "case_evidence:7edf7dedf8597b9b2823eea891927cd72d39e541bf9362f0c692c6aee7c91666",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.invalidation",
+    "kind": "TECHNICAL_INVALIDATION",
+    "text": "A recovery of 20-day momentum back to positive while price remains above the 20-day moving average invalidates the distribution warning (see UPTREND_CONFIRMED)."
+   },
+   "relation": "PRODUCER_CONDITION_NOT_CONSUMER_OUTCOME"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "02740143933e612bb6edd871074d33215c2b97fb688a929f9fc109ee70e3c509",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.invalidation",
+    "producer_head": "20a97427c2a0aec1a6b5538a34b32fd16f048dfe",
+    "product_identity": "current_daily_decision_research_product:de3a5d91c69ad70dc8979b25e21db46cb0b218f074e0c28f450938c844076287",
+    "run_identity": "daily_producer_run:78211b58dd804b5514ed76203ba6cdb465dc34dda735eae17b16f7b5da3cfab1",
+    "session": "2026-10-22",
+    "ticker": "NVL"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:29858a37dd91e875550712233531adcd5883265100c4180e0288a93870194750",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.invalidation",
+    "kind": "INTEGRATED_DECISION_INVALIDATION",
+    "text": {
+     "activation_semantics": "FIRST_LATER_COMPLETED_SESSION_WITH_RETAINED_CLOSE_SATISFIES_FIXED_T0_BOUNDARY",
+     "authority_boundary": "RETAINED_RESEARCH_BOUNDARY_NOT_EXECUTION_OR_STOP_LOSS",
+     "condition_identity": "retained_strategy_boundary_condition:1993dd755b6da240ad2442ce7c603bb884266348c0ec60d03a1722e8babba2ba",
+     "condition_version": "retained_strategy_boundary_condition/v1",
+     "narrative_reason": "Fixed T0 structural close boundary; analytical research only.",
+     "operator": ">",
+     "reason_codes": [
+      "EXISTING_READY_FIXED_T0_CLOSE_BOUNDARY"
+     ],
+     "reference_field": "close",
+     "reference_level": 10.55,
+     "required_state": "CONFIRMED_SWING_HIGH_BY_RULE_OR_V1_RESISTANCE_FALLBACK",
+     "role": "invalidation",
+     "source_boundary_status": "READY",
+     "source_boundary_type": "CONFIRMED_SWING_HIGH_BY_RULE_OR_V1_RESISTANCE_FALLBACK",
+     "source_lineage": {
+      "as_of_session": "2026-10-22",
+      "source_artifact_identity": "market_structure_breakout_product_projection/v1:eb72d6cd2b7ac83ea2688065ebec6f2709cb943b4d9a9a39d3f22f7248a22701"
+     },
+     "source_method": "market_structure_breakout_product_projection/v1",
+     "source_metric": "invalidation_level",
+     "source_rule": null,
+     "source_strategy_identity": "market_structure_breakout_product_projection/v1:eb72d6cd2b7ac83ea2688065ebec6f2709cb943b4d9a9a39d3f22f7248a22701",
+     "status": "MACHINE_EVALUABLE",
+     "strategy_operator": "FUTURE_CLOSE_GT_STRUCTURAL_LEVEL"
+    }
+   },
+   "relation": "PRODUCER_CONDITION_NOT_CONSUMER_OUTCOME"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "02740143933e612bb6edd871074d33215c2b97fb688a929f9fc109ee70e3c509",
+    "evidence_ref": "current_daily_decision_research.fundamental_invalidation",
+    "producer_head": "20a97427c2a0aec1a6b5538a34b32fd16f048dfe",
+    "product_identity": "current_daily_decision_research_product:de3a5d91c69ad70dc8979b25e21db46cb0b218f074e0c28f450938c844076287",
+    "run_identity": "daily_producer_run:78211b58dd804b5514ed76203ba6cdb465dc34dda735eae17b16f7b5da3cfab1",
+    "session": "2026-10-22",
+    "ticker": "NVL"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:b0417b735f664e6ddb50b69bc90e4d1442e0dd1115b458f45a4ffb6ad335a195",
+   "observation": {
+    "current_trigger_state": "UNKNOWN",
+    "evidence_ref": "current_daily_decision_research.fundamental_invalidation",
+    "kind": "FUNDAMENTAL_INVALIDATION",
+    "metric_or_axis": "COMPATIBLE_PROFITABILITY_QUALITY_DETERIORATION",
+    "source_artifact_identity": "shadow_security_recommendation:1b15df365a350a19b39e1b1db1dcc775a0b597e364532e560f83faa8cff500d8",
+    "status": "CONDITIONAL",
+    "text": "A related profitability axis exists but no compatible numeric margin baseline is retained."
+   },
+   "relation": "PRODUCER_CONDITION_NOT_CONSUMER_OUTCOME"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "02740143933e612bb6edd871074d33215c2b97fb688a929f9fc109ee70e3c509",
+    "evidence_ref": "current_daily_decision_research.thesis_counter_thesis.questions_to_verify",
+    "producer_head": "20a97427c2a0aec1a6b5538a34b32fd16f048dfe",
+    "product_identity": "current_daily_decision_research_product:de3a5d91c69ad70dc8979b25e21db46cb0b218f074e0c28f450938c844076287",
+    "run_identity": "daily_producer_run:78211b58dd804b5514ed76203ba6cdb465dc34dda735eae17b16f7b5da3cfab1",
+    "session": "2026-10-22",
+    "ticker": "NVL"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:4eaa5fba13ed11ff510220333db58a60a048645118eec85c03a6765853dcb108",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.thesis_counter_thesis.questions_to_verify",
+    "kind": "CARD_QUESTION_TO_VERIFY",
+    "text": "A session close below the 20-day moving average would confirm the momentum rollover already visible in the 20-day reading."
+   },
+   "relation": "PRODUCER_RESEARCH_QUESTION_NOT_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "02740143933e612bb6edd871074d33215c2b97fb688a929f9fc109ee70e3c509",
+    "evidence_ref": "current_daily_decision_research.corporate_intelligence_context.what_to_verify",
+    "producer_head": "20a97427c2a0aec1a6b5538a34b32fd16f048dfe",
+    "product_identity": "current_daily_decision_research_product:de3a5d91c69ad70dc8979b25e21db46cb0b218f074e0c28f450938c844076287",
+    "run_identity": "daily_producer_run:78211b58dd804b5514ed76203ba6cdb465dc34dda735eae17b16f7b5da3cfab1",
+    "session": "2026-10-22",
+    "ticker": "NVL"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:1f21c931233386b3d96707712b7cf6a1772920470862e4fe3c7ed2f626fe1c32",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.corporate_intelligence_context.what_to_verify",
+    "kind": "CORPORATE_WHAT_TO_VERIFY",
+    "text": "NO_RETAINED_INTELLIGENCE_IS_A_DATA_GAP_NOT_ZERO_CORPORATE_ACTIVITY"
+   },
+   "relation": "PRODUCER_RESEARCH_QUESTION_NOT_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "02740143933e612bb6edd871074d33215c2b97fb688a929f9fc109ee70e3c509",
+    "evidence_ref": "current_daily_decision_research.fundamental_context",
+    "producer_head": "20a97427c2a0aec1a6b5538a34b32fd16f048dfe",
+    "product_identity": "current_daily_decision_research_product:de3a5d91c69ad70dc8979b25e21db46cb0b218f074e0c28f450938c844076287",
+    "run_identity": "daily_producer_run:78211b58dd804b5514ed76203ba6cdb465dc34dda735eae17b16f7b5da3cfab1",
+    "session": "2026-10-22",
+    "ticker": "NVL"
+   },
+   "domain": "CASH_BALANCE",
+   "evidence_identity": "case_evidence:7670e9412f77afeb02b8f1245ae8ed59bf3ee832f440e8c3777cd6ff87dacb46",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.fundamental_context",
+    "kind": "NEEDS_QUALIFIED_SAME_PERIOD_PROFIT_AND_OPERATING_CASH",
+    "text": null
+   },
+   "relation": "PRODUCER_RESEARCH_QUESTION_NOT_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "02740143933e612bb6edd871074d33215c2b97fb688a929f9fc109ee70e3c509",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context",
+    "producer_head": "20a97427c2a0aec1a6b5538a34b32fd16f048dfe",
+    "product_identity": "current_daily_decision_research_product:de3a5d91c69ad70dc8979b25e21db46cb0b218f074e0c28f450938c844076287",
+    "run_identity": "daily_producer_run:78211b58dd804b5514ed76203ba6cdb465dc34dda735eae17b16f7b5da3cfab1",
+    "session": "2026-10-22",
+    "ticker": "NVL"
+   },
+   "domain": "OPERATING",
+   "evidence_identity": "case_evidence:1284883c58054b3b0dae6afa1110f89a906fb5f3c7b6c7259c965e630baf37e1",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context",
+    "kind": "NEEDS_QUALIFIED_COMPARABLE_REVENUE_AND_EARNINGS",
+    "text": null
+   },
+   "relation": "PRODUCER_RESEARCH_QUESTION_NOT_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "02740143933e612bb6edd871074d33215c2b97fb688a929f9fc109ee70e3c509",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context",
+    "producer_head": "20a97427c2a0aec1a6b5538a34b32fd16f048dfe",
+    "product_identity": "current_daily_decision_research_product:de3a5d91c69ad70dc8979b25e21db46cb0b218f074e0c28f450938c844076287",
+    "run_identity": "daily_producer_run:78211b58dd804b5514ed76203ba6cdb465dc34dda735eae17b16f7b5da3cfab1",
+    "session": "2026-10-22",
+    "ticker": "NVL"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:bcce9f04230b662885c48e2dbe547f20936da97fac4dc5bd5090600157a35f99",
+   "observation": {
+    "code": "VALUATION_REASON_CODE_WHILE_PEER_VALUATION_UNAVAILABLE",
+    "consumer_effect": "NEITHER_FIELD_IS_UPGRADED_OR_DISCARDED",
+    "evidence_refs": [
+     "current_daily_decision_research.integrated_decision_v1.financial_composite_context",
+     "current_daily_decision_research.valuation_context"
+    ],
+    "source_value": {
+     "peer_valuation_status": "VALUATION_PEER_CONTEXT_UNAVAILABLE",
+     "reason_codes": [
+      "ATTRACTIVE_RELATIVE_RESEARCH_PEER_VALUATION"
+     ]
+    }
+   },
+   "relation": "SOURCE_CONFLICT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "02740143933e612bb6edd871074d33215c2b97fb688a929f9fc109ee70e3c509",
+    "evidence_ref": "current_daily_decision_research.valuation_context",
+    "producer_head": "20a97427c2a0aec1a6b5538a34b32fd16f048dfe",
+    "product_identity": "current_daily_decision_research_product:de3a5d91c69ad70dc8979b25e21db46cb0b218f074e0c28f450938c844076287",
+    "run_identity": "daily_producer_run:78211b58dd804b5514ed76203ba6cdb465dc34dda735eae17b16f7b5da3cfab1",
+    "session": "2026-10-22",
+    "ticker": "NVL"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:26f7897b67232363a3b41ae6afe55a25331418c03cc49dc79b51c627389e5736",
+   "observation": {
+    "code": "VALUATION_REASON_CODE_WHILE_PEER_VALUATION_UNAVAILABLE",
+    "consumer_effect": "NEITHER_FIELD_IS_UPGRADED_OR_DISCARDED",
+    "evidence_refs": [
+     "current_daily_decision_research.integrated_decision_v1.financial_composite_context",
+     "current_daily_decision_research.valuation_context"
+    ],
+    "source_value": {
+     "peer_valuation_status": "VALUATION_PEER_CONTEXT_UNAVAILABLE",
+     "reason_codes": [
+      "ATTRACTIVE_RELATIVE_RESEARCH_PEER_VALUATION"
+     ]
+    }
+   },
+   "relation": "SOURCE_CONFLICT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.fundamental_research_context.official_income.earnings_quality_context",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "NVL"
+   },
+   "domain": "OPERATING",
+   "evidence_identity": "case_evidence:6215ae5020dcc286e5646d9abec99a1d0de29b29c1d451042c88449168eb7cb5",
+   "observation": {
+    "components": [],
+    "comprehensive_income": "NOT_SUPPLIED_BY_PRODUCER",
+    "earnings_quality_scope": "CURRENT_REPORTED_INCOME",
+    "earnings_quality_status": "UNKNOWN",
+    "excluded_post_cutoff_or_untimed_components": [],
+    "interpretation": "REPORTED_PROFIT_NOT_ESTABLISHED_AS_RECURRING_OR_COMPREHENSIVE_INCOME",
+    "normalization_status": null,
+    "reason": "NO_QUALIFIED_NON_RECURRING_LINE_EVIDENCE",
+    "recurrence_assessment": null,
+    "reported_income_lines": []
+   },
+   "relation": "PRODUCER_EARNINGS_QUALITY_CONTEXT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "NVL"
+   },
+   "domain": "OPERATING",
+   "evidence_identity": "case_evidence:4e53bad8ddcdf420ebb6e2da6d555f87a1dadf39d93033d81c4df4659a670a35",
+   "observation": {
+    "evidence_basis_state": "FINANCIAL_POSITION_ONLY",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context",
+    "financial_composite_state": "FUNDAMENTALS_IMPROVING",
+    "statement_code": "COMPOSITE_VERDICT_DESCRIBES_FINANCIAL_POSITION_NOT_BUSINESS_PROFITABILITY"
+   },
+   "relation": "RELATED_INSUFFICIENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.fundamental_research_context",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "NVL"
+   },
+   "domain": "CASH_BALANCE",
+   "evidence_identity": "case_evidence:35f0f8108ca91579386a863f52a4789fe65b9cfc0652922a772278850a0bd5af",
+   "observation": {
+    "economics_status": null,
+    "state": "UNKNOWN",
+    "statement_code": "OLDER_CARD_HAS_NO_INCOME_TO_CASH_CONTEXT"
+   },
+   "relation": "RELATED_INSUFFICIENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.valuation_context",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "NVL"
+   },
+   "domain": "VALUATION",
+   "evidence_identity": "case_evidence:6f650c219ff873cd11b206e40ab37eb9a1c33d9ccd14982fc67966b52e9cd83d",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.valuation_context",
+    "peer_valuation_status": "PEER_RELATIVE_RESEARCH_IN_INTEGRATED_DECISION",
+    "shadow_authority": "SHADOW_RESEARCH_ONLY",
+    "strict_valuation_status": "UNAVAILABLE"
+   },
+   "relation": "RELATED_INSUFFICIENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "NVL"
+   },
+   "domain": "TECHNICAL",
+   "evidence_identity": "case_evidence:1be716fe7c6789be864e04b5d84b07f0d743e124efcca9c9cc4aabae62fa5933",
+   "observation": {
+    "decision_identity": "decision:NVL:eaa4e6fecbe2a4a3",
+    "entry_action": "WAIT",
+    "entry_state": "SIDEWAYS_NEUTRAL",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1",
+    "posture_condition_class": "BEARISH_STRUCTURE_ADVERSE",
+    "research_action_posture": "AVOID",
+    "tactical_phase": "BREAKDOWN",
+    "use": "TECHNICAL_RESEARCH_LABEL_NOT_INVESTMENT_QUALITY_OR_INSTRUCTION"
+   },
+   "relation": "TECHNICAL_CONTEXT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.why_it_is_on_radar.evidence_for",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "NVL"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:e9f8268a58969911e4418e9843b8fbaed2dd9fdfa21cefb0f75f20a739b0a954",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.why_it_is_on_radar.evidence_for",
+    "text": "Current-session descriptive liquidity is eligible (board-composition reading available)."
+   },
+   "relation": "SUPPORTING_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.why_it_is_on_radar.evidence_for",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "NVL"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:f507f718188170ad316bcd3ec1b2ca254d402555bdba43bc22b1635d7ca43204",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.why_it_is_on_radar.evidence_for",
+    "text": "Official-tier fundamental evidence is available (readiness: PARTIAL)."
+   },
+   "relation": "SUPPORTING_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context.supporting_reason_codes",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "NVL"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:751d220ad054635f2457f579e0e0ed5d43b2c62c9e9491316c9263c846af8e00",
+   "observation": {
+    "code": "BALANCE_SHEET_STRENGTHENING",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context.supporting_reason_codes",
+    "source_value": null
+   },
+   "relation": "SUPPORTING_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context.supporting_reason_codes",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "NVL"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:63caa2b0d0cba557ebcb88a6a0ca519bc5d2907b6b5b8b97b701141e885b2d36",
+   "observation": {
+    "code": "DEBT_TO_EQUITY_DECREASING",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context.supporting_reason_codes",
+    "source_value": null
+   },
+   "relation": "SUPPORTING_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context.supporting_reason_codes",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "NVL"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:46178536e827eebba8814f9c0a6e39787900e0e642e17997c381b056f4aaeca1",
+   "observation": {
+    "code": "CURRENT_RATIO_IMPROVING",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context.supporting_reason_codes",
+    "source_value": null
+   },
+   "relation": "SUPPORTING_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context.supporting_reason_codes",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "NVL"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:6619b419947b7083b964d3fa5ecf5385abb68d49c18a65a1d1dd74de6b0f98ca",
+   "observation": {
+    "code": "ATTRACTIVE_RELATIVE_RESEARCH_PEER_VALUATION",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context.supporting_reason_codes",
+    "source_value": null
+   },
+   "relation": "SUPPORTING_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.trigger",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "NVL"
+   },
+   "domain": "TECHNICAL",
+   "evidence_identity": "case_evidence:34cb26ccce07835b89b69c10d94bdbec2de38616898c2a0b88cf903fab1412b3",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.trigger",
+    "kind": "TECHNICAL_TRIGGER",
+    "text": "A decisive move away from the 20-day moving average combined with a same-session momentum quartile extreme (top or bottom) would resolve the current lack of a directional edge."
+   },
+   "relation": "PRODUCER_CONDITION_NOT_CONSUMER_OUTCOME"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.invalidation",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "NVL"
+   },
+   "domain": "TECHNICAL",
+   "evidence_identity": "case_evidence:9972f3647e26468d6f5c63697a3c8331d5e4223066aa7309ac2891138d1339b9",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.invalidation",
+    "kind": "TECHNICAL_INVALIDATION",
+    "text": "A move to a same-session momentum quartile extreme (top or bottom) combined with price moving decisively away from the 20-day moving average would invalidate the neutral read."
+   },
+   "relation": "PRODUCER_CONDITION_NOT_CONSUMER_OUTCOME"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.invalidation",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "NVL"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:ccbdcde677357e758c4435216021932407080e988aeb6169b1f44a9fb65d9505",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.invalidation",
+    "kind": "INTEGRATED_DECISION_INVALIDATION",
+    "text": {
+     "activation_semantics": "FIRST_LATER_COMPLETED_SESSION_WITH_RETAINED_CLOSE_SATISFIES_FIXED_T0_BOUNDARY",
+     "authority_boundary": "RETAINED_RESEARCH_BOUNDARY_NOT_EXECUTION_OR_STOP_LOSS",
+     "condition_identity": "retained_strategy_boundary_condition:53f88fea12c4c911c5775f03c6841c2c6b6323b34c969fe99635c3bdffb85a59",
+     "condition_version": "retained_strategy_boundary_condition/v1",
+     "narrative_reason": "Fixed T0 structural close boundary; analytical research only.",
+     "operator": ">",
+     "reason_codes": [
+      "EXISTING_READY_FIXED_T0_CLOSE_BOUNDARY"
+     ],
+     "reference_field": "close",
+     "reference_level": 10.55,
+     "required_state": "CONFIRMED_SWING_HIGH_BY_RULE_OR_V1_RESISTANCE_FALLBACK",
+     "role": "invalidation",
+     "source_boundary_status": "READY",
+     "source_boundary_type": "CONFIRMED_SWING_HIGH_BY_RULE_OR_V1_RESISTANCE_FALLBACK",
+     "source_lineage": {
+      "as_of_session": "2026-10-23",
+      "source_artifact_identity": "market_structure_breakout_product_projection/v1:4e7ac0a0a9e50c2e8f3064a720588db15c065ee3f441663282f096d96752f5f6"
+     },
+     "source_method": "market_structure_breakout_product_projection/v1",
+     "source_metric": "invalidation_level",
+     "source_rule": null,
+     "source_strategy_identity": "market_structure_breakout_product_projection/v1:4e7ac0a0a9e50c2e8f3064a720588db15c065ee3f441663282f096d96752f5f6",
+     "status": "MACHINE_EVALUABLE",
+     "strategy_operator": "FUTURE_CLOSE_GT_STRUCTURAL_LEVEL"
+    }
+   },
+   "relation": "PRODUCER_CONDITION_NOT_CONSUMER_OUTCOME"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.fundamental_invalidation",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "NVL"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:6ad813ef5d9f35881f452f95a9f5cac51a86a84f02845990a088855aa8f215a5",
+   "observation": {
+    "current_trigger_state": "UNKNOWN",
+    "evidence_ref": "current_daily_decision_research.fundamental_invalidation",
+    "kind": "FUNDAMENTAL_INVALIDATION",
+    "metric_or_axis": "COMPATIBLE_PROFITABILITY_QUALITY_DETERIORATION",
+    "source_artifact_identity": "shadow_security_recommendation:f5ec7815e36af91ea390c0bb12c7252a5fc380130ba435dfbc322eca4d50ed93",
+    "status": "CONDITIONAL",
+    "text": "A related profitability axis exists but no compatible numeric margin baseline is retained."
+   },
+   "relation": "PRODUCER_CONDITION_NOT_CONSUMER_OUTCOME"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.thesis_counter_thesis.questions_to_verify",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "NVL"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:94fd4b53ca0a9cb5f082674474f3c330cb4cfdf18b3e0c1a2ebc7e8f0851db46",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.thesis_counter_thesis.questions_to_verify",
+    "kind": "CARD_QUESTION_TO_VERIFY",
+    "text": "A decisive move away from the 20-day moving average combined with a same-session momentum quartile extreme (top or bottom) would resolve the current lack of a directional edge."
+   },
+   "relation": "PRODUCER_RESEARCH_QUESTION_NOT_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.corporate_intelligence_context.what_to_verify",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "NVL"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:f58f8e5e6f37a8ca0ee482c23d717f2dd56b29502cc43283416a31df27e25c68",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.corporate_intelligence_context.what_to_verify",
+    "kind": "CORPORATE_WHAT_TO_VERIFY",
+    "text": "NO_RETAINED_INTELLIGENCE_IS_A_DATA_GAP_NOT_ZERO_CORPORATE_ACTIVITY"
+   },
+   "relation": "PRODUCER_RESEARCH_QUESTION_NOT_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.fundamental_research_context",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "NVL"
+   },
+   "domain": "CASH_BALANCE",
+   "evidence_identity": "case_evidence:1dd2f9d8a213b409a77799af3ffa70d7f7008271e1a26278d3806986b2cecf62",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.fundamental_research_context",
+    "kind": "NEEDS_QUALIFIED_SAME_PERIOD_PROFIT_AND_OPERATING_CASH",
+    "text": null
+   },
+   "relation": "PRODUCER_RESEARCH_QUESTION_NOT_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "NVL"
+   },
+   "domain": "OPERATING",
+   "evidence_identity": "case_evidence:6ff9319b9eb693901c1048bf5f7061ce67bfb200aa9b4ef5c633e86f96b369df",
+   "observation": {
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context",
+    "kind": "NEEDS_QUALIFIED_COMPARABLE_REVENUE_AND_EARNINGS",
+    "text": null
+   },
+   "relation": "PRODUCER_RESEARCH_QUESTION_NOT_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "NVL"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:c5d93da5740a6242afd8b84b51bc0272ce7141a77f86a580a62d482b7724500e",
+   "observation": {
+    "code": "VALUATION_REASON_CODE_WHILE_PEER_VALUATION_UNAVAILABLE",
+    "consumer_effect": "NEITHER_FIELD_IS_UPGRADED_OR_DISCARDED",
+    "evidence_refs": [
+     "current_daily_decision_research.integrated_decision_v1.financial_composite_context",
+     "current_daily_decision_research.valuation_context"
+    ],
+    "source_value": {
+     "peer_valuation_status": "PEER_RELATIVE_RESEARCH_IN_INTEGRATED_DECISION",
+     "reason_codes": [
+      "ATTRACTIVE_RELATIVE_RESEARCH_PEER_VALUATION"
+     ]
+    }
+   },
+   "relation": "SOURCE_CONFLICT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.valuation_context",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "NVL"
+   },
+   "domain": "BUSINESS_RISK",
+   "evidence_identity": "case_evidence:150cc01add5b3a5c33b40435479f521228b294f6a8c091c74cbcd01c6b4ca9bb",
+   "observation": {
+    "code": "VALUATION_REASON_CODE_WHILE_PEER_VALUATION_UNAVAILABLE",
+    "consumer_effect": "NEITHER_FIELD_IS_UPGRADED_OR_DISCARDED",
+    "evidence_refs": [
+     "current_daily_decision_research.integrated_decision_v1.financial_composite_context",
+     "current_daily_decision_research.valuation_context"
+    ],
+    "source_value": {
+     "peer_valuation_status": "PEER_RELATIVE_RESEARCH_IN_INTEGRATED_DECISION",
+     "reason_codes": [
+      "ATTRACTIVE_RELATIVE_RESEARCH_PEER_VALUATION"
+     ]
+    }
+   },
+   "relation": "SOURCE_CONFLICT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.fundamental_research_context",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "NVL"
+   },
+   "domain": "OPERATING",
+   "evidence_identity": "case_evidence:872cf47ff38ba86d42557d925c6e433809c04ef915920fa670f8d299890f9b6e",
+   "observation": {
+    "basis_source": "VOTE_DIMENSIONS_OF_OLDER_CARD",
+    "business_dimensions": [
+     "PROFITABILITY"
+    ],
+    "items": [
+     {
+      "code": "FUNDAMENTAL_VOTE_DIMENSIONS",
+      "evidence_ref": "current_daily_decision_research.integrated_decision_v1.evidence_axes.FUNDAMENTAL.context",
+      "source_value": {
+       "adverse_votes": [],
+       "favorable_votes": [
+        "CAPITAL_STRUCTURE.DIRECTION",
+        "PROFITABILITY.LEVEL"
+       ]
+      }
+     },
+     {
+      "code": "COMPOSITE_STATE_AND_REASONS",
+      "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context",
+      "reason_code_categories": {
+       "ATTRACTIVE_RELATIVE_RESEARCH_PEER_VALUATION": "VALUATION",
+       "BALANCE_SHEET_STRENGTHENING": "FINANCIAL_POSITION",
+       "CURRENT_RATIO_IMPROVING": "FINANCIAL_POSITION",
+       "DEBT_TO_EQUITY_DECREASING": "FINANCIAL_POSITION",
+       "PROFITABLE_CORE_OPERATIONS": "BUSINESS"
+      },
+      "source_value": {
+       "contradicting_reason_codes": [],
+       "financial_composite_state": "FUNDAMENTALS_IMPROVING",
+       "supporting_reason_codes": [
+        "PROFITABLE_CORE_OPERATIONS",
+        "BALANCE_SHEET_STRENGTHENING",
+        "DEBT_TO_EQUITY_DECREASING",
+        "CURRENT_RATIO_IMPROVING",
+        "ATTRACTIVE_RELATIVE_RESEARCH_PEER_VALUATION"
+       ]
+      }
+     }
+    ],
+    "position_dimensions": [
+     "CAPITAL_STRUCTURE"
+    ],
+    "state": "BUSINESS_AND_POSITION",
+    "statement_code": "COMPOSITE_VERDICT_INCLUDES_BUSINESS_DIMENSIONS"
+   },
+   "relation": "CONSUMER_CLASSIFICATION_NOT_NEW_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.fundamental_research_context",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "NVL"
+   },
+   "domain": "CASH_BALANCE",
+   "evidence_identity": "case_evidence:270f3579e68d34b34478d4da845d263e65acfef25fd7aa54dc60e75e252cea36",
+   "observation": {
+    "items": [
+     {
+      "code": "LEGACY_DIRECTIONS",
+      "evidence_ref": "current_daily_decision_research.fundamental_context",
+      "source_value": {
+       "earnings_direction": null,
+       "operating_cash_flow_direction": null,
+       "revenue_direction": null
+      }
+     }
+    ],
+    "state": "UNKNOWN",
+    "statement_code": "OLDER_CARD_HAS_NO_INCOME_TO_CASH_CONTEXT"
+   },
+   "relation": "CONSUMER_CLASSIFICATION_NOT_NEW_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.fundamental_research_context",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "NVL"
+   },
+   "domain": "CASH_BALANCE",
+   "evidence_identity": "case_evidence:d9748a47e690aa83d88c6d1830bad8765c8e890d2fa82f644a606c9d5b922240",
+   "observation": {
+    "items": [],
+    "state": "FREE_CASH_FLOW_NOT_SUPPLIED",
+    "statement_code": "NO_PRODUCER_CAPEX_OR_FREE_CASH_FLOW_FIELD"
+   },
+   "relation": "CONSUMER_CLASSIFICATION_NOT_NEW_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.fundamental_research_context",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "NVL"
+   },
+   "domain": "OPERATING",
+   "evidence_identity": "case_evidence:adb5892a094f615491fba5e156dcc7ef84744c402caf092674b8bcaca0849168",
+   "observation": {
+    "cautions": [
+     {
+      "code": "OLDER_CARD_ALIGNMENT_UNAVAILABLE",
+      "evidence_ref": "current_daily_decision_research.fundamental_context.revenue_vs_earnings_alignment",
+      "source_value": {
+       "reason": "NO_PROVIDER_TRAJECTORY_PROMOTION_TO_OFFICIAL",
+       "status": "UNAVAILABLE"
+      }
+     }
+    ],
+    "matched": [],
+    "refused": [],
+    "refused_metrics": [],
+    "state": "NO_MATCHED_COMPARISON",
+    "statement_code": "ONLY_PRODUCER_MATCHED_COMPARISONS_ARE_GROWTH_EVIDENCE"
+   },
+   "relation": "CONSUMER_CLASSIFICATION_NOT_NEW_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.fundamental_research_context",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "NVL"
+   },
+   "domain": "OPERATING",
+   "evidence_identity": "case_evidence:7c8d14d4c74807549df5d96d8c514bdb23545622fc81eb213f125cb59b944a6f",
+   "observation": {
+    "management_forecast": "NOT_SUPPLIED_BY_PRODUCER",
+    "planned_or_pending": [],
+    "reported": [],
+    "state": "NO_PLANNED_ITEMS_SUPPLIED",
+    "statement_code": "PLANNED_APPROVED_OR_FORECAST_ITEMS_ARE_NOT_REPORTED_RESULTS",
+    "unreviewed_releases": []
+   },
+   "relation": "CONSUMER_CLASSIFICATION_NOT_NEW_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.counter_thesis",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "NVL"
+   },
+   "domain": "TECHNICAL",
+   "evidence_identity": "case_evidence:b8cee471740f9d6f7a64536ea0918b7d07925807008a930220090b6eb0103801",
+   "observation": {
+    "category": "TECHNICAL",
+    "code": "PRODUCER_COUNTER_THESIS_CODE",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.counter_thesis",
+    "source_value": "EARLY_BEARISH_REVERSAL_STRUCTURE"
+   },
+   "relation": "GROUNDED_COUNTER_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.counter_thesis",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "NVL"
+   },
+   "domain": "TECHNICAL",
+   "evidence_identity": "case_evidence:d796321097f37bcf9ba257c612e1671e394bc3cbe497efe6a9f4831f4fbf3186",
+   "observation": {
+    "category": "TECHNICAL",
+    "code": "PRODUCER_COUNTER_THESIS_CODE",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.counter_thesis",
+    "source_value": "LOWER_SWING_HIGHS"
+   },
+   "relation": "GROUNDED_COUNTER_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.counter_thesis",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "NVL"
+   },
+   "domain": "TECHNICAL",
+   "evidence_identity": "case_evidence:f3cedd4e195a66700c0003b619c8adbb37859ef5ca1fb639895b5bd638d55663",
+   "observation": {
+    "category": "TECHNICAL",
+    "code": "PRODUCER_COUNTER_THESIS_CODE",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.counter_thesis",
+    "source_value": "MA20_SLOPE_FALLING"
+   },
+   "relation": "GROUNDED_COUNTER_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.thesis_counter_thesis.counter_thesis",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "NVL"
+   },
+   "domain": "TECHNICAL",
+   "evidence_identity": "case_evidence:dd4453fe4cd2a74f9c1a24fafa575cd7b7afddf828d860df3cfcdf0c3e258fc8",
+   "observation": {
+    "authority": "CURRENT_DETERMINISTIC_RESEARCH",
+    "category": "TECHNICAL",
+    "code": "CARD_COUNTER_CLAIM_INFERENCE",
+    "evidence_field": "tactical.evidence_against",
+    "evidence_ref": "current_daily_decision_research.thesis_counter_thesis.counter_thesis",
+    "source_value": "Price is at or below its 20-day moving average."
+   },
+   "relation": "GROUNDED_COUNTER_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.thesis_counter_thesis.counter_thesis",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "NVL"
+   },
+   "domain": "TECHNICAL",
+   "evidence_identity": "case_evidence:640aeb1afd8034b269c793450d7f3f7f8d94e4d832d420804ffdf2467034e394",
+   "observation": {
+    "authority": "CURRENT_DETERMINISTIC_RESEARCH",
+    "category": "TECHNICAL",
+    "code": "CARD_COUNTER_CLAIM_INFERENCE",
+    "evidence_field": "tactical.evidence_against",
+    "evidence_ref": "current_daily_decision_research.thesis_counter_thesis.counter_thesis",
+    "source_value": "20-day momentum is negative (-0.1521)."
+   },
+   "relation": "GROUNDED_COUNTER_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "evidence_ref": "current_daily_decision_research.thesis_counter_thesis.counter_thesis",
+    "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+    "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+    "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16",
+    "ticker": "NVL"
+   },
+   "domain": "TECHNICAL",
+   "evidence_identity": "case_evidence:89d6a632f456415b9cbd4cf032e46f9c3d9f9cf080ba2a455004500993699051",
+   "observation": {
+    "authority": "CURRENT_DETERMINISTIC_RESEARCH",
+    "category": "TECHNICAL",
+    "code": "CARD_COUNTER_CLAIM_INFERENCE",
+    "evidence_field": "tactical.evidence_against",
+    "evidence_ref": "current_daily_decision_research.thesis_counter_thesis.counter_thesis",
+    "source_value": "20-day momentum ranks in the LOWER_QUARTILE of the same-session market cohort."
+   },
+   "relation": "GROUNDED_COUNTER_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "c2b5aec1f842539a9a281fc60f74000744554727af225cf7248e6603d91074b8",
+    "evidence_ref": "current_daily_decision_research.fundamental_research_context",
+    "producer_head": "1bb8106232d078fa5d475cab953b54462d57711e",
+    "product_identity": "current_daily_decision_research_product:669b5968e703adfe88297878b481f1ecd0d4327706f4cee10a79296235735d72",
+    "run_identity": "daily_producer_run:d4a2e4247511c56c4a91686bdf1e272861c57bb6f720c637400a1cc36900c27d",
+    "session": "2026-10-21",
+    "ticker": "NVL"
+   },
+   "domain": "OPERATING",
+   "evidence_identity": "case_evidence:21bc9dbc1fb901977a03c7002bc0a3149866a36ac5cbf2f0d6246939721d82d8",
+   "observation": {
+    "basis_source": "VOTE_DIMENSIONS_OF_OLDER_CARD",
+    "business_dimensions": [],
+    "items": [
+     {
+      "code": "FUNDAMENTAL_VOTE_DIMENSIONS",
+      "evidence_ref": "current_daily_decision_research.integrated_decision_v1.evidence_axes.FUNDAMENTAL.context",
+      "source_value": {
+       "adverse_votes": [],
+       "favorable_votes": [
+        "CAPITAL_STRUCTURE.DIRECTION"
+       ]
+      }
+     },
+     {
+      "code": "COMPOSITE_STATE_AND_REASONS",
+      "evidence_ref": "current_daily_decision_research.integrated_decision_v1.financial_composite_context",
+      "reason_code_categories": {
+       "ATTRACTIVE_RELATIVE_RESEARCH_PEER_VALUATION": "VALUATION",
+       "BALANCE_SHEET_STRENGTHENING": "FINANCIAL_POSITION",
+       "CURRENT_RATIO_IMPROVING": "FINANCIAL_POSITION",
+       "DEBT_TO_EQUITY_DECREASING": "FINANCIAL_POSITION"
+      },
+      "source_value": {
+       "contradicting_reason_codes": [],
+       "financial_composite_state": "FUNDAMENTALS_IMPROVING",
+       "supporting_reason_codes": [
+        "BALANCE_SHEET_STRENGTHENING",
+        "DEBT_TO_EQUITY_DECREASING",
+        "CURRENT_RATIO_IMPROVING",
+        "ATTRACTIVE_RELATIVE_RESEARCH_PEER_VALUATION"
+       ]
+      }
+     }
+    ],
+    "position_dimensions": [
+     "CAPITAL_STRUCTURE"
+    ],
+    "state": "FINANCIAL_POSITION_ONLY",
+    "statement_code": "COMPOSITE_VERDICT_DESCRIBES_FINANCIAL_POSITION_NOT_BUSINESS_PROFITABILITY"
+   },
+   "relation": "CONSUMER_CLASSIFICATION_NOT_NEW_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "c2b5aec1f842539a9a281fc60f74000744554727af225cf7248e6603d91074b8",
+    "evidence_ref": "current_daily_decision_research.fundamental_research_context",
+    "producer_head": "1bb8106232d078fa5d475cab953b54462d57711e",
+    "product_identity": "current_daily_decision_research_product:669b5968e703adfe88297878b481f1ecd0d4327706f4cee10a79296235735d72",
+    "run_identity": "daily_producer_run:d4a2e4247511c56c4a91686bdf1e272861c57bb6f720c637400a1cc36900c27d",
+    "session": "2026-10-21",
+    "ticker": "NVL"
+   },
+   "domain": "CASH_BALANCE",
+   "evidence_identity": "case_evidence:f2d9b2f84da97484d079eac06e10ebb9d951cd930143bed0b83c37dc7cf1ab06",
+   "observation": {
+    "items": [
+     {
+      "code": "LEGACY_DIRECTIONS",
+      "evidence_ref": "current_daily_decision_research.fundamental_context",
+      "source_value": {
+       "earnings_direction": null,
+       "operating_cash_flow_direction": null,
+       "revenue_direction": null
+      }
+     }
+    ],
+    "state": "UNKNOWN",
+    "statement_code": "OLDER_CARD_HAS_NO_INCOME_TO_CASH_CONTEXT"
+   },
+   "relation": "CONSUMER_CLASSIFICATION_NOT_NEW_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "c2b5aec1f842539a9a281fc60f74000744554727af225cf7248e6603d91074b8",
+    "evidence_ref": "current_daily_decision_research.fundamental_research_context",
+    "producer_head": "1bb8106232d078fa5d475cab953b54462d57711e",
+    "product_identity": "current_daily_decision_research_product:669b5968e703adfe88297878b481f1ecd0d4327706f4cee10a79296235735d72",
+    "run_identity": "daily_producer_run:d4a2e4247511c56c4a91686bdf1e272861c57bb6f720c637400a1cc36900c27d",
+    "session": "2026-10-21",
+    "ticker": "NVL"
+   },
+   "domain": "CASH_BALANCE",
+   "evidence_identity": "case_evidence:757d3b1c3bb40eafe4ccc316a61a1f1c881903bf0e5e6f31f88d5e07c37caebf",
+   "observation": {
+    "items": [],
+    "state": "FREE_CASH_FLOW_NOT_SUPPLIED",
+    "statement_code": "NO_PRODUCER_CAPEX_OR_FREE_CASH_FLOW_FIELD"
+   },
+   "relation": "CONSUMER_CLASSIFICATION_NOT_NEW_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "c2b5aec1f842539a9a281fc60f74000744554727af225cf7248e6603d91074b8",
+    "evidence_ref": "current_daily_decision_research.fundamental_research_context",
+    "producer_head": "1bb8106232d078fa5d475cab953b54462d57711e",
+    "product_identity": "current_daily_decision_research_product:669b5968e703adfe88297878b481f1ecd0d4327706f4cee10a79296235735d72",
+    "run_identity": "daily_producer_run:d4a2e4247511c56c4a91686bdf1e272861c57bb6f720c637400a1cc36900c27d",
+    "session": "2026-10-21",
+    "ticker": "NVL"
+   },
+   "domain": "OPERATING",
+   "evidence_identity": "case_evidence:602ff21a5a842b9d6fcc932f83fa1fc80f5c27cd685c336cfadf6fd863ad8e9b",
+   "observation": {
+    "cautions": [
+     {
+      "code": "OLDER_CARD_ALIGNMENT_UNAVAILABLE",
+      "evidence_ref": "current_daily_decision_research.fundamental_context.revenue_vs_earnings_alignment",
+      "source_value": {
+       "reason": "NO_PROVIDER_TRAJECTORY_PROMOTION_TO_OFFICIAL",
+       "status": "UNAVAILABLE"
+      }
+     }
+    ],
+    "matched": [],
+    "refused": [],
+    "refused_metrics": [],
+    "state": "NO_MATCHED_COMPARISON",
+    "statement_code": "ONLY_PRODUCER_MATCHED_COMPARISONS_ARE_GROWTH_EVIDENCE"
+   },
+   "relation": "CONSUMER_CLASSIFICATION_NOT_NEW_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "c2b5aec1f842539a9a281fc60f74000744554727af225cf7248e6603d91074b8",
+    "evidence_ref": "current_daily_decision_research.fundamental_research_context",
+    "producer_head": "1bb8106232d078fa5d475cab953b54462d57711e",
+    "product_identity": "current_daily_decision_research_product:669b5968e703adfe88297878b481f1ecd0d4327706f4cee10a79296235735d72",
+    "run_identity": "daily_producer_run:d4a2e4247511c56c4a91686bdf1e272861c57bb6f720c637400a1cc36900c27d",
+    "session": "2026-10-21",
+    "ticker": "NVL"
+   },
+   "domain": "OPERATING",
+   "evidence_identity": "case_evidence:79d2fba70c486257f9d250aeadbbb7be0e83bf55356c0c4a7b5f87a95bf6d5af",
+   "observation": {
+    "management_forecast": "NOT_SUPPLIED_BY_PRODUCER",
+    "planned_or_pending": [],
+    "reported": [],
+    "state": "NO_PLANNED_ITEMS_SUPPLIED",
+    "statement_code": "PLANNED_APPROVED_OR_FORECAST_ITEMS_ARE_NOT_REPORTED_RESULTS",
+    "unreviewed_releases": []
+   },
+   "relation": "CONSUMER_CLASSIFICATION_NOT_NEW_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "02740143933e612bb6edd871074d33215c2b97fb688a929f9fc109ee70e3c509",
+    "evidence_ref": "current_daily_decision_research.fundamental_research_context",
+    "producer_head": "20a97427c2a0aec1a6b5538a34b32fd16f048dfe",
+    "product_identity": "current_daily_decision_research_product:de3a5d91c69ad70dc8979b25e21db46cb0b218f074e0c28f450938c844076287",
+    "run_identity": "daily_producer_run:78211b58dd804b5514ed76203ba6cdb465dc34dda735eae17b16f7b5da3cfab1",
+    "session": "2026-10-22",
+    "ticker": "NVL"
+   },
+   "domain": "CASH_BALANCE",
+   "evidence_identity": "case_evidence:add1ed56e5074b3524fcfc07979fd59fa6ee26c8094b70c43ae1536c019aa24d",
+   "observation": {
+    "items": [
+     {
+      "code": "LEGACY_DIRECTIONS",
+      "evidence_ref": "current_daily_decision_research.fundamental_context",
+      "source_value": {
+       "earnings_direction": null,
+       "operating_cash_flow_direction": null,
+       "revenue_direction": null
+      }
+     }
+    ],
+    "state": "UNKNOWN",
+    "statement_code": "OLDER_CARD_HAS_NO_INCOME_TO_CASH_CONTEXT"
+   },
+   "relation": "CONSUMER_CLASSIFICATION_NOT_NEW_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "02740143933e612bb6edd871074d33215c2b97fb688a929f9fc109ee70e3c509",
+    "evidence_ref": "current_daily_decision_research.fundamental_research_context",
+    "producer_head": "20a97427c2a0aec1a6b5538a34b32fd16f048dfe",
+    "product_identity": "current_daily_decision_research_product:de3a5d91c69ad70dc8979b25e21db46cb0b218f074e0c28f450938c844076287",
+    "run_identity": "daily_producer_run:78211b58dd804b5514ed76203ba6cdb465dc34dda735eae17b16f7b5da3cfab1",
+    "session": "2026-10-22",
+    "ticker": "NVL"
+   },
+   "domain": "CASH_BALANCE",
+   "evidence_identity": "case_evidence:544186a7a0f313e77610658414e1f1a99fc44cdc58fd235bd2e63898f9f9297a",
+   "observation": {
+    "items": [],
+    "state": "FREE_CASH_FLOW_NOT_SUPPLIED",
+    "statement_code": "NO_PRODUCER_CAPEX_OR_FREE_CASH_FLOW_FIELD"
+   },
+   "relation": "CONSUMER_CLASSIFICATION_NOT_NEW_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.fundamental_research_context",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "NVL"
+   },
+   "domain": "CASH_BALANCE",
+   "evidence_identity": "case_evidence:a54a3ecf3b0740f305dfe845b37bdd04bac910df967240d5260132210af54efd",
+   "observation": {
+    "items": [
+     {
+      "code": "LEGACY_DIRECTIONS",
+      "evidence_ref": "current_daily_decision_research.fundamental_context",
+      "source_value": {
+       "earnings_direction": null,
+       "operating_cash_flow_direction": null,
+       "revenue_direction": null
+      }
+     }
+    ],
+    "state": "UNKNOWN",
+    "statement_code": "OLDER_CARD_HAS_NO_INCOME_TO_CASH_CONTEXT"
+   },
+   "relation": "CONSUMER_CLASSIFICATION_NOT_NEW_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.fundamental_research_context",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "NVL"
+   },
+   "domain": "CASH_BALANCE",
+   "evidence_identity": "case_evidence:b8a3c78775a70c87cf896704d2d6f7ff6c4a3d85caa68943711c3a140888d1ab",
+   "observation": {
+    "items": [],
+    "state": "FREE_CASH_FLOW_NOT_SUPPLIED",
+    "statement_code": "NO_PRODUCER_CAPEX_OR_FREE_CASH_FLOW_FIELD"
+   },
+   "relation": "CONSUMER_CLASSIFICATION_NOT_NEW_FACT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.counter_thesis",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "NVL"
+   },
+   "domain": "TECHNICAL",
+   "evidence_identity": "case_evidence:f1193f0335a14abe5b9f83b234d8fc3bb51be050558d58b88a4aaaefbb92a079",
+   "observation": {
+    "category": "TECHNICAL",
+    "code": "PRODUCER_COUNTER_THESIS_CODE",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.counter_thesis",
+    "source_value": "EARLY_BEARISH_REVERSAL_STRUCTURE"
+   },
+   "relation": "GROUNDED_COUNTER_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.counter_thesis",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "NVL"
+   },
+   "domain": "TECHNICAL",
+   "evidence_identity": "case_evidence:ec181348efd52d04c33c24b14c689385c0fcf27cad069545d9d36c45fa396055",
+   "observation": {
+    "category": "TECHNICAL",
+    "code": "PRODUCER_COUNTER_THESIS_CODE",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.counter_thesis",
+    "source_value": "LOWER_SWING_HIGHS"
+   },
+   "relation": "GROUNDED_COUNTER_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.counter_thesis",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "NVL"
+   },
+   "domain": "TECHNICAL",
+   "evidence_identity": "case_evidence:adc6c84b6c1289f1618bf547def257ee1747150d44bc29a367968b1bc22141af",
+   "observation": {
+    "category": "TECHNICAL",
+    "code": "PRODUCER_COUNTER_THESIS_CODE",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.counter_thesis",
+    "source_value": "BEARISH_BREAK_OF_STRUCTURE"
+   },
+   "relation": "GROUNDED_COUNTER_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.counter_thesis",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "NVL"
+   },
+   "domain": "TECHNICAL",
+   "evidence_identity": "case_evidence:20b87067073933b24297b1bd2e629a882d8cb0a2d4010f48655cd2752f2bd88f",
+   "observation": {
+    "category": "TECHNICAL",
+    "code": "PRODUCER_COUNTER_THESIS_CODE",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.counter_thesis",
+    "source_value": "MA20_SLOPE_FALLING"
+   },
+   "relation": "GROUNDED_COUNTER_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.counter_thesis",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "NVL"
+   },
+   "domain": "TECHNICAL",
+   "evidence_identity": "case_evidence:c7fc6a060d22bf35c2f06fbd4288b7b421846a2c0adf64b799495945318e0fad",
+   "observation": {
+    "category": "TECHNICAL",
+    "code": "PRODUCER_COUNTER_THESIS_CODE",
+    "evidence_ref": "current_daily_decision_research.integrated_decision_v1.counter_thesis",
+    "source_value": "VOLUME_CONTRACTION_0.53X"
+   },
+   "relation": "GROUNDED_COUNTER_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.thesis_counter_thesis.counter_thesis",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "NVL"
+   },
+   "domain": "TECHNICAL",
+   "evidence_identity": "case_evidence:2111141d162a784bb81258750a7fc9354ea18d554f63fddbfb3b290fd14bb91c",
+   "observation": {
+    "authority": "CURRENT_DETERMINISTIC_RESEARCH",
+    "category": "TECHNICAL",
+    "code": "CARD_COUNTER_CLAIM_INFERENCE",
+    "evidence_field": "tactical.evidence_against",
+    "evidence_ref": "current_daily_decision_research.thesis_counter_thesis.counter_thesis",
+    "source_value": "Price is at or below its 20-day moving average."
+   },
+   "relation": "GROUNDED_COUNTER_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.thesis_counter_thesis.counter_thesis",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "NVL"
+   },
+   "domain": "TECHNICAL",
+   "evidence_identity": "case_evidence:d837e714174312d27da71c7108fdbb3040d74014578ffb7e995fe1c971235af9",
+   "observation": {
+    "authority": "CURRENT_DETERMINISTIC_RESEARCH",
+    "category": "TECHNICAL",
+    "code": "CARD_COUNTER_CLAIM_INFERENCE",
+    "evidence_field": "tactical.evidence_against",
+    "evidence_ref": "current_daily_decision_research.thesis_counter_thesis.counter_thesis",
+    "source_value": "20-day momentum is negative (-0.0337)."
+   },
+   "relation": "GROUNDED_COUNTER_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.thesis_counter_thesis.counter_thesis",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "NVL"
+   },
+   "domain": "TECHNICAL",
+   "evidence_identity": "case_evidence:b5b9efd3c62a68defcd29beead5e6ec6dee59adad5a6b7e908816fcc85dabc3e",
+   "observation": {
+    "authority": "CURRENT_DETERMINISTIC_RESEARCH",
+    "category": "TECHNICAL",
+    "code": "CARD_COUNTER_CLAIM_INFERENCE",
+    "evidence_field": "tactical.evidence_against",
+    "evidence_ref": "current_daily_decision_research.thesis_counter_thesis.counter_thesis",
+    "source_value": "20-day momentum ranks in the LOWER_MIDDLE of the same-session market cohort."
+   },
+   "relation": "GROUNDED_COUNTER_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.thesis_counter_thesis.counter_thesis",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "NVL"
+   },
+   "domain": "TECHNICAL",
+   "evidence_identity": "case_evidence:507a13d12dbc8065b25302a14922c9da8522eb4b62ffb97d960541370b306b8e",
+   "observation": {
+    "authority": "CURRENT_DETERMINISTIC_RESEARCH",
+    "category": "TECHNICAL",
+    "code": "CARD_COUNTER_CLAIM_INFERENCE",
+    "evidence_field": "tactical.evidence_against",
+    "evidence_ref": "current_daily_decision_research.thesis_counter_thesis.counter_thesis",
+    "source_value": "Today's session return is negative (-0.0093)."
+   },
+   "relation": "GROUNDED_COUNTER_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.thesis_counter_thesis.counter_thesis",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "NVL"
+   },
+   "domain": "TECHNICAL",
+   "evidence_identity": "case_evidence:ad42ddb7296b99225274a16050358e99f8f0b2adbabc2bb8d42fc1c7e71857f4",
+   "observation": {
+    "authority": "CURRENT_DETERMINISTIC_RESEARCH",
+    "category": "TECHNICAL",
+    "code": "CARD_COUNTER_CLAIM_INFERENCE",
+    "evidence_field": "tactical.evidence_against",
+    "evidence_ref": "current_daily_decision_research.thesis_counter_thesis.counter_thesis",
+    "source_value": "Provider-relative volume is at or below the same-session cohort median today."
+   },
+   "relation": "GROUNDED_COUNTER_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.thesis_counter_thesis.counter_thesis",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "NVL"
+   },
+   "domain": "TECHNICAL",
+   "evidence_identity": "case_evidence:ccb1ef02a6df3981415528be20d40f9cd538c22e58bd4b18ca6ea40ae6af93b3",
+   "observation": {
+    "authority": "CURRENT_DETERMINISTIC_RESEARCH",
+    "category": "TECHNICAL",
+    "code": "CARD_COUNTER_CLAIM_INFERENCE",
+    "evidence_field": "tactical.evidence_against",
+    "evidence_ref": "current_daily_decision_research.thesis_counter_thesis.counter_thesis",
+    "source_value": "20-day volatility is at or above the same-session market median."
+   },
+   "relation": "GROUNDED_COUNTER_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.thesis_counter_thesis.counter_thesis",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "NVL"
+   },
+   "domain": "TECHNICAL",
+   "evidence_identity": "case_evidence:b3ce270ce80acdfe5e4bc60412ca8cd561d19ca27e6116c59c180f7ba543b391",
+   "observation": {
+    "authority": "CURRENT_DETERMINISTIC_RESEARCH",
+    "category": "TECHNICAL",
+    "code": "CARD_COUNTER_CLAIM_INFERENCE",
+    "evidence_field": "tactical.evidence_against",
+    "evidence_ref": "current_daily_decision_research.thesis_counter_thesis.counter_thesis",
+    "source_value": "20-day momentum ranks in the LOWER_MIDDLE of its own same-session sector cohort."
+   },
+   "relation": "GROUNDED_COUNTER_ARGUMENT"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.trigger",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "NVL"
+   },
+   "domain": "TECHNICAL",
+   "evidence_identity": "case_evidence:a00fc775f7d236d1be9b9889b8070342863ff9b2871a9f6a84b8d8818aa17e9d",
+   "observation": {
+    "kind": "TECHNICAL_TRIGGER",
+    "outcome_scope": "SEE_EXPLICIT_PRODUCER_STATE_ONLY",
+    "source_occurrence": {
+     "session": "2026-10-23",
+     "text": "A decisive move away from the 20-day moving average combined with a same-session momentum quartile extreme (top or bottom) would resolve the current lack of a directional edge."
+    }
+   },
+   "relation": "PRODUCER_CONDITION_NOT_CONSUMER_OUTCOME"
+  },
+  {
+   "citation": {
+    "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "evidence_ref": "current_daily_decision_research.invalidation",
+    "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+    "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+    "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23",
+    "ticker": "NVL"
+   },
+   "domain": "TECHNICAL",
+   "evidence_identity": "case_evidence:eb332e42a0ddbc08af98535f4333d5cca4ddd30605adb2e04d6a0b62495d7e0d",
+   "observation": {
+    "kind": "TECHNICAL_INVALIDATION",
+    "outcome_scope": "SEE_EXPLICIT_PRODUCER_STATE_ONLY",
+    "source_occurrence": {
+     "session": "2026-10-23",
+     "text": "A move to a same-session momentum quartile extreme (top or bottom) combined with price moving decisively away from the 20-day moving average would invalidate the neutral read."
+    }
+   },
+   "relation": "PRODUCER_CONDITION_NOT_CONSUMER_OUTCOME"
+  }
+ ],
+ "grouped_next_investigation": [
+  {
+   "domain": "OPERATING",
+   "input_needed": "Doanh thu, lợi nhuận, biên lợi nhuận và giải trình hoạt động cùng kỳ, cùng phạm vi báo cáo; không suy nguyên nhân từ tăng trưởng.",
+   "producer_questions": [
+    "case_evidence:6ff9319b9eb693901c1048bf5f7061ce67bfb200aa9b4ef5c633e86f96b369df"
+   ]
+  },
+  {
+   "domain": "CASH_BALANCE",
+   "input_needed": "Lợi nhuận và dòng tiền hoạt động cùng kỳ; biến động vốn lưu động, nợ, nhu cầu vốn và tính áp dụng theo loại hình doanh nghiệp. Không suy FCF từ lợi nhuận.",
+   "producer_questions": [
+    "case_evidence:1dd2f9d8a213b409a77799af3ffa70d7f7008271e1a26278d3806986b2cecf62"
+   ]
+  },
+  {
+   "domain": "VALUATION",
+   "input_needed": "Giá, cơ sở cổ phiếu, mẫu số tài chính và phương pháp đủ điều kiện. Giá trị nội tại cần đầu vào và kết quả evaluator được Producer quản lý.",
+   "producer_questions": []
+  },
+  {
+   "domain": "BUSINESS_RISK",
+   "input_needed": "Bằng chứng nguồn để kiểm tra từng phản luận, cơ chế kinh tế và các giả định chưa được xác nhận.",
+   "producer_questions": [
+    "case_evidence:94fd4b53ca0a9cb5f082674474f3c330cb4cfdf18b3e0c1a2ebc7e8f0851db46",
+    "case_evidence:f58f8e5e6f37a8ca0ee482c23d717f2dd56b29502cc43283416a31df27e25c68"
+   ]
+  },
+  {
+   "domain": "TECHNICAL",
+   "input_needed": "Điều kiện và outcome do đúng chủ thể báo cáo; đổi trạng thái không chứng minh điều kiện đã xảy ra.",
+   "producer_questions": []
+  },
+  {
+   "domain": "TEMPORAL",
+   "input_needed": "Phiên giao chính xác, knowledge time, kỳ báo cáo và revision để tách thay đổi kinh tế khỏi đổi cách biểu diễn hoặc thiếu giao dữ liệu.",
+   "producer_questions": []
+  },
+  {
+   "domain": "COMPARISON",
+   "input_needed": "Cùng loại hình kinh tế, kỳ, phạm vi, tiền tệ, đơn vị, phương pháp và cơ sở cổ phiếu; các giá trị khác cơ sở được xem riêng.",
+   "producer_questions": []
+  }
+ ],
+ "overview": [
+  {
+   "conditions_without_verified_outcome": 3,
+   "delivered_sessions": 4,
+   "latest_research_action_posture": "AVOID",
+   "latest_session": "2026-10-23",
+   "newly_delivered_old_evidence": 0,
+   "persisting_risks": 9,
+   "posture_value_changes": 1,
+   "status": "LONGITUDINAL_VIEW",
+   "supplied_sessions": 4,
+   "ticker": "NVL"
+  }
+ ],
+ "question_investigations": [
+  {
+   "direct_reference_links": [],
+   "domains": [
+    "BUSINESS_RISK",
+    "TECHNICAL",
+    "TEMPORAL"
+   ],
+   "evidence_links": [],
+   "interpretation": "HUMAN_FRAMING_NOT_VERIFIED_FACT",
+   "investigation": {
+    "BUSINESS_RISK": {
+     "evidence_by_relation": {
+      "CHALLENGING_ARGUMENT": [
+       "case_evidence:107aa18f3eb40fb4fd61ace161a62ac4493107c436d13662d1a45133fcacf704",
+       "case_evidence:79509c63a5f97bd0f1dee2f56bc1a04828b1c79e76414ca3c1b0ada14ff0e687",
+       "case_evidence:21630990be4e9dde8159b719f45047e5ff0f846c7cd0655cb163a6876d93fa10",
+       "case_evidence:0a36e381beff2cfdcdeddc8642bf3d741065751e2c27967702115cc9a4fcc1e1",
+       "case_evidence:213a5f7d5048f3874279e2e13df0c70ccdae09c4c4c9e93561e9a46d75f8abe9",
+       "case_evidence:97e6c4c1ff7412f4efa6b41873af90e0047091181b223177c8d801bf203e586a"
+      ],
+      "PRODUCER_CONDITION_NOT_CONSUMER_OUTCOME": [
+       "case_evidence:adfd0b136c3f1813e0b26b2d49d6f11417fe3487d68d6bec577858ea7b43df16",
+       "case_evidence:a01fd5b6029733a8579dbd84a57ed1ad6589db6bbb4a1ae8444139ea6cc7585d",
+       "case_evidence:21eddfe88163333ebe0c005db2a1045db4037378fa1e53718e28249b11b94197",
+       "case_evidence:f0dbcf54aad629184f717e5390410c23845746577187a395da025e0d2e8ae2d5",
+       "case_evidence:29858a37dd91e875550712233531adcd5883265100c4180e0288a93870194750",
+       "case_evidence:b0417b735f664e6ddb50b69bc90e4d1442e0dd1115b458f45a4ffb6ad335a195"
+      ],
+      "PRODUCER_RESEARCH_QUESTION_NOT_FACT": [
+       "case_evidence:3c26562bef64491a218eee8a7490292ab043dac9aceb3cc364d8130cca92751c",
+       "case_evidence:032077ca86c2683f7c817c5aa59c1dadd2639c6112c9d1fee59799eeb6389663",
+       "case_evidence:4ba41ea8644d9fe0a9a7bf102e13a07fe3fbd4b7096792b6000f2a7c449c85e9",
+       "case_evidence:cbfc7a1c9a754a5bd7d27ecba306e7a7f44a0bb1ec6ac9b16bea763c3f168f44",
+       "case_evidence:4eaa5fba13ed11ff510220333db58a60a048645118eec85c03a6765853dcb108",
+       "case_evidence:1f21c931233386b3d96707712b7cf6a1772920470862e4fe3c7ed2f626fe1c32"
+      ],
+      "RELATED_INSUFFICIENT": [
+       "case_evidence:f3949cf02ee8b3775692cd786145c0402281714b3bbf9491aba741349fd34fd4",
+       "case_evidence:0a923dff0e9d11ffdce62290f0700e6333da7c2d391ae0f455eb695f07f470f6",
+       "case_evidence:f90f57c1950708b0a7913c749326df8fc17efe6df63c0caf09f0156cb4d18415",
+       "case_evidence:6d8f38d88f1784e08764977cca50ec5723b9e26a5b6bbfb124e680a1f0784753",
+       "case_evidence:005656d97d1b2a5d44749793e0ed6ea862c30b245f4173d6987f96bca0db512d",
+       "case_evidence:f18c2d9e94fd9b53c15a5bf8a00505a018ebaf56b5b5407a76fcd6e8b2c7e4e7"
+      ],
+      "SOURCE_CONFLICT": [
+       "case_evidence:172a704f43daae2ceb418262909d293cefc8364e0263bcecae7f6c6439e88b99",
+       "case_evidence:a4a52d22eb3b026d6664f908c5839c306ee200cc2d94f5642c218dce671a0054",
+       "case_evidence:16728edf62330a8986076cbebc12d36a8de31010b2614649561a3fe080fcb831",
+       "case_evidence:211592c5c0cd4697f9996b1bf2e596df1ff6fbe16b9c46927365dc15a6857d60",
+       "case_evidence:bcce9f04230b662885c48e2dbe547f20936da97fac4dc5bd5090600157a35f99",
+       "case_evidence:26f7897b67232363a3b41ae6afe55a25331418c03cc49dc79b51c627389e5736"
+      ],
+      "SUPPORTING_ARGUMENT": [
+       "case_evidence:b45b7a96c94f80d46dc6ec89fac198f02bb2f8f014fe1972fc037c372483e73c",
+       "case_evidence:3e73bad7235c0fd481dfdd01361ad2975d5e942973b02c0c529f5458c1f5a429",
+       "case_evidence:82ce2287d74c124a1c54ce093bf5acc719b87c5e090e5807713de11f81384518",
+       "case_evidence:c765d8bbdfaec794740672f5b20b3ecc11f909670da6da2226e8f3b6d5010d98",
+       "case_evidence:ac1a94ab3ea1d1efef030fa8855292cb2a60d97b77652745dd3cb869b504288e",
+       "case_evidence:e39524be796d496806e722e8410a21ab850efc140fabe67f4b105ce8914eb201"
+      ]
+     },
+     "input_needed": "Bằng chứng nguồn để kiểm tra từng phản luận, cơ chế kinh tế và các giả định chưa được xác nhận."
+    },
+    "TECHNICAL": {
+     "evidence_by_relation": {
+      "GROUNDED_COUNTER_ARGUMENT": [
+       "case_evidence:b8cee471740f9d6f7a64536ea0918b7d07925807008a930220090b6eb0103801",
+       "case_evidence:d796321097f37bcf9ba257c612e1671e394bc3cbe497efe6a9f4831f4fbf3186",
+       "case_evidence:f3cedd4e195a66700c0003b619c8adbb37859ef5ca1fb639895b5bd638d55663",
+       "case_evidence:dd4453fe4cd2a74f9c1a24fafa575cd7b7afddf828d860df3cfcdf0c3e258fc8",
+       "case_evidence:640aeb1afd8034b269c793450d7f3f7f8d94e4d832d420804ffdf2467034e394",
+       "case_evidence:89d6a632f456415b9cbd4cf032e46f9c3d9f9cf080ba2a455004500993699051"
+      ],
+      "PRODUCER_CONDITION_NOT_CONSUMER_OUTCOME": [
+       "case_evidence:1f5180a004055b10c51a86784de971d097f4a9c3421ad29bd442deedc2c0f476",
+       "case_evidence:aa93a3fc1c8591ef773fb0504a3dac6b7ccfdaf8e88ce7032a622e7d232e0225",
+       "case_evidence:c85f12587bd2fb1a114297c14e5832cd8f8c71c7959e04cb94685010433f5065",
+       "case_evidence:dd1088deb8fbd7adb9030a36b280db098eb593d3d4a04ad629c7b41772cd0817",
+       "case_evidence:1be2f666331853fae6db60dba4e36d5a519a9763484f1fad883098b3e332937c",
+       "case_evidence:7edf7dedf8597b9b2823eea891927cd72d39e541bf9362f0c692c6aee7c91666"
+      ],
+      "TECHNICAL_CONTEXT": [
+       "case_evidence:ad80bf23b79bbfaeb3f6d172e77d4d0f91f8f1260512627a4beec0097dd32208",
+       "case_evidence:70e3ab69648405561f3b6f6716390ad05aa44019c82919466052d84cf8176852",
+       "case_evidence:b49ded5d291a3e9293d7952a3b34c55759d95f0450e41994422d829190f774ca",
+       "case_evidence:1be716fe7c6789be864e04b5d84b07f0d743e124efcca9c9cc4aabae62fa5933"
+      ]
+     },
+     "input_needed": "Điều kiện và outcome do đúng chủ thể báo cáo; đổi trạng thái không chứng minh điều kiện đã xảy ra."
+    },
+    "TEMPORAL": {
+     "evidence_by_relation": {},
+     "input_needed": "Phiên giao chính xác, knowledge time, kỳ báo cáo và revision để tách thay đổi kinh tế khỏi đổi cách biểu diễn hoặc thiếu giao dữ liệu."
+    }
+   },
+   "kind": "QUESTION",
+   "mapping_status": "EXPLICIT_DOMAIN_SCOPE_NOT_ENTAILMENT_VERIFIED",
+   "text": "NVL thay đổi trạng thái chiến thuật: phản luận nào tiếp tục tồn tại, và có outcome đủ thẩm quyền hay chỉ đổi trạng thái, nguồn hoặc revision?",
+   "topic_identity": "case_topic:d614fdc53ce103bb3f62067fd9a282dee82da3026c2f5ac6ce0d45a70f149529",
+   "verdict": "UNANSWERED_NO_AUTOMATIC_THESIS_CONFIRMATION"
+  },
+  {
+   "direct_reference_links": [],
+   "domains": [],
+   "evidence_links": [],
+   "interpretation": "HUMAN_FRAMING_NOT_VERIFIED_FACT",
+   "investigation": {
+    "BUSINESS_RISK": {
+     "evidence_by_relation": {
+      "CHALLENGING_ARGUMENT": [
+       "case_evidence:107aa18f3eb40fb4fd61ace161a62ac4493107c436d13662d1a45133fcacf704",
+       "case_evidence:79509c63a5f97bd0f1dee2f56bc1a04828b1c79e76414ca3c1b0ada14ff0e687",
+       "case_evidence:21630990be4e9dde8159b719f45047e5ff0f846c7cd0655cb163a6876d93fa10",
+       "case_evidence:0a36e381beff2cfdcdeddc8642bf3d741065751e2c27967702115cc9a4fcc1e1",
+       "case_evidence:213a5f7d5048f3874279e2e13df0c70ccdae09c4c4c9e93561e9a46d75f8abe9",
+       "case_evidence:97e6c4c1ff7412f4efa6b41873af90e0047091181b223177c8d801bf203e586a"
+      ],
+      "PRODUCER_CONDITION_NOT_CONSUMER_OUTCOME": [
+       "case_evidence:adfd0b136c3f1813e0b26b2d49d6f11417fe3487d68d6bec577858ea7b43df16",
+       "case_evidence:a01fd5b6029733a8579dbd84a57ed1ad6589db6bbb4a1ae8444139ea6cc7585d",
+       "case_evidence:21eddfe88163333ebe0c005db2a1045db4037378fa1e53718e28249b11b94197",
+       "case_evidence:f0dbcf54aad629184f717e5390410c23845746577187a395da025e0d2e8ae2d5",
+       "case_evidence:29858a37dd91e875550712233531adcd5883265100c4180e0288a93870194750",
+       "case_evidence:b0417b735f664e6ddb50b69bc90e4d1442e0dd1115b458f45a4ffb6ad335a195"
+      ],
+      "PRODUCER_RESEARCH_QUESTION_NOT_FACT": [
+       "case_evidence:3c26562bef64491a218eee8a7490292ab043dac9aceb3cc364d8130cca92751c",
+       "case_evidence:032077ca86c2683f7c817c5aa59c1dadd2639c6112c9d1fee59799eeb6389663",
+       "case_evidence:4ba41ea8644d9fe0a9a7bf102e13a07fe3fbd4b7096792b6000f2a7c449c85e9",
+       "case_evidence:cbfc7a1c9a754a5bd7d27ecba306e7a7f44a0bb1ec6ac9b16bea763c3f168f44",
+       "case_evidence:4eaa5fba13ed11ff510220333db58a60a048645118eec85c03a6765853dcb108",
+       "case_evidence:1f21c931233386b3d96707712b7cf6a1772920470862e4fe3c7ed2f626fe1c32"
+      ],
+      "RELATED_INSUFFICIENT": [
+       "case_evidence:f3949cf02ee8b3775692cd786145c0402281714b3bbf9491aba741349fd34fd4",
+       "case_evidence:0a923dff0e9d11ffdce62290f0700e6333da7c2d391ae0f455eb695f07f470f6",
+       "case_evidence:f90f57c1950708b0a7913c749326df8fc17efe6df63c0caf09f0156cb4d18415",
+       "case_evidence:6d8f38d88f1784e08764977cca50ec5723b9e26a5b6bbfb124e680a1f0784753",
+       "case_evidence:005656d97d1b2a5d44749793e0ed6ea862c30b245f4173d6987f96bca0db512d",
+       "case_evidence:f18c2d9e94fd9b53c15a5bf8a00505a018ebaf56b5b5407a76fcd6e8b2c7e4e7"
+      ],
+      "SOURCE_CONFLICT": [
+       "case_evidence:172a704f43daae2ceb418262909d293cefc8364e0263bcecae7f6c6439e88b99",
+       "case_evidence:a4a52d22eb3b026d6664f908c5839c306ee200cc2d94f5642c218dce671a0054",
+       "case_evidence:16728edf62330a8986076cbebc12d36a8de31010b2614649561a3fe080fcb831",
+       "case_evidence:211592c5c0cd4697f9996b1bf2e596df1ff6fbe16b9c46927365dc15a6857d60",
+       "case_evidence:bcce9f04230b662885c48e2dbe547f20936da97fac4dc5bd5090600157a35f99",
+       "case_evidence:26f7897b67232363a3b41ae6afe55a25331418c03cc49dc79b51c627389e5736"
+      ],
+      "SUPPORTING_ARGUMENT": [
+       "case_evidence:b45b7a96c94f80d46dc6ec89fac198f02bb2f8f014fe1972fc037c372483e73c",
+       "case_evidence:3e73bad7235c0fd481dfdd01361ad2975d5e942973b02c0c529f5458c1f5a429",
+       "case_evidence:82ce2287d74c124a1c54ce093bf5acc719b87c5e090e5807713de11f81384518",
+       "case_evidence:c765d8bbdfaec794740672f5b20b3ecc11f909670da6da2226e8f3b6d5010d98",
+       "case_evidence:ac1a94ab3ea1d1efef030fa8855292cb2a60d97b77652745dd3cb869b504288e",
+       "case_evidence:e39524be796d496806e722e8410a21ab850efc140fabe67f4b105ce8914eb201"
+      ]
+     },
+     "input_needed": "Bằng chứng nguồn để kiểm tra từng phản luận, cơ chế kinh tế và các giả định chưa được xác nhận."
+    },
+    "CASH_BALANCE": {
+     "evidence_by_relation": {
+      "CONSUMER_CLASSIFICATION_NOT_NEW_FACT": [
+       "case_evidence:270f3579e68d34b34478d4da845d263e65acfef25fd7aa54dc60e75e252cea36",
+       "case_evidence:d9748a47e690aa83d88c6d1830bad8765c8e890d2fa82f644a606c9d5b922240",
+       "case_evidence:f2d9b2f84da97484d079eac06e10ebb9d951cd930143bed0b83c37dc7cf1ab06",
+       "case_evidence:757d3b1c3bb40eafe4ccc316a61a1f1c881903bf0e5e6f31f88d5e07c37caebf",
+       "case_evidence:add1ed56e5074b3524fcfc07979fd59fa6ee26c8094b70c43ae1536c019aa24d",
+       "case_evidence:544186a7a0f313e77610658414e1f1a99fc44cdc58fd235bd2e63898f9f9297a"
+      ],
+      "PRODUCER_RESEARCH_QUESTION_NOT_FACT": [
+       "case_evidence:af7675f10bd3ded71f276f0a9a3dc351d42be758d7701172b9e1fde9e5598a04",
+       "case_evidence:ae04cdaf33cdb22bfc2fe45c6c882e4150f9c83adf96a9cca221395c7b3b164d",
+       "case_evidence:7670e9412f77afeb02b8f1245ae8ed59bf3ee832f440e8c3777cd6ff87dacb46",
+       "case_evidence:1dd2f9d8a213b409a77799af3ffa70d7f7008271e1a26278d3806986b2cecf62"
+      ],
+      "RELATED_INSUFFICIENT": [
+       "case_evidence:45d62928d4bb15d25f6c2914b92ff7f640cfbc39a72f703c28228ef077b705f9",
+       "case_evidence:d2d1a403aed365dba9316cc51cdebeceba7ed421913666dce7c783b8a3017e72",
+       "case_evidence:60ab7d2e255822c355888e49315168818236f70b31d4197c41cb72d1fb9c6c3c",
+       "case_evidence:35f0f8108ca91579386a863f52a4789fe65b9cfc0652922a772278850a0bd5af"
+      ]
+     },
+     "input_needed": "Lợi nhuận và dòng tiền hoạt động cùng kỳ; biến động vốn lưu động, nợ, nhu cầu vốn và tính áp dụng theo loại hình doanh nghiệp. Không suy FCF từ lợi nhuận."
+    },
+    "COMPARISON": {
+     "evidence_by_relation": {},
+     "input_needed": "Cùng loại hình kinh tế, kỳ, phạm vi, tiền tệ, đơn vị, phương pháp và cơ sở cổ phiếu; các giá trị khác cơ sở được xem riêng."
+    },
+    "OPERATING": {
+     "evidence_by_relation": {
+      "CONSUMER_CLASSIFICATION_NOT_NEW_FACT": [
+       "case_evidence:872cf47ff38ba86d42557d925c6e433809c04ef915920fa670f8d299890f9b6e",
+       "case_evidence:adb5892a094f615491fba5e156dcc7ef84744c402caf092674b8bcaca0849168",
+       "case_evidence:7c8d14d4c74807549df5d96d8c514bdb23545622fc81eb213f125cb59b944a6f",
+       "case_evidence:21bc9dbc1fb901977a03c7002bc0a3149866a36ac5cbf2f0d6246939721d82d8",
+       "case_evidence:602ff21a5a842b9d6fcc932f83fa1fc80f5c27cd685c336cfadf6fd863ad8e9b",
+       "case_evidence:79d2fba70c486257f9d250aeadbbb7be0e83bf55356c0c4a7b5f87a95bf6d5af"
+      ],
+      "PRODUCER_EARNINGS_QUALITY_CONTEXT": [
+       "case_evidence:6215ae5020dcc286e5646d9abec99a1d0de29b29c1d451042c88449168eb7cb5"
+      ],
+      "PRODUCER_RESEARCH_QUESTION_NOT_FACT": [
+       "case_evidence:b343651f73d1bddd3aa449a806634df8e84fcf80305f805ae52f61fc383ea57e",
+       "case_evidence:1284883c58054b3b0dae6afa1110f89a906fb5f3c7b6c7259c965e630baf37e1",
+       "case_evidence:6ff9319b9eb693901c1048bf5f7061ce67bfb200aa9b4ef5c633e86f96b369df"
+      ],
+      "RELATED_INSUFFICIENT": [
+       "case_evidence:b7683ea9487ad4cd9fb1a942a18d70d53d7ad28275a1f3be11fbf521cf770884",
+       "case_evidence:8e8556073bd9ecb4e5aab2c128107af4c58b7b067eb737a195a15b870e473c80",
+       "case_evidence:d3ab5f7101dea47641d66bf65161a319d7c8db16f08318ec7a62b860a21127b1",
+       "case_evidence:4e53bad8ddcdf420ebb6e2da6d555f87a1dadf39d93033d81c4df4659a670a35"
+      ]
+     },
+     "input_needed": "Doanh thu, lợi nhuận, biên lợi nhuận và giải trình hoạt động cùng kỳ, cùng phạm vi báo cáo; không suy nguyên nhân từ tăng trưởng."
+    },
+    "TECHNICAL": {
+     "evidence_by_relation": {
+      "GROUNDED_COUNTER_ARGUMENT": [
+       "case_evidence:b8cee471740f9d6f7a64536ea0918b7d07925807008a930220090b6eb0103801",
+       "case_evidence:d796321097f37bcf9ba257c612e1671e394bc3cbe497efe6a9f4831f4fbf3186",
+       "case_evidence:f3cedd4e195a66700c0003b619c8adbb37859ef5ca1fb639895b5bd638d55663",
+       "case_evidence:dd4453fe4cd2a74f9c1a24fafa575cd7b7afddf828d860df3cfcdf0c3e258fc8",
+       "case_evidence:640aeb1afd8034b269c793450d7f3f7f8d94e4d832d420804ffdf2467034e394",
+       "case_evidence:89d6a632f456415b9cbd4cf032e46f9c3d9f9cf080ba2a455004500993699051"
+      ],
+      "PRODUCER_CONDITION_NOT_CONSUMER_OUTCOME": [
+       "case_evidence:1f5180a004055b10c51a86784de971d097f4a9c3421ad29bd442deedc2c0f476",
+       "case_evidence:aa93a3fc1c8591ef773fb0504a3dac6b7ccfdaf8e88ce7032a622e7d232e0225",
+       "case_evidence:c85f12587bd2fb1a114297c14e5832cd8f8c71c7959e04cb94685010433f5065",
+       "case_evidence:dd1088deb8fbd7adb9030a36b280db098eb593d3d4a04ad629c7b41772cd0817",
+       "case_evidence:1be2f666331853fae6db60dba4e36d5a519a9763484f1fad883098b3e332937c",
+       "case_evidence:7edf7dedf8597b9b2823eea891927cd72d39e541bf9362f0c692c6aee7c91666"
+      ],
+      "TECHNICAL_CONTEXT": [
+       "case_evidence:ad80bf23b79bbfaeb3f6d172e77d4d0f91f8f1260512627a4beec0097dd32208",
+       "case_evidence:70e3ab69648405561f3b6f6716390ad05aa44019c82919466052d84cf8176852",
+       "case_evidence:b49ded5d291a3e9293d7952a3b34c55759d95f0450e41994422d829190f774ca",
+       "case_evidence:1be716fe7c6789be864e04b5d84b07f0d743e124efcca9c9cc4aabae62fa5933"
+      ]
+     },
+     "input_needed": "Điều kiện và outcome do đúng chủ thể báo cáo; đổi trạng thái không chứng minh điều kiện đã xảy ra."
+    },
+    "TEMPORAL": {
+     "evidence_by_relation": {},
+     "input_needed": "Phiên giao chính xác, knowledge time, kỳ báo cáo và revision để tách thay đổi kinh tế khỏi đổi cách biểu diễn hoặc thiếu giao dữ liệu."
+    },
+    "VALUATION": {
+     "evidence_by_relation": {
+      "RELATED_INSUFFICIENT": [
+       "case_evidence:01f0cd1f966a33777b9e58cabfa64af1c1469695e2b07b28d3edc120f3c3679f",
+       "case_evidence:345c8ce42d6aac74fdf62ddef75e7189392c58abcf5ec96f6502f49a8f56d179",
+       "case_evidence:51be90b5ddafab17c71c63a658950110cb60c26d5792c7460b7ffecadcedfbd4",
+       "case_evidence:6f650c219ff873cd11b206e40ab37eb9a1c33d9ccd14982fc67966b52e9cd83d"
+      ]
+     },
+     "input_needed": "Giá, cơ sở cổ phiếu, mẫu số tài chính và phương pháp đủ điều kiện. Giá trị nội tại cần đầu vào và kết quả evaluator được Producer quản lý."
+    }
+   },
+   "kind": "HYPOTHESIS",
+   "mapping_status": "UNMAPPED_HUMAN_TEXT_REQUIRES_INVESTIGATION",
+   "text": "Giả thuyết nhà đầu tư: cấu trúc kỹ thuật có thể đi cùng cải thiện kinh doanh; cần bằng chứng độc lập để kiểm tra.",
+   "topic_identity": "case_topic:8a8d383b2c3e06e2956c6433b3931d65efd34337317af0e08448edb956f35ca9",
+   "verdict": "UNANSWERED_NO_AUTOMATIC_THESIS_CONFIRMATION"
+  }
+ ],
+ "request": {
+  "contract_version": "investment_research_case_request/v1",
+  "members": [
+   {
+    "research_role": "COMPARISON_ONLY",
+    "ticker": "NVL"
+   }
+  ],
+  "sessions": [
+   {
+    "expected_bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+    "expected_run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+    "session": "2026-10-16"
+   },
+   {
+    "expected_bundle_sha256": "c2b5aec1f842539a9a281fc60f74000744554727af225cf7248e6603d91074b8",
+    "expected_run_identity": "daily_producer_run:d4a2e4247511c56c4a91686bdf1e272861c57bb6f720c637400a1cc36900c27d",
+    "session": "2026-10-21"
+   },
+   {
+    "expected_bundle_sha256": "02740143933e612bb6edd871074d33215c2b97fb688a929f9fc109ee70e3c509",
+    "expected_run_identity": "daily_producer_run:78211b58dd804b5514ed76203ba6cdb465dc34dda735eae17b16f7b5da3cfab1",
+    "session": "2026-10-22"
+   },
+   {
+    "expected_bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+    "expected_run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+    "session": "2026-10-23"
+   }
+  ],
+  "topics": [
+   {
+    "domains": [
+     "BUSINESS_RISK",
+     "TECHNICAL",
+     "TEMPORAL"
+    ],
+    "evidence_links": [],
+    "interpretation": "HUMAN_FRAMING_NOT_VERIFIED_FACT",
+    "kind": "QUESTION",
+    "text": "NVL thay đổi trạng thái chiến thuật: phản luận nào tiếp tục tồn tại, và có outcome đủ thẩm quyền hay chỉ đổi trạng thái, nguồn hoặc revision?",
+    "topic_identity": "case_topic:d614fdc53ce103bb3f62067fd9a282dee82da3026c2f5ac6ce0d45a70f149529"
+   },
+   {
+    "domains": [],
+    "evidence_links": [],
+    "interpretation": "HUMAN_FRAMING_NOT_VERIFIED_FACT",
+    "kind": "HYPOTHESIS",
+    "text": "Giả thuyết nhà đầu tư: cấu trúc kỹ thuật có thể đi cùng cải thiện kinh doanh; cần bằng chứng độc lập để kiểm tra.",
+    "topic_identity": "case_topic:8a8d383b2c3e06e2956c6433b3931d65efd34337317af0e08448edb956f35ca9"
+   }
+  ]
+ },
+ "session_basis": [
+  {
+   "bundle_sha256": "eae2ceba5b76068059a6aa03a47ca05b7685a6b686dfe18bb0e4fb90f69afb8b",
+   "producer_head": "9406d596110566189e06f6426de83411e4350d37",
+   "product_identity": "current_daily_decision_research_product:c3afa1e1834704ef4c0707f5d75dd3f68900b0c668fcf9cd784825dd1573e15c",
+   "run_identity": "daily_producer_run:fc78840c61c06240316c90257a8c62a778ed3720e3d39a8d0e72715f622e52c8",
+   "session": "2026-10-16",
+   "ticker_count": 1
+  },
+  {
+   "bundle_sha256": "c2b5aec1f842539a9a281fc60f74000744554727af225cf7248e6603d91074b8",
+   "producer_head": "1bb8106232d078fa5d475cab953b54462d57711e",
+   "product_identity": "current_daily_decision_research_product:669b5968e703adfe88297878b481f1ecd0d4327706f4cee10a79296235735d72",
+   "run_identity": "daily_producer_run:d4a2e4247511c56c4a91686bdf1e272861c57bb6f720c637400a1cc36900c27d",
+   "session": "2026-10-21",
+   "ticker_count": 1
+  },
+  {
+   "bundle_sha256": "02740143933e612bb6edd871074d33215c2b97fb688a929f9fc109ee70e3c509",
+   "producer_head": "20a97427c2a0aec1a6b5538a34b32fd16f048dfe",
+   "product_identity": "current_daily_decision_research_product:de3a5d91c69ad70dc8979b25e21db46cb0b218f074e0c28f450938c844076287",
+   "run_identity": "daily_producer_run:78211b58dd804b5514ed76203ba6cdb465dc34dda735eae17b16f7b5da3cfab1",
+   "session": "2026-10-22",
+   "ticker_count": 1
+  },
+  {
+   "bundle_sha256": "602587173c8a1df65f5a4cf5a42bbc8d3ba6aaddd4ed8ba9dc39a6edc03af343",
+   "producer_head": "5837372a4c609df60df54360b2bb3ce2b80b80a5",
+   "product_identity": "current_daily_decision_research_product:16c98c5a37661f0e52c1d19915ed2be20447e981d7ef8a3d188b050cdadf59e9",
+   "run_identity": "daily_producer_run:6cf260313f9de80a9b32aeaff9a042de76e84311e51e2b088cb6bf50abc8f6a7",
+   "session": "2026-10-23",
+   "ticker_count": 1
+  }
+ ],
+ "status": "COMPLETE_COVERAGE",
+ "thesis_challenges": [
+  {
+   "cannot_conclude": [
+    "NO_FREE_CASH_FLOW_CLAIM",
+    "NO_PROFIT_AS_OPERATING_CASH_CLAIM",
+    "NO_POSITION_AS_EARNINGS_QUALITY_CLAIM",
+    "NO_CASH_GENERATION_CONFIRMATION",
+    "NO_BUSINESS_WIDE_IMPROVEMENT_CLAIM",
+    "UNKNOWNS_MUST_BE_ACKNOWLEDGED"
+   ],
+   "conditions": [
+    "case_evidence:34cb26ccce07835b89b69c10d94bdbec2de38616898c2a0b88cf903fab1412b3",
+    "case_evidence:9972f3647e26468d6f5c63697a3c8331d5e4223066aa7309ac2891138d1339b9",
+    "case_evidence:ccbdcde677357e758c4435216021932407080e988aeb6169b1f44a9fb65d9505",
+    "case_evidence:6ad813ef5d9f35881f452f95a9f5cac51a86a84f02845990a088855aa8f215a5",
+    "case_evidence:a00fc775f7d236d1be9b9889b8070342863ff9b2871a9f6a84b8d8818aa17e9d",
+    "case_evidence:eb332e42a0ddbc08af98535f4333d5cca4ddd30605adb2e04d6a0b62495d7e0d"
+   ],
+   "contradictions": [
+    "case_evidence:c5d93da5740a6242afd8b84b51bc0272ce7141a77f86a580a62d482b7724500e",
+    "case_evidence:150cc01add5b3a5c33b40435479f521228b294f6a8c091c74cbcd01c6b4ca9bb"
+   ],
+   "positive_hypotheses": [
+    "case_topic:d614fdc53ce103bb3f62067fd9a282dee82da3026c2f5ac6ce0d45a70f149529",
+    "case_topic:8a8d383b2c3e06e2956c6433b3931d65efd34337317af0e08448edb956f35ca9"
+   ],
+   "producer_support": [
+    "case_evidence:e9f8268a58969911e4418e9843b8fbaed2dd9fdfa21cefb0f75f20a739b0a954",
+    "case_evidence:f507f718188170ad316bcd3ec1b2ca254d402555bdba43bc22b1635d7ca43204",
+    "case_evidence:751d220ad054635f2457f579e0e0ed5d43b2c62c9e9491316c9263c846af8e00",
+    "case_evidence:63caa2b0d0cba557ebcb88a6a0ca519bc5d2907b6b5b8b97b701141e885b2d36",
+    "case_evidence:46178536e827eebba8814f9c0a6e39787900e0e642e17997c381b056f4aaeca1",
+    "case_evidence:6619b419947b7083b964d3fa5ecf5385abb68d49c18a65a1d1dd74de6b0f98ca"
+   ],
+   "status": "INVESTIGATION_NOT_VERDICT",
+   "strongest_grounded_counter_thesis": {
+    "category": "TECHNICAL",
+    "evidence": [
+     "case_evidence:f1193f0335a14abe5b9f83b234d8fc3bb51be050558d58b88a4aaaefbb92a079",
+     "case_evidence:ec181348efd52d04c33c24b14c689385c0fcf27cad069545d9d36c45fa396055",
+     "case_evidence:adc6c84b6c1289f1618bf547def257ee1747150d44bc29a367968b1bc22141af",
+     "case_evidence:20b87067073933b24297b1bd2e629a882d8cb0a2d4010f48655cd2752f2bd88f",
+     "case_evidence:c7fc6a060d22bf35c2f06fbd4288b7b421846a2c0adf64b799495945318e0fad",
+     "case_evidence:2111141d162a784bb81258750a7fc9354ea18d554f63fddbfb3b290fd14bb91c"
+    ],
+    "selection_rule": "FIXED_CATEGORY_PRECEDENCE_NOT_A_STRENGTH_SCORE",
+    "status": "SOURCE_GROUNDED_ARGUMENTS"
+   },
+   "support_qualifications": [
+    {
+     "evidence": "case_evidence:751d220ad054635f2457f579e0e0ed5d43b2c62c9e9491316c9263c846af8e00",
+     "qualifiers": [
+      "FINANCIAL_POSITION_BASIS_NOT_PROFITABILITY_OR_CASH"
+     ]
+    },
+    {
+     "evidence": "case_evidence:63caa2b0d0cba557ebcb88a6a0ca519bc5d2907b6b5b8b97b701141e885b2d36",
+     "qualifiers": [
+      "FINANCIAL_POSITION_BASIS_NOT_PROFITABILITY_OR_CASH"
+     ]
+    },
+    {
+     "evidence": "case_evidence:46178536e827eebba8814f9c0a6e39787900e0e642e17997c381b056f4aaeca1",
+     "qualifiers": [
+      "FINANCIAL_POSITION_BASIS_NOT_PROFITABILITY_OR_CASH"
+     ]
+    },
+    {
+     "evidence": "case_evidence:6619b419947b7083b964d3fa5ecf5385abb68d49c18a65a1d1dd74de6b0f98ca",
+     "qualifiers": [
+      "CONTESTED_BY_PRODUCER_SOURCE_CONFLICT:VALUATION_REASON_CODE_WHILE_PEER_VALUATION_UNAVAILABLE",
+      "FINANCIAL_POSITION_BASIS_NOT_PROFITABILITY_OR_CASH"
+     ]
+    }
+   ],
+   "ticker": "NVL"
+  }
+ ]
+}
