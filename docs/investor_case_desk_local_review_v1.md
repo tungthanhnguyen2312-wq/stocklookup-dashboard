@@ -57,6 +57,44 @@ The case identity is shown verbatim. The browser does not recompute it.
   input still needed.
 - **Evidence gaps, comparison blockers and the case's conclusion limits.**
 
+### Financial quality (Consumer PR #13, optional)
+
+A case built with Producer `research financial-quality` outputs carries
+`financial_quality_research`. The viewer shows it in its own section, "Chất lượng lợi nhuận
+và dòng tiền", between the decision distinctions and the thesis challenge. A case without
+the block renders byte-for-byte as before. For each source and ticker, the section shows the
+Producer's state and exact rows for:
+
+- reported profit;
+- source-labelled unusual or provision components (recurrence `UNKNOWN`, normalization
+  `NOT_CALCULATED`);
+- whether operating cash can be compared with profit, with the blockers and any cash
+  figures from other periods (listed, never paired);
+- recurring-earnings evidence, cautions and unknowns;
+- the limits of the valuation denominator;
+- the evidence that would confirm or invalidate the financial thesis;
+- any other Producer source figures that no answer cites.
+
+Each fact keeps its period dates, scope, assurance, line and page, knowledge time and
+document hash. Producer text is shown verbatim beside the Vietnamese label.
+
+The source boundary is explicit:
+
+- **Exact binding is re-checked, not trusted.** `EXACT_CASE_RUN_SOURCE_PROJECTION` is
+  accepted only when it names the case's own session, run identity and bundle hash.
+- **Exact binding is still a later consultation.** It is labelled as figures from the run's
+  own source, with an explanation looked up later (with its consultation time). It is never
+  an original T0 conclusion or a delivered Daily card.
+- **Every other binding is separate context.** It is shown under a warning as later/current
+  context outside every case session. The same ticker or date is not proof of the same run.
+
+A malformed or inconsistent block refuses the file with `BAD_FINANCIAL_QUALITY` and
+leaves any open case in place. That covers an unknown binding, a binding that doesn't match
+the case run, pins that don't match the request, a bridge referencing an unknown output, and
+rows of the wrong ticker. Malformed answer values inside an accepted block degrade to
+placeholders. The page computes no normalized earnings, EPS, multiple, score or instruction.
+Every figure in the section is a value from the file.
+
 When a case is open, the dossier of any member ticker shows a notice linking back to the
 case. The case view links to the current dossier of each member that is published.
 
@@ -67,3 +105,15 @@ acceptance cases: HPG, NVL and the five-company FPT/HPG/PNJ/TPB/VNM basis case.
 `build_case_desk_review_fixtures.py` regenerates them byte-for-byte from the output of
 `python tools/run_investment_case_excerpt_acceptance.py --output-dir <dir>`. It only
 removes content; the case identities match the Consumer acceptance receipt.
+
+Three more fixtures come from Consumer PR #13 (`3f47640`):
+
+- `case_fq_exact.json`: FPT/HPG/PNJ/VNM. Both October 22/23 outputs bind exactly.
+- `case_fq_separate.json`: the same request with three sessions. The October 23 output stays
+  separate context.
+- `case_fq_cross_sector.json`: the full retained original bundles for 2026-10-20..23, with
+  QNS, POW and VCI added. All four outputs bind exactly.
+
+The same builder regenerates them from `python tools/run_case_financial_quality_acceptance.py
+--output-dir <dir>` (with `--retained-root` for the cross-sector case), and keeps the
+`financial_quality_research` block whole.

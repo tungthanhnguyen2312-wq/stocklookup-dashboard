@@ -21,6 +21,10 @@
   const EVIDENCE_ID_RE = /^case_evidence:[0-9a-f]{64}$/;
   const SHA_RE = /^[0-9a-f]{64}$/;
   const RUN_RE = /^daily_producer_run:[0-9a-f]{64}$/;
+  const FQ_CONTRACT = "case_financial_quality_research/v1";
+  const FQ_EVIDENCE_ID_RE = /^case_financial_quality_evidence:[0-9a-f]{64}$/;
+  const FQ_SOURCE_RE = /^market_wide_current_fundamental_research:[0-9a-f]{64}$/;
+  const FQ_EXACT = "EXACT_CASE_RUN_SOURCE_PROJECTION";
   const NOTICE = "Hồ sơ này chỉ nằm trong tab trình duyệt hiện tại: không tải lên máy chủ, không lưu, không đưa vào liên kết và không công bố. Tải lại hoặc đóng trang là hồ sơ biến mất.";
 
   function h(value) {
@@ -137,6 +141,66 @@
     SESSION_MISMATCH: "Các phiên trong hồ sơ không khớp nhau.",
     BAD_SECTION: "Thiếu hoặc sai cấu trúc một phần bắt buộc của hồ sơ.",
     BAD_EVIDENCE: "Danh mục bằng chứng của hồ sơ không hợp lệ.",
+    BAD_FINANCIAL_QUALITY: "Phần chất lượng tài chính (financial-quality) của hồ sơ không hợp lệ hoặc không khớp phiên/lần chạy của hồ sơ; không mở hồ sơ này.",
+  });
+
+  // Consumer PR #13: optional Producer `research financial-quality` outputs inside a case.
+  // A binding state is shown exactly as the case states it, and EXACT is re-checked against
+  // the case's own session/run/bundle before it is believed. The page derives nothing.
+  const FQ_BINDINGS = Object.freeze({
+    EXACT_CASE_RUN_SOURCE_PROJECTION: "Đúng nguồn của lần chạy",
+    SEPARATE_SAME_DATE_DIFFERENT_SOURCE_PROJECTION: "Cùng ngày nhưng khác nguồn dữ liệu của lần chạy",
+    SEPARATE_SOURCE_SESSION_NOT_IN_CASE: "Phiên nguồn không thuộc hồ sơ",
+    SEPARATE_CASE_RUN_FUNDAMENTAL_IDENTITY_UNAVAILABLE: "Lần chạy không ghi định danh nguồn cơ bản",
+  });
+  const FQ_RELATIONS = Object.freeze({
+    FQ_SOURCE_FACT: { label: "Số liệu nguồn (Producer)", cls: "source" },
+    FQ_REPORTED_COMPONENT: { label: "Khoản mục được nguồn ghi nhận", cls: "source" },
+    FQ_CASH_MEASUREMENT: { label: "Phép đo một kỳ của Producer", cls: "source" },
+    FQ_OBSERVED_SUPPORT: { label: "Quan sát của Producer", cls: "inference" },
+    FQ_ACCOUNTING_CAUTION: { label: "Cảnh báo kế toán của Producer", cls: "conditional" },
+    FQ_UNSUPPORTED_CONCLUSION: { label: "Kết luận chưa có căn cứ", cls: "gap" },
+    FQ_THESIS_TEST: { label: "Kiểm định luận điểm của Producer", cls: "research" },
+    FQ_REFUSED_OR_BLOCKED: { label: "Producer từ chối ghép/so sánh", cls: "gap" },
+  });
+  const FQ_CODES = Object.freeze({
+    REPORTED_PROFIT_OBSERVED: "Lợi nhuận kế toán được báo cáo; chưa xác lập là lợi nhuận bền vững hay đã chuẩn hóa",
+    REPORTED_PROFIT_NOT_QUALIFIED: "Không có lợi nhuận báo cáo đủ điều kiện cho một kết luận lợi nhuận",
+    REPORTED_PROVISION_COMPONENT: "Khoản điều chỉnh dự phòng không phải tiền thu về, không phải khoản một lần đã xác nhận và không được cộng lại vào lợi nhuận",
+    REPORTED_DISPOSAL_COMPONENT: "Khoản thanh lý có thể làm méo hệ số lợi nhuận; tính lặp lại và thuế chưa được chứng minh",
+    POSITIVE_PROFIT_NEGATIVE_OPERATING_CASH: "Lợi nhuận dương nhưng dòng tiền kinh doanh âm trong một kỳ cùng cơ sở; một kỳ không chứng minh nguyên nhân",
+    OPERATING_CASH_AT_OR_ABOVE_PROFIT: "Dòng tiền kinh doanh bằng hoặc cao hơn lợi nhuận trong một kỳ cùng cơ sở; một kỳ không chứng minh chuyển hóa tiền bền vững",
+    CASH_CONVERSION_NOT_ESTABLISHED: "Chưa có cặp lợi nhuận/dòng tiền kinh doanh cùng tài liệu, cùng kỳ, cùng cơ sở",
+    RECURRENCE_NOT_ESTABLISHED: "Khoản mục được báo cáo không phải lợi nhuận chuẩn hóa; không có khoản mục cũng không chứng minh lợi nhuận sạch",
+    WORKING_CAPITAL_CAUSALITY_NOT_ESTABLISHED: "Chưa có thuyết minh vốn lưu động, thu hồi hay hạn thanh toán; chênh lệch tiền không chứng minh nguyên nhân",
+    CASH_OBLIGATIONS_NOT_ESTABLISHED: "Số dư tiền không cho biết tiền khả dụng sau nợ đến hạn, thuế, cổ tức, cam kết vốn",
+    OCI_NOT_ADMITTED: "Chưa có cầu nối OCI/thuế/phân bổ được chấp nhận; lợi nhuận sau thuế không phải thu nhập toàn diện",
+    VALUATION_DENOMINATOR_NOT_QUALIFIED: "Chưa có EPS đủ điều kiện, cơ sở cổ phiếu tương thích hay mẫu số lợi nhuận lặp lại; P/E thấp tự nó không chứng minh giá hấp dẫn",
+    FISCAL_COMPARABILITY_LIMIT: "Mỗi quan sát chỉ đúng trong kỳ, phạm vi, tiền tệ và mức đảm bảo của nó; nhãn lịch không chứng minh so sánh được",
+    SOURCE_QUALIFICATION_GAP: "Khoảng trống đủ điều kiện của nguồn",
+    CASH_PAIRING_REFUSED: "Producer từ chối ghép lợi nhuận với dòng tiền",
+    COMPARISON_REFUSED: "Producer từ chối so sánh",
+    NO_SAME_STATEMENT_SET_OPERATING_CASH_FLOW: "Không có dòng tiền kinh doanh trong cùng bộ báo cáo",
+    OPERATING_CASH_FLOW_ONLY_FOR_OTHER_PERIODS: "Dòng tiền kinh doanh chỉ có cho kỳ khác",
+    NO_SAME_STATEMENT_SET_QUALIFIED_PROFIT: "Không có lợi nhuận đủ điều kiện trong cùng bộ báo cáo",
+  });
+  const FQ_CLAIMS = Object.freeze({
+    "Reported profit reflects sustainable earnings": "Lợi nhuận báo cáo phản ánh lợi nhuận bền vững",
+    "Accounting profit is supported by operating cash": "Lợi nhuận kế toán được dòng tiền kinh doanh hỗ trợ",
+    "A low reported multiple represents attractive value": "Hệ số định giá báo cáo thấp nghĩa là giá hấp dẫn",
+  });
+  const FQ_STATES = Object.freeze({
+    REPORTED_PROFIT_OBSERVED: "Có lợi nhuận báo cáo", REPORTED_PROFIT_NOT_QUALIFIED: "Không có lợi nhuận đủ điều kiện",
+    SOURCE_LABELLED_COMPONENTS_REPORTED: "Có khoản mục được nguồn ghi nhận", NO_ADMITTED_COMPONENT: "Không có khoản mục được chấp nhận",
+    SAME_BASIS_ONE_PERIOD_MEASUREMENT_REPORTED: "Có phép đo cùng cơ sở trong một kỳ",
+    NOT_COMPARABLE_ON_SUPPLIED_EVIDENCE: "Không so sánh được trên bằng chứng hiện có",
+    INDUSTRIAL_CASH_CONVERSION_NOT_APPLICABLE: "Không áp dụng chuyển hóa tiền kiểu doanh nghiệp phi tài chính cho loại hình này",
+    UNSUPPORTED: "Chưa được hỗ trợ", BOUNDED_MEASUREMENT_ONLY: "Chỉ có phép đo giới hạn", NOT_SUPPLIED: "Không được cung cấp",
+    UNKNOWN: "Chưa xác định", NOT_CALCULATED: "Không tính",
+    INCLUDED: "Có trong nguồn", NOT_IN_SUPPLIED_ARTIFACT: "Mã không có trong nguồn financial-quality",
+    REFUSED_ENTITY_CLASS_CONFLICT: "Bị từ chối: loại hình doanh nghiệp mâu thuẫn với hồ sơ",
+    CORPORATE_INDUSTRIAL_CASH_CONVERSION: "Doanh nghiệp phi tài chính",
+    NOT_APPLICABLE_FINANCIAL_OR_UNRESOLVED_ENTITY: "Tổ chức tài chính hoặc loại hình chưa xác định",
   });
 
   function label(table, code) {
@@ -234,7 +298,67 @@
       evidence.set(id, row);
     }
     if (arr(request.topics).length > LIMITS.topics) return fail("BAD_SECTION", "topics");
-    return { ok: true, model: buildModel(doc, tickers, sessions, evidence) };
+    const fq = validateFinancialQuality(doc, tickers, sessions);
+    if (!fq.ok) return fq;
+    return { ok: true, model: buildModel(doc, tickers, sessions, evidence, fq.value) };
+  }
+
+  function validateFinancialQuality(doc, tickers, sessions) {
+    const bad = (detail) => fail("BAD_FINANCIAL_QUALITY", detail);
+    const raw = doc.financial_quality_research;
+    const pins = obj(doc.request).financial_quality_artifact_sha256;
+    const bridges = doc.decision_distinctions.filter((d) => obj(d).financial_quality_bridge !== undefined);
+    if (raw === undefined) return pins === undefined && !bridges.length ? { ok: true, value: null } : bad("financial_quality_research missing");
+    const research = obj(raw);
+    const artifacts = arr(research.artifacts);
+    if (research.contract_version !== FQ_CONTRACT || !artifacts.length || artifacts.length > 10) return bad(str(research.contract_version) || "artifacts");
+    const bySha = new Map();
+    const blocks = {};
+    let rows = 0;
+    for (const a of artifacts) {
+      const src = obj(obj(a).source);
+      const sha = str(src.artifact_sha256);
+      const day = str(src.source_session);
+      const binding = obj(src.binding);
+      if (!SHA_RE.test(sha) || bySha.has(sha) || !SESSION_RE.test(day) || [...bySha.values()].some((x) => x.source_session === day)
+          || !FQ_SOURCE_RE.test(str(src.source_artifact_identity)) || !own(FQ_BINDINGS, binding.state)) return bad(sha || day);
+      const run = sessions.find((x) => x.session === day);
+      // EXACT is believed only when it names this case's own session, run and bundle.
+      if (binding.state === FQ_EXACT && !(run && binding.session === day && binding.run_identity === run.run && binding.bundle_sha256 === run.bundle)) return bad(`binding:${day}`);
+      if (binding.state === "SEPARATE_SOURCE_SESSION_NOT_IN_CASE" && run) return bad(`binding:${day}`);
+      bySha.set(sha, src);
+      const seen = new Set();
+      for (const t of arr(obj(a).tickers)) {
+        const block = obj(t);
+        const ticker = str(block.ticker);
+        if (!tickers.includes(ticker) || seen.has(ticker) || !str(block.status)) return bad(`ticker:${ticker}`);
+        seen.add(ticker);
+        const byId = new Map();
+        for (const e of arr(block.evidence)) {
+          const row = obj(e);
+          const id = str(row.evidence_identity);
+          const rs = obj(row.source);
+          if (!FQ_EVIDENCE_ID_RE.test(id) || byId.has(id) || !str(row.relation) || !row.observation || typeof row.observation !== "object"
+              || rs.ticker !== ticker || rs.artifact_sha256 !== sha || rs.binding_state !== binding.state) return bad(id || ticker);
+          byId.set(id, row);
+        }
+        rows += byId.size;
+        if (rows > LIMITS.evidence) return bad("too many rows");
+        (blocks[ticker] = blocks[ticker] || []).push(Object.freeze({ source: src, block, rows: byId }));
+      }
+    }
+    const shas = [...bySha.keys()].sort();
+    if (!Array.isArray(pins) || pins.length !== shas.length || pins.some((p, i) => p !== shas[i])) return bad("request pins");
+    for (const d of bridges) {
+      for (const b of arr(obj(d).financial_quality_bridge)) {
+        const src = bySha.get(str(obj(b).artifact_sha256));
+        if (!src || obj(src.binding).state !== obj(b).binding_state || src.source_session !== obj(b).source_session) return bad(`bridge:${str(obj(d).ticker)}`);
+      }
+    }
+    // Exact source binding first, then by source session.
+    Object.keys(blocks).forEach((t) => blocks[t].sort((x, y) => (x.source.binding.state !== FQ_EXACT) - (y.source.binding.state !== FQ_EXACT)
+      || (x.source.source_session < y.source.source_session ? -1 : x.source.source_session > y.source.source_session ? 1 : 0)));
+    return { ok: true, value: Object.freeze({ blocks }) };
   }
 
   function byTicker(rows) {
@@ -243,7 +367,7 @@
     return out;
   }
 
-  function buildModel(doc, tickers, sessions, evidence) {
+  function buildModel(doc, tickers, sessions, evidence, financialQuality) {
     const request = obj(doc.request);
     const roles = {};
     arr(request.members).forEach((m) => { roles[m.ticker] = str(m.research_role); });
@@ -272,6 +396,7 @@
       gaps: arr(doc.grouped_next_investigation),
       conclusionLimits: arr(doc.conclusion_limits).filter((c) => typeof c === "string"),
       evidence,
+      financialQuality: financialQuality || null,
     });
   }
 
@@ -357,6 +482,95 @@
       + (comps.length ? `<ul class="cdr-sublist">${comps.slice(0, 8).map((c) => `<li>${h(clip(c.canonical_metric, 80))} · dòng ${h(clip(c.line_code, 8))} · ${h(clip(c.reporting_period, 20))}: ${h(valueText(c.value))} ${h(clip(c.currency, 8))} · ${h(clip(c.audit_or_review_status, 30))} · ${labelHtml(STATUSES, c.valuation_use)}${c.extraction_method ? ` · trích xuất ${h(clip(c.extraction_method, 60))}` : ""}</li>`).join("")}</ul>` : "");
   }
 
+  // ---------------------------------------------------------------------------------------
+  // Financial quality (Consumer PR #13). Values are shown as the Producer output states them.
+  // ---------------------------------------------------------------------------------------
+  function fqCodeHtml(code) { return labelHtml(FQ_CODES, code); }
+  function fqFactHtml(o) {
+    return `<span class="wb-item-label"><b>${h(clip(o.canonical_metric, 80))}</b> · ${h(clip(o.reporting_period, 20))} (${h(clip(o.period_start, 10))} → ${h(clip(o.period_end, 10))}) · ${h(clip(o.statement_scope, 40))}: <span class="wb-item-value">${h(valueText(o.normalized_value))}</span> ${h(clip(o.currency, 8))}${o.unit_scale && o.unit_scale !== 1 ? ` ×${h(valueText(o.unit_scale))}` : ""}</span>`
+      + `<div class="wb-item-meta">Đảm bảo: ${h(clip(o.audit_or_review_status || "không rõ", 40))} · dòng ${h(clip(o.line_code, 8))} trang ${h(valueText(o.source_page))} · biết lúc ${h(clip(o.knowledge_available_at || "—", 40))} · tài liệu <code class="cdr-code" title="${h(clip(o.document_sha256, 64))}">${h(clip(o.document_sha256, 12))}</code></div>`;
+  }
+  function fqRowHtml(entry, rows) {
+    const e = entry || {};
+    const rel = FQ_RELATIONS[e.relation] || { label: e.relation, cls: "gap" };
+    const o = obj(e.observation);
+    let body;
+    if (e.relation === "FQ_SOURCE_FACT") body = fqFactHtml(o);
+    else if (e.relation === "FQ_REPORTED_COMPONENT") body = `${fqFactHtml(o)}<div class="wb-item-meta">Tính lặp lại: ${labelHtml(FQ_STATES, o.recurrence_assessment || "UNKNOWN")} · chuẩn hóa: ${labelHtml(FQ_STATES, o.normalization_status || "NOT_CALCULATED")}</div>`;
+    else if (e.relation === "FQ_CASH_MEASUREMENT") {
+      body = `<span class="wb-item-label">${h(clip(arr(o.bounds)[0], 10))} → ${h(clip(arr(o.bounds)[1], 10))} · ${h(clip(o.statement_scope, 40))}: dòng tiền kinh doanh ${h(valueText(o.operating_cash_flow))} so với lợi nhuận ${h(valueText(o.profit))} ${h(clip(o.currency, 8))}</span>`
+        + `<div class="wb-item-meta">Tỷ lệ do Producer báo cáo: ${h(valueText(o.conversion_ratio))} — một kỳ, mô tả, không chứng minh nguyên nhân hay tính bền vững.</div>`;
+    } else if (e.relation === "FQ_THESIS_TEST") {
+      body = `<span class="wb-item-label">${h(clip(own(FQ_CLAIMS, o.claim) ? FQ_CLAIMS[o.claim] : o.claim, 300))}: <b>${labelHtml(FQ_STATES, o.status)}</b></span>`
+        + `<div class="wb-item-meta">Cần để xác nhận (nguyên văn Producer): ${h(clip(o.confirming_evidence_needed, 600))}</div><div class="wb-item-meta">Vô hiệu khi (nguyên văn Producer): ${h(clip(o.invalidation_condition, 600))}</div>`;
+    } else if (e.relation === "FQ_REFUSED_OR_BLOCKED") {
+      const span = arr(o.bounds).length === 2 ? `${h(clip(o.bounds[0], 10))} → ${h(clip(o.bounds[1], 10))}: ` : "";
+      body = `<span class="wb-item-label">${span}${arr(o.reason_codes).slice(0, 8).map(fqCodeHtml).join("; ") || "—"}</span>`;
+    } else {
+      // Producer statements: Vietnamese label for known codes, Producer text verbatim beside it.
+      const cited = arr(o.citation_ids).map((c) => [...rows.values()].find((r) => r.relation === "FQ_SOURCE_FACT" && obj(r.observation).citation_id === c)).filter(Boolean);
+      body = `<span class="wb-item-label">${fqCodeHtml(o.code)}</span><div class="wb-item-meta">Producer: ${h(clip(o.text, 600))}</div>`
+        + (cited.length ? `<ul class="cdr-sublist">${cited.slice(0, 4).map((r) => `<li>${fqFactHtml(obj(r.observation))}</li>`).join("")}</ul>` : "");
+    }
+    return `<li class="wb-item" data-fq-relation="${h(clip(e.relation, 60))}"><div class="wb-item-head"><span class="wb-kind wb-kind-${h(rel.cls)}">${h(clip(rel.label, 120))}</span>${body}</div></li>`;
+  }
+  function fqListHtml(rows, ids, emptyText) {
+    const list = arr(ids).filter((x) => typeof x === "string");
+    if (!list.length) return `<p class="cockpit-note">${h(emptyText || "Không có.")}</p>`;
+    const item = (id) => (FQ_EVIDENCE_ID_RE.test(id) && rows.has(id) ? fqRowHtml(rows.get(id), rows)
+      : '<li class="wb-item wb-item-gap" data-case-evidence-missing="true"><span class="wb-item-label">Hồ sơ nhắc tới bằng chứng không có trong nguồn financial-quality của tệp.</span></li>');
+    const head = list.slice(0, LIMITS.rowsShown).map(item).join("");
+    const rest = list.slice(LIMITS.rowsShown);
+    return `<ul class="wb-items">${head}</ul>${rest.length ? `<details class="wb-more"><summary>Xem thêm ${rest.length} mục</summary><ul class="wb-items">${rest.map(item).join("")}</ul></details>` : ""}`;
+  }
+  function fqBindingHtml(model, src) {
+    const b = obj(src.binding);
+    const at = h(clip(src.consultation_cutoff, 40));
+    const day = h(clip(src.source_session, 10));
+    if (b.state === FQ_EXACT) {
+      return `<div class="cockpit-note" role="note" data-fq-binding="${h(b.state)}"><b>${h(FQ_BINDINGS[b.state])} phiên ${day}</b>: số liệu lấy từ đúng nguồn dữ liệu cơ bản mà lần chạy <code class="cdr-code" title="${h(clip(b.run_identity, 90))}">${h(clip(b.run_identity, 30))}</code> của phiên này đã dùng (trang đã khớp mã lần chạy và bundle với hồ sơ). Phần giải thích được tra cứu sau, lúc ${at}: không phải kết luận đã có tại phiên ${day} và không phải thẻ Daily đã giao.${src.source_session !== model.latestSession ? ` Đây là phiên ${day}, không phải phiên mới nhất ${h(model.latestSession)} của hồ sơ.` : ""}</div>`;
+    }
+    return `<div class="vs-alert vs-alert-warning" role="note" data-fq-binding="${h(clip(b.state, 80))}"><b>Bối cảnh tra cứu sau / hiện tại — không thuộc thời điểm của bất kỳ phiên nào trong hồ sơ.</b> ${labelHtml(FQ_BINDINGS, b.state)} (phiên nguồn ${day}, tra cứu lúc ${at}). Cùng mã hay cùng ngày không chứng minh cùng lần chạy.</div>`;
+  }
+  function fqAnswersHtml(entry) {
+    const t = entry.block;
+    if (t.status !== "INCLUDED") return `<p class="cockpit-note" data-fq-status="${h(clip(t.status, 60))}">${labelHtml(FQ_STATES, t.status)}${t.status === "REFUSED_ENTITY_CLASS_CONFLICT" ? ` (hồ sơ: ${labelHtml(STATUSES, t.case_entity_class)}, nguồn: ${labelHtml(STATUSES, t.source_entity_class)})` : ""}.</p>`;
+    const q = obj(t.investor_answers);
+    const rows = entry.rows;
+    const st = (code) => `<b>${labelHtml(FQ_STATES, code || "NOT_SUPPLIED")}</b>`;
+    const profit = obj(q.reported_profit), comp = obj(q.unusual_or_provision_components), cash = obj(q.cash_vs_profit);
+    const rec = obj(q.recurring_earnings), val = obj(q.valuation_denominator);
+    const excluded = arr(t.excluded_after_source_cutoff_or_untimed).length;
+    // Source figures no answer cites (for example equity) stay visible rather than dropped.
+    const cited = new Set();
+    const collect = (v) => { if (typeof v === "string") cited.add(v); else if (Array.isArray(v)) v.forEach(collect); else if (v && typeof v === "object") Object.values(v).forEach(collect); };
+    collect(q);
+    const other = [...rows.keys()].filter((id) => !cited.has(id) && rows.get(id).relation === "FQ_SOURCE_FACT");
+    return `<p class="cockpit-note">Loại hình theo nguồn: ${labelHtml(STATUSES, t.source_entity_class)} · ${labelHtml(FQ_STATES, t.applicability)}</p>
+      <h6>Lợi nhuận thực sự được báo cáo</h6><p>${st(profit.state)}</p>${fqListHtml(rows, profit.evidence)}
+      <h6>Khoản bất thường / dự phòng có nguồn</h6><p>${st(comp.state)} · tính lặp lại: ${labelHtml(FQ_STATES, comp.recurrence_assessment || "UNKNOWN")} · chuẩn hóa: ${labelHtml(FQ_STATES, comp.normalization_status || "NOT_CALCULATED")}. Không có khoản mục không chứng minh lợi nhuận sạch.</p>${fqListHtml(rows, comp.evidence, "Không có khoản mục được chấp nhận.")}
+      <h6>Dòng tiền kinh doanh có so được với lợi nhuận không</h6><p data-fq-cash="${h(clip(cash.state, 80))}">${st(cash.state)} · kiểm định của Producer: ${st(cash.producer_status)}</p>
+      <div class="wb-two-col"><div><div class="wb-dim-head">Phép đo cùng cơ sở</div>${fqListHtml(rows, cash.measurements, "Không có phép đo: không ghép lợi nhuận và dòng tiền khác kỳ, khác phạm vi hay khác mức đảm bảo.")}<div class="wb-dim-head">Vì sao chưa so được</div>${fqListHtml(rows, cash.blockers, "Không có.")}</div>
+        <div><div class="wb-dim-head">Quan sát tiền (có thể khác kỳ — không ghép)</div>${fqListHtml(rows, cash.cash_observations, "Không có số liệu tiền đủ điều kiện.")}<div class="wb-dim-head">Nguyên nhân còn mở</div>${fqListHtml(rows, cash.open_causes, "Không có.")}</div></div>
+      <h6>Bằng chứng về lợi nhuận lặp lại</h6><p>Kiểm định của Producer: ${st(rec.producer_status)}</p>
+      <div class="wb-two-col"><div><div class="wb-dim-head">Quan sát</div>${fqListHtml(rows, rec.supporting, "Không có lợi nhuận được quan sát.")}<div class="wb-dim-head">Cảnh báo</div>${fqListHtml(rows, rec.cautions, "Không có cảnh báo kế toán.")}</div><div><div class="wb-dim-head">Chưa biết</div>${fqListHtml(rows, rec.unknowns, "Không có.")}</div></div>
+      <h6>Giới hạn của mẫu số định giá</h6><p>Kiểm định của Producer: ${st(val.producer_status)}. Trang không tính P/E, EPS hay hệ số nào.</p>${fqListHtml(rows, val.reasons, "Không có.")}
+      <h6>Bằng chứng cần để xác nhận hoặc vô hiệu luận điểm tài chính</h6>${fqListHtml(rows, q.evidence_needed, "Không có kiểm định.")}
+      ${other.length ? `<h6>Số liệu nguồn khác của Producer</h6><p class="cockpit-note">Quan sát hữu ích, không trả lời trực tiếp các câu hỏi trên và không đủ để kết luận về lợi nhuận hay dòng tiền.</p>${fqListHtml(rows, other)}` : ""}
+      ${excluded ? `<p class="cockpit-note" data-fq-excluded="${excluded}">${excluded} số liệu bị loại vì biết sau thời điểm cắt của nguồn hoặc không rõ thời điểm.</p>` : ""}`;
+  }
+  function financialQualityHtml(model, ticker) {
+    const blocks = arr(obj(obj(model.financialQuality).blocks)[ticker]);
+    if (!blocks.length) return `<p class="cockpit-note">Nguồn financial-quality của hồ sơ không có ${h(ticker)}.</p>`;
+    return `<p class="cockpit-note">Đầu ra offline, không biểu quyết của Producer <code>research financial-quality</code>, được người lập hồ sơ cung cấp riêng. Số liệu là của Producer; trang chỉ hiển thị lại, không tính lợi nhuận chuẩn hóa, EPS, hệ số định giá, điểm hay lệnh giao dịch. Mã băm chứng minh tệp không bị sửa, không chứng minh số liệu đúng.</p>`
+      + blocks.map((entry) => `<article class="cdr-fq" data-fq-session="${h(clip(entry.source.source_session, 10))}">${fqBindingHtml(model, entry.source)}${fqAnswersHtml(entry)}</article>`).join("");
+  }
+  function fqDistinctionNoteHtml(dd) {
+    const rows = arr(dd.financial_quality_bridge);
+    if (!rows.length) return "";
+    return `<p class="cockpit-note" data-fq-bridge="${rows.length}">Có ${rows.length} nguồn financial-quality bổ sung cho mã này: ${rows.map((r) => `phiên ${h(clip(obj(r).source_session, 10))} — ${labelHtml(FQ_BINDINGS, obj(r).binding_state)}`).join("; ")}. Xem mục “Chất lượng lợi nhuận và dòng tiền”. Các trạng thái ở trên vẫn là của thẻ Daily.</p>`;
+  }
+
   function sectionHtml(id, title, count, body, open) {
     return `<details class="wb-section" id="${h(id)}"${open ? " open" : ""}><summary><span class="wb-section-title">${h(title)}</span>${count ? `<span class="wb-section-count">${h(count)}</span>` : ""}</summary><div class="wb-section-body">${body}</div></details>`;
   }
@@ -405,7 +619,7 @@
       <p data-case-oci="${h(clip(oci.status, 80))}">${labelHtml(STATUSES, oci.status)}. Lợi nhuận báo cáo không được trình bày như thu nhập toàn diện hay lợi nhuận thường xuyên.</p>
       ${arr(oci.reported_income_lines).length ? `<ul class="cdr-sublist">${arr(oci.reported_income_lines).slice(0, 8).map((l) => `<li>${h(clip(l.metric, 60))} · dòng ${h(clip(l.line_code, 8))} · ${h(clip(l.reporting_period, 20))} · ${h(clip(l.statement_scope, 30))}</li>`).join("")}</ul>` : ""}
       <h6>Chuyển đổi lợi nhuận thành tiền</h6>
-      <p>${labelHtml(STATUSES, cash.status)}</p>
+      <p>${labelHtml(STATUSES, cash.status)}</p>${fqDistinctionNoteHtml(dd)}
       ${evidenceListHtml(model, cash.evidence)}
       <h6>Định giá theo đúng loại hình</h6>
       <p>Loại hình: ${labelHtml(STATUSES, val.entity_class)} · định giá chặt: ${labelHtml(STATUSES, val.strict_valuation_status)} · định giá theo nhóm: ${labelHtml(STATUSES, val.peer_valuation_status)}</p>
@@ -428,7 +642,8 @@
       <div class="wb-two-col"><div><div class="wb-dim-head">Producer ủng hộ</div>${evidenceListHtml(model, support.slice(0, LIMITS.rowsShown), "Không có lập luận ủng hộ.")}${support.length > LIMITS.rowsShown ? `<p class="cockpit-note">Còn ${support.length - LIMITS.rowsShown} lập luận ủng hộ khác trong tệp.</p>` : ""}
         ${Object.keys(quals).length ? `<div class="wb-dim-caveat">Lưu ý về lập luận ủng hộ:</div><ul class="cdr-sublist">${Object.keys(quals).slice(0, 12).map((id) => `<li>${quals[id].map((q) => (str(q).startsWith("CONTESTED_BY_PRODUCER_SOURCE_CONFLICT:") ? `Bị chính nguồn Producer phản bác: <code class="cdr-code">${h(clip(q.slice(38), 120))}</code>` : labelHtml(STATUSES, q))).join("; ")}</li>`).join("")}</ul>` : ""}</div>
       <div><div class="wb-dim-head">Phản luận mạnh nhất có căn cứ: ${labelHtml(DOMAINS, counter.category)}</div><p class="cockpit-note">${labelHtml(STATUSES, counter.selection_rule)}</p>${evidenceListHtml(model, counter.evidence, "Không có phản luận có căn cứ nguồn.")}</div></div>
-      <h6>Mâu thuẫn chưa giải quyết</h6>${evidenceListHtml(model, c.contradictions, "Không có mâu thuẫn được ghi nhận.")}
+      ${arr(c.financial_quality_tests).length ? `<h6>Kiểm định chất lượng tài chính của Producer</h6><p class="cockpit-note">Không phải phản luận được chọn hay kết luận.</p><ul class="cdr-sublist" data-fq-tests="${arr(c.financial_quality_tests).length}">${arr(c.financial_quality_tests).map((t) => `<li>Phiên nguồn ${h(clip(obj(t).source_session, 10))} · ${labelHtml(FQ_BINDINGS, obj(t).binding_state)}: ${arr(obj(t).thesis_tests).length} kiểm định, ${arr(obj(t).accounting_cautions).length} cảnh báo kế toán, ${arr(obj(t).unsupported_conclusions).length} kết luận chưa có căn cứ</li>`).join("")}</ul>
+      ` : ""}<h6>Mâu thuẫn chưa giải quyết</h6>${evidenceListHtml(model, c.contradictions, "Không có mâu thuẫn được ghi nhận.")}
       <h6>Không được kết luận</h6><ul class="cdr-sublist">${arr(c.cannot_conclude).map((x) => `<li>${labelHtml(STATUSES, x)}</li>`).join("") || "<li>—</li>"}</ul>`;
   }
 
@@ -495,7 +710,8 @@
         ${Object.keys(ov).length ? `<p class="cockpit-note">Trong hồ sơ: ${h(valueText(ov.delivered_sessions))}/${h(valueText(ov.supplied_sessions))} phiên có dữ liệu · ${h(valueText(ov.persisting_risks))} rủi ro kéo dài · ${h(valueText(ov.conditions_without_verified_outcome))} điều kiện chưa có kết quả được kiểm chứng.</p>` : ""}
       </div></section>
       ${sectionHtml("cdr-sec-distinctions", "Các trạng thái không được gộp", `phiên ${model.latestSession}`, distinctionsHtml(model, ticker), true)}
-      ${sectionHtml("cdr-sec-challenge", "Ủng hộ và phản luận", "", challengeHtml(model, ticker), true)}
+      ${model.financialQuality ? `${sectionHtml("cdr-sec-financial-quality", "Chất lượng lợi nhuận và dòng tiền (nguồn Producer bổ sung)", `${arr(model.financialQuality.blocks[ticker]).length} nguồn`, financialQualityHtml(model, ticker), true)}
+      ` : ""}${sectionHtml("cdr-sec-challenge", "Ủng hộ và phản luận", "", challengeHtml(model, ticker), true)}
       ${sectionHtml("cdr-sec-topics", "Câu hỏi và giả thuyết của bạn", `${model.topics.length}`, topicsHtml(model, ticker), false)}
       ${sectionHtml("cdr-sec-gaps", "Khoảng trống bằng chứng và giới hạn", "", gapsHtml(model, ticker), false)}
     </div>`;
@@ -571,7 +787,7 @@
   }
 
   return {
-    CONTRACT, LIMITS, NOTICE, IMPORT_ERRORS, RELATIONS, CONDITION_KINDS, TRIGGER_STATES, SESSION_STATES,
+    CONTRACT, LIMITS, NOTICE, IMPORT_ERRORS, RELATIONS, CONDITION_KINDS, TRIGGER_STATES, SESSION_STATES, FQ_BINDINGS,
     parseCase, validateCase, compareWithPublished, caseViewHtml, emptyStateHtml, dossierNoticeHtml,
     attach, render, acceptText, closeCase, currentModel, focusTicker,
   };

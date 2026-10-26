@@ -14,7 +14,10 @@
 .cdr-topic-text { margin: .35rem 0; font-size: .86rem; overflow-wrap: anywhere; }
 .cdr-dossier-notice { margin-bottom: .75rem; }
 .cdr-dossier-notice .btn { margin-left: .35rem; }
+.cdr-fq { min-width: 0; overflow-wrap: anywhere; }
+.cdr-fq + .cdr-fq { margin-top: .9rem; padding-top: .9rem; border-top: 1px solid var(--border-soft); }
 
 @media (max-width: 640px) {
-  .cdr-compare-table, .cdr-conditions { display: block; overflow-x: auto; }
+  /* The shared .cockpit-table min-width would push the page sideways; scroll inside instead. */
+  .cdr-compare-table, .cdr-conditions { display: block; overflow-x: auto; min-width: 0; max-width: 100%; }
 }

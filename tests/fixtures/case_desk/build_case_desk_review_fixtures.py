@@ -9,6 +9,13 @@ drops `findings`, `temporal_review`, `source_transport` and every unreferenced r
 No value, code, text or identity is rewritten, so the fixtures stay faithful excerpts
 (their `case_identity` is the original identity of the full case, not of the excerpt).
 
+Financial-quality cases (Consumer PR #13) come from `python tools/run_case_financial_quality_acceptance.py
+--output-dir <dir> [--retained-root <daily-producer-runs root>]`; their optional
+`financial_quality_research` block is kept whole. `fq-separate` is the same excerpt
+request with three sessions and only the October 23 output, so it stays separate context.
+A case directory missing from the given output dir is skipped, so each acceptance
+output dir rebuilds only its own fixtures.
+
 Usage: python tests/fixtures/case_desk/build_case_desk_review_fixtures.py <acceptance-output-dir>
 """
 import json
@@ -19,6 +26,9 @@ CASES = {
     "hpg-business-vs-technical": "case_hpg.json",
     "nvl-thesis-challenge": "case_nvl.json",
     "mixed-company-basis": "case_mixed_basis.json",
+    "excerpt-after": "case_fq_exact.json",
+    "fq-separate": "case_fq_separate.json",
+    "retained-after": "case_fq_cross_sector.json",
 }
 OUT_DIR = Path(__file__).resolve().parent
 PER_LIST = 6
@@ -72,6 +82,8 @@ def trim(case):
         }
         for p in case["current_profiles"]
     ]
+    if "financial_quality_research" in case:
+        out["financial_quality_research"] = case["financial_quality_research"]
     referenced = set()
     _ids([out["decision_distinctions"], out["thesis_challenges"], out["question_investigations"],
           out["grouped_next_investigation"]], referenced)
@@ -86,7 +98,11 @@ def main(argv):
     root = Path(argv[1])
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     for name, target in CASES.items():
-        case = json.loads((root / name / "investment_research_case.json").read_text(encoding="utf-8"))
+        source = root / name / "investment_research_case.json"
+        if not source.exists():
+            print(f"{target}: skipped, {name} not in this output dir")
+            continue
+        case = json.loads(source.read_text(encoding="utf-8"))
         text = json.dumps(trim(case), ensure_ascii=False, indent=1, sort_keys=True) + "\n"
         (OUT_DIR / target).write_text(text, encoding="utf-8", newline="\n")
         print(f"{target}: {len(text.encode('utf-8'))} bytes")

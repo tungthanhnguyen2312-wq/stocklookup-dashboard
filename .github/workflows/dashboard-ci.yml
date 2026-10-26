@@ -67,6 +67,9 @@ jobs:
       - name: Case Desk local review tests
         run: node --test tests/case-desk-review.test.js
 
+      - name: Case Desk financial-quality presentation tests
+        run: node --test tests/case-desk-financial-quality.test.js
+
       - name: Portfolio evidence and risk workspace tests
         run: node --test tests/portfolio-research-model.test.js
 
