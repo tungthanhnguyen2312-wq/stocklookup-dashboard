@@ -589,7 +589,7 @@
       <div class="ws-valuation-method-value">${diagnosticValueHtml(detail)}</div>
       ${valuationPeerContextHtml(detail.peer_relative)}
       ${context.length ? `<div class="cockpit-note ws-diagnostic-context">${escHtml(context.join(" · "))}</div>` : ""}
-      ${blockers.length ? `<div class="cockpit-note ws-diagnostic-blocker">Thiếu/giới hạn: ${blockers.slice(0, 2).map(diagnosticReasonHtml).join(" · ")}${blockers.length > 2 ? " · …" : ""}</div>` : ""}
+      ${blockers.length ? `<div class="cockpit-note ws-diagnostic-blocker">Thiếu/giới hạn: ${blockers.map(diagnosticReasonHtml).join(" · ")}</div>` : ""}
       ${detailsHtml(detail, "Chi tiết kỹ thuật phương pháp")}
     </article>`;
   }
@@ -619,11 +619,30 @@
     }
     return '<div class="ws-valuation-summary">Chưa có phương pháp định giá có dữ liệu nghiên cứu.</div>';
   }
+  function valuationReadinessHtml(valuation) {
+    const ready = (valuation || {}).research_readiness;
+    if (!ready || typeof ready !== "object") return "";
+    const lines = [];
+    const earnings = ready.normalized_earnings;
+    const intrinsic = ready.intrinsic_value;
+    if (earnings && earnings.readiness) lines.push(`EPS bình thường hóa: ${earnings.readiness}${earnings.reason_code ? ` · ${earnings.reason_code}` : ""}`);
+    if (intrinsic && intrinsic.readiness) lines.push(`Giá trị nội tại: ${intrinsic.readiness}${intrinsic.reason_code ? ` · ${intrinsic.reason_code}` : ""}`);
+    const share = Array.isArray(ready.share_or_corporate_action_blockers) ? ready.share_or_corporate_action_blockers : [];
+    if (share.length) lines.push(`Cổ phiếu/sự kiện: ${share.join(" · ")}`);
+    if (!lines.length) return "";
+    return `<div class="ws-valuation-readiness" data-probability="NOT_EMITTED" data-target-price="NOT_EMITTED">${lines.map((line) => `<div class="cockpit-note">${escHtml(line)}</div>`).join("")}</div>`;
+  }
+  function conditionalScenarioHtml(card) {
+    const block = (card || {}).conditional_scenarios;
+    if (!block) return '<div class="cockpit-note">Chưa có kịch bản có điều kiện từ hợp đồng hiện có cho phiên này.</div>';
+    const row = (label, item) => `<div data-case="${escHtml(label)}"><b>${escHtml(label)}</b> ${escHtml((item && item.case_status) || "Chưa có")} <span class="cockpit-note">${escHtml((item && item.reason_code) || "")}</span></div>`;
+    return `<div class="ws-conditional-scenarios" data-probability="NOT_EMITTED" data-target-price="NOT_EMITTED">${row("BEAR", block.bear)}${row("BASE", block.base)}${row("BULL", block.bull)}<div class="cockpit-note">Kịch bản có điều kiện. Không phải xác suất và không phải giá mục tiêu.</div></div>`;
+  }
   function valuationDiagnosticsHtml(valuation) {
     const val = valuation || {};
     const diagnostics = val.method_diagnostics && typeof val.method_diagnostics === "object" ? val.method_diagnostics : {};
     const methods = Object.entries(diagnostics);
-    return `${valuationSummaryHtml(val)}${methods.length
+    return `${valuationReadinessHtml(val)}${valuationSummaryHtml(val)}${methods.length
       ? `<div class="ws-valuation-methods" aria-label="Chi tiết phương pháp định giá">${methods.map(([id, method]) => valuationMethodHtml(id, method)).join("")}</div>`
       : (val.supporting_methods && val.supporting_methods.length ? supportingMethodsHtml(val.supporting_methods) : "")}`;
   }
@@ -1124,6 +1143,7 @@
 
           <section class="ws-section" aria-labelledby="ws-section-scenario-${escHtml(ticker)}">
             <h5 id="ws-section-scenario-${escHtml(ticker)}" class="ws-section-title">Kịch bản &amp; mốc quan trọng</h5>
+            ${conditionalScenarioHtml(card)}
             <div class="cockpit-grid mb-2">
               ${kpiHtml("Mức kích hoạt tham chiếu", hasRetainedValue(referenceTrigger.trigger_level) ? formatDiagnosticNumber(referenceTrigger.trigger_level) : "Chưa có dữ liệu")}
               ${kpiHtml("Trạng thái kích hoạt", pill(referenceTrigger.trigger_state || referenceTrigger.status, "confirmation_state"))}
