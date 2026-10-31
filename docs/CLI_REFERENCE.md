@@ -1,5 +1,8 @@
 # CLI Reference
 
+> **Tài liệu lịch sử — không phải cách dùng Dashboard hiện nay.** Trang này mô tả pipeline cục bộ VNSTOCK trước đây; việc thu thập trực tiếp qua vnstock đã ngừng và dữ liệu hiện do hệ thống nghiên cứu riêng (Producer) phát hành. Để dùng Stock Lookup, chỉ cần mở <https://tungthanhnguyen2312-wq.github.io/stocklookup-dashboard/>. Các lệnh bên dưới được giữ làm bằng chứng lịch sử và có thể không còn chạy được.
+
+
 > Toàn bộ lệnh chạy các script backend + web publish, thứ tự và lịch chạy khuyến nghị.
 > Tách ra từ README ngày 12/07/2026. Xem [ARCHITECTURE.md](ARCHITECTURE.md) cho vai trò từng
 > script, [DATA_PIPELINE.md](DATA_PIPELINE.md) cho các bẫy dữ liệu cần biết khi dùng output.

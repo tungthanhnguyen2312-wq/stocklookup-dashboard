@@ -24,7 +24,12 @@ Candlestick/sector artifacts là sidecar legacy tùy chọn, không thay thế W
 session, producer identity, denominator và zero-silent-drop của projection trước khi copy atomic
 vào Dashboard. Repository này chỉ là target static, không phát sinh quyền publish.
 
-Hệ thống gồm 2 nửa:
+**Ranh giới công khai hiện nay:** website và mã nguồn trong repository này là công khai. Hệ thống tạo dữ
+liệu (Producer) và phần nghiên cứu AI (Consumer) là hạ tầng riêng tư, không được phát hành tại đây. Phần
+"Backend" và sơ đồ luồng dữ liệu bên dưới mô tả pipeline cục bộ VNSTOCK trước đây và được giữ làm thông tin
+kỹ thuật lịch sử; chúng không phải mô tả hệ thống tạo dữ liệu hiện hành.
+
+Hệ thống (giai đoạn VNSTOCK, lịch sử) gồm 2 nửa:
 
 **Backend (local, không lên GitHub)** — 7 chân kiềng quanh kho `vn_stock.db` (hiện **1.686 mã**, ~1,9 triệu dòng giá + metadata + macro + news + cổ đông):
 
