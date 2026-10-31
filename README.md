@@ -14,6 +14,8 @@ nhu cầu được mô tả tại
 [docs/INVESTOR_FIRST_UX_V1.md](docs/INVESTOR_FIRST_UX_V1.md).
 Hệ thống trình bày tối giản (bố cục, nút, bảng, điều hướng di động) được mô tả tại
 [docs/MINIMAL_GLASS_UX_V1.md](docs/MINIMAL_GLASS_UX_V1.md).
+Lớp kính, thanh điều hướng dạng dock và chuyển trang có chuyển động được mô tả tại
+[docs/GLASSY_SHELL_V1.md](docs/GLASSY_SHELL_V1.md).
 
 Giao diện nghiên cứu hiện tại sử dụng `data/investment_decision_workspace.json`,
 bản chiếu Workspace được tuần tự hóa do Producer quản lý. Trang Tổng quan,

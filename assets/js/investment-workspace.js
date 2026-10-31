@@ -97,6 +97,11 @@
     catalyst: "Chất xúc tác",
     freshness: "Độ mới dữ liệu",
   };
+  function filtersFromQuery(value) {
+    const known = new Set(FILTERS.map((f) => f.id));
+    return [...new Set(String(value || "").split(",").map((id) => id.trim()).filter((id) => known.has(id)))];
+  }
+
   const FILTERS = [
     { id: "initiate", label: "Mở vị thế khi bứt phá", group: "posture", test: (c) => c.research_action_posture === "INITIATE_ON_BREAKOUT" },
     { id: "accumulate", label: "Tích lũy khi kiểm định lại", group: "posture", test: (c) => c.research_action_posture === "ACCUMULATE_ON_RETEST" },
@@ -1294,20 +1299,26 @@
         </tr>`;
       }
 
-      function focusTickers() { return notableTickers(WORKSPACE.cards); }
+      // GLASSY_SHELL_V1: no "four notable" cards (they were the first four eligible cards A-Z, and
+      // ranking is prohibited). The section now opens every ticker by published posture: each
+      // chip applies the matching posture filter to the full list below and shows its count.
+      let POSTURE_COUNTS = null;
       function renderDecisionFocus() {
         const root = document.getElementById("decision-focus");
         if (!root) return;
-        root.innerHTML = focusTickers().map((ticker) => {
-          const card = WORKSPACE.cards[ticker];
-          const trigger = card.reference_trigger || (card.tactical || {}).reference_trigger || {};
-          return `<article class="ws-focus-card" data-focus-ticker="${esc(ticker)}"><div class="ws-focus-card-head"><strong>${esc(ticker)}</strong>${pill(card.entry_state, "tactical_state")}</div><div class="cockpit-note">${sectorDisplayHtml(card.sector)}</div><div class="ws-focus-action">${actionPostureHtml(card)} ${evidenceCurrencyHtml(card.evidence_currency)}</div>${hasRetainedValue(trigger.trigger_level) ? `<div class="cockpit-note">Kích hoạt tham chiếu: ${esc(formatDiagnosticNumber(trigger.trigger_level))}</div>` : ""}<ul>${compactReasons(card, 2).map((reason) => `<li>${esc(reason)}</li>`).join("")}</ul><button type="button" class="btn btn-sm btn-outline-light" data-select-ticker="${esc(ticker)}">Xem luận điểm</button></article>`;
-        }).join("") || '<p class="cockpit-note">Chưa có nhóm cần chú ý theo trạng thái nghiên cứu hiện tại.</p>';
+        const postureFilters = FILTERS.filter((f) => f.group === "posture");
+        if (!POSTURE_COUNTS) {
+          const cards = Object.values(WORKSPACE.cards);
+          POSTURE_COUNTS = Object.fromEntries(postureFilters.map((f) => [f.id, cards.filter((c) => f.test(c)).length]));
+        }
+        root.innerHTML = `<p class="cockpit-note ws-posture-note">${esc(Object.keys(WORKSPACE.cards).length.toLocaleString("vi-VN"))} mã theo tư thế nghiên cứu đã công bố. Chọn một nhóm để lọc danh sách bên dưới; không phải xếp hạng.</p>`
+          + `<div class="ws-posture-chips" role="group" aria-label="Lọc theo tư thế nghiên cứu">${postureFilters.map((f) => `<button type="button" class="ws-posture-chip" data-posture-filter="${esc(f.id)}" aria-pressed="${ACTIVE_FILTERS.includes(f.id) ? "true" : "false"}"${POSTURE_COUNTS[f.id] ? "" : " disabled"}><span>${esc(f.label)}</span><strong>${esc(POSTURE_COUNTS[f.id].toLocaleString("vi-VN"))}</strong></button>`).join("")}</div>`;
       }
 
       function renderList() {
         const tickers = filteredTickers();
         document.getElementById("opportunity-rows").innerHTML = tickers.map(renderRow).join("");
+        renderDecisionFocus();
         document.getElementById("row-count").textContent = `${tickers.length} / ${Object.keys(WORKSPACE.cards).length}`;
         document.getElementById("filter-count").textContent = ACTIVE_FILTERS.length ? `${ACTIVE_FILTERS.length} bộ lọc đang bật` : "";
         // PHASE 12 -- visible on the collapsed "Bộ lọc" control itself, so the reader can see a
@@ -1676,6 +1687,22 @@
           if (!workbenchDeepLink) openDrawer();
         }
 
+        // ?filter=<id>[,<id>] opens the list with those published filters on (Home's posture entry
+        // links here). Unknown ids are ignored; the URL follows later chip changes.
+        const queryFilters = filtersFromQuery(new URLSearchParams(window.location.search).get("filter"));
+        if (queryFilters.length) {
+          ACTIVE_FILTERS = queryFilters;
+          const disclosure = document.getElementById("ws-filter-disclosure");
+          if (disclosure) disclosure.open = true;
+          renderFilterChips();
+          renderList();
+        }
+        function syncFilterParam() {
+          if (!window.history || typeof window.history.replaceState !== "function") return;
+          const url = new URL(window.location.href);
+          if (ACTIVE_FILTERS.length) url.searchParams.set("filter", ACTIVE_FILTERS.join(",")); else url.searchParams.delete("filter");
+          window.history.replaceState(window.history.state, "", url.pathname + url.search + url.hash);
+        }
         document.getElementById("filter-chips").addEventListener("click", (e) => {
           const btn = e.target.closest("[data-filter]");
           if (!btn) return;
@@ -1683,10 +1710,12 @@
           ACTIVE_FILTERS = ACTIVE_FILTERS.includes(id) ? ACTIVE_FILTERS.filter((x) => x !== id) : ACTIVE_FILTERS.concat(id);
           renderFilterChips();
           renderList();
+          syncFilterParam();
         });
         document.getElementById("filters-reset").addEventListener("click", () => {
           ACTIVE_FILTERS = []; SEARCH_QUERY = ""; document.getElementById("ticker-search").value = "";
           renderFilterChips(); renderList();
+          syncFilterParam();
         });
         document.getElementById("ticker-search").addEventListener("input", (e) => { SEARCH_QUERY = e.target.value; renderList(); });
 
@@ -1698,8 +1727,15 @@
         });
 
         document.getElementById("decision-focus").addEventListener("click", (e) => {
-          const button = e.target.closest("[data-select-ticker]");
-          if (button) selectTicker(button.dataset.selectTicker, { openDrawer: true });
+          const chip = e.target.closest("[data-posture-filter]");
+          if (!chip) return;
+          const id = chip.dataset.postureFilter;
+          const postureIds = FILTERS.filter((f) => f.group === "posture").map((f) => f.id);
+          const wasOn = ACTIVE_FILTERS.includes(id);
+          ACTIVE_FILTERS = ACTIVE_FILTERS.filter((x) => !postureIds.includes(x)).concat(wasOn ? [] : [id]);
+          renderFilterChips();
+          renderList();
+          syncFilterParam();
         });
 
         document.getElementById("analysis-rows").addEventListener("click", (e) => {
@@ -1912,7 +1948,7 @@
   }
 
   return {
-    DATA_URL, SCHEMA_VERSION, CONTRACT_VERSION, validateWorkspaceContract, PORTFOLIO_STORAGE_KEY, RELATIVE_VALUATION_LABELS, FILTERS, FILTER_GROUP_LABELS,
+    DATA_URL, SCHEMA_VERSION, CONTRACT_VERSION, validateWorkspaceContract, PORTFOLIO_STORAGE_KEY, RELATIVE_VALUATION_LABELS, FILTERS, filtersFromQuery, FILTER_GROUP_LABELS,
     matchesFilters, matchesSearch, selectedTickerForDeepLink, hasStaleAxis, joinPortfolioResearch,
     readLocalPortfolioHoldings, localHoldingFor, buildT0Export,
     VETO_RESEARCH_STANCES, TACTICAL_ACTIONABLE_ENTRY_READINESS, stanceEntryGuidance,

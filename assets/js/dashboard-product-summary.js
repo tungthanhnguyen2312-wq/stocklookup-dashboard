@@ -653,7 +653,7 @@
         summaryHost.innerHTML = renderDecisionSummaryHtml(summary);
         renderMarketOverview(summary);
         renderInvestorHome(summary);
-        bootHomeOpportunities(summary.as_of_session, summary, buildInfo);
+        renderPostureEntry(summary);
       })
       .catch((error) => {
         if (typeof console !== "undefined" && console.debug) console.debug("dashboard summary unavailable:", error);
@@ -706,6 +706,39 @@
     return block.cards.map((card) => opportunityArticleHtml(card.ticker, card, workspaceApi)).join("") || '<p class="cockpit-note">Chưa có mã đáng chú ý theo trạng thái hiện tại.</p>';
   }
 
+  // GLASSY_SHELL_V1: Home no longer shows four "notable" tickers. That selection was the first
+  // four eligible cards in insertion (A-Z) order, and the workspace contract prohibits ranking.
+  // Home instead opens the whole universe by research_action_posture, using the published
+  // summary counts and the matching Cơ hội posture filters (ids and labels mirror FILTERS in
+  // investment-workspace.js). The notable-card helpers above stay exported for their contracts.
+  const POSTURE_ENTRY = [
+    { filter: "initiate", label: "Mở vị thế khi bứt phá", postures: ["INITIATE_ON_BREAKOUT"] },
+    { filter: "accumulate", label: "Tích lũy khi kiểm định lại", postures: ["ACCUMULATE_ON_RETEST"] },
+    { filter: "early_watch", label: "Theo dõi sớm", postures: ["EARLY_WATCH"] },
+    { filter: "wait", label: "Chờ xác nhận", postures: ["WAIT_FOR_CONFIRMATION"] },
+    { filter: "hold", label: "Nắm giữ (nếu đang nắm giữ)", postures: ["HOLD", "HOLD_DO_NOT_ADD"] },
+    { filter: "avoid", label: "Tránh / giảm tỷ trọng", postures: ["AVOID", "REDUCE"] },
+    { filter: "insufficient", label: "Chưa đủ bằng chứng hiện tại", postures: ["INSUFFICIENT_CURRENT_RESEARCH"] },
+  ];
+
+  function postureEntryHtml(summary) {
+    const block = (summary && summary.research_action_posture) || {};
+    const counts = block.counts || {};
+    if (!block.available || !Object.keys(counts).length) return '<p class="cockpit-note">Chưa có tư thế nghiên cứu cho phiên hiện tại.</p>';
+    const rows = POSTURE_ENTRY.map((entry) => ({ ...entry, count: entry.postures.reduce((sum, key) => sum + (Number(counts[key]) || 0), 0) }));
+    const max = Math.max(1, ...rows.map((row) => row.count));
+    const total = typeof block.coverage === "number" ? block.coverage : rows.reduce((sum, row) => sum + row.count, 0);
+    return `<p class="cockpit-note">${esc(total.toLocaleString("vi-VN"))} mã của phiên, nhóm theo tư thế nghiên cứu đã công bố. Không có danh sách mã hàng đầu: dữ liệu không xếp hạng cổ phiếu.</p>`
+      + `<ul class="home-posture-list">${rows.map((row) => `<li><a class="home-posture-row" href="investment-workspace.html?filter=${row.filter}" data-posture-filter="${row.filter}"${row.count ? "" : ' aria-disabled="true" tabindex="-1"'}>`
+      + `<span class="home-posture-label">${esc(row.label)}</span><strong class="home-posture-count">${esc(row.count.toLocaleString("vi-VN"))}</strong>`
+      + `<span class="home-posture-track" aria-hidden="true"><span style="width:${((row.count / max) * 100).toFixed(1)}%"></span></span></a></li>`).join("")}</ul>`;
+  }
+
+  function renderPostureEntry(summary) {
+    const host = typeof document !== "undefined" ? document.getElementById("home-opportunities") : null;
+    if (host) host.innerHTML = postureEntryHtml(summary);
+  }
+
   function presentationApi() {
     const root = typeof window !== "undefined" ? window : globalThis;
     return root.VSWorkspaceCardPresentation || root.VSInvestmentWorkspace || null;
@@ -756,6 +789,8 @@
     homeOpportunityRequestPlan,
     publishedNotableHtml,
     bootHomeOpportunities,
+    POSTURE_ENTRY,
+    postureEntryHtml,
     STANCE_ORDER,
     POSTURE_ORDER,
     POSTURE_UNAVAILABLE_TEXT,

@@ -10,12 +10,13 @@ const root = path.resolve(__dirname, "..");
 const read = (name) => fs.readFileSync(path.join(root, name), "utf8");
 const PAGES = ["dashboard.html", "investment-workspace.html", "portfolio.html", "macro.html", "archive.html", "about.html"];
 
-test("every investor page loads the shared design layer last", () => {
+test("every investor page loads the shared layout layer, then the glass shell last", () => {
   for (const page of PAGES) {
     const html = read(page);
     const head = html.slice(0, html.indexOf("</head>"));
     const sheets = [...head.matchAll(/<link rel="stylesheet" href="([^"]+)"/g)].map((m) => m[1]);
-    assert.match(sheets[sheets.length - 1], /^assets\/css\/minimal-glass\.css\?v=/, `${page} must load minimal-glass.css last`);
+    assert.match(sheets[sheets.length - 2], /^assets\/css\/minimal-glass\.css\?v=/, `${page} must load minimal-glass.css before the glass shell`);
+    assert.match(sheets[sheets.length - 1], /^assets\/css\/glass-shell\.css\?v=/, `${page} must load glass-shell.css last`);
   }
 });
 
@@ -31,7 +32,7 @@ test("one secondary top-bar link with one label, no reload button, no duplicate 
 
 test("Cơ hội rows expose one detail control (the ticker), not a second identical button", () => {
   const script = read("assets/js/investment-workspace.js");
-  const row = script.slice(script.indexOf("function renderRow(ticker)"), script.indexOf("function focusTickers()"));
+  const row = script.slice(script.indexOf("function renderRow(ticker)"), script.indexOf("let POSTURE_COUNTS"));
   assert.equal((row.match(/data-select-ticker=/g) || []).length, 1);
   assert.match(row, /aria-label="Xem chi tiết \$\{esc\(ticker\)\}"/);
   assert.doesNotMatch(row, />Chi tiết<\/button>/);

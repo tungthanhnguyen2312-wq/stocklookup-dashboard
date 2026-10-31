@@ -6,10 +6,12 @@
   <title>Danh mục | Stock Lookup</title>
   <meta name="description" content="Danh mục cá nhân trên trình duyệt và đối chiếu bằng chứng nghiên cứu đã công bố.">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="style.css?v=2026-10-23-c80b389-551e7ba11b&ui=minimal-glass-v1">
-  <link rel="stylesheet" href="assets/css/shell.css?v=2026-10-23-c80b389-551e7ba11b&ui=minimal-glass-v1">
-  <link rel="stylesheet" href="assets/css/investigation-workbench.css?v=2026-10-23-c80b389-551e7ba11b&ui=minimal-glass-v1">
-  <link rel="stylesheet" href="assets/css/minimal-glass.css?v=2026-10-23-c80b389-551e7ba11b&ui=minimal-glass-v1">
+  <link rel="stylesheet" href="style.css?v=2026-10-23-c80b389-551e7ba11b&ui=glassy-shell-v1">
+  <link rel="stylesheet" href="assets/css/shell.css?v=2026-10-23-c80b389-551e7ba11b&ui=glassy-shell-v1">
+  <link rel="stylesheet" href="assets/css/investigation-workbench.css?v=2026-10-23-c80b389-551e7ba11b&ui=glassy-shell-v1">
+  <link rel="stylesheet" href="assets/css/minimal-glass.css?v=2026-10-23-c80b389-551e7ba11b&ui=glassy-shell-v1">
+  <link rel="stylesheet" href="assets/css/glass-shell.css?v=2026-10-23-c80b389-551e7ba11b&ui=glassy-shell-v1">
+  <script src="assets/js/glass-shell.js?v=2026-10-23-c80b389-551e7ba11b&ui=glassy-shell-v1"></script>
   <style>
     .portfolio-weight-bar { height: 28px; border-radius: 6px; overflow: hidden; display: flex; background: var(--surface); border: 1px solid var(--border); }
     .portfolio-weight-segment { display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700; color: #031014; transition: width 0.3s ease; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; padding: 0 4px; }
@@ -30,11 +32,23 @@
   </style>
 </head>
 <body class="bg-bg text-white" data-page="portfolio">
+
+  <!-- GLASSY_SHELL_V1: decorative scene behind the glass surfaces (no data, no image file). -->
+  <div class="gs-scene" aria-hidden="true">
+    <div class="gs-pan">
+      <div class="gs-sky"></div>
+      <svg class="gs-hills" viewBox="0 0 1600 260" preserveAspectRatio="none" focusable="false"><path d="M0 170 C160 120 300 150 430 112 C560 76 690 128 820 102 C980 70 1100 120 1240 96 C1380 74 1500 110 1600 92 L1600 260 L0 260Z" fill="rgba(20,26,40,.55)"/><path d="M0 212 C180 176 330 200 520 168 C700 140 860 190 1040 164 C1220 140 1400 182 1600 160 L1600 260 L0 260Z" fill="rgba(10,14,22,.8)"/></svg>
+      <div class="gs-floor"></div>
+      <div class="gs-mullions"></div>
+      <div class="gs-light gs-l1"></div><div class="gs-light gs-l2"></div><div class="gs-light gs-l3"></div>
+    </div>
+    <div class="gs-veil"></div>
+  </div>
 <div class="vs-shell">
   <div class="vs-shell-main">
     <header class="vs-topbar">
       <a class="vs-topbar-brand" href="dashboard.html"><span class="vs-brand-dot"></span><span>Stock Lookup</span></a>
-      <nav class="vs-topbar-nav" aria-label="Điều hướng chính"><a class="vs-topnav-link" href="dashboard.html" data-nav="dashboard">Tổng quan</a><a class="vs-topnav-link" href="investment-workspace.html" data-nav="investment-workspace">Cơ hội</a><a class="vs-topnav-link is-active active" href="portfolio.html" data-nav="portfolio" aria-current="page">Danh mục</a><a class="vs-topnav-link" href="macro.html" data-nav="macro">Vĩ mô</a><a class="vs-topnav-link" href="archive.html" data-nav="archive">Lịch sử</a></nav>
+      <nav class="vs-topbar-nav" aria-label="Điều hướng chính"><span class="gs-lens" aria-hidden="true"></span><a class="vs-topnav-link" href="dashboard.html" data-nav="dashboard"><svg class="gs-nav-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20h5v-6h4v6h5V9.5"/></svg><span class="gs-nav-label">Tổng quan</span></a><a class="vs-topnav-link" href="investment-workspace.html" data-nav="investment-workspace"><svg class="gs-nav-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/><path d="M8.5 12.5 10.5 10l2 2 2-3"/></svg><span class="gs-nav-label">Cơ hội</span></a><a class="vs-topnav-link is-active active" href="portfolio.html" data-nav="portfolio" aria-current="page"><svg class="gs-nav-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="7" width="18" height="13" rx="2.5"/><path d="M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7"/><path d="M3 12.5h18"/></svg><span class="gs-nav-label">Danh mục</span></a><a class="vs-topnav-link" href="macro.html" data-nav="macro"><svg class="gs-nav-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17"/><path d="M12 3.5c2.6 2.4 3.8 5.2 3.8 8.5s-1.2 6.1-3.8 8.5c-2.6-2.4-3.8-5.2-3.8-8.5S9.4 5.9 12 3.5Z"/></svg><span class="gs-nav-label">Vĩ mô</span></a><a class="vs-topnav-link" href="archive.html" data-nav="archive"><svg class="gs-nav-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 12a8.5 8.5 0 1 0 2.6-6.1"/><path d="M3.5 4.5v4h4"/><path d="M12 7.5V12l3 2"/></svg><span class="gs-nav-label">Lịch sử</span></a></nav>
       <span class="vs-topbar-spacer"></span>
       <a class="vs-topbar-link" href="about.html">Giới thiệu</a>
     </header>
@@ -204,11 +218,11 @@
     </footer>
   </div>
 </div>
-<script src="assets/js/value-format.js?v=2026-10-23-c80b389-551e7ba11b&ui=minimal-glass-v1"></script>
-<script src="assets/js/workspace-card-presentation.js?v=2026-10-23-c80b389-551e7ba11b&ui=minimal-glass-v1"></script>
-<script src="assets/js/workspace-read-model.js?v=2026-10-23-c80b389-551e7ba11b&ui=minimal-glass-v1"></script>
-<script src="assets/js/investigation-workbench.js?v=2026-10-23-c80b389-551e7ba11b&ui=minimal-glass-v1"></script>
-<script src="assets/js/portfolio-research-model.js?v=2026-10-23-c80b389-551e7ba11b&ui=minimal-glass-v1"></script>
-<script src="portfolio.js?v=2026-10-23-c80b389-551e7ba11b&ui=minimal-glass-v1"></script>
+<script src="assets/js/value-format.js?v=2026-10-23-c80b389-551e7ba11b&ui=glassy-shell-v1"></script>
+<script src="assets/js/workspace-card-presentation.js?v=2026-10-23-c80b389-551e7ba11b&ui=glassy-shell-v1"></script>
+<script src="assets/js/workspace-read-model.js?v=2026-10-23-c80b389-551e7ba11b&ui=glassy-shell-v1"></script>
+<script src="assets/js/investigation-workbench.js?v=2026-10-23-c80b389-551e7ba11b&ui=glassy-shell-v1"></script>
+<script src="assets/js/portfolio-research-model.js?v=2026-10-23-c80b389-551e7ba11b&ui=glassy-shell-v1"></script>
+<script src="portfolio.js?v=2026-10-23-c80b389-551e7ba11b&ui=glassy-shell-v1"></script>
 </body>
 </html>

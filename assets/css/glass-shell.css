@@ -1,0 +1,408 @@
+/* ============================================================
+ * Stock Lookup — assets/css/glass-shell.css
+ * GLASSY_SHELL_V1 (Owner-approved direction from prototype/glassy-v5)
+ *
+ * Loaded after minimal-glass.css on the six investor pages. minimal-glass.css keeps
+ * the information architecture and component layout; this layer adds:
+ *   - a fixed dusk scene whose lighting belongs to the current page;
+ *   - frosted glass surfaces (fill, blur, rim light, under-glow, sheen);
+ *   - the primary navigation as a dock (left on desktop, bottom on phones) with a
+ *     glass lens on the current page;
+ *   - cross-page view transitions: the lens glides, the scene pans and relights,
+ *     the page content dissolves and re-forms. Browsers without cross-document
+ *     view transitions load pages normally with the same look.
+ * Data tables stay on near-opaque glass. Reduced motion removes all movement.
+ * ============================================================ */
+
+:root {
+  --gs-ink: #f3f6fb;
+  --gs-ink-2: rgba(232, 239, 248, 0.78);
+  --gs-ink-3: rgba(222, 231, 243, 0.6);
+  --gs-line: rgba(255, 255, 255, 0.11);
+  --gs-line-strong: rgba(255, 255, 255, 0.18);
+  --gs-radius: 20px;
+  --gs-ease-out: cubic-bezier(.2, .8, .2, 1);
+  --gs-ease-glide: cubic-bezier(.32, .72, .16, 1);
+  --gs-dock-item: 52px;
+  --gs-dock-gap: 8px;
+  --gs-dock-pad: 10px;
+  --gs-dock-space: 104px;
+
+  /* Section lighting (Tổng quan by default). */
+  --gs-l1: #f3a65a;
+  --gs-l2: #d9788f;
+  --gs-l3: #3fa7a0;
+  --gs-sky-top: #0b1526;
+  --gs-sky-mid: #26324f;
+  --gs-sky-low: #c07a4b;
+  --gs-spec-x: 18%;
+  --gs-pan: 0vw;
+  --gs-i: 0;
+
+  /* Tables and dense data sit on these near-opaque surfaces. */
+  --mg-solid: #0e1420;
+  --mg-solid-2: #141c2a;
+  --mg-line: rgba(255, 255, 255, 0.08);
+  --mg-line-strong: rgba(255, 255, 255, 0.14);
+  --text: var(--gs-ink);
+  --text-secondary: var(--gs-ink-2);
+  --text-muted: var(--gs-ink-3);
+}
+body[data-page="investment-workspace"] { --gs-l1: #3cc8b8; --gs-l2: #3a7bd5; --gs-l3: #9ad8cc; --gs-sky-top: #061a22; --gs-sky-mid: #123a46; --gs-sky-low: #2f8f88; --gs-spec-x: 38%; --gs-pan: -6vw; --gs-i: 1; }
+body[data-page="portfolio"] { --gs-l1: #9a8cff; --gs-l2: #d08cf7; --gs-l3: #4f7cff; --gs-sky-top: #0f0c24; --gs-sky-mid: #2a2350; --gs-sky-low: #8c5fb8; --gs-spec-x: 55%; --gs-pan: -12vw; --gs-i: 2; }
+body[data-page="macro"] { --gs-l1: #5aa7ff; --gs-l2: #8fdcff; --gs-l3: #f0b45a; --gs-sky-top: #07142a; --gs-sky-mid: #173a63; --gs-sky-low: #5f8fc4; --gs-spec-x: 78%; --gs-pan: -18vw; --gs-i: 3; }
+body[data-page="archive"] { --gs-l1: #c3cede; --gs-l2: #71849e; --gs-l3: #e2c9a0; --gs-sky-top: #0c1118; --gs-sky-mid: #262f3c; --gs-sky-low: #7d7f86; --gs-spec-x: 92%; --gs-pan: -24vw; --gs-i: 4; }
+body[data-page="about"] { --gs-l1: #b9a6e8; --gs-l2: #6f86b8; --gs-l3: #d8b98e; --gs-sky-top: #0d1020; --gs-sky-mid: #262a48; --gs-sky-low: #7b6a9c; --gs-spec-x: 64%; --gs-pan: -15vw; }
+
+/* ---------- Canvas and scene ---------- */
+body, body.bg-bg {
+  background: var(--gs-sky-top);
+  color: var(--gs-ink);
+}
+.vs-shell, .vs-shell-main { position: relative; z-index: 1; background: transparent; }
+.vs-content { position: relative; }
+
+.gs-scene { position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+.gs-pan { position: absolute; inset: -4% -30% -4% -6%; transform: translate3d(var(--gs-pan), 0, 0); }
+.gs-sky {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(60% 40% at 30% 74%, color-mix(in oklab, var(--gs-sky-low) 70%, transparent), transparent 70%),
+    linear-gradient(180deg, var(--gs-sky-top) 0%, var(--gs-sky-mid) 48%, var(--gs-sky-low) 74%, #0a0d14 100%);
+}
+.gs-hills { position: absolute; left: 0; right: 0; bottom: 14%; width: 100%; height: 26%; }
+.gs-floor { position: absolute; left: 0; right: 0; bottom: 0; height: 16%; background: linear-gradient(180deg, rgba(8, 10, 16, 0.55), #07090e); }
+.gs-mullions {
+  position: absolute; inset: 0;
+  background:
+    repeating-linear-gradient(90deg, transparent 0 calc(22vw - 3px), rgba(10, 12, 18, 0.55) calc(22vw - 3px) 22vw),
+    linear-gradient(180deg, transparent 0 8%, rgba(10, 12, 18, 0.5) 8% calc(8% + 3px), transparent calc(8% + 3px));
+}
+.gs-light { position: absolute; border-radius: 50%; }
+.gs-l1 { width: 70vmax; height: 70vmax; left: calc(-18vmax - var(--gs-pan) * 2); top: -30vmax; background: radial-gradient(closest-side, color-mix(in oklab, var(--gs-l1) 42%, transparent), transparent); }
+.gs-l2 { width: 60vmax; height: 60vmax; right: -20vmax; top: 10vmax; background: radial-gradient(closest-side, color-mix(in oklab, var(--gs-l2) 30%, transparent), transparent); }
+.gs-l3 { width: 50vmax; height: 50vmax; left: 20vmax; bottom: -28vmax; background: radial-gradient(closest-side, color-mix(in oklab, var(--gs-l3) 26%, transparent), transparent); }
+.gs-veil { position: absolute; inset: 0; background: radial-gradient(120% 80% at 50% 0%, rgba(4, 6, 12, 0.18) 30%, rgba(4, 6, 12, 0.62)); }
+
+/* ---------- Glass material ---------- */
+.vs-content .card,
+.vs-content .kpi,
+.vs-content .home-pulse {
+  background:
+    radial-gradient(560px circle at var(--gs-mx, var(--gs-spec-x)) var(--gs-my, 0%), rgba(255, 255, 255, 0.09), transparent 46%),
+    linear-gradient(150deg, rgba(255, 255, 255, 0.115), rgba(255, 255, 255, 0.04) 42%, rgba(255, 255, 255, 0.065));
+  border: 1px solid var(--gs-line);
+  border-top-color: rgba(255, 255, 255, 0.24);
+  border-radius: var(--gs-radius);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  backdrop-filter: blur(20px) saturate(150%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.24),
+    inset 0 0 0 1px color-mix(in oklab, var(--gs-l1) 14%, transparent),
+    0 26px 60px -30px rgba(2, 5, 14, 0.85),
+    0 18px 46px -36px color-mix(in oklab, var(--gs-l1) 70%, transparent);
+}
+.vs-content .card:hover, .vs-content .kpi:hover { border-color: var(--gs-line-strong); border-top-color: rgba(255, 255, 255, 0.3); }
+/* Nested surfaces: tinted, no second blur layer. */
+.vs-content .card .card,
+.vs-content .card .kpi,
+.decision-drawer .card {
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: none;
+  border-radius: 14px;
+}
+.card-header { border-bottom-color: rgba(255, 255, 255, 0.08); border-top-left-radius: var(--gs-radius) !important; border-top-right-radius: var(--gs-radius) !important; }
+details.card[open] > summary.card-header { border-bottom-color: rgba(255, 255, 255, 0.08); }
+.vs-content details.card:not([open]) { background: rgba(255, 255, 255, 0.05); }
+
+/* Dense data: near-opaque glass so numbers stay legible over any lighting. */
+.vs-content .table-responsive,
+.vs-content .ws-list-scroll { background: rgba(8, 12, 20, 0.72); border-radius: 14px; }
+.cockpit-table, .ws-compact-table, .macro-table { background: transparent; }
+.cockpit-table th, .ws-compact-table th, .macro-table th { background: rgba(11, 16, 26, 0.97); }
+
+/* Type */
+.page-title { font-size: clamp(1.6rem, 2.4vw, 2.15rem); font-weight: 650; letter-spacing: -0.015em; }
+.page-lede { color: var(--gs-ink-2); font-size: 0.95rem; }
+.page-head { margin-bottom: 1.4rem; }
+
+/* ---------- Top bar: floating glass pill ---------- */
+.vs-topbar {
+  position: sticky;
+  top: 12px;
+  z-index: 1030;
+  margin: 12px 20px 0 0;
+  padding: 0.45rem 0.6rem 0.45rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid var(--gs-line);
+  border-top-color: rgba(255, 255, 255, 0.24);
+  /* The glass lives on ::before so the fixed dock inside the bar keeps the viewport as its
+     containing block (backdrop-filter on the bar itself would trap it). */
+  background: transparent;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  box-shadow: 0 18px 44px -28px rgba(2, 5, 14, 0.9);
+}
+.vs-topbar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.05));
+  -webkit-backdrop-filter: blur(22px) saturate(160%);
+  backdrop-filter: blur(22px) saturate(160%);
+}
+.vs-topbar-brand { color: var(--gs-ink); }
+.vs-brand-dot, .vs-topbar-brand .vs-brand-dot { background: linear-gradient(140deg, #fff, color-mix(in oklab, var(--gs-l1) 60%, #fff)); box-shadow: 0 3px 12px -3px var(--gs-l1); }
+.vs-topbar-meta { color: var(--gs-ink-2); padding: 0.25rem 0.7rem; border-radius: 999px; border: 1px solid var(--gs-line); background: rgba(255, 255, 255, 0.06); }
+.vs-topbar-link { color: var(--gs-ink-2); padding: 0.35rem 0.7rem; border-radius: 999px; }
+.vs-topbar-link:hover, .vs-topbar-link.is-active { color: var(--gs-ink); background: rgba(255, 255, 255, 0.08); }
+.vs-sidebar, .vs-sidebar-overlay, .vs-sidebar-toggle { display: none !important; }
+.vs-statusfooter { background: transparent; border-top-color: rgba(255, 255, 255, 0.06); }
+.vs-shell-main { padding-left: var(--gs-dock-space); }
+
+/* ---------- Dock (primary navigation) ---------- */
+.vs-topbar .vs-topbar-nav {
+  position: fixed;
+  z-index: 1040;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gs-dock-gap);
+  width: auto;
+  margin: 0;
+  padding: var(--gs-dock-pad);
+  overflow: visible;
+  order: 0;
+  border-radius: 999px;
+  border: 1px solid var(--gs-line);
+  border-top-color: rgba(255, 255, 255, 0.26);
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.05));
+  -webkit-backdrop-filter: blur(22px) saturate(160%);
+  backdrop-filter: blur(22px) saturate(160%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16), 0 22px 50px -26px rgba(2, 5, 14, 0.9);
+}
+.vs-topbar .vs-topnav-link {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: var(--gs-dock-item);
+  height: var(--gs-dock-item);
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--gs-ink-2);
+  transition: color 0.25s ease 0.05s, background-color 0.2s ease;
+}
+.vs-topbar .vs-topnav-link:hover { background: rgba(255, 255, 255, 0.09); color: var(--gs-ink); }
+.vs-topbar .vs-topbar-nav .vs-topnav-link.is-active,
+.vs-topbar .vs-topbar-nav .vs-topnav-link.active,
+.vs-topbar .vs-topbar-nav .vs-topnav-link[aria-current="page"] { color: #0c1322; background: transparent; border: 0; box-shadow: none; }
+.vs-topbar .vs-topnav-link .gs-nav-icon { flex: 0 0 auto; width: 22px; height: 22px; max-width: none; color: inherit; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.gs-nav-label {
+  position: absolute;
+  left: calc(100% + 14px);
+  top: 50%;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  white-space: nowrap;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #0c1322;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 8px 20px -10px rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transform: translate(-6px, -50%);
+  transition: opacity 0.18s ease, transform 0.28s var(--gs-ease-out);
+  pointer-events: none;
+}
+.vs-topnav-link:hover .gs-nav-label,
+.vs-topnav-link:focus-visible .gs-nav-label { opacity: 1; transform: translate(0, -50%); }
+.gs-lens {
+  position: absolute;
+  z-index: 1;
+  left: var(--gs-dock-pad);
+  top: var(--gs-dock-pad);
+  width: var(--gs-dock-item);
+  height: var(--gs-dock-item);
+  border-radius: 999px;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.97), rgba(232, 238, 248, 0.86));
+  box-shadow: inset 0 1px 0 #fff, inset 0 -3px 6px rgba(20, 30, 50, 0.14), 0 10px 26px -8px color-mix(in oklab, var(--gs-l1) 85%, transparent), 0 0 0 1px rgba(255, 255, 255, 0.5);
+  transform: translateY(calc(var(--gs-i) * (var(--gs-dock-item) + var(--gs-dock-gap))));
+}
+body[data-page="about"] .gs-lens { opacity: 0; }
+
+/* Phones: the dock moves to the bottom edge with visible labels; same lens logic. */
+@media (max-width: 760px) {
+  :root { --gs-dock-space: 0px; --gs-dock-w: 62px; --gs-dock-h: 54px; --gs-dock-gap: 4px; --gs-dock-pad: 6px; }
+  .vs-topbar { top: 8px; margin: 8px 10px 0; padding: 0.4rem 0.45rem 0.4rem 0.85rem; flex-wrap: nowrap; gap: 0.5rem; }
+  .vs-topbar-meta { font-size: 0.72rem; padding: 0.2rem 0.55rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+  .vs-topbar-link { font-size: 0.78rem; padding: 0.3rem 0.5rem; }
+  .vs-topbar .vs-topbar-nav {
+    left: 50%;
+    top: auto;
+    bottom: max(10px, env(safe-area-inset-bottom));
+    transform: translateX(-50%);
+    flex-direction: row;
+  }
+  .vs-topbar .vs-topnav-link { width: var(--gs-dock-w); height: var(--gs-dock-h); border-radius: 27px; display: flex; flex-direction: column; justify-content: center; gap: 2px; }
+  .vs-topbar .vs-topnav-link .gs-nav-icon { width: 20px; height: 20px; }
+  .gs-nav-label {
+    position: static; opacity: 1; transform: none; padding: 0; background: none; box-shadow: none;
+    color: inherit; font-size: 0.66rem; line-height: 1.1;
+  }
+  .gs-lens { width: var(--gs-dock-w); height: var(--gs-dock-h); transform: translateX(calc(var(--gs-i) * (var(--gs-dock-w) + var(--gs-dock-gap)))); }
+  .vs-content { padding: 1rem 0.85rem 7rem; }
+  .vs-statusfooter { padding-bottom: 6.5rem; }
+}
+
+/* ---------- Home: whole universe by posture (replaces the four-ticker block) ---------- */
+.home-posture-entry > .cockpit-note { margin-bottom: 0.75rem; }
+.home-posture-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.25rem; }
+.home-posture-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.35rem 0.75rem;
+  align-items: center;
+  padding: 0.55rem 0.7rem;
+  border-radius: 12px;
+  color: var(--gs-ink);
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+.home-posture-row:hover { background: rgba(255, 255, 255, 0.07); color: var(--gs-ink); }
+.home-posture-row[aria-disabled="true"] { pointer-events: none; color: var(--gs-ink-3); }
+.home-posture-count { font-variant-numeric: tabular-nums; font-weight: 600; color: var(--gs-ink-2); }
+.home-posture-track { grid-column: 1 / -1; height: 4px; border-radius: 4px; background: rgba(255, 255, 255, 0.07); overflow: hidden; }
+.home-posture-track > span { display: block; height: 100%; border-radius: 4px; background: linear-gradient(90deg, color-mix(in oklab, var(--gs-l1) 70%, #fff), var(--gs-l1)); }
+
+/* ---------- Cơ hội: posture chips and gliding tab lens ---------- */
+#decision-focus.ws-focus-grid { display: block; }
+.ws-posture-note { margin-bottom: 0.7rem; }
+.ws-posture-chips { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+.ws-posture-chip {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.45rem 0.85rem; border-radius: 999px;
+  border: 1px solid var(--gs-line); background: rgba(255, 255, 255, 0.06);
+  color: var(--gs-ink-2); font-size: 0.82rem; font-weight: 550;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.ws-posture-chip strong { font-variant-numeric: tabular-nums; font-weight: 600; color: var(--gs-ink-3); }
+.ws-posture-chip:hover { background: rgba(255, 255, 255, 0.11); color: var(--gs-ink); }
+.ws-posture-chip[aria-pressed="true"] { background: rgba(255, 255, 255, 0.92); color: #0c1322; border-color: #fff; }
+.ws-posture-chip[aria-pressed="true"] strong { color: #34405a; }
+.ws-posture-chip:disabled { opacity: 0.45; }
+
+.ws-view-tabs.gs-has-lens {
+  position: relative;
+  padding: 5px;
+  gap: 2px;
+  border: 1px solid var(--gs-line);
+  border-radius: 999px;
+  background: rgba(6, 10, 18, 0.42);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  backdrop-filter: blur(16px) saturate(150%);
+}
+.ws-view-tabs.gs-has-lens .ws-view-tab { position: relative; z-index: 1; border: 0; border-radius: 999px; padding: 0.45rem 0.9rem; margin: 0; transition: color 0.25s ease 0.04s; }
+.ws-view-tabs.gs-has-lens .ws-view-tab[aria-selected="true"] { color: #0c1322; background: none; }
+.ws-view-tabs.gs-has-lens .ws-tab-divider { margin: 0.45rem 0.4rem; }
+.gs-tab-lens {
+  position: absolute; z-index: 0; left: 0; top: 0; border-radius: 999px; pointer-events: none;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(232, 238, 248, 0.86));
+  box-shadow: inset 0 1px 0 #fff, 0 8px 20px -10px color-mix(in oklab, var(--gs-l1) 85%, transparent);
+}
+
+/* Detail drawer: the strongest glass on the page. */
+.decision-drawer {
+  background: linear-gradient(170deg, rgba(22, 30, 46, 0.78), rgba(12, 17, 27, 0.88));
+  -webkit-backdrop-filter: blur(28px) saturate(170%);
+  backdrop-filter: blur(28px) saturate(170%);
+  border-left: 1px solid var(--gs-line-strong);
+  box-shadow: -30px 0 80px -40px rgba(0, 0, 0, 0.9), inset 1px 0 0 rgba(255, 255, 255, 0.08);
+}
+
+/* ---------- Motion: page re-forms on arrival ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .vs-content > * { animation: gs-panel-in 520ms var(--gs-ease-out) both; animation-delay: calc(80ms + var(--gs-n, 7) * 45ms); }
+  .vs-content > :nth-child(1) { --gs-n: 0; }
+  .vs-content > :nth-child(2) { --gs-n: 1; }
+  .vs-content > :nth-child(3) { --gs-n: 2; }
+  .vs-content > :nth-child(4) { --gs-n: 3; }
+  .vs-content > :nth-child(5) { --gs-n: 4; }
+  .vs-content > :nth-child(6) { --gs-n: 5; }
+  .vs-content > :nth-child(7) { --gs-n: 6; }
+  .vs-content > :nth-child(-n + 4) { animation-name: gs-panel-in-soft; }
+}
+@keyframes gs-panel-in { from { opacity: 0; transform: translateY(16px) scale(0.985); } }
+@keyframes gs-panel-in-soft { from { opacity: 0; transform: translateY(18px) scale(0.98); filter: blur(10px); } }
+
+/* ---------- Cross-page view transitions ---------- */
+@view-transition { navigation: auto; }
+/* Names are applied only while a transition runs (html.gs-vt, set by glass-shell.js on
+   pageswap/pagereveal) so that, at rest, the glass blurs the real scene behind it. */
+html.gs-vt { view-transition-name: none; }
+html.gs-vt .gs-pan { view-transition-name: gs-pan; }
+html.gs-vt .gs-veil { view-transition-name: gs-veil; }
+html.gs-vt .vs-content { view-transition-name: gs-content; }
+html.gs-vt .vs-topbar { view-transition-name: gs-topbar; }
+html.gs-vt .vs-topbar .vs-topbar-nav { view-transition-name: gs-dock; }
+html.gs-vt .vs-statusfooter { view-transition-name: gs-footer; }
+html.gs-vt .gs-lens { view-transition-name: gs-lens; }
+html.gs-vt .vs-topnav-link[data-nav="dashboard"] { view-transition-name: gs-nav-dashboard; }
+html.gs-vt .vs-topnav-link[data-nav="investment-workspace"] { view-transition-name: gs-nav-workspace; }
+html.gs-vt .vs-topnav-link[data-nav="portfolio"] { view-transition-name: gs-nav-portfolio; }
+html.gs-vt .vs-topnav-link[data-nav="macro"] { view-transition-name: gs-nav-macro; }
+html.gs-vt .vs-topnav-link[data-nav="archive"] { view-transition-name: gs-nav-archive; }
+
+::view-transition-group(gs-pan),
+::view-transition-old(gs-pan),
+::view-transition-new(gs-pan),
+::view-transition-group(gs-veil) { animation-duration: 820ms; animation-timing-function: var(--gs-ease-glide); }
+::view-transition-group(gs-content), ::view-transition-group(gs-topbar), ::view-transition-group(gs-dock) { animation: none; }
+::view-transition-old(gs-topbar), ::view-transition-new(gs-topbar), ::view-transition-old(gs-dock), ::view-transition-new(gs-dock) { animation-duration: 400ms; }
+::view-transition-old(gs-content) { animation: gs-dissolve 230ms cubic-bezier(.4, 0, 1, 1) both; }
+::view-transition-new(gs-content) { animation: gs-arrive 300ms 150ms ease-out both; }
+::view-transition-group(gs-lens) { animation-duration: 520ms; animation-timing-function: var(--gs-ease-glide); }
+::view-transition-image-pair(gs-lens) { animation: gs-stretch-v 520ms var(--gs-ease-glide); }
+::view-transition-group(*) { animation-timing-function: var(--gs-ease-glide); }
+::view-transition-old(gs-nav-dashboard), ::view-transition-new(gs-nav-dashboard),
+::view-transition-old(gs-nav-workspace), ::view-transition-new(gs-nav-workspace),
+::view-transition-old(gs-nav-portfolio), ::view-transition-new(gs-nav-portfolio),
+::view-transition-old(gs-nav-macro), ::view-transition-new(gs-nav-macro),
+::view-transition-old(gs-nav-archive), ::view-transition-new(gs-nav-archive) { animation-duration: 480ms; }
+@keyframes gs-dissolve { to { opacity: 0; filter: blur(12px); transform: translateY(-10px) scale(0.985); } }
+@keyframes gs-arrive { from { opacity: 0; } }
+@keyframes gs-stretch-v { 45% { transform: scale(0.86, 1.32); } }
+@keyframes gs-stretch-h { 45% { transform: scale(1.28, 0.88); } }
+@media (max-width: 760px) {
+  ::view-transition-image-pair(gs-lens) { animation-name: gs-stretch-h; }
+}
+
+/* ---------- Reduced motion: state changes stay, movement goes ---------- */
+@media (prefers-reduced-motion: reduce) {
+  @view-transition { navigation: none; }
+  .vs-content > * { animation: none !important; }
+  .gs-nav-label, .vs-topbar .vs-topnav-link, .home-posture-row, .ws-posture-chip { transition: none; }
+}
+
+/* No backdrop-filter support: dense, readable surfaces. */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .vs-content .card, .vs-content .kpi, .vs-content .home-pulse, .vs-topbar::before, .vs-topbar .vs-topbar-nav, .decision-drawer { background: rgba(16, 23, 37, 0.94); }
+}
+
+@media print {
+  .gs-scene, .vs-topbar .vs-topbar-nav { display: none !important; }
+  .vs-shell-main { padding-left: 0; }
+}

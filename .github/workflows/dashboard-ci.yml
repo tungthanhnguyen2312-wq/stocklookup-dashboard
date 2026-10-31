@@ -144,10 +144,14 @@ jobs:
       - name: Minimal glass UX consolidation contract
         run: node --test tests/minimal-glass-ux-v1.test.js
 
+      - name: Glassy shell and whole-universe entry contract
+        run: node --test tests/glassy-shell-v1.test.js
+
       - name: JavaScript syntax checks
         run: |
           node --check assets/js/candlestick-patterns.js
           node --check assets/js/macro.js
+          node --check assets/js/glass-shell.js
           node --check assets/js/company-panel.js
           node --check assets/js/value-format.js
           node --check assets/js/investment-workspace.js
