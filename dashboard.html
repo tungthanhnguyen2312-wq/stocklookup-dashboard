@@ -27,12 +27,13 @@
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 
-  <link rel="stylesheet" href="style.css?v=2026-10-23-c80b389-551e7ba11b">
+  <link rel="stylesheet" href="style.css?v=2026-10-23-c80b389-551e7ba11b&ui=minimal-glass-v1">
 
 
-  <link rel="stylesheet" href="assets/css/tailwind.generated.css?v=2026-10-23-c80b389-551e7ba11b">
-  <link rel="stylesheet" href="assets/css/shell.css?v=2026-10-23-c80b389-551e7ba11b">
-  <link rel="stylesheet" href="assets/css/decision-cockpit.css?v=2026-10-23-c80b389-551e7ba11b">
+  <link rel="stylesheet" href="assets/css/tailwind.generated.css?v=2026-10-23-c80b389-551e7ba11b&ui=minimal-glass-v1">
+  <link rel="stylesheet" href="assets/css/shell.css?v=2026-10-23-c80b389-551e7ba11b&ui=minimal-glass-v1">
+  <link rel="stylesheet" href="assets/css/decision-cockpit.css?v=2026-10-23-c80b389-551e7ba11b&ui=minimal-glass-v1">
+  <link rel="stylesheet" href="assets/css/minimal-glass.css?v=2026-10-23-c80b389-551e7ba11b&ui=minimal-glass-v1">
 
 </head>
 <body class="bg-bg text-white font-sans" data-page="dashboard">
@@ -56,14 +57,16 @@
         <a class="vs-topbar-brand" href="dashboard.html"><span class="vs-brand-dot"></span><span>Stock Lookup</span></a>
         <nav class="vs-topbar-nav" aria-label="Điều hướng chính"><a class="vs-topnav-link is-active active" href="dashboard.html" data-nav="dashboard" aria-current="page">Tổng quan</a><a class="vs-topnav-link" href="investment-workspace.html" data-nav="investment-workspace">Cơ hội</a><a class="vs-topnav-link" href="portfolio.html" data-nav="portfolio">Danh mục</a><a class="vs-topnav-link" href="macro.html" data-nav="macro">Vĩ mô</a><a class="vs-topnav-link" href="archive.html" data-nav="archive">Lịch sử</a></nav>
         <span class="vs-topbar-spacer"></span>
-        <a class="vs-topbar-link" href="about.html">Dữ liệu &amp; phương pháp</a>
         <span class="vs-topbar-meta" id="market-last-updated">Đang tải phiên thị trường…</span>
-        <button type="button" class="vs-icon-btn" onclick="location.reload()" aria-label="Làm mới dữ liệu" title="Làm mới dữ liệu"><i data-lucide="refresh-cw"></i></button>
+        <a class="vs-topbar-link" href="about.html">Giới thiệu</a>
       </header>
 
       <main class="vs-content investor-home">
-        <h1 class="h3 mb-3">Tổng quan thị trường</h1>
-        <section aria-label="Nhịp thị trường" class="mb-4">
+        <div class="page-head">
+          <h1 class="page-title">Tổng quan thị trường</h1>
+          <p class="page-lede">Thị trường phiên này ra sao, nhóm ngành nào chiếm phần lớn dữ liệu, mã nào cần xem thêm và rủi ro nào cần chú ý.</p>
+        </div>
+        <section aria-label="Nhịp thị trường" class="home-pulse mb-4">
           <div id="dashboard-hero-banner"></div>
           <div class="home-breadth" aria-label="Số mã tăng, đứng giá và giảm">
             <div><span>Mã tăng</span><strong id="kpi-session-up">—</strong></div>
@@ -76,8 +79,8 @@
           <div class="card-body" id="home-sectors">Đang cập nhật…</div>
         </section>
         <section class="card mb-4" aria-labelledby="home-opportunities-heading">
-          <div class="card-header"><h2 class="h5 mb-0" id="home-opportunities-heading">Cổ phiếu đáng xem</h2></div>
-          <div class="card-body"><p class="cockpit-note">Theo trạng thái đã công bố, không phải xếp hạng đầu tư.</p><div id="home-opportunities" class="home-opportunities">Đang cập nhật…</div></div>
+          <div class="card-header"><h2 class="h5 mb-0" id="home-opportunities-heading">Cổ phiếu đáng chú ý</h2><a class="vs-link-action" href="investment-workspace.html">Xem toàn bộ trong Cơ hội &rarr;</a></div>
+          <div class="card-body"><p class="cockpit-note">Theo trạng thái đã công bố, không phải xếp hạng đầu tư. Cùng nhóm mã với mục Nổi bật trong Cơ hội.</p><div id="home-opportunities" class="home-opportunities">Đang cập nhật…</div></div>
         </section>
         <section class="card mb-4" aria-labelledby="home-risks-heading">
           <div class="card-header"><h2 class="h5 mb-0" id="home-risks-heading">Rủi ro cần chú ý</h2></div>
@@ -90,7 +93,7 @@
             <p class="cockpit-note">Số mã tăng/giảm chỉ tính các mã có biến động giá đúng phiên. Mã thiếu giá không được tính là đứng giá. Số mã theo ngành mô tả phạm vi dữ liệu, không thể hiện ngành dẫn dắt.</p>
             <p class="cockpit-note">Thanh khoản tham khảo không chứng minh khả năng thực hiện lệnh. Khả năng vào/ra vị thế chỉ được xác lập khi dữ liệu giao dịch đáp ứng đủ điều kiện.</p>
             <div id="current-product-summary"></div>
-            <a href="about.html">Cách đọc dữ liệu và giới hạn phương pháp</a>
+            <a class="vs-link-action" href="about.html">Cách đọc dữ liệu và giới hạn phương pháp &rarr;</a>
           </div>
         </details>
       </main>
@@ -103,13 +106,13 @@
 
 
   <script src="https://unpkg.com/lucide@1.24.0" defer></script>
-  <script src="assets/js/shell.js?v=2026-10-23-c80b389-551e7ba11b" defer></script>
-  <script src="data/build_info.js?v=2026-10-23-c80b389-551e7ba11b" defer></script>
+  <script src="assets/js/shell.js?v=2026-10-23-c80b389-551e7ba11b&ui=minimal-glass-v1" defer></script>
+  <script src="data/build_info.js?v=2026-10-23-c80b389-551e7ba11b&ui=minimal-glass-v1" defer></script>
 
-  <script src="assets/js/value-format.js?v=2026-10-23-c80b389-551e7ba11b" defer></script>
-  <script src="assets/js/product-scope-format.js?v=2026-10-23-c80b389-551e7ba11b" defer></script>
-  <script src="assets/js/session-coherence.js?v=2026-10-23-c80b389-551e7ba11b" defer></script>
-  <script src="assets/js/workspace-card-presentation.js?v=2026-10-23-c80b389-551e7ba11b" defer></script>
-  <script src="assets/js/dashboard-product-summary.js?v=2026-10-23-c80b389-551e7ba11b" defer></script>
+  <script src="assets/js/value-format.js?v=2026-10-23-c80b389-551e7ba11b&ui=minimal-glass-v1" defer></script>
+  <script src="assets/js/product-scope-format.js?v=2026-10-23-c80b389-551e7ba11b&ui=minimal-glass-v1" defer></script>
+  <script src="assets/js/session-coherence.js?v=2026-10-23-c80b389-551e7ba11b&ui=minimal-glass-v1" defer></script>
+  <script src="assets/js/workspace-card-presentation.js?v=2026-10-23-c80b389-551e7ba11b&ui=minimal-glass-v1" defer></script>
+  <script src="assets/js/dashboard-product-summary.js?v=2026-10-23-c80b389-551e7ba11b&ui=minimal-glass-v1" defer></script>
 </body>
 </html>

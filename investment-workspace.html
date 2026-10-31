@@ -3,35 +3,35 @@
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Cơ hội | Stock Lookup</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="style.css?v=2026-10-23-c80b389-551e7ba11b"><link rel="stylesheet" href="assets/css/shell.css?v=2026-10-23-c80b389-551e7ba11b"><link rel="stylesheet" href="assets/css/decision-cockpit.css?v=2026-10-23-c80b389-551e7ba11b"><link rel="stylesheet" href="assets/css/investment-workspace.css?v=2026-10-23-c80b389-551e7ba11b"><link rel="stylesheet" href="assets/css/investigation-workbench.css?v=2026-10-23-c80b389-551e7ba11b"><link rel="stylesheet" href="assets/css/case-desk-review.css?v=2026-10-23-c80b389-551e7ba11b">
+  <link rel="stylesheet" href="style.css?v=2026-10-23-c80b389-551e7ba11b&ui=minimal-glass-v1"><link rel="stylesheet" href="assets/css/shell.css?v=2026-10-23-c80b389-551e7ba11b&ui=minimal-glass-v1"><link rel="stylesheet" href="assets/css/decision-cockpit.css?v=2026-10-23-c80b389-551e7ba11b&ui=minimal-glass-v1"><link rel="stylesheet" href="assets/css/investment-workspace.css?v=2026-10-23-c80b389-551e7ba11b&ui=minimal-glass-v1"><link rel="stylesheet" href="assets/css/investigation-workbench.css?v=2026-10-23-c80b389-551e7ba11b&ui=minimal-glass-v1"><link rel="stylesheet" href="assets/css/case-desk-review.css?v=2026-10-23-c80b389-551e7ba11b&ui=minimal-glass-v1">
+  <link rel="stylesheet" href="assets/css/minimal-glass.css?v=2026-10-23-c80b389-551e7ba11b&ui=minimal-glass-v1">
 </head><body class="bg-bg text-white" data-page="investment-workspace">
 <div class="vs-shell"><div class="vs-shell-main"><header class="vs-topbar">
   <a class="vs-topbar-brand" href="dashboard.html"><span class="vs-brand-dot"></span><span>Stock Lookup</span></a>
   <nav class="vs-topbar-nav" aria-label="Điều hướng chính"><a class="vs-topnav-link" href="dashboard.html" data-nav="dashboard">Tổng quan</a><a class="vs-topnav-link is-active active" href="investment-workspace.html" data-nav="investment-workspace" aria-current="page">Cơ hội</a><a class="vs-topnav-link" href="portfolio.html" data-nav="portfolio">Danh mục</a><a class="vs-topnav-link" href="macro.html" data-nav="macro">Vĩ mô</a><a class="vs-topnav-link" href="archive.html" data-nav="archive">Lịch sử</a></nav>
-  <span class="vs-topbar-spacer"></span><span class="badge-soft bs-amber d-none d-md-inline-block">CHỈ MANG TÍNH NGHIÊN CỨU</span><a class="vs-topbar-link" href="about.html">Dữ liệu &amp; phương pháp</a>
+  <span class="vs-topbar-spacer"></span><a class="vs-topbar-link" href="about.html">Giới thiệu</a>
 </header><main class="vs-content">
   <div id="workspace-error" class="vs-alert vs-alert-warning" hidden></div>
   <div id="workspace" hidden>
     <div class="cockpit-hero">
       <div>
-        <div class="section-eyebrow">Theo dõi và tìm hiểu cổ phiếu</div>
-        <h1 class="h3 mb-1">Cơ hội</h1>
+        <h1 class="page-title">Cơ hội</h1>
+        <p class="page-lede">Mã nào đáng nghiên cứu thêm, vì sao, và điều gì sẽ xác nhận hoặc vô hiệu luận điểm.</p>
         <div class="cockpit-note" id="session-line">Đang cập nhật…</div>
       </div>
-      <div class="d-flex gap-2 align-items-center flex-wrap">
+      <div class="ws-ticker-picker">
         <label class="cockpit-note mb-0" for="ticker-select">Mã</label>
-        <select id="ticker-select" class="form-select form-select-sm" style="max-width:140px"></select>
-        <button id="ws-open-selected-drawer" type="button" class="btn btn-sm btn-outline-light">Mở chi tiết mã &rarr;</button>
-        <label class="btn btn-sm btn-outline-light mb-0" title="Tác động danh mục cập nhật khi nhập tệp dữ liệu đã xuất từ Trình soạn danh mục">Nhập nghiên cứu danh mục<input id="import-portfolio-research" type="file" accept="application/json" hidden></label>
+        <select id="ticker-select" class="form-select form-select-sm"></select>
+        <button id="ws-open-selected-drawer" type="button" class="vs-btn vs-btn-primary">Mở chi tiết mã</button>
       </div>
     </div>
-    <div class="cockpit-note ws-defensive-line">Thông tin để tham khảo và kiểm chứng, không phải lệnh giao dịch.</div>
+    <div class="ws-defensive-line"><span class="badge-soft bs-amber">CHỈ MANG TÍNH NGHIÊN CỨU</span> Thông tin để tham khảo và kiểm chứng, không phải lệnh giao dịch.</div>
 
     <!-- Layer 1: compact, decision-relevant market pulse. Diagnostics remain in details. -->
 
 
     <!-- Layer 2: existing Workspace lanes, bounded to four cards without a new score/rank. -->
-    <div class="ws-view-tabs" role="tablist" aria-label="Chế độ xem Cơ hội"><button type="button" id="ws-tab-opportunities" class="ws-view-tab" data-view="opportunities" role="tab" aria-selected="true" aria-controls="ws-view-opportunities">Nổi bật</button><button type="button" id="ws-tab-explore" class="ws-view-tab" data-view="explore" role="tab" aria-selected="false" aria-controls="ws-view-explore">Khám phá</button><button type="button" id="ws-tab-dossier" class="ws-view-tab" data-view="dossier" role="tab" aria-selected="false" aria-controls="ws-view-dossier">Hồ sơ điều tra</button><button type="button" id="ws-tab-compare" class="ws-view-tab" data-view="compare" role="tab" aria-selected="false" aria-controls="ws-view-compare">So sánh</button><button type="button" id="ws-tab-technical" class="ws-view-tab" data-view="technical" role="tab" aria-selected="false" aria-controls="ws-view-technical">Kỹ thuật</button><button type="button" id="ws-tab-watchlist" class="ws-view-tab" data-view="watchlist" role="tab" aria-selected="false" aria-controls="ws-view-watchlist">Theo dõi</button><button type="button" id="ws-tab-portfolio" class="ws-view-tab" data-view="portfolio" role="tab" aria-selected="false" aria-controls="ws-view-portfolio">Danh mục</button><button type="button" id="ws-tab-journal" class="ws-view-tab" data-view="journal" role="tab" aria-selected="false" aria-controls="ws-view-journal">Sổ nghiên cứu</button><button type="button" id="ws-tab-case" class="ws-view-tab" data-view="case" role="tab" aria-selected="false" aria-controls="ws-view-case">Hồ sơ Case Desk</button></div>
+    <div class="ws-view-tabs" role="tablist" aria-label="Chế độ xem Cơ hội"><button type="button" id="ws-tab-opportunities" class="ws-view-tab" data-view="opportunities" role="tab" aria-selected="true" aria-controls="ws-view-opportunities">Nổi bật</button><button type="button" id="ws-tab-explore" class="ws-view-tab" data-view="explore" role="tab" aria-selected="false" aria-controls="ws-view-explore">Khám phá</button><button type="button" id="ws-tab-technical" class="ws-view-tab" data-view="technical" role="tab" aria-selected="false" aria-controls="ws-view-technical">Kỹ thuật</button><button type="button" id="ws-tab-dossier" class="ws-view-tab" data-view="dossier" role="tab" aria-selected="false" aria-controls="ws-view-dossier">Hồ sơ điều tra</button><button type="button" id="ws-tab-compare" class="ws-view-tab" data-view="compare" role="tab" aria-selected="false" aria-controls="ws-view-compare">So sánh</button><span class="ws-tab-divider" role="presentation" aria-hidden="true"></span><span class="ws-tab-group-label" aria-hidden="true">Của bạn</span><button type="button" id="ws-tab-watchlist" class="ws-view-tab" data-view="watchlist" role="tab" aria-selected="false" aria-controls="ws-view-watchlist">Theo dõi</button><button type="button" id="ws-tab-journal" class="ws-view-tab" data-view="journal" role="tab" aria-selected="false" aria-controls="ws-view-journal">Sổ nghiên cứu</button><button type="button" id="ws-tab-portfolio" class="ws-view-tab" data-view="portfolio" role="tab" aria-selected="false" aria-controls="ws-view-portfolio">Tác động danh mục</button><button type="button" id="ws-tab-case" class="ws-view-tab" data-view="case" role="tab" aria-selected="false" aria-controls="ws-view-case">Case Desk</button></div>
     <section id="decision-focus-section" class="ws-focus-section mb-4" aria-labelledby="decision-focus-heading">
       <div class="ws-section-head"><div><div class="section-eyebrow">Điểm cần chú ý</div><h2 id="decision-focus-heading" class="h5 mb-0">Cổ phiếu đáng chú ý</h2></div><span class="cockpit-note">Theo trạng thái đã công bố, không phải xếp hạng</span></div>
       <div id="decision-focus" class="ws-focus-grid" aria-live="polite"></div>
@@ -72,16 +72,18 @@
           <th>Vô hiệu</th>
           <th>Quyết định hành động</th>
           <th>Dấu hiệu</th>
-          <th><span class="vs-visually-hidden">Chi tiết</span></th>
         </tr></thead><tbody id="opportunity-rows"></tbody></table></div>
       </div></section>
     </div>
 
     <div id="ws-view-portfolio" data-ws-view role="tabpanel" aria-labelledby="ws-tab-portfolio" hidden>
-      <section class="cockpit-section card mb-4"><div class="card-header"><h5>Danh mục cá nhân</h5></div><div class="card-body">
-        <p class="cockpit-note">Danh mục là bối cảnh riêng, không làm thay đổi tư thế nghiên cứu của từng mã.</p>
+      <section class="cockpit-section card mb-4"><div class="card-header"><h5>Tác động lên danh mục của bạn</h5></div><div class="card-body">
+        <p class="cockpit-note">Danh mục là bối cảnh riêng, không làm thay đổi tư thế nghiên cứu của từng mã. Vị thế được soạn ở trang Danh mục; tại đây chỉ hiển thị tác động của tệp bạn nhập.</p>
         <div id="workspace-portfolio-summary" class="cockpit-grid"></div>
-        <a class="btn btn-sm btn-outline-light mt-3" href="portfolio.html">Mở Trình soạn danh mục</a>
+        <div class="vs-actions mt-3">
+          <label class="vs-btn mb-0" title="Tác động danh mục cập nhật khi nhập tệp dữ liệu đã xuất từ trang Danh mục">Nhập tệp danh mục<input id="import-portfolio-research" type="file" accept="application/json" hidden></label>
+          <a class="vs-link-action" href="portfolio.html">Mở trang Danh mục &rarr;</a>
+        </div>
       </div></section>
     </div>
 
@@ -159,7 +161,6 @@
     <details id="section-data-methodology" class="card mb-4">
       <summary class="card-header d-flex justify-content-between align-items-center" style="cursor:pointer">
         <h5 class="mb-0">Dữ liệu &amp; phương pháp</h5>
-        <span class="cockpit-note">Mở rộng / Thu gọn</span>
       </summary>
       <div class="card-body">
 
@@ -197,9 +198,9 @@
       <span id="decision-drawer-badge"></span>
     </div>
     <div class="d-flex align-items-center gap-2">
-      <a id="drawer-dossier-link" href="investment-workspace.html?view=dossier" class="btn btn-sm btn-outline-light">Hồ sơ điều tra</a>
-      <button id="drawer-export-t0" type="button" class="btn btn-sm btn-outline-light">Xuất bản ghi</button>
-      <a id="drawer-screener-link" href="#" class="btn btn-sm btn-outline-secondary">Khám phá</a>
+      <a id="drawer-dossier-link" href="investment-workspace.html?view=dossier" class="vs-btn vs-btn-primary">Hồ sơ điều tra</a>
+      <button id="drawer-export-t0" type="button" class="vs-btn">Xuất bản ghi</button>
+      <a id="drawer-screener-link" href="#" class="vs-link-action">Khám phá</a>
       <button id="decision-drawer-close" type="button" class="decision-drawer-close" aria-label="Đóng chi tiết">✕</button>
     </div>
   </div>
@@ -210,16 +211,16 @@
 
 <footer class="vs-statusfooter"><span>Phục vụ nghiên cứu, không phải lệnh giao dịch.</span></footer>
 </div></div>
-<script src="data/build_info.js?v=2026-10-23-c80b389-551e7ba11b"></script>
-<script src="assets/js/value-format.js?v=2026-10-23-c80b389-551e7ba11b"></script>
-<script src="assets/js/product-scope-format.js?v=2026-10-23-c80b389-551e7ba11b"></script>
-<script src="assets/js/session-coherence.js?v=2026-10-23-c80b389-551e7ba11b"></script>
-<script src="assets/js/shell.js?v=2026-10-23-c80b389-551e7ba11b"></script>
-<script src="assets/js/candlestick-patterns.js?v=2026-10-23-c80b389-551e7ba11b"></script>
-<script src="assets/js/decision-cockpit.js?v=2026-10-23-c80b389-551e7ba11b"></script>
-<script src="assets/js/workspace-read-model.js?v=2026-10-23-c80b389-551e7ba11b"></script>
-<script src="assets/js/workspace-card-presentation.js?v=2026-10-23-c80b389-551e7ba11b"></script>
-<script src="assets/js/investigation-workbench.js?v=2026-10-23-c80b389-551e7ba11b"></script>
-<script src="assets/js/case-desk-review.js?v=2026-10-23-c80b389-551e7ba11b"></script>
-<script src="assets/js/investment-workspace.js?v=2026-10-23-c80b389-551e7ba11b"></script>
+<script src="data/build_info.js?v=2026-10-23-c80b389-551e7ba11b&ui=minimal-glass-v1"></script>
+<script src="assets/js/value-format.js?v=2026-10-23-c80b389-551e7ba11b&ui=minimal-glass-v1"></script>
+<script src="assets/js/product-scope-format.js?v=2026-10-23-c80b389-551e7ba11b&ui=minimal-glass-v1"></script>
+<script src="assets/js/session-coherence.js?v=2026-10-23-c80b389-551e7ba11b&ui=minimal-glass-v1"></script>
+<script src="assets/js/shell.js?v=2026-10-23-c80b389-551e7ba11b&ui=minimal-glass-v1"></script>
+<script src="assets/js/candlestick-patterns.js?v=2026-10-23-c80b389-551e7ba11b&ui=minimal-glass-v1"></script>
+<script src="assets/js/decision-cockpit.js?v=2026-10-23-c80b389-551e7ba11b&ui=minimal-glass-v1"></script>
+<script src="assets/js/workspace-read-model.js?v=2026-10-23-c80b389-551e7ba11b&ui=minimal-glass-v1"></script>
+<script src="assets/js/workspace-card-presentation.js?v=2026-10-23-c80b389-551e7ba11b&ui=minimal-glass-v1"></script>
+<script src="assets/js/investigation-workbench.js?v=2026-10-23-c80b389-551e7ba11b&ui=minimal-glass-v1"></script>
+<script src="assets/js/case-desk-review.js?v=2026-10-23-c80b389-551e7ba11b&ui=minimal-glass-v1"></script>
+<script src="assets/js/investment-workspace.js?v=2026-10-23-c80b389-551e7ba11b&ui=minimal-glass-v1"></script>
 </body></html>

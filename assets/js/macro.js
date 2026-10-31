@@ -234,9 +234,9 @@
       delta.setAttribute("aria-label", "Thay đổi: " + deltaText(item));
 
       var details = element("div", "macro-kpi-details");
+      // Frequency and per-indicator update time stay in "Toàn bộ chỉ báo"; the card keeps
+      // only what changes how the value is read: its period and its source.
       details.append(detailRow("Kỳ dữ liệu", formatPeriod(item)));
-      details.append(detailRow("Tần suất", item.frequency_label || item.frequency || "—"));
-      details.append(detailRow("Cập nhật", formatGeneratedAt(item.pipeline_updated_at)));
       details.append(detailRow("Nguồn", externalLink(item.source || "Nguồn", item.source_url)));
       if (item.history_scope) details.append(detailRow("Phạm vi", item.history_scope.replace("pipeline bắt đầu chạy đều", "quy trình cập nhật bắt đầu hoạt động đều")));
 

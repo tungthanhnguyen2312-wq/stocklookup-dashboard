@@ -141,6 +141,9 @@ jobs:
       - name: Investor-first Vietnamese UX and semantic parity
         run: node --test tests/investor-first-ux-v1.test.js tests/workspace-mobile-overflow.test.js
 
+      - name: Minimal glass UX consolidation contract
+        run: node --test tests/minimal-glass-ux-v1.test.js
+
       - name: JavaScript syntax checks
         run: |
           node --check assets/js/candlestick-patterns.js
@@ -158,6 +161,7 @@ jobs:
           node --check assets/js/screener-master.js
           node --check assets/js/signals-product.js
           node --check assets/js/session-coherence.js
+          node --check assets/js/archive.js
 
       # Navigation-contract and visual-foundation-contract above already assert
       # HTML/CSS structure (required nav markup, design tokens, no conflict

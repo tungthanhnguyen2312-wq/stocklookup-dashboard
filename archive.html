@@ -19,13 +19,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=2026-10-23-c80b389-551e7ba11b">
+  <link rel="stylesheet" href="style.css?v=2026-10-23-c80b389-551e7ba11b&ui=minimal-glass-v1">
 
   <!-- Tailwind CSS build sẵn bằng CLI standalone (xem build_frontend.bat + tailwind.config.js)
        — thay cho Play CDN chạy JIT trong trình duyệt. Giữ NGUYÊN behavior cũ
        (corePlugins.preflight:false, theme.extend colors/fontFamily như cũ). -->
-  <link rel="stylesheet" href="assets/css/tailwind.generated.css?v=2026-10-23-c80b389-551e7ba11b">
-  <link rel="stylesheet" href="assets/css/shell.css?v=2026-10-23-c80b389-551e7ba11b">
+  <link rel="stylesheet" href="assets/css/tailwind.generated.css?v=2026-10-23-c80b389-551e7ba11b&ui=minimal-glass-v1">
+  <link rel="stylesheet" href="assets/css/shell.css?v=2026-10-23-c80b389-551e7ba11b&ui=minimal-glass-v1">
+  <link rel="stylesheet" href="assets/css/minimal-glass.css?v=2026-10-23-c80b389-551e7ba11b&ui=minimal-glass-v1">
 </head>
 <body class="bg-bg text-white font-sans" data-page="archive">
 
@@ -48,27 +49,27 @@
         <a class="vs-topbar-brand" href="dashboard.html"><span class="vs-brand-dot"></span><span>Stock Lookup</span></a>
         <nav class="vs-topbar-nav" aria-label="Điều hướng chính"><a class="vs-topnav-link" href="dashboard.html" data-nav="dashboard">Tổng quan</a><a class="vs-topnav-link" href="investment-workspace.html" data-nav="investment-workspace">Cơ hội</a><a class="vs-topnav-link" href="portfolio.html" data-nav="portfolio">Danh mục</a><a class="vs-topnav-link" href="macro.html" data-nav="macro">Vĩ mô</a><a class="vs-topnav-link is-active active" href="archive.html" data-nav="archive" aria-current="page">Lịch sử</a></nav>
         <span class="vs-topbar-spacer"></span>
-        <a class="vs-topbar-link is-active active" href="archive.html"><i data-lucide="history"></i>Lịch sử</a>
+        <a class="vs-topbar-link" href="about.html">Giới thiệu</a>
       </header>
 
-      <main class="vs-content">
-        <div class="card mb-4">
+      <main class="vs-content archive-page">
+        <div class="page-head">
+          <h1 class="page-title">Lịch sử</h1>
+          <p class="page-lede">Báo cáo của các phiên trước, giữ nguyên như lúc công bố. Dùng để đối chiếu điều đã biết tại thời điểm đó — không phải dữ liệu hiện hành.</p>
+        </div>
+        <section class="card mb-4" aria-labelledby="archive-list-heading">
           <div class="card-header">
-            <h5><i data-lucide="archive" class="card-icon"></i>Kho lưu trữ báo cáo</h5>
+            <h2 class="h5 mb-0" id="archive-list-heading">Kho báo cáo</h2>
+            <span id="archive-count" class="cockpit-note"></span>
           </div>
           <div class="card-body">
-            <p class="text-muted mb-3" style="font-size:0.85rem;">
-              Các báo cáo/playbook thị trường tĩnh theo phiên — nội dung lịch sử giữ nguyên,
-              không chỉnh sửa. Đây là danh sách ghi tay (GitHub Pages không có API liệt kê thư
-              mục để tự khám phá file), nhóm theo tháng/năm và có thể tìm nhanh bên dưới.
-            </p>
-            <input type="search" id="archive-search" class="vs-input vs-input-sm mb-3"
-                   placeholder="Tìm theo tên báo cáo hoặc ngày (vd: 04/2026)…" style="max-width: 26rem;">
-
-            <!-- Chip lọc theo quý — archive.js tự ẩn nếu báo cáo chỉ nằm trong 1 quý -->
-            <div class="chip-row mb-3" id="archive-quarter-chips"></div>
-            <!-- Lọc theo ngành/mã — ẩn tới khi có báo cáo thật gắn industry/company (xem archive.js) -->
-            <div class="mb-3" id="archive-industry-filter" style="display:none;"></div>
+            <div class="archive-toolbar">
+              <input type="search" id="archive-search" class="vs-input vs-input-sm" aria-label="Tìm báo cáo"
+                     placeholder="Tìm theo ngày (vd: 10/2026) hoặc loại báo cáo…">
+              <div class="chip-row" id="archive-quarter-chips"></div>
+            </div>
+            <div id="archive-industry-filter" style="display:none;"></div>
+            <p id="archive-discovery-status" class="cockpit-note" role="status">Đang tìm các báo cáo phiên gần đây…</p>
 
             <div id="archive-list"></div>
 
@@ -77,19 +78,20 @@
               <div class="vs-empty-title">Không tìm thấy báo cáo phù hợp</div>
               <div class="vs-empty-sub">Thử một từ khóa khác hoặc xoá ô tìm kiếm.</div>
             </div>
+            <p class="cockpit-note mt-3 mb-0">Mỗi báo cáo ghi rõ phiên dữ liệu, dữ liệu đã cũ và các giới hạn tại thời điểm công bố. Báo cáo không được chỉnh sửa hồi tố.</p>
           </div>
-        </div>
+        </section>
       </main>
 
-      <footer class="vs-statusfooter"><a href="about.html">Dữ liệu &amp; phương pháp</a>
+      <footer class="vs-statusfooter">
         <span>Phục vụ nghiên cứu, không phải lệnh giao dịch. Dữ liệu và phân tích là bản ghi phục vụ nghiên cứu độc lập.</span>
       </footer>
     </div>
   </div>
 
   <script src="https://unpkg.com/lucide@1.24.0"></script>
-  <script src="assets/js/shell.js?v=2026-10-23-c80b389-551e7ba11b"></script>
-  <script src="data/build_info.js?v=2026-10-23-c80b389-551e7ba11b"></script>
-  <script src="assets/js/archive.js?v=2026-10-23-c80b389-551e7ba11b"></script>
+  <script src="assets/js/shell.js?v=2026-10-23-c80b389-551e7ba11b&ui=minimal-glass-v1"></script>
+  <script src="data/build_info.js?v=2026-10-23-c80b389-551e7ba11b&ui=minimal-glass-v1"></script>
+  <script src="assets/js/archive.js?v=2026-10-23-c80b389-551e7ba11b&ui=minimal-glass-v1"></script>
 </body>
 </html>
