@@ -12,6 +12,8 @@ evidence kỹ thuật và danh sách theo dõi là các chế độ xem bên tro
 được chuyển hướng. Quy ước trình bày bằng tiếng Việt và hiển thị chi tiết theo
 nhu cầu được mô tả tại
 [docs/INVESTOR_FIRST_UX_V1.md](docs/INVESTOR_FIRST_UX_V1.md).
+Hệ thống trình bày tối giản (bố cục, nút, bảng, điều hướng di động) được mô tả tại
+[docs/MINIMAL_GLASS_UX_V1.md](docs/MINIMAL_GLASS_UX_V1.md).
 
 Giao diện nghiên cứu hiện tại sử dụng `data/investment_decision_workspace.json`,
 bản chiếu Workspace được tuần tự hóa do Producer quản lý. Trang Tổng quan,

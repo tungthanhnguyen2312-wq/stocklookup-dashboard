@@ -1281,7 +1281,7 @@
         const price = retainedPrice(card);
         return `<tr data-row-ticker="${esc(ticker)}" class="${isSelected ? "ws-row-selected" : ""}" style="cursor: pointer;">
           <td class="sticky-col">
-            <button type="button" class="btn btn-link p-0 ws-ticker-link fw-bold font-monospace text-start" data-select-ticker="${esc(ticker)}">${esc(ticker)}</button>
+            <button type="button" class="btn btn-link p-0 ws-ticker-link fw-bold font-monospace text-start" data-select-ticker="${esc(ticker)}" aria-label="Xem chi tiết ${esc(ticker)}">${esc(ticker)}</button>
           </td>
           <td>${pill(card.entry_state, "tactical_state")}<div class="cockpit-note">${sectorDisplayHtml(card.sector)}</div></td>
           <td>${hasRetainedValue(price) ? `<b>${esc(formatDiagnosticNumber(price))}</b>` : '<span class="cockpit-note">—</span>'}</td>
@@ -1291,7 +1291,6 @@
           <td data-label="Vô hiệu">${invalidation.boundary_type ? esc(conditionHeadline(invalidation).label) : '<span class="cockpit-note">Chưa đủ dữ liệu vô hiệu</span>'}</td>
           <td>${actionPostureHtml(card)}<div>${evidenceCurrencyHtml(card.evidence_currency)}</div></td>
           <td class="cockpit-note" data-label="Điểm cần xem">${esc(compactReasons(card, 1)[0])}</td>
-          <td><button type="button" class="btn btn-sm btn-outline-light" data-select-ticker="${esc(ticker)}">Chi tiết</button></td>
         </tr>`;
       }
 

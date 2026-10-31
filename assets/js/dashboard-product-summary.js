@@ -402,30 +402,27 @@
   function heroBannerHtml(summary) {
     if (!summary || !summary.as_of_session) {
       return `
-        <div class="card" style="border-left: 4px solid var(--border); background: var(--surface);">
-          <div class="card-body py-3 px-4">
-            <span class="badge-soft bs-gray">Chưa có dữ liệu phiên thị trường</span>
-          </div>
+        <div class="home-pulse-status">
+          <span class="badge-soft bs-gray">Chưa có dữ liệu phiên thị trường</span>
         </div>`;
     }
     const dateMatch = String(summary.as_of_session).match(/^(\d{4})-(\d{2})-(\d{2})$/);
     const displayDate = dateMatch ? `${dateMatch[3]}/${dateMatch[2]}/${dateMatch[1]}` : summary.as_of_session;
     const breadth = summary.session_breadth;
     const state = marketBreadthStateLabel(breadth);
+    // The three counts are the large figures beside this status; repeat them only as
+    // one short sentence for screen readers and narrow layouts, not as a second panel.
     const breadthText = breadth.available
       ? `${breadth.up.toLocaleString("vi-VN")} tăng · ${breadth.down.toLocaleString("vi-VN")} giảm · ${breadth.flat.toLocaleString("vi-VN")} tham chiếu`
       : "Chưa có dữ liệu độ rộng phiên";
     return `
-      <div class="card" style="border-left: 4px solid var(--primary); background: linear-gradient(90deg, rgba(32, 231, 207, 0.08) 0%, rgba(15, 23, 42, 0.6) 100%);">
-        <div class="card-body py-3 px-4 d-flex align-items-center justify-content-between flex-wrap gap-3">
-          <div>
-            <div class="d-flex align-items-center gap-2 flex-wrap mb-1">
-              <span class="badge-soft bs-blue">Phiên ${esc(displayDate)}</span>
-              ${state ? `<span class="badge-soft ${state.cls}">${esc(state.text)}</span>` : ""}
-            </div>
-            <div class="text-xs text-muted">${esc(breadthText)}</div>
-          </div>
+      <div class="home-pulse-status">
+        <div class="home-pulse-label">Nhịp thị trường</div>
+        <div class="d-flex align-items-center gap-2 flex-wrap">
+          <span class="badge-soft bs-blue">Phiên ${esc(displayDate)}</span>
+          ${state ? `<span class="badge-soft ${state.cls}">${esc(state.text)}</span>` : ""}
         </div>
+        <div class="home-pulse-summary">${esc(breadthText)}</div>
       </div>`;
   }
 

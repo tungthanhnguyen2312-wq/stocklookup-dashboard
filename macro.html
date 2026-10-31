@@ -3,30 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vĩ mô | Stock Look Up</title>
-  <meta name="description" content="Dashboard chỉ báo vĩ mô gồm lãi suất, tỷ giá, CPI, lợi suất, DXY, dầu, vàng, VIX và trạng thái dữ liệu khối ngoại từ Stock Look Up.">
+  <title>Vĩ mô | Stock Lookup</title>
+  <meta name="description" content="Dashboard chỉ báo vĩ mô gồm lãi suất, tỷ giá, CPI, lợi suất, DXY, dầu, vàng, VIX và trạng thái dữ liệu khối ngoại từ Stock Lookup.">
   <link rel="canonical" href="https://tungthanhnguyen2312-wq.github.io/stocklookup-dashboard/macro.html">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2303080A'/%3E%3Crect x='6' y='18' width='5' height='8' rx='1' fill='%2320E7CF'/%3E%3Crect x='14' y='12' width='5' height='14' rx='1' fill='%2327E6A1'/%3E%3Crect x='22' y='6' width='5' height='20' rx='1' fill='%2327E6A1'/%3E%3C/svg%3E">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Stock Look Up — Vĩ mô">
-  <meta property="og:description" content="Theo dõi lãi suất, tỷ giá, tăng trưởng, rủi ro và hàng hóa từ dữ liệu Stock Look Up.">
+  <meta property="og:title" content="Stock Lookup — Vĩ mô">
+  <meta property="og:description" content="Theo dõi lãi suất, tỷ giá, tăng trưởng, rủi ro và hàng hóa từ dữ liệu Stock Lookup.">
   <meta property="og:url" content="https://tungthanhnguyen2312-wq.github.io/stocklookup-dashboard/macro.html">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Stock Look Up — Vĩ mô">
+  <meta name="twitter:title" content="Stock Lookup — Vĩ mô">
   <meta name="twitter:description" content="Dashboard vĩ mô, cập nhật theo lần công bố gần nhất.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=2026-10-23-c80b389-551e7ba11b">
+  <link rel="stylesheet" href="style.css?v=2026-10-23-c80b389-551e7ba11b&ui=minimal-glass-v1">
 
   <!-- Tailwind CSS build sẵn bằng CLI standalone (xem build_frontend.bat + tailwind.config.js)
        — thay cho Play CDN chạy JIT trong trình duyệt. Giữ NGUYÊN behavior cũ
        (corePlugins.preflight:false, theme.extend colors/fontFamily như cũ). -->
-  <link rel="stylesheet" href="assets/css/tailwind.generated.css?v=2026-10-23-c80b389-551e7ba11b">
-  <link rel="stylesheet" href="assets/css/shell.css?v=2026-10-23-c80b389-551e7ba11b">
-  <link rel="stylesheet" href="assets/css/macro.css?v=2026-10-23-c80b389-551e7ba11b">
+  <link rel="stylesheet" href="assets/css/tailwind.generated.css?v=2026-10-23-c80b389-551e7ba11b&ui=minimal-glass-v1">
+  <link rel="stylesheet" href="assets/css/shell.css?v=2026-10-23-c80b389-551e7ba11b&ui=minimal-glass-v1">
+  <link rel="stylesheet" href="assets/css/macro.css?v=2026-10-23-c80b389-551e7ba11b&ui=minimal-glass-v1">
+  <link rel="stylesheet" href="assets/css/minimal-glass.css?v=2026-10-23-c80b389-551e7ba11b&ui=minimal-glass-v1">
 </head>
 <body class="bg-bg text-white font-sans" data-page="macro">
   <div class="vs-shell">
@@ -48,37 +49,20 @@
         <a class="vs-topbar-brand" href="dashboard.html"><span class="vs-brand-dot"></span><span>Stock Lookup</span></a>
         <nav class="vs-topbar-nav" aria-label="Điều hướng chính"><a class="vs-topnav-link" href="dashboard.html" data-nav="dashboard">Tổng quan</a><a class="vs-topnav-link" href="investment-workspace.html" data-nav="investment-workspace">Cơ hội</a><a class="vs-topnav-link" href="portfolio.html" data-nav="portfolio">Danh mục</a><a class="vs-topnav-link is-active active" href="macro.html" data-nav="macro" aria-current="page">Vĩ mô</a><a class="vs-topnav-link" href="archive.html" data-nav="archive">Lịch sử</a></nav>
         <span class="vs-topbar-spacer"></span>
-        <a class="vs-topbar-link" href="about.html">Dữ liệu &amp; phương pháp</a>
-        <button type="button" class="vs-icon-btn" onclick="location.reload()" aria-label="Làm mới dữ liệu" title="Làm mới dữ liệu"><i data-lucide="refresh-cw"></i></button>
+        <a class="vs-topbar-link" href="about.html">Giới thiệu</a>
       </header>
 
       <main class="vs-content macro-page" id="macro-main">
-        <section class="card macro-hero" aria-labelledby="macro-title">
-          <div class="card-body macro-hero-body">
-            <div>
-              <div class="section-eyebrow">Tổng quan vĩ mô</div>
-              <h1 id="macro-title">Vĩ mô</h1>
-              <p class="macro-subtitle">Bối cảnh lãi suất, tiền tệ, tăng trưởng, rủi ro và hàng hóa theo dữ liệu đã cập nhật gần nhất.</p>
-              <div class="macro-badges">
-                <span class="badge-soft bs-blue">Toàn thị trường</span>
-                <span class="badge-soft bs-gray" id="macro-status" role="status" aria-live="polite">Đang tải</span>
-              </div>
-            </div>
-            <dl class="macro-meta" aria-label="Thông tin snapshot">
-              <div>
-                <dt>Ngày dữ liệu</dt>
-                <dd id="snapshot-date">—</dd>
-              </div>
-              <div>
-                <dt>Thời điểm tạo</dt>
-                <dd id="pipeline-time">—</dd>
-              </div>
-              <div>
-                <dt>Nhịp cập nhật</dt>
-                <dd>Cập nhật theo lần công bố gần nhất</dd>
-              </div>
-            </dl>
+        <section class="page-head macro-head" aria-labelledby="macro-title">
+          <div>
+            <h1 id="macro-title" class="page-title">Vĩ mô</h1>
+            <p class="page-lede">Lãi suất, tỷ giá, tăng trưởng, rủi ro và hàng hóa — bối cảnh chung cho mọi luận điểm, không phải tín hiệu cho từng mã.</p>
           </div>
+          <dl class="macro-meta" aria-label="Thông tin bản dữ liệu">
+            <div><dt>Trạng thái</dt><dd><span class="badge-soft bs-gray" id="macro-status" role="status" aria-live="polite">Đang tải</span></dd></div>
+            <div><dt>Ngày dữ liệu</dt><dd id="snapshot-date">—</dd></div>
+            <div><dt>Thời điểm tạo</dt><dd id="pipeline-time">—</dd></div>
+          </dl>
         </section>
 
         <div class="macro-notice is-loading" id="macro-notice" role="status" aria-live="polite">
@@ -161,9 +145,9 @@
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js" defer></script>
   <script src="https://unpkg.com/lucide@1.24.0" defer></script>
-  <script src="data/build_info.js?v=2026-10-23-c80b389-551e7ba11b" defer></script>
-  <script src="assets/js/value-format.js?v=2026-10-23-c80b389-551e7ba11b" defer></script>
-  <script src="assets/js/shell.js?v=2026-10-23-c80b389-551e7ba11b" defer></script>
-  <script src="assets/js/macro.js?v=2026-10-23-c80b389-551e7ba11b" defer></script>
+  <script src="data/build_info.js?v=2026-10-23-c80b389-551e7ba11b&ui=minimal-glass-v1" defer></script>
+  <script src="assets/js/value-format.js?v=2026-10-23-c80b389-551e7ba11b&ui=minimal-glass-v1" defer></script>
+  <script src="assets/js/shell.js?v=2026-10-23-c80b389-551e7ba11b&ui=minimal-glass-v1" defer></script>
+  <script src="assets/js/macro.js?v=2026-10-23-c80b389-551e7ba11b&ui=minimal-glass-v1" defer></script>
 </body>
 </html>
