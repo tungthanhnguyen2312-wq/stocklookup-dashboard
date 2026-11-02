@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "build_id": "2026-11-02-efa23b7-ab41cdb089",
-  "generated_at": "2026-11-02T23:12:59+07:00",
-  "published_at": "2026-11-02T23:12:59+07:00",
+  "build_id": "2026-11-02-4da1b31-9d72076097",
+  "generated_at": "2026-11-02T23:23:40+07:00",
+  "published_at": "2026-11-02T23:23:40+07:00",
   "market_session": "2026-11-02",
-  "git_commit": "efa23b7c102e325512d62f4dc406b78b6a92508d",
+  "git_commit": "4da1b3115065c9d6346eae72e41b1316940f19c0",
   "git_commit_semantics": "pre_publication_source_head",
   "row_counts": {
     "screen_snapshot": 1683,
@@ -26,17 +26,17 @@
     "screen_snapshot.csv": {
       "sha256": "34c7a31854e1d6fb4bf53ecad062d5f4ce6c43ce4a34a24c608ede18771d3d86",
       "size": 554725,
-      "mtime": "2026-11-02T23:11:32+07:00"
+      "mtime": "2026-11-02T23:21:36+07:00"
     },
     "market_breadth.csv": {
       "sha256": "21a1d70335ddd302e7c8ab1b5c7693d46d97146fdf1a623edf03107b2e90a318",
       "size": 142,
-      "mtime": "2026-11-02T23:11:32+07:00"
+      "mtime": "2026-11-02T23:21:36+07:00"
     },
     "analysis_latest.json": {
       "sha256": "32242747d4d4564ef06d36f90405bdf72eeb681485ef68819f45695cd9195b39",
       "size": 8889,
-      "mtime": "2026-11-02T23:11:32+07:00"
+      "mtime": "2026-11-02T23:21:36+07:00"
     },
     "ai_report_latest.md": {
       "sha256": "5ca7bad344ed82d9034c39c96a338a6ae988bb931e0127776782d516109cd0cf",
@@ -49,9 +49,9 @@
       "mtime": "2026-07-11T05:48:59+07:00"
     },
     "data/screener_data.js": {
-      "sha256": "2786c760031fd70b24cc0c034083e4baf514853521251c9e375fb566ba55aa13",
+      "sha256": "f539f0cc265c4a41d1c636a62ae97fb2942a8a0e37be0dc94303256a7bd7ef8b",
       "size": 1937677,
-      "mtime": "2026-11-02T23:13:08+07:00"
+      "mtime": "2026-11-02T23:23:52+07:00"
     }
   },
   "investment_workspace": {
