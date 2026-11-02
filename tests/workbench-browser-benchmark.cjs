@@ -75,7 +75,7 @@ async function main() {
       const row={width,plainHeap:await memory(),plainDetailRequests:resources.filter(r=>r.url.includes('/workspace_detail/')).length};
       // Cold worst-case five shards, with real high-interest issuers.
       const start=Date.now();
-      await evaluate(`history.replaceState(null,'','?view=compare&tickers=VCB,SSI,TCB,PNJ,HPG&session=2026-10-23')`);
+      await evaluate(`history.replaceState(null,'','?view=compare&tickers=VCB,SSI,TCB,PNJ,HPG&session=${index.as_of_session}')`);
       await click('#ws-tab-compare');await wait(`document.querySelector('#wb-compare-heading')`);
       row.fiveShardMs=Date.now()-start;
       await evaluate('new Promise(resolve=>setTimeout(resolve,2000))');
@@ -94,7 +94,7 @@ async function main() {
       row.repeatedDossierMs=Date.now()-repeated;row.repeatedHeap=await memory();row.dossierRenders=await evaluate('__bench.renders');
       // Same-shard request concurrency and fresh same-shard comparison.
       const sameStart=Date.now(), sameRequestStart=resources.length;
-      await send('Page.navigate',{url:url+'?view=compare&tickers=SSI,SHB,STB,SAB,SBT&session=2026-10-23'});await wait(`document.querySelector('#wb-compare-heading')`);
+      await send('Page.navigate',{url:url+'?view=compare&tickers=SSI,SHB,STB,SAB,SBT&session='+index.as_of_session});await wait(`document.querySelector('#wb-compare-heading')`);
       row.sameShardMs=Date.now()-sameStart;row.sameShardRequests=resources.slice(sameRequestStart).filter(r=>r.url.includes('/workspace_detail/'));
       row.sameShardHeap=await memory();row.sameShardParse=await evaluate(`__bench.parses.filter(p=>p.contract==='workspace_detail_shard/v1')`);
       const before=resources.length;await click('#ws-tab-dossier');
@@ -120,12 +120,12 @@ async function main() {
       console.log(width,'reliability: stale requests');
       await evaluate(`window.__originalDetail=VSWorkspaceReadModel.getTickerDetail;window.__gates=[];window.__outstanding=0;
         VSWorkspaceReadModel.getTickerDetail=(...args)=>{__outstanding++;return new Promise(resolve=>__originalDetail(...args).then(r=>{const release=()=>{__outstanding--;resolve(r)};release.ticker=args[0];__gates.push(release)}))};
-        history.replaceState(null,'','?view=compare&tickers=HPG,PNJ&session=2026-10-23');`);
+        history.replaceState(null,'','?view=compare&tickers=HPG,PNJ&session=${index.as_of_session}');`);
       await click('#ws-tab-compare');await wait('__gates.length>=2');await click('[data-wb-action="compare-clear"]');
       await evaluate('__gates.splice(0).forEach(resolve=>resolve())');await frames();
       checks.clearCancelsPending=await evaluate(`!document.querySelector('#wb-compare-heading')`);
-      await evaluate(`history.replaceState(null,'','?view=compare&tickers=HPG,PNJ&session=2026-10-23');VSInvestigationWorkbench.renderView('compare');`);await wait('__gates.length>=2');
-      await evaluate(`history.replaceState(null,'','?view=compare&tickers=HPG,ZZZZZZ&session=2026-10-23');VSInvestigationWorkbench.renderView('compare');__gates.splice(0).forEach(resolve=>resolve());`);await frames();
+      await evaluate(`history.replaceState(null,'','?view=compare&tickers=HPG,PNJ&session=${index.as_of_session}');VSInvestigationWorkbench.renderView('compare');`);await wait('__gates.length>=2');
+      await evaluate(`history.replaceState(null,'','?view=compare&tickers=HPG,ZZZZZZ&session=${index.as_of_session}');VSInvestigationWorkbench.renderView('compare');__gates.splice(0).forEach(resolve=>resolve());`);await frames();
       checks.invalidRequestCancelsPending=await evaluate(`!document.querySelector('#wb-compare-heading') && !!document.querySelector('#wb-compare-result [role=alert]')`);
       await click('#ws-tab-dossier');await select('TCB');await evaluate(`VSInvestigationWorkbench.renderView('dossier',{focus:true})`);await wait('__outstanding>0 && __gates.length===__outstanding');
       await click('#ws-tab-journal');await evaluate('__gates.splice(0).forEach(resolve=>resolve())');await frames();
@@ -141,7 +141,7 @@ async function main() {
       await click('#ws-tab-journal');
       await evaluate(`window.__readers=[];window.__FileReader=FileReader;window.FileReader=class{readAsText(file){file.text().then(text=>{this.result=text;__readers.push(()=>this.onload())})}};
         for(const [ticker,note] of [['HPG','older import'],['FPT','last import']]){
-          const journal=VSInvestigationWorkbench.emptyJournal();const {entry}=VSInvestigationWorkbench.upsertEntry(journal,'dossier',[ticker],'2026-10-23');VSInvestigationWorkbench.setHypothesis(entry,note);
+          const journal=VSInvestigationWorkbench.emptyJournal();const {entry}=VSInvestigationWorkbench.upsertEntry(journal,'dossier',[ticker],'${index.as_of_session}');VSInvestigationWorkbench.setHypothesis(entry,note);
           const transfer=new DataTransfer();transfer.items.add(new File([JSON.stringify(VSInvestigationWorkbench.exportJournal(journal))],'journal.json',{type:'application/json'}));
           const input=document.querySelector('[data-wb-import]');input.files=transfer.files;input.dispatchEvent(new Event('change',{bubbles:true}));
         }`);

@@ -83,6 +83,13 @@
     PARTICIPATION_CONTRADICTION_NARROWS_ENTRY: "Mức tham gia mâu thuẫn, thu hẹp điều kiện vào",
     CONFIRMED_RETEST_ENTRY: "Kiểm định lại đã được xác nhận",
     FAILED_BREAKOUT_REBASE_REQUIRED: "Bứt phá thất bại — cần tạo nền lại",
+    FAILED_BREAKOUT_WITH_DETERIORATION: "Bứt phá thất bại kèm nền tảng suy yếu",
+    BEARISH_BREADTH_NARROWS_FRESH_ENTRY: "Thị trường chung suy yếu, thu hẹp điều kiện vào mới",
+    // market context (context only, never a gate)
+    DETERIORATING_BREADTH: "Độ rộng thị trường suy giảm",
+    MARKET_BREADTH_DETERIORATING_BREADTH: "Độ rộng thị trường suy giảm",
+    MARKET_REGIME_HEADWIND: "Thị trường chung là lực cản (chỉ là bối cảnh)",
+    MARKET_REGIME_TAILWIND: "Thị trường chung hỗ trợ (chỉ là bối cảnh)",
     NO_QUALIFIED_ENTRY_TRIGGER: "Chưa có mức kích hoạt đủ điều kiện",
     NO_QUALIFIED_INVALIDATION_OR_ADVERSE_EVIDENCE: "Chưa có điều kiện vô hiệu hoặc bằng chứng bất lợi đủ điều kiện",
     QUALIFIED_INTEGRATED_INVALIDATION: "Có điều kiện vô hiệu tích hợp đủ điều kiện",
