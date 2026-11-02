@@ -8,7 +8,11 @@ const pr = require("../assets/js/portfolio-research-model.js");
 const wb = require("../assets/js/investigation-workbench.js");
 
 const root = path.resolve(__dirname, "..");
-const index = JSON.parse(fs.readFileSync(path.join(root, "data/workspace_index.json"), "utf8"));
+// Scenario assertions (FPT/PNJ/NVL avoid, TCB bank wait, ...) describe the 2026-10-23 publication.
+// Postures change every session, so these model tests read a frozen subset of that publication
+// (tests/fixtures/published-2026-10-23, extracted from Dashboard commit 5983e9f) instead of live data.
+const dataRoot = path.join(root, "tests/fixtures/published-2026-10-23");
+const index = JSON.parse(fs.readFileSync(path.join(dataRoot, "workspace_index.json"), "utf8"));
 const beforeIndex = index.source_artifact_identity;
 
 function portfolio(positions, extra) {
@@ -140,7 +144,7 @@ test("case C separates bank evidence from corporate comparison", () => {
   assert.equal(tcb.posture_raw, "WAIT_FOR_CONFIRMATION");
   const load = (ticker) => {
     const card = index.cards[ticker];
-    const shard = JSON.parse(fs.readFileSync(path.join(root, "data/workspace_detail", `${card.detail_shard}.json`), "utf8"));
+    const shard = JSON.parse(fs.readFileSync(path.join(dataRoot, "workspace_detail", `${card.detail_shard}.json`), "utf8"));
     return { ticker, thin: card, detail: shard.tickers[ticker] };
   };
   const comparison = pr.comparisonFromDetails([load("TCB"), load("HPG")], index);

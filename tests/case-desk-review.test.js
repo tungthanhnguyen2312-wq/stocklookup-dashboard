@@ -101,7 +101,9 @@ test("bank versus corporate metrics are refused, never compared or ranked", () =
 
 test("case session is compared with the published session; old research is labelled as such", () => {
   const m = open("hpg");
-  const same = cdr.compareWithPublished(m, index, "HPG");
+  // The fixture case is a 2026-10-23 run; compare it with a publication of that same date.
+  const sameDay = { ...index, as_of_session: "2026-10-23" };
+  const same = cdr.compareWithPublished(m, sameDay, "HPG");
   assert.equal(same.state, "SAME_DATE_RUN_NOT_VERIFIED");
   assert.equal(same.publishedPosture, index.cards.HPG.research_action_posture);
   const later = { ...index, as_of_session: "2026-10-30" };
@@ -215,8 +217,9 @@ test("dossier notice appears only for a ticker inside the opened case", () => {
   const m = open("mixed");
   assert.equal(cdr.dossierNoticeHtml(null, "HPG", index), "");
   assert.equal(cdr.dossierNoticeHtml(m, "NVL", index), "");
-  const notice = cdr.dossierNoticeHtml(m, "TPB", index);
+  const notice = cdr.dossierNoticeHtml(m, "TPB", { ...index, as_of_session: "2026-10-23" });
   assert.match(notice, /data-case-dossier-notice="SAME_DATE_RUN_NOT_VERIFIED"/);
+  assert.match(cdr.dossierNoticeHtml(m, "TPB", { ...index, as_of_session: "2026-11-02" }), /data-case-dossier-notice="CASE_OLDER"/);
   assert.match(visible(notice), /Hồ sơ là nghiên cứu riêng, không phải dữ liệu đang công bố/);
 });
 

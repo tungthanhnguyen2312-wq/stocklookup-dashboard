@@ -47,14 +47,18 @@ test("every published ticker builds a dossier whose posture is the Producer's ve
   }
 });
 
-test("real postures stay specific: NVL avoid, TPB hold-do-not-add, never collapsed into a generic wait", () => {
-  const nvl = wb.buildDossier(detail("NVL"), ctx("NVL"));
-  assert.equal(nvl.posture.raw, "AVOID");
-  assert.ok(nvl.adverse.some((a) => a.raw === "AVOID"), "NVL avoid must be listed as an adverse condition");
-  const tpb = wb.buildDossier(detail("TPB"), ctx("TPB"));
-  assert.equal(tpb.posture.raw, "HOLD_DO_NOT_ADD");
-  assert.match(wb.dossierHtml(tpb), /data-action-posture="HOLD_DO_NOT_ADD"/);
-  assert.doesNotMatch(wb.dossierHtml(tpb), /data-action-posture="WAIT_FOR_CONFIRMATION"/);
+test("real postures stay specific: the Producer's own NVL/TPB posture, never collapsed into a generic wait", () => {
+  // Postures are session data (TPB was HOLD_DO_NOT_ADD on 2026-10-23 and AVOID on 2026-11-02);
+  // the contract is that the dossier carries the published value verbatim and never relabels it.
+  for (const t of ["NVL", "TPB"]) {
+    const card = detail(t);
+    const m = wb.buildDossier(card, ctx(t));
+    assert.equal(m.posture.raw, card.research_action_posture, t);
+    assert.notEqual(m.posture.raw, "WAIT_FOR_CONFIRMATION", `${t} has a specific published posture`);
+    assert.match(wb.dossierHtml(m), new RegExp(`data-action-posture="${card.research_action_posture}"`), t);
+    assert.doesNotMatch(wb.dossierHtml(m), /data-action-posture="WAIT_FOR_CONFIRMATION"/, t);
+    if (m.posture.raw === "AVOID") assert.ok(m.adverse.some((a) => a.raw === "AVOID"), `${t} avoid must be listed as an adverse condition`);
+  }
 });
 
 test("adverse conditions are always in the compact overview, before any collapsed section", () => {
