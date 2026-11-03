@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
-  "generated_at": "2026-11-02T00:00:00+00:00",
-  "reference_session_date": "2026-11-02",
+  "generated_at": "2026-11-03T00:00:00+00:00",
+  "reference_session_date": "2026-11-03",
   "tickers_requested": [
     "POW",
     "SSI",
@@ -23,9 +23,9 @@
   "tickers": {
     "POW": {
       "snapshot": {
-        "date": "2026-11-02",
+        "date": "2026-11-03",
         "ticker": "POW",
-        "close": "12.05",
+        "close": "12",
         "exchange": "HSX",
         "industry": "corporate",
         "canonical_observation_status": "EXACT_SESSION_RETAINED",
@@ -35,9 +35,9 @@
     },
     "SSI": {
       "snapshot": {
-        "date": "2026-11-02",
+        "date": "2026-11-03",
         "ticker": "SSI",
-        "close": "18.85",
+        "close": "19.15",
         "exchange": "HSX",
         "industry": "securities",
         "canonical_observation_status": "EXACT_SESSION_RETAINED",
@@ -47,9 +47,9 @@
     },
     "HPG": {
       "snapshot": {
-        "date": "2026-11-02",
+        "date": "2026-11-03",
         "ticker": "HPG",
-        "close": "20.4",
+        "close": "21.25",
         "exchange": "HSX",
         "industry": "corporate",
         "canonical_observation_status": "EXACT_SESSION_RETAINED",
@@ -59,9 +59,9 @@
     },
     "EVF": {
       "snapshot": {
-        "date": "2026-11-02",
+        "date": "2026-11-03",
         "ticker": "EVF",
-        "close": "11.75",
+        "close": "11.5",
         "exchange": "HSX",
         "industry": "finance_company",
         "canonical_observation_status": "EXACT_SESSION_RETAINED",
@@ -71,9 +71,9 @@
     },
     "PAN": {
       "snapshot": {
-        "date": "2026-11-02",
+        "date": "2026-11-03",
         "ticker": "PAN",
-        "close": "16.6",
+        "close": "16.7",
         "exchange": "HSX",
         "industry": "corporate",
         "canonical_observation_status": "EXACT_SESSION_RETAINED",
@@ -83,9 +83,9 @@
     },
     "PNJ": {
       "snapshot": {
-        "date": "2026-11-02",
+        "date": "2026-11-03",
         "ticker": "PNJ",
-        "close": "15.6",
+        "close": "14.75",
         "exchange": "HSX",
         "industry": "corporate",
         "canonical_observation_status": "EXACT_SESSION_RETAINED",
@@ -95,9 +95,9 @@
     },
     "FPT": {
       "snapshot": {
-        "date": "2026-11-02",
+        "date": "2026-11-03",
         "ticker": "FPT",
-        "close": "50.2",
+        "close": "50.4",
         "exchange": "HSX",
         "industry": "corporate",
         "canonical_observation_status": "EXACT_SESSION_RETAINED",
@@ -107,9 +107,9 @@
     },
     "QNS": {
       "snapshot": {
-        "date": "2026-11-02",
+        "date": "2026-11-03",
         "ticker": "QNS",
-        "close": "49.4",
+        "close": "49.6",
         "exchange": "UPCOM",
         "industry": "corporate",
         "canonical_observation_status": "EXACT_SESSION_RETAINED",
@@ -119,9 +119,9 @@
     },
     "VNM": {
       "snapshot": {
-        "date": "2026-11-02",
+        "date": "2026-11-03",
         "ticker": "VNM",
-        "close": "56",
+        "close": "56.3",
         "exchange": "HSX",
         "industry": "corporate",
         "canonical_observation_status": "EXACT_SESSION_RETAINED",
@@ -131,9 +131,9 @@
     },
     "PVD": {
       "snapshot": {
-        "date": "2026-11-02",
+        "date": "2026-11-03",
         "ticker": "PVD",
-        "close": "17.7",
+        "close": "17.45",
         "exchange": "HSX",
         "industry": "corporate",
         "canonical_observation_status": "EXACT_SESSION_RETAINED",
@@ -143,9 +143,9 @@
     },
     "NVL": {
       "snapshot": {
-        "date": "2026-11-02",
+        "date": "2026-11-03",
         "ticker": "NVL",
-        "close": "10.35",
+        "close": "10.25",
         "exchange": "HSX",
         "industry": "corporate",
         "canonical_observation_status": "EXACT_SESSION_RETAINED",
