@@ -47,18 +47,38 @@ test("every published ticker builds a dossier whose posture is the Producer's ve
   }
 });
 
-test("real postures stay specific: the Producer's own NVL/TPB posture, never collapsed into a generic wait", () => {
+test("published NVL/TPB postures carry the Producer's exact value, including a legitimate wait", () => {
   // Postures are session data (TPB was HOLD_DO_NOT_ADD on 2026-10-23 and AVOID on 2026-11-02);
   // the contract is that the dossier carries the published value verbatim and never relabels it.
   for (const t of ["NVL", "TPB"]) {
     const card = detail(t);
     const m = wb.buildDossier(card, ctx(t));
     assert.equal(m.posture.raw, card.research_action_posture, t);
-    assert.notEqual(m.posture.raw, "WAIT_FOR_CONFIRMATION", `${t} has a specific published posture`);
     assert.match(wb.dossierHtml(m), new RegExp(`data-action-posture="${card.research_action_posture}"`), t);
-    assert.doesNotMatch(wb.dossierHtml(m), /data-action-posture="WAIT_FOR_CONFIRMATION"/, t);
+    if (card.research_action_posture !== "WAIT_FOR_CONFIRMATION") {
+      assert.doesNotMatch(wb.dossierHtml(m), /data-action-posture="WAIT_FOR_CONFIRMATION"/, t);
+    }
     if (m.posture.raw === "AVOID") assert.ok(m.adverse.some((a) => a.raw === "AVOID"), `${t} avoid must be listed as an adverse condition`);
   }
+});
+
+test("specific Producer postures never collapse into waiting, independent of the current session", () => {
+  for (const posture of ["AVOID", "REDUCE", "HOLD_DO_NOT_ADD", "WAIT_FOR_CONFIRMATION"]) {
+    const card = { ...detail("TPB"), research_action_posture: posture };
+    const m = wb.buildDossier(card, ctx("TPB"));
+    const html = wb.dossierHtml(m);
+    assert.equal(m.posture.raw, posture);
+    assert.match(html, new RegExp(`data-action-posture="${posture}"`));
+    if (posture !== "WAIT_FOR_CONFIRMATION") assert.doesNotMatch(html, /data-action-posture="WAIT_FOR_CONFIRMATION"/);
+    if (["AVOID", "REDUCE"].includes(posture)) assert.ok(m.adverse.some((a) => a.raw === posture));
+    assert.equal(card.research_action_posture, posture);
+  }
+});
+
+test("narrow market leadership has its own neutral Vietnamese label", () => {
+  assert.deepEqual(wb.codeLabel("NARROW_LEADERSHIP"), {
+    raw: "NARROW_LEADERSHIP", label: "Dẫn dắt ở nhóm hẹp", known: true,
+  });
 });
 
 test("adverse conditions are always in the compact overview, before any collapsed section", () => {

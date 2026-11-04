@@ -87,6 +87,7 @@
     BEARISH_BREADTH_NARROWS_FRESH_ENTRY: "Thị trường chung suy yếu, thu hẹp điều kiện vào mới",
     // market context (context only, never a gate)
     DETERIORATING_BREADTH: "Độ rộng thị trường suy giảm",
+    NARROW_LEADERSHIP: "Dẫn dắt ở nhóm hẹp",
     MARKET_BREADTH_DETERIORATING_BREADTH: "Độ rộng thị trường suy giảm",
     MARKET_REGIME_HEADWIND: "Thị trường chung là lực cản (chỉ là bối cảnh)",
     MARKET_REGIME_TAILWIND: "Thị trường chung hỗ trợ (chỉ là bối cảnh)",
