@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
-  "generated_at": "2026-11-03T00:00:00+00:00",
-  "reference_session_date": "2026-11-03",
+  "generated_at": "2026-11-04T00:00:00+00:00",
+  "reference_session_date": "2026-11-04",
   "tickers_requested": [
     "POW",
     "SSI",
@@ -21,7 +21,7 @@
   "volume_basis_verified": false,
   "is_actionable": false,
   "freshness": {
-    "reference_session": "2026-11-03",
+    "reference_session": "2026-11-04",
     "status": "fresh",
     "blocked": false,
     "stale": [],
@@ -31,7 +31,7 @@
   "canonical_sources": {
     "contract_version": "canonical_trusted_subset_release/v1",
     "runtime_release": {
-      "session": "2026-11-03",
+      "session": "2026-11-04",
       "source": "retained_canonical_daily_producer",
       "unavailable_legacy_fields": [
         "historical_indicator_suite",
@@ -46,9 +46,9 @@
     "POW": {
       "entity_type": "corporate",
       "snapshot": {
-        "date": "2026-11-03",
+        "date": "2026-11-04",
         "ticker": "POW",
-        "close": "12",
+        "close": "12.45",
         "exchange": "HSX",
         "industry": "corporate",
         "canonical_observation_status": "EXACT_SESSION_RETAINED",
@@ -128,9 +128,9 @@
     "SSI": {
       "entity_type": "securities",
       "snapshot": {
-        "date": "2026-11-03",
+        "date": "2026-11-04",
         "ticker": "SSI",
-        "close": "19.15",
+        "close": "20.4",
         "exchange": "HSX",
         "industry": "securities",
         "canonical_observation_status": "EXACT_SESSION_RETAINED",
@@ -214,9 +214,9 @@
     "HPG": {
       "entity_type": "corporate",
       "snapshot": {
-        "date": "2026-11-03",
+        "date": "2026-11-04",
         "ticker": "HPG",
-        "close": "21.25",
+        "close": "21.7",
         "exchange": "HSX",
         "industry": "corporate",
         "canonical_observation_status": "EXACT_SESSION_RETAINED",
@@ -296,9 +296,9 @@
     "EVF": {
       "entity_type": "finance_company",
       "snapshot": {
-        "date": "2026-11-03",
+        "date": "2026-11-04",
         "ticker": "EVF",
-        "close": "11.5",
+        "close": "11.75",
         "exchange": "HSX",
         "industry": "finance_company",
         "canonical_observation_status": "EXACT_SESSION_RETAINED",
@@ -377,9 +377,9 @@
     "PAN": {
       "entity_type": "corporate",
       "snapshot": {
-        "date": "2026-11-03",
+        "date": "2026-11-04",
         "ticker": "PAN",
-        "close": "16.7",
+        "close": "17.1",
         "exchange": "HSX",
         "industry": "corporate",
         "canonical_observation_status": "EXACT_SESSION_RETAINED",
@@ -459,7 +459,7 @@
     "PNJ": {
       "entity_type": "corporate",
       "snapshot": {
-        "date": "2026-11-03",
+        "date": "2026-11-04",
         "ticker": "PNJ",
         "close": "14.75",
         "exchange": "HSX",
@@ -541,9 +541,9 @@
     "FPT": {
       "entity_type": "corporate",
       "snapshot": {
-        "date": "2026-11-03",
+        "date": "2026-11-04",
         "ticker": "FPT",
-        "close": "50.4",
+        "close": "53.9",
         "exchange": "HSX",
         "industry": "corporate",
         "canonical_observation_status": "EXACT_SESSION_RETAINED",
@@ -623,9 +623,9 @@
     "QNS": {
       "entity_type": "corporate",
       "snapshot": {
-        "date": "2026-11-03",
+        "date": "2026-11-04",
         "ticker": "QNS",
-        "close": "49.6",
+        "close": "49.5",
         "exchange": "UPCOM",
         "industry": "corporate",
         "canonical_observation_status": "EXACT_SESSION_RETAINED",
@@ -705,9 +705,9 @@
     "VNM": {
       "entity_type": "corporate",
       "snapshot": {
-        "date": "2026-11-03",
+        "date": "2026-11-04",
         "ticker": "VNM",
-        "close": "56.3",
+        "close": "57.4",
         "exchange": "HSX",
         "industry": "corporate",
         "canonical_observation_status": "EXACT_SESSION_RETAINED",
@@ -787,9 +787,9 @@
     "PVD": {
       "entity_type": "corporate",
       "snapshot": {
-        "date": "2026-11-03",
+        "date": "2026-11-04",
         "ticker": "PVD",
-        "close": "17.45",
+        "close": "17.6",
         "exchange": "HSX",
         "industry": "corporate",
         "canonical_observation_status": "EXACT_SESSION_RETAINED",
@@ -869,9 +869,9 @@
     "NVL": {
       "entity_type": "corporate",
       "snapshot": {
-        "date": "2026-11-03",
+        "date": "2026-11-04",
         "ticker": "NVL",
-        "close": "10.25",
+        "close": "10.45",
         "exchange": "HSX",
         "industry": "corporate",
         "canonical_observation_status": "EXACT_SESSION_RETAINED",
