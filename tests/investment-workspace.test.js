@@ -700,3 +700,19 @@ test("legacy valuation artifacts remain safe while HPG-like old summaries do not
   assert.doesNotMatch(visible, /4 phương pháp định giá tuyệt đối/);
   assert.doesNotMatch(visible, /DCF|fair value|target price|giá mục tiêu/i);
 });
+
+test("official financial context renders verbatim values with their use limits and nothing when absent", () => {
+  const wsApi = require(path.join(__dirname, "..", "assets", "js", "investment-workspace.js"));
+  assert.equal(wsApi.officialFinancialContextHtml(undefined), "");
+  assert.equal(wsApi.officialFinancialContextHtml([]), "");
+  const html = wsApi.officialFinancialContextHtml([
+    { canonical_metric: "net_income", reporting_period: "2025", period_type: "annual", normalized_value: 15514931571606,
+      currency: "VND", audit_or_review_status: "audited", statement_scope: "consolidated",
+      valuation_use: "NOT_PERMITTED_AUDITED_ANNUAL_CONTEXT" },
+  ]);
+  assert.match(html, /data-official-context-count="1"/);
+  assert.match(html, /data-valuation-use="NOT_PERMITTED_AUDITED_ANNUAL_CONTEXT"/);
+  assert.match(html, /15\.514,9 tỷ VND/);
+  assert.match(html, /không dùng cho định giá/);
+  assert.match(html, /Không tính TTM/);
+});

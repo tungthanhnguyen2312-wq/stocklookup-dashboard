@@ -632,6 +632,32 @@
       ? `<div class="ws-valuation-methods" aria-label="Chi tiết phương pháp định giá">${methods.map(([id, method]) => valuationMethodHtml(id, method)).join("")}</div>`
       : (val.supporting_methods && val.supporting_methods.length ? supportingMethodsHtml(val.supporting_methods) : "")}`;
   }
+  // Admitted official exact fields (audited annual / reviewed interim) carried verbatim from the
+  // Producer with their own use limits. Context only: never a valuation input, TTM or annualized.
+  const OFFICIAL_METRIC_VI = Object.freeze({
+    revenue: "Doanh thu thuần", net_income: "Lợi nhuận sau thuế", attributable_net_income: "LNST cổ đông công ty mẹ",
+    shareholders_equity: "Vốn chủ sở hữu", total_assets: "Tổng tài sản", cash_and_equivalents: "Tiền và tương đương tiền",
+    operating_cash_flow: "Lưu chuyển tiền thuần từ HĐKD", total_interest_bearing_debt: "Nợ vay chịu lãi",
+    provision_charge_or_reversal_adjustment: "Trích lập/hoàn nhập dự phòng (điều chỉnh LCTT)",
+    investment_property_disposal_result: "Kết quả thanh lý BĐS đầu tư",
+  });
+  const OFFICIAL_USE_VI = Object.freeze({
+    NOT_PERMITTED_AUDITED_ANNUAL_CONTEXT: "Bối cảnh năm đã kiểm toán – không dùng cho định giá",
+    NOT_PERMITTED_EARNINGS_COMPONENT_CONTEXT: "Thành phần lợi nhuận – không dùng cho định giá",
+    NOT_PERMITTED_FOREIGN_CURRENCY_CONTEXT: "Đồng tiền báo cáo gốc – không quy đổi, không dùng cho định giá",
+    EXISTING_METRIC_PERIOD_CONTRACT_ONLY: "Chỉ dùng theo hợp đồng kỳ của chỉ số hiện hành",
+  });
+  function officialAmountText(value, currency) {
+    if (typeof value !== "number" || !Number.isFinite(value)) return "—";
+    if (currency === "VND") return `${(value / 1e9).toLocaleString("vi-VN", { maximumFractionDigits: 1 })} tỷ VND`;
+    return `${value.toLocaleString("vi-VN")} ${currency || ""}`.trim();
+  }
+  function officialFinancialContextHtml(rows) {
+    if (!Array.isArray(rows) || !rows.length) return "";
+    const assurance = { audited: "đã kiểm toán", reviewed: "đã soát xét" };
+    const body = rows.map((r) => `<tr data-official-metric="${escHtml(r.canonical_metric)}" data-valuation-use="${escHtml(r.valuation_use)}"><td>${escHtml(OFFICIAL_METRIC_VI[r.canonical_metric] || r.canonical_metric)}</td><td>${escHtml(r.reporting_period)}${r.period_type === "interim" ? " (giữa niên độ)" : ""}</td><td class="text-end">${escHtml(officialAmountText(r.normalized_value, r.currency))}</td><td>${escHtml(assurance[r.audit_or_review_status] || r.audit_or_review_status || "—")} · ${escHtml(r.statement_scope === "consolidated" ? "hợp nhất" : (r.statement_scope || "—"))}</td><td><small>${escHtml(OFFICIAL_USE_VI[r.valuation_use] || r.valuation_use || "—")}</small></td></tr>`).join("");
+    return `<div class="ws-official-financial-context mt-2" data-official-context-count="${rows.length}"><b>BCTC chính thức đã được chấp nhận</b><div class="cockpit-note">Số liệu nguyên văn từ báo cáo tài chính chính thức, có trích dẫn trang và mã băm tài liệu. Không tính TTM, không quy năm, không thay mẫu số của bội số định giá.</div><div class="tactical-wrap" tabindex="0" aria-label="Bảng số liệu BCTC chính thức"><table class="tactical-table"><thead><tr><th>Chỉ tiêu</th><th>Kỳ</th><th>Giá trị</th><th>Đảm bảo · phạm vi</th><th>Giới hạn sử dụng</th></tr></thead><tbody>${body}</tbody></table></div></div>`;
+  }
   function fundamentalDiagnosticsHtml(fundamental) {
     const data = fundamental || {};
     const warnings = Array.isArray(data.warnings_blockers) ? data.warnings_blockers : [];
@@ -1166,6 +1192,7 @@
             </div></div>
             <div class="card"><div class="card-header"><h6>Doanh nghiệp</h6></div><div class="card-body">
               ${fundamentalDiagnosticsHtml(fundamental)}
+              ${officialFinancialContextHtml(val.official_financial_context)}
             </div></div>
             <div class="card"><div class="card-header"><h6>Định giá</h6></div><div class="card-body">
               <div class="mb-2"><b>Trạng thái định giá tương đối</b> ${pill(val.relative_research_state, "valuation_state")}</div>
@@ -1988,5 +2015,6 @@
     analysisRecord, analysisRows, analysisRowHtml, analysisEvidenceHtml,
     rowSignalVelocityHtml, rowFlowPriceHtml,
     metricSlotHtml, investorMetricsGridHtml, metricValueHtml, unavailableText,
+    officialFinancialContextHtml,
   };
 });
