@@ -1,5 +1,5 @@
 {
-  "build_id": "2026-11-06-3b70d40-83af117486",
+  "build_id": "2026-11-06-def207f-fec6c50efb",
   "canonical_producer_status": {
     "active_equity_universe": 1497,
     "input_candidates": 1683,
@@ -60,9 +60,9 @@
     "positive_20d_momentum_count": 342,
     "unchanged": 223
   },
-  "producer_commit": "d678c093b5be363aad9d4f0e06b649a7c3435bb9",
+  "producer_commit": "b233b53ea4f36a9b4cfa7efeb748cb99ecb7c602",
   "producer_commit_semantics": "pre_publication_producer_head",
-  "producer_commit_summary": "daily: retain 2026-11-06 completed session",
+  "producer_commit_summary": "Merge pull request #223 from tungthanhnguyen2312-wq/fix/post-daily-publish-binding-and-thesis-root-20261106",
   "prospective_cohort_identity": "prospective_research_cohort_snapshot:9aaa27d44e32d83f313b33a87b83f25c42d48deb5012935244189d1db0238e03",
   "schema_version": "1.0.0",
   "source_artifacts": {
