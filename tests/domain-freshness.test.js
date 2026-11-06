@@ -48,12 +48,25 @@ test("classifySidecarAvailability marks an older candle component session-stale 
 });
 
 test("an unattested candle sidecar never appears in the same domain as the tactical table's own data source", () => {
-  // This release intentionally has no legacy domains/components envelope.  Its candle sidecar
-  // is therefore absent-from-publication, never silently shown as tactical-table evidence.
+  // Two valid published states: no candle attestation (sidecar absent-from-publication), or the
+  // Producer's post-Daily current_session_candlestick_projection attested CURRENT for exactly
+  // this market session (engine #221/#223). Anything in between must never classify as current,
+  // and the candle component is never the tactical table's own (Workspace) data source.
   const signalComponent = buildInfo.domains && buildInfo.domains.signals && buildInfo.domains.signals.components
     ? buildInfo.domains.signals.components.candlestick_patterns : null;
   const sidecar = signals.classifySidecarAvailability(true, signalComponent, buildInfo.market_session);
-  assert.equal(sidecar.status, "ABSENT_FROM_PUBLICATION");
+  if (!signalComponent) {
+    assert.equal(sidecar.status, "ABSENT_FROM_PUBLICATION");
+  } else if (sidecar.status === "PRESENT_AND_SESSION_COMPATIBLE") {
+    assert.equal(signalComponent.status, "CURRENT");
+    assert.equal(signalComponent.source_session, buildInfo.market_session);
+    assert.match(String(signalComponent.projection_identity || ""), /^current_session_candlestick_projection\/v1:/);
+    const sidecarPayload = JSON.parse(fs.readFileSync(path.join(root, "data", "candlestick_patterns.json"), "utf8"));
+    assert.equal(sidecarPayload.projection_identity, signalComponent.projection_identity);
+    assert.equal(sidecarPayload.source_session, buildInfo.market_session);
+  } else {
+    assert.notEqual(signalComponent.status, "CURRENT");
+  }
   assert.notEqual(buildInfo.investment_workspace, signalComponent);
 });
 
