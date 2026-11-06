@@ -595,6 +595,109 @@
     }
   }
 
+  /* ============================================================
+   * CURRENT_SESSION_CANDLESTICK_PROJECTION_V1 — one renderer shared by Cơ hội (company drawer +
+   * technical view) and the Signals compatibility page. Payload = Producer bridge
+   * `current_session_candlestick_projection/v1`; callers must ALSO require the published
+   * build_info component CURRENT for the same session (componentIsCurrent).
+   * ============================================================ */
+  const CANDLE_CONTRACT = "current_session_candlestick_projection/v1";
+  const FOCUS_TICKERS = Object.freeze(["HPG", "PAN", "SSI", "EVF", "POW"]);
+  const TICKER_STATUS_VI = Object.freeze({
+    CONFIRMED_1D_PATTERN_ON_SESSION: "Có mẫu hình nến ngày đã đóng phiên",
+    CONFIRMED_HIGHER_TIMEFRAME_ON_SESSION: "Có mẫu hình tuần/tháng đã đóng kỳ ở phiên này",
+    FORMING_HIGHER_TIMEFRAME_ONLY: "Chỉ có mẫu hình tuần/tháng đang hình thành",
+    RECENT_PATTERN_ONLY: "Không có mẫu ở phiên này; có mẫu gần đây",
+    NO_PATTERN_DETECTED: "Không phát hiện mẫu hình",
+    EXCLUDED: "Chưa đủ điều kiện quét",
+  });
+  const EXCLUSION_VI = Object.freeze({
+    NO_EXACT_SESSION_BAR: "Không có nến đúng phiên (dữ liệu cũ hoặc không giao dịch)",
+    MISSING_OR_INVALID_OHLC: "Thiếu hoặc sai OHLC ở phiên",
+    MIXED_PRICE_BASIS: "Chuỗi giá trộn nhiều cơ sở điều chỉnh",
+    NO_QUALIFIED_OBSERVATION: "Không có quan sát giá đủ chuẩn",
+    INSUFFICIENT_HISTORY: "Lịch sử giá quá ngắn",
+  });
+  const TREND_VI = Object.freeze({
+    ALIGNED_WITH_SMA50_SIDE: "Cùng chiều vị trí so với SMA50",
+    AGAINST_SMA50_SIDE: "Ngược chiều vị trí so với SMA50",
+    NEUTRAL_PATTERN: "Mẫu trung tính",
+    TREND_CONTEXT_UNAVAILABLE: "Chưa đủ dữ liệu xu hướng",
+  });
+  const VOLUME_VI = Object.freeze({
+    VOLUME_ABOVE_20_SESSION_AVERAGE: "KL cao hơn TB 20 kỳ",
+    VOLUME_NEAR_20_SESSION_AVERAGE: "KL gần TB 20 kỳ",
+    VOLUME_BELOW_20_SESSION_AVERAGE: "KL thấp hơn TB 20 kỳ",
+    VOLUME_CONTEXT_UNAVAILABLE: "Chưa có bối cảnh khối lượng",
+  });
+  const CONFIRM_VI = Object.freeze({
+    CONFIRMED_PERIOD_CLOSED: "Đã xác nhận (kỳ đã đóng)",
+    FORMING_PERIOD_OPEN: "Đang hình thành (kỳ chưa đóng)",
+  });
+  const TIMEFRAME_VI = Object.freeze({ "1D": "Ngày", "1W": "Tuần", "1M": "Tháng" });
+  const fmtNum = (value, digits = 2) => (typeof value === "number" && Number.isFinite(value))
+    ? value.toLocaleString("vi-VN", { maximumFractionDigits: digits, minimumFractionDigits: 0 }) : "—";
+  const viOf = (map, code) => (code && map[code]) || code || "—";
+  const tickerHref = (ticker) => `investment-workspace.html?ticker=${encodeURIComponent(ticker)}`;
+
+  function componentIsCurrent(buildInfo, session) {
+    const component = buildInfo && buildInfo.domains && buildInfo.domains.signals &&
+      buildInfo.domains.signals.components && buildInfo.domains.signals.components.candlestick_patterns;
+    return Boolean(component && component.status === "CURRENT" && session && component.source_session === session);
+  }
+
+  function isCurrentCandleSnapshot(snapshot, session) {
+    return Boolean(snapshot && snapshot.contract_version === CANDLE_CONTRACT && session &&
+      snapshot.source_session === session && snapshot.scan_date === session &&
+      Array.isArray(snapshot.patterns) && snapshot.tickers && typeof snapshot.tickers === "object");
+  }
+
+  function invalidationText(inv) {
+    if (!inv || !inv.rule) return "—";
+    if (inv.rule === "CLOSE_BELOW_PATTERN_LOW") return `Vô hiệu nếu đóng cửa dưới ${fmtNum(inv.level)}`;
+    if (inv.rule === "CLOSE_ABOVE_PATTERN_HIGH") return `Vô hiệu nếu đóng cửa trên ${fmtNum(inv.level)}`;
+    if (inv.rule === "CLOSE_OUTSIDE_PATTERN_RANGE") return `Kết thúc khi đóng cửa ngoài ${fmtNum(inv.low)}–${fmtNum(inv.high)}`;
+    return inv.rule;
+  }
+
+  function patternDetailRowHtml(row, registry) {
+    const info = lookupPatternInfo(registry, row.pattern_key) || {};
+    const name = row.pattern_name_vi || info.name_vi || row.pattern_name || row.pattern_key;
+    return `<tr data-pattern-key="${esc(row.pattern_key)}"><td>${esc(viOf(TIMEFRAME_VI, row.timeframe))}</td><td><strong>${esc(name)}</strong><br><small class="pattern-muted">${esc(row.detected_at)}${row.bars_ago ? ` · cách ${esc(row.bars_ago)} kỳ` : ""}</small></td><td><span class="pattern-direction ${esc(row.direction || "")}">${esc(directionLabel(row.direction, true))}</span></td><td>${esc(viOf(CONFIRM_VI, row.confirmation_state))}</td><td>${esc(viOf(TREND_VI, row.trend_alignment))}</td><td>${esc(viOf(VOLUME_VI, row.volume_confirmation))}</td><td>${esc(invalidationText(row.invalidation))}</td></tr>`;
+  }
+
+  function focusTickerHtml(snapshot, ticker) {
+    const info = (snapshot.tickers || {})[ticker];
+    if (!info) return `<div class="candle-focus" data-ticker="${esc(ticker)}"><h6>${esc(ticker)}</h6><p class="pattern-muted">Không thuộc phạm vi quét của phiên này.</p></div>`;
+    if (info.status === "EXCLUDED") {
+      return `<div class="candle-focus" data-ticker="${esc(ticker)}" data-candle-status="EXCLUDED"><h6>${esc(ticker)}</h6><p>${esc(TICKER_STATUS_VI.EXCLUDED)}: ${esc(viOf(EXCLUSION_VI, info.reason_code))}</p></div>`;
+    }
+    const ind = info.indicators || {};
+    const hist = info.history || {};
+    const histText = ["1D", "1W", "1M"].map((tf) => `${viOf(TIMEFRAME_VI, tf)} ${fmtNum((hist[tf] || {}).completed_bars, 0)} kỳ${(hist[tf] || {}).status === "PARTIAL_HISTORY" ? " (lịch sử ngắn)" : ""}`).join(" · ");
+    const side = (v) => (v === "ABOVE" ? "trên" : v === "BELOW" ? "dưới" : "—");
+    const rows = (snapshot.patterns || []).filter((p) => p.ticker === ticker).slice(0, 8)
+      .map((p) => patternDetailRowHtml(p, snapshot.registry || {})).join("");
+    return `<div class="candle-focus" data-ticker="${esc(ticker)}" data-candle-status="${esc(info.status)}">
+      <h6><a class="tactical-link" href="${tickerHref(ticker)}">${esc(ticker)}</a> · ${esc(viOf(TICKER_STATUS_VI, info.status))}</h6>
+      <p class="pattern-muted mb-1">Đóng cửa ${fmtNum(ind.close)} · ${side(ind.close_vs_sma50)} SMA50 (${fmtNum(ind.sma50)}) · ${side(ind.close_vs_sma200)} SMA200 (${fmtNum(ind.sma200)}) · RSI14 ${fmtNum(ind.rsi14, 1)} · MACD hist ${fmtNum(ind.macd_hist, 3)} · Bollinger ${fmtNum(ind.bb_lower)}–${fmtNum(ind.bb_upper)} · ATR14 ${fmtNum(ind.atr14)} · KL/TB20 ${fmtNum(ind.relative_volume_20)}</p>
+      <p class="pattern-muted mb-1">Lịch sử: ${esc(histText)}</p>
+      ${rows ? `<div class="tactical-wrap" tabindex="0"><table class="tactical-table candle-focus-table"><thead><tr><th>Khung</th><th>Mẫu hình</th><th>Hướng</th><th>Trạng thái</th><th>Xu hướng</th><th>Khối lượng</th><th>Điều kiện vô hiệu</th></tr></thead><tbody>${rows}</tbody></table></div>` : `<p class="pattern-muted">Không phát hiện mẫu hình trong cửa sổ quét.</p>`}
+    </div>`;
+  }
+
+  function coverageHtml(snapshot) {
+    const cov = snapshot.coverage || {};
+    const reasons = Object.entries(cov.exclusion_reasons || {}).filter(([, n]) => n > 0)
+      .map(([code, n]) => `<li title="${esc(code)}">${esc(viOf(EXCLUSION_VI, code))}: ${fmtNum(n, 0)}</li>`).join("");
+    return `<p class="pattern-muted mb-1">Phiên ${esc(snapshot.source_session)} · quét ${fmtNum(cov.scanned_count, 0)}/${fmtNum(cov.candidate_count, 0)} mã · nguồn: nến ngày DNSE giữ lại của phiên (giá điều chỉnh hồi tố, chưa phải giá khớp gốc; không tính giá trị giao dịch vì đơn vị giá nguồn chưa được công bố). Mẫu hình nến là bối cảnh nghiên cứu, không phải tín hiệu mua/bán.</p>${reasons ? `<details class="vs-tech-details"><summary>Lý do chưa quét</summary><ul>${reasons}</ul></details>` : ""}`;
+  }
+
+  const currentProjection = Object.freeze({
+    CANDLE_CONTRACT, FOCUS_TICKERS, componentIsCurrent, isCurrentCandleSnapshot,
+    invalidationText, focusTickerHtml, coverageHtml,
+  });
+
   // API dùng chung cho tab Tổng quan (signals.html inline script) — cùng 1 nguồn
   // glossary/tooltip/confidence với bảng chi tiết, không tạo bản dịch/hệ thống thứ 2.
   // Guard typeof window: cho phép require() file này trong Node để unit test các hàm
@@ -617,6 +720,7 @@
       smcNameTrigger,
       colorTokenForPattern,
       colorTokenForSmc,
+      currentProjection,
     };
   }
 
@@ -632,6 +736,7 @@
       tags, rowHtml,
       directionLabel, smcNameTrigger, colorTokenForPattern, colorTokenForSmc,
       PATTERN_COLORS, PATTERN_COLOR_TOKENS, SMC_COLORS,
+      currentProjection,
     };
   }
 }());

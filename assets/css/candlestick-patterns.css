@@ -138,3 +138,9 @@
    "(ABBR)" is the smaller secondary text, matching the candlestick name pattern. */
 .smc-name-vi { font-weight:600; }
 .smc-name-abbr { font-size:.85em; font-weight:400; color:var(--text-muted); margin-left:.2em; }
+
+/* CURRENT_SESSION_CANDLESTICK_PROJECTION_V1 focus cards (Cơ hội + Signals) */
+.candle-focus-grid{display:grid;gap:.75rem}
+.candle-focus{padding:.75rem;border:1px solid var(--border);border-radius:var(--radius-md);min-width:0}
+.candle-focus h6{margin:0 0 .35rem}
+.candle-focus .tactical-wrap{overflow-x:auto}
