@@ -944,9 +944,14 @@
     return escHtml(String(value ?? ""));
   }
 
-  function sourceRecordForMetric(card, metricId) {
+  function sourceRecordForMetric(card, metricId, displayRecord) {
     const features = ((card || {}).fundamental || {}).current_features || {};
     const methods = ((card || {}).valuation || {}).method_diagnostics || {};
+    // stocklookup-engine PR #222: a P/B value taken from the existing P/B_CURRENT_RESEARCH
+    // method carries basis RESEARCH_PROXY; its own method record is the guard source.
+    if (metricId === "pb" && (displayRecord || {}).basis === "RESEARCH_PROXY" && methods["P/B_CURRENT_RESEARCH"]) {
+      return methods["P/B_CURRENT_RESEARCH"];
+    }
     const published = {
       pe_ttm: methods["P/E_TTM"],
       ps_ttm: methods["P/S_TTM"],
@@ -970,6 +975,7 @@
     let valueHtml;
     if (isAvailable) {
       valueHtml = metricValueHtml(metricId, record.value);
+      if (record.basis === "RESEARCH_PROXY") valueHtml += ' <span class="cockpit-note" data-metric-basis="RESEARCH_PROXY">(tham khảo nghiên cứu)</span>';
     } else if (guard.label) {
       const reason = sourceRecord && Array.isArray(sourceRecord.blocker_reason_codes) && sourceRecord.blocker_reason_codes[0]
         ? ` · ${diagnosticReasonLabel(sourceRecord.blocker_reason_codes[0])}`
@@ -996,7 +1002,7 @@
     const displayMetrics = (card || {}).display_metrics;
     const catalog = (options || {}).displayMetricCatalog;
     if (!displayMetrics || !catalog) return "";
-    const rows = metricIds.map((id) => metricSlotHtml(displayMetrics, catalog, id, sourceRecordForMetric(card, id))).join("");
+    const rows = metricIds.map((id) => metricSlotHtml(displayMetrics, catalog, id, sourceRecordForMetric(card, id, displayMetrics[id]))).join("");
     return `<div class="ws-metric-group"><h6>${escHtml(groupLabel)}</h6><div class="ws-metric-grid">${rows}</div></div>`;
   }
 

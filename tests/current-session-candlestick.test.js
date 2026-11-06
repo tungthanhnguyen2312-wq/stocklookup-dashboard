@@ -83,3 +83,18 @@ test("componentIsCurrent requires CURRENT for the exact session", () => {
   assert.equal(cpx.componentIsCurrent({}, SESSION), false);
   assert.equal(cpx.componentIsCurrent(null, SESSION), false);
 });
+
+test("P/B research-proxy value renders with its research label (engine PR #222)", () => {
+  const ws = require(path.join(root, "assets", "js", "investment-workspace.js"));
+  const card = {
+    valuation: { method_diagnostics: {
+      "P/B": { availability_state: "NOT_AVAILABLE", status: "INPUT_BLOCKED", blocker_reason_codes: ["X"], value: null },
+      "P/B_CURRENT_RESEARCH": { availability_state: "AVAILABLE_REFERENCE_ONLY", status: "RESEARCH_USABLE", share_basis: "CURRENT_SHARE_RESEARCH_PROXY", limitations: ["CURRENT_RESEARCH_ONLY"], value: 0.4473 },
+    } },
+    display_metrics: { pb: { display_state: "AVAILABLE", value: 0.4473, basis: "RESEARCH_PROXY" } },
+  };
+  const html = ws.investorMetricsGridHtml(card, { displayMetricCatalog: { pb: { label: "P/B" } } }, ["pb"], "Định giá");
+  assert.match(html, /0,4473x/);
+  assert.match(html, /Proxy nghiên cứu|tham khảo nghiên cứu/);
+  assert.doesNotMatch(html, /Bị chặn/);
+});
