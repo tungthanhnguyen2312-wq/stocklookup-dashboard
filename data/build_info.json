@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "build_id": "2026-11-06-def207f-fec6c50efb",
-  "generated_at": "2026-11-06T20:39:59+07:00",
-  "published_at": "2026-11-06T20:39:59+07:00",
+  "build_id": "2026-11-06-0850561-97d3327699",
+  "generated_at": "2026-11-06T20:49:23+07:00",
+  "published_at": "2026-11-06T20:49:23+07:00",
   "market_session": "2026-11-06",
-  "git_commit": "def207f7393668562f2fa1176b57e7acf5474ccb",
+  "git_commit": "085056164dd46c4d8b8333db0d7c66828c523695",
   "git_commit_semantics": "pre_publication_source_head",
   "row_counts": {
     "screen_snapshot": 1683,
@@ -26,17 +26,17 @@
     "screen_snapshot.csv": {
       "sha256": "77cb9c84be50119e9c626d0720bd274a7fcab1b9763f6514edb901248f15c999",
       "size": 562633,
-      "mtime": "2026-11-06T20:37:49+07:00"
+      "mtime": "2026-11-06T20:47:49+07:00"
     },
     "market_breadth.csv": {
       "sha256": "2957f4d1e7fc038548415ed54323f16414fbeb8990e308389e63577fdb19823e",
       "size": 143,
-      "mtime": "2026-11-06T20:37:49+07:00"
+      "mtime": "2026-11-06T20:47:49+07:00"
     },
     "analysis_latest.json": {
       "sha256": "0e0194f0cad3e3098120b29d3a1a69af762534782a8126b45cacddcf85f67253",
       "size": 8889,
-      "mtime": "2026-11-06T20:37:49+07:00"
+      "mtime": "2026-11-06T20:47:49+07:00"
     },
     "ai_report_latest.md": {
       "sha256": "5ca7bad344ed82d9034c39c96a338a6ae988bb931e0127776782d516109cd0cf",
@@ -49,9 +49,9 @@
       "mtime": "2026-07-11T05:48:59+07:00"
     },
     "data/screener_data.js": {
-      "sha256": "532f5a4a150ba86078e37acff90f63d4ad446440184f1618820a9c1e7d5d7d55",
+      "sha256": "228ae7eca20605975b5c22b5da9761fcf10efcd8e9f762bf1314dfe48254c9f2",
       "size": 1944404,
-      "mtime": "2026-11-06T20:40:12+07:00"
+      "mtime": "2026-11-06T20:49:36+07:00"
     }
   },
   "domains": {
