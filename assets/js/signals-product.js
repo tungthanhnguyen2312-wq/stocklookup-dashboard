@@ -177,12 +177,26 @@
     return `<tr data-pattern-key="${esc(key)}" title="${esc(key)}"><td><a class="tactical-link" href="${href(row.ticker)}">${esc(row.ticker)}</a></td><td><strong class="pattern-name-vi pattern-color-${esc(color)}">${nameMarkup}</strong><br><small class="pattern-muted pattern-name-en">${esc(nameEn)}</small></td><td><span class="pattern-direction ${esc(row.direction || "")}">${esc(direction)}</span></td><td>${smcMarkup || '<span class="pattern-muted">–</span>'}</td></tr>`;
   }
 
-  function renderCompatiblePatterns(snapshot) {
-    const registry = (snapshot && snapshot.registry) || {};
-    const rows = ((snapshot && snapshot.patterns) || []).filter((row) => row && row.timeframe === "1D" && row.bars_ago === 0).slice(0, 80);
-    if (!rows.length) return candleUnavailableHtml(SIDECAR_UNAVAILABLE);
+  // CURRENT_SESSION_CANDLESTICK_PROJECTION_V1: renderer shared with Cơ hội (candlestick-patterns.js).
+  function currentProjection() {
+    const cp = getCandlestickPatterns();
+    return cp && cp.currentProjection ? cp.currentProjection : null;
+  }
+
+  function renderCompatiblePatterns(snapshot, session, extraTicker) {
+    const cpx = currentProjection();
+    if (!cpx || !cpx.isCurrentCandleSnapshot(snapshot, session)) return candleUnavailableHtml("CANDLESTICK_PROJECTION_NOT_CURRENT_CONTRACT");
+    const registry = snapshot.registry || {};
+    const tickers = cpx.FOCUS_TICKERS.slice();
+    if (extraTicker && !tickers.includes(extraTicker)) tickers.unshift(extraTicker);
+    const focus = tickers.map((t) => cpx.focusTickerHtml(snapshot, t)).join("");
+    const rows = snapshot.patterns.filter((row) => row && row.timeframe === "1D" && row.bars_ago === 0 && row.status === "completed")
+      .sort((a, b) => (b.confidence_score || 0) - (a.confidence_score || 0)).slice(0, 80);
     const body = rows.map((row) => renderPatternRowHtml(row, registry)).join("");
-    return `<div class="tactical-wrap" tabindex="0" aria-label="Bảng mẫu hình nến có thể cuộn ngang"><table class="tactical-table"><thead><tr><th>Mã</th><th>Mẫu hình</th><th>Hướng</th><th>SMC</th></tr></thead><tbody>${body}</tbody></table></div>`;
+    const table = rows.length
+      ? `<div class="tactical-wrap" tabindex="0" aria-label="Bảng mẫu hình nến có thể cuộn ngang"><table class="tactical-table"><thead><tr><th>Mã</th><th>Mẫu hình</th><th>Hướng</th><th>SMC</th></tr></thead><tbody>${body}</tbody></table></div>`
+      : `<p class="pattern-muted">Không có mẫu hình nến ngày đã đóng ở phiên này.</p>`;
+    return `${cpx.coverageHtml(snapshot)}<h6 class="mt-3">Mã quan tâm</h6><div class="candle-focus-grid">${focus}</div><h6 class="mt-3">Mẫu hình nến ngày phiên ${esc(session)} (toàn thị trường, tối đa 80)</h6>${table}`;
   }
 
   async function probeSidecar(path) {
@@ -209,7 +223,9 @@
       host.innerHTML = candleUnavailableHtml(availability.code);
       return;
     }
-    host.innerHTML = renderCompatiblePatterns(probed.payload);
+    const queryTicker = typeof window !== "undefined" && window.location
+      ? (new URLSearchParams(window.location.search).get("ticker") || "").toUpperCase() || null : null;
+    host.innerHTML = renderCompatiblePatterns(probed.payload, currentSession, queryTicker);
   }
 
   function bindTabs() {
@@ -300,6 +316,7 @@
     DATA_URL, SCHEMA_VERSION, CONTRACT_VERSION, validateWorkspaceContract, CANDLE_SIDECARS, SIDECAR_UNAVAILABLE, CANDLE_UNAVAILABLE_LABEL,
     actionLabel, records, cohortStates, renderRowHtml, labelOf, actionHtml,
     classifySidecarAvailability, candleUnavailableHtml, patternLabel, renderPatternRowHtml,
+    renderCompatiblePatterns,
   };
   if (typeof window !== "undefined") window.StockLookupSignals = api;
   if (typeof module !== "undefined") module.exports = api;

@@ -1169,6 +1169,7 @@
               <b>Kỹ thuật</b> ${pill((why.tactical_evidence || {}).primary_entry_state, "tactical_state")}<br>
               <div class="mt-2"><b>Nhãn thiết lập</b>${listHtml(card.setup_tags, "setup_tag")}</div>
               <div class="mt-2"><b>Thị trường/ngành</b> ${sectorDiagnosticHtml(marketSector)}</div>
+              <div class="mt-2"><a class="tactical-link" data-candle-link href="investment-workspace.html?view=technical&amp;ticker=${encodeURIComponent(card.ticker || "")}">Mẫu hình nến &amp; chỉ báo kỹ thuật phiên này →</a></div>
             </div></div>
             <div class="card"><div class="card-header"><h6>Xu hướng tín hiệu</h6></div><div class="card-body">
               ${signalVelocityDeepHtml(card)}
@@ -1251,6 +1252,7 @@
       let SELECTED_TICKER = null;
       let WORKSPACE_VIEW = "opportunities";
       let SIGNAL_SNAPSHOT_PROMISE = null;
+      let CURRENT_CANDLE_PROMISE = null;
       const VALID_VIEWS = ["opportunities", "portfolio", "watchlist", "explore", "technical"];
       // INVESTOR_EVIDENCE_INVESTIGATION_WORKBENCH_V1: dossier / compare / journal share the same
       // index fetch and selected-ticker state; investigation-workbench.js renders their panels.
@@ -1410,6 +1412,19 @@
         const targets = document.querySelectorAll(`[data-selected-signal-for="${cssEscapeSelector(ticker)}"], #workspace-technical-selected`);
         const write = (html) => targets.forEach((el) => { el.innerHTML = html; });
         try {
+          // CURRENT_SESSION_CANDLESTICK_PROJECTION_V1: prefer the Producer's current-session
+          // projection, only when build_info attests it CURRENT for this exact session and the
+          // payload names the same session. Otherwise fall through to the legacy path unchanged.
+          const cp = window.VSCandlestickPatterns;
+          const cpx = cp && cp.currentProjection;
+          if (cpx && cpx.componentIsCurrent(window.BUILD_INFO, WORKSPACE.as_of_session)) {
+            if (!CURRENT_CANDLE_PROMISE) CURRENT_CANDLE_PROMISE = cp.loadSnapshot().catch(() => null);
+            const current = await CURRENT_CANDLE_PROMISE;
+            if (cpx.isCurrentCandleSnapshot(current, WORKSPACE.as_of_session)) {
+              write(`<section class="ws-signal-evidence" data-signal-session="${escHtml(current.source_session)}" data-candle-contract="${escHtml(current.contract_version)}">${cpx.focusTickerHtml(current, String(ticker || "").toUpperCase())}${cpx.coverageHtml(current)}</section>`);
+              return;
+            }
+          }
           if (!SIGNAL_SNAPSHOT_PROMISE) SIGNAL_SNAPSHOT_PROMISE = fetch("data/candle_signals.json", { cache: "no-store" }).then((r) => r.ok ? r.json() : null);
           const snapshot = await SIGNAL_SNAPSHOT_PROMISE;
           if (!snapshot || snapshot.scan_date !== WORKSPACE.as_of_session) {

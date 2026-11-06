@@ -283,3 +283,9 @@
 @media (prefers-reduced-motion:reduce) {
   .decision-drawer,.decision-drawer-backdrop { transition:none; }
 }
+
+/* CURRENT_SESSION_CANDLESTICK_PROJECTION_V1 focus card in company drawer / technical view */
+.candle-focus{padding:.75rem;border:1px solid var(--border);border-radius:var(--radius-md);min-width:0}
+.candle-focus h6{margin:0 0 .35rem}
+.candle-focus .tactical-wrap{overflow-x:auto}
+.candle-focus table{font-size:.82rem}
