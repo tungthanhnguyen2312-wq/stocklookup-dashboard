@@ -119,6 +119,7 @@ tools/
 tools/*
 !tools/build_current_decision_cockpit.py
 !tools/build_investment_decision_workspace.py
+!tools/verify_candlestick_release_binding.cjs
 
 # Local-only, identity-bound decision cockpit projections.  These are built from
 # an explicit Daily Research Session Operation; never treat a directory scan as

@@ -183,9 +183,10 @@
     return cp && cp.currentProjection ? cp.currentProjection : null;
   }
 
-  function renderCompatiblePatterns(snapshot, session, extraTicker) {
+  function renderCompatiblePatterns(snapshot, session, extraTicker, component) {
     const cpx = currentProjection();
     if (!cpx || !cpx.isCurrentCandleSnapshot(snapshot, session)) return candleUnavailableHtml("CANDLESTICK_PROJECTION_NOT_CURRENT_CONTRACT");
+    if (!cpx.snapshotBindsComponent(snapshot, component, session)) return candleUnavailableHtml("CANDLESTICK_PROJECTION_IDENTITY_NOT_ATTESTED");
     const registry = snapshot.registry || {};
     const tickers = cpx.FOCUS_TICKERS.slice();
     if (extraTicker && !tickers.includes(extraTicker)) tickers.unshift(extraTicker);
@@ -225,7 +226,7 @@
     }
     const queryTicker = typeof window !== "undefined" && window.location
       ? (new URLSearchParams(window.location.search).get("ticker") || "").toUpperCase() || null : null;
-    host.innerHTML = renderCompatiblePatterns(probed.payload, currentSession, queryTicker);
+    host.innerHTML = renderCompatiblePatterns(probed.payload, currentSession, queryTicker, component);
   }
 
   function bindTabs() {

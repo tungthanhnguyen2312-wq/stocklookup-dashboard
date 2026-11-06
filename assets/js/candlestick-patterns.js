@@ -352,15 +352,24 @@
     }
     // Ưu tiên fetch JSON qua http(s); file:// (fetch luôn bị CORS chặn) hoặc fetch lỗi thì
     // nạp fallback data/candlestick_patterns.js (13,5MB) CHỈ lúc đó, không tải song song.
+    // Codex F3: JSON and JS fallback must carry the projection identity build_info attests.
+    const bound = (data) => {
+      validateSnapshot(data);
+      const declared = component && component.projection_identity;
+      if (declared && data.projection_identity !== declared) {
+        throw new Error("CANDLESTICK_PROJECTION_IDENTITY_MISMATCH");
+      }
+      return data;
+    };
     if (!isFileProtocol()) {
       try {
         const response = await fetch("data/candlestick_patterns.json", { cache: "no-store" });
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
-        return validateSnapshot(await response.json());
+        return bound(await response.json());
       } catch (error) { /* rơi xuống fallback bên dưới */ }
     }
     await loadFallbackScript("data/candlestick_patterns.js", "CANDLESTICK_PATTERNS");
-    if (window.CANDLESTICK_PATTERNS) return validateSnapshot(window.CANDLESTICK_PATTERNS);
+    if (window.CANDLESTICK_PATTERNS) return bound(window.CANDLESTICK_PATTERNS);
     const error = new Error("Không tải được dữ liệu mẫu hình nến (cả HTTP và fallback).");
     console.error("Candlestick snapshot load failed", error);
     throw error;
@@ -646,6 +655,30 @@
     return Boolean(component && component.status === "CURRENT" && session && component.source_session === session);
   }
 
+  function candleComponent(buildInfo) {
+    return (buildInfo && buildInfo.domains && buildInfo.domains.signals &&
+      buildInfo.domains.signals.components && buildInfo.domains.signals.components.candlestick_patterns) || null;
+  }
+
+  // Codex F3: a payload of the same session is not enough. Render only when the payload is the
+  // exact projection build_info attests (projection identity, and source snapshot identity when
+  // declared). Missing metadata on either side fails closed. Shared by JSON and JS fallback,
+  // Tín hiệu and Cơ hội.
+  function snapshotBindsComponent(snapshot, component, session) {
+    if (!component || component.status !== "CURRENT" || !session || component.source_session !== session) return false;
+    if (!isCurrentCandleSnapshot(snapshot, session)) return false;
+    const projection = component.projection_identity;
+    if (typeof projection !== "string" || !projection || snapshot.projection_identity !== projection) return false;
+    const declared = component.source_snapshot_identity;
+    if (declared !== undefined && declared !== null) {
+      const actual = snapshot.source && snapshot.source.snapshot_identity;
+      if (typeof declared !== "string" || !declared || actual !== declared) return false;
+    }
+    if (typeof component.scanned_count === "number" &&
+      !(snapshot.coverage && snapshot.coverage.scanned_count === component.scanned_count)) return false;
+    return true;
+  }
+
   function isCurrentCandleSnapshot(snapshot, session) {
     return Boolean(snapshot && snapshot.contract_version === CANDLE_CONTRACT && session &&
       snapshot.source_session === session && snapshot.scan_date === session &&
@@ -694,7 +727,7 @@
   }
 
   const currentProjection = Object.freeze({
-    CANDLE_CONTRACT, FOCUS_TICKERS, componentIsCurrent, isCurrentCandleSnapshot,
+    CANDLE_CONTRACT, FOCUS_TICKERS, componentIsCurrent, isCurrentCandleSnapshot, snapshotBindsComponent, candleComponent,
     invalidationText, focusTickerHtml, coverageHtml,
   });
 
