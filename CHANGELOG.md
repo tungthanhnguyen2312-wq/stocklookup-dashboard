@@ -4,6 +4,13 @@ Lịch sử phát triển chính thức của dự án. Chi tiết riêng về g
 
 ---
 
+## [1.4.1] — 2026-11-07 · Ràng buộc định danh mẫu nến + bằng chứng byte công khai
+
+- Tín hiệu, Cơ hội và loader JSON/JS chỉ hiển thị mẫu nến khi projection identity, snapshot identity và số mã quét khớp đúng component CURRENT trong build_info (Codex F3); lệch → trạng thái không khả dụng.
+- Deploy Pages kiểm tra build_info.js ↔ build_info.json, cặp candlestick JSON ↔ JS và identity trước khi xác nhận byte công khai; thêm build_info.js, cặp candlestick, signals.html và renderer vào danh sách bằng chứng (Codex F4).
+
+---
+
 ## [1.4.0] — 2026-07-14 · Candlestick patterns 1D/1W/1M
 
 - Thêm engine pandas/NumPy có registry 31 mẫu, context xu hướng, tolerance ATR/% giá, scan lịch sử không look-ahead và resample tuần/tháng từ OHLCV ngày.
