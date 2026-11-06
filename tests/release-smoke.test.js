@@ -408,3 +408,44 @@ test("Deploy Pages workflow verifies cache-busted public bytes before SUCCESS", 
   assert.equal(exhaustedMatch, false);
   assert.equal(exhausted, maxAttempts);
 });
+
+// Codex F4: public-byte proof covers the candlestick sidecar pair, build_info.js and renderers,
+// behind a local binding gate that refuses a mismatched release.
+test("deploy-pages proves candlestick JSON/JS, build_info.js and renderer bytes behind a binding gate", () => {
+  const yamlText = fs.readFileSync(DEPLOY_WORKFLOW, "utf8").replace(/\r\n/g, "\n");
+  assert.match(yamlText, /node tools\/verify_candlestick_release_binding\.cjs \. --proof-files/);
+  assert.match(yamlText, /candlestick release binding refused[\s\S]*exit 1/);
+  const binding = require(path.join(ROOT, "tools", "verify_candlestick_release_binding.cjs"));
+  const os = require("node:os");
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "candle-bind-"));
+  fs.mkdirSync(path.join(tmp, "data"));
+  const fixture = JSON.parse(fs.readFileSync(path.join(ROOT, "tests", "fixtures", "candlestick-current-20261105", "candlestick_patterns.json"), "utf8"));
+  const component = { status: "CURRENT", source_session: "2026-11-05", projection_identity: fixture.projection_identity,
+    source_snapshot_identity: fixture.source.snapshot_identity, scanned_count: fixture.coverage.scanned_count };
+  const write = (bi, payload, js) => {
+    fs.writeFileSync(path.join(tmp, "data", "build_info.json"), JSON.stringify(bi));
+    fs.writeFileSync(path.join(tmp, "data", "build_info.js"), `window.STOCK_LOOKUP_BUILD_INFO = ${JSON.stringify(bi)};\nwindow.BUILD_INFO = window.STOCK_LOOKUP_BUILD_INFO;\n`);
+    fs.writeFileSync(path.join(tmp, "data", "candlestick_patterns.json"), JSON.stringify(payload));
+    fs.writeFileSync(path.join(tmp, "data", "candlestick_patterns.js"), `window.CANDLESTICK_PATTERNS = ${JSON.stringify(js)};\n`);
+  };
+  const bi = { market_session: "2026-11-05", domains: { signals: { components: { candlestick_patterns: component } } } };
+  write(bi, fixture, fixture);
+  const ok = binding.verify(tmp);
+  assert.equal(ok.status, "BOUND");
+  for (const f of ["data/build_info.js", "data/candlestick_patterns.json", "data/candlestick_patterns.js", "signals.html"]) {
+    assert.ok(ok.proofFiles.includes(f), f);
+  }
+  const other = JSON.parse(JSON.stringify(fixture)); other.projection_identity = "x";
+  write(bi, other, other);
+  assert.deepEqual(binding.verify(tmp).errors, ["PROJECTION_IDENTITY_MISMATCH"]);
+  const drift = JSON.parse(JSON.stringify(fixture)); drift.patterns = [];
+  write(bi, fixture, drift);
+  assert.ok(binding.verify(tmp).errors.includes("CANDLESTICK_JS_JSON_PARITY_FAILED"));
+  write(bi, fixture, fixture);
+  fs.writeFileSync(path.join(tmp, "data", "build_info.js"), "window.STOCK_LOOKUP_BUILD_INFO = {};\n");
+  assert.ok(binding.verify(tmp).errors.includes("BUILD_INFO_JS_JSON_PARITY_FAILED"));
+  const stale = { market_session: "2026-11-06", domains: { signals: { components: { candlestick_patterns: Object.assign({}, component, { status: "STALE" }) } } } };
+  write(stale, fixture, fixture);
+  assert.equal(binding.verify(tmp).status, "NOT_CLAIMED");
+  fs.rmSync(tmp, { recursive: true, force: true });
+});

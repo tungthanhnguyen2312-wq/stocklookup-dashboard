@@ -1426,7 +1426,13 @@
           if (cpx && cpx.componentIsCurrent(window.BUILD_INFO, WORKSPACE.as_of_session)) {
             if (!CURRENT_CANDLE_PROMISE) CURRENT_CANDLE_PROMISE = cp.loadSnapshot().catch(() => null);
             const current = await CURRENT_CANDLE_PROMISE;
-            if (cpx.isCurrentCandleSnapshot(current, WORKSPACE.as_of_session)) {
+            if (!cpx.snapshotBindsComponent(current, cpx.candleComponent(window.BUILD_INFO), WORKSPACE.as_of_session)) {
+              // Attested CURRENT but the payload is another projection (mixed release): unavailable,
+              // never the legacy path and never the mismatched payload.
+              write('<p class="ws-signal-unavailable" data-candle-availability="unavailable" data-reason="CANDLESTICK_PROJECTION_IDENTITY_NOT_ATTESTED">Dữ liệu mẫu hình nến chưa khớp bản phát hành đã xác thực; tạm không hiển thị.</p>');
+              return;
+            }
+            {
               write(`<section class="ws-signal-evidence" data-signal-session="${escHtml(current.source_session)}" data-candle-contract="${escHtml(current.contract_version)}">${cpx.focusTickerHtml(current, String(ticker || "").toUpperCase())}${cpx.coverageHtml(current)}</section>`);
               return;
             }

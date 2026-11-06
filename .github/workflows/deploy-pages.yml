@@ -264,6 +264,18 @@ jobs:
               FILES+=("$f")
             fi
           done
+          # Codex F4: build_info.js always; when the candlestick component is CURRENT, its JSON/JS
+          # pair (canonical parity + attested projection/snapshot identity) and the renderer entry
+          # points. A local binding mismatch refuses before any public claim.
+          if ! CANDLE_PROOF="$(node tools/verify_candlestick_release_binding.cjs . --proof-files)"; then
+            echo "ERROR: candlestick release binding refused"
+            exit 1
+          fi
+          while IFS= read -r f; do
+            if [ -n "$f" ]; then
+              FILES+=("$f")
+            fi
+          done <<< "$CANDLE_PROOF"
           # Detail shard filenames are dynamic -- verify whichever ones this publish produced,
           # not a fixed guess, against the live served bytes below.
           if [ -d "data/workspace_detail" ]; then

@@ -13,11 +13,17 @@ const cpx = require(path.join(root, "assets", "js", "candlestick-patterns.js")).
 const fixture = JSON.parse(fs.readFileSync(
   path.join(__dirname, "fixtures", "candlestick-current-20261105", "candlestick_patterns.json"), "utf8"));
 const SESSION = "2026-11-05";
+const ATTESTED = Object.freeze({
+  status: "CURRENT", source_session: SESSION, freshness: "EXACT_SESSION",
+  projection_identity: fixture.projection_identity,
+  source_snapshot_identity: fixture.source.snapshot_identity,
+  scanned_count: fixture.coverage.scanned_count, reason_codes: [],
+});
 const visible = (html) => html.replace(/<details[\s\S]*?<\/details>/g, "").replace(/<[^>]+>/g, " ");
 
 test("current-session projection renders for the attested session with the five focus tickers", () => {
   assert.equal(cpx.isCurrentCandleSnapshot(fixture, SESSION), true);
-  const html = signals.renderCompatiblePatterns(fixture, SESSION, null);
+  const html = signals.renderCompatiblePatterns(fixture, SESSION, null, ATTESTED);
   for (const ticker of ["HPG", "PAN", "SSI", "EVF", "POW"]) {
     assert.match(html, new RegExp(`data-ticker="${ticker}"`));
   }
@@ -39,17 +45,17 @@ test("excluded ticker shows its reason, not an empty or zero state", () => {
 });
 
 test("a ticker requested by query string is shown first", () => {
-  const html = signals.renderCompatiblePatterns(fixture, SESSION, "AAA");
+  const html = signals.renderCompatiblePatterns(fixture, SESSION, "AAA", ATTESTED);
   assert.ok(html.indexOf('data-ticker="AAA"') < html.indexOf('data-ticker="HPG"'));
 });
 
 test("stale or legacy payloads never render as current", () => {
   assert.equal(cpx.isCurrentCandleSnapshot(fixture, "2026-11-06"), false);
-  const stale = signals.renderCompatiblePatterns(fixture, "2026-11-06", null);
+  const stale = signals.renderCompatiblePatterns(fixture, "2026-11-06", null, ATTESTED);
   assert.match(stale, /data-candle-availability="unavailable"/);
   const legacy = { schema_version: 1, scan_date: SESSION, patterns: [], registry: {} };
   assert.equal(cpx.isCurrentCandleSnapshot(legacy, SESSION), false);
-  assert.match(signals.renderCompatiblePatterns(legacy, SESSION, null), /data-candle-availability="unavailable"/);
+  assert.match(signals.renderCompatiblePatterns(legacy, SESSION, null, ATTESTED), /data-candle-availability="unavailable"/);
 });
 
 test("published component gate still decides before the payload is read", () => {
@@ -106,4 +112,78 @@ test("a week/month closed on the session is labelled confirmed, never as forming
   assert.match(html, /data-candle-status="CONFIRMED_HIGHER_TIMEFRAME_ON_SESSION"/);
   assert.match(visible(html), /mẫu hình tuần\/tháng đã đóng kỳ ở phiên này/);
   assert.doesNotMatch(visible(html), /Chỉ có mẫu hình tuần\/tháng đang hình thành/);
+});
+
+// Codex F3 regressions: identity binding, not just session equality.
+const unavailable = /data-candle-availability="unavailable"/;
+
+test("same_session_different_projection_identity_is_unavailable", () => {
+  const other = Object.assign({}, ATTESTED, { projection_identity: "current_session_candlestick_projection/v1:" + "0".repeat(64) });
+  assert.equal(cpx.snapshotBindsComponent(fixture, other, SESSION), false);
+  const html = signals.renderCompatiblePatterns(fixture, SESSION, null, other);
+  assert.match(html, unavailable);
+  assert.match(html, /CANDLESTICK_PROJECTION_IDENTITY_NOT_ATTESTED/);
+  assert.doesNotMatch(html, /data-ticker="HPG"/);
+});
+
+test("right projection but wrong source snapshot is unavailable", () => {
+  const other = Object.assign({}, ATTESTED, { source_snapshot_identity: "p3f9_exact_session_snapshot:" + "f".repeat(64) });
+  assert.equal(cpx.snapshotBindsComponent(fixture, other, SESSION), false);
+  assert.match(signals.renderCompatiblePatterns(fixture, SESSION, null, other), unavailable);
+});
+
+test("stale component never renders as CURRENT even with matching identity", () => {
+  const stale = Object.assign({}, ATTESTED, { status: "STALE" });
+  assert.equal(cpx.snapshotBindsComponent(fixture, stale, SESSION), false);
+  assert.match(signals.renderCompatiblePatterns(fixture, SESSION, null, stale), unavailable);
+});
+
+test("valid exact match renders", () => {
+  assert.equal(cpx.snapshotBindsComponent(fixture, ATTESTED, SESSION), true);
+  assert.doesNotMatch(signals.renderCompatiblePatterns(fixture, SESSION, null, ATTESTED), unavailable);
+});
+
+test("missing_identity_is_unavailable on either side and does not throw", () => {
+  const noComponentId = Object.assign({}, ATTESTED); delete noComponentId.projection_identity;
+  assert.equal(cpx.snapshotBindsComponent(fixture, noComponentId, SESSION), false);
+  assert.equal(cpx.snapshotBindsComponent(fixture, null, SESSION), false);
+  assert.match(signals.renderCompatiblePatterns(fixture, SESSION, null, undefined), unavailable);
+  const noPayloadId = JSON.parse(JSON.stringify(fixture)); delete noPayloadId.projection_identity;
+  assert.equal(cpx.snapshotBindsComponent(noPayloadId, ATTESTED, SESSION), false);
+  const scanned = Object.assign({}, ATTESTED, { scanned_count: ATTESTED.scanned_count + 1 });
+  assert.equal(cpx.snapshotBindsComponent(fixture, scanned, SESSION), false);
+});
+
+test("fallback_payload_must_match_attested_identity through the real loader", async () => {
+  const saved = { window: global.window, document: global.document, fetch: global.fetch };
+  const mod = path.join(root, "assets", "js", "candlestick-patterns.js");
+  try {
+    const mismatched = JSON.parse(JSON.stringify(fixture));
+    mismatched.projection_identity = "current_session_candlestick_projection/v1:" + "1".repeat(64);
+    // readyState "loading": init() waits for DOMContentLoaded, which never fires here.
+    global.document = { readyState: "loading", head: { appendChild(node) { global.window.CANDLESTICK_PATTERNS = mismatched; node.onload && node.onload(); } },
+      createElement() { return {}; }, getElementById() { return null; }, querySelector() { return null; }, querySelectorAll() { return []; },
+      addEventListener() {} };
+    global.window = { location: { protocol: "https:", search: "" }, BUILD_INFO: { domains: { signals: { components: { candlestick_patterns: ATTESTED } } } } };
+    global.fetch = async () => ({ ok: true, json: async () => mismatched });
+    delete require.cache[require.resolve(mod)];
+    require(mod);
+    const api = global.window.VSCandlestickPatterns;
+    assert.ok(api && api.loadSnapshot);
+    await assert.rejects(() => api.loadSnapshot());
+    global.fetch = async () => ({ ok: true, json: async () => fixture });
+    const ok = await api.loadSnapshot();
+    assert.equal(ok.projection_identity, ATTESTED.projection_identity);
+  } finally {
+    Object.assign(global, saved);
+    delete require.cache[require.resolve(mod)];
+  }
+});
+
+test("Cơ hội refuses a mismatched projection instead of falling back to the legacy file", () => {
+  const source = fs.readFileSync(path.join(root, "assets", "js", "investment-workspace.js"), "utf8");
+  const bind = source.indexOf("cpx.snapshotBindsComponent(current, cpx.candleComponent(window.BUILD_INFO), WORKSPACE.as_of_session)");
+  const legacy = source.indexOf('fetch("data/candle_signals.json"');
+  assert.ok(bind > 0 && legacy > bind);
+  assert.match(source.slice(bind, legacy), /CANDLESTICK_PROJECTION_IDENTITY_NOT_ATTESTED[\s\S]*?return;/);
 });
