@@ -605,6 +605,7 @@
   const FOCUS_TICKERS = Object.freeze(["HPG", "PAN", "SSI", "EVF", "POW"]);
   const TICKER_STATUS_VI = Object.freeze({
     CONFIRMED_1D_PATTERN_ON_SESSION: "Có mẫu hình nến ngày đã đóng phiên",
+    CONFIRMED_HIGHER_TIMEFRAME_ON_SESSION: "Có mẫu hình tuần/tháng đã đóng kỳ ở phiên này",
     FORMING_HIGHER_TIMEFRAME_ONLY: "Chỉ có mẫu hình tuần/tháng đang hình thành",
     RECENT_PATTERN_ONLY: "Không có mẫu ở phiên này; có mẫu gần đây",
     NO_PATTERN_DETECTED: "Không phát hiện mẫu hình",

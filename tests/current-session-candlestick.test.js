@@ -98,3 +98,12 @@ test("P/B research-proxy value renders with its research label (engine PR #222)"
   assert.match(html, /Proxy nghiên cứu|tham khảo nghiên cứu/);
   assert.doesNotMatch(html, /Bị chặn/);
 });
+
+test("a week/month closed on the session is labelled confirmed, never as forming (Friday 2026-11-06)", () => {
+  const friday = JSON.parse(JSON.stringify(fixture));
+  friday.tickers.SSI = Object.assign({}, friday.tickers.SSI, { status: "CONFIRMED_HIGHER_TIMEFRAME_ON_SESSION" });
+  const html = cpx.focusTickerHtml(friday, "SSI");
+  assert.match(html, /data-candle-status="CONFIRMED_HIGHER_TIMEFRAME_ON_SESSION"/);
+  assert.match(visible(html), /mẫu hình tuần\/tháng đã đóng kỳ ở phiên này/);
+  assert.doesNotMatch(visible(html), /Chỉ có mẫu hình tuần\/tháng đang hình thành/);
+});
