@@ -71,8 +71,54 @@
   }
 
 
+  function q3IndependentObservationHtml(record) {
+    const observations = record.observations;
+    if (record.research_kind !== "COMPARATIVE_INCOME_AND_OPERATING_CASH_FLOW"
+        || !Array.isArray(observations) || !observations.length
+        || record.official_fact_admitted !== false || record.valuation_use !== "CLOSED"
+        || record.session_binding !== "NOT_A_SEALED_SESSION_FACT"
+        || record.common_shareholder_pb !== "UNAVAILABLE" || record.book_sensitivity) return "";
+    const label = {
+      revenue: "Doanh thu thuần",
+      net_income: "Lợi nhuận sau thuế",
+      attributable_net_income: "Lợi nhuận sau thuế của cổ đông công ty mẹ",
+      operating_cash_flow: "Dòng tiền kinh doanh",
+    };
+    const periodLabel = {
+      "2026-Q3": "quý 3/2026",
+      "2025-Q3": "quý 3/2025",
+      "2026-9M": "9 tháng 2026 (không phải quý riêng)",
+      "2025-9M": "9 tháng 2025 (không phải quý riêng)",
+    };
+    const number = (value) => value.toLocaleString("vi-VN", { maximumFractionDigits: 4 });
+    const lines = observations.filter((row) => Object.hasOwn(label, row.metric)
+      && Object.hasOwn(periodLabel, row.period) && Number.isSafeInteger(row.value)
+      && row.unit === "VND" && Number.isInteger(row.pdf_page)).map((row) => (
+      `<li>${label[row.metric]} · ${periodLabel[row.period]} · ${number(row.value)} đồng (trang PDF ${row.pdf_page})</li>`
+    ));
+    if (lines.length !== observations.length) return "";
+    const rejected = record.rejected_income_columns || {};
+    const currentRejected = rejected["2026-Q3"] && rejected["2026-9M"];
+    if (!currentRejected) return "";
+    const url = String(record.source_url || "");
+    const source = /^https:\/\/staticfile\.hsx\.vn\/Uploads\/UploadDocuments\/[0-9]+\/[A-Za-z0-9%._-]+\.pdf$/.test(url)
+      ? `<a href="${escHtml(url)}">PDF công bố qua HOSE</a>` : "PDF công bố qua HOSE";
+    const yoy = Number.isFinite(record.operating_cash_flow_yoy_pct)
+      ? ` Dòng tiền kinh doanh 9 tháng thay đổi ${number(record.operating_cash_flow_yoy_pct)}% so với cùng kỳ.` : "";
+    return `<div class="ws-q3-successor cockpit-note mt-1" data-official-fact="false" data-session-binding="NOT_A_SEALED_SESSION_FACT" data-valuation-use="CLOSED" data-research-kind="COMPARATIVE_INCOME_AND_OPERATING_CASH_FLOW">
+      <b>BCTC hợp nhất Q3/2026 · Nghiên cứu sau Daily</b>
+      <p>Cột kết quả quý 3/2026 lệch 1 đồng giữa lợi nhuận sau thuế và phần chia cổ đông. Cột 9 tháng 2026 lệch 1 đồng ở cầu thuế. Cả hai cột hiện hành bị loại và không được sửa số để ép khớp.
+        Số so sánh 2025 và dòng tiền kinh doanh 9 tháng đối chiếu trên trang riêng, không lấy từ cột bị loại.${yoy}
+        Chưa soát xét. Không phải fact chính thức. Không tính P/B, nợ vay thuần hay EPS chuẩn hóa.</p>
+      <details><summary>Đối chiếu số liệu và nguồn</summary><ul>${lines.join("")}</ul>
+        ${source} · công bố ${escHtml(record.issuer_disclosure_date || "")} · hợp nhất · chưa soát xét · SHA-256 ${escHtml(record.sha256 || "")}.
+      </details>
+    </div>`;
+  }
+
   function q3SuccessorHtml(record) {
     if (!record) return "";
+    if (record.research_kind === "COMPARATIVE_INCOME_AND_OPERATING_CASH_FLOW") return q3IndependentObservationHtml(record);
     if (Array.isArray(record.observations)) return q3ObservationHtml(record);
     if (Array.isArray(record.shadow_rows) && record.official_fact_admitted === false) {
       const lines = record.shadow_rows.map((row) => {

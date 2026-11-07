@@ -1997,14 +1997,20 @@ ${arr(d.dossiers).map(dossierSection).join("")}${cmpSection}${notesSection}
 
   function appendComparisonResearch(out, key, doc, tickers) {
     const research = window.VSQ3Research;
-    if (!research || !tickers.includes("PAN")) return;
+    const wanted = [
+      ["PAN", "data-comparison-pan-research", "PAN · Ghi chú định giá nghiên cứu"],
+      ["POW", "data-comparison-pow-research", "POW · Dòng tiền và số so sánh"],
+    ].filter(([ticker]) => tickers.includes(ticker));
+    if (!research || !wanted.length) return;
     const token = UI.compareToken;
     research.load().then((q3Successor) => {
       if (UI.compareToken !== token || UI.comparisonKey !== key || !currentView("compare", doc)) return;
-      const record = research.q3SuccessorFor({ q3Successor }, "PAN");
-      const html = record && Array.isArray(record.observations) ? research.q3SuccessorHtml(record) : "";
-      if (html && !out.querySelector("[data-comparison-pan-research]")) {
-        out.insertAdjacentHTML("beforeend", `<section data-comparison-pan-research><h4>PAN · Ghi chú định giá nghiên cứu</h4>${html}</section>`);
+      for (const [ticker, attr, title] of wanted) {
+        if (out.querySelector(`[${attr}]`)) continue;
+        const record = research.q3SuccessorFor({ q3Successor }, ticker);
+        const html = record && (Array.isArray(record.observations) || Array.isArray(record.shadow_rows))
+          ? research.q3SuccessorHtml(record) : "";
+        if (html) out.insertAdjacentHTML("beforeend", `<section ${attr}><h4>${title}</h4>${html}</section>`);
       }
     });
   }
