@@ -2,14 +2,156 @@
   "contract_version": "q3_2026_successor_research/v1",
   "issuers": {
     "EVF": {
-      "contract_version": "q3_2026_successor_research/v1",
-      "exact_statement_url": null,
-      "official_fact_admitted": false,
-      "reason_codes": [
-        "EXACT_Q3_DISCLOSURE_LOCATED_ISSUER_HOST_NOT_ADMITTED"
+      "audit_or_review_status": "reviewed",
+      "commercial_bank": false,
+      "common_shareholder_pb": "UNAVAILABLE",
+      "credit_loss_provision_yoy_pct": -32.41,
+      "disclosure_url": "https://www.evnfc.vn/index.php/tin-co-dong/reviewed-financial-statements-q3-2026",
+      "entity_class": "finance_company",
+      "evidence_layer": "VISUAL_READ_NOT_BYTE_NATIVE",
+      "existing_consumer_usable": false,
+      "income_form": "B03a/TCTD",
+      "industrial_ratios": "NOT_APPLICABLE",
+      "issuer_disclosure_date": "2026-10-26",
+      "net_income_yoy_pct": 13.46,
+      "normalized_eps": "NOT_COMPUTED",
+      "observations": [
+        {
+          "metric": "interest_income",
+          "pdf_page": 11,
+          "period": "2026-9M",
+          "unit": "MILLION_VND",
+          "value": 5839452
+        },
+        {
+          "metric": "interest_expense",
+          "pdf_page": 11,
+          "period": "2026-9M",
+          "unit": "MILLION_VND",
+          "value": 4126903
+        },
+        {
+          "metric": "net_interest_income",
+          "pdf_page": 11,
+          "period": "2026-9M",
+          "unit": "MILLION_VND",
+          "value": 1712549
+        },
+        {
+          "metric": "pre_provision_profit",
+          "pdf_page": 11,
+          "period": "2026-9M",
+          "unit": "MILLION_VND",
+          "value": 1469579
+        },
+        {
+          "metric": "credit_loss_provision",
+          "pdf_page": 11,
+          "period": "2026-9M",
+          "unit": "MILLION_VND",
+          "value": 433809
+        },
+        {
+          "metric": "pretax_profit",
+          "pdf_page": 11,
+          "period": "2026-9M",
+          "unit": "MILLION_VND",
+          "value": 1035770
+        },
+        {
+          "metric": "tax",
+          "pdf_page": 11,
+          "period": "2026-9M",
+          "unit": "MILLION_VND",
+          "value": 200431
+        },
+        {
+          "metric": "net_income",
+          "pdf_page": 11,
+          "period": "2026-9M",
+          "unit": "MILLION_VND",
+          "value": 835339
+        },
+        {
+          "metric": "interest_income",
+          "pdf_page": 11,
+          "period": "2025-9M",
+          "unit": "MILLION_VND",
+          "value": 4026565
+        },
+        {
+          "metric": "interest_expense",
+          "pdf_page": 11,
+          "period": "2025-9M",
+          "unit": "MILLION_VND",
+          "value": 2593169
+        },
+        {
+          "metric": "net_interest_income",
+          "pdf_page": 11,
+          "period": "2025-9M",
+          "unit": "MILLION_VND",
+          "value": 1433396
+        },
+        {
+          "metric": "pre_provision_profit",
+          "pdf_page": 11,
+          "period": "2025-9M",
+          "unit": "MILLION_VND",
+          "value": 1546421
+        },
+        {
+          "metric": "credit_loss_provision",
+          "pdf_page": 11,
+          "period": "2025-9M",
+          "unit": "MILLION_VND",
+          "value": 641834
+        },
+        {
+          "metric": "pretax_profit",
+          "pdf_page": 11,
+          "period": "2025-9M",
+          "unit": "MILLION_VND",
+          "value": 904587
+        },
+        {
+          "metric": "tax",
+          "pdf_page": 11,
+          "period": "2025-9M",
+          "unit": "MILLION_VND",
+          "value": 168374
+        },
+        {
+          "metric": "net_income",
+          "pdf_page": 11,
+          "period": "2025-9M",
+          "unit": "MILLION_VND",
+          "value": 736213
+        }
       ],
-      "status": "BLOCKED",
+      "official_fact_admitted": false,
+      "official_store_adoption": "REFUSED",
+      "period_end": "2026-09-30",
+      "period_start_printed": "2026-01-01",
+      "pre_provision_profit_yoy_pct": -4.97,
+      "publication_precision": "DATE_ONLY",
+      "rejected_income_columns": {},
+      "research_kind": "REVIEWED_NINE_MONTH_FINANCE_COMPANY",
+      "review_pdf_page": 6,
+      "review_report_number": "2.0010/27/TC-AC",
+      "review_scope": "POSITION_AT_2026-09-30_AND_NINE_MONTHS_ENDED_THAT_DATE",
+      "review_standard": "VSA_2410",
+      "reviewer": "A&C Auditing and Consulting Co., Ltd.",
+      "session_binding": "NOT_A_SEALED_SESSION_FACT",
+      "sha256": "ace221dd37e1fd6e3036d6d5df431a43902246903b96a88b6a626dfcdf4b8475",
+      "source_role": "ISSUER_SITE_DISCLOSURE_PDF_HOST_NOT_AN_APPROVED_OFFICIAL_ROUTE",
+      "source_url": "https://www.evnfc.vn/storage/app/media/anh_ban_lanh_dao/20261026%20-%20EVF%20-%20Bao%20cao%20tai%20chinh%20Q3%202026%20soat%20xet%201.pdf",
+      "standalone_quarter_column": false,
+      "statement_scope": "separate",
+      "statement_scope_basis": "COVER_AND_INCOME_TITLE_DO_NOT_SAY_CONSOLIDATED",
+      "statement_signed_date": "2026-10-22",
       "ticker": "EVF",
+      "unit": "MILLION_VND",
       "valuation_use": "CLOSED"
     },
     "HPG": {
@@ -595,7 +737,7 @@
     }
   },
   "knowledge_available_at": "2026-11-07T10:51:54+07:00",
-  "observation_count": 25,
+  "observation_count": 41,
   "official_fact_admitted_count": 0,
   "session_binding": "NOT_A_SEALED_SESSION_FACT",
   "shadow_row_count": 6

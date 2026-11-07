@@ -116,8 +116,56 @@
     </div>`;
   }
 
+  function q3FinanceCompanyHtml(record) {
+    const observations = record.observations;
+    if (record.research_kind !== "REVIEWED_NINE_MONTH_FINANCE_COMPANY"
+        || record.entity_class !== "finance_company" || record.commercial_bank !== false
+        || record.statement_scope !== "separate" || record.audit_or_review_status !== "reviewed"
+        || record.standalone_quarter_column !== false || record.unit !== "MILLION_VND"
+        || !Array.isArray(observations) || observations.length !== 16
+        || record.official_fact_admitted !== false || record.valuation_use !== "CLOSED"
+        || record.session_binding !== "NOT_A_SEALED_SESSION_FACT"
+        || record.common_shareholder_pb !== "UNAVAILABLE") return "";
+    const label = {
+      interest_income: "Thu nhập lãi",
+      interest_expense: "Chi phí lãi",
+      net_interest_income: "Thu nhập lãi thuần",
+      pre_provision_profit: "Lợi nhuận trước dự phòng rủi ro tín dụng",
+      credit_loss_provision: "Chi phí dự phòng rủi ro tín dụng",
+      pretax_profit: "Lợi nhuận trước thuế",
+      tax: "Chi phí thuế thu nhập doanh nghiệp",
+      net_income: "Lợi nhuận sau thuế",
+    };
+    const periodLabel = {
+      "2026-9M": "9 tháng 2026 (không phải quý riêng)",
+      "2025-9M": "9 tháng 2025 (không phải quý riêng)",
+    };
+    const number = (value) => value.toLocaleString("vi-VN", { maximumFractionDigits: 4 });
+    const lines = observations.filter((row) => Object.hasOwn(label, row.metric)
+      && Object.hasOwn(periodLabel, row.period) && Number.isSafeInteger(row.value)
+      && row.unit === "MILLION_VND" && row.pdf_page === 11).map((row) => (
+      `<li>${label[row.metric]} · ${periodLabel[row.period]} · ${number(row.value)} triệu đồng</li>`
+    ));
+    if (lines.length !== 16) return "";
+    if (![record.net_income_yoy_pct, record.pre_provision_profit_yoy_pct, record.credit_loss_provision_yoy_pct]
+      .every(Number.isFinite)) return "";
+    const url = String(record.source_url || "");
+    const source = /^https:\/\/www\.evnfc\.vn\/storage\/app\/media\/[A-Za-z0-9%._/-]+\.pdf$/.test(url)
+      ? `<a href="${escHtml(url)}">PDF trên trang nhà phát hành</a>` : "PDF trên trang nhà phát hành";
+    return `<div class="ws-q3-successor cockpit-note mt-1" data-official-fact="false" data-session-binding="NOT_A_SEALED_SESSION_FACT" data-valuation-use="CLOSED" data-research-kind="REVIEWED_NINE_MONTH_FINANCE_COMPANY" data-entity-class="finance_company">
+      <b>BCTC giữa niên độ 9 tháng · công ty tài chính · đã soát xét</b>
+      <p>Phạm vi soát xét là bảng cân đối tại 30/09/2026 và kỳ từ 01/01/2026 đến 30/09/2026. Không có cột quý III riêng. Đơn vị triệu đồng.
+        Lợi nhuận sau thuế ${number(record.net_income_yoy_pct)}%, trong khi lợi nhuận trước dự phòng ${number(record.pre_provision_profit_yoy_pct)}% và chi phí dự phòng rủi ro tín dụng ${number(record.credit_loss_provision_yoy_pct)}% so với cùng kỳ.
+        Đây là công ty tài chính, không phải ngân hàng thương mại. Không tính P/B, NIM dùng để định giá, EV/EBITDA hay EPS chuẩn hóa. Host IR chưa được admit thành fact chính thức.</p>
+      <details><summary>Đối chiếu số liệu và nguồn</summary><ul>${lines.join("")}</ul>
+        ${source} · công bố ${escHtml(record.issuer_disclosure_date || "")} · soát xét ${escHtml(record.review_standard || "")} · SHA-256 ${escHtml(record.sha256 || "")}.
+      </details>
+    </div>`;
+  }
+
   function q3SuccessorHtml(record) {
     if (!record) return "";
+    if (record.research_kind === "REVIEWED_NINE_MONTH_FINANCE_COMPANY") return q3FinanceCompanyHtml(record);
     if (record.research_kind === "COMPARATIVE_INCOME_AND_OPERATING_CASH_FLOW") return q3IndependentObservationHtml(record);
     if (Array.isArray(record.observations)) return q3ObservationHtml(record);
     if (Array.isArray(record.shadow_rows) && record.official_fact_admitted === false) {

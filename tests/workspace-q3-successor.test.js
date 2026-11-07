@@ -77,6 +77,22 @@ test("POW shows reconciled comparative rows and withholds the one-dong income co
   assert.equal(ws.q3SuccessorHtml({ ...record, valuation_use: "AVAILABLE" }), "");
 });
 
+test("EVF reviewed nine-month rows stay on the finance-company scope", () => {
+  const q3Successor = require("../data/q3_successor_research.json");
+  const record = ws.q3SuccessorFor({ q3Successor }, "EVF");
+  const html = ws.decisionCardHtml({ ticker: "EVF" }, { ticker: "EVF", q3Successor });
+  assert.equal(record.observations.length, 16);
+  assert.equal(record.entity_class, "finance_company");
+  assert.equal(record.commercial_bank, false);
+  assert.equal(record.standalone_quarter_column, false);
+  assert.equal(record.official_fact_admitted, false);
+  assert.match(html, /triệu đồng/);
+  assert.match(html, /không phải ngân hàng thương mại/);
+  assert.match(html, /Không tính/);
+  assert.match(html, /data-valuation-use="CLOSED"/);
+  assert.equal(record.valuation_use, "CLOSED");
+});
+
 test("the published POW artifact stays research-only", () => {
   const q3Successor = require("../data/q3_successor_research.json");
   const record = ws.q3SuccessorFor({ q3Successor }, "POW");
