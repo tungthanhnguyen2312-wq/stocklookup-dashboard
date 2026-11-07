@@ -2001,6 +2001,7 @@ ${arr(d.dossiers).map(dossierSection).join("")}${cmpSection}${notesSection}
       ["PAN", "data-comparison-pan-research", "PAN · Ghi chú định giá nghiên cứu"],
       ["POW", "data-comparison-pow-research", "POW · Dòng tiền và số so sánh"],
       ["EVF", "data-comparison-evf-research", "EVF · Công ty tài chính, 9 tháng đã soát xét"],
+      ["SSI", "data-comparison-ssi-research", "SSI · Công ty chứng khoán, hợp nhất chưa soát xét"],
     ].filter(([ticker]) => tickers.includes(ticker));
     if (!research || !wanted.length) return;
     const token = UI.compareToken;
