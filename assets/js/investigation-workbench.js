@@ -1995,6 +1995,20 @@ ${arr(d.dossiers).map(dossierSection).join("")}${cmpSection}${notesSection}
     if (count) count.textContent = `${UI.compare.length}/${MAX_COMPARE}`;
   }
 
+  function appendComparisonResearch(out, key, doc, tickers) {
+    const research = window.VSQ3Research;
+    if (!research || !tickers.includes("PAN")) return;
+    const token = UI.compareToken;
+    research.load().then((q3Successor) => {
+      if (UI.compareToken !== token || UI.comparisonKey !== key || !currentView("compare", doc)) return;
+      const record = research.q3SuccessorFor({ q3Successor }, "PAN");
+      const html = record && Array.isArray(record.observations) ? research.q3SuccessorHtml(record) : "";
+      if (html && !out.querySelector("[data-comparison-pan-research]")) {
+        out.insertAdjacentHTML("beforeend", `<section data-comparison-pan-research><h4>PAN · Ghi chú định giá nghiên cứu</h4>${html}</section>`);
+      }
+    });
+  }
+
   function runComparison(tickers, requestedSession, focus) {
     const out = document.getElementById("wb-compare-result");
     const doc = wsDoc();
@@ -2014,6 +2028,7 @@ ${arr(d.dossiers).map(dossierSection).join("")}${cmpSection}${notesSection}
     const key = releaseKey(doc) + validation.tickers.join(",");
     if (UI.comparison && UI.comparisonKey === key && !UI.comparison.detailMissing.length) {
       out.innerHTML = comparisonHtml(UI.comparison, { saved: Boolean(findEntry(UI.journal, entryIdFor("comparison", validation.tickers))) });
+      appendComparisonResearch(out, key, doc, validation.tickers);
       if (focus) focusHeading("wb-compare-heading");
       return;
     }
@@ -2037,6 +2052,7 @@ ${arr(d.dossiers).map(dossierSection).join("")}${cmpSection}${notesSection}
         const saved = Boolean(findEntry(UI.journal, entryIdFor("comparison", validation.tickers)));
         out.innerHTML = comparisonHtml(UI.comparison, { saved }) + (UI.comparison.detailMissing.length
           ? '<button type="button" class="btn btn-sm btn-outline-light" data-wb-action="compare-run">Thử lại chi tiết còn thiếu</button>' : "");
+        appendComparisonResearch(out, key, doc, validation.tickers);
         if (focus) focusHeading("wb-compare-heading");
       });
   }
