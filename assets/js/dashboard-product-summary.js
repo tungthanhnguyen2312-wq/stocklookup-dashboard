@@ -20,6 +20,8 @@
   // cards still read workspace_index.json until summary.notable_cards is published.
   // SCREENER_URL and summarizeScreenerOverview() stay exported for callers that need them.
   const HOME_SUMMARY_URL = "data/dashboard_home_summary.json";
+  const CURRENT_RESEARCH_URL = "data/market_close_current_research.json";
+  const CURRENT_RESEARCH_CONTRACT = "market_close_current_research/v1";
   const HOME_SUMMARY_CONTRACT = "dashboard_home_summary/v1";
   const BUILD_INFO_URL = "data/build_info.json";
   const WORKSPACE_INDEX_URL = "data/workspace_index.json";
@@ -654,6 +656,7 @@
         renderMarketOverview(summary);
         renderInvestorHome(summary);
         renderPostureEntry(summary);
+        renderCurrentResearch();
       })
       .catch((error) => {
         if (typeof console !== "undefined" && console.debug) console.debug("dashboard summary unavailable:", error);
@@ -678,6 +681,31 @@
     if (currency.NO_CURRENT_EVIDENCE) risks.push(`${currency.NO_CURRENT_EVIDENCE.toLocaleString("vi-VN")} mã chưa có dữ liệu nghiên cứu hiện tại.`);
     if (!summary.liquidity || !summary.liquidity.execution_exact_established) risks.push("Chưa đủ dữ liệu xác lập khả năng vào/ra vị thế. Thanh khoản tham khảo không chứng minh khả năng thực hiện lệnh.");
     return `<ul class="cockpit-list">${(risks.length ? risks : ["Chưa ghi nhận cảnh báo trong các dữ liệu được công bố; vẫn cần kiểm tra từng mã."]).map((risk) => `<li>${esc(risk)}</li>`).join("")}</ul>`;
+  }
+
+  function currentResearchHtml(payload) {
+    if (!payload || payload.contract_version !== CURRENT_RESEARCH_CONTRACT || payload.session_binding !== "NOT_WRITTEN_INTO_SEALED_DAILY") return "";
+    const bench = payload.posthoc_benchmark || {};
+    if (bench.status !== "POSTHOC_CURRENT_RESEARCH" || bench.seal_time_knowledge !== "NOT_CLAIMED") {
+      return '<p class="cockpit-note">Chưa có quan sát sau niêm phong đủ điều kiện. Không suy chỉ số từ giá từng mã.</p>';
+    }
+    const sign = Number(bench.change_points) > 0 ? "+" : "";
+    const indexLine = `VN-Index phiên ${bench.session} được đọc lúc ${bench.knowledge_available_at}, sau Daily đã niêm phong: ${Number(bench.close).toLocaleString("vi-VN")} điểm (${sign}${Number(bench.change_points).toLocaleString("vi-VN")} điểm, ${Number(bench.change_percent).toLocaleString("vi-VN")}%). Nguồn: ${bench.authority || "chưa gắn"}. Đây không phải số liệu đã biết tại thời điểm niêm phong và không phải số liệu HOSE điều hành chỉ số.`;
+    const closures = (payload.source_closures || []).map((row) => `${row.source}: đóng vì ${row.reason}`);
+    const compatibility = (payload.compatibility || {}).reason || "NOT_JOINED";
+    return `<p data-posthoc-session="${esc(bench.session)}" data-knowledge-at="${esc(bench.knowledge_available_at)}">${esc(indexLine)}</p><p class="cockpit-note">${esc(closures.join("; ") || "Không có nguồn nào được đóng trong lần này.")}</p><p class="cockpit-note">Độ rộng, regime và chỉ số không được ghép thành một kết luận cùng thời điểm biết: ${esc(compatibility)}.</p>`;
+  }
+
+  function renderCurrentResearch() {
+    const host = typeof document !== "undefined" ? document.getElementById("home-current-research") : null;
+    if (!host || typeof fetch !== "function") return;
+    fetch(CURRENT_RESEARCH_URL, { cache: "no-store" })
+      .then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); })
+      .then((payload) => {
+        const html = currentResearchHtml(payload);
+        if (html) host.innerHTML = html;
+      })
+      .catch(() => {});
   }
 
   function marketCloseHtml(summary) {
@@ -829,6 +857,6 @@
     renderMarketOverview,
     validateProjection,
     validateHomeSummary,
-    investorRiskHtml, homeOpportunitiesHtml, marketCloseHtml,
+    investorRiskHtml, homeOpportunitiesHtml, marketCloseHtml, currentResearchHtml,
   };
 });

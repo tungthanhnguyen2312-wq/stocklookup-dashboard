@@ -1,0 +1,370 @@
+{
+  "contract_version": "q3_2026_successor_research/v1",
+  "issuers": {
+    "EVF": {
+      "contract_version": "q3_2026_successor_research/v1",
+      "exact_statement_url": null,
+      "official_fact_admitted": false,
+      "reason_codes": [
+        "NO_ADMITTED_ISSUER_IR_HOST"
+      ],
+      "status": "BLOCKED",
+      "ticker": "EVF",
+      "valuation_use": "CLOSED"
+    },
+    "HPG": {
+      "assurance": "unreviewed_management_signed_no_review_report_in_front_matter",
+      "byte_length": 7200670,
+      "columns": {
+        "2026-9M": {
+          "candidate_only": true,
+          "classification": {
+            "contract_version": "q3_2026_research_freshness/v1",
+            "currency_refresh_in_scope": false,
+            "document_kind": "NINE_MONTH_CUMULATIVE",
+            "duration_semantics": "duration_nine_month",
+            "existing_consumer_usable": false,
+            "nine_month_promoted_to_standalone_quarter": false,
+            "official_fact_admitted": false,
+            "period_label": "2026-9M",
+            "reason_codes": [
+              "NOT_ADMITTED"
+            ],
+            "valuation_use": "CLOSED"
+          },
+          "contract_version": "q3_2026_successor_research/v1",
+          "cross_foot_reason_codes": [],
+          "nine_month_promoted_to_standalone_quarter": false,
+          "official_fact_admitted": false,
+          "reason_codes": [
+            "NOT_ADMITTED",
+            "TEXT_LAYER_NOT_SOURCE_FAITHFUL_NO_REPAIR"
+          ],
+          "session_binding": "NOT_A_SEALED_SESSION_FACT",
+          "shadow_rows": [
+            {
+              "audit_or_review_status": "unreviewed",
+              "canonical_metric": "revenue",
+              "currency": "VND",
+              "evidence_layer": "VISUAL_READ_NOT_BYTE_NATIVE",
+              "existing_consumer_usable": false,
+              "line_code": "10",
+              "official_fact_admitted": false,
+              "pdf_page": 6,
+              "period_kind": "NINE_MONTH_CUMULATIVE",
+              "reporting_period": "2026-9M",
+              "statement_scope": "consolidated",
+              "unit_scale": 1,
+              "valuation_use": "CLOSED",
+              "value_vnd": 170273936838530
+            },
+            {
+              "audit_or_review_status": "unreviewed",
+              "canonical_metric": "net_income",
+              "currency": "VND",
+              "evidence_layer": "VISUAL_READ_NOT_BYTE_NATIVE",
+              "existing_consumer_usable": false,
+              "line_code": "60",
+              "official_fact_admitted": false,
+              "pdf_page": 6,
+              "period_kind": "NINE_MONTH_CUMULATIVE",
+              "reporting_period": "2026-9M",
+              "statement_scope": "consolidated",
+              "unit_scale": 1,
+              "valuation_use": "CLOSED",
+              "value_vnd": 23745852930083
+            },
+            {
+              "audit_or_review_status": "unreviewed",
+              "canonical_metric": "attributable_net_income",
+              "currency": "VND",
+              "evidence_layer": "VISUAL_READ_NOT_BYTE_NATIVE",
+              "existing_consumer_usable": false,
+              "line_code": "61",
+              "official_fact_admitted": false,
+              "pdf_page": 6,
+              "period_kind": "NINE_MONTH_CUMULATIVE",
+              "reporting_period": "2026-9M",
+              "statement_scope": "consolidated",
+              "unit_scale": 1,
+              "valuation_use": "CLOSED",
+              "value_vnd": 23582361859679
+            }
+          ],
+          "text_layer": {
+            "examined": true,
+            "faithful": false,
+            "mixed_token_count": 1,
+            "reason_codes": [
+              "TEXT_LAYER_NOT_SOURCE_FAITHFUL_NO_REPAIR"
+            ]
+          },
+          "valuation_use": "CLOSED"
+        },
+        "2026-Q3": {
+          "candidate_only": true,
+          "classification": {
+            "contract_version": "q3_2026_research_freshness/v1",
+            "currency_refresh_in_scope": false,
+            "document_kind": "Q3_STANDALONE_UNREVIEWED",
+            "duration_semantics": "duration_quarter",
+            "existing_consumer_usable": false,
+            "nine_month_promoted_to_standalone_quarter": false,
+            "official_fact_admitted": false,
+            "period_label": "2026-Q3",
+            "reason_codes": [
+              "OUT_OF_FINANCIAL_EVIDENCE_CURRENCY_REFRESH_SCOPE",
+              "UNREVIEWED_Q3_STAYS_RESEARCH_TIER_NOT_OFFICIAL_FACT"
+            ],
+            "valuation_use": "CLOSED"
+          },
+          "contract_version": "q3_2026_successor_research/v1",
+          "cross_foot_reason_codes": [],
+          "nine_month_promoted_to_standalone_quarter": false,
+          "official_fact_admitted": false,
+          "reason_codes": [
+            "OUT_OF_FINANCIAL_EVIDENCE_CURRENCY_REFRESH_SCOPE",
+            "UNREVIEWED_Q3_STAYS_RESEARCH_TIER_NOT_OFFICIAL_FACT",
+            "TEXT_LAYER_NOT_SOURCE_FAITHFUL_NO_REPAIR"
+          ],
+          "session_binding": "NOT_A_SEALED_SESSION_FACT",
+          "shadow_rows": [
+            {
+              "audit_or_review_status": "unreviewed",
+              "canonical_metric": "revenue",
+              "currency": "VND",
+              "evidence_layer": "VISUAL_READ_NOT_BYTE_NATIVE",
+              "existing_consumer_usable": false,
+              "line_code": "10",
+              "official_fact_admitted": false,
+              "pdf_page": 6,
+              "period_kind": "Q3_STANDALONE_UNREVIEWED",
+              "reporting_period": "2026-Q3",
+              "statement_scope": "consolidated",
+              "unit_scale": 1,
+              "valuation_use": "CLOSED",
+              "value_vnd": 62214187236976
+            },
+            {
+              "audit_or_review_status": "unreviewed",
+              "canonical_metric": "net_income",
+              "currency": "VND",
+              "evidence_layer": "VISUAL_READ_NOT_BYTE_NATIVE",
+              "existing_consumer_usable": false,
+              "line_code": "60",
+              "official_fact_admitted": false,
+              "pdf_page": 6,
+              "period_kind": "Q3_STANDALONE_UNREVIEWED",
+              "reporting_period": "2026-Q3",
+              "statement_scope": "consolidated",
+              "unit_scale": 1,
+              "valuation_use": "CLOSED",
+              "value_vnd": 8265460462966
+            },
+            {
+              "audit_or_review_status": "unreviewed",
+              "canonical_metric": "attributable_net_income",
+              "currency": "VND",
+              "evidence_layer": "VISUAL_READ_NOT_BYTE_NATIVE",
+              "existing_consumer_usable": false,
+              "line_code": "61",
+              "official_fact_admitted": false,
+              "pdf_page": 6,
+              "period_kind": "Q3_STANDALONE_UNREVIEWED",
+              "reporting_period": "2026-Q3",
+              "statement_scope": "consolidated",
+              "unit_scale": 1,
+              "valuation_use": "CLOSED",
+              "value_vnd": 8217339610974
+            }
+          ],
+          "text_layer": {
+            "examined": true,
+            "faithful": false,
+            "mixed_token_count": 1,
+            "reason_codes": [
+              "TEXT_LAYER_NOT_SOURCE_FAITHFUL_NO_REPAIR"
+            ]
+          },
+          "valuation_use": "CLOSED"
+        }
+      },
+      "contract_version": "q3_2026_successor_research/v1",
+      "document_date_printed": "2026-10-29",
+      "existing_consumer_usable": false,
+      "form": "B02-DN/HN",
+      "host": "file.hoaphat.com.vn",
+      "knowledge_available_at": "2026-11-07T10:51:54+07:00",
+      "official_fact_admitted": false,
+      "official_fact_admitted_count": 0,
+      "official_store_adoption": "REFUSED",
+      "parent_pdf_not_fetched": "https://file.hoaphat.com.vn/hoaphat-com-vn/2026/10/20261029-hpg-bctc-cong-ty-me-quy-3-2026-va-giai-trinh.pdf",
+      "pdf_page": 6,
+      "press_release_used_as_statement": false,
+      "printed_page": 5,
+      "publication_date": null,
+      "session_binding": "NOT_A_SEALED_SESSION_FACT",
+      "sha256": "22a4061c9816d11121816377ea78ae99cf68928a75aa8bdcb15e7ded1bbf5ec9",
+      "shadow_row_count": 6,
+      "shadow_rows": [
+        {
+          "audit_or_review_status": "unreviewed",
+          "canonical_metric": "revenue",
+          "currency": "VND",
+          "evidence_layer": "VISUAL_READ_NOT_BYTE_NATIVE",
+          "existing_consumer_usable": false,
+          "line_code": "10",
+          "official_fact_admitted": false,
+          "pdf_page": 6,
+          "period_kind": "Q3_STANDALONE_UNREVIEWED",
+          "reporting_period": "2026-Q3",
+          "statement_scope": "consolidated",
+          "unit_scale": 1,
+          "valuation_use": "CLOSED",
+          "value_vnd": 62214187236976
+        },
+        {
+          "audit_or_review_status": "unreviewed",
+          "canonical_metric": "net_income",
+          "currency": "VND",
+          "evidence_layer": "VISUAL_READ_NOT_BYTE_NATIVE",
+          "existing_consumer_usable": false,
+          "line_code": "60",
+          "official_fact_admitted": false,
+          "pdf_page": 6,
+          "period_kind": "Q3_STANDALONE_UNREVIEWED",
+          "reporting_period": "2026-Q3",
+          "statement_scope": "consolidated",
+          "unit_scale": 1,
+          "valuation_use": "CLOSED",
+          "value_vnd": 8265460462966
+        },
+        {
+          "audit_or_review_status": "unreviewed",
+          "canonical_metric": "attributable_net_income",
+          "currency": "VND",
+          "evidence_layer": "VISUAL_READ_NOT_BYTE_NATIVE",
+          "existing_consumer_usable": false,
+          "line_code": "61",
+          "official_fact_admitted": false,
+          "pdf_page": 6,
+          "period_kind": "Q3_STANDALONE_UNREVIEWED",
+          "reporting_period": "2026-Q3",
+          "statement_scope": "consolidated",
+          "unit_scale": 1,
+          "valuation_use": "CLOSED",
+          "value_vnd": 8217339610974
+        },
+        {
+          "audit_or_review_status": "unreviewed",
+          "canonical_metric": "revenue",
+          "currency": "VND",
+          "evidence_layer": "VISUAL_READ_NOT_BYTE_NATIVE",
+          "existing_consumer_usable": false,
+          "line_code": "10",
+          "official_fact_admitted": false,
+          "pdf_page": 6,
+          "period_kind": "NINE_MONTH_CUMULATIVE",
+          "reporting_period": "2026-9M",
+          "statement_scope": "consolidated",
+          "unit_scale": 1,
+          "valuation_use": "CLOSED",
+          "value_vnd": 170273936838530
+        },
+        {
+          "audit_or_review_status": "unreviewed",
+          "canonical_metric": "net_income",
+          "currency": "VND",
+          "evidence_layer": "VISUAL_READ_NOT_BYTE_NATIVE",
+          "existing_consumer_usable": false,
+          "line_code": "60",
+          "official_fact_admitted": false,
+          "pdf_page": 6,
+          "period_kind": "NINE_MONTH_CUMULATIVE",
+          "reporting_period": "2026-9M",
+          "statement_scope": "consolidated",
+          "unit_scale": 1,
+          "valuation_use": "CLOSED",
+          "value_vnd": 23745852930083
+        },
+        {
+          "audit_or_review_status": "unreviewed",
+          "canonical_metric": "attributable_net_income",
+          "currency": "VND",
+          "evidence_layer": "VISUAL_READ_NOT_BYTE_NATIVE",
+          "existing_consumer_usable": false,
+          "line_code": "61",
+          "official_fact_admitted": false,
+          "pdf_page": 6,
+          "period_kind": "NINE_MONTH_CUMULATIVE",
+          "reporting_period": "2026-9M",
+          "statement_scope": "consolidated",
+          "unit_scale": 1,
+          "valuation_use": "CLOSED",
+          "value_vnd": 23582361859679
+        }
+      ],
+      "source_url": "https://file.hoaphat.com.vn/hoaphat-com-vn/2026/11/bao-cao-tai-chinh-hop-nhat-quy-iii-2026.pdf",
+      "statement_scope": "consolidated",
+      "ticker": "HPG",
+      "valuation_use": "CLOSED"
+    },
+    "PAN": {
+      "cheapness_claim": "NOT_SUPPORTED",
+      "common_shareholder_pb": "UNAVAILABLE",
+      "contract_version": "common_shareholder_book_comparison/v1",
+      "earnings_quality": {
+        "effect_on_research_pb": "NOT_EVALUABLE",
+        "effect_on_research_pe": "NOT_EVALUABLE",
+        "normalized_eps": "NOT_COMPUTED",
+        "reason_codes": [
+          "DISPOSAL_INCOME_NOT_ADMITTED",
+          "OPERATING_CASH_FLOW_NOT_ADMITTED",
+          "INVENTORY_NOT_ADMITTED"
+        ],
+        "rule": "PRETAX_NONRECURRING_INCOME_IS_NOT_SUBTRACTED_FROM_NET_INCOME",
+        "target_price": "NOT_EMITTED"
+      },
+      "label": "COMMON_SHAREHOLDER_RESEARCH",
+      "missing": [
+        "PARENT_EQUITY_NOT_ADMITTED",
+        "COMMON_SHARES_OUTSTANDING_NOT_ADMITTED",
+        "TREASURY_SHARES_NOT_ADMITTED",
+        "SHARE_COUNT_EFFECTIVE_TIME_UNKNOWN",
+        "REPORTING_PERIOD_NOT_BOUND",
+        "PRICE_BASIS_NOT_BOUND",
+        "NO_EXACT_OFFICIAL_Q3_STATEMENT_URL",
+        "NO_ADMITTED_IR_INDEX_HOST"
+      ],
+      "ticker": "PAN"
+    },
+    "POW": {
+      "contract_version": "q3_2026_successor_research/v1",
+      "exact_statement_url": null,
+      "official_fact_admitted": false,
+      "reason_codes": [
+        "IR_INDEX_URL_PREVIOUSLY_404_NOT_RETRIED",
+        "NO_EXACT_OFFICIAL_Q3_STATEMENT_URL"
+      ],
+      "status": "BLOCKED",
+      "ticker": "POW",
+      "valuation_use": "CLOSED"
+    },
+    "SSI": {
+      "contract_version": "q3_2026_successor_research/v1",
+      "exact_statement_url": null,
+      "official_fact_admitted": false,
+      "reason_codes": [
+        "IR_INDEX_URL_PREVIOUSLY_404_NOT_RETRIED",
+        "NO_EXACT_OFFICIAL_Q3_STATEMENT_URL"
+      ],
+      "status": "BLOCKED",
+      "ticker": "SSI",
+      "valuation_use": "CLOSED"
+    }
+  },
+  "knowledge_available_at": "2026-11-07T10:51:54+07:00",
+  "official_fact_admitted_count": 0,
+  "session_binding": "NOT_A_SEALED_SESSION_FACT",
+  "shadow_row_count": 6
+}
