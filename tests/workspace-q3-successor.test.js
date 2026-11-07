@@ -93,11 +93,28 @@ test("EVF reviewed nine-month rows stay on the finance-company scope", () => {
   assert.equal(record.valuation_use, "CLOSED");
 });
 
+test("SSI consolidated rows stay securities research", () => {
+  const q3Successor = require("../data/q3_successor_research.json");
+  const record = ws.q3SuccessorFor({ q3Successor }, "SSI");
+  const html = ws.decisionCardHtml({ ticker: "SSI" }, { ticker: "SSI", q3Successor });
+  assert.equal(record.entity_class, "securities");
+  assert.equal(record.official_fact_admitted, false);
+  assert.equal(record.official_store_adoption, "REFUSED");
+  assert.equal(record.observations.length, 17);
+  assert.match(html, /công ty chứng khoán/);
+  assert.match(html, /348\.933\.594\.669/);
+  assert.match(html, /Không tính/);
+  assert.match(html, /data-official-fact="false"/);
+  assert.equal(q3Successor.official_fact_admitted_count, 0);
+});
+
 test("the published POW artifact stays research-only", () => {
   const q3Successor = require("../data/q3_successor_research.json");
   const record = ws.q3SuccessorFor({ q3Successor }, "POW");
   const html = ws.decisionCardHtml({ ticker: "POW" }, { ticker: "POW", q3Successor });
-  assert.equal(record.observations.length, 8);
+  assert.equal(record.observations.length, 12);
+  assert.match(html, /Phải trả thương mại PV GAS/);
+  assert.match(html, /không gọi phần chênh lệch là tiền đã thu/);
   assert.equal(record.official_fact_admitted, false);
   assert.equal(q3Successor.official_fact_admitted_count, 0);
   assert.match(html, /2\.738\.981\.106\.106/);
@@ -108,7 +125,11 @@ test("PAN retained observations display in the decision card with closed compara
   const q3Successor = require("../data/q3_successor_research.json");
   const record = ws.q3SuccessorFor({ q3Successor }, "PAN");
   const html = ws.decisionCardHtml({ ticker: "PAN" }, { ticker: "PAN", q3Successor });
-  assert.equal(record.observations.length, 17);
+  assert.equal(record.observations.length, 23);
+  assert.match(html, /thuyết minh bộ phận/);
+  assert.match(html, /BCTC riêng/);
+  assert.match(html, /19\.968\.968\.615/);
+  assert.doesNotMatch(html, /963\.087\.575\.991/);
   assert.match(html, /0,7621×/);
   assert.match(html, /619\.520\.988\.619/);
   assert.match(html, /561\.507\.166\.021/);
