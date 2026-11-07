@@ -185,6 +185,51 @@
     return "";
   }
 
+  // Two lenses, one decision. The tactical queue (entry_state / entry_action) and the Integrated
+  // Decision (research_action_posture) are separate lenses that may legitimately disagree; when a
+  // constructive tactical label sits under a non-constructive posture the reader must be told
+  // which one is the decision, that the trigger is not yet met, and what would change it.
+  const LENS_CONSTRUCTIVE_POSTURES = new Set(["INITIATE_ON_BREAKOUT", "ACCUMULATE_ON_RETEST"]);
+  const LENS_TRIGGER_STATE_LABELS = Object.freeze({ TRIGGERED: "Đã kích hoạt", APPROACHING: "Đang tiến gần mức kích hoạt", BELOW_TRIGGER: "Dưới mức kích hoạt" });
+  const LENS_CONDITION_LABELS = Object.freeze({ BEARISH_STRUCTURE_ADVERSE: "Cấu trúc giá giảm, bất lợi" });
+  function lensReconciliationHtml(card) {
+    const c = card || {};
+    const posture = c.research_action_posture;
+    if (!posture || !TACTICAL_ACTIONABLE_ENTRY_READINESS.has(c.entry_action) || LENS_CONSTRUCTIVE_POSTURES.has(posture)) return "";
+    const trig = c.reference_trigger || (c.tactical || {}).reference_trigger || {};
+    const confirm = conditionHeadline(c.confirmation || {}).label;
+    const invalid = conditionHeadline(((c.invalidation || {}).technical) || {}).label;
+    const trigText = hasRetainedValue(trig.trigger_level)
+      ? `Mức kích hoạt tham chiếu ${formatDiagnosticNumber(trig.trigger_level)} — ${LENS_TRIGGER_STATE_LABELS[trig.trigger_state] || formatWorkspaceState(trig.trigger_state || trig.status, "confirmation_state")}${trig.trigger_condition_satisfied === true ? "" : " (chưa thỏa điều kiện)"}.`
+      : "Chưa có mức kích hoạt tham chiếu.";
+    return `<div class="ws-lens-reconciliation cockpit-note mt-2" data-lens-conflict="${escHtml(posture)}|${escHtml(c.entry_action)}">
+      <b>Hai lăng kính khác nhau — không phải tín hiệu mua.</b>
+      <ul class="cockpit-list">
+        <li>Thiết lập kỹ thuật: ${escHtml(formatWorkspaceState(c.entry_state, "tactical_state"))} → ${escHtml(formatWorkspaceState(c.entry_action, "entry_action"))} (nhãn hàng đợi kỹ thuật, không có quyền mở vị thế).</li>
+        <li>Quyết định tích hợp (quyết định chính): ${escHtml(actionPostureLabel(c))}${c.posture_condition_class ? ` · ${escHtml(LENS_CONDITION_LABELS[c.posture_condition_class] || formatWorkspaceState(c.posture_condition_class, "rule_condition"))}` : ""}.</li>
+        <li>${escHtml(trigText)}</li>
+        <li>Điều cần xảy ra để thay đổi nhận định: ${escHtml(confirm || "điều kiện xác nhận")} và Quyết định tích hợp được nâng ở phiên sau. Vô hiệu: ${escHtml(invalid || "chưa có")}.</li>
+      </ul>
+    </div>`;
+  }
+
+  // Financial recency. OFFICIAL_QUALIFIED describes source authority, not recency: always show the
+  // statement period the analysis uses and whether any later official period was admitted.
+  function financialPeriodHtml(card) {
+    const c = card || {};
+    const compact = (((c.why || {}).financial_analysis || {}).compact) || {};
+    const period = compact.as_of_financial_period;
+    const official = ((c.valuation || {}).official_financial_context) || [];
+    const current = Array.isArray(official) ? official.filter((f) => f && f.temporal_status === "CURRENT_OFFICIAL_FACT") : [];
+    const periods = Array.from(new Set(current.map((f) => f.reporting_period).filter(Boolean))).sort();
+    const later = periods.length
+      ? `Kỳ chính thức mới hơn đã được chấp nhận (chỉ là bối cảnh, không dùng cho định giá/TTM): ${periods.join(", ")} — ${current.length} chỉ tiêu.`
+      : "Chưa có kỳ BCTC chính thức mới hơn được chấp nhận. BCTC đã công bố nhưng chưa qua kiểm chứng nguồn sẽ không xuất hiện ở đây.";
+    return `<div class="ws-financial-period cockpit-note mt-1" data-financial-period="${escHtml(period || "UNAVAILABLE")}">
+      <b>Kỳ BCTC dùng trong phân tích:</b> ${escHtml(period || "chưa xác định")}. “Đạt chuẩn chính thức” nói về thẩm quyền nguồn, không có nghĩa là dữ liệu quý mới nhất. ${escHtml(later)}
+    </div>`;
+  }
+
   // Orthogonal inspection-order axis, rendered separately; never alters the posture label/color.
   function opportunityPriorityHtml(card) {
     const tier = ((card || {}).opportunity_priority || {}).research_priority_tier || "UNAVAILABLE";
@@ -841,6 +886,22 @@
   function evidenceQualityHtml(quality) {
     return `<span class="ws-evidence-quality tone-${escHtml(quality.tone)}" tabindex="0" data-help="${escHtml(quality.why)}" aria-label="Mức độ tin cậy của bằng chứng: ${escHtml(quality.label)}. ${escHtml(quality.why)}">${escHtml(quality.label)}</span>`;
   }
+  // P/B research proxy basis. The Producer already labels the denominator (total owners' equity,
+  // including non-controlling interest where present) and its balance-sheet period; show both so a
+  // low proxy is never read as a common-shareholder P/B or as proof that the stock is cheap.
+  function bookBasisNoteHtml(val) {
+    const d = (((val || {}).method_diagnostics) || {})["P/B_CURRENT_RESEARCH"] || {};
+    if (!hasRetainedValue(d.value)) return "";
+    const nci = String(d.equity_definition || "").includes("INCLUDES_NCI");
+    const basis = nci
+      ? "tổng vốn chủ sở hữu hợp nhất (gồm lợi ích cổ đông không kiểm soát nếu có)"
+      : (d.equity_definition ? formatWorkspaceState(d.equity_definition, "rule_condition") : "mẫu số chưa xác định");
+    const lag = Number.isFinite(Number(d.book_period_lag_quarters)) && d.book_period_lag_quarters !== null ? `, trễ ${d.book_period_lag_quarters} quý` : "";
+    return `<div class="ws-book-basis cockpit-note mt-1" data-equity-definition="${escHtml(d.equity_definition || "UNKNOWN")}" data-book-period="${escHtml(d.book_period || "UNKNOWN")}">
+      <b>Cơ sở P/B nghiên cứu ${escHtml(formatDiagnosticNumber(d.value))}×:</b> ${escHtml(basis)}, kỳ sổ sách ${escHtml(d.book_period || "chưa xác định")}${escHtml(lag)}; số cổ phiếu là proxy nghiên cứu.
+      Đây không phải P/B trên vốn cổ đông công ty mẹ và không so trực tiếp với P/B tính từ BCTC kỳ mới hơn. P/B thấp không tự chứng minh cổ phiếu rẻ (cần xét lợi nhuận bất thường, dòng tiền, tồn kho).
+    </div>`;
+  }
   function valuationEvidenceSummaryHtml(val) {
     const methods = (val && val.supporting_methods) || [];
     const method = methods.find((item) => item && hasRetainedValue(item.value));
@@ -1127,6 +1188,7 @@
             <div class="ws-drawer-overview-head"><div><div class="section-eyebrow">Tóm tắt nghiên cứu</div><h4>${escHtml(ticker)} <span>${sectorDisplayHtml(card.sector)}</span></h4></div>${actionPostureHtml(card)}</div>
             <div class="ws-drawer-keyline">${evidenceCurrencyHtml(card.evidence_currency)} · ${opportunityPriorityHtml(card)}</div>
             <div class="ws-drawer-keyline">${pill(card.entry_state, "tactical_state")} · ${pill(card.research_stance_readiness, "research_readiness")} · ${pill(card.entry_action, "entry_action")} · ${researchScreenHtml(card)}</div>
+            ${lensReconciliationHtml(card)}
             <div class="ws-drawer-facts">${hasRetainedValue(price) ? `<span>Giá hiện tại <b>${escHtml(formatDiagnosticNumber(price))}</b></span>` : ""}${hasRetainedValue(referenceTrigger.trigger_level) ? `<span>Kích hoạt tham chiếu <b>${escHtml(formatDiagnosticNumber(referenceTrigger.trigger_level))}</b></span>` : ""}${invalidation.boundary_type ? `<span>Vô hiệu <b>${escHtml(conditionHeadline(invalidation).label)}</b></span>` : ""}</div>
             <p>${escHtml(`Quyết định hành động: ${actionPostureLabel(card)} (${evidenceCurrencyLabel(card.evidence_currency)}).`)}</p>
             <ul>${compactReasons(card, 3).map((reason) => `<li>${escHtml(reason)}</li>`).join("")}</ul>
@@ -1153,7 +1215,9 @@
           <section class="ws-section" aria-labelledby="ws-section-fundamentals-${escHtml(ticker)}">
             <h5 id="ws-section-fundamentals-${escHtml(ticker)}" class="ws-section-title">Cơ bản &amp; định giá</h5>
             <div class="ws-evidence-summary-item"><div>${helpLabelHtml("Nền tảng")}${evidenceQualityHtml(foundationQuality)}</div><strong>${escHtml(formatWorkspaceState(fundamental.state, "fundamental_state"))}</strong><p>${escHtml(formatWorkspaceState(fundamental.trajectory, "fundamental_trajectory"))}</p></div>
+            ${financialPeriodHtml(card)}
             ${valuationEvidenceSummaryHtml(val)}
+            ${bookBasisNoteHtml(val)}
             ${investorMetricsGridHtml(card, opts, ["gross_margin", "net_margin", "revenue_growth_yoy", "net_income_growth_yoy", "operating_cash_flow_sign", "roe", "roa", "debt_to_equity", "ebitda"], "Cơ bản")}
             ${returnBalanceMetricsHtml(fundamental)}
             ${investorMetricsGridHtml(card, opts, ["pe_ttm", "pb", "ps_ttm", "ev_sales", "ev_ebitda"], "Định giá")}
@@ -1181,7 +1245,7 @@
               <div class="mt-1"><b>Quyết định hành động</b> ${actionPostureHtml(card)} ${evidenceCurrencyHtml(card.evidence_currency)} <span class="cockpit-note">(quyết định chính, từ Quyết định tích hợp)</span></div>
               <div class="mt-1"><b>Vị thế</b> ${pill(((card.position_context || {}).position_state) || "UNKNOWN_POSITION_NOT_SUPPLIED", "position_context")} · ${opportunityPriorityHtml(card)}</div>
               <div class="mt-1"><b>Sàng lọc nghiên cứu (phụ)</b> ${researchScreenLabel(card) === formatWorkspaceState(card.research_stance, "research_stance") ? pill(card.research_stance, "research_stance") : researchScreenHtml(card)} <span class="cockpit-note">(bối cảnh sàng lọc/ứng viên, không phải quyết định hành động)</span></div>
-              <div class="mt-1"><b>Mức sẵn sàng kỹ thuật</b> ${pill(card.entry_action, "entry_action")} <span class="cockpit-note">thiết lập kỹ thuật: ${pill(card.entry_state, "tactical_state")}</span>${VETO_RESEARCH_STANCES.has(card.research_stance) ? ' <span class="cockpit-state blocked">Không phải tín hiệu mua</span>' : ""}</div>
+              <div class="mt-1"><b>Mức sẵn sàng kỹ thuật</b> ${pill(card.entry_action, "entry_action")} <span class="cockpit-note">thiết lập kỹ thuật: ${pill(card.entry_state, "tactical_state")}</span>${VETO_RESEARCH_STANCES.has(card.research_stance) || lensReconciliationHtml(card) ? ' <span class="cockpit-state blocked">Không phải tín hiệu mua</span>' : ""}</div>
               ${stanceEntryGuidance(card.research_stance, card.entry_action) ? `<div class="cockpit-note mt-2">${escHtml(stanceEntryGuidance(card.research_stance, card.entry_action))}</div>` : ""}
               <div class="mt-2"><b>Lý do xác định (bằng chứng ủng hộ)</b>${listHtml(why.deterministic_reasons, "rule_condition")}</div>
               <div class="mt-2"><b>Bối cảnh đối trọng</b>${listHtml(why.counterbalancing_context, "rule_condition")}</div>
@@ -2015,6 +2079,6 @@
     analysisRecord, analysisRows, analysisRowHtml, analysisEvidenceHtml,
     rowSignalVelocityHtml, rowFlowPriceHtml,
     metricSlotHtml, investorMetricsGridHtml, metricValueHtml, unavailableText,
-    officialFinancialContextHtml,
+    officialFinancialContextHtml, lensReconciliationHtml, financialPeriodHtml, bookBasisNoteHtml,
   };
 });

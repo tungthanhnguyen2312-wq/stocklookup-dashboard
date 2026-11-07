@@ -57,6 +57,9 @@ jobs:
       - name: Investment workspace tests
         run: node --test tests/investment-workspace.test.js
 
+      - name: Workspace lens and financial period tests
+        run: node --test tests/workspace-lens-financial-period.test.js
+
       # INVESTOR_EVIDENCE_INVESTIGATION_WORKBENCH_V1: dossier / comparison / journal / export
       # contracts over every committed published ticker (no fixtures).
       - name: Investigation workbench tests
