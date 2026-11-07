@@ -889,6 +889,43 @@
   // P/B research proxy basis. The Producer already labels the denominator (total owners' equity,
   // including non-controlling interest where present) and its balance-sheet period; show both so a
   // low proxy is never read as a common-shareholder P/B or as proof that the stock is cheap.
+  const Q3_METRIC_LABELS = {
+    revenue: "Doanh thu thuần",
+    net_income: "Lợi nhuận sau thuế",
+    attributable_net_income: "Lợi nhuận sau thuế của cổ đông công ty mẹ",
+  };
+
+  function q3SuccessorFor(options, ticker) {
+    const artifact = options && options.q3Successor;
+    if (!artifact || artifact.contract_version !== "q3_2026_successor_research/v1") return null;
+    if (artifact.session_binding !== "NOT_A_SEALED_SESSION_FACT" || artifact.official_fact_admitted_count !== 0) return null;
+    return (artifact.issuers || {})[String(ticker || "").toUpperCase()] || null;
+  }
+
+  function q3SuccessorHtml(record) {
+    if (!record) return "";
+    if (Array.isArray(record.shadow_rows) && record.official_fact_admitted === false) {
+      const lines = record.shadow_rows.map((row) => {
+        const period = row.reporting_period === "2026-9M" ? "9 tháng 2026 (không phải quý riêng)" : row.reporting_period;
+        const label = Q3_METRIC_LABELS[row.canonical_metric] || row.canonical_metric;
+        return `${label}, ${period}: ${Number(row.value_vnd).toLocaleString("vi-VN")} đồng`;
+      });
+      return `<div class="ws-q3-successor cockpit-note mt-1" data-official-fact="false" data-session-binding="NOT_A_SEALED_SESSION_FACT" data-valuation-use="CLOSED">
+        <b>BCTC hợp nhất Q3/2026, tầng nghiên cứu:</b> ${escHtml(lines.join("; "))}.
+        Chưa soát xét, không phải fact chính thức, không thuộc Daily đã niêm phong, không dùng để tính P/E, P/B hay EPS chuẩn hóa.
+        Nguồn ${escHtml(record.host || "")}, SHA-256 ${escHtml(record.sha256 || "")}. Lớp chữ PDF không trung thành; số là đọc trang đã cộng ngang.
+      </div>`;
+    }
+    const reasons = record.reason_codes || record.missing || [];
+    const quality = (record.earnings_quality && record.earnings_quality.reason_codes) || [];
+    if (!reasons.length && !quality.length) return "";
+    return `<div class="ws-q3-successor cockpit-note mt-1" data-official-fact="false" data-q3-status="BLOCKED">
+      <b>Q3/2026 chưa thành fact:</b> ${escHtml(reasons.join(", "))}.
+      ${quality.length ? `Chất lượng lợi nhuận chưa đánh giá được (${escHtml(quality.join(", "))}). ` : ""}
+      EPS chuẩn hóa và giá mục tiêu không được suy ra.
+    </div>`;
+  }
+
   function bookBasisNoteHtml(val) {
     const d = (((val || {}).method_diagnostics) || {})["P/B_CURRENT_RESEARCH"] || {};
     if (!hasRetainedValue(d.value)) return "";
@@ -1227,6 +1264,7 @@
             ${financialPeriodHtml(card)}
             ${valuationEvidenceSummaryHtml(val)}
             ${bookBasisNoteHtml(val)}
+            ${q3SuccessorHtml(q3SuccessorFor(opts, ticker))}
             ${investorMetricsGridHtml(card, opts, ["gross_margin", "net_margin", "revenue_growth_yoy", "net_income_growth_yoy", "operating_cash_flow_sign", "roe", "roa", "debt_to_equity", "ebitda"], "Cơ bản")}
             ${returnBalanceMetricsHtml(fundamental)}
             ${investorMetricsGridHtml(card, opts, ["pe_ttm", "pb", "ps_ttm", "ev_sales", "ev_ebitda"], "Định giá")}
@@ -1596,6 +1634,11 @@
       // Monotonically increasing token: if the reader picks a different ticker while a shard
       // fetch for the previous one is still in flight, the stale response must never overwrite
       // what is now on screen for the newly-selected ticker.
+      let q3SuccessorLoaded = null;
+      const q3SuccessorPromise = fetch("data/q3_successor_research.json", { cache: "no-store" })
+        .then((response) => (response.ok ? response.json() : null))
+        .then((data) => { q3SuccessorLoaded = data; return data; })
+        .catch(() => null);
       let DECISION_CARD_REQUEST_TOKEN = 0;
       // Which ticker's full card has been requested into the drawer/print surfaces. Selecting a
       // ticker without opening its details only updates the header and links: a plain visit to
@@ -1641,7 +1684,7 @@
         const resolveDetail = readModel
           ? readModel.getTickerDetail(ticker, WORKSPACE)
           : Promise.resolve({ status: "unavailable", reason: "READ_MODEL_UNAVAILABLE" });
-        resolveDetail.then((result) => {
+        Promise.all([resolveDetail, q3SuccessorPromise]).then(([result]) => {
           if (requestToken !== DECISION_CARD_REQUEST_TOKEN) return; // superseded by a newer selection
           if (result.status !== "ok") {
             const message = '<div class="cockpit-note" data-drawer-unavailable="true">Tạm chưa có dữ liệu chi tiết.</div>';
@@ -1655,6 +1698,7 @@
             portfolio: effectivePortfolio(ticker, card),
             sourceArtifacts: WORKSPACE.source_artifacts,
             displayMetricCatalog: WORKSPACE.display_metric_catalog,
+            q3Successor: q3SuccessorLoaded,
           };
           // The drawer is the on-screen surface. The in-page node is print-only. Both receive
           // the same HTML string from one decisionCardHtml call.
@@ -2088,6 +2132,6 @@
     analysisRecord, analysisRows, analysisRowHtml, analysisEvidenceHtml,
     rowSignalVelocityHtml, rowFlowPriceHtml,
     metricSlotHtml, investorMetricsGridHtml, metricValueHtml, unavailableText,
-    officialFinancialContextHtml, lensReconciliationHtml, financialPeriodHtml, bookBasisNoteHtml,
+    officialFinancialContextHtml, lensReconciliationHtml, financialPeriodHtml, bookBasisNoteHtml, q3SuccessorHtml, q3SuccessorFor,
   };
 });

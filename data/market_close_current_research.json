@@ -1,0 +1,92 @@
+{
+  "compatibility": {
+    "reason": "BENCHMARK_KNOWLEDGE_TIME_IS_AFTER_THE_SEALED_SESSION",
+    "regime_breadth_and_benchmark": "NOT_JOINED"
+  },
+  "contract_version": "market_close_current_research/v1",
+  "posthoc_benchmark": {
+    "authority": "DNSE_CURRENT_STATE_REPUBLISHED_INDEX_NOT_HOSE_ADMINISTRATOR",
+    "change_percent": -0.88,
+    "change_points": -15.37,
+    "close": 1725.36,
+    "derivation_from_constituents": "NOT_PERMITTED",
+    "index": "VNINDEX",
+    "knowledge_available_at": "2026-11-07T09:49:56+07:00",
+    "knowledge_date": "2026-11-07",
+    "pit_backtest_eligible": false,
+    "previous_close": 1740.73,
+    "previous_session": "2026-11-05",
+    "same_knowledge_as_sealed_breadth": false,
+    "seal_time_knowledge": "NOT_CLAIMED",
+    "session": "2026-11-06",
+    "session_binding": "NOT_WRITTEN_INTO_SEALED_DAILY",
+    "source_identity": "dnse_index_return_series/4cf91c602cb69b01a5acfb1bf6e772806a5ee09f7b22d9a0d216f8b78340511e",
+    "status": "POSTHOC_CURRENT_RESEARCH"
+  },
+  "session_binding": "NOT_WRITTEN_INTO_SEALED_DAILY",
+  "source_closures": [
+    {
+      "evidence": {
+        "cpi_periods": [
+          "2026-06",
+          "2026-07"
+        ],
+        "discovered_new_release_count": 0,
+        "freshness_reason_codes": [
+          "FRESHNESS_CEILING_EXCEEDED"
+        ],
+        "freshness_status": "STALE_OR_UNAVAILABLE",
+        "latest_released_at": "2026-08-03",
+        "latest_retained_observation": "2026-07",
+        "latest_retained_value_percent_yoy": 4.45,
+        "next_expected_official_release": "2026-12-03",
+        "next_reference_period": "2026-11",
+        "october_2026_present": false,
+        "retrieved_at": "2026-11-07T03:47:44Z",
+        "route": "vietnam_official_macro_evidence.acquire",
+        "valid_through": "2026-09-30"
+      },
+      "reason": "OCTOBER_2026_CPI_NOT_ON_ADMITTED_NSO_ENGLISH_ROUTE",
+      "session_binding": "NOT_WRITTEN_INTO_SEALED_DAILY",
+      "source": "NSO_CPI_OCTOBER_2026",
+      "status": "CLOSED_UNAVAILABLE"
+    },
+    {
+      "evidence": {
+        "machine_readable_observation_retained": false,
+        "new_route_opened": false
+      },
+      "reason": "NO_MACHINE_READABLE_CURRENT_OFFICIAL_SBV_FX_OBSERVATION_RETAINED",
+      "session_binding": "NOT_WRITTEN_INTO_SEALED_DAILY",
+      "source": "SBV_CENTRAL_RATE",
+      "status": "CLOSED_UNAVAILABLE"
+    },
+    {
+      "evidence": {
+        "known_sample_urls": [
+          "https://staticfile.hsx.vn/Uploads/UploadDocuments/2437581/20260206%20Tong%20hop%20thong%20tin%20giao%20dich.pdf",
+          "https://staticfile.hsx.vn/Uploads/UploadDocuments/2439241/20260213%20Tong%20hop%20thong%20tin%20giao%20dich.pdf"
+        ],
+        "locator_attempt": "duckduckgo_html",
+        "locator_http_status": 202,
+        "news_id_derivable": false,
+        "official_urls_found": 0,
+        "price_times_volume": "NOT_PERMITTED"
+      },
+      "reason": "NO_BOUNDED_LOCATOR_FOR_HOSE_DAILY_TRADING_SUMMARY",
+      "session_binding": "NOT_WRITTEN_INTO_SEALED_DAILY",
+      "source": "HOSE_AGGREGATE_TRADING_VALUE_2026-11-06",
+      "status": "CLOSED_UNAVAILABLE"
+    },
+    {
+      "evidence": {
+        "dnse_cohort_is_whole_exchange": false,
+        "institutional_intent_from_relative_volume": "NOT_PERMITTED"
+      },
+      "reason": "NO_AUTHORIZED_WHOLE_EXCHANGE_FOREIGN_VALUE_ROUTE",
+      "session_binding": "NOT_WRITTEN_INTO_SEALED_DAILY",
+      "source": "WHOLE_EXCHANGE_FOREIGN_VALUE",
+      "status": "CLOSED_UNAVAILABLE"
+    }
+  ]
+}
