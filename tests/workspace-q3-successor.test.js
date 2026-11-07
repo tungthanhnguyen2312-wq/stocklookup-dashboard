@@ -121,6 +121,32 @@ test("the published POW artifact stays research-only", () => {
   assert.match(html, /data-valuation-use="CLOSED"/);
 });
 
+test("durability claims keep fact, derivation, inference and unknown apart", () => {
+  const q3Successor = require("../data/q3_successor_research.json");
+  const forbidden = /giá mục tiêu|khuyến nghị mua|khuyến nghị bán|BUY|SELL/;
+  for (const ticker of ["PAN", "SSI", "POW", "EVF"]) {
+    const block = ws.q3SuccessorHtml(ws.q3SuccessorFor({ q3Successor }, ticker));
+    const card = ws.decisionCardHtml({ ticker }, { ticker, q3Successor });
+    for (const kind of ["FACT", "DERIVATION", "INFERENCE", "UNKNOWN", "CONDITION"]) {
+      assert.match(block, new RegExp(`data-claim-class="${kind}"`));
+    }
+    assert.doesNotMatch(block, forbidden);
+    assert.match(block, /data-official-fact="false"/);
+    assert.match(card, /q3-claim-list/);
+  }
+  const pan = ws.q3SuccessorHtml(ws.q3SuccessorFor({ q3Successor }, "PAN"));
+  assert.match(pan, /chưa đo chênh lệch thanh khoản hợp nhất/);
+  assert.match(pan, /-619\.520\.988\.619/);
+  const pow = ws.q3SuccessorHtml(ws.q3SuccessorFor({ q3Successor }, "POW"));
+  assert.match(pow, /chưa có tỷ lệ chuyển lợi nhuận thành tiền/);
+  assert.match(pow, /Không cộng/);
+  const ssi = ws.q3SuccessorHtml(ws.q3SuccessorFor({ q3Successor }, "SSI"));
+  assert.match(ssi, /Chưa có dòng tiền kinh doanh/);
+  const evf = ws.q3SuccessorHtml(ws.q3SuccessorFor({ q3Successor }, "EVF"));
+  assert.match(evf, /Chưa có dư nợ, nợ xấu/);
+  assert.match(evf, /không phải bằng chứng lợi nhuận cốt lõi mạnh hơn/);
+});
+
 test("PAN retained observations display in the decision card with closed comparator authority", () => {
   const q3Successor = require("../data/q3_successor_research.json");
   const record = ws.q3SuccessorFor({ q3Successor }, "PAN");
