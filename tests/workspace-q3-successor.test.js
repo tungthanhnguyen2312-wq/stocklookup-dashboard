@@ -45,6 +45,49 @@ test("a promoted official count is not displayed", () => {
   assert.equal(ws.q3SuccessorFor({ q3Successor: promoted }, "HPG"), null);
 });
 
+test("POW shows reconciled comparative rows and withholds the one-dong income columns", () => {
+  const record = {
+    research_kind: "COMPARATIVE_INCOME_AND_OPERATING_CASH_FLOW",
+    official_fact_admitted: false,
+    valuation_use: "CLOSED",
+    session_binding: "NOT_A_SEALED_SESSION_FACT",
+    common_shareholder_pb: "UNAVAILABLE",
+    issuer_disclosure_date: "2026-10-30",
+    sha256: "c423af37737c4fb9ec1df98ff7b0145488f103a9667db5215aacd848ac12bcfb",
+    source_url: "https://staticfile.hsx.vn/Uploads/UploadDocuments/2510748/20261030%20-%20POW%20-%20BCTC%20HN%20Q3.2026.pdf",
+    operating_cash_flow_yoy_pct: -19.78,
+    rejected_income_columns: {
+      "2026-Q3": ["LINE_60_DOES_NOT_FOOT_61_PLUS_62"],
+      "2026-9M": ["LINE_60_DOES_NOT_FOOT_50_MINUS_51_MINUS_52"],
+    },
+    observations: [
+      { metric: "revenue", period: "2025-Q3", value: 7855188738891, unit: "VND", pdf_page: 8 },
+      { metric: "operating_cash_flow", period: "2026-9M", value: 2738981106106, unit: "VND", pdf_page: 10 },
+      { metric: "operating_cash_flow", period: "2025-9M", value: 3414230602443, unit: "VND", pdf_page: 10 },
+    ],
+  };
+  const html = ws.q3SuccessorHtml(record);
+  assert.match(html, /2\.738\.981\.106\.106/);
+  assert.match(html, /3\.414\.230\.602\.443/);
+  assert.match(html, /-19,78%/);
+  assert.match(html, /lệch 1 đồng/);
+  assert.match(html, /data-valuation-use="CLOSED"/);
+  assert.match(html, /data-official-fact="false"/);
+  assert.doesNotMatch(html, /2\.073\.116\.246\.766/);
+  assert.equal(ws.q3SuccessorHtml({ ...record, valuation_use: "AVAILABLE" }), "");
+});
+
+test("the published POW artifact stays research-only", () => {
+  const q3Successor = require("../data/q3_successor_research.json");
+  const record = ws.q3SuccessorFor({ q3Successor }, "POW");
+  const html = ws.decisionCardHtml({ ticker: "POW" }, { ticker: "POW", q3Successor });
+  assert.equal(record.observations.length, 8);
+  assert.equal(record.official_fact_admitted, false);
+  assert.equal(q3Successor.official_fact_admitted_count, 0);
+  assert.match(html, /2\.738\.981\.106\.106/);
+  assert.match(html, /data-valuation-use="CLOSED"/);
+});
+
 test("PAN retained observations display in the decision card with closed comparator authority", () => {
   const q3Successor = require("../data/q3_successor_research.json");
   const record = ws.q3SuccessorFor({ q3Successor }, "PAN");

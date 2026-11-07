@@ -477,14 +477,109 @@
       "valuation_use": "CLOSED"
     },
     "POW": {
-      "contract_version": "q3_2026_successor_research/v1",
-      "exact_statement_url": null,
-      "official_fact_admitted": false,
-      "reason_codes": [
-        "EXACT_Q3_PDF_LOCATED_SOURCE_BYTES_UNVERIFIED"
+      "audit_or_review_status": "unreviewed",
+      "cash_flow_form": "B03-DN/HN",
+      "cash_flow_method": "INDIRECT",
+      "common_shareholder_pb": "UNAVAILABLE",
+      "document_signature_time": "2026-10-30T16:40:59+07:00",
+      "evidence_layer": "VISUAL_READ_NOT_BYTE_NATIVE",
+      "existing_consumer_usable": false,
+      "income_form": "B02-DN/HN",
+      "issuer_disclosure_date": "2026-10-30",
+      "loan_and_lease_lines_excluded": [
+        "321",
+        "339"
       ],
-      "status": "BLOCKED",
+      "observations": [
+        {
+          "line_code": "10",
+          "metric": "revenue",
+          "pdf_page": 8,
+          "period": "2025-Q3",
+          "unit": "VND",
+          "value": 7855188738891
+        },
+        {
+          "line_code": "60",
+          "metric": "net_income",
+          "pdf_page": 8,
+          "period": "2025-Q3",
+          "unit": "VND",
+          "value": 948377521849
+        },
+        {
+          "line_code": "61",
+          "metric": "attributable_net_income",
+          "pdf_page": 8,
+          "period": "2025-Q3",
+          "unit": "VND",
+          "value": 809300749571
+        },
+        {
+          "line_code": "10",
+          "metric": "revenue",
+          "pdf_page": 8,
+          "period": "2025-9M",
+          "unit": "VND",
+          "value": 25404267937149
+        },
+        {
+          "line_code": "60",
+          "metric": "net_income",
+          "pdf_page": 8,
+          "period": "2025-9M",
+          "unit": "VND",
+          "value": 2181973853090
+        },
+        {
+          "line_code": "61",
+          "metric": "attributable_net_income",
+          "pdf_page": 8,
+          "period": "2025-9M",
+          "unit": "VND",
+          "value": 1856808001611
+        },
+        {
+          "line_code": "20",
+          "metric": "operating_cash_flow",
+          "pdf_page": 10,
+          "period": "2026-9M",
+          "unit": "VND",
+          "value": 2738981106106
+        },
+        {
+          "line_code": "20",
+          "metric": "operating_cash_flow",
+          "pdf_page": 10,
+          "period": "2025-9M",
+          "unit": "VND",
+          "value": 3414230602443
+        }
+      ],
+      "official_fact_admitted": false,
+      "official_store_adoption": "REFUSED",
+      "operating_cash_flow_yoy_pct": -19.78,
+      "period_end": "2026-09-30",
+      "period_start_printed": "2026-01-01",
+      "publication_precision": "DATE_ONLY",
+      "rejected_income_columns": {
+        "2026-9M": [
+          "LINE_60_DOES_NOT_FOOT_50_MINUS_51_MINUS_52"
+        ],
+        "2026-Q3": [
+          "LINE_60_DOES_NOT_FOOT_61_PLUS_62"
+        ]
+      },
+      "research_kind": "COMPARATIVE_INCOME_AND_OPERATING_CASH_FLOW",
+      "retention": "LOCAL_PDF_SHA256_MATCHES_CODEX_CLOSEOUT_RECEIPT",
+      "session_binding": "NOT_A_SEALED_SESSION_FACT",
+      "sha256": "c423af37737c4fb9ec1df98ff7b0145488f103a9667db5215aacd848ac12bcfb",
+      "source_role": "EXCHANGE_HOSTED_ISSUER_DISCLOSURE_ATTACHMENT",
+      "source_url": "https://staticfile.hsx.vn/Uploads/UploadDocuments/2510748/20261030%20-%20POW%20-%20BCTC%20HN%20Q3.2026.pdf",
+      "statement_scope": "consolidated",
+      "text_layer": "NOT_SOURCE_FAITHFUL_NO_REPAIR",
       "ticker": "POW",
+      "unit": "VND",
       "valuation_use": "CLOSED"
     },
     "SSI": {
@@ -500,7 +595,7 @@
     }
   },
   "knowledge_available_at": "2026-11-07T10:51:54+07:00",
-  "observation_count": 17,
+  "observation_count": 25,
   "official_fact_admitted_count": 0,
   "session_binding": "NOT_A_SEALED_SESSION_FACT",
   "shadow_row_count": 6
