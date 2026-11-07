@@ -56,3 +56,12 @@ test("decision card renders both corrections", () => {
   assert.match(html, /ws-financial-period/);
   assert.match(html, /Không phải tín hiệu mua/);
 });
+
+test("P/B research proxy shows its NCI denominator and book period", () => {
+  const val = { method_diagnostics: { "P/B_CURRENT_RESEARCH": { value: 0.4397, equity_definition: "TOTAL_OWNERS_EQUITY_AS_REPORTED_INCLUDES_NCI_WHERE_PRESENT", book_period: "2026-Q1", book_period_lag_quarters: 3 } } };
+  const html = ws.bookBasisNoteHtml(val);
+  assert.match(html, /gồm lợi ích cổ đông không kiểm soát/);
+  assert.match(html, /kỳ sổ sách 2026-Q1, trễ 3 quý/);
+  assert.match(html, /không phải P\/B trên vốn cổ đông công ty mẹ/);
+  assert.equal(ws.bookBasisNoteHtml({}), "");
+});

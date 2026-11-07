@@ -886,6 +886,22 @@
   function evidenceQualityHtml(quality) {
     return `<span class="ws-evidence-quality tone-${escHtml(quality.tone)}" tabindex="0" data-help="${escHtml(quality.why)}" aria-label="Mức độ tin cậy của bằng chứng: ${escHtml(quality.label)}. ${escHtml(quality.why)}">${escHtml(quality.label)}</span>`;
   }
+  // P/B research proxy basis. The Producer already labels the denominator (total owners' equity,
+  // including non-controlling interest where present) and its balance-sheet period; show both so a
+  // low proxy is never read as a common-shareholder P/B or as proof that the stock is cheap.
+  function bookBasisNoteHtml(val) {
+    const d = (((val || {}).method_diagnostics) || {})["P/B_CURRENT_RESEARCH"] || {};
+    if (!hasRetainedValue(d.value)) return "";
+    const nci = String(d.equity_definition || "").includes("INCLUDES_NCI");
+    const basis = nci
+      ? "tổng vốn chủ sở hữu hợp nhất (gồm lợi ích cổ đông không kiểm soát nếu có)"
+      : (d.equity_definition ? formatWorkspaceState(d.equity_definition, "rule_condition") : "mẫu số chưa xác định");
+    const lag = Number.isFinite(Number(d.book_period_lag_quarters)) && d.book_period_lag_quarters !== null ? `, trễ ${d.book_period_lag_quarters} quý` : "";
+    return `<div class="ws-book-basis cockpit-note mt-1" data-equity-definition="${escHtml(d.equity_definition || "UNKNOWN")}" data-book-period="${escHtml(d.book_period || "UNKNOWN")}">
+      <b>Cơ sở P/B nghiên cứu ${escHtml(formatDiagnosticNumber(d.value))}×:</b> ${escHtml(basis)}, kỳ sổ sách ${escHtml(d.book_period || "chưa xác định")}${escHtml(lag)}; số cổ phiếu là proxy nghiên cứu.
+      Đây không phải P/B trên vốn cổ đông công ty mẹ và không so trực tiếp với P/B tính từ BCTC kỳ mới hơn. P/B thấp không tự chứng minh cổ phiếu rẻ (cần xét lợi nhuận bất thường, dòng tiền, tồn kho).
+    </div>`;
+  }
   function valuationEvidenceSummaryHtml(val) {
     const methods = (val && val.supporting_methods) || [];
     const method = methods.find((item) => item && hasRetainedValue(item.value));
@@ -1201,6 +1217,7 @@
             <div class="ws-evidence-summary-item"><div>${helpLabelHtml("Nền tảng")}${evidenceQualityHtml(foundationQuality)}</div><strong>${escHtml(formatWorkspaceState(fundamental.state, "fundamental_state"))}</strong><p>${escHtml(formatWorkspaceState(fundamental.trajectory, "fundamental_trajectory"))}</p></div>
             ${financialPeriodHtml(card)}
             ${valuationEvidenceSummaryHtml(val)}
+            ${bookBasisNoteHtml(val)}
             ${investorMetricsGridHtml(card, opts, ["gross_margin", "net_margin", "revenue_growth_yoy", "net_income_growth_yoy", "operating_cash_flow_sign", "roe", "roa", "debt_to_equity", "ebitda"], "Cơ bản")}
             ${returnBalanceMetricsHtml(fundamental)}
             ${investorMetricsGridHtml(card, opts, ["pe_ttm", "pb", "ps_ttm", "ev_sales", "ev_ebitda"], "Định giá")}
@@ -2062,6 +2079,6 @@
     analysisRecord, analysisRows, analysisRowHtml, analysisEvidenceHtml,
     rowSignalVelocityHtml, rowFlowPriceHtml,
     metricSlotHtml, investorMetricsGridHtml, metricValueHtml, unavailableText,
-    officialFinancialContextHtml, lensReconciliationHtml, financialPeriodHtml,
+    officialFinancialContextHtml, lensReconciliationHtml, financialPeriodHtml, bookBasisNoteHtml,
   };
 });
