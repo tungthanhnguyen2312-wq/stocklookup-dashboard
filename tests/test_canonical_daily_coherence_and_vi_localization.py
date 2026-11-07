@@ -43,7 +43,7 @@ class CanonicalDailyCoherenceAndViLocalizationTests(unittest.TestCase):
         assert(vf.formatStructureBadge('BELOW_MA20_MOMENTUM_NEGATIVE').includes('data-structure="BELOW_MA20_MOMENTUM_NEGATIVE"'));
         assert(vf.formatStructureBadge('NOT_AVAILABLE').includes('Chưa có'));
         assert(vf.formatSectorLineage('QUALIFIED_CLASSIFICATION|QUALIFIED_ENTITY_CLASS|corporate').label === 'Doanh nghiệp');
-        assert.strictEqual(vf.formatRuleCondition('TACTICAL_STATE_AWAITING_CONFIRMATION'), 'Chờ xác nhận điều kiện kỹ thuật');
+        assert.strictEqual(vf.formatRuleCondition('TACTICAL_STATE_AWAITING_CONFIRMATION'), 'Chưa có đủ tín hiệu xác nhận xu hướng');
 
         // 2. Directions - NEVER Bò / Gấu
         assert.strictEqual(vf.formatDirection('bullish'), 'Tăng giá');

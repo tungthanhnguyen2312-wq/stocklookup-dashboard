@@ -250,7 +250,7 @@ test("drawer keeps concise localized conditions primary and raw identity in prog
   }), { ticker: "AAA", sourceArtifacts: { producer_artifact_identity: "workspace/v1:test" } });
   const primary = html.split('<details class="ws-deep-evidence">')[0].replace(/<[^>]+>/g, " ");
   assert.match(primary, /Rủi ro phá vỡ hỗ trợ tái diễn/);
-  assert.match(primary, /Chờ xác nhận điều kiện kỹ thuật/);
+  assert.match(primary, /Chưa có đủ tín hiệu xác nhận xu hướng/);
   assert.doesNotMatch(primary, /EASING_TO_REVERSAL_UPGRADE|FUTURE_CLOSE_GT_FUTURE_MA20|RENEWED_BREAKDOWN_RISK|COMPATIBLE_PROFITABILITY_QUALITY_DETERIORATION|TACTICAL_STATE_AWAITING_CONFIRMATION/);
   assert.match(html, /Điều kiện nâng cấp sang đảo chiều/);
   assert.match(html, /Suy giảm chất lượng lợi nhuận/);

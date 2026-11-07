@@ -683,6 +683,21 @@
     return `<ul class="cockpit-list">${(risks.length ? risks : ["Chưa ghi nhận cảnh báo trong các dữ liệu được công bố; vẫn cần kiểm tra từng mã."]).map((risk) => `<li>${esc(risk)}</li>`).join("")}</ul>`;
   }
 
+  // Everyday names for the official sources a post-hoc read could not use. Unknown sources fall
+  // back to a generic phrase; the raw source id stays in the technical disclosure.
+  function closureLabel(source) {
+    const raw = String(source || "");
+    if (/^NSO_CPI_([A-Z]+)_(\d{4})$/.test(raw)) {
+      const months = { JANUARY: 1, FEBRUARY: 2, MARCH: 3, APRIL: 4, MAY: 5, JUNE: 6, JULY: 7, AUGUST: 8, SEPTEMBER: 9, OCTOBER: 10, NOVEMBER: 11, DECEMBER: 12 };
+      const m = raw.match(/^NSO_CPI_([A-Z]+)_(\d{4})$/);
+      return months[m[1]] ? `chỉ số giá tiêu dùng (CPI) tháng ${months[m[1]]}/${m[2]} của Cục Thống kê` : "chỉ số giá tiêu dùng (CPI) của Cục Thống kê";
+    }
+    if (/^SBV_CENTRAL_RATE/.test(raw)) return "tỷ giá trung tâm của Ngân hàng Nhà nước";
+    if (/^HOSE_AGGREGATE_TRADING_VALUE/.test(raw)) return "tổng giá trị giao dịch toàn sàn HOSE";
+    if (/^WHOLE_EXCHANGE_FOREIGN_VALUE/.test(raw)) return "giá trị giao dịch của nhà đầu tư nước ngoài toàn thị trường";
+    return "một nguồn dữ liệu chính thức khác";
+  }
+
   function currentResearchHtml(payload) {
     if (!payload || payload.contract_version !== CURRENT_RESEARCH_CONTRACT || payload.session_binding !== "NOT_WRITTEN_INTO_SEALED_DAILY") return "";
     const bench = payload.posthoc_benchmark || {};
@@ -690,10 +705,12 @@
       return '<p class="cockpit-note">Chưa có quan sát sau niêm phong đủ điều kiện. Không suy chỉ số từ giá từng mã.</p>';
     }
     const sign = Number(bench.change_points) > 0 ? "+" : "";
-    const indexLine = `VN-Index phiên ${bench.session} được đọc lúc ${bench.knowledge_available_at}, sau Daily đã niêm phong: ${Number(bench.close).toLocaleString("vi-VN")} điểm (${sign}${Number(bench.change_points).toLocaleString("vi-VN")} điểm, ${Number(bench.change_percent).toLocaleString("vi-VN")}%). Nguồn: ${bench.authority || "chưa gắn"}. Đây không phải số liệu đã biết tại thời điểm niêm phong và không phải số liệu HOSE điều hành chỉ số.`;
+    const indexLine = `VN-Index phiên ${bench.session}: ${Number(bench.close).toLocaleString("vi-VN")} điểm (${sign}${Number(bench.change_points).toLocaleString("vi-VN")} điểm, ${sign}${Number(bench.change_percent).toLocaleString("vi-VN")}%).`;
+    const whenLine = `Số liệu được đọc lúc ${bench.knowledge_available_at}, sau Daily đã niêm phong, từ một nguồn tái công bố (không phải HOSE). Vì biết sau thời điểm chốt báo cáo phiên, con số này không được ghép với độ rộng thị trường ở trên để rút ra một kết luận chung.`;
+    const missing = (payload.source_closures || []).map((row) => closureLabel(row.source));
     const closures = (payload.source_closures || []).map((row) => `${row.source}: đóng vì ${row.reason}`);
     const compatibility = (payload.compatibility || {}).reason || "NOT_JOINED";
-    return `<p data-posthoc-session="${esc(bench.session)}" data-knowledge-at="${esc(bench.knowledge_available_at)}">${esc(indexLine)}</p><p class="cockpit-note">${esc(closures.join("; ") || "Không có nguồn nào được đóng trong lần này.")}</p><p class="cockpit-note">Độ rộng, regime và chỉ số không được ghép thành một kết luận cùng thời điểm biết: ${esc(compatibility)}.</p>`;
+    return `<p class="mb-1" data-posthoc-session="${esc(bench.session)}" data-knowledge-at="${esc(bench.knowledge_available_at)}"><strong>${esc(indexLine)}</strong></p><p class="cockpit-note">${esc(whenLine)}</p>${missing.length ? `<p class="cockpit-note">Chưa có số liệu chính thức cho: ${esc(missing.join("; "))}.</p>` : ""}<details class="ws-tech home-tech"><summary>Chi tiết kỹ thuật về nguồn</summary><p class="cockpit-note">Nguồn chỉ số: ${esc(bench.authority || "chưa gắn")}.</p><p class="cockpit-note">${esc(closures.join("; ") || "Không có nguồn nào được đóng trong lần này.")}</p><p class="cockpit-note">Lý do không ghép: ${esc(compatibility)}.</p></details>`;
   }
 
   function renderCurrentResearch() {
@@ -716,16 +733,18 @@
     const index = block.benchmark_index || {};
     const breadth = block.breadth || {};
     const sectors = block.sectors || {};
+    const sign = Number(index.change_points) > 0 ? "+" : "";
     const indexLine = index.status === "AVAILABLE"
-      ? `VN-Index ${Number(index.close).toLocaleString("vi-VN")} điểm (${Number(index.change_points) > 0 ? "+" : ""}${Number(index.change_points).toLocaleString("vi-VN")} điểm, ${Number(index.change_percent).toLocaleString("vi-VN")}%). Nguồn: ${index.authority || "chưa gắn"}. Không phải số liệu HOSE điều hành chỉ số.`
-      : `VN-Index: chưa có mức chỉ số đủ điều kiện (${(index.reason_codes || []).join(", ") || "không gắn"}). Không suy từ giá từng mã.`;
+      ? `VN-Index ${Number(index.close).toLocaleString("vi-VN")} điểm (${sign}${Number(index.change_points).toLocaleString("vi-VN")} điểm, ${sign}${Number(index.change_percent).toLocaleString("vi-VN")}%). Không phải số liệu HOSE điều hành chỉ số; xem nguồn ở phần chi tiết kỹ thuật.`
+      : "VN-Index: chưa có mức chỉ số đủ điều kiện. Trang không tự tính chỉ số từ giá từng mã.";
     const breadthLine = breadth.status === "AVAILABLE"
-      ? `Độ rộng trên ${Number(breadth.denominator || 0).toLocaleString("vi-VN")} mã có kỹ thuật cùng phiên: ${Number(breadth.advancing || 0).toLocaleString("vi-VN")} tăng / ${Number(breadth.declining || 0).toLocaleString("vi-VN")} giảm / ${Number(breadth.unchanged || 0).toLocaleString("vi-VN")} đứng. Đây không phải toàn sàn.`
-      : "Độ rộng: chưa có.";
+      ? `Trong ${Number(breadth.denominator || 0).toLocaleString("vi-VN")} mã có dữ liệu kỹ thuật cùng phiên: ${Number(breadth.advancing || 0).toLocaleString("vi-VN")} mã tăng, ${Number(breadth.declining || 0).toLocaleString("vi-VN")} mã giảm, ${Number(breadth.unchanged || 0).toLocaleString("vi-VN")} mã đứng giá. Đây không phải toàn sàn.`
+      : "Số mã tăng/giảm: chưa có.";
     const sectorLine = sectors.status === "AVAILABLE"
-      ? `Nhóm ngành (taxonomy nhà cung cấp, không so với số ngành của công ty chứng khoán): ${Number(sectors.groups_with_more_decliners_than_advancers || 0).toLocaleString("vi-VN")} nhóm giảm nhiều hơn tăng. Nhóm weakening: ${(sectors.weakening || []).join(", ") || "không có"}.`
+      ? `Theo cách phân ngành của nhà cung cấp dữ liệu: ${Number(sectors.groups_with_more_decliners_than_advancers || 0).toLocaleString("vi-VN")} nhóm có số mã giảm nhiều hơn số mã tăng. Nhóm đang suy yếu: ${(sectors.weakening || []).join(", ") || "không có"}.`
       : "Nhóm ngành: chưa có.";
-    return `<p>${esc(indexLine)}</p><p>${esc(breadthLine)}</p><p>${esc(sectorLine)}</p><p class="cockpit-note">Thanh khoản sàn: ${esc(block.liquidity_status || "UNAVAILABLE")}. Dòng ngoại toàn sàn: ${esc(block.foreign_flow_status || "UNAVAILABLE")}. Trục vĩ mô dùng được: ${esc((block.macro_usable_axes || []).join(", ") || "không có")}.</p>`;
+    const has = (status) => (status === "AVAILABLE" ? "có" : "chưa có");
+    return `<p>${esc(indexLine)}</p><p>${esc(breadthLine)}</p><p>${esc(sectorLine)}</p><p class="cockpit-note">Thanh khoản toàn sàn: ${esc(has(block.liquidity_status))} · Giao dịch khối ngoại toàn sàn: ${esc(has(block.foreign_flow_status))}.</p><details class="ws-tech home-tech"><summary>Chi tiết kỹ thuật về nguồn</summary><p class="cockpit-note">Nguồn chỉ số: ${esc(index.authority || "chưa gắn")}${(index.reason_codes || []).length ? ` · lý do: ${esc(index.reason_codes.join(", "))}` : ""}.</p><p class="cockpit-note">Thanh khoản sàn: ${esc(block.liquidity_status || "UNAVAILABLE")}. Dòng ngoại toàn sàn: ${esc(block.foreign_flow_status || "UNAVAILABLE")}. Trục vĩ mô dùng được: ${esc((block.macro_usable_axes || []).join(", ") || "không có")}.</p></details>`;
   }
 
   function renderInvestorHome(summary) {
@@ -774,11 +793,11 @@
   function postureEntryHtml(summary) {
     const block = (summary && summary.research_action_posture) || {};
     const counts = block.counts || {};
-    if (!block.available || !Object.keys(counts).length) return '<p class="cockpit-note">Chưa có tư thế nghiên cứu cho phiên hiện tại.</p>';
+    if (!block.available || !Object.keys(counts).length) return '<p class="cockpit-note">Chưa có trạng thái hành động cho phiên hiện tại.</p>';
     const rows = POSTURE_ENTRY.map((entry) => ({ ...entry, count: entry.postures.reduce((sum, key) => sum + (Number(counts[key]) || 0), 0) }));
     const max = Math.max(1, ...rows.map((row) => row.count));
     const total = typeof block.coverage === "number" ? block.coverage : rows.reduce((sum, row) => sum + row.count, 0);
-    return `<p class="cockpit-note">${esc(total.toLocaleString("vi-VN"))} mã của phiên, nhóm theo tư thế nghiên cứu đã công bố. Không có danh sách mã hàng đầu: dữ liệu không xếp hạng cổ phiếu.</p>`
+    return `<p class="cockpit-note">${esc(total.toLocaleString("vi-VN"))} mã của phiên, nhóm theo trạng thái hành động đã công bố. Trang không xếp hạng cổ phiếu và không chọn "mã tốt nhất".</p>`
       + `<ul class="home-posture-list">${rows.map((row) => `<li><a class="home-posture-row" href="investment-workspace.html?filter=${row.filter}" data-posture-filter="${row.filter}"${row.count ? "" : ' aria-disabled="true" tabindex="-1"'}>`
       + `<span class="home-posture-label">${esc(row.label)}</span><strong class="home-posture-count">${esc(row.count.toLocaleString("vi-VN"))}</strong>`
       + `<span class="home-posture-track" aria-hidden="true"><span style="width:${((row.count / max) * 100).toFixed(1)}%"></span></span></a></li>`).join("")}</ul>`;

@@ -63,7 +63,7 @@ jobs:
       # INVESTOR_EVIDENCE_INVESTIGATION_WORKBENCH_V1: dossier / comparison / journal / export
       # contracts over every committed published ticker (no fixtures).
       - name: Investigation workbench tests
-        run: node --test tests/workspace-read-model.test.js tests/investigation-workbench.test.js
+        run: node --test tests/workspace-read-model.test.js tests/investigation-workbench.test.js tests/investor-friendly-dossier.test.js
 
       # INVESTOR_CASE_DESK_LOCAL_REVIEW_INTEGRATION_V1: browser-local Case Desk case viewer over
       # sanitized excerpts of the Consumer PR #12 HPG / NVL / five-company acceptance cases.

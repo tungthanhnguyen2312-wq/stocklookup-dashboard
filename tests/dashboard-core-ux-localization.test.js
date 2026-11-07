@@ -302,8 +302,8 @@ test("technical structure pills localize visible text and keep raw identity in d
 });
 
 test("rule-condition and Workspace readiness text are localized with raw identity retained", () => {
-  assert.equal(vf.formatRuleCondition("TACTICAL_STATE_AWAITING_CONFIRMATION"), "Chờ xác nhận điều kiện kỹ thuật");
-  assert.equal(vf.formatRuleCondition("WAIT_FOR_CONFIRMATION"), "Chờ xác nhận điều kiện kỹ thuật");
+  assert.equal(vf.formatRuleCondition("TACTICAL_STATE_AWAITING_CONFIRMATION"), "Chưa có đủ tín hiệu xác nhận xu hướng");
+  assert.equal(vf.formatRuleCondition("WAIT_FOR_CONFIRMATION"), "Chưa có đủ tín hiệu xác nhận xu hướng");
   assert.equal(vf.formatRuleCondition("PROFITABILITY_STATE_REVERSAL"), "Đảo chiều trạng thái lợi nhuận");
   assert.equal(vf.formatDomainState("UNKNOWN_MACHINE_RULE_XYZ", "rule_condition").label, "Điều kiện kỹ thuật");
   assert.equal(vf.formatDomainState("UNKNOWN_MACHINE_RULE_XYZ", "rule_condition").raw, "UNKNOWN_MACHINE_RULE_XYZ");
