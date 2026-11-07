@@ -680,7 +680,29 @@
     return `<ul class="cockpit-list">${(risks.length ? risks : ["Chưa ghi nhận cảnh báo trong các dữ liệu được công bố; vẫn cần kiểm tra từng mã."]).map((risk) => `<li>${esc(risk)}</li>`).join("")}</ul>`;
   }
 
+  function marketCloseHtml(summary) {
+    const block = summary && summary.market_close;
+    if (!block || block.contract_version !== "market_close_intelligence/v1" || block.session !== summary.as_of_session) {
+      return '<p class="cockpit-note">Chưa có bản tin đóng cửa cùng phiên. Không suy chỉ số từ giá từng mã.</p>';
+    }
+    const index = block.benchmark_index || {};
+    const breadth = block.breadth || {};
+    const sectors = block.sectors || {};
+    const indexLine = index.status === "AVAILABLE"
+      ? `VN-Index ${Number(index.close).toLocaleString("vi-VN")} điểm (${Number(index.change_points) > 0 ? "+" : ""}${Number(index.change_points).toLocaleString("vi-VN")} điểm, ${Number(index.change_percent).toLocaleString("vi-VN")}%). Nguồn: ${index.authority || "chưa gắn"}. Không phải số liệu HOSE điều hành chỉ số.`
+      : `VN-Index: chưa có mức chỉ số đủ điều kiện (${(index.reason_codes || []).join(", ") || "không gắn"}). Không suy từ giá từng mã.`;
+    const breadthLine = breadth.status === "AVAILABLE"
+      ? `Độ rộng trên ${Number(breadth.denominator || 0).toLocaleString("vi-VN")} mã có kỹ thuật cùng phiên: ${Number(breadth.advancing || 0).toLocaleString("vi-VN")} tăng / ${Number(breadth.declining || 0).toLocaleString("vi-VN")} giảm / ${Number(breadth.unchanged || 0).toLocaleString("vi-VN")} đứng. Đây không phải toàn sàn.`
+      : "Độ rộng: chưa có.";
+    const sectorLine = sectors.status === "AVAILABLE"
+      ? `Nhóm ngành (taxonomy nhà cung cấp, không so với số ngành của công ty chứng khoán): ${Number(sectors.groups_with_more_decliners_than_advancers || 0).toLocaleString("vi-VN")} nhóm giảm nhiều hơn tăng. Nhóm weakening: ${(sectors.weakening || []).join(", ") || "không có"}.`
+      : "Nhóm ngành: chưa có.";
+    return `<p>${esc(indexLine)}</p><p>${esc(breadthLine)}</p><p>${esc(sectorLine)}</p><p class="cockpit-note">Thanh khoản sàn: ${esc(block.liquidity_status || "UNAVAILABLE")}. Dòng ngoại toàn sàn: ${esc(block.foreign_flow_status || "UNAVAILABLE")}. Trục vĩ mô dùng được: ${esc((block.macro_usable_axes || []).join(", ") || "không có")}.</p>`;
+  }
+
   function renderInvestorHome(summary) {
+    const closeHost = document.getElementById("home-market-close");
+    if (closeHost) closeHost.innerHTML = marketCloseHtml(summary);
     const sectorHost = document.getElementById("home-sectors");
     if (sectorHost) sectorHost.innerHTML = summary.sector.available
       ? `<p class="cockpit-note">Các nhóm có nhiều mã trong phạm vi dữ liệu; chưa có cơ sở xác định ngành dẫn dắt.</p><div class="home-sector-list">${(summary.sector.rows || []).slice(0, 4).map((row) => `<div><span>${esc(row.label)}</span><strong>${esc(row.count.toLocaleString("vi-VN"))} mã</strong></div>`).join("")}</div>`
@@ -807,6 +829,6 @@
     renderMarketOverview,
     validateProjection,
     validateHomeSummary,
-    investorRiskHtml, homeOpportunitiesHtml,
+    investorRiskHtml, homeOpportunitiesHtml, marketCloseHtml,
   };
 });

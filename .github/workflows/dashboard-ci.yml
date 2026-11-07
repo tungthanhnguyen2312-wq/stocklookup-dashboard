@@ -136,7 +136,7 @@ jobs:
         run: python tests/test_asset_cache_version_contract.py -v
 
       - name: Dashboard Home summary cutover tests
-        run: node --test tests/dashboard-home-summary-cutover.test.js
+        run: node --test tests/dashboard-home-summary-cutover.test.js tests/home-market-close.test.js
 
       - name: Dashboard Home performance and investor-first tests
         run: node --test tests/dashboard-home-performance-and-investor-first.test.js

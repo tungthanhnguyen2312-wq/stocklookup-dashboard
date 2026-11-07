@@ -897,9 +897,18 @@
       ? "tổng vốn chủ sở hữu hợp nhất (gồm lợi ích cổ đông không kiểm soát nếu có)"
       : (d.equity_definition ? formatWorkspaceState(d.equity_definition, "rule_condition") : "mẫu số chưa xác định");
     const lag = Number.isFinite(Number(d.book_period_lag_quarters)) && d.book_period_lag_quarters !== null ? `, trễ ${d.book_period_lag_quarters} quý` : "";
+    const comparison = d.common_shareholder_comparison || {};
+    const common = comparison.common_shareholder_pb || {};
+    let commonLine = "";
+    if (common.status === "UNAVAILABLE") {
+      commonLine = ` P/B vốn cổ đông phổ thông (${escHtml(comparison.label || "COMMON_SHAREHOLDER_RESEARCH")}): chưa lập được (${escHtml((common.reason_codes || []).join(", ") || "thiếu vốn chủ cổ đông mẹ")}).`;
+    } else if (common.status === "AVAILABLE") {
+      const periodNote = comparison.periods_comparable ? "" : ", khác kỳ với P/B nghiên cứu đang hiển thị";
+      commonLine = ` P/B vốn cổ đông phổ thông ${escHtml(formatDiagnosticNumber(common.value))}×, kỳ ${escHtml(common.period || "chưa xác định")}${escHtml(periodNote)}.`;
+    }
     return `<div class="ws-book-basis cockpit-note mt-1" data-equity-definition="${escHtml(d.equity_definition || "UNKNOWN")}" data-book-period="${escHtml(d.book_period || "UNKNOWN")}">
       <b>Cơ sở P/B nghiên cứu ${escHtml(formatDiagnosticNumber(d.value))}×:</b> ${escHtml(basis)}, kỳ sổ sách ${escHtml(d.book_period || "chưa xác định")}${escHtml(lag)}; số cổ phiếu là proxy nghiên cứu.
-      Đây không phải P/B trên vốn cổ đông công ty mẹ và không so trực tiếp với P/B tính từ BCTC kỳ mới hơn. P/B thấp không tự chứng minh cổ phiếu rẻ (cần xét lợi nhuận bất thường, dòng tiền, tồn kho).
+      Đây không phải P/B trên vốn cổ đông công ty mẹ và không so trực tiếp với P/B tính từ BCTC kỳ mới hơn. P/B thấp không tự chứng minh cổ phiếu rẻ (cần xét lợi nhuận bất thường, dòng tiền, tồn kho).${commonLine}
     </div>`;
   }
   function valuationEvidenceSummaryHtml(val) {
