@@ -55,7 +55,7 @@ jobs:
         run: node --test tests/screener-master.test.js
 
       - name: Investment workspace tests
-        run: node --test tests/investment-workspace.test.js
+        run: node --test tests/investment-workspace.test.js tests/workspace-q3-successor.test.js
 
       - name: Workspace lens and financial period tests
         run: node --test tests/workspace-lens-financial-period.test.js

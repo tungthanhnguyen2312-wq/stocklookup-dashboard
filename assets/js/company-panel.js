@@ -738,7 +738,7 @@
           <div class="vs-panel-tab-content" data-tab-content="chart" id="cp-panel-chart" role="tabpanel" aria-labelledby="cp-tab-chart">
             <div class="chart-box" style="height:220px"><canvas id="cp-chart-canvas"></canvas></div>
           </div>
-          <div class="vs-panel-tab-content" data-tab-content="financials" id="cp-panel-financials" role="tabpanel" aria-labelledby="cp-tab-financials"><div id="cp-financials-content">${financialsPlaceholder()}</div></div>
+          <div class="vs-panel-tab-content" data-tab-content="financials" id="cp-panel-financials" role="tabpanel" aria-labelledby="cp-tab-financials"><div id="cp-financials-q3"></div><div id="cp-financials-content">${financialsPlaceholder()}</div></div>
         </div>
       </div>`;
     document.body.appendChild(backdrop);
@@ -812,6 +812,15 @@
       overview.innerHTML = renderOverview(row) + renderHistoricalValuation(entry) + renderQualifiedResearchBrief(researchBriefForRow(row, bundle)) + renderQualifiedResearchDelta(researchDeltaForRow(row, bundle)) + renderEbitdaLineage(entry) + renderAnalysisReadiness(readinessForRow(row, bundle)) + renderCorporateIntelligence(corporateForRow(row, bundle)) + renderFinancialDistress(distressForRow(row, bundle), taxonomyForRow(row, bundle)) + renderCitedDocumentEvidence(evidenceForRow(row, bundle)) + renderQualifiedResearchSnapshotV2(qualifiedResearchSnapshotForRow(row, bundle), row);
       if (financialsContent) financialsContent.innerHTML = renderFinancialAnalysis(entry);
     });
+    const q3Research = window.VSQ3Research;
+    const q3Container = document.getElementById("cp-financials-q3");
+    if (q3Container) {
+      q3Container.replaceChildren();
+      if (q3Research && ticker === "PAN") q3Research.load().then((q3Successor) => {
+        if (backdrop._currentRow !== row) return;
+        q3Container.innerHTML = q3Research.q3SuccessorHtml(q3Research.q3SuccessorFor({ q3Successor }, ticker));
+      });
+    }
     switchTab("overview");
     backdrop.classList.add("is-open");
     document.body.style.overflow = "hidden";

@@ -44,3 +44,17 @@ test("a promoted official count is not displayed", () => {
   const promoted = { ...artifact, official_fact_admitted_count: 1 };
   assert.equal(ws.q3SuccessorFor({ q3Successor: promoted }, "HPG"), null);
 });
+
+test("PAN retained observations display in the decision card with closed comparator authority", () => {
+  const q3Successor = require("../data/q3_successor_research.json");
+  const record = ws.q3SuccessorFor({ q3Successor }, "PAN");
+  const html = ws.decisionCardHtml({ ticker: "PAN" }, { ticker: "PAN", q3Successor });
+  assert.equal(record.observations.length, 17);
+  assert.match(html, /0,7621×/);
+  assert.match(html, /619\.520\.988\.619/);
+  assert.match(html, /561\.507\.166\.021/);
+  assert.match(html, /data-valuation-use="CLOSED"/);
+  assert.match(html, /9 tháng không qua kiểm tra cộng ngang/);
+  assert.match(html, /staticfile\.hsx\.vn/);
+  assert.equal(ws.q3SuccessorHtml({ ...record, valuation_use: "AVAILABLE" }), "");
+});

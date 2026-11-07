@@ -6,7 +6,7 @@
       "exact_statement_url": null,
       "official_fact_admitted": false,
       "reason_codes": [
-        "NO_ADMITTED_ISSUER_IR_HOST"
+        "EXACT_Q3_DISCLOSURE_LOCATED_ISSUER_HOST_NOT_ADMITTED"
       ],
       "status": "BLOCKED",
       "ticker": "EVF",
@@ -310,41 +310,178 @@
       "valuation_use": "CLOSED"
     },
     "PAN": {
-      "cheapness_claim": "NOT_SUPPORTED",
-      "common_shareholder_pb": "UNAVAILABLE",
-      "contract_version": "common_shareholder_book_comparison/v1",
-      "earnings_quality": {
-        "effect_on_research_pb": "NOT_EVALUABLE",
-        "effect_on_research_pe": "NOT_EVALUABLE",
-        "normalized_eps": "NOT_COMPUTED",
+      "audit_or_review_status": "unreviewed",
+      "book_sensitivity": {
+        "book_date": "2026-09-30",
+        "derived_equity_excluding_nci_vnd": 5558920172015,
+        "illustrative_multiple": 0.7620862279561025,
+        "kind": "CROSS_DATE_ILLUSTRATION",
+        "quarter_end_shares": 250673166,
         "reason_codes": [
-          "DISPOSAL_INCOME_NOT_ADMITTED",
-          "OPERATING_CASH_FLOW_NOT_ADMITTED",
-          "INVENTORY_NOT_ADMITTED"
+          "RECONCILED_PARENT_EQUITY_METHOD_NOT_ADMITTED",
+          "SHARE_CONTINUITY_THROUGH_PRICE_SESSION_UNPROVEN",
+          "RAW_PRICE_BASIS_NOT_BOUND"
         ],
-        "rule": "PRETAX_NONRECURRING_INCOME_IS_NOT_SUBTRACTED_FROM_NET_INCOME",
-        "target_price": "NOT_EMITTED"
+        "reference_price_basis": "CURRENT_DESCRIPTIVE_DNSE_REST_ADJUSTED_RETROSPECTIVE_RAW_AS_TRADED_NOT_PROMOTED",
+        "reference_price_session": "2026-11-06",
+        "reference_price_source": "decision:PAN:5339b11b31869af6",
+        "reference_price_vnd": 16900
       },
-      "label": "COMMON_SHAREHOLDER_RESEARCH",
-      "missing": [
-        "PARENT_EQUITY_NOT_ADMITTED",
-        "COMMON_SHARES_OUTSTANDING_NOT_ADMITTED",
-        "TREASURY_SHARES_NOT_ADMITTED",
-        "SHARE_COUNT_EFFECTIVE_TIME_UNKNOWN",
-        "REPORTING_PERIOD_NOT_BOUND",
-        "PRICE_BASIS_NOT_BOUND",
-        "NO_EXACT_OFFICIAL_Q3_STATEMENT_URL",
-        "NO_ADMITTED_IR_INDEX_HOST"
+      "common_shareholder_pb": "UNAVAILABLE",
+      "evidence_layer": "VISUAL_READ_NOT_BYTE_NATIVE",
+      "existing_consumer_usable": false,
+      "issuer_disclosure_date": "2026-10-27",
+      "observations": [
+        {
+          "line_code": "10",
+          "metric": "revenue",
+          "pdf_page": 8,
+          "period": "2026-Q3",
+          "unit": "VND",
+          "value": 4057502614673
+        },
+        {
+          "line_code": "60",
+          "metric": "net_income",
+          "pdf_page": 8,
+          "period": "2026-Q3",
+          "unit": "VND",
+          "value": 335736615861
+        },
+        {
+          "line_code": "61",
+          "metric": "attributable_net_income",
+          "pdf_page": 8,
+          "period": "2026-Q3",
+          "unit": "VND",
+          "value": 195756189127
+        },
+        {
+          "line_code": "10",
+          "metric": "revenue",
+          "pdf_page": 8,
+          "period": "2025-Q3",
+          "unit": "VND",
+          "value": 5138101338699
+        },
+        {
+          "line_code": "60",
+          "metric": "net_income",
+          "pdf_page": 8,
+          "period": "2025-Q3",
+          "unit": "VND",
+          "value": 266378896981
+        },
+        {
+          "line_code": "61",
+          "metric": "attributable_net_income",
+          "pdf_page": 8,
+          "period": "2025-Q3",
+          "unit": "VND",
+          "value": 156192900845
+        },
+        {
+          "metric": "total_equity",
+          "pdf_page": 7,
+          "period": "2026-09-30",
+          "unit": "VND",
+          "value": 9414380321367
+        },
+        {
+          "metric": "noncontrolling_interest",
+          "pdf_page": 7,
+          "period": "2026-09-30",
+          "unit": "VND",
+          "value": 3855460149352
+        },
+        {
+          "metric": "issued_shares",
+          "pdf_page": 34,
+          "period": "2026-09-30",
+          "unit": "shares",
+          "value": 258072996
+        },
+        {
+          "metric": "treasury_shares",
+          "pdf_page": 34,
+          "period": "2026-09-30",
+          "unit": "shares",
+          "value": 7399830
+        },
+        {
+          "metric": "outstanding_shares",
+          "pdf_page": 34,
+          "period": "2026-09-30",
+          "unit": "shares",
+          "value": 250673166
+        },
+        {
+          "metric": "net_inventory",
+          "pdf_page": 26,
+          "period": "2026-09-30",
+          "unit": "VND",
+          "value": 4331055601966
+        },
+        {
+          "metric": "net_inventory",
+          "pdf_page": 26,
+          "period": "2025-12-31",
+          "unit": "VND",
+          "value": 3179033807421
+        },
+        {
+          "metric": "operating_cash_flow",
+          "pdf_page": 9,
+          "period": "2026-9M",
+          "unit": "VND",
+          "value": -619520988619
+        },
+        {
+          "metric": "receivables_cash_movement",
+          "pdf_page": 9,
+          "period": "2026-9M",
+          "unit": "VND",
+          "value": -2803360221257
+        },
+        {
+          "metric": "inventory_cash_movement",
+          "pdf_page": 9,
+          "period": "2026-9M",
+          "unit": "VND",
+          "value": -1099450415124
+        },
+        {
+          "metric": "pretax_disposal_gain",
+          "pdf_page": 36,
+          "period": "2026-9M",
+          "unit": "VND",
+          "value": 561507166021
+        }
       ],
-      "ticker": "PAN"
+      "official_fact_admitted": false,
+      "parent_profit_yoy_pct": 25.33,
+      "publication_precision": "DATE_ONLY",
+      "rejected_income_columns": {
+        "2026-9M": [
+          "LINE_60_DOES_NOT_FOOT_61_PLUS_62"
+        ]
+      },
+      "retained_at": "2026-11-07T09:01:04Z",
+      "revenue_yoy_pct": -21.03,
+      "session_binding": "NOT_A_SEALED_SESSION_FACT",
+      "sha256": "d7e1422fcda668eb640abbdc73f1194380241e81c6ed9d33a5ef6e3ead0366b1",
+      "source_role": "EXCHANGE_HOSTED_ISSUER_DISCLOSURE_ATTACHMENT",
+      "source_url": "https://staticfile.hsx.vn/Uploads/UploadDocuments/2508740/20261027%20-%20PAN%20-%20BCTC%20Hop%20nhat%20Q3%202026%20kem%20giai%20trinh%20%28signed%29.pdf",
+      "statement_scope": "consolidated",
+      "ticker": "PAN",
+      "valuation_use": "CLOSED"
     },
     "POW": {
       "contract_version": "q3_2026_successor_research/v1",
       "exact_statement_url": null,
       "official_fact_admitted": false,
       "reason_codes": [
-        "IR_INDEX_URL_PREVIOUSLY_404_NOT_RETRIED",
-        "NO_EXACT_OFFICIAL_Q3_STATEMENT_URL"
+        "EXACT_Q3_PDF_LOCATED_SOURCE_BYTES_UNVERIFIED"
       ],
       "status": "BLOCKED",
       "ticker": "POW",
@@ -355,8 +492,7 @@
       "exact_statement_url": null,
       "official_fact_admitted": false,
       "reason_codes": [
-        "IR_INDEX_URL_PREVIOUSLY_404_NOT_RETRIED",
-        "NO_EXACT_OFFICIAL_Q3_STATEMENT_URL"
+        "EXACT_Q3_PDF_LOCATED_SOURCE_BYTES_UNVERIFIED"
       ],
       "status": "BLOCKED",
       "ticker": "SSI",
@@ -364,6 +500,7 @@
     }
   },
   "knowledge_available_at": "2026-11-07T10:51:54+07:00",
+  "observation_count": 17,
   "official_fact_admitted_count": 0,
   "session_binding": "NOT_A_SEALED_SESSION_FACT",
   "shadow_row_count": 6
