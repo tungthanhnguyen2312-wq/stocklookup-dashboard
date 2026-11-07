@@ -124,3 +124,61 @@
   .wb-actions, .wb-inline-form, .wb-remove, [data-wb-action] { display: none !important; }
   .wb-section { break-inside: avoid-page; }
 }
+
+/* INVESTOR_FRIENDLY_DASHBOARD_UX_20261108: two-layer dossier. Layer 1 is a short plain-language
+   brief that reuses the existing glass surface tokens; layer 2 keeps every section collapsible. */
+.wb-lead { margin: .85rem 0 .75rem; padding: .8rem .95rem; border-radius: var(--radius-md); background: rgba(15, 23, 42, .28); border: 1px solid var(--border-soft); }
+.wb-lead-text { font-size: 1rem; line-height: 1.6; margin: .2rem 0 0; color: var(--text); }
+.wb-lead-why { font-size: .86rem; line-height: 1.55; margin: .35rem 0 0; color: var(--text-muted); }
+.wb-brief-title { font-size: .78rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--accent-text); margin: 0 0 .45rem; display: flex; align-items: center; gap: .4rem; }
+.wb-brief-count { display: inline-flex; min-width: 1.4rem; justify-content: center; padding: 0 .35rem; border-radius: 999px; font-size: .7rem; background: rgba(148, 163, 184, .16); color: var(--text); letter-spacing: 0; }
+.wb-brief { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .7rem; margin: .75rem 0; }
+.wb-brief-card, .wb-brief > .wb-adverse { margin: 0; padding: .8rem .9rem; border: 1px solid var(--border-soft); border-radius: var(--radius-md); background: rgba(15, 23, 42, .22); min-width: 0; font-size: .88rem; line-height: 1.55; }
+.wb-brief-card p { margin: 0 0 .4rem; }
+.wb-brief-positive { border-left: 3px solid var(--success); }
+.wb-brief-watch { border-left: 3px solid rgba(245, 158, 11, .7); }
+.wb-brief > .wb-adverse { border-left: 3px solid var(--danger); }
+.wb-adverse[data-severity="serious"] { margin: .75rem 0; padding: .8rem .95rem; border: 1px solid rgba(239, 68, 68, .45); border-left: 4px solid var(--danger); border-radius: var(--radius-md); font-size: .9rem; line-height: 1.55; }
+.wb-adverse .wb-brief-title { color: var(--danger-text-soft, #fca5a5); }
+.wb-brief-list { list-style: none; padding: 0; margin: 0; display: grid; gap: .4rem; }
+.wb-brief-list > li { position: relative; padding-left: .9rem; overflow-wrap: anywhere; }
+.wb-brief-list > li::before { content: ""; position: absolute; left: 0; top: .62em; width: .36rem; height: .36rem; border-radius: 50%; background: var(--border-medium); }
+.wb-brief-positive .wb-brief-list > li::before { background: var(--success); }
+.wb-adverse .wb-brief-list > li::before { background: var(--danger); }
+.wb-brief-figures b { font-variant-numeric: tabular-nums; }
+.wb-brief-strong { font-weight: 600; color: var(--text); }
+.wb-brief-empty { color: var(--text-muted); font-size: .85rem; }
+.wb-brief-foot { font-size: .76rem; color: var(--text-muted); margin: .45rem 0 0 !important; line-height: 1.45; }
+.wb-brief-more { display: inline-block; margin-top: .4rem; font-size: .78rem; color: var(--accent-text); }
+.wb-tag { display: inline-block; margin-left: .2rem; padding: 0 .4rem; border-radius: 999px; font-size: .68rem; color: var(--text-muted); border: 1px solid var(--border-soft); white-space: nowrap; vertical-align: 1px; }
+.wb-watch-role { display: block; font-size: .7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: .03em; }
+.wb-watch-state { display: inline-block; margin-left: .25rem; padding: 0 .45rem; border-radius: 999px; font-size: .68rem; border: 1px dashed rgba(245, 158, 11, .6); color: #fcd34d; white-space: nowrap; }
+.wb-watch-happened { border-style: solid; border-color: rgba(239, 68, 68, .55); color: var(--danger-text-soft, #fca5a5); }
+.wb-watch-now { border-style: solid; border-color: var(--border-medium); color: var(--text-muted); }
+.wb-certainty { margin: .2rem 0 .6rem; padding: .65rem .9rem; border-radius: var(--radius-md); border: 1px dashed var(--border-medium); font-size: .82rem; line-height: 1.5; color: var(--text-muted); }
+.wb-certainty ul { margin: 0; padding-left: 1.1rem; display: grid; gap: .2rem; }
+.wb-actions-secondary { display: inline-flex; flex-wrap: wrap; gap: .1rem; margin-left: auto; }
+.wb-actions-secondary .btn-link { color: var(--text-muted); text-decoration: none; font-size: .78rem; }
+.wb-actions-secondary .btn-link:hover, .wb-actions-secondary .btn-link:focus-visible { color: var(--accent-text); text-decoration: underline; }
+.wb-deep-head { margin: 1.1rem 0 .6rem; }
+.wb-deep-title { font-size: 1rem; font-weight: 700; margin: 0 0 .15rem; }
+.wb-list-kind { display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; margin: 0 0 .35rem; }
+.wb-theme { margin: .35rem 0; padding: .45rem .6rem; border: 1px solid var(--border-soft); border-radius: var(--radius-sm); background: rgba(15, 23, 42, .2); }
+.wb-theme > summary { font-size: .84rem; margin: 0; color: var(--text); }
+.wb-reason-group { margin: .5rem 0 .2rem; }
+.wb-reason-head { display: flex; flex-wrap: wrap; gap: .4rem; align-items: baseline; font-size: .8rem; }
+.wb-chips { list-style: none; padding: 0; margin: .3rem 0 0; display: flex; flex-wrap: wrap; gap: .3rem; }
+.wb-chips li { font-size: .74rem; padding: .1rem .5rem; border-radius: 999px; border: 1px solid var(--border-soft); background: var(--surface); }
+.wb-legend h6 { font-size: .8rem; margin: 0 0 .3rem; }
+.wb-section-body { font-size: .88rem; line-height: 1.5; }
+.wb-item-label { font-size: .86rem; }
+@media (max-width: 768px) {
+  .wb-brief { grid-template-columns: 1fr; }
+  .wb-actions-secondary { margin-left: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .wb-section, .wb-theme, .wb-more { scroll-behavior: auto; }
+}
+@media print {
+  .wb-brief { grid-template-columns: 1fr 1fr; }
+}

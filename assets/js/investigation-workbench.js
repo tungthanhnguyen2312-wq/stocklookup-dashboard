@@ -71,7 +71,7 @@
     UNQUALIFIED_TACTICAL_AND_FUNDAMENTAL: "Kỹ thuật và nền tảng đều chưa đủ điều kiện",
     MISSING_CURRENT_EVIDENCE: "Thiếu bằng chứng phiên hiện tại",
     PENDING_DEFINED_CONFIRMATION: "Đang chờ điều kiện xác nhận đã xác định",
-    EARLY_MONITOR_NO_TRIGGER: "Theo dõi sớm, chưa có mức kích hoạt",
+    EARLY_MONITOR_NO_TRIGGER: "Theo dõi sớm, chưa có mức giá kích hoạt",
     FUNDAMENTAL_DETERIORATION_VETO_NO_NEW_ENTRY: "Nền tảng suy yếu — không mở vị thế mới",
     EXTENDED_NO_CHASE: "Giá đã đi xa — không đuổi giá",
     FRESH_ENTRY_TRIGGER: "Có mức kích hoạt mới",
@@ -91,19 +91,19 @@
     MARKET_BREADTH_DETERIORATING_BREADTH: "Độ rộng thị trường suy giảm",
     MARKET_REGIME_HEADWIND: "Thị trường chung là lực cản (chỉ là bối cảnh)",
     MARKET_REGIME_TAILWIND: "Thị trường chung hỗ trợ (chỉ là bối cảnh)",
-    NO_QUALIFIED_ENTRY_TRIGGER: "Chưa có mức kích hoạt đủ điều kiện",
-    NO_QUALIFIED_INVALIDATION_OR_ADVERSE_EVIDENCE: "Chưa có điều kiện vô hiệu hoặc bằng chứng bất lợi đủ điều kiện",
-    QUALIFIED_INTEGRATED_INVALIDATION: "Có điều kiện vô hiệu tích hợp đủ điều kiện",
-    QUALIFIED_INTEGRATED_ENTRY_TRIGGER: "Có mức kích hoạt tích hợp đủ điều kiện",
-    OBSERVED_REFERENCE: "Kịch bản tham chiếu đang quan sát",
-    NOT_ADMITTED: "Chưa được chấp nhận",
-    REFERENCE_CASE_NOT_MOST_PROBABLE: "Kịch bản tham chiếu không phải kịch bản có khả năng nhất",
+    NO_QUALIFIED_ENTRY_TRIGGER: "Chưa có mức giá kích hoạt rõ ràng",
+    NO_QUALIFIED_INVALIDATION_OR_ADVERSE_EVIDENCE: "Chưa có điều kiện vô hiệu hay bằng chứng bất lợi rõ ràng",
+    QUALIFIED_INTEGRATED_INVALIDATION: "Đã có điều kiện rõ ràng để nhận biết khi nhận định sai",
+    QUALIFIED_INTEGRATED_ENTRY_TRIGGER: "Đã có mức giá kích hoạt rõ ràng",
+    OBSERVED_REFERENCE: "Đang theo dõi",
+    NOT_ADMITTED: "Chưa đủ điều kiện",
+    REFERENCE_CASE_NOT_MOST_PROBABLE: "Kịch bản tham chiếu là mốc để so sánh, không có nghĩa là khả năng xảy ra cao nhất",
     RESEARCH_ONLY_NOT_EXECUTION: "Chỉ để nghiên cứu, không phải lệnh giao dịch",
-    PRICE_BASIS_UNVERIFIED_OR_MIXED: "Cơ sở giá chưa được kiểm chứng hoặc lẫn nhiều cơ sở",
+    PRICE_BASIS_UNVERIFIED_OR_MIXED: "Chuỗi giá dùng để tính chưa được kiểm chứng (có thể lẫn giá đã và chưa điều chỉnh)",
     UPWARD_INVALIDATION_RESOLVES_BEARISH_STRUCTURE_NOT_LONG_SETUP: "Vô hiệu theo chiều lên chỉ chấm dứt cấu trúc giảm, không tạo thiết lập mua",
-    UNKNOWN_UNCALIBRATED: "Chưa hiệu chỉnh — không có xác suất",
+    UNKNOWN_UNCALIBRATED: "Không ước tính xác suất",
     TECHNICAL_INVALIDATION_ALREADY_SOURCED_FROM_TACTICAL_CONFIRMATION_INVALIDATION_BOUNDARIES_VIA_TACTICAL_BEHAVIOR_CONTEXT: "Biên vô hiệu kỹ thuật đã nằm trong điều kiện xác nhận/vô hiệu kỹ thuật",
-    STATE_HAS_NO_DIRECTIONAL_THESIS_TO_CONFIRM_OR_INVALIDATE: "Trạng thái hiện tại không có luận điểm định hướng để xác nhận hay vô hiệu",
+    STATE_HAS_NO_DIRECTIONAL_THESIS_TO_CONFIRM_OR_INVALIDATE: "Hiện chưa có nhận định theo một hướng nào nên chưa có mốc vô hiệu",
     ENTRY_STATE_TECHNICALLY_INELIGIBLE_NO_RETAINED_BOUNDARY: "Trạng thái kỹ thuật chưa đủ điều kiện, chưa có biên được giữ lại",
     // financial analysis
     FA_V2_CAPITAL_EFFICIENCY_UNAVAILABLE: "Chưa có dữ liệu hiệu quả sử dụng vốn",
@@ -112,7 +112,7 @@
     FA_V2_BALANCE_SHEET_STRENGTHENING: "Bảng cân đối kế toán củng cố",
     SECTOR_LEADERSHIP_LEADING: "Ngành đang dẫn dắt",
     MISSING_SAME_NATIVE_PERIOD_SCOPE_SERIES: "Thiếu chuỗi dữ liệu cùng kỳ và phạm vi",
-    KBS_PERIOD_IDENTITY_UNVERIFIED: "Kỳ dữ liệu của nguồn KBS chưa được kiểm chứng",
+    KBS_PERIOD_IDENTITY_UNVERIFIED: "Chưa xác minh được số liệu của một nguồn thuộc đúng kỳ nào",
     MISSING_STANDALONE_QUARTER_CFO: "Thiếu dòng tiền kinh doanh quý riêng lẻ",
     FUNDAMENTAL_FEATURE_STORE_ABSENT: "Chưa có kho chỉ tiêu nền tảng",
     MISSING_COMPATIBLE_POINT_IN_TIME_SERIES: "Thiếu chuỗi số dư thời điểm tương thích",
@@ -132,7 +132,7 @@
     ISSUER_NOT_BANK: "Không phải ngân hàng",
     ISSUER_NOT_SECURITIES: "Không phải công ty chứng khoán",
     ENTITY_TYPE_NOT_SUPPORTED_THIS_MILESTONE: "Loại hình doanh nghiệp chưa được hỗ trợ",
-    FEATURE_STORE_RESEARCH_PROXY: "Chỉ số thay thế từ kho dữ liệu nghiên cứu",
+    FEATURE_STORE_RESEARCH_PROXY: "Số liệu tham khảo tính từ dữ liệu nhà cung cấp",
     BLOCKED_BY_EVIDENCE: "Bị chặn do thiếu bằng chứng",
     INDUSTRIAL_FINANCIAL_ANALYSIS: "Phân tích tài chính doanh nghiệp phi tài chính",
     OTHER_FINANCIAL_LIMITED_ANALYSIS: "Phân tích giới hạn cho tổ chức tài chính",
@@ -179,25 +179,25 @@
     OFFICIAL_QUALIFIED_FINANCIAL_INPUT_UNAVAILABLE: "Chưa có đầu vào tài chính chính thức đủ điều kiện",
     FINANCIAL_VALUE_SCALE_NOT_CANONICAL_FOR_CURRENT_VALUATION: "Đơn vị số liệu tài chính chưa chuẩn hóa cho định giá",
     conflicted_input_fact: "Dữ kiện đầu vào mâu thuẫn",
-    OFFICIAL_REPORTED_PERIOD_INPUT_NOT_ADMITTED: "Đầu vào kỳ báo cáo chính thức chưa được chấp nhận",
+    OFFICIAL_REPORTED_PERIOD_INPUT_NOT_ADMITTED: "Số liệu báo cáo chính thức của kỳ này chưa đủ điều kiện sử dụng",
     PRICE_PROVIDER_REJECTED: "Nguồn giá bị từ chối",
     CURRENT_COMMON_OUTSTANDING_COVERAGE_NOT_PROVEN_THROUGH_PRICE_SESSION: "Chưa chứng minh số cổ phiếu lưu hành đến phiên giá",
     STALE_SHARE_FAIL_CLOSED_CORPORATE_ACTION_OR_UNVERIFIABLE_FRESHNESS: "Số cổ phiếu có thể đã cũ do sự kiện doanh nghiệp",
     missing_explicit_official_ex_date_on_share_relevant_event: "Thiếu ngày giao dịch không hưởng quyền chính thức",
     PRICE_FINANCIAL_CURRENCY_MISMATCH_NO_FX_CONVERSION_CONTRACT: "Lệch đơn vị tiền tệ giữa giá và báo cáo tài chính",
     CALCULATION_READINESS_PERIOD_STALE: "Kỳ dữ liệu tính toán đã cũ",
-    POSITIVE_DENOMINATOR_REQUIRED: "Cần mẫu số dương",
+    POSITIVE_DENOMINATOR_REQUIRED: "Chỉ tính được khi giá trị dùng để chia lớn hơn 0",
     STATEMENT_SCOPE_UNKNOWN_NOT_PEER_COMPARABLE: "Chưa rõ phạm vi báo cáo — không đối sánh được",
     BELOW_MIN_COHORT_MEMBERS: "Nhóm đối sánh dưới số thành viên tối thiểu",
     INCOMPATIBLE_OR_UNAVAILABLE_BASIS: "Cơ sở không tương thích hoặc chưa có",
-    INTRINSIC_VALUE_METHOD_NOT_ADMITTED: "Chưa có phương pháp định giá nội tại được chấp nhận",
+    INTRINSIC_VALUE_METHOD_NOT_ADMITTED: "Chưa có phương pháp đủ tin cậy để tính giá trị hợp lý",
     NO_VALUATION_METHOD_AVAILABLE: "Chưa có phương pháp định giá",
     RESEARCH_METHODS_AVAILABLE_NOT_PEER_QUALIFIED: "Có phương pháp nghiên cứu nhưng chưa đủ điều kiện đối sánh",
     PEER_RELATIVE_QUALIFIED: "Đối sánh tương đối đủ điều kiện nghiên cứu",
-    CURRENT_SHARE_RESEARCH_PROXY: "Số cổ phiếu hiện tại, chỉ dùng nghiên cứu",
+    CURRENT_SHARE_RESEARCH_PROXY: "Tính theo số cổ phiếu hiện tại (tham khảo)",
     PROVIDER_VALUATION_PROXY: "Định giá của nhà cung cấp, chỉ dùng nghiên cứu",
     TTM_SUM: "12 tháng gần nhất",
-    POINT_IN_TIME_BALANCE_SHEET: "Số dư tại thời điểm",
+    POINT_IN_TIME_BALANCE_SHEET: "Số dư mới nhất",
     EXISTING_CURRENT_VALUATION_METHOD: "Phương pháp định giá hiện hành",
     UNVERIFIED_RESEARCH_PRICE: "giá nghiên cứu chưa kiểm chứng",
     RETURN_RATIO: "tỷ suất",
@@ -209,8 +209,8 @@
     NO_TRIGGER: "Không có mức kích hoạt",
     CONFIRMED_BOS_TRIGGER: "Kích hoạt khi phá cấu trúc đã xác nhận",
     RETEST_BROKEN_PIVOT: "Kiểm định lại đỉnh xoay đã vượt",
-    CONFIRMED_SWING_LOW_BY_RULE_OR_V1_SUPPORT_FALLBACK: "Đáy xoay đã xác nhận (hoặc hỗ trợ dự phòng)",
-    CONFIRMED_SWING_HIGH_BY_RULE_OR_V1_RESISTANCE_FALLBACK: "Đỉnh xoay đã xác nhận (hoặc kháng cự dự phòng)",
+    CONFIRMED_SWING_LOW_BY_RULE_OR_V1_SUPPORT_FALLBACK: "Đáy gần nhất đã được xác nhận (hoặc vùng hỗ trợ)",
+    CONFIRMED_SWING_HIGH_BY_RULE_OR_V1_RESISTANCE_FALLBACK: "Đỉnh gần nhất đã được xác nhận (hoặc vùng kháng cự)",
     MULTI_SIGNAL_RULE_NOT_REDUCED_TO_A_SINGLE_THRESHOLD: "Quy tắc nhiều tín hiệu, không quy về một ngưỡng",
     NO_RETAINED_NEXT_SESSION_EXTENSION_THRESHOLD: "Chưa có ngưỡng mở rộng cho phiên kế tiếp",
     DISJUNCTIVE_CONFIRMATION_NOT_A_SINGLE_FIXED_BOUNDARY: "Xác nhận theo nhiều nhánh, không phải một biên cố định",
@@ -242,7 +242,7 @@
     BUILT: "Đầy đủ",
     PARTIAL: "Một phần",
     // published contract blocked outputs
-    NOT_EMITTED: "Không phát hành",
+    NOT_EMITTED: "Không đưa ra",
     RANKING_PROHIBITED: "Cấm xếp hạng",
     FORECAST_PROHIBITED: "Cấm dự báo xác suất",
     SCORING_PROHIBITED: "Cấm chấm điểm",
@@ -396,16 +396,16 @@
 
   // Visible separation of what kind of statement each item is.
   const EVIDENCE_KINDS = Object.freeze({
-    SOURCE_FACT: { label: "Dữ kiện nguồn công bố", cls: "source" },
-    PRODUCER_INFERENCE: { label: "Suy luận của Producer", cls: "inference" },
-    CONDITIONAL: { label: "Thiết lập có điều kiện", cls: "conditional" },
-    RESEARCH_ONLY: { label: "Chỉ số thay thế, chỉ dùng nghiên cứu", cls: "research" },
-    HISTORICAL: { label: "Bằng chứng lịch sử", cls: "historical" },
-    MISSING: { label: "Thiếu", cls: "gap" },
-    STALE: { label: "Đã cũ", cls: "gap" },
-    BLOCKED: { label: "Bị chặn", cls: "gap" },
-    INCOMPATIBLE: { label: "Không tương thích", cls: "gap" },
-    LIMITATION: { label: "Giới hạn dữ liệu", cls: "gap" },
+    SOURCE_FACT: { label: "Số liệu có nguồn công bố", cls: "source" },
+    PRODUCER_INFERENCE: { label: "Đánh giá từ dữ liệu", cls: "inference" },
+    CONDITIONAL: { label: "Điều kiện tương lai", cls: "conditional" },
+    RESEARCH_ONLY: { label: "Số liệu tham khảo", cls: "research" },
+    HISTORICAL: { label: "Thông tin quá khứ", cls: "historical" },
+    MISSING: { label: "Chưa có dữ liệu", cls: "gap" },
+    STALE: { label: "Số liệu cũ", cls: "gap" },
+    BLOCKED: { label: "Chưa tính được", cls: "gap" },
+    INCOMPATIBLE: { label: "Không khớp kỳ/nguồn", cls: "gap" },
+    LIMITATION: { label: "Giới hạn sử dụng", cls: "gap" },
     HUMAN_NOTE: { label: "Ghi chú của bạn", cls: "note" },
   });
   const GAP_KINDS = new Set(["MISSING", "STALE", "BLOCKED", "INCOMPATIBLE", "LIMITATION"]);
@@ -493,7 +493,7 @@
       positionConditional: Boolean(obj(c.action_presentation).position_conditional),
       secondaryScreen: c.research_stance ? codeLabel(c.research_stance, "research_stance") : null,
       priority: obj(c.opportunity_priority).research_priority_tier ? codeLabel(obj(c.opportunity_priority).research_priority_tier, "opportunity_priority") : null,
-      reasons: arr(obj(c.why).deterministic_reasons).filter((r) => typeof r === "string").map((r) => codeItem("PRODUCER_INFERENCE", r)),
+      reasons: arr(obj(c.why).deterministic_reasons).filter((r) => typeof r === "string").map((r) => codeItem("PRODUCER_INFERENCE", r, { source: "Lý do của trạng thái hiện tại" })),
     };
   }
 
@@ -537,7 +537,7 @@
       else if (it.polarity === "constructive") support.push(it);
       else neutral.push(it);
     };
-    arr(why.deterministic_reasons).filter((r) => typeof r === "string").forEach((r) => place(codeItem("PRODUCER_INFERENCE", r, { source: "Lý do Producer nêu cho tư thế" })));
+    arr(why.deterministic_reasons).filter((r) => typeof r === "string").forEach((r) => place(codeItem("PRODUCER_INFERENCE", r, { source: "Lý do của trạng thái hiện tại" })));
     arr(why.counterbalancing_context).filter((r) => typeof r === "string").forEach((r) => place(codeItem("PRODUCER_INFERENCE", r, { source: "Bối cảnh đối trọng" })));
     arr(obj(why.financial_analysis).supporting).filter((r) => typeof r === "string").forEach((r) => place(codeItem("PRODUCER_INFERENCE", r, { dimension: "business", period: faPeriod, source: "Phân tích tài chính" })));
     const ticker = str(c.ticker);
@@ -564,20 +564,21 @@
   function adverseBlock(c, evidence) {
     const out = [];
     const posture = str(c.research_action_posture);
-    if (posture === "AVOID" || posture === "REDUCE") out.push({ label: `Tư thế của Producer: ${codeLabel(posture, "research_action_posture").label}`, raw: posture });
-    if (posture === "HOLD_DO_NOT_ADD") out.push({ label: "Tư thế của Producer: không mua thêm", raw: posture });
-    if (["BREAKDOWN_RISK", "DISTRIBUTION_RISK", "DOWNTREND"].includes(str(c.entry_state))) out.push({ label: `Trạng thái kỹ thuật: ${codeLabel(c.entry_state, "tactical_state").label}`, raw: c.entry_state });
+    if (posture === "AVOID") out.push({ label: "Trạng thái hành động là Tránh: không mở vị thế mới", raw: posture });
+    if (posture === "REDUCE") out.push({ label: "Trạng thái hành động là Giảm tỷ trọng (dành cho người đang nắm giữ)", raw: posture });
+    if (posture === "HOLD_DO_NOT_ADD") out.push({ label: "Trạng thái hành động: nắm giữ nhưng không mua thêm", raw: posture });
+    if (["BREAKDOWN_RISK", "DISTRIBUTION_RISK", "DOWNTREND"].includes(str(c.entry_state))) out.push({ label: `Xu hướng giá: ${codeLabel(c.entry_state, "tactical_state").label}`, raw: c.entry_state, dimension: "technical" });
     const cond = str(c.posture_condition_class);
-    if (cond && codePolarity(cond) === "adverse") out.push({ label: `Phân loại điều kiện: ${codeLabel(cond).label}`, raw: cond });
+    if (cond && codePolarity(cond) === "adverse") out.push({ label: codeLabel(cond).label, raw: cond, dimension: reasonDimension(cond) });
     const pres = getCardPresentation();
     const evClass = pres ? pres.evidenceCurrencyClass(c.evidence_currency) : "";
     if (evClass === "NO_CURRENT_EVIDENCE" || evClass === "LAST_TRADE_AS_OF") out.push({ label: pres.evidenceCurrencyLabel(c.evidence_currency), raw: str(c.evidence_currency) });
     const inv = obj(c.invalidation);
-    if (str(obj(inv.technical).status) === "TRIGGERED") out.push({ label: "Điều kiện vô hiệu kỹ thuật đã được Producer ghi nhận là đã kích hoạt", raw: "TECHNICAL_INVALIDATION_TRIGGERED" });
-    if (str(obj(inv.fundamental).status) === "TRIGGERED") out.push({ label: "Điều kiện vô hiệu nền tảng đã được Producer ghi nhận là đã kích hoạt", raw: "FUNDAMENTAL_INVALIDATION_TRIGGERED" });
-    if (str(obj(c.signal_velocity).overall_transition_state) === "DETERIORATING") out.push({ label: "Xu hướng tín hiệu: đang suy yếu", raw: "DETERIORATING" });
-    if (str(obj(c.official_research_scope).scope_bucket) === "OUTSIDE_CURRENT_OFFICIAL_RESEARCH_SCOPE") out.push({ label: "Ngoài phạm vi nghiên cứu chính thức hiện hành", raw: "OUTSIDE_CURRENT_OFFICIAL_RESEARCH_SCOPE" });
-    (evidence ? evidence.counter : []).forEach((it) => out.push({ label: it.label, raw: it.raw || "", verbatim: it.verbatim }));
+    if (str(obj(inv.technical).status) === "TRIGGERED") out.push({ label: "Dữ liệu ghi nhận điều kiện vô hiệu kỹ thuật đã xảy ra", dimension: "technical", raw: "TECHNICAL_INVALIDATION_TRIGGERED" });
+    if (str(obj(inv.fundamental).status) === "TRIGGERED") out.push({ label: "Dữ liệu ghi nhận điều kiện vô hiệu về nền tảng đã xảy ra", dimension: "business", raw: "FUNDAMENTAL_INVALIDATION_TRIGGERED" });
+    if (str(obj(c.signal_velocity).overall_transition_state) === "DETERIORATING") out.push({ label: "Tín hiệu qua nhiều phiên đang suy yếu", raw: "DETERIORATING", dimension: "technical" });
+    if (str(obj(c.official_research_scope).scope_bucket) === "OUTSIDE_CURRENT_OFFICIAL_RESEARCH_SCOPE") out.push({ label: "Mã nằm ngoài phạm vi nghiên cứu chính thức hiện hành", raw: "OUTSIDE_CURRENT_OFFICIAL_RESEARCH_SCOPE" });
+    (evidence ? evidence.counter : []).forEach((it) => out.push({ label: it.label, raw: it.raw || "", verbatim: it.verbatim, dimension: it.dimension }));
     const seen = new Set();
     return out.filter((a) => { const k = a.label; if (seen.has(k)) return false; seen.add(k); return true; });
   }
@@ -636,7 +637,7 @@
       const v = fa[k];
       if (v === "NOT_APPLICABLE") { notApplicableCount++; return; }
       if (isUnavailableState(v)) { unavailableStates.push({ raw: k, label: featureLabel(k), state: codeLabel(v).label }); return; }
-      establishes.push(item("PRODUCER_INFERENCE", "business", featureLabel(k), { raw: k, value: codeLabel(v).label, valueRaw: v, polarity: codePolarity(v), period, source: "Phân loại trạng thái tài chính của Producer" }));
+      establishes.push(item("PRODUCER_INFERENCE", "business", featureLabel(k), { raw: k, value: codeLabel(v).label, valueRaw: v, polarity: codePolarity(v), period, source: "Phân tích báo cáo tài chính" }));
     });
     const features = Object.keys(obj(fa.feature_fitness)).sort().map((id) => featureRecord(id, fa.feature_fitness[id]));
     features.forEach((f) => {
@@ -661,7 +662,7 @@
     const health = obj(fu.financial_health);
     const healthRows = Object.keys(health).filter((k) => typeof health[k] === "string").map((k) => ({ id: k, label: featureLabel(k), state: codeLabel(health[k], "fundamental_state"), raw: health[k] }));
     const limitations = [];
-    if (str(fa.pit_authority) === "NOT_GRANTED" || arr(fa.warnings).includes("PIT_AUTHORITY_NOT_GRANTED")) limitations.push("Số liệu chưa được xác lập là dữ liệu đã biết tại đúng thời điểm (PIT); chỉ dùng cho nghiên cứu hiện tại.");
+    if (str(fa.pit_authority) === "NOT_GRANTED" || arr(fa.warnings).includes("PIT_AUTHORITY_NOT_GRANTED")) limitations.push("Chưa xác minh được thời điểm số liệu này được công bố ra thị trường, nên chỉ dùng để tham khảo hiện tại, không dùng để kiểm tra lại quá khứ.");
     if (str(fu.freshness_status) && str(fu.freshness_status) !== "CURRENT") limitations.push(`Độ mới: ${codeLabel(fu.freshness_status, "freshness").label}${period ? ` (kỳ ${period})` : ""}.`);
     arr(fu.warnings_blockers).filter((w) => typeof w === "string").slice(0, 6).forEach((w) => limitations.push(codeLabel(w, "diagnostic_reason").label));
     return {
@@ -778,7 +779,7 @@
     } : null;
     const weakening = [];
     const bear = obj(scen.bear);
-    if (bear.case_status) weakening.push({ label: `Kịch bản bất lợi: ${codeLabel(bear.case_status, "evidence_state").label}`, detail: bear.reason_code ? codeLabel(bear.reason_code).label : "", kind: "CONDITIONAL" });
+    if (bear.case_status) weakening.push({ label: `Kịch bản bất lợi — ${codeLabel(bear.case_status, "evidence_state").label}`, detail: bear.reason_code ? codeLabel(bear.reason_code).label : "", kind: "CONDITIONAL" });
     arr(inv.future_financial_invalidation_watch).forEach((w) => {
       if (typeof w === "string") weakening.push({ label: codeLabel(w).label, detail: "Điều kiện theo dõi cho kỳ báo cáo tương lai", kind: "CONDITIONAL" });
       else if (w && typeof w === "object") weakening.push({ label: codeLabel(w.trigger_type || w.watch_state).label, detail: w.thesis_dimension ? codeLabel(w.thesis_dimension).label : "", kind: "CONDITIONAL" });
@@ -836,12 +837,12 @@
       });
       groups.forEach((g) => {
         const shown = g.labels.slice(0, 4).join(", ") + (g.labels.length > 4 ? ` và ${g.labels.length - 4} ${noun} khác` : "");
-        add(g.kind, axis, `${prefix}:${g.kind}:${g.reasonRaw || g.detail}`, g.labels.length === 1 ? g.labels[0] : `${g.labels.length} ${noun}: ${shown}`, g.detail, { period: g.period, members: g.raws });
+        add(g.kind, axis, `${prefix}:${g.kind}:${g.reasonRaw || g.detail}`, g.labels.length === 1 ? g.labels[0] : `${g.labels.length} ${noun}: ${shown}`, g.detail, { period: g.period, members: g.raws, reasonRaw: g.reasonRaw });
       });
     };
     grouped(fundamentals.unavailable, "fundamental", "features", "chỉ tiêu");
     grouped(valuation.unavailable, "valuation", "methods", "phương pháp");
-    if (valuation.intrinsic && /BLOCK/.test(valuation.intrinsic.readiness.raw)) add("BLOCKED", "valuation", "intrinsic", "Định giá nội tại", valuation.intrinsic.reason.label);
+    if (valuation.intrinsic && /BLOCK/.test(valuation.intrinsic.readiness.raw)) add("BLOCKED", "valuation", "intrinsic", "Giá trị hợp lý (định giá nội tại)", valuation.intrinsic.reason.label, { reasonRaw: valuation.intrinsic.reason.raw });
     const ct = obj(c.counter_thesis);
     arr(ct.unavailable_dimensions).filter((d) => typeof d === "string").forEach((d) => add("MISSING", reasonDimension(d) === "business" ? "fundamental" : "other", `dim:${d}`, codeLabel(d).label, ""));
     arr(ct.warnings).filter((w) => typeof w === "string").forEach((w) => add("LIMITATION", "other", `warn:${w}`, codeLabel(w).label, ""));
@@ -855,7 +856,7 @@
     if (str(ck.status) === "UNAVAILABLE") add("MISSING", "catalyst", "knowledge", "Thông tin doanh nghiệp hiện hành", "Chưa có lớp thông tin doanh nghiệp hiện hành");
     const pc = obj(c.prospective_case);
     if (pc.status && /UNAVAILABLE/.test(str(pc.status))) add("MISSING", "other", "prospective", "Hồ sơ theo dõi luận điểm qua thời gian", codeLabel(pc.status, "prospective_case").label);
-    if (str(obj(c.position_context).position_state) === "UNKNOWN_POSITION_NOT_SUPPLIED") add("LIMITATION", "other", "position", "Vị thế cá nhân", "Producer không biết bạn có nắm giữ mã này hay không; trang không suy đoán điều đó");
+    if (str(obj(c.position_context).position_state) === "UNKNOWN_POSITION_NOT_SUPPLIED") add("LIMITATION", "other", "position", "Vị thế cá nhân", "Trang không biết bạn có nắm giữ mã này hay không và không suy đoán điều đó");
     const seen = new Set();
     return gaps.filter((g) => { if (seen.has(g.key)) return false; seen.add(g.key); return true; }).map((g) => Object.assign(g, { question: verificationQuestion(g, ctx) }));
   }
@@ -955,20 +956,202 @@
   }
 
   // ---------------------------------------------------------------------------------------
+  // Plain-language reading layer (INVESTOR_FRIENDLY_DASHBOARD_UX_20261108).
+  // A deterministic restatement of the dossier model for a reader with no finance background.
+  // It only selects, groups and re-words what the model already carries. It never adds a
+  // judgement, a score, a rank, a probability or a target; it never turns a condition into an
+  // event, a reference level into an entry, or a missing figure into a negative verdict.
+  // ---------------------------------------------------------------------------------------
+  const POSTURE_MEANING = Object.freeze({
+    INITIATE_ON_BREAKOUT: "Chỉ xem xét mở vị thế nếu giá vượt được mức kích hoạt đã nêu. Bản thân trạng thái này chưa phải tín hiệu mua.",
+    ACCUMULATE_ON_RETEST: "Chỉ xem xét tích lũy nếu giá quay lại vùng đã vượt và giữ được. Bản thân trạng thái này chưa phải tín hiệu mua.",
+    EARLY_WATCH: "Đáng đưa vào danh sách theo dõi, nhưng chưa có mức giá kích hoạt để hành động.",
+    WAIT_FOR_CONFIRMATION: "Cần chờ thêm tín hiệu xác nhận; hiện chưa có cơ sở để hành động.",
+    HOLD: "Dành cho người đang nắm giữ: tiếp tục giữ. Trang không biết bạn có nắm giữ mã này hay không.",
+    HOLD_DO_NOT_ADD: "Dành cho người đang nắm giữ: có thể giữ nhưng không mua thêm. Trang không biết bạn có nắm giữ mã này hay không.",
+    REDUCE: "Dành cho người đang nắm giữ: cân nhắc giảm tỷ trọng. Trang không biết bạn có nắm giữ mã này hay không.",
+    AVOID: "Không mở vị thế mới ở thời điểm này.",
+    INSUFFICIENT_CURRENT_RESEARCH: "Chưa đủ dữ liệu của phiên hiện tại để đưa ra trạng thái hành động.",
+  });
+  const SERIOUS_POSTURES = new Set(["AVOID", "REDUCE", "HOLD_DO_NOT_ADD"]);
+  // Why ordinary corporate yardsticks do not apply to financial issuers. Domain explanation only.
+  const ENTITY_NOTES = Object.freeze({
+    bank: "Ngân hàng được đọc bằng thước đo riêng (biên lãi ròng, nợ xấu, cho vay/huy động); P/E hay biên lợi nhuận của doanh nghiệp thông thường không áp dụng.",
+    securities: "Công ty chứng khoán được đọc bằng thước đo riêng (cơ cấu doanh thu môi giới, cho vay ký quỹ, tài sản tài chính FVTPL); nhiều chỉ tiêu của doanh nghiệp thông thường không áp dụng.",
+    finance_company: "Công ty tài chính được đọc bằng thước đo riêng (thu nhập lãi, chi phí dự phòng rủi ro tín dụng); nhiều chỉ tiêu của doanh nghiệp thông thường không áp dụng.",
+    insurance: "Doanh nghiệp bảo hiểm được đọc bằng thước đo riêng (phí bảo hiểm, bồi thường, đầu tư); nhiều chỉ tiêu của doanh nghiệp thông thường không áp dụng.",
+  });
+
+  // Topic a missing figure belongs to, so dozens of rows read as a handful of themes.
+  const THEMES = Object.freeze({
+    earnings: "Lợi nhuận & doanh thu", cash: "Dòng tiền", efficiency: "Hiệu quả sử dụng vốn",
+    health: "Sức khỏe tài chính", sector: "Chỉ tiêu riêng của ngân hàng / chứng khoán", valuation: "Định giá",
+  });
+  function themeOf(id, axis) {
+    if (axis === "valuation") return "valuation";
+    const k = String(id || "").toLowerCase();
+    if (/^bank_|brokerage|fvtpl|margin_lending|loan_interest/.test(k)) return "sector";
+    if (/cfo|operating_cash_flow|free_cash_flow|cash_conversion|cash_earnings|cash_quality/.test(k)) return "cash";
+    if (/roa|roe|turnover|capital_efficiency/.test(k)) return "efficiency";
+    if (/net_income|revenue|profit|margin|earnings|growth|pbt/.test(k)) return "earnings";
+    return "health";
+  }
+
+  // Why a figure is not usable, explained in everyday words. These are readings of the original
+  // reason code, not new business states; the original reason stays attached to every row.
+  const REASON_CATEGORIES = Object.freeze({
+    NO_DATA: { label: "Chưa có dữ liệu", text: "Chưa có số liệu cần thiết." },
+    PARTIAL: { label: "Có dữ liệu nhưng chưa đủ để tính", text: "Đã có một phần số liệu nhưng còn thiếu kỳ hoặc thành phần để tính." },
+    INCOMPATIBLE: { label: "Số liệu không khớp nhau", text: "Các số liệu khác kỳ, khác phạm vi hoặc khác nguồn nên không ghép lại để tính được." },
+    RESEARCH_SCOPE: { label: "Chỉ dùng để tham khảo", text: "Có số liệu để tham khảo nhưng chưa đủ điều kiện dùng chính thức." },
+    NOT_APPLICABLE: { label: "Không áp dụng", text: "Chỉ tiêu không phù hợp với loại hình doanh nghiệp này; đây không phải thiếu dữ liệu." },
+    PENDING: { label: "Đang chờ xác nhận", text: "Điều kiện cho tương lai, chưa xảy ra." },
+    NOT_PERMITTED: { label: "Chưa đủ căn cứ để kết luận", text: "Do hạn chế về nguồn, thời điểm công bố hoặc phương pháp, chưa thể rút ra kết luận từ phần này." },
+    STALE: { label: "Số liệu cũ", text: "Đang dùng số liệu của kỳ hoặc phiên trước." },
+  });
+  function reasonCategory(kind, reason) {
+    const r = String(reason || "").toUpperCase();
+    if (kind === "STALE") return "STALE";
+    if (/NOT_APPLICABLE|NOT_SUPPORTED|ISSUER_NOT_|ENTITY_METHOD/.test(r)) return "NOT_APPLICABLE";
+    if (kind === "LIMITATION" || /PIT|AUTHORITY|NOT_AUTHORIZED|INTRINSIC_VALUE|NOT_EMITTED|PRICE_BASIS|EXECUTION|NOT_PROVEN|FAIL_CLOSED|REJECTED/.test(r)) return "NOT_PERMITTED";
+    if (/NOT_ADMITTED|RESEARCH_ONLY|PROVIDER_RESEARCH|PROXY/.test(r)) return "RESEARCH_SCOPE";
+    if (kind === "INCOMPATIBLE") return "INCOMPATIBLE";
+    if (/SERIES|CONSECUTIVE|STANDALONE|TTM|PRIOR_YEAR|BOUNDARY|DENOMINATOR|NOT_READY|EBITDA|PAIR|PERIODS|SAME_QUARTER/.test(r)) return "PARTIAL";
+    if (/INCOMPATIBLE|CROSS_PROVIDER|SAME_PROVIDER|UNVERIFIED|SCOPE_UNKNOWN|MIXED|MISMATCH|CONFLICT|COMPATIBLE/.test(r)) return "INCOMPATIBLE";
+    return kind === "BLOCKED" ? "PARTIAL" : "NO_DATA";
+  }
+
+  // Every unusable fundamental/valuation row, grouped by theme then by shared root reason. Raw
+  // counts and rows are preserved; only the reading order changes.
+  function unknownGroups(m) {
+    const themes = new Map();
+    const add = (theme, it) => {
+      if (!themes.has(theme)) themes.set(theme, { theme, label: THEMES[theme], items: [], notApplicable: [], reasons: new Map() });
+      const g = themes.get(theme);
+      const category = reasonCategory(it.kind, it.reasonRaw || it.detail);
+      const row = { label: it.label, kind: it.kind, raw: it.raw || "", reasonRaw: it.reasonRaw || "", detail: it.detail || "", category, period: it.period || null };
+      if (category === "NOT_APPLICABLE") { g.notApplicable.push(row); return; }
+      g.items.push(row);
+      const rk = `${category}|${row.reasonRaw || row.detail}`;
+      if (!g.reasons.has(rk)) g.reasons.set(rk, { category, detail: row.detail, reasonRaw: row.reasonRaw, rows: [] });
+      g.reasons.get(rk).rows.push(row);
+    };
+    m.fundamentals.unavailable.forEach((u) => add(themeOf(u.raw), u));
+    m.valuation.unavailable.forEach((u) => add("valuation", u));
+    return Object.keys(THEMES).filter((t) => themes.has(t)).map((t) => {
+      const g = themes.get(t);
+      const reasons = Array.from(g.reasons.values());
+      const byCategory = {};
+      g.items.forEach((r) => { byCategory[r.category] = (byCategory[r.category] || 0) + 1; });
+      const mainCategory = Object.keys(byCategory).sort((a, b) => byCategory[b] - byCategory[a])[0] || null;
+      const mainReason = reasons.filter((r) => r.category === mainCategory).sort((x, y) => y.rows.length - x.rows.length)[0] || null;
+      return { theme: g.theme, label: g.label, items: g.items, notApplicable: g.notApplicable, reasons, byCategory, mainCategory, mainDetail: mainReason && mainReason.detail ? mainReason.detail : "" };
+    });
+  }
+
+  function bucketTone(raw) {
+    const r = String(raw || "").toUpperCase();
+    if (/UPPER|TOP|ABOVE|LEADING/.test(r)) return "constructive";
+    if (/LOWER|BOTTOM|BELOW|LAGGING/.test(r)) return "adverse";
+    return "neutral";
+  }
+  function trendTone(raw) {
+    const r = String(raw || "").toUpperCase();
+    if (/UPTREND|BREAKOUT_READY|BASE_BUILDING|EARLY_REVERSAL|EASING/.test(r)) return "constructive";
+    if (/DOWNTREND|BREAKDOWN|DISTRIBUTION/.test(r)) return "adverse";
+    return "neutral";
+  }
+  const DIMENSION_TAGS = Object.freeze({ technical: "Kỹ thuật", market: "Thị trường & ngành", business: "Tài chính", valuation: "Định giá", catalyst: "Sự kiện", other: "" });
+
+  function plainBrief(m) {
+    const p = m.posture;
+    const raw = String(p.raw || "");
+    const noCurrent = p.evidenceCurrencyClass === "NO_CURRENT_EVIDENCE";
+    const meaning = noCurrent
+      ? "Mã này không có dữ liệu giao dịch của phiên hiện tại; mọi nhận định bên dưới cần đọc thận trọng."
+      : (POSTURE_MEANING[raw] || "Chưa có giải thích ngắn cho trạng thái này; xem phần chi tiết bên dưới.");
+    const why = p.reasons.filter((r) => r.polarity === "neutral").map((r) => r.label).slice(0, 2);
+    const serious = SERIOUS_POSTURES.has(raw) || noCurrent || m.adverse.some((a) => /TRIGGERED$|OUTSIDE_CURRENT_OFFICIAL/.test(a.raw || ""));
+    const f = m.fundamentals;
+    const data = [];
+    if (noCurrent) data.push("Giá & kỹ thuật: không có dữ liệu giao dịch của phiên hiện tại.");
+    else if (p.evidenceCurrencyClass === "LAST_TRADE_AS_OF") data.push(`Giá & kỹ thuật: dùng giao dịch gần nhất trước phiên ${m.session || "hiện tại"} (${String(p.evidenceCurrencyRaw || "").split(":")[1] || "chưa rõ ngày"}).`);
+    else data.push(`Giá & kỹ thuật: dữ liệu phiên ${m.session || "—"}.`);
+    if (!f.period) data.push("Tài chính: chưa có số liệu báo cáo dùng được.");
+    else if (f.freshness && f.freshness !== "CURRENT") data.push(`Tài chính: đang dùng số liệu kỳ ${f.period}; cần thận trọng vì có thể chưa phản ánh đầy đủ tình hình mới.`);
+    else data.push(`Tài chính: số liệu kỳ ${f.period}.`);
+    if (f.limitations.some((l) => /thời điểm/.test(l))) data.push("Chưa xác minh được thời điểm số liệu tài chính được công bố ra thị trường, nên chỉ dùng để tham khảo hiện tại.");
+    if (f.establishes.some((e) => e.kind === "RESEARCH_ONLY") || m.valuation.establishes.length) data.push("Các con số tài chính và định giá là số liệu tham khảo tính từ dữ liệu nhà cung cấp, chưa phải số liệu chính thức đã kiểm toán.");
+    if (m.freshness.sessionMismatch) data.push(`Dữ liệu chi tiết thuộc phiên ${m.freshness.cardSession}, khác phiên đang hiển thị ${m.freshness.indexSession}; hai phiên không được ghép.`);
+
+    const t = m.technical;
+    const trendLabel = codeLabel(t.entryState, "tactical_state");
+    const rsLabel = t.market.marketBucket ? codeLabel(t.market.marketBucket, "data_fitness") : null;
+    const differ = rsLabel && trendTone(t.entryState) !== bucketTone(t.market.marketBucket);
+
+    const c = m.conditions;
+    const watch = [];
+    const conf = c.confirmation[0];
+    if (conf && conf.available) watch.push({ role: "Tín hiệu xác nhận", text: conf.boundary ? conf.boundary.label : conf.status.label, state: conf.fired === "PRODUCER_REPORTED_TRIGGERED" ? "happened" : "pending" });
+    if (c.reference && c.reference.level !== null) watch.push({ role: "Mức giá kích hoạt", text: `${formatNumber(c.reference.level, 4)} — mốc tham chiếu, không phải điểm mua`, state: c.reference.satisfied ? "happened" : "pending" });
+    if (c.reference && c.reference.invalidationLevel !== null) watch.push({ role: "Mốc giá cần xem lại", text: `${formatNumber(c.reference.invalidationLevel, 4)}${c.reference.invalidationMethod ? ` — ${c.reference.invalidationMethod.label}` : ""}`, state: "reference" });
+    const inv = c.invalidation[0];
+    if (inv && inv.available) watch.push({ role: "Điều kiện vô hiệu kỹ thuật", text: inv.boundary ? inv.boundary.label : inv.status.label, state: inv.fired === "PRODUCER_REPORTED_TRIGGERED" ? "happened" : "pending" });
+    const fi = c.fundamentalInvalidation;
+    if (fi && fi.statusRaw !== "UNAVAILABLE" && fi.dimension) watch.push({ role: "Điều kiện về nền tảng", text: fi.dimension ? `${fi.dimension}${fi.baseline ? ` hiện ${fi.baseline.toLowerCase()}` : ""}${fi.watch ? `; cần xem lại nếu chuyển sang ${fi.watch.toLowerCase()} ở kỳ báo cáo tới` : ""}` : fi.status.label, state: fi.fired ? "happened" : "pending" });
+    c.weakening.forEach((w) => watch.push({ role: w.kind === "CONDITIONAL" ? "Dấu hiệu suy yếu có thể xảy ra" : "Dấu hiệu suy yếu đang ghi nhận", text: w.label, state: w.kind === "CONDITIONAL" ? "pending" : "now" }));
+
+    const v = m.valuation;
+    const unknowns = unknownGroups(m);
+    const usable = v.establishes.filter((e) => e.raw !== "market_cap");
+    const intrinsicBlocked = v.intrinsic && /BLOCK/.test(v.intrinsic.readiness.raw);
+    return {
+      postureLabel: p.label, meaning, why, serious, data,
+      positives: m.evidence.support, cautions: m.adverse,
+      trend: { label: trendLabel.label, rs: rsLabel ? rsLabel.label : null, differ: Boolean(differ), leadership: t.market.leadership ? codeLabel(t.market.leadership, "data_fitness").label : null },
+      watch,
+      valuation: {
+        relative: v.relativeState && !/UNAVAILABLE|INSUFFICIENT/.test(String(v.relativeState)) ? codeLabel(v.relativeState, "valuation_state").label : null,
+        usable, blocked: v.unavailable,
+        sameMethodDifferentBasis: (() => { const seen = {}; let dup = ""; usable.slice(0, 4).forEach((e) => { const base = e.label.split(" · ")[0]; if (seen[base] && seen[base] !== (e.period || "-")) dup = base; seen[base] = e.period || "-"; }); return dup; })(),
+        fairValue: intrinsicBlocked ? `Chưa đủ căn cứ để xác định giá trị hợp lý: ${v.intrinsic.reason.label.charAt(0).toLowerCase()}${v.intrinsic.reason.label.slice(1)}.` : (v.intrinsic ? `Định giá giá trị hợp lý: ${v.intrinsic.readiness.label}.` : "Chưa có đánh giá giá trị hợp lý cho mã này."),
+      },
+      unknowns,
+      notApplicableTotal: f.notApplicableCount + unknowns.reduce((n, g) => n + g.notApplicable.length, 0),
+      entityNote: ENTITY_NOTES[m.entityClass] || "",
+    };
+  }
+
+  // ---------------------------------------------------------------------------------------
   // Dossier rendering
   // ---------------------------------------------------------------------------------------
-  function itemHtml(it) {
+  function itemHtml(it, opts) {
+    const o = opts || {};
     const meta = [];
     if (it.value) meta.push(`<strong class="wb-item-value">${h(it.value)}</strong>`);
     if (it.detail) meta.push(`<span>${h(it.detail)}</span>`);
     if (it.period) meta.push(`<span>${/^\d/.test(String(it.period)) ? `Kỳ ${h(it.period)}` : `Cơ sở kỳ: ${h(it.period)}`}</span>`);
-    if (it.source) meta.push(`<span>${h(it.source)}</span>`);
+    if (it.source && !o.hideSource) meta.push(`<span>${h(it.source)}</span>`);
     if (it.knownAt) meta.push(`<span>Biết từ ${h(it.knownAt)}</span>`);
-    return `<li class="wb-item wb-item-${h(EVIDENCE_KINDS[it.kind] ? EVIDENCE_KINDS[it.kind].cls : "inference")}" data-polarity="${h(it.polarity || "neutral")}"${it.raw ? ` data-code="${h(it.raw)}"` : ""}>
-      <div class="wb-item-head">${kindBadgeHtml(it.kind)}<span class="wb-item-label"${it.verbatim ? ' lang="en"' : ""}${it.originalText && !it.verbatim ? ` title="${h(it.originalText)}"` : ""}>${h(it.label)}</span></div>
+    return `<li class="wb-item wb-item-${h(EVIDENCE_KINDS[it.kind] ? EVIDENCE_KINDS[it.kind].cls : "inference")}" data-polarity="${h(it.polarity || "neutral")}" data-evidence-kind="${h(it.kind)}"${it.raw ? ` data-code="${h(it.raw)}"` : ""}>
+      <div class="wb-item-head">${o.hideKind ? "" : kindBadgeHtml(it.kind)}<span class="wb-item-label"${it.verbatim ? ' lang="en"' : ""}${it.originalText && !it.verbatim ? ` title="${h(it.originalText)}"` : ""}>${h(it.label)}</span></div>
       ${meta.length ? `<div class="wb-item-meta">${meta.join(" · ")}</div>` : ""}
       ${it.citation ? citationHtml(it.citation) : ""}
     </li>`;
+  }
+  // A list states its evidence kind and shared source once, in its header, instead of on
+  // every row. Mixed lists keep the per-row badge.
+  function itemListHtml(items, opts) {
+    const o = opts || {};
+    if (!items.length) return "";
+    const kinds = new Set(items.map((it) => it.kind));
+    const sources = new Set(items.map((it) => it.source || ""));
+    const uniformKind = kinds.size === 1;
+    const uniformSource = sources.size === 1 && items[0].source;
+    const head = uniformKind || uniformSource ? `<div class="wb-list-kind">${uniformKind ? kindBadgeHtml(items[0].kind) : ""}${uniformSource ? `<span class="cockpit-note">${h(items[0].source)}</span>` : ""}</div>` : "";
+    const limit = o.limit || items.length;
+    const render = (list) => `<ul class="wb-items">${list.map((it) => itemHtml(it, { hideKind: uniformKind, hideSource: Boolean(uniformSource) })).join("")}</ul>`;
+    return `${head}${render(items.slice(0, limit))}${items.length > limit ? `<details class="wb-more"><summary>Xem thêm ${items.length - limit} mục</summary>${render(items.slice(limit))}</details>` : ""}`;
   }
   function itemsByDimensionHtml(items, emptyText) {
     if (!items.length) return `<p class="cockpit-note mb-0">${h(emptyText)}</p>`;
@@ -977,7 +1160,7 @@
     return Object.keys(DIMENSIONS).filter((d) => groups[d]).map((d) => `<div class="wb-dim" data-dimension="${h(d)}">
       <div class="wb-dim-head">${h(DIMENSIONS[d].label)}</div>
       ${DIMENSIONS[d].caveat ? `<div class="wb-dim-caveat">${h(DIMENSIONS[d].caveat)}</div>` : ""}
-      <ul class="wb-items">${groups[d].map(itemHtml).join("")}</ul></div>`).join("");
+      ${itemListHtml(groups[d])}</div>`).join("");
   }
   function citationHtml(cit) {
     return `<div class="wb-citation">${kindBadgeHtml("SOURCE_FACT")}
@@ -987,12 +1170,12 @@
     </div>`;
   }
   function conditionHtml(cond) {
-    if (!cond.available && !cond.reasonCode) return '<p class="cockpit-note mb-0">Producer chưa công bố điều kiện này cho phiên hiện tại.</p>';
+    if (!cond.available && !cond.reasonCode) return '<p class="cockpit-note mb-0">Chưa có điều kiện này cho phiên hiện tại.</p>';
     const fired = !cond.available ? "" : cond.fired === "PRODUCER_REPORTED_TRIGGERED"
-      ? '<span class="cockpit-state tone-watch" data-fired="producer-reported">Producer ghi nhận đã kích hoạt</span>'
-      : (cond.isFuture ? '<span class="cockpit-state tone-neutral" data-fired="future">Điều kiện cho phiên tương lai — chưa xảy ra</span>' : '<span class="cockpit-state tone-neutral" data-fired="not-reported">Chưa được ghi nhận là đã kích hoạt</span>');
+      ? '<span class="cockpit-state tone-watch" data-fired="producer-reported">Dữ liệu ghi nhận đã xảy ra</span>'
+      : (cond.isFuture ? '<span class="cockpit-state tone-neutral" data-fired="future">Chưa xảy ra — điều kiện cho phiên tới</span>' : '<span class="cockpit-state tone-neutral" data-fired="not-reported">Chưa được ghi nhận là đã xảy ra</span>');
     const parts = [];
-    if (cond.boundary) parts.push(`<div><b>Biên</b> ${h(cond.boundary.label)}</div>`);
+    if (cond.boundary) parts.push(`<div><b>Điều cần xảy ra</b> ${h(cond.boundary.label)}</div>`);
     if (cond.operator) parts.push(`<div><b>So sánh</b> ${h(cond.operator.label)}</div>`);
     if (cond.direction) parts.push(`<div><b>Chiều</b> ${h(cond.direction.label)}</div>`);
     if (cond.level !== null) parts.push(`<div><b>Mức tham chiếu</b> ${h(formatNumber(cond.level, 4))}${cond.unit ? ` <span class="cockpit-note">(${h(cond.unit)})</span>` : ""}${cond.baselineSession ? ` <span class="cockpit-note">từ phiên ${h(cond.baselineSession)}</span>` : ""}</div>`);
@@ -1000,22 +1183,22 @@
     if (cond.reasonCode) parts.push(`<div class="cockpit-note">${h(cond.reasonCode.label)}</div>`);
     cond.warnings.forEach((w) => parts.push(`<div class="cockpit-note">${h(w)}</div>`));
     return `<div class="wb-condition" data-condition-role="${h(cond.role)}">
-      <div class="wb-condition-head">${kindBadgeHtml("CONDITIONAL")} ${pillHtml(cond.statusRaw || "UNAVAILABLE", cond.role === "invalidation" ? "invalidation_state" : "confirmation_state")} ${fired}</div>
+      <div class="wb-condition-head">${pillHtml(cond.statusRaw || "UNAVAILABLE", cond.role === "invalidation" ? "invalidation_state" : "confirmation_state")} ${fired}</div>
       ${parts.join("")}
-      ${cond.sourceText ? `<details class="wb-tech"><summary>Mô tả gốc của Producer</summary><p lang="en">${h(cond.sourceText)}</p></details>` : ""}
+      ${cond.sourceText ? `<details class="wb-tech"><summary>Mô tả gốc (tiếng Anh)</summary><p lang="en">${h(cond.sourceText)}</p></details>` : ""}
     </div>`;
   }
   function referenceHtml(ref) {
     if (!ref) return "";
     const fired = ref.satisfied
-      ? '<span class="cockpit-state tone-watch" data-fired="producer-reported">Producer ghi nhận đã chạm mức tham chiếu</span>'
+      ? '<span class="cockpit-state tone-watch" data-fired="producer-reported">Dữ liệu ghi nhận đã chạm mức tham chiếu</span>'
       : '<span class="cockpit-state tone-neutral" data-fired="not-reported">Chưa chạm mức tham chiếu</span>';
     return `<div class="wb-condition" data-condition-role="reference">
-      <div class="wb-condition-head">${kindBadgeHtml("CONDITIONAL")} <b>Mức kích hoạt tham chiếu</b> ${ref.level !== null ? `<strong>${h(formatNumber(ref.level, 4))}</strong>` : '<span class="cockpit-note">chưa có mức</span>'} ${fired}</div>
+      <div class="wb-condition-head"><b>Mức giá kích hoạt tham chiếu</b> ${ref.level !== null ? `<strong>${h(formatNumber(ref.level, 4))}</strong>` : '<span class="cockpit-note">chưa có mức</span>'} ${fired}</div>
       ${ref.type ? `<div><b>Loại</b> ${h(ref.type.label)}</div>` : ""}
-      ${ref.state ? `<div><b>Trạng thái do Producer công bố</b> ${h(ref.state.label)}</div>` : ""}
-      ${ref.invalidationLevel !== null ? `<div><b>Mức vô hiệu tham chiếu</b> ${h(formatNumber(ref.invalidationLevel, 4))}${ref.invalidationMethod ? ` <span class="cockpit-note">${h(ref.invalidationMethod.label)}</span>` : ""}</div>` : ""}
-      <div class="cockpit-note">Quyền mở vị thế: ${ref.entryAuthority ? "Producer đã xác lập" : "chưa được xác lập"}. Mức tham chiếu không phải điểm mua và không tự thay đổi tư thế.</div>
+      ${ref.state ? `<div><b>Trạng thái hiện tại</b> ${h(ref.state.label)}</div>` : ""}
+      ${ref.invalidationLevel !== null ? `<div><b>Mốc giá cần xem lại</b> ${h(formatNumber(ref.invalidationLevel, 4))}${ref.invalidationMethod ? ` <span class="cockpit-note">${h(ref.invalidationMethod.label)}</span>` : ""}</div>` : ""}
+      <div class="cockpit-note">Quyền mở vị thế: ${ref.entryAuthority ? "đã được xác lập" : "chưa được xác lập"}. Mức tham chiếu không phải điểm mua và không tự thay đổi trạng thái hành động.</div>
     </div>`;
   }
 
@@ -1024,48 +1207,110 @@
   }
 
   function legendHtml() {
-    return `<details class="wb-legend"><summary>Cách đọc các nhãn bằng chứng</summary><ul>${Object.keys(EVIDENCE_KINDS).map((k) => `<li>${kindBadgeHtml(k)} ${h({
+    return `<div class="wb-legend"><h6>Cách đọc các nhãn</h6><ul>${Object.keys(EVIDENCE_KINDS).map((k) => `<li>${kindBadgeHtml(k)} ${h({
       SOURCE_FACT: "Số liệu hoặc sự kiện có nguồn công bố cụ thể (kỳ, trang, thời điểm biết).",
-      PRODUCER_INFERENCE: "Phân loại hoặc lý do do Producer suy ra từ dữ liệu.",
-      CONDITIONAL: "Điều kiện cho tương lai; chỉ là thiết lập, không phải sự kiện đã xảy ra.",
+      PRODUCER_INFERENCE: "Phân loại hoặc lý do do hệ thống phân tích suy ra từ dữ liệu.",
+      CONDITIONAL: "Điều kiện cho tương lai; chưa xảy ra.",
       RESEARCH_ONLY: "Số liệu tính từ dữ liệu nhà cung cấp, chưa phải số liệu chính thức đã kiểm chứng.",
       HISTORICAL: "Thông tin của các phiên hoặc kỳ trước.",
-      MISSING: "Producer chưa có dữ liệu.", STALE: "Dữ liệu không thuộc phiên/kỳ hiện tại.", BLOCKED: "Dữ liệu bị chặn bởi điều kiện kiểm chứng.",
-      INCOMPATIBLE: "Dữ liệu khác nguồn hoặc khác kỳ, không ghép được.", LIMITATION: "Giới hạn cách dùng dữ liệu.",
-      HUMAN_NOTE: "Nội dung bạn tự viết; không phải dữ liệu của Producer.",
-    }[k])}</li>`).join("")}</ul></details>`;
+      MISSING: "Chưa có số liệu cần thiết.", STALE: "Số liệu không thuộc phiên/kỳ hiện tại.", BLOCKED: "Chưa đủ điều kiện để tính chỉ tiêu này.",
+      INCOMPATIBLE: "Số liệu khác nguồn hoặc khác kỳ, không ghép được.", LIMITATION: "Giới hạn cách dùng dữ liệu.",
+      HUMAN_NOTE: "Nội dung bạn tự viết; không phải dữ liệu phân tích.",
+    }[k])}</li>`).join("")}</ul>
+    <h6 class="mt-2">Vì sao một chỉ tiêu chưa dùng được</h6><ul>${Object.keys(REASON_CATEGORIES).map((k) => `<li><b>${h(REASON_CATEGORIES[k].label)}</b> — ${h(REASON_CATEGORIES[k].text)}</li>`).join("")}</ul></div>`;
   }
+
+  const WATCH_STATE = Object.freeze({
+    pending: '<span class="wb-watch-state" data-watch-state="pending">Chưa xảy ra</span>',
+    happened: '<span class="wb-watch-state wb-watch-happened" data-watch-state="happened">Đã xảy ra theo dữ liệu</span>',
+    reference: '<span class="wb-watch-state" data-watch-state="reference">Mốc tham chiếu</span>',
+    now: '<span class="wb-watch-state wb-watch-now" data-watch-state="now">Đang ghi nhận</span>',
+  });
+  function briefCard(cls, title, body, extraAttrs) {
+    return `<div class="wb-brief-card ${cls}"${extraAttrs || ""}><h3 class="wb-brief-title">${title}</h3>${body}</div>`;
+  }
+  function briefListHtml(rows, limit, moreHref, moreNoun) {
+    const shown = rows.slice(0, limit);
+    return `<ul class="wb-brief-list">${shown.join("")}</ul>${rows.length > limit ? `<a class="wb-brief-more" href="${moreHref}" data-wb-open-section="${moreHref.slice(1)}">Xem thêm ${rows.length - limit} ${moreNoun}</a>` : ""}`;
+  }
+  function tagHtml(text) { return text ? `<span class="wb-tag">${h(text)}</span>` : ""; }
 
   function overviewHtml(m, opts) {
     const saved = Boolean(opts && opts.saved);
     const inCompare = Boolean(opts && opts.inCompare);
     const p = m.posture;
+    const b = plainBrief(m);
+    const businessTag = (it) => (it.dimension === "business" && it.period ? `Tài chính kỳ ${it.period}` : DIMENSION_TAGS[it.dimension] || "");
+    const cautionList = b.cautions.filter((a) => a.raw !== p.raw || !b.serious);
+    const cautionRows = cautionList.map((a) => `<li${a.verbatim ? ' lang="en"' : ""} data-code="${h(a.raw)}">${h(a.label)} ${tagHtml(DIMENSION_TAGS[a.dimension] || "")}</li>`);
+    const cautions = `<div class="wb-adverse" role="note" aria-label="Điểm cần thận trọng"${b.serious ? ' data-severity="serious"' : ""}>
+        <h3 class="wb-brief-title wb-adverse-title">${b.serious ? "Cần lưu ý trước tiên" : "Điểm cần thận trọng"}${cautionList.length ? ` <span class="wb-brief-count">${cautionList.length}</span>` : ""}</h3>
+        ${cautionList.length ? briefListHtml(cautionRows, 4, "#wb-sec-evidence", "điểm") : '<p class="wb-brief-empty">Dữ liệu phiên này không ghi nhận điểm bất lợi riêng cho mã này. Điều đó không có nghĩa là không có rủi ro.</p>'}
+      </div>`;
+    const posTags = new Set(b.positives.map(businessTag));
+    const posTagOnce = posTags.size === 1 ? Array.from(posTags)[0] : "";
+    const positives = briefCard("wb-brief-positive", `Điểm tích cực${b.positives.length ? ` <span class="wb-brief-count">${b.positives.length}</span>` : ""}`,
+      b.positives.length
+        ? `${briefListHtml(b.positives.map((it) => `<li data-code="${h(it.raw || "")}"${it.verbatim ? ' lang="en"' : ""}>${h(it.label)} ${posTagOnce ? "" : tagHtml(businessTag(it))}</li>`), 4, "#wb-sec-evidence", "điểm")}${posTagOnce ? `<p class="wb-brief-foot">Nhóm: ${h(posTagOnce.charAt(0).toLowerCase() + posTagOnce.slice(1))}.</p>` : ""}`
+        : '<p class="wb-brief-empty">Chưa có điểm tích cực nào được dữ liệu xác lập ở phiên này.</p>');
+    const watch = briefCard("wb-brief-watch", "Điều cần theo dõi",
+      b.watch.length
+        ? `${briefListHtml(b.watch.map((w) => `<li data-watch-role="${h(w.role)}"><span class="wb-watch-role">${h(w.role)}</span> ${h(w.text)} ${WATCH_STATE[w.state]}</li>`), 4, "#wb-sec-conditions", "điều kiện")}<p class="wb-brief-foot">Điều kiện "chưa xảy ra" chỉ là mốc để theo dõi, không phải dự báo.</p>`
+        : '<p class="wb-brief-empty">Chưa có điều kiện xác nhận hay vô hiệu nào được công bố cho mã này.</p>');
+    const val = b.valuation;
+    const valuation = briefCard("wb-brief-valuation", "Định giá cho biết gì?",
+      `<p class="wb-brief-strong">${h(val.fairValue)}</p>
+      ${val.relative ? `<p>So với nhóm doanh nghiệp tương tự: <b>${h(val.relative)}</b> <span class="cockpit-note">(chỉ để tham khảo)</span></p>` : ""}
+      ${val.usable.length ? `<ul class="wb-brief-list wb-brief-figures">${val.usable.slice(0, 4).map((e) => `<li data-code="${h(e.raw)}"><span>${h(e.label)}</span> <b>${h(e.value)}</b> <span class="cockpit-note">${h(e.period ? (/^\d/.test(e.period) ? `kỳ ${e.period}` : `theo ${e.period.toLowerCase()}`) : "")}</span></li>`).join("")}</ul>` : '<p class="wb-brief-empty">Chưa có chỉ số định giá nào tính được.</p>'}
+      ${val.sameMethodDifferentBasis ? `<p class="cockpit-note">${h(val.sameMethodDifferentBasis)} có hai giá trị vì dùng số liệu ở hai thời điểm khác nhau; không so trực tiếp hai con số này.</p>` : ""}
+      ${val.blocked.length ? `<p class="cockpit-note">Chưa tính được ${val.blocked.length} chỉ số: ${h(val.blocked.slice(0, 4).map((x) => x.label).join(", "))}${val.blocked.length > 4 ? ` và ${val.blocked.length - 4} chỉ số khác` : ""}.</p>` : ""}
+      <p class="wb-brief-foot">Các chỉ số là số liệu tham khảo, không phải giá trị hợp lý. Trang không đưa ra giá mục tiêu.</p>`);
+    const mainDetail = (g) => (g.mainDetail ? g.mainDetail.charAt(0).toLowerCase() + g.mainDetail.slice(1) : "");
+    const unknownRows = b.unknowns.filter((g) => g.items.length).map((g) => `<li data-theme="${h(g.theme)}"><b>${h(g.label)}</b>: ${g.items.length} chỉ tiêu chưa dùng được — ${h(REASON_CATEGORIES[g.mainCategory].label.toLowerCase())}${mainDetail(g) ? ` (chủ yếu: ${h(mainDetail(g))})` : ""}.</li>`);
+    const fz = m.fundamentals;
+    const unknown = briefCard("wb-brief-unknown", "Những gì chưa biết",
+      `${unknownRows.length ? briefListHtml(unknownRows, 4, "#wb-sec-fundamentals", "nhóm") : '<p class="wb-brief-empty">Không ghi nhận chỉ tiêu tài chính hay định giá nào bị thiếu.</p>'}
+      ${b.notApplicableTotal ? `<p class="cockpit-note">${b.notApplicableTotal} chỉ tiêu không áp dụng cho loại hình doanh nghiệp này — không tính là thiếu.</p>` : ""}
+      ${b.entityNote ? `<p class="cockpit-note" data-entity-note="true">${h(b.entityNote)}</p>` : ""}
+      ${unknownRows.length ? '<p class="wb-brief-foot">Thiếu dữ liệu không có nghĩa là doanh nghiệp đang xấu đi; chỉ là chưa đủ căn cứ để đánh giá phần đó.</p>' : ""}`);
+    const trend = briefCard("wb-brief-trend", "Giá đang diễn biến thế nào?",
+      `<ul class="wb-brief-list"><li><span class="wb-watch-role">Xu hướng giá</span> <b>${h(b.trend.label)}</b></li>
+        ${b.trend.rs ? `<li><span class="wb-watch-role">So với thị trường</span> <b>${h(b.trend.rs)}</b></li>` : ""}
+        ${b.trend.leadership ? `<li><span class="wb-watch-role">Vị thế của ngành</span> <b>${h(b.trend.leadership)}</b></li>` : ""}</ul>
+      ${b.trend.differ ? '<p class="wb-brief-foot" data-two-lenses="true">Đây là hai cách nhìn khác nhau: xu hướng nói về đường đi của chính giá cổ phiếu, còn "so với thị trường" là sức mạnh tương đối so với các mã khác trong cùng thời gian. Hai kết quả có thể khác nhau và không gộp thành một kết luận.</p>' : ""}`);
     return `<section class="wb-overview" aria-labelledby="wb-dossier-heading" data-dossier-ticker="${h(m.ticker)}">
       <div class="wb-overview-head">
-        <div><div class="section-eyebrow">Hồ sơ điều tra · phiên ${h(m.session || "—")}</div>
+        <div><div class="section-eyebrow">Hồ sơ cổ phiếu · phiên ${h(m.session || "—")}</div>
           <h2 id="wb-dossier-heading" class="wb-dossier-title" tabindex="-1">${h(m.ticker)} <span>${h(m.sector.label)}</span></h2></div>
         <div class="wb-posture">${p.html} ${p.evidenceCurrencyHtml}</div>
       </div>
       ${m.freshness.sessionMismatch ? `<div class="vs-alert vs-alert-warning" role="status">Dữ liệu chi tiết thuộc phiên ${h(m.freshness.cardSession)}, khác phiên đang hiển thị ${h(m.freshness.indexSession)}. Không ghép hai phiên.</div>` : ""}
-      ${p.conditionClass ? `<div class="wb-keyline"><span class="cockpit-note">Phân loại điều kiện của Producer:</span> ${codeHtml(p.conditionClass.raw)}</div>` : ""}
-      <div class="wb-keyline">${p.reasons.length ? p.reasons.map((r) => `<span class="cockpit-chip wb-reason" data-code="${h(r.raw)}">${h(r.label)}</span>`).join("") : '<span class="cockpit-note">Chưa có lý do ngắn được giữ lại</span>'}</div>
-      ${m.adverse.length ? `<div class="wb-adverse" role="note" aria-label="Điều kiện bất lợi"><div class="wb-adverse-title">Điều kiện bất lợi đang được ghi nhận (${m.adverse.length})</div><ul>${m.adverse.map((a) => `<li${a.verbatim ? ' lang="en"' : ""} data-code="${h(a.raw)}">${h(a.label)}</li>`).join("")}</ul></div>` : '<div class="wb-adverse wb-adverse-none">Producer không ghi nhận điều kiện bất lợi riêng cho mã này ở phiên hiện tại.</div>'}
-      <div class="wb-counts">
-        <a href="#wb-sec-evidence" class="wb-count"><b>${m.evidence.support.length}</b><span>Bằng chứng ủng hộ</span></a>
-        <a href="#wb-sec-evidence" class="wb-count wb-count-adverse"><b>${m.evidence.counter.length}</b><span>Phản biện / bất lợi</span></a>
-        <a href="#wb-sec-conditions" class="wb-count"><b>${m.conditions.confirmation.filter((x) => x.available).length + m.conditions.invalidation.filter((x) => x.available).length + m.conditions.weakening.length}</b><span>Điều kiện theo dõi</span></a>
-        <a href="#wb-sec-questions" class="wb-count"><b>${m.gaps.length}</b><span>Khoảng trống cần kiểm chứng</span></a>
-        <a href="#wb-sec-freshness" class="wb-count"><b>${m.freshness.currentAxes}/${m.freshness.axes.length}</b><span>Trục dữ liệu hiện hành</span></a>
+      <div class="wb-lead" data-brief="situation">
+        <h3 class="wb-brief-title">Tình hình hiện tại</h3>
+        <p class="wb-lead-text"><strong>${h(b.postureLabel)}.</strong> ${h(b.meaning)}</p>
+        ${b.why.length ? `<p class="wb-lead-why">Lý do chính: ${h(b.why.join("; "))}.</p>` : ""}
       </div>
+      ${b.serious ? cautions : ""}
+      <div class="wb-brief">
+        ${positives}
+        ${b.serious ? "" : cautions}
+        ${watch}
+        ${valuation}
+        ${trend}
+        ${unknown}
+      </div>
+      <div class="wb-certainty" data-brief="certainty"><h3 class="wb-brief-title">Mức độ tin cậy của dữ liệu</h3><ul>${b.data.map((d) => `<li>${h(d)}</li>`).join("")}</ul></div>
       <div class="wb-actions" role="group" aria-label="Thao tác với hồ sơ">
         <button type="button" class="btn btn-sm ${saved ? "btn-outline-warning" : "btn-outline-light"}" data-wb-action="${saved ? "unsave" : "save"}" aria-pressed="${saved ? "true" : "false"}">${saved ? "Bỏ khỏi sổ nghiên cứu" : "Lưu vào sổ nghiên cứu"}</button>
         <button type="button" class="btn btn-sm btn-outline-light" data-wb-action="${inCompare ? "compare-remove" : "compare-add"}">${inCompare ? "Bỏ khỏi danh sách so sánh" : "Thêm vào so sánh"}</button>
-        <button type="button" class="btn btn-sm btn-outline-light" data-wb-action="export-json">Xuất hồ sơ (JSON)</button>
-        <button type="button" class="btn btn-sm btn-outline-light" data-wb-action="export-html">Tải bản in (HTML)</button>
-        <button type="button" class="btn btn-sm btn-outline-light" data-wb-action="print">In hồ sơ</button>
         <button type="button" class="btn btn-sm btn-outline-secondary" data-wb-action="open-drawer">Xem thẻ chi tiết đầy đủ</button>
+        <span class="wb-actions-secondary">
+          <button type="button" class="btn btn-sm btn-link" data-wb-action="export-json">Xuất JSON</button>
+          <button type="button" class="btn btn-sm btn-link" data-wb-action="export-html">Tải bản in</button>
+          <button type="button" class="btn btn-sm btn-link" data-wb-action="print">In</button>
+        </span>
       </div>
-      <p class="cockpit-note mb-0">Tư thế và mọi nhãn là của Producer, hiển thị nguyên trạng. Hồ sơ không tạo kết luận mới, không xếp hạng, không có giá mục tiêu hay xác suất.</p>
+      <p class="cockpit-note mb-0">Trang chỉ diễn giải dữ liệu đã công bố: không xếp hạng, không đưa ra giá mục tiêu hay xác suất, và không phải lời khuyên mua bán.</p>
     </section>`;
   }
 
@@ -1073,104 +1318,146 @@
     const s = m.strategy;
     const p = m.posture;
     return `<div class="cockpit-grid mb-2">
-        <div class="cockpit-kpi"><div class="label">Quyết định hành động</div><div class="value">${p.html}</div></div>
-        <div class="cockpit-kpi"><div class="label">Trạng thái kỹ thuật</div><div class="value">${pillHtml(s.entryState, "tactical_state")}</div></div>
+        <div class="cockpit-kpi"><div class="label">Trạng thái hành động</div><div class="value">${p.html}</div></div>
+        <div class="cockpit-kpi"><div class="label">Xu hướng giá</div><div class="value">${pillHtml(s.entryState, "tactical_state")}</div></div>
         <div class="cockpit-kpi"><div class="label">Mức sẵn sàng kỹ thuật</div><div class="value">${pillHtml(s.entryAction, "entry_action")}</div></div>
         <div class="cockpit-kpi"><div class="label">Mức sẵn sàng nghiên cứu</div><div class="value">${pillHtml(s.readiness, "research_readiness")}</div></div>
       </div>
-      <div class="wb-keyline"><span class="cockpit-note">Lý do Producer nêu (theo thứ tự công bố):</span></div>
-      <ul class="wb-items">${p.reasons.map(itemHtml).join("") || '<li class="cockpit-note">Chưa có lý do được giữ lại</li>'}</ul>
+      ${p.conditionClass ? `<p class="mb-1"><span class="cockpit-note">Nhóm tình huống:</span> ${codeHtml(p.conditionClass.raw)}</p>` : ""}
+      <h6>Lý do của trạng thái hiện tại <span class="cockpit-note">(theo thứ tự công bố)</span></h6>
+      ${itemListHtml(p.reasons) || '<p class="cockpit-note">Chưa có lý do được giữ lại.</p>'}
       ${p.secondaryScreen ? `<div class="cockpit-note mt-2">Sàng lọc nghiên cứu (phụ, không phải quyết định): ${h(p.secondaryScreen.label)}</div>` : ""}
-      ${p.priority ? `<div class="cockpit-note">Ưu tiên xem xét (thứ tự kiểm tra, không thay đổi tư thế): ${h(p.priority.label)}</div>` : ""}
-      ${p.policyVersion ? `<div class="cockpit-note">Phiên bản chính sách tư thế: ${h(p.policyVersion)}</div>` : ""}
+      ${p.priority ? `<div class="cockpit-note">Thứ tự xem xét (chỉ là thứ tự kiểm tra, không thay đổi trạng thái): ${h(p.priority.label)}</div>` : ""}
       ${s.setupTags.length ? `<div class="wb-keyline mt-2"><span class="cockpit-note">Dấu hiệu kỹ thuật:</span> ${s.setupTags.map((t) => pillHtml(t, "setup_tag", "neutral")).join(" ")}</div>` : ""}
-      ${s.scenarios.length ? `<h6 class="mt-3">Kịch bản có điều kiện của Producer</h6><ul class="wb-items">${s.scenarios.map((sc) => `<li class="wb-item wb-item-conditional" data-scenario="${h(sc.case)}"><div class="wb-item-head">${kindBadgeHtml("CONDITIONAL")}<span class="wb-item-label">${h(sc.caseLabel)}: ${h(sc.status.label)}</span></div><div class="wb-item-meta">${sc.reason ? `${h(sc.reason.label)} · ` : ""}${h(sc.probability.label)}</div></li>`).join("")}</ul>` : ""}
+      ${s.scenarios.length ? `<h6 class="mt-3">Các kịch bản</h6>
+        <div class="wb-list-kind">${kindBadgeHtml("CONDITIONAL")}<span class="cockpit-note">Mỗi kịch bản chỉ xảy ra khi điều kiện của nó được đáp ứng. Không kịch bản nào có xác suất được ước tính.</span></div>
+        <ul class="wb-items">${s.scenarios.map((sc) => `<li class="wb-item wb-item-conditional" data-scenario="${h(sc.case)}"><div class="wb-item-head"><span class="wb-item-label"><b>${h(sc.caseLabel)}</b> — ${h(sc.status.label)}</span></div>${sc.reason ? `<div class="wb-item-meta">${h(sc.reason.label)}</div>` : ""}</li>`).join("")}</ul>` : ""}
       ${s.scenarioLimitations.length ? `<ul class="cockpit-list">${s.scenarioLimitations.map((l) => `<li class="cockpit-note">${h(l.label)}</li>`).join("")}</ul>` : ""}
-      <div class="cockpit-note">Giá mục tiêu: ${h(codeLabel(s.targetPriceStatus).label)} · Xác suất: ${h(codeLabel(s.probabilityStatus).label)}</div>`;
+      <div class="cockpit-note">Giá mục tiêu: ${h(codeLabel(s.targetPriceStatus).label)} · Xác suất: ${h(codeLabel(s.probabilityStatus).label)}${p.policyVersion ? ` · Phiên bản quy tắc: ${h(p.policyVersion)}` : ""}</div>`;
   }
 
   function technicalHtml(m) {
     const t = m.technical;
+    const differ = t.market.marketBucket && trendTone(t.entryState) !== bucketTone(t.market.marketBucket);
     const rows = [
-      ["Trạng thái kỹ thuật", pillHtml(t.entryState, "tactical_state")],
+      ["Xu hướng giá", pillHtml(t.entryState, "tactical_state")],
       ["Mức sẵn sàng kỹ thuật", pillHtml(t.entryAction, "entry_action")],
       ["Giá hiện tại", t.price !== null ? `${h(formatNumber(t.price, 4))} <span class="cockpit-note">(${h(t.priceUnit)})</span>` : '<span class="cockpit-note">Chưa có giá được giữ lại</span>'],
-      ["Xu hướng tín hiệu", `${pillHtml(t.signalVelocity.state, "signal_velocity_state")}${t.signalVelocity.reason ? ` <span class="cockpit-note">${h(t.signalVelocity.reason.label)}</span>` : ""}`],
-      ["Dòng ngoại – giá", t.flow.cohort === "OUTSIDE_CURRENT_FLOW_RESEARCH_COHORT" ? '<span class="cockpit-note">Chưa thuộc nhóm theo dõi dòng ngoại</span>' : `${pillHtml(t.flow.relationship, "flow_price_relationship")} ${t.flow.foreignFlow ? pillHtml(t.flow.foreignFlow, "foreign_flow_state") : ""}${t.flow.latestSession ? ` <span class="cockpit-note">phiên ${h(t.flow.latestSession)}</span>` : ""}`],
+      ["Diễn biến tín hiệu qua nhiều phiên", `${pillHtml(t.signalVelocity.state, "signal_velocity_state")}${t.signalVelocity.reason ? ` <span class="cockpit-note">${h(t.signalVelocity.reason.label)}</span>` : ""}`],
+      ["Dòng vốn ngoại và giá", t.flow.cohort === "OUTSIDE_CURRENT_FLOW_RESEARCH_COHORT" ? '<span class="cockpit-note">Chưa thuộc nhóm theo dõi dòng ngoại</span>' : `${pillHtml(t.flow.relationship, "flow_price_relationship")} ${t.flow.foreignFlow ? pillHtml(t.flow.foreignFlow, "foreign_flow_state") : ""}${t.flow.latestSession ? ` <span class="cockpit-note">phiên ${h(t.flow.latestSession)}</span>` : ""}`],
       ["Độ rộng thị trường", pillHtml(t.market.breadth, "data_fitness", "neutral")],
-      ["Dẫn dắt ngành", pillHtml(t.market.leadership, "data_fitness", "neutral")],
-      ["Động lượng so với thị trường / ngành", `${pillHtml(t.market.marketBucket, "data_fitness", "neutral")} / ${pillHtml(t.market.sectorBucket, "data_fitness", "neutral")}`],
-      ["Thanh khoản nghiên cứu", `${pillHtml(t.liquidity.readiness, "liquidity_state")}${t.liquidity.volume !== null ? ` · khối lượng ${h(formatNumber(t.liquidity.volume, 0))}${t.liquidity.session ? ` (phiên ${h(t.liquidity.session)})` : ""}` : ""}`],
+      ["Vị thế của ngành", pillHtml(t.market.leadership, "data_fitness", "neutral")],
+      ["Sức mạnh so với thị trường / trong ngành", `${pillHtml(t.market.marketBucket, "data_fitness", "neutral")} / ${pillHtml(t.market.sectorBucket, "data_fitness", "neutral")}`],
+      ["Khối lượng giao dịch", `${pillHtml(t.liquidity.readiness, "liquidity_state")}${t.liquidity.volume !== null ? ` · ${h(formatNumber(t.liquidity.volume, 0))} cổ phiếu${t.liquidity.session ? ` (phiên ${h(t.liquidity.session)})` : ""}` : ""}`],
     ];
     return `<div class="wb-dim-caveat">${h(DIMENSIONS.technical.caveat)} Thiết lập kỹ thuật vẫn được hiển thị đầy đủ dù dữ liệu tài chính thiếu.</div>
       <dl class="wb-dl">${rows.map(([k, v]) => `<div><dt>${h(k)}</dt><dd>${v}</dd></div>`).join("")}</dl>
-      <div class="cockpit-note">Năng lực thực hiện lệnh: ${h(codeLabel(t.liquidity.execution, "liquidity_state").label)}. Thanh khoản nghiên cứu không xác lập quy mô lệnh.</div>`;
+      ${differ ? '<p class="cockpit-note" data-two-lenses="true">Xu hướng giá và sức mạnh tương đối là hai phép đo khác nhau: một mã có thể đi ngang nhưng vẫn mạnh hơn phần lớn thị trường trong cùng thời gian, hoặc ngược lại.</p>' : ""}
+      <div class="cockpit-note">Khả năng khớp lệnh khối lượng lớn: ${h(codeLabel(t.liquidity.execution, "liquidity_state").label)}. Khối lượng giao dịch chỉ để tham khảo, không cho biết quy mô lệnh phù hợp.</div>`;
+  }
+
+  function unknownThemeHtml(g) {
+    return `<details class="wb-more wb-theme" data-theme="${h(g.theme)}"><summary><b>${h(g.label)}</b> — ${g.items.length} chỉ tiêu <span class="cockpit-note">(${Object.keys(g.byCategory).map((k) => `${REASON_CATEGORIES[k].label.toLowerCase()}: ${g.byCategory[k]}`).join(" · ")})</span></summary>
+      ${g.reasons.map((r) => `<div class="wb-reason-group" data-reason-category="${h(r.category)}" data-reason-code="${h(r.reasonRaw)}">
+        <div class="wb-reason-head"><span class="wb-kind wb-kind-gap">${h(REASON_CATEGORIES[r.category].label)}</span> <span class="cockpit-note">${h(r.detail || REASON_CATEGORIES[r.category].text)}${r.rows[0].period ? ` · kỳ ${h(r.rows[0].period)}` : ""}</span></div>
+        <ul class="wb-chips">${r.rows.map((x) => `<li data-code="${h(x.raw)}" data-evidence-kind="${h(x.kind)}" title="${h(x.reasonRaw)}">${h(x.label)}</li>`).join("")}</ul></div>`).join("")}
+    </details>`;
   }
 
   function fundamentalsHtml(m) {
     const f = m.fundamentals;
-    const v = m.valuation;
-    const est = f.establishes;
+    const inference = f.establishes.filter((e) => e.kind !== "RESEARCH_ONLY");
+    const figures = f.establishes.filter((e) => e.kind === "RESEARCH_ONLY");
+    const allGroups = unknownGroups(m).filter((g) => g.theme !== "valuation");
+    const groups = allGroups.filter((g) => g.items.length);
+    const naRows = allGroups.reduce((out, g) => out.concat(g.notApplicable), []);
+    const fundamentalUnavailable = groups.reduce((n, g) => n + g.items.length, 0);
     const head = `<div class="wb-keyline"><span class="cockpit-note">Loại hình:</span> ${pillHtml(f.entityClass === "unknown" ? "" : f.entityClass, "entity_type", "neutral")} ${f.family ? `<span class="cockpit-note">${h(f.family.label)}</span>` : ""} ${f.period ? `<span class="cockpit-note">Kỳ tài chính ${h(f.period)}</span>` : ""} ${f.freshness ? pillHtml(f.freshness, "freshness") : ""}</div>
-      ${f.isBank ? '<div class="wb-bank-note">Ngân hàng dùng thước đo riêng (biên lãi ròng, nợ xấu, cho vay/huy động…). Không đọc theo biên lợi nhuận hay P/E của doanh nghiệp phi tài chính.</div>' : ""}
+      ${f.isBank ? '<div class="wb-bank-note">Ngân hàng dùng thước đo riêng (biên lãi ròng, nợ xấu, cho vay/huy động…). Không đọc theo biên lợi nhuận hay P/E của doanh nghiệp phi tài chính.</div>' : (ENTITY_NOTES[f.entityClass] ? `<div class="wb-bank-note">${h(ENTITY_NOTES[f.entityClass])}</div>` : "")}
       ${f.limitations.length ? `<ul class="cockpit-list">${f.limitations.map((l) => `<li class="cockpit-note">${h(l)}</li>`).join("")}</ul>` : ""}`;
-    const establishedHtml = est.length
-      ? `<ul class="wb-items">${est.slice(0, 10).map(itemHtml).join("")}</ul>${est.length > 10 ? `<details class="wb-more"><summary>Xem thêm ${est.length - 10} mục</summary><ul class="wb-items">${est.slice(10).map(itemHtml).join("")}</ul></details>` : ""}`
-      : '<p class="cockpit-note">Dữ liệu tài chính hiện chưa xác lập được chỉ tiêu nào cho mã này.</p>';
-    const unavailableHtml = f.unavailable.length
-      ? `<ul class="wb-items">${f.unavailable.slice(0, 8).map(itemHtml).join("")}</ul>${f.unavailable.length > 8 ? `<details class="wb-more"><summary>Xem thêm ${f.unavailable.length - 8} mục</summary><ul class="wb-items">${f.unavailable.slice(8).map(itemHtml).join("")}</ul></details>` : ""}`
-      : '<p class="cockpit-note">Không có chỉ tiêu bị thiếu được ghi nhận.</p>';
-    const valEst = v.establishes.length ? `<ul class="wb-items">${v.establishes.map((e) => itemHtml(Object.assign({}, e, {
-      detail: [e.availability ? e.availability.label : "", e.shareBasis, e.peer ? `Đối sánh trong nhóm riêng của mã: ${e.peer.status.label}${e.peer.count !== null ? ` · ${e.peer.count} mã` : ""}` : ""].filter(Boolean).join(" · "),
-    }))).join("")}</ul>` : '<p class="cockpit-note">Chưa có phương pháp định giá nào có giá trị được giữ lại.</p>';
-    const valUn = v.unavailable.length ? `<ul class="wb-items">${v.unavailable.map(itemHtml).join("")}</ul>` : "";
     return `${head}
-      <div class="wb-two-col">
-        <div><h6>Điều dữ liệu tài chính đang xác lập</h6>${establishedHtml}</div>
-        <div><h6>Điều chưa có / bị chặn</h6>${unavailableHtml}${f.unavailableStates.length ? `<p class="cockpit-note">Trạng thái Producer chưa xác định được: ${h(f.unavailableStates.map((x) => x.label).join(", "))}.</p>` : ""}${f.notApplicableCount ? `<p class="cockpit-note">${f.notApplicableCount} chỉ tiêu không áp dụng cho loại hình doanh nghiệp này (không tính là thiếu).</p>` : ""}</div>
-      </div>
-      <h6 class="mt-3">Định giá</h6>
-      <div class="wb-keyline">${pillHtml(v.relativeState, "valuation_state")} ${v.displayState ? `<span class="cockpit-note">${h(v.displayState.label)}</span>` : ""} ${v.shareBasis ? `<span class="cockpit-note">Cơ sở: ${h(v.shareBasis.label)}</span>` : ""}</div>
-      <div class="wb-dim-caveat">${h(DIMENSIONS.valuation.caveat)} Định giá nghiêm ngặt: ${v.intrinsic ? `${h(v.intrinsic.readiness.label)} — ${h(v.intrinsic.reason.label)}` : "chưa được công bố"}. Giá mục tiêu: ${h(v.targetPrice.label)}.</div>
-      <div class="wb-two-col"><div><h6>Có giá trị (chỉ dùng nghiên cứu)</h6>${valEst}</div><div><h6>Chưa có / bị chặn</h6>${valUn || '<p class="cockpit-note">Không có phương pháp bị chặn.</p>'}</div></div>`;
+      <h6>Đánh giá tổng hợp từ báo cáo tài chính</h6>
+      ${itemListHtml(inference) || '<p class="cockpit-note">Chưa có đánh giá tổng hợp nào cho kỳ này.</p>'}
+      <h6 class="mt-3">Các con số tham khảo</h6>
+      ${itemListHtml(figures, { limit: 6 }) || '<p class="cockpit-note">Dữ liệu tài chính hiện chưa xác lập được con số nào cho mã này.</p>'}
+      <h6 class="mt-3">Chỉ tiêu chưa dùng được <span class="cockpit-note">(${fundamentalUnavailable})</span></h6>
+      ${groups.length ? `<p class="cockpit-note">Nhóm theo chủ đề; mỗi lý do chung chỉ nêu một lần. Mở từng nhóm để xem đủ danh sách.</p>${groups.map(unknownThemeHtml).join("")}` : '<p class="cockpit-note">Không có chỉ tiêu bị thiếu được ghi nhận.</p>'}
+      ${naRows.length ? `<p class="cockpit-note" data-reason-category="NOT_APPLICABLE">Không áp dụng cho loại hình doanh nghiệp này (không phải thiếu dữ liệu): ${naRows.map((x) => `<span data-code="${h(x.raw)}" title="${h(x.reasonRaw)}">${h(x.label)}</span>`).join(", ")}.</p>` : ""}
+      ${f.unavailableStates.length ? `<p class="cockpit-note">Chưa có đánh giá tổng hợp cho: ${h(f.unavailableStates.map((x) => x.label).join(", "))}.</p>` : ""}
+      ${f.notApplicableCount ? `<p class="cockpit-note">${f.notApplicableCount} chỉ tiêu không áp dụng cho loại hình doanh nghiệp này (không tính là thiếu).</p>` : ""}`;
+  }
+
+  function valuationHtml(m) {
+    const v = m.valuation;
+    const g = unknownGroups(m).find((x) => x.theme === "valuation");
+    const valEst = v.establishes.length ? itemListHtml(v.establishes.map((e) => Object.assign({}, e, {
+      detail: [e.availability ? e.availability.label : "", e.shareBasis, e.peer ? `So với nhóm tương tự: ${e.peer.status.label}${e.peer.count !== null ? ` · ${e.peer.count} mã` : ""}` : ""].filter(Boolean).join(" · "),
+    }))) : '<p class="cockpit-note">Chưa có phương pháp định giá nào có giá trị được giữ lại.</p>';
+    return `<div class="wb-keyline">${pillHtml(v.relativeState, "valuation_state")} ${v.displayState ? `<span class="cockpit-note">${h(v.displayState.label)}</span>` : ""} ${v.shareBasis ? `<span class="cockpit-note">${h(v.shareBasis.label)}</span>` : ""}</div>
+      <div class="wb-dim-caveat">${h(DIMENSIONS.valuation.caveat)} Giá trị hợp lý: ${v.intrinsic ? `${h(v.intrinsic.readiness.label)} — ${h(v.intrinsic.reason.label)}` : "chưa được công bố"}. Giá mục tiêu: ${h(v.targetPrice.label)}.</div>
+      <h6>Chỉ số tính được (để tham khảo)</h6>${valEst}
+      <h6 class="mt-3">Chỉ số chưa tính được</h6>${g && g.items.length ? unknownThemeHtml(g) : '<p class="cockpit-note">Không có phương pháp nào bị thiếu.</p>'}
+      ${g && g.notApplicable.length ? `<p class="cockpit-note" data-reason-category="NOT_APPLICABLE">Không áp dụng cho loại hình doanh nghiệp này (không phải thiếu dữ liệu): ${g.notApplicable.map((x) => `<span data-code="${h(x.raw)}" title="${h(x.reasonRaw)}">${h(x.label)}</span>`).join(", ")}.</p>` : ""}`;
   }
 
   function conditionsHtml(m) {
     const c = m.conditions;
-    return `<p class="cockpit-note">Đây là các điều kiện Producer công bố để theo dõi. Một điều kiện cho phiên tương lai chưa bao giờ được hiển thị như đã xảy ra.</p>
+    return `<p class="cockpit-note">Các mốc để biết khi nào nhận định được xác nhận, yếu đi hoặc cần xem lại. Điều kiện cho phiên tương lai không bao giờ được hiển thị như đã xảy ra.</p>
       <h6>Xác nhận</h6>${c.confirmation.map(conditionHtml).join("")}${referenceHtml(c.reference)}
-      ${c.bull ? `<div class="cockpit-note">Kịch bản tích cực: ${h(c.bull.status.label)}${c.bull.reason ? ` — ${h(c.bull.reason.label)}` : ""}</div>` : ""}
-      <h6 class="mt-3">Suy yếu</h6>${c.weakening.length ? `<ul class="wb-items">${c.weakening.map((w) => `<li class="wb-item">${kindBadgeHtml(w.kind)} <span class="wb-item-label">${h(w.label)}</span>${w.detail ? `<div class="wb-item-meta">${h(w.detail)}</div>` : ""}</li>`).join("")}</ul>` : '<p class="cockpit-note">Producer chưa công bố điều kiện suy yếu riêng.</p>'}
+      ${c.bull ? `<div class="cockpit-note">Kịch bản tích cực — ${h(c.bull.status.label)}${c.bull.reason ? `: ${h(c.bull.reason.label)}` : ""}</div>` : ""}
+      <h6 class="mt-3">Suy yếu</h6>${c.weakening.length ? `<ul class="wb-items">${c.weakening.map((w) => `<li class="wb-item">${kindBadgeHtml(w.kind)} <span class="wb-item-label">${h(w.label)}</span>${w.detail ? `<div class="wb-item-meta">${h(w.detail)}</div>` : ""}</li>`).join("")}</ul>` : '<p class="cockpit-note">Chưa có điều kiện suy yếu riêng.</p>'}
       <h6 class="mt-3">Vô hiệu / xem xét lại</h6>${c.invalidation.map(conditionHtml).join("")}
-      ${c.fundamentalInvalidation ? `<div class="wb-condition" data-condition-role="fundamental-invalidation"><div class="wb-condition-head">${kindBadgeHtml("CONDITIONAL")} <b>Vô hiệu nền tảng</b> ${pillHtml(c.fundamentalInvalidation.statusRaw, "invalidation_state")} ${c.fundamentalInvalidation.fired ? '<span class="cockpit-state tone-adverse" data-fired="producer-reported">Producer ghi nhận đã kích hoạt</span>' : '<span class="cockpit-state tone-neutral" data-fired="future">Điều kiện cho kỳ báo cáo tương lai — chưa xảy ra</span>'}</div>
-        ${c.fundamentalInvalidation.dimension ? `<div><b>Khía cạnh</b> ${h(c.fundamentalInvalidation.dimension)}${c.fundamentalInvalidation.baseline ? ` · hiện tại ${h(c.fundamentalInvalidation.baseline)}` : ""}${c.fundamentalInvalidation.watch ? ` · vô hiệu nếu chuyển sang ${h(c.fundamentalInvalidation.watch)}` : ""}</div>` : ""}
+      ${c.fundamentalInvalidation ? `<div class="wb-condition" data-condition-role="fundamental-invalidation"><div class="wb-condition-head"><b>Điều kiện về nền tảng</b> ${pillHtml(c.fundamentalInvalidation.statusRaw, "invalidation_state")} ${c.fundamentalInvalidation.fired ? '<span class="cockpit-state tone-adverse" data-fired="producer-reported">Dữ liệu ghi nhận đã xảy ra</span>' : '<span class="cockpit-state tone-neutral" data-fired="future">Chưa xảy ra — điều kiện cho kỳ báo cáo tới</span>'}</div>
+        ${c.fundamentalInvalidation.dimension ? `<div><b>Khía cạnh</b> ${h(c.fundamentalInvalidation.dimension)}${c.fundamentalInvalidation.baseline ? ` · hiện tại ${h(c.fundamentalInvalidation.baseline)}` : ""}${c.fundamentalInvalidation.watch ? ` · cần xem lại nếu chuyển sang ${h(c.fundamentalInvalidation.watch)}` : ""}</div>` : ""}
         ${c.fundamentalInvalidation.asOf ? `<div class="cockpit-note">Kỳ cơ sở ${h(c.fundamentalInvalidation.asOf)}</div>` : ""}</div>` : ""}`;
   }
 
+  // Display order only: questions whose single root cause blocks the most figures come first.
+  // The question set, identities and texts are unchanged.
+  function questionOrder(gaps) {
+    return gaps.map((g, i) => ({ g, i, w: arr(g.members).length || 1 })).sort((a, b) => b.w - a.w || a.i - b.i).map((x) => x.g);
+  }
   function questionsHtml(m, journalEntry) {
     const userQs = journalEntry ? journalEntry.questions : [];
     const tracked = new Set(userQs.map((q) => q.gap_key).filter(Boolean));
-    const byAxis = {};
-    m.gaps.forEach((g) => { (byAxis[g.axis] = byAxis[g.axis] || []).push(g); });
-    const groupsHtml = Object.keys(byAxis).sort().map((axis) => `<div class="wb-dim"><div class="wb-dim-head">${h(axisLabel(axis) === "Trục dữ liệu khác" ? "Khác" : axisLabel(axis))} <span class="cockpit-note">(${byAxis[axis].length})</span></div><ul class="wb-items">${byAxis[axis].map((g) => `<li class="wb-item wb-item-gap" data-gap-key="${h(g.key)}">
-        <div class="wb-item-head">${kindBadgeHtml(g.kind)}<span class="wb-item-label">${h(g.label)}</span></div>
-        ${g.detail ? `<div class="wb-item-meta">${h(g.detail)}${g.source ? ` · nguồn ${h(g.source)}` : ""}</div>` : ""}
-        <div class="wb-question">Câu hỏi kiểm chứng: ${h(g.question.text)}</div>
+    const li = (g) => `<li class="wb-item wb-item-gap" data-gap-key="${h(g.key)}" data-evidence-kind="${h(g.kind)}">
+        <div class="wb-question">${h(g.question.text)}</div>
+        <div class="wb-item-meta"><span class="wb-kind wb-kind-gap">${h(REASON_CATEGORIES[reasonCategory(g.kind, g.reasonRaw || g.key)].label)}</span>${g.source ? ` · nguồn ${h(g.source)}` : ""}</div>
         ${journalEntry ? (tracked.has(g.key) ? '<span class="cockpit-note">Đã đưa vào sổ nghiên cứu</span>' : `<button type="button" class="btn btn-sm btn-outline-light" data-wb-action="track-question" data-gap-key="${h(g.key)}">Theo dõi câu hỏi này</button>`) : ""}
-      </li>`).join("")}</ul></div>`).join("");
-    return `<p class="cockpit-note">Mỗi câu hỏi được tạo theo một mẫu cố định từ đúng khoảng trống dữ liệu Producer đã công bố — không phải nhận định mới.${journalEntry ? "" : " Lưu hồ sơ vào sổ nghiên cứu để theo dõi trạng thái từng câu hỏi."}</p>${groupsHtml || '<p class="cockpit-note">Producer không ghi nhận khoảng trống dữ liệu cho mã này.</p>'}`;
+      </li>`;
+    if (!m.gaps.length) return '<p class="cockpit-note">Không ghi nhận khoảng trống dữ liệu cho mã này.</p>';
+    const ordered = questionOrder(m.gaps);
+    const top = ordered.slice(0, 5);
+    const topKeys = new Set(top.map((g) => g.key));
+    const rest = m.gaps.filter((g) => !topKeys.has(g.key));
+    const byAxis = {};
+    rest.forEach((g) => { (byAxis[g.axis] = byAxis[g.axis] || []).push(g); });
+    const restHtml = Object.keys(byAxis).sort().map((axis) => `<div class="wb-dim"><div class="wb-dim-head">${h(axisLabel(axis) === "Trục dữ liệu khác" ? "Khác" : axisLabel(axis))} <span class="cockpit-note">(${byAxis[axis].length})</span></div><ul class="wb-items">${byAxis[axis].map(li).join("")}</ul></div>`).join("");
+    return `<p class="cockpit-note">Mỗi câu hỏi xuất phát từ một khoảng trống dữ liệu đã công bố; các chỉ tiêu cùng thiếu một nguồn được gộp vào một câu hỏi. Đây không phải nhận định mới.${journalEntry ? "" : " Lưu hồ sơ vào sổ nghiên cứu để theo dõi từng câu hỏi."}</p>
+      <h6>Câu hỏi ảnh hưởng nhiều chỉ tiêu nhất</h6><ul class="wb-items" data-questions="top">${top.map(li).join("")}</ul>
+      ${rest.length ? `<details class="wb-more" data-questions="rest"><summary>Xem ${rest.length} câu hỏi còn lại</summary>${restHtml}</details>` : ""}`;
   }
 
   function freshnessHtml(m) {
     const f = m.freshness;
-    return `<div class="table-responsive"><table class="cockpit-table wb-table"><thead><tr><th>Trục</th><th>Độ mới</th><th>Phiên/kỳ nguồn</th><th>Mức đủ điều kiện</th></tr></thead><tbody>${f.axes.map((a) => `<tr><td>${h(a.label)}</td><td>${pillHtml(a.freshness, "freshness")}</td><td>${h(a.source || "—")}</td><td>${h(a.qualification || "—")}</td></tr>`).join("")}</tbody></table></div>
-      <p class="cockpit-note mb-1">${f.currentAxes}/${f.axes.length} trục dữ liệu ở phiên hiện tại · ${f.metricsAvailable}/${f.metricsTotal} chỉ tiêu hiển thị có giá trị. Đây là số đếm độ đầy đủ, không phải điểm đánh giá.</p>
-      ${f.deepEvidence ? `<p class="cockpit-note mb-0">Bằng chứng sâu: ${h(f.deepEvidence)}</p>` : ""}`;
+    return `<div class="table-responsive"><table class="cockpit-table wb-table"><thead><tr><th>Nhóm dữ liệu</th><th>Độ mới</th><th>Phiên/kỳ nguồn</th><th>Mức đủ điều kiện</th></tr></thead><tbody>${f.axes.map((a) => `<tr><td>${h(a.label)}</td><td>${pillHtml(a.freshness, "freshness")}</td><td>${h(a.source || "—")}</td><td>${h(a.qualification || "—")}</td></tr>`).join("")}</tbody></table></div>
+      <p class="cockpit-note mb-1">${f.currentAxes}/${f.axes.length} nhóm dữ liệu thuộc phiên hiện tại · ${f.metricsAvailable}/${f.metricsTotal} chỉ tiêu hiển thị có giá trị. Đây là số đếm độ đầy đủ, không phải điểm đánh giá.</p>
+      ${f.deepEvidence ? `<p class="cockpit-note mb-0">Bằng chứng chuyên sâu: ${h(f.deepEvidence)}</p>` : ""}`;
   }
 
   function provenanceHtml(m) {
-    return `<p class="cockpit-note">Nguồn gốc của hồ sơ này. Hồ sơ là bản đọc lại dữ liệu đã công bố, không phải gói dữ liệu niêm phong của Producer.</p>
-      <dl class="wb-dl wb-dl-mono">${m.provenance.map((r) => `<div><dt>${h(r.label)}</dt><dd class="wb-mono">${h(r.value)}</dd></div>`).join("")}</dl>`;
+    const codes = [];
+    const push = (label, raw) => { if (raw) codes.push([label, raw]); };
+    push("Trạng thái hành động", m.posture.raw);
+    if (m.posture.conditionClass) push("Nhóm tình huống", m.posture.conditionClass.raw);
+    m.posture.reasons.forEach((r) => push("Lý do", r.raw));
+    push("Xu hướng giá", m.technical.entryState);
+    m.fundamentals.unavailable.concat(m.valuation.unavailable).forEach((u) => push(u.label, u.reasonRaw));
+    return `${legendHtml()}
+      <h6 class="mt-3">Nguồn gốc dữ liệu</h6>
+      <p class="cockpit-note">Hồ sơ là bản đọc lại dữ liệu đã công bố, không phải gói dữ liệu niêm phong của hệ thống phân tích.</p>
+      <dl class="wb-dl wb-dl-mono">${m.provenance.map((r) => `<div><dt>${h(r.label)}</dt><dd class="wb-mono">${h(r.value)}</dd></div>`).join("")}</dl>
+      <details class="wb-tech"><summary>Mã trạng thái và mã lý do gốc (${codes.length})</summary><dl class="wb-dl wb-dl-mono">${codes.map(([k, v]) => `<div><dt>${h(k)}</dt><dd class="wb-mono">${h(v)}</dd></div>`).join("")}</dl></details>`;
   }
 
   function notesHtml(m, entry, stale) {
@@ -1194,7 +1481,7 @@
       <h6 class="mt-3">Điều kiện bạn muốn theo dõi</h6>
       <ul class="wb-note-list">${entry.conditions.map((c) => `<li data-condition-id="${h(c.id)}"><span class="wb-note-text">${h(c.text)}</span><button type="button" class="btn btn-sm btn-link wb-remove" data-wb-action="remove-condition" data-condition-id="${h(c.id)}" aria-label="Xóa điều kiện">Xóa</button></li>`).join("") || '<li class="cockpit-note">Chưa có điều kiện.</li>'}</ul>
       <form class="wb-inline-form" data-wb-form="condition"><label class="vs-visually-hidden" for="wb-new-condition">Điều kiện mới</label><input id="wb-new-condition" class="form-control form-control-sm" maxlength="${LIMITS.item}" placeholder="Ví dụ: đọc lại khi có báo cáo quý mới" autocomplete="off"><button type="submit" class="btn btn-sm btn-outline-light">Thêm</button></form>
-      <p class="cockpit-note mt-2 mb-0">Ghi chú của bạn không phải dữ liệu Producer và không thay đổi tư thế nghiên cứu.</p>
+      <p class="cockpit-note mt-2 mb-0">Ghi chú của bạn không phải dữ liệu phân tích và không thay đổi trạng thái hành động.</p>
     </div>`;
   }
 
@@ -1203,18 +1490,20 @@
     if (!m) return '<div class="cockpit-note" data-dossier-unavailable="true">Chưa có dữ liệu để lập hồ sơ cho mã này.</div>';
     const entry = o.journalEntry || null;
     const ev = m.evidence;
+    const fundUnavailable = m.fundamentals.unavailable.length;
     return `${overviewHtml(m, { saved: Boolean(entry), inCompare: o.inCompare })}
-      ${legendHtml()}
+      <div class="wb-deep-head"><h3 class="wb-deep-title">Tìm hiểu sâu hơn</h3><p class="cockpit-note mb-0">Mở từng phần để xem đầy đủ con số, bằng chứng, kỳ báo cáo và lý do gốc.</p></div>
       ${sectionHtml("wb-sec-notes", "Ghi chú của bạn", entry ? `${entry.questions.filter((q) => q.status === "open").length} câu hỏi đang mở` : "chưa lưu", notesHtml(m, entry, o.stale), Boolean(entry))}
-      ${sectionHtml("wb-sec-posture", "Tư thế & chiến lược của Producer", m.posture.conditionClass ? m.posture.conditionClass.label : "", strategyHtml(m), false)}
-      ${sectionHtml("wb-sec-evidence", "Bằng chứng ủng hộ & phản biện", `${ev.support.length} ủng hộ · ${ev.counter.length} phản biện`, `<p class="cockpit-note">"Ủng hộ" và "phản biện" chỉ phân theo chiều của chính mã điều kiện Producer công bố (tích cực hay bất lợi), nhóm theo khía cạnh. Việc phân nhóm không thay đổi tư thế và không cân đo bên nào thắng.</p><div class="wb-two-col"><div><h6>Bằng chứng ủng hộ</h6>${itemsByDimensionHtml(ev.support, "Producer chưa ghi nhận bằng chứng ủng hộ cho phiên này.")}</div><div><h6>Phản biện / bất lợi</h6>${itemsByDimensionHtml(ev.counter, "Producer chưa ghi nhận phản luận cho phiên này.")}</div></div>${ev.neutral.length ? `<h6 class="mt-3">Lý do trung tính / đang chờ</h6>${itemsByDimensionHtml(ev.neutral, "")}` : ""}`, false)}
-      ${sectionHtml("wb-sec-technical", "Kỹ thuật & thị trường", "", technicalHtml(m), false)}
-      ${sectionHtml("wb-sec-fundamentals", "Cơ bản & định giá: đã xác lập và chưa có", `${m.fundamentals.establishes.length + m.valuation.establishes.length} xác lập · ${m.fundamentals.unavailable.length + m.valuation.unavailable.length} chưa có`, fundamentalsHtml(m), false)}
-      ${sectionHtml("wb-sec-conditions", "Điều kiện xác nhận, suy yếu và vô hiệu", "", conditionsHtml(m), false)}
-      ${sectionHtml("wb-sec-questions", "Câu hỏi chưa có lời giải", `${m.gaps.length} khoảng trống`, questionsHtml(m, entry), false)}
-      ${sectionHtml("wb-sec-freshness", "Độ mới & độ đầy đủ của bằng chứng", `${m.freshness.currentAxes}/${m.freshness.axes.length} hiện hành`, freshnessHtml(m), false)}
+      ${sectionHtml("wb-sec-evidence", "Toàn bộ điểm tích cực và điểm cần thận trọng", `${ev.support.length} tích cực · ${ev.counter.length} cần thận trọng`, `<p class="cockpit-note">Mỗi điểm được xếp theo chiều của chính dữ liệu (tích cực hay bất lợi) và nhóm theo khía cạnh. Số lượng mỗi bên không cho biết bên nào đúng hơn.</p><div class="wb-two-col"><div><h6>Điểm tích cực</h6>${itemsByDimensionHtml(ev.support, "Chưa có điểm tích cực nào được ghi nhận cho phiên này.")}</div><div><h6>Điểm cần thận trọng</h6>${itemsByDimensionHtml(ev.counter, "Chưa có điểm bất lợi nào được ghi nhận cho phiên này.")}</div></div>${ev.neutral.length ? `<h6 class="mt-3">Đang chờ / trung tính</h6>${itemsByDimensionHtml(ev.neutral, "")}` : ""}`, false)}
+      ${sectionHtml("wb-sec-conditions", "Điều kiện xác nhận, suy yếu và xem xét lại", "", conditionsHtml(m), false)}
+      ${sectionHtml("wb-sec-posture", "Trạng thái hành động và các kịch bản", "", strategyHtml(m), false)}
+      ${sectionHtml("wb-sec-technical", "Giá, kỹ thuật và thị trường", "", technicalHtml(m), false)}
+      ${sectionHtml("wb-sec-fundamentals", "Số liệu tài chính", `${m.fundamentals.establishes.length} có số liệu · ${fundUnavailable} chưa dùng được`, fundamentalsHtml(m), false)}
+      ${sectionHtml("wb-sec-valuation", "Định giá chi tiết", `${m.valuation.establishes.length} tính được · ${m.valuation.unavailable.length} chưa tính được`, valuationHtml(m), false)}
+      ${sectionHtml("wb-sec-questions", "Câu hỏi cần kiểm chứng", `${m.gaps.length} câu hỏi`, questionsHtml(m, entry), false)}
+      ${sectionHtml("wb-sec-freshness", "Độ mới của dữ liệu", `${m.freshness.currentAxes}/${m.freshness.axes.length} nhóm thuộc phiên hiện tại`, freshnessHtml(m), false)}
       ${sectionHtml("wb-sec-history", "Lịch sử công khai", "", o.historyHtml || historyPlaceholderHtml(), false)}
-      ${sectionHtml("wb-sec-provenance", "Nguồn gốc dữ liệu", "", provenanceHtml(m), false)}`;
+      ${sectionHtml("wb-sec-provenance", "Chi tiết dữ liệu và phương pháp", "", provenanceHtml(m), false)}`;
   }
 
   // ---------------------------------------------------------------------------------------
@@ -2201,6 +2490,12 @@ ${arr(d.dossiers).map(dossierSection).join("")}${cmpSection}${notesSection}
     document.addEventListener("click", (e) => {
       const btn = e.target.closest("[data-wb-action]");
       if (btn && btn.closest(".wb-root")) { e.preventDefault(); handleAction(btn.dataset.wbAction, btn); return; }
+      const openSection = e.target.closest("[data-wb-open-section]");
+      if (openSection) {
+        const sec = document.getElementById(openSection.getAttribute("data-wb-open-section"));
+        if (sec && sec.tagName === "DETAILS") { e.preventDefault(); sec.open = true; sec.scrollIntoView({ block: "start", behavior: "auto" }); const s = sec.querySelector("summary"); if (s) s.focus({ preventScroll: true }); }
+        return;
+      }
       const openDossier = e.target.closest("[data-wb-open-dossier]");
       if (openDossier && UI.ctx) { e.preventDefault(); UI.ctx.openDossier(openDossier.dataset.wbOpenDossier); return; }
       const openEntry = e.target.closest("[data-wb-open-entry]");

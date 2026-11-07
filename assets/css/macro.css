@@ -357,3 +357,10 @@
   .macro-notice.is-loading svg,
   .macro-skeleton-card { animation: none !important; }
 }
+
+/* INVESTOR_FRIENDLY_DASHBOARD_UX_20261108: plain-language explainer under each KPI card. */
+.macro-explain { margin-top: .55rem; font-size: .8rem; line-height: 1.5; }
+.macro-explain > summary { cursor: pointer; color: var(--accent-text, #7dd3c7); }
+.macro-explain > summary:focus-visible { outline: 2px solid var(--primary, #2dd4bf); outline-offset: 2px; border-radius: 4px; }
+.macro-explain p { margin: .35rem 0 0; color: var(--text-muted, #94a3b8); }
+.macro-explain .macro-explain-note { font-style: italic; font-size: .74rem; }

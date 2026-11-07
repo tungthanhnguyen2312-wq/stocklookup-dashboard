@@ -810,7 +810,7 @@
   }
   const MICRO_EXPLANATIONS = {
     "Pha kỹ thuật": "Mô tả bối cảnh giá theo dữ liệu được giữ lại. Đây là bằng chứng nghiên cứu, không phải lệnh mua hoặc bán.",
-    "Mức sẵn sàng kỹ thuật": "Cho biết trạng thái thiết lập kỹ thuật hiện có; trạng thái này tách biệt với tư thế nghiên cứu và xác nhận thực tế.",
+    "Mức sẵn sàng kỹ thuật": "Cho biết trạng thái thiết lập kỹ thuật hiện có; trạng thái này tách biệt với trạng thái hành động và xác nhận thực tế.",
     "Dấu hiệu": "Các đặc điểm kỹ thuật được giữ lại để hỗ trợ diễn giải, không tạo thẩm quyền giao dịch độc lập.",
     "Khối lượng phiên": "Khối lượng của phiên được giữ lại; không tự xác lập năng lực thực hiện lệnh hoặc thanh khoản đầy đủ.",
     "Định giá": "Định giá tương đối cần được đọc cùng kỳ dữ liệu, nhóm so sánh và các giới hạn được công bố.",
@@ -1245,7 +1245,7 @@
             </div>
             <div class="mt-1"><b>Vô hiệu kỹ thuật</b> ${pill(((card.invalidation || {}).technical || {}).status, "invalidation_state")}</div>
             <div class="mt-1"><b>Vô hiệu nền tảng doanh nghiệp</b> ${pill(((card.invalidation || {}).fundamental || {}).status, "invalidation_state")}</div>
-            <div class="cockpit-note mt-2">Mức tham chiếu không tự xác lập quyền mở vị thế — chỉ trạng thái đã kích hoạt mới có thể nâng tư thế nghiên cứu.</div>
+            <div class="cockpit-note mt-2">Mức tham chiếu không tự xác lập quyền mở vị thế — chỉ trạng thái đã kích hoạt mới có thể nâng trạng thái hành động.</div>
             <div class="mt-2 cockpit-note">Hồ sơ nghiên cứu dự kiến: ${pill((card.prospective_case || {}).status, "prospective_case")} · vòng đời luận điểm: ${escHtml(formatWorkspaceState((card.prospective_case || {}).thesis_lifecycle_state, "prospective_case"))}</div>
           </section>
 
@@ -1287,13 +1287,13 @@
             </div></div>
             <div class="card"><div class="card-header"><h6>Kích hoạt / Vô hiệu</h6></div><div class="card-body">
               <div class="cockpit-grid mb-2">${kpiHtml("Trạng thái biên", pill((card.confirmation || {}).status, "confirmation_state"))}${kpiHtml("Trạng thái kích hoạt thực tế", pill((card.confirmation || {}).confirmation_trigger_state, "confirmation_state"))}</div>
-              <div class="cockpit-note mb-2">Trạng thái biên cho biết điều kiện kích hoạt đã được gắn (có giá trị/toán tử cơ sở) — không phải bằng chứng điều kiện đã kích hoạt. Chỉ trạng thái đã kích hoạt mới có thể nâng tư thế nghiên cứu lên ứng viên mở vị thế.</div>
+              <div class="cockpit-note mb-2">Trạng thái biên cho biết điều kiện kích hoạt đã được gắn (có giá trị/toán tử cơ sở) — không phải bằng chứng điều kiện đã kích hoạt. Chỉ trạng thái đã kích hoạt mới có thể nâng trạng thái hành động lên ứng viên mở vị thế.</div>
               ${conditionVisibleHtml(card.confirmation || {})}
               <hr class="my-3">
               <b>Mức kích hoạt tham chiếu</b>
               ${referenceTriggerHtml(referenceTrigger)}
               <hr class="my-3">
-              <b>${((card.invalidation || {}).technical || {}).semantic === "STANCE_RECONSIDERATION_WATCH" ? "Điều gì sẽ làm tư thế này đáng xem xét lại" : "Kỹ thuật (vô hiệu luận điểm)"}</b> ${pill(((card.invalidation || {}).technical || {}).status, "invalidation_state")}
+              <b>${((card.invalidation || {}).technical || {}).semantic === "STANCE_RECONSIDERATION_WATCH" ? "Điều gì sẽ làm trạng thái này đáng xem xét lại" : "Kỹ thuật (vô hiệu luận điểm)"}</b> ${pill(((card.invalidation || {}).technical || {}).status, "invalidation_state")}
               ${((card.invalidation || {}).technical || {}).semantic === "STANCE_RECONSIDERATION_WATCH" ? '<div class="cockpit-note mb-1">Tư thế này là điều kiện cấm mở vị thế mới, không có luận điểm dài hạn để vô hiệu — biên này cho biết khi nào lệnh cấm đáng được xem xét lại, không phải điều kiện vô hiệu luận điểm.</div>' : ""}
               ${conditionVisibleHtml((card.invalidation || {}).technical || {})}
               <b>Nền tảng doanh nghiệp</b> ${pill(((card.invalidation || {}).fundamental || {}).status, "invalidation_state")}
@@ -1424,8 +1424,8 @@
           const cards = Object.values(WORKSPACE.cards);
           POSTURE_COUNTS = Object.fromEntries(postureFilters.map((f) => [f.id, cards.filter((c) => f.test(c)).length]));
         }
-        root.innerHTML = `<p class="cockpit-note ws-posture-note">${esc(Object.keys(WORKSPACE.cards).length.toLocaleString("vi-VN"))} mã theo tư thế nghiên cứu đã công bố. Chọn một nhóm để lọc danh sách bên dưới; không phải xếp hạng.</p>`
-          + `<div class="ws-posture-chips" role="group" aria-label="Lọc theo tư thế nghiên cứu">${postureFilters.map((f) => `<button type="button" class="ws-posture-chip" data-posture-filter="${esc(f.id)}" aria-pressed="${ACTIVE_FILTERS.includes(f.id) ? "true" : "false"}"${POSTURE_COUNTS[f.id] ? "" : " disabled"}><span>${esc(f.label)}</span><strong>${esc(POSTURE_COUNTS[f.id].toLocaleString("vi-VN"))}</strong></button>`).join("")}</div>`;
+        root.innerHTML = `<p class="cockpit-note ws-posture-note">${esc(Object.keys(WORKSPACE.cards).length.toLocaleString("vi-VN"))} mã, nhóm theo trạng thái hành động đã công bố. Bấm một nhóm để lọc danh sách bên dưới; đây không phải xếp hạng.</p>`
+          + `<div class="ws-posture-chips" role="group" aria-label="Lọc theo trạng thái hành động">${postureFilters.map((f) => `<button type="button" class="ws-posture-chip" data-posture-filter="${esc(f.id)}" aria-pressed="${ACTIVE_FILTERS.includes(f.id) ? "true" : "false"}"${POSTURE_COUNTS[f.id] ? "" : " disabled"}><span>${esc(f.label)}</span><strong>${esc(POSTURE_COUNTS[f.id].toLocaleString("vi-VN"))}</strong></button>`).join("")}</div>`;
       }
 
       function renderList() {
@@ -1471,7 +1471,7 @@
         root.innerHTML = [
           analysisKpi("Trạng thái", PORTFOLIO_OVERRIDE ? "Đã nạp bối cảnh danh mục" : "Chưa nạp bối cảnh danh mục"),
           analysisKpi("Vị thế được giữ lại", PORTFOLIO_OVERRIDE ? String(held) : "—"),
-          analysisKpi("Nguyên tắc", "Không thay đổi tư thế nghiên cứu của mã"),
+          analysisKpi("Nguyên tắc", "Không thay đổi trạng thái hành động của mã"),
         ].join("");
       }
 

@@ -78,7 +78,7 @@ test("Home opens the whole universe by posture instead of four A-Z tickers", () 
   const boot = script.slice(script.indexOf("function bootDashboardOverview()"), script.indexOf("function investorRiskHtml("));
   assert.match(boot, /renderPostureEntry\(summary\);/);
   assert.doesNotMatch(boot, /bootHomeOpportunities\(/, "Home no longer selects or fetches notable cards");
-  assert.match(home.postureEntryHtml({ research_action_posture: { available: false } }), /Chưa có tư thế nghiên cứu/);
+  assert.match(home.postureEntryHtml({ research_action_posture: { available: false } }), /Chưa có trạng thái hành động/);
 });
 
 test("Cơ hội replaces the featured four with posture chips over the full list", () => {

@@ -32,6 +32,29 @@
     brent: "#E8975D", wti: "#7DD3E8",
     gold_world: "#E8C468", gold_sjc: "#B8935F",
   };
+  /* Giải thích phổ thông cho từng chỉ báo: chỉ báo là gì và vì sao nhà đầu tư thường theo dõi.
+   * Đây là kiến thức chung, không phải nhận định về số liệu hiện tại: trang không suy ra
+   * quan hệ nhân quả hay dự báo thị trường từ các con số này. */
+  var MACRO_EXPLAINERS = {
+    usdvnd_vcb: { what: "Giá bán 1 đô la Mỹ tại Vietcombank, tính bằng đồng.", why: "Khi số này tăng, đồng Việt Nam yếu đi so với USD. Nhà đầu tư thường theo dõi vì tỷ giá liên quan đến chi phí nhập khẩu, nợ vay bằng ngoại tệ và dòng vốn nước ngoài." },
+    usdvnd_mkt: { what: "Tỷ giá USD/VND trên thị trường quốc tế.", why: "Dùng để đối chiếu với giá niêm yết của ngân hàng trong nước." },
+    us_fedfunds: { what: "Lãi suất điều hành của Cục Dự trữ Liên bang Mỹ (Fed).", why: "Lãi suất Mỹ cao thường làm đồng USD hấp dẫn hơn và được theo dõi vì có thể ảnh hưởng đến tỷ giá và dòng vốn vào các thị trường mới nổi." },
+    us_10y: { what: "Lợi suất trái phiếu Chính phủ Mỹ kỳ hạn 10 năm.", why: "Thường được xem là mức lãi suất tham chiếu của thế giới; khi tăng, các tài sản rủi ro như cổ phiếu thường bị so sánh khắt khe hơn." },
+    us_cpi: { what: "Chỉ số giá tiêu dùng của Mỹ (lạm phát Mỹ).", why: "Lạm phát Mỹ là một căn cứ để Fed quyết định lãi suất." },
+    dxy: { what: "Chỉ số đo sức mạnh của USD so với nhiều đồng tiền khác.", why: "USD mạnh lên thường gây áp lực lên tỷ giá của các nước khác, trong đó có Việt Nam." },
+    vix: { what: "Chỉ số đo mức kỳ vọng biến động của thị trường cổ phiếu Mỹ (thường gọi là “chỉ số sợ hãi”).", why: "VIX cao cho thấy nhà đầu tư toàn cầu đang lo ngại nhiều hơn; đây là bối cảnh tâm lý chung, không phải tín hiệu cho từng mã." },
+    brent: { what: "Giá dầu thô Brent, tính bằng USD mỗi thùng.", why: "Giá dầu ảnh hưởng đến chi phí vận tải, sản xuất và lạm phát; một số ngành như dầu khí, hàng không chịu tác động trực tiếp hơn." },
+    wti: { what: "Giá dầu thô WTI của Mỹ, tính bằng USD mỗi thùng.", why: "Dùng song song với giá Brent để theo dõi giá năng lượng thế giới." },
+    gold_world: { what: "Giá vàng thế giới, tính bằng USD mỗi ounce.", why: "Vàng thường được xem là tài sản trú ẩn khi thị trường bất ổn." },
+    gold_sjc: { what: "Giá bán vàng miếng SJC tại TP.HCM.", why: "Phản ánh nhu cầu nắm giữ vàng trong nước; chênh lệch với giá thế giới có thể rất lớn." },
+    vn_cpi_yoy: { what: "Lạm phát Việt Nam: mức tăng giá tiêu dùng so với cùng kỳ năm trước.", why: "Lạm phát cao thường hạn chế khả năng hạ lãi suất trong nước." },
+    vn_gdp_yoy: { what: "Tốc độ tăng trưởng kinh tế Việt Nam so với năm trước.", why: "Cho biết bức tranh chung của nền kinh tế; số liệu theo năm nên thay đổi chậm." },
+    sp500: { what: "Chỉ số 500 công ty lớn của Mỹ.", why: "Đại diện cho tâm lý thị trường cổ phiếu toàn cầu." },
+    nasdaq: { what: "Chỉ số sàn Nasdaq của Mỹ, nhiều cổ phiếu công nghệ.", why: "Phản ánh tâm lý với nhóm công nghệ và tăng trưởng." },
+    nikkei: { what: "Chỉ số chứng khoán chính của Nhật Bản.", why: "Bối cảnh thị trường châu Á." },
+    hsi: { what: "Chỉ số chứng khoán Hang Seng của Hồng Kông.", why: "Bối cảnh thị trường châu Á, nhạy với kinh tế Trung Quốc." },
+  };
+
   var FALLBACK_COLOR_POOL = ["#20e7cf", "#5deBff", "#27e6a1", "#f0c45a", "#ff5d73"];
 
   // Chỉ báo mới thêm sau này (chưa có trong INDICATOR_COLORS) vẫn có màu ổn định:
@@ -192,8 +215,8 @@
   function freshnessBadge(item) {
     var state = item.freshness && item.freshness.status;
     if (item.status !== "available") return { text: "Thiếu dữ liệu", className: "bs-gray" };
-    if (state === "stale") return { text: "Cần cập nhật", className: "bs-amber" };
-    if (state === "current") return { text: "Trong ngưỡng", className: "bs-green" };
+    if (state === "stale") return { text: "Số liệu cần cập nhật", className: "bs-amber" };
+    if (state === "current") return { text: "Số liệu còn mới", className: "bs-green" };
     return { text: "Chưa xác định", className: "bs-gray" };
   }
 
@@ -241,6 +264,15 @@
       if (item.history_scope) details.append(detailRow("Phạm vi", item.history_scope.replace("pipeline bắt đầu chạy đều", "quy trình cập nhật bắt đầu hoạt động đều")));
 
       card.append(top, valueRow, delta, details);
+      var explain = MACRO_EXPLAINERS[item.key];
+      if (explain) {
+        var more = element("details", "macro-explain");
+        more.append(element("summary", "", "Chỉ số này là gì?"));
+        more.append(element("p", "", explain.what));
+        more.append(element("p", "", explain.why));
+        more.append(element("p", "macro-explain-note", "Đây là giải thích chung, không phải dự báo hay nhận định về con số hiện tại."));
+        card.append(more);
+      }
       container.append(card);
     });
   }
