@@ -1,5 +1,14 @@
 # CHANGELOG UI — Refactor giao diện toàn dự án
 
+## Cập nhật 2026-11-07 — Hai lăng kính, kỳ BCTC và cơ sở P/B (PR #29)
+
+- Cơ hội: khi nhãn kỹ thuật tích cực (vd. Sẵn sàng bứt phá → Mở vị thế khi xác nhận) nằm dưới
+  Quyết định tích hợp không tích cực (vd. Tránh), thẻ nêu rõ lăng kính nào là quyết định chính,
+  mức kích hoạt chưa thỏa, điều kiện thay đổi nhận định và mức vô hiệu; gắn nhãn Không phải tín hiệu mua.
+- Cơ bản & định giá: luôn hiện kỳ BCTC dùng trong phân tích; “Đạt chuẩn chính thức” là thẩm quyền nguồn,
+  không phải độ mới; liệt kê kỳ chính thức mới hơn đã được chấp nhận (chỉ là bối cảnh).
+- P/B nghiên cứu: nêu mẫu số (tổng vốn chủ sở hữu gồm lợi ích CĐ không kiểm soát), kỳ sổ sách và độ trễ.
+
 ## Cập nhật 2026-10-07 — Giao diện ưu tiên nhà đầu tư V1
 
 Milestone: `INVESTOR_FIRST_DASHBOARD_UX_AND_LANGUAGE_CONVERGENCE_V1`.
