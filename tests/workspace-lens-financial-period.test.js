@@ -64,4 +64,7 @@ test("P/B research proxy shows its NCI denominator and book period", () => {
   assert.match(html, /kỳ sổ sách 2026-Q1, trễ 3 quý/);
   assert.match(html, /không phải P\/B trên vốn cổ đông công ty mẹ/);
   assert.equal(ws.bookBasisNoteHtml({}), "");
+  const compared = { method_diagnostics: { "P/B_CURRENT_RESEARCH": { value: 0.4397, equity_definition: "TOTAL_OWNERS_EQUITY_AS_REPORTED_INCLUDES_NCI_WHERE_PRESENT", book_period: "2026-Q1", common_shareholder_comparison: { label: "COMMON_SHAREHOLDER_RESEARCH", periods_comparable: false, common_shareholder_pb: { status: "UNAVAILABLE", reason_codes: ["PARENT_EQUITY_NOT_ADMITTED"] } } } } };
+  assert.match(ws.bookBasisNoteHtml(compared), /COMMON_SHAREHOLDER_RESEARCH/);
+  assert.match(ws.bookBasisNoteHtml(compared), /PARENT_EQUITY_NOT_ADMITTED/);
 });
