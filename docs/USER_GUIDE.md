@@ -1,5 +1,8 @@
 # User Guide — Bắt đầu với Stock Look Up
 
+> **Tài liệu lịch sử — không phải cách dùng Dashboard hiện nay.** Trang này mô tả pipeline cục bộ VNSTOCK trước đây; việc thu thập trực tiếp qua vnstock đã ngừng và dữ liệu hiện do hệ thống nghiên cứu riêng (Producer) phát hành. Để dùng Stock Lookup, chỉ cần mở <https://tungthanhnguyen2312-wq.github.io/stocklookup-dashboard/>. Các lệnh bên dưới được giữ làm bằng chứng lịch sử và có thể không còn chạy được.
+
+
 > Hướng dẫn setup lần đầu + các lỗi thường gặp khi mới chạy. Tách ra từ README ngày
 > 12/07/2026. Muốn xem toàn bộ lệnh hằng ngày/tuần/tháng → [CLI_REFERENCE.md](CLI_REFERENCE.md).
 
