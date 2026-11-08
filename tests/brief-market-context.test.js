@@ -1,3 +1,8 @@
+// brief_market_context/v1 rendering, driven by the Engine-generated contract fixture.
+// tests/fixtures/brief_market_context_contract_v1.json is a byte copy of stocklookup-engine's
+// tests/fixtures/brief_market_context_contract_v1.json, produced by its real
+// snapshot -> session_change -> Brief -> delivery path; Dashboard CI compares the copy with
+// the Engine main branch, so a changed Engine shape fails here instead of going stale.
 const assert = require("node:assert/strict");
 const fs = require("node:fs");
 const path = require("node:path");
@@ -5,75 +10,141 @@ const test = require("node:test");
 
 const root = path.resolve(__dirname, "..");
 const dc = require("../assets/js/decision-cockpit.js");
+const FIXTURE = JSON.parse(fs.readFileSync(path.join(root, "tests", "fixtures", "brief_market_context_contract_v1.json"), "utf8"));
+const cockpitOf = (name) => JSON.parse(JSON.stringify(FIXTURE.cases[name].cockpit));
+const html = (name) => dc.renderBriefMarketContextHtml(cockpitOf(name));
+const pcOf = (name) => cockpitOf(name).brief_market_context_v1.market_participation_change;
 
-function cockpit(block) {
-  return { session: "2026-11-02", schema_version: "current_decision_cockpit_projection/v2", ...(block ? { brief_market_context_v1: block } : {}) };
-}
-
-const PARTICIPATION = {
-  status: "AVAILABLE", rule: "matched_cohort_session_change/v1", previous_session: "2026-10-26",
-  adjacency: "NON_ADJACENT_SESSION_GAP_4",
-  cohort: { matched: 742, matched_with_ma20_side_both_sessions: 742, current_only: 119, previous_only: 116 },
-  changes: { advance_ratio_pp: -12.67, decline_ratio_pp: 10.1, above_ma20_share_pp: -30.73, positive_momentum_share_pp: -8.5 },
-  ma20_crossings: { crossed_above: 20, crossed_below: 248, net: -228 },
-  participation_character: "NARROWING",
-  market_close_condition_evaluation: { "Participation improves": "REFUTED" },
-};
-const GATED = [{ ticker: "MCP", security_setup: "FIRED_BREAKOUT_TRIGGER_QUALIFIED_AT_SECURITY_LEVEL",
-  market_environment: "ADVERSE_MARKET_REGIME_HOLDS_FRESH_ENTRY", market_regime: "DETERIORATING_BREADTH",
-  security_invalidation: { invalidation_level: 9.0 } }];
-const BLOCK = { contract_version: "brief_market_context/v1", session: "2026-11-02",
-  market_participation_change: PARTICIPATION, market_gated_entries: GATED, market_gated_count: 1 };
-
-test("absent, foreign-contract or other-session block renders nothing", () => {
-  assert.equal(dc.renderBriefMarketContextHtml(cockpit(null)), "");
-  assert.equal(dc.renderBriefMarketContextHtml(cockpit({ ...BLOCK, contract_version: "x/v9" })), "");
-  assert.equal(dc.renderBriefMarketContextHtml(cockpit({ ...BLOCK, session: "2026-11-03" })), "");
+test("fixture is the Engine contract and its case digest is intact", () => {
+  assert.equal(FIXTURE.contract_version, "brief_market_context_contract_fixture/v1");
+  assert.equal(FIXTURE.projection_contract, "brief_market_context/v1");
+  assert.match(FIXTURE.generated_by, /^stocklookup-engine:tools\/build_brief_market_context_contract_fixture\.py$/);
+  // The digest is Python's canonical JSON (floats keep ".0"), so it is not recomputed in JS; byte
+  // equality with the Engine file is enforced by the Dashboard CI contract-sync step instead.
+  assert.match(FIXTURE.cases_sha256, /^[0-9a-f]{64}$/);
+  const expected = ["adjacent_broadening_confirmed_with_churn", "asymmetric_missing_momentum", "cohort_reconciliation_mismatch",
+    "different_ma20_eligibility", "indeterminate_condition", "market_gated_entries", "missing_previous_snapshot",
+    "older_brief_without_new_fields", "refuted_condition", "registry_adjacent_calendar_separated", "registry_gap_unverified_adjacency"];
+  assert.deepEqual(Object.keys(FIXTURE.cases).sort(), expected);
 });
 
-test("participation change shows matched-cohort deltas, churn, gap warning and the evaluated condition", () => {
-  const html = dc.renderBriefMarketContextHtml(cockpit(BLOCK));
-  assert.match(html, /Thu hẹp/);
-  assert.match(html, /-12\.67 điểm %/);
-  assert.match(html, /-30\.73 điểm %/);
-  assert.match(html, /-228/);
-  assert.match(html, /cùng 742 mã/);
-  assert.match(html, /119 mã chỉ có ở phiên này/);
-  assert.match(html, /NON_ADJACENT_SESSION_GAP_4/);
-  assert.match(html, /độ rộng cải thiện.*: <strong>Không xảy ra<\/strong>/);
-  assert.doesNotMatch(html, /Participation improves/);
-});
-
-test("market-gated rows keep the security setup and the market environment apart and give no order wording", () => {
-  const html = dc.renderBriefMarketContextHtml(cockpit(BLOCK));
-  assert.match(html, /data-ticker="MCP"/);
-  assert.match(html, /Setup của mã đã kích hoạt/);
-  assert.match(html, /Độ rộng suy yếu/);
-  assert.match(html, /Mức vô hiệu của mã: 9/);
-  assert.match(html, /Đây không phải khuyến nghị mua/);
-  for (const forbidden of [/khối lượng/i, /giá mục tiêu/i, /xác suất/i, /điểm số/i, /mua ngay/i]) {
-    assert.doesNotMatch(html, forbidden);
+test("every displayed number is the Engine's own value", () => {
+  for (const name of Object.keys(FIXTURE.cases)) {
+    const block = cockpitOf(name).brief_market_context_v1;
+    const pc = block && block.market_participation_change;
+    if (!pc || pc.status !== "AVAILABLE") continue;
+    const out = html(name);
+    for (const key of ["advance_ratio_pp", "above_ma20_share_pp", "positive_momentum_share_pp"]) {
+      const v = pc.changes[key];
+      const shown = v == null ? "—" : `${v > 0 ? "+" : ""}${v.toFixed(2)} điểm %`;
+      assert.ok(out.includes(shown), `${name}: ${key} ${shown}`);
+    }
+    assert.ok(out.includes(`cùng ${pc.cohort.matched} mã`), name);
+    assert.ok(out.includes(`${pc.ma20_crossings.net > 0 ? "+" : ""}${pc.ma20_crossings.net} (lên ${pc.ma20_crossings.crossed_above} / xuống ${pc.ma20_crossings.crossed_below})`), name);
   }
 });
 
-test("refused comparison shows its reason; only-gated block still renders", () => {
-  const refused = { ...BLOCK, market_participation_change: { status: "UNAVAILABLE", reason_codes: ["NO_PREVIOUS_PARTICIPATION_SNAPSHOT"] } };
-  assert.match(dc.renderBriefMarketContextHtml(cockpit(refused)), /NO_PREVIOUS_PARTICIPATION_SNAPSHOT/);
-  const onlyGated = { contract_version: BLOCK.contract_version, session: BLOCK.session, market_gated_entries: GATED, market_gated_count: 1 };
-  const html = dc.renderBriefMarketContextHtml(cockpit(onlyGated));
-  assert.doesNotMatch(html, /Độ rộng so với phiên trước/);
-  assert.match(html, /bị thị trường giữ lại/);
+test("condition object renders its hypothesis and Engine state, never condition_source", () => {
+  const cases = { adjacent_broadening_confirmed_with_churn: "Đã xác nhận", refuted_condition: "Bị bác bỏ",
+    indeterminate_condition: "Chưa xác nhận cũng chưa bị bác bỏ" };
+  for (const [name, label] of Object.entries(cases)) {
+    const cond = pcOf(name).market_close_condition_evaluation;
+    const out = html(name);
+    assert.match(out, new RegExp(`data-condition-state="${cond.state}">Điều kiện &quot;độ rộng cải thiện&quot; của bản tin đóng cửa: <strong>${label}</strong>`));
+    assert.ok(!out.includes(cond.condition_source), name);
+    assert.doesNotMatch(out, /hypothesis|condition_source|state:/);
+  }
+});
+
+test("malformed or unknown condition data is handled without reinterpretation", () => {
+  const c = cockpitOf("refuted_condition");
+  const pc = c.brief_market_context_v1.market_participation_change;
+  pc.market_close_condition_evaluation = { hypothesis: "Participation improves", state: "MAYBE", condition_source: "x" };
+  assert.match(dc.renderBriefMarketContextHtml(c), /<strong>Chưa xác định<\/strong>/);
+  for (const bad of [null, "CONFIRMED", ["CONFIRMED"], { "Participation improves": "CONFIRMED" }]) {
+    pc.market_close_condition_evaluation = bad;
+    const out = dc.renderBriefMarketContextHtml(c);
+    assert.doesNotMatch(out, /data-condition-state/);
+    assert.doesNotMatch(out, /Đã xác nhận/);
+  }
+});
+
+test("asymmetric momentum shows the both-sessions denominator", () => {
+  const pc = pcOf("asymmetric_missing_momentum");
+  assert.equal(pc.cohort.matched_with_momentum_both_sessions, 3);
+  const out = html("asymmetric_missing_momentum");
+  assert.match(out, /\+33\.33 điểm %/);
+  assert.match(out, /Động lượng tính trên 3 mã có dữ liệu động lượng ở cả hai phiên/);
+});
+
+test("different MA20 eligibility and churn are stated", () => {
+  assert.match(html("different_ma20_eligibility"), /MA20 tính trên 3 mã biết vị trí MA20 ở cả hai phiên/);
+  assert.match(html("adjacent_broadening_confirmed_with_churn"), /1 mã chỉ có ở phiên này và 1 mã chỉ có ở phiên trước/);
+});
+
+test("registry-adjacent but calendar-separated pair carries the multi-session warning", () => {
+  const pc = pcOf("registry_adjacent_calendar_separated");
+  assert.equal(pc.adjacency, "REGISTRY_IMMEDIATE_PREVIOUS_COMPLETED_SESSION");
+  assert.equal(pc.span.may_span_multiple_trading_sessions, true);
+  const out = html("registry_adjacent_calendar_separated");
+  assert.match(out, /data-multi-session="true"/);
+  assert.match(out, /Giữa hai phiên có 4 ngày làm việc/);
+  assert.match(out, /có thể gộp nhiều phiên giao dịch/);
+  assert.match(out, /không phải lịch giao dịch chính thức/);
+  const adjacent = html("adjacent_broadening_confirmed_with_churn");
+  assert.match(adjacent, /data-multi-session="false"/);
+  assert.doesNotMatch(adjacent, /data-span-warning/);
+  const gap = html("registry_gap_unverified_adjacency");
+  assert.match(gap, /chưa được xác nhận là phiên hoàn tất liền trước/);
+});
+
+test("refusals show their reason and no numbers", () => {
+  for (const [name, reason] of [["missing_previous_snapshot", "NO_PREVIOUS_PARTICIPATION_SNAPSHOT"],
+    ["cohort_reconciliation_mismatch", "CURRENT_PARTICIPATION_COHORT_DIFFERS_FROM_MARKET_BREADTH"]]) {
+    const out = html(name);
+    assert.ok(out.includes(reason), name);
+    assert.doesNotMatch(out, /điểm %/);
+  }
+});
+
+test("older Brief, wrong session and foreign contract render nothing", () => {
+  assert.equal(html("older_brief_without_new_fields"), "");
+  const wrong = cockpitOf("adjacent_broadening_confirmed_with_churn");
+  wrong.brief_market_context_v1.session = "2026-11-05";
+  assert.equal(dc.renderBriefMarketContextHtml(wrong), "");
+  const foreign = cockpitOf("adjacent_broadening_confirmed_with_churn");
+  foreign.brief_market_context_v1.contract_version = "brief_market_context/v2";
+  assert.equal(dc.renderBriefMarketContextHtml(foreign), "");
+});
+
+test("market-gated rows keep security setup and market environment apart with no order wording", () => {
+  const block = cockpitOf("market_gated_entries").brief_market_context_v1;
+  const out = html("market_gated_entries");
+  assert.match(out, /data-ticker="MCP"/);
+  assert.match(out, /Setup của mã đã kích hoạt/);
+  assert.match(out, /Độ rộng suy yếu/);
+  assert.match(out, new RegExp(`Mức vô hiệu của mã: ${block.market_gated_entries[0].security_invalidation.invalidation_level}`));
+  assert.match(out, /Đây không phải khuyến nghị mua/);
+  for (const forbidden of [/khối lượng/i, /giá mục tiêu/i, /xác suất/i, /điểm số/i, /mua ngay/i]) {
+    assert.doesNotMatch(out, forbidden);
+  }
 });
 
 test("values from the projection are escaped", () => {
-  const evil = { ...BLOCK, market_gated_entries: [{ ...GATED[0], ticker: "<img src=x onerror=alert(1)>" }] };
-  assert.doesNotMatch(dc.renderBriefMarketContextHtml(cockpit(evil)), /<img/);
+  const c = cockpitOf("market_gated_entries");
+  const b = c.brief_market_context_v1;
+  b.market_gated_entries[0].ticker = "<img src=x onerror=alert(1)>";
+  b.market_gated_entries[0].security_setup = "<script>alert(1)</script>";
+  b.market_participation_change.previous_session = "<b>x</b>";
+  b.market_participation_change.span.calendar_weekdays_between = "<i>4</i>";
+  const out = dc.renderBriefMarketContextHtml(c);
+  assert.doesNotMatch(out, /<img|<script|<b>x|<i>4/);
 });
 
 test("workspace page hosts a hidden section and clears it on a session mismatch", () => {
-  const html = fs.readFileSync(path.join(root, "investment-workspace.html"), "utf8");
-  assert.match(html, /id="section-brief-market-context" hidden/);
-  assert.match(html, /id="cockpit-brief-market-context"/);
+  const page = fs.readFileSync(path.join(root, "investment-workspace.html"), "utf8");
+  assert.match(page, /id="section-brief-market-context" hidden/);
+  assert.match(page, /id="cockpit-brief-market-context"/);
   const js = fs.readFileSync(path.join(root, "assets", "js", "investment-workspace.js"), "utf8");
   assert.match(js, /renderBriefMarketContextHtml\(cockpit\)/);
   const mismatch = js.slice(js.indexOf("Session Coherence Gate"), js.indexOf("Real contract rendering"));
