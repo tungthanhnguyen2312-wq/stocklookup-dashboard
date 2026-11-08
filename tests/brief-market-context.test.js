@@ -18,7 +18,7 @@ const pcOf = (name) => cockpitOf(name).brief_market_context_v1.market_participat
 test("fixture is the Engine contract and its case digest is intact", () => {
   assert.equal(FIXTURE.contract_version, "brief_market_context_contract_fixture/v1");
   assert.equal(FIXTURE.projection_contract, "brief_market_context/v1");
-  assert.match(FIXTURE.generated_by, /^stocklookup-engine:tools\/build_brief_market_context_contract_fixture\.py$/);
+  assert.match(FIXTURE.generated_by, /^stocklookup-engine:tests\/build_brief_market_context_contract_fixture\.py$/);
   // The digest is Python's canonical JSON (floats keep ".0"), so it is not recomputed in JS; byte
   // equality with the Engine file is enforced by the Dashboard CI contract-sync step instead.
   assert.match(FIXTURE.cases_sha256, /^[0-9a-f]{64}$/);

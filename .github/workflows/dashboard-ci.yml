@@ -141,7 +141,7 @@ jobs:
       - name: Brief market context (matched-cohort change, market-gated setups)
         run: node --test tests/brief-market-context.test.js
 
-      # The fixture is Engine output (stocklookup-engine tools/build_brief_market_context_contract_fixture.py).
+      # The fixture is Engine output (stocklookup-engine tests/build_brief_market_context_contract_fixture.py).
       # A changed Engine contract must fail here instead of leaving this copy stale.
       - name: Brief market context fixture matches Engine main
         run: |
