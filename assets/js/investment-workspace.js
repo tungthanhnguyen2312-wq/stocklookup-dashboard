@@ -2019,7 +2019,17 @@
               });
               const watchCountEl = document.getElementById("cockpit-watch-count");
               if (watchCountEl) watchCountEl.textContent = "—";
+              const bmcSection = document.getElementById("section-brief-market-context");
+              if (bmcSection) bmcSection.hidden = true;
               return;
+            }
+
+            const bmcEl = document.getElementById("cockpit-brief-market-context");
+            const bmcSectionEl = document.getElementById("section-brief-market-context");
+            if (bmcEl && dc && dc.renderBriefMarketContextHtml) {
+              const bmcHtml = dc.renderBriefMarketContextHtml(cockpit);
+              bmcEl.innerHTML = bmcHtml;
+              if (bmcSectionEl) bmcSectionEl.hidden = !bmcHtml;
             }
 
             // Real contract rendering via pure helpers
