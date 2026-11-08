@@ -74,6 +74,11 @@
         </div>
       </details>
 
+      <!-- brief_market_context/v1: shown only when the session's Brief carries it; market and security stay separate. -->
+      <section class="cockpit-section card mb-4" id="section-brief-market-context" hidden><div class="card-header"><h5 class="mb-0">Thị trường hôm nay so với phiên trước</h5></div><div class="card-body">
+        <div id="cockpit-brief-market-context"></div>
+      </div></section>
+
       <!-- Compact default: retained decision fields only; advanced axes remain in drawer/explore. -->
       <section class="cockpit-section card mb-4"><div class="card-header d-flex justify-content-between align-items-center"><h5 class="mb-0">Danh sách cơ hội</h5><span id="row-count" class="badge-soft bs-blue"></span></div><div class="card-body p-0">
         <div class="table-responsive ws-list-scroll"><table class="cockpit-table ws-compact-table" id="opportunity-table"><thead><tr>

@@ -442,6 +442,106 @@
     return missingHtml + readyHtml;
   }
 
+  // brief_market_context/v1: verbatim copy of the Daily Brief's matched-cohort participation change
+  // and market-gated setups. Rendered only when present and bound to the projection's own session;
+  // nothing is recomputed, scored or ranked here.
+  const PARTICIPATION_CHARACTER_VI = {
+    BROADENING: "Lan rộng — nhiều mã cùng tham gia hơn",
+    NARROWING: "Thu hẹp — ít mã tham gia hơn",
+    DIVERGENT: "Phân hóa — các thước đo đi ngược chiều",
+    UNCHANGED: "Không đổi",
+    UNCHANGED_ON_ONE_MEASURE: "Gần như không đổi",
+    UNKNOWN: "Chưa xác định",
+  };
+  const CONDITION_VI = {
+    CONFIRMED: "Đã xác nhận",
+    REFUTED: "Không xảy ra",
+    NEITHER_CONFIRMED_NOR_REFUTED: "Chưa đủ để kết luận",
+  };
+  const CONDITION_LABEL_VI = {
+    "Participation improves": "Điều kiện \"độ rộng cải thiện\" của bản tin đóng cửa",
+  };
+  const REGIME_VI = {
+    DETERIORATING_BREADTH: "Độ rộng suy yếu",
+    DEFENSIVE: "Phòng thủ",
+    BEARISH: "Giảm",
+    WEAK: "Yếu",
+    DISTRIBUTION: "Phân phối",
+    HIGH_RISK: "Rủi ro cao",
+  };
+
+  function signedPp(v) {
+    if (typeof v !== "number" || !isFinite(v)) return "—";
+    return `${v > 0 ? "+" : ""}${v.toFixed(2)} điểm %`;
+  }
+
+  function signedCount(v) {
+    if (typeof v !== "number" || !isFinite(v)) return "—";
+    return `${v > 0 ? "+" : ""}${v}`;
+  }
+
+  const plainKpi = (label, value) =>
+    `<div class="cockpit-kpi"><div class="label">${esc(label)}</div><div class="value">${esc(value)}</div></div>`;
+
+  function renderParticipationChangeHtml(pc) {
+    if (!pc) return "";
+    if (pc.status !== "AVAILABLE") {
+      const reasons = Array.isArray(pc.reason_codes) ? pc.reason_codes.join(", ") : "";
+      return `<div class="cockpit-note" data-participation-status="${esc(pc.status || "UNAVAILABLE")}">Chưa so sánh được độ rộng với phiên trước${reasons ? ` (${esc(reasons)})` : ""}.</div>`;
+    }
+    const ch = pc.changes || {};
+    const cohort = pc.cohort || {};
+    const cross = pc.ma20_crossings || {};
+    const character = PARTICIPATION_CHARACTER_VI[pc.participation_character] || pc.participation_character || "Chưa xác định";
+    const evalMap = pc.market_close_condition_evaluation || {};
+    const evalRows = Object.keys(evalMap).map(k => `<li>${esc(CONDITION_LABEL_VI[k] || k)}: <strong>${esc(CONDITION_VI[evalMap[k]] || evalMap[k])}</strong></li>`).join("");
+    const adjacency = String(pc.adjacency || "");
+    const gapWarning = adjacency.startsWith("NON_ADJACENT") || adjacency === "ADJACENCY_UNVERIFIED"
+      ? `<div class="cockpit-note">Phiên so sánh có thể không liền kề (${esc(adjacency)}).</div>` : "";
+    return `
+      <div class="cockpit-grid" data-participation-character="${esc(pc.participation_character || "UNKNOWN")}">
+        ${plainKpi("Đặc điểm tham gia", character)}
+        ${plainKpi("Tỷ lệ mã tăng", signedPp(ch.advance_ratio_pp))}
+        ${plainKpi("Tỷ lệ mã trên MA20", signedPp(ch.above_ma20_share_pp))}
+        ${plainKpi("Tỷ lệ động lượng dương", signedPp(ch.positive_momentum_share_pp))}
+        ${plainKpi("Cắt MA20 (ròng)", `${signedCount(cross.net)} (lên ${cross.crossed_above ?? "—"} / xuống ${cross.crossed_below ?? "—"})`)}
+      </div>
+      <div class="cockpit-note mt-2">So với phiên ${esc(pc.previous_session || "—")} trên cùng ${esc(cohort.matched ?? "—")} mã có mặt ở cả hai phiên; ${esc(cohort.current_only ?? 0)} mã chỉ có ở phiên này và ${esc(cohort.previous_only ?? 0)} mã chỉ có ở phiên trước không được tính.</div>
+      ${gapWarning}
+      ${evalRows ? `<ul class="cockpit-list mt-2">${evalRows}</ul>` : ""}`;
+  }
+
+  function renderMarketGatedHtml(rows, count) {
+    if (!Array.isArray(rows) || !rows.length) return "";
+    const items = rows.map(r => {
+      const inv = r.security_invalidation || {};
+      const invText = inv.invalidation_level != null ? `Mức vô hiệu của mã: ${esc(inv.invalidation_level)}` : "Chưa có mức vô hiệu";
+      return `<tr data-ticker="${esc(r.ticker)}">
+        <td><strong>${esc(r.ticker)}</strong></td>
+        <td>Setup của mã đã kích hoạt</td>
+        <td>${esc(REGIME_VI[r.market_regime] || r.market_regime || "—")}</td>
+        <td>${invText}</td>
+      </tr>`;
+    }).join("");
+    return `
+      <p class="cockpit-note mb-2">${esc(count ?? rows.length)} mã có setup riêng đã kích hoạt nhưng đang được giữ ở trạng thái chờ chỉ vì thị trường chung bất lợi. Quy tắc tự gỡ khi chế độ thị trường không còn thuộc nhóm bất lợi, nếu điểm kích hoạt và mức vô hiệu của mã vẫn còn hiệu lực. Đây không phải khuyến nghị mua.</p>
+      <div class="table-responsive"><table class="table table-sm cockpit-table mb-0">
+        <thead><tr><th>Mã</th><th>Setup của mã</th><th>Thị trường</th><th>Vô hiệu</th></tr></thead>
+        <tbody>${items}</tbody>
+      </table></div>`;
+  }
+
+  function renderBriefMarketContextHtml(data) {
+    const block = data && data.brief_market_context_v1;
+    if (!block || block.contract_version !== "brief_market_context/v1" || block.session !== data.session) return "";
+    const participation = renderParticipationChangeHtml(block.market_participation_change);
+    const gated = renderMarketGatedHtml(block.market_gated_entries, block.market_gated_count);
+    if (!participation && !gated) return "";
+    return `
+      ${participation ? `<h6 class="mb-2">Độ rộng so với phiên trước (cùng tập mã)</h6>${participation}` : ""}
+      ${gated ? `<h6 class="mb-2 mt-3">Setup tốt nhưng bị thị trường giữ lại</h6>${gated}` : ""}`;
+  }
+
   function renderVerifyNextHtml(data) {
     const items = Array.isArray(data?.what_to_verify_next) ? data.what_to_verify_next : [];
     return items.length
@@ -654,6 +754,7 @@
     renderPortfolioRiskHtml,
     renderDataGapsHtml,
     renderVerifyNextHtml,
+    renderBriefMarketContextHtml,
     renderLineageHtml,
     renderSessionMismatchHtml,
   };

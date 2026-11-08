@@ -138,6 +138,9 @@ jobs:
       - name: Dashboard Home summary cutover tests
         run: node --test tests/dashboard-home-summary-cutover.test.js tests/home-market-close.test.js
 
+      - name: Brief market context (matched-cohort change, market-gated setups)
+        run: node --test tests/brief-market-context.test.js
+
       - name: Dashboard Home performance and investor-first tests
         run: node --test tests/dashboard-home-performance-and-investor-first.test.js
 
