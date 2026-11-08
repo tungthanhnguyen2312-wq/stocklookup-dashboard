@@ -455,8 +455,8 @@
   };
   const CONDITION_VI = {
     CONFIRMED: "Đã xác nhận",
-    REFUTED: "Không xảy ra",
-    NEITHER_CONFIRMED_NOR_REFUTED: "Chưa đủ để kết luận",
+    REFUTED: "Bị bác bỏ",
+    NEITHER_CONFIRMED_NOR_REFUTED: "Chưa xác nhận cũng chưa bị bác bỏ",
   };
   const CONDITION_LABEL_VI = {
     "Participation improves": "Điều kiện \"độ rộng cải thiện\" của bản tin đóng cửa",
@@ -492,23 +492,41 @@
     const ch = pc.changes || {};
     const cohort = pc.cohort || {};
     const cross = pc.ma20_crossings || {};
-    const character = PARTICIPATION_CHARACTER_VI[pc.participation_character] || pc.participation_character || "Chưa xác định";
-    const evalMap = pc.market_close_condition_evaluation || {};
-    const evalRows = Object.keys(evalMap).map(k => `<li>${esc(CONDITION_LABEL_VI[k] || k)}: <strong>${esc(CONDITION_VI[evalMap[k]] || evalMap[k])}</strong></li>`).join("");
+    const character = PARTICIPATION_CHARACTER_VI[pc.participation_character] || "Chưa xác định";
+    const span = (pc.span && typeof pc.span === "object") ? pc.span : {};
+    const multiSession = span.may_span_multiple_trading_sessions === true;
     const adjacency = String(pc.adjacency || "");
-    const gapWarning = adjacency.startsWith("NON_ADJACENT") || adjacency === "ADJACENCY_UNVERIFIED"
-      ? `<div class="cockpit-note">Phiên so sánh có thể không liền kề (${esc(adjacency)}).</div>` : "";
+    const warnings = [];
+    if (multiSession) {
+      const days = Number.isInteger(span.calendar_weekdays_between) ? span.calendar_weekdays_between : null;
+      warnings.push(`Giữa hai phiên có ${days != null ? esc(days) + " " : ""}ngày làm việc (thứ Hai–thứ Sáu), nên thay đổi này có thể gộp nhiều phiên giao dịch, không phải biến động của một phiên. Cách đếm này không phải lịch giao dịch chính thức của sở.`);
+    }
+    if (adjacency.startsWith("NON_ADJACENT") || adjacency === "ADJACENCY_UNVERIFIED") {
+      warnings.push("Phiên so sánh chưa được xác nhận là phiên hoàn tất liền trước.");
+    }
+    const momDenom = Number.isInteger(cohort.matched_with_momentum_both_sessions) ? cohort.matched_with_momentum_both_sessions : null;
+    const ma20Denom = Number.isInteger(cohort.matched_with_ma20_side_both_sessions) ? cohort.matched_with_ma20_side_both_sessions : null;
     return `
-      <div class="cockpit-grid" data-participation-character="${esc(pc.participation_character || "UNKNOWN")}">
+      <div class="cockpit-grid" data-participation-character="${esc(pc.participation_character || "UNKNOWN")}" data-multi-session="${multiSession ? "true" : "false"}">
         ${plainKpi("Đặc điểm tham gia", character)}
         ${plainKpi("Tỷ lệ mã tăng", signedPp(ch.advance_ratio_pp))}
         ${plainKpi("Tỷ lệ mã trên MA20", signedPp(ch.above_ma20_share_pp))}
         ${plainKpi("Tỷ lệ động lượng dương", signedPp(ch.positive_momentum_share_pp))}
         ${plainKpi("Cắt MA20 (ròng)", `${signedCount(cross.net)} (lên ${cross.crossed_above ?? "—"} / xuống ${cross.crossed_below ?? "—"})`)}
       </div>
-      <div class="cockpit-note mt-2">So với phiên ${esc(pc.previous_session || "—")} trên cùng ${esc(cohort.matched ?? "—")} mã có mặt ở cả hai phiên; ${esc(cohort.current_only ?? 0)} mã chỉ có ở phiên này và ${esc(cohort.previous_only ?? 0)} mã chỉ có ở phiên trước không được tính.</div>
-      ${gapWarning}
-      ${evalRows ? `<ul class="cockpit-list mt-2">${evalRows}</ul>` : ""}`;
+      ${warnings.map(w => `<div class="cockpit-note mt-2" data-span-warning="true"><strong>Lưu ý:</strong> ${w}</div>`).join("")}
+      <div class="cockpit-note mt-2">So với phiên ${esc(pc.previous_session || "—")} trên cùng ${esc(cohort.matched ?? "—")} mã có mặt ở cả hai phiên; ${esc(cohort.current_only ?? 0)} mã chỉ có ở phiên này và ${esc(cohort.previous_only ?? 0)} mã chỉ có ở phiên trước không được tính.${ma20Denom != null ? ` MA20 tính trên ${esc(ma20Denom)} mã biết vị trí MA20 ở cả hai phiên.` : ""}${momDenom != null ? ` Động lượng tính trên ${esc(momDenom)} mã có dữ liệu động lượng ở cả hai phiên.` : ""}</div>
+      ${renderConditionHtml(pc.market_close_condition_evaluation)}`;
+  }
+
+  // market_close_condition_evaluation is one object {hypothesis, state, condition_source}. Only the
+  // hypothesis and its Engine-evaluated state are shown; condition_source is provenance, not a condition.
+  function renderConditionHtml(cond) {
+    if (!cond || typeof cond !== "object" || Array.isArray(cond)) return "";
+    if (typeof cond.hypothesis !== "string" || typeof cond.state !== "string") return "";
+    const label = CONDITION_LABEL_VI[cond.hypothesis] || "Điều kiện của bản tin đóng cửa";
+    const state = CONDITION_VI[cond.state] || "Chưa xác định";
+    return `<ul class="cockpit-list mt-2"><li data-condition-state="${esc(cond.state)}">${esc(label)}: <strong>${esc(state)}</strong></li></ul>`;
   }
 
   function renderMarketGatedHtml(rows, count) {
@@ -518,7 +536,7 @@
       const invText = inv.invalidation_level != null ? `Mức vô hiệu của mã: ${esc(inv.invalidation_level)}` : "Chưa có mức vô hiệu";
       return `<tr data-ticker="${esc(r.ticker)}">
         <td><strong>${esc(r.ticker)}</strong></td>
-        <td>Setup của mã đã kích hoạt</td>
+        <td>${r.security_setup === "FIRED_BREAKOUT_TRIGGER_QUALIFIED_AT_SECURITY_LEVEL" ? "Setup của mã đã kích hoạt" : esc(r.security_setup || "—")}</td>
         <td>${esc(REGIME_VI[r.market_regime] || r.market_regime || "—")}</td>
         <td>${invText}</td>
       </tr>`;

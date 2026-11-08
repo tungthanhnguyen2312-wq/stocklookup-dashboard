@@ -141,6 +141,14 @@ jobs:
       - name: Brief market context (matched-cohort change, market-gated setups)
         run: node --test tests/brief-market-context.test.js
 
+      # The fixture is Engine output (stocklookup-engine tests/build_brief_market_context_contract_fixture.py).
+      # A changed Engine contract must fail here instead of leaving this copy stale.
+      - name: Brief market context fixture matches Engine main
+        run: |
+          curl -fsSL --retry 3 -o /tmp/engine_fixture.json \
+            https://raw.githubusercontent.com/tungthanhnguyen2312-wq/stocklookup-engine/main/tests/fixtures/brief_market_context_contract_v1.json
+          cmp /tmp/engine_fixture.json tests/fixtures/brief_market_context_contract_v1.json
+
       - name: Dashboard Home performance and investor-first tests
         run: node --test tests/dashboard-home-performance-and-investor-first.test.js
 

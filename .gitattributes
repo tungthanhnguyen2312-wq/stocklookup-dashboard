@@ -45,3 +45,6 @@ docs/PROJECT_COMPLETION.md   text eol=lf
 docs/PROJECT_DIRECTION.md    text eol=lf
 docs/PROJECT_HEALTH_AUDIT.md text eol=lf
 docs/REPO_AUDIT.md           text eol=lf
+
+# Engine-generated contract fixture: byte-compared with stocklookup-engine main in CI.
+tests/fixtures/brief_market_context_contract_v1.json -text
