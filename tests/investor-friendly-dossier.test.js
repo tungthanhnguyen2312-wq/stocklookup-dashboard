@@ -45,7 +45,25 @@ test("HPG: the brief (situation, positives, cautions, watch, valuation, unknowns
 
 test("HPG: at most five verification questions are open by default, and all of them stay reachable with unchanged ids and text", () => {
   const { m, html } = dossier("HPG");
-  assert.equal(m.gaps.length, 25);
+  // One question per published gap. The count is not a session census: on 2026-11-09
+  // P/E_REPORTED_PERIOD and P/S_REPORTED_PERIOD became published figures, so the single
+  // blocked-input question those two methods shared on 2026-11-06 must not be kept.
+  assert.equal(m.questions.length, m.gaps.length);
+  assert.deepEqual(m.questions.map((q) => q.id), m.gaps.map((g) => g.question.id));
+  assert.deepEqual(m.questions.map((q) => q.gapKey), m.gaps.map((g) => g.key));
+  const qctx = { ticker: "HPG", postureLabel: m.posture.label };
+  for (const g of m.gaps) {
+    assert.equal(g.question.id, `g-${wb.stableHash(`HPG|${g.key}`)}`);
+    assert.equal(g.question.text, wb.verificationQuestion(g, qctx).text);
+  }
+  for (const raw of ["P/E_REPORTED_PERIOD", "P/S_REPORTED_PERIOD"]) {
+    assert.ok(m.valuation.establishes.some((row) => row.raw === raw), `${raw} stays a published figure`);
+  }
+  assert.equal(
+    m.gaps.filter((g) => g.axis === "valuation" && g.reasonRaw === "OFFICIAL_REPORTED_PERIOD_INPUT_NOT_ADMITTED").length,
+    0,
+    "an admitted reported-period method does not keep a blocked-input question"
+  );
   const top = html.slice(html.indexOf('data-questions="top"'), html.indexOf('data-questions="rest"'));
   const shown = top.match(/data-gap-key="/g) || [];
   assert.ok(shown.length > 0 && shown.length <= 5, `default questions: ${shown.length}`);
@@ -143,6 +161,32 @@ test("every published ticker: each unusable figure keeps its original reason cod
       assert.ok(html.includes(u.reasonRaw), `${t}: ${u.raw} lost reason ${u.reasonRaw}`);
     }
   }
+});
+
+test("a fixed card keeps question ids, text, and order when a published figure closes a gap", () => {
+  const card = {
+    ticker: "HPG",
+    as_of_session: "2026-11-09",
+    research_action_posture: "EARLY_WATCH",
+    lineage: { per_axis_freshness: { fundamental: "STALE", valuation: "CURRENT" }, per_axis_source_session: { fundamental: "2026-11-06" } },
+    valuation: {
+      method_diagnostics: {
+        P_E_REPORTED_PERIOD: { value: 11.4, availability_state: "AVAILABLE", status: "AVAILABLE" },
+        P_S_REPORTED_PERIOD: { value: null, availability_state: "NOT_AVAILABLE", status: "BLOCKED", blocker_reason_codes: ["OFFICIAL_REPORTED_PERIOD_INPUT_NOT_ADMITTED"] },
+      },
+      research_readiness: {},
+    },
+  };
+  const first = wb.buildDossier(card, { ticker: "HPG", session: "2026-11-09" });
+  const second = wb.buildDossier(card, { ticker: "HPG", session: "2026-11-09" });
+  assert.deepEqual(second.questions, first.questions);
+  assert.deepEqual(first.questions.map((q) => q.gapKey), [
+    "fundamental|fresh:STALE",
+    "valuation|methods:BLOCKED:OFFICIAL_REPORTED_PERIOD_INPUT_NOT_ADMITTED",
+  ]);
+  assert.ok(first.valuation.establishes.some((row) => row.raw === "P_E_REPORTED_PERIOD"));
+  assert.equal(first.gaps.filter((g) => g.key.includes("P_E_REPORTED_PERIOD")).length, 0);
+  for (const g of first.gaps) assert.equal(g.question.id, `g-${wb.stableHash(`HPG|${g.key}`)}`);
 });
 
 test("hostile text in a card is escaped in both layers", () => {
