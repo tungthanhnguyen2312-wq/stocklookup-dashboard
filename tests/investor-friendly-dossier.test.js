@@ -105,8 +105,19 @@ test("HPG: price trend and relative strength are explained as two different lens
   assert.match(visible(layer1(html)), /Trên trung bình/);
 });
 
+// A scenario about one ticker's state is pinned to the published card that had that state.
+// PAN was AVOID through 2026-11-09 and INITIATE_ON_BREAKOUT on 2026-11-10; read live, this
+// test would fail on a correct publication. Checks over live data are the
+// "every published ticker" tests, which hold for any session.
+function frozenDossier(name) {
+  const f = JSON.parse(read(`tests/fixtures/dossier-scenarios/${name}.json`));
+  const m = wb.buildDossier(f.card, { ticker: f.ticker, session: f.as_of_session, sourceArtifactIdentity: f.source_artifact_identity });
+  return { f, m, html: wb.dossierHtml(m) };
+}
+
 test("PAN: an avoid posture is the first caution, and the two P/B figures are not presented as one", () => {
-  const { html } = dossier("PAN");
+  const { f, html } = frozenDossier("PAN_2026-11-09_avoid");
+  assert.equal(f.card.research_action_posture, "AVOID");
   const l1 = layer1(html);
   assert.match(l1, /class="wb-adverse"[^>]*data-severity="serious"/);
   assert.ok(l1.indexOf('data-severity="serious"') < l1.indexOf('class="wb-brief"'), "serious cautions sit above the cards");
@@ -150,7 +161,8 @@ test("every published ticker: the brief never upgrades the Producer decision, in
       serious++;
     }
   }
-  assert.ok(serious > 100);
+  assert.ok(Object.keys(index.cards).length > 0);
+  assert.equal(serious, Object.values(index.cards).filter((c) => ["AVOID", "REDUCE"].includes(c.research_action_posture)).length);
 });
 
 test("every published ticker: each unusable figure keeps its original reason code reachable in the expanded layer", () => {

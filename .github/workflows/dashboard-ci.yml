@@ -9,6 +9,7 @@ on:
 
 permissions:
   contents: read
+  actions: read
 
 jobs:
   validate:
@@ -30,16 +31,56 @@ jobs:
         with:
           python-version: "3.13"
 
+      # A Daily publication commit changes published data and the ?v= cache token, not code.
+      # It runs the publication integrity gate (the steps below without an `if:`), which is
+      # quantified over all published data. Steps marked `lane == 'full'` are code-behaviour
+      # tests, many written around one ticker's market state on the day they were authored;
+      # they gate code changes, not the market moving. Unknown changes, pull requests, and a
+      # base commit without a green Dashboard CI run always take the full lane.
+      # See tools/ci_change_lane.py and tests/README.md.
+      - name: Classify change lane
+        id: lane
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EVENT_NAME: ${{ github.event_name }}
+          BEFORE_SHA: ${{ github.event.before }}
+        run: |
+          ZERO_SHA="0000000000000000000000000000000000000000"
+          if [ "$EVENT_NAME" = "pull_request" ]; then
+            echo "lane=full" >> "$GITHUB_OUTPUT"; echo "lane=full (pull request)"; exit 0
+          fi
+          if [ "$EVENT_NAME" = "push" ] && [ -n "$BEFORE_SHA" ] && [ "$BEFORE_SHA" != "$ZERO_SHA" ] && git cat-file -e "$BEFORE_SHA" 2>/dev/null; then
+            BASE="$BEFORE_SHA"
+          else
+            BASE="$(git rev-parse HEAD~1)"
+          fi
+          python tools/ci_change_lane.py "$BASE" HEAD | tee /tmp/lane.txt
+          if grep -qx "lane=data" /tmp/lane.txt; then
+            GREEN="$(gh run list --repo "$GITHUB_REPOSITORY" --workflow dashboard-ci.yml --commit "$BASE" --status success --limit 1 --json databaseId --jq 'length' || echo 0)"
+            if [ "$GREEN" != "1" ]; then
+              echo "lane=full" >> "$GITHUB_OUTPUT"
+              echo "lane=full (base $BASE has no green Dashboard CI run)"
+            fi
+          fi
+
+      - name: Change-lane classification tests
+        if: steps.lane.outputs.lane == 'full'
+        run: python tests/test_ci_change_lane.py -v
+
       - name: Signals/macro localization tests
+        if: steps.lane.outputs.lane == 'full'
         run: node --test tests/signals-macro-localization.test.js
 
       - name: Signals product localization tests
+        if: steps.lane.outputs.lane == 'full'
         run: node --test tests/signals-product-localization.test.js
 
       - name: Company-panel JavaScript tests
+        if: steps.lane.outputs.lane == 'full'
         run: node --test tests/company-panel.test.js
 
       - name: Cited-evidence render tests
+        if: steps.lane.outputs.lane == 'full'
         run: node --test tests/cited-evidence-render.test.js
 
       # Runs against the committed analysis_bundle.json / bundle_manifest.json rather than
@@ -49,34 +90,43 @@ jobs:
         run: node --test tests/release-smoke.test.js
 
       - name: Screener state contract tests
+        if: steps.lane.outputs.lane == 'full'
         run: node --test tests/screener-state.test.js
 
       - name: Screener master tests
+        if: steps.lane.outputs.lane == 'full'
         run: node --test tests/screener-master.test.js
 
       - name: Investment workspace tests
+        if: steps.lane.outputs.lane == 'full'
         run: node --test tests/investment-workspace.test.js tests/workspace-q3-successor.test.js
 
       - name: Workspace lens and financial period tests
+        if: steps.lane.outputs.lane == 'full'
         run: node --test tests/workspace-lens-financial-period.test.js
 
       # INVESTOR_EVIDENCE_INVESTIGATION_WORKBENCH_V1: dossier / comparison / journal / export
-      # contracts over every committed published ticker (no fixtures).
+      # contracts. Checks over every published ticker also run in the integrity gate below.
       - name: Investigation workbench tests
+        if: steps.lane.outputs.lane == 'full'
         run: node --test tests/workspace-read-model.test.js tests/investigation-workbench.test.js tests/investor-friendly-dossier.test.js
 
       # INVESTOR_CASE_DESK_LOCAL_REVIEW_INTEGRATION_V1: browser-local Case Desk case viewer over
       # sanitized excerpts of the Consumer PR #12 HPG / NVL / five-company acceptance cases.
       - name: Case Desk local review tests
+        if: steps.lane.outputs.lane == 'full'
         run: node --test tests/case-desk-review.test.js
 
       - name: Case Desk financial-quality presentation tests
+        if: steps.lane.outputs.lane == 'full'
         run: node --test tests/case-desk-financial-quality.test.js
 
       - name: Portfolio evidence and risk workspace tests
+        if: steps.lane.outputs.lane == 'full'
         run: node --test tests/portfolio-research-model.test.js
 
       - name: Real-data workbench browser performance and reliability
+        if: steps.lane.outputs.lane == 'full'
         timeout-minutes: 10
         run: |
           export CHROME_PATH="$(command -v google-chrome)"
@@ -84,6 +134,7 @@ jobs:
           node tests/workbench-browser-benchmark.cjs reports/workbench-hosted
 
       - name: Portfolio evidence browser acceptance
+        if: steps.lane.outputs.lane == 'full'
         timeout-minutes: 10
         run: |
           export CHROME_PATH="$(command -v google-chrome)"
@@ -91,12 +142,15 @@ jobs:
           node tests/portfolio-research-browser.cjs reports/portfolio-research-browser
 
       - name: Analysis/product surface tests
+        if: steps.lane.outputs.lane == 'full'
         run: node --test tests/product-surface-convergence.test.js
 
       - name: Unified decision workspace v2 architecture contract tests
+        if: steps.lane.outputs.lane == 'full'
         run: node --test tests/unified-decision-workspace-v2.test.js
 
       - name: Dashboard localization and governed overview tests
+        if: steps.lane.outputs.lane == 'full'
         run: node --test tests/dashboard-core-ux-localization.test.js
 
       # Real-data contract + session-coherence lane: catches a stale artifact rendering as
@@ -112,19 +166,62 @@ jobs:
       - name: Session-coherence contract tests
         run: node --test tests/session-coherence-contract.test.js
 
+      # Publication integrity over every published ticker: the dossier renders, carries the
+      # Producer's posture verbatim, never upgrades it, never invents a target, and never
+      # shows an unfired condition as fired.
+      - name: Every published ticker renders within the Producer's decision
+        run: node --test --test-name-pattern="^every published ticker" tests/investigation-workbench.test.js tests/investor-friendly-dossier.test.js
+
+      # Not a gate. On a Daily publication commit this reports which code-behaviour tests
+      # no longer match the session, so the drift is known before the next code change.
+      - name: Code-behaviour tests against the new session (advisory)
+        if: steps.lane.outputs.lane == 'data'
+        continue-on-error: true
+        run: >-
+          node --test
+          tests/signals-macro-localization.test.js
+          tests/signals-product-localization.test.js
+          tests/company-panel.test.js
+          tests/cited-evidence-render.test.js
+          tests/screener-state.test.js
+          tests/screener-master.test.js
+          tests/investment-workspace.test.js
+          tests/workspace-q3-successor.test.js
+          tests/workspace-lens-financial-period.test.js
+          tests/workspace-read-model.test.js
+          tests/investigation-workbench.test.js
+          tests/investor-friendly-dossier.test.js
+          tests/case-desk-review.test.js
+          tests/case-desk-financial-quality.test.js
+          tests/portfolio-research-model.test.js
+          tests/product-surface-convergence.test.js
+          tests/unified-decision-workspace-v2.test.js
+          tests/dashboard-core-ux-localization.test.js
+          tests/dashboard-home-summary-cutover.test.js
+          tests/home-market-close.test.js
+          tests/brief-market-context.test.js
+          tests/dashboard-home-performance-and-investor-first.test.js
+          tests/investor-first-ux-v1.test.js
+          tests/workspace-mobile-overflow.test.js
+          tests/minimal-glass-ux-v1.test.js
+          tests/glassy-shell-v1.test.js
+
       - name: Canonical daily coherence and Vietnamese presentation tests
         run: python tests/test_canonical_daily_coherence_and_vi_localization.py -v
 
       - name: Navigation contract tests
+        if: steps.lane.outputs.lane == 'full'
         run: python tests/test_navigation_contract.py -v
 
       - name: Visual-foundation contract tests
+        if: steps.lane.outputs.lane == 'full'
         run: python tests/test_visual_foundation_contract.py -v
 
       - name: Safe web artifact publication contract tests
         run: python tests/test_safe_web_artifacts.py -v
 
       - name: Dashboard bento contract tests
+        if: steps.lane.outputs.lane == 'full'
         run: python tests/test_dashboard_bento_contract.py -v
 
       # DASHBOARD_HOME_SUMMARY_AND_CACHE_BUSTING_V1: fails the build (blocking Deploy
@@ -136,32 +233,40 @@ jobs:
         run: python tests/test_asset_cache_version_contract.py -v
 
       - name: Dashboard Home summary cutover tests
+        if: steps.lane.outputs.lane == 'full'
         run: node --test tests/dashboard-home-summary-cutover.test.js tests/home-market-close.test.js
 
       - name: Brief market context (matched-cohort change, market-gated setups)
+        if: steps.lane.outputs.lane == 'full'
         run: node --test tests/brief-market-context.test.js
 
       # The fixture is Engine output (stocklookup-engine tests/build_brief_market_context_contract_fixture.py).
       # A changed Engine contract must fail here instead of leaving this copy stale.
       - name: Brief market context fixture matches Engine main
+        if: steps.lane.outputs.lane == 'full'
         run: |
           curl -fsSL --retry 3 -o /tmp/engine_fixture.json \
             https://raw.githubusercontent.com/tungthanhnguyen2312-wq/stocklookup-engine/main/tests/fixtures/brief_market_context_contract_v1.json
           cmp /tmp/engine_fixture.json tests/fixtures/brief_market_context_contract_v1.json
 
       - name: Dashboard Home performance and investor-first tests
+        if: steps.lane.outputs.lane == 'full'
         run: node --test tests/dashboard-home-performance-and-investor-first.test.js
 
       - name: Investor-first Vietnamese UX and semantic parity
+        if: steps.lane.outputs.lane == 'full'
         run: node --test tests/investor-first-ux-v1.test.js tests/workspace-mobile-overflow.test.js
 
       - name: Minimal glass UX consolidation contract
+        if: steps.lane.outputs.lane == 'full'
         run: node --test tests/minimal-glass-ux-v1.test.js
 
       - name: Glassy shell and whole-universe entry contract
+        if: steps.lane.outputs.lane == 'full'
         run: node --test tests/glassy-shell-v1.test.js
 
       - name: JavaScript syntax checks
+        if: steps.lane.outputs.lane == 'full'
         run: |
           node --check assets/js/candlestick-patterns.js
           node --check assets/js/macro.js
@@ -187,6 +292,7 @@ jobs:
       # this repo, so no additional step is added here.
 
       - name: Whitespace check (git diff --check)
+        if: steps.lane.outputs.lane == 'full'
         env:
           EVENT_NAME: ${{ github.event_name }}
           BASE_SHA: ${{ github.event.pull_request.base.sha }}
