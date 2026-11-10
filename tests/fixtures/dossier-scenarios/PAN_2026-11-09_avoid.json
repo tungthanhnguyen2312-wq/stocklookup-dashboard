@@ -1,0 +1,4706 @@
+{
+ "fixture_kind": "published_workspace_detail_card_verbatim",
+ "ticker": "PAN",
+ "as_of_session": "2026-11-09",
+ "source_artifact_identity": "investment_decision_workspace_projection/v1:30ef01203c4f5fd301f419c217f0bc2916aa3a9d295632ddb90f44a5a3b6664b",
+ "dashboard_source_commit": "aa132cae0958fe3d42063c2f84016c926084c213",
+ "scenario": "AVOID posture with two P/B figures from different dates and no fair-value basis",
+ "card": {
+  "action_presentation": {
+   "condition": null,
+   "position_conditional": false
+  },
+  "as_of_session": "2026-11-09",
+  "authority_boundary": {
+   "is_actionable": false,
+   "missing_private_portfolio_is_unknown_position_not_not_held": true,
+   "no_probability": true,
+   "no_rank": true,
+   "no_score": true,
+   "no_target_price": true,
+   "opportunity_priority_never_alters_action_posture": true,
+   "portfolio_fit_does_not_mutate_research_stance": true,
+   "priority_now_is_not_buy_now": true,
+   "research_action_posture_is_the_action_decision": true,
+   "research_stance_is_not_execution_order": true,
+   "research_stance_is_secondary_research_screen_only": true,
+   "security_attractiveness_separate_from_portfolio_fit": true
+  },
+  "catalyst": {
+   "adverse_events": [],
+   "event_classifications": [],
+   "event_count": 0,
+   "freshness_status": "CURRENT",
+   "pending_watch_items": [],
+   "qualified_current_catalysts": [],
+   "source_session": "2026-11-09",
+   "status": "UNAVAILABLE"
+  },
+  "conditional_scenarios": {
+   "base": {
+    "case_status": "OBSERVED_REFERENCE",
+    "is_actionable": false,
+    "probability_status": "UNKNOWN_UNCALIBRATED",
+    "reason_code": "BEARISH_STRUCTURE_ADVERSE"
+   },
+   "bear": {
+    "case_status": "CONDITIONAL",
+    "is_actionable": false,
+    "probability_status": "UNKNOWN_UNCALIBRATED",
+    "reason_code": "BEARISH_STRUCTURE_ADVERSE"
+   },
+   "bull": {
+    "case_status": "NOT_ADMITTED",
+    "is_actionable": false,
+    "probability_status": "UNKNOWN_UNCALIBRATED",
+    "reason_code": "NO_QUALIFIED_ENTRY_TRIGGER"
+   },
+   "is_actionable": false,
+   "limitations": [
+    "REFERENCE_CASE_NOT_MOST_PROBABLE",
+    "RESEARCH_ONLY_NOT_EXECUTION",
+    "UPWARD_INVALIDATION_RESOLVES_BEARISH_STRUCTURE_NOT_LONG_SETUP",
+    "PRICE_BASIS_UNVERIFIED_OR_MIXED"
+   ],
+   "official_target_price_status": "NOT_EMITTED",
+   "probability_status": "NOT_EMITTED",
+   "source_contract": "current_evidence_bound_scenario_integrated_binding/v1"
+  },
+  "confirmation": {
+   "as_of": "2026-11-09",
+   "baseline_period_session": "2026-11-09",
+   "baseline_value": 17.775,
+   "boundary_type": "EASING_TO_REVERSAL_UPGRADE",
+   "comparison_operator": "FUTURE_CLOSE_GT_FUTURE_MA20",
+   "confirmation_trigger_state": "NOT_AVAILABLE",
+   "direction": "ABOVE_TO_CONFIRM",
+   "evidence_lineage": {
+    "feature_as_of_session": "2026-11-09",
+    "price_basis_qualification": {
+     "comparability": "NOT_ESTABLISHED",
+     "factor_chain_status": "NOT_PROVIDED",
+     "historical_pit_eligible": false,
+     "limitations": [
+      "NO_QUALIFIED_CORPORATE_ACTION_FACTOR_CHAIN",
+      "AUTHENTICATED_FACTOR_CHAIN_INTERFACE_UNAVAILABLE",
+      "IDENTITY_TRANSFORM_IS_NOT_AN_ADJUSTMENT"
+     ],
+     "observed_price_basis": "CURRENT_DESCRIPTIVE_DNSE_REST_ADJUSTED_RETROSPECTIVE_RAW_AS_TRADED_NOT_PROMOTED",
+     "price_basis_verified": false,
+     "price_unit": "UNVERIFIED_RESEARCH_PRICE",
+     "raw_as_traded_authority": "NOT_PROMOTED",
+     "research_label": "ADJUSTED_RETROSPECTIVE",
+     "transformation_identity": "identity_provider_numeric_ohlc/v1",
+     "window_evidence": [
+      {
+       "observation_identity": null,
+       "price_basis": "CURRENT_DESCRIPTIVE_DNSE_REST_ADJUSTED_RETROSPECTIVE_RAW_AS_TRADED_NOT_PROMOTED",
+       "provider": "DNSE",
+       "session": "2026-10-13",
+       "source_identity": null,
+       "transformation_identity": "identity_provider_numeric_ohlc/v1"
+      },
+      {
+       "observation_identity": null,
+       "price_basis": "CURRENT_DESCRIPTIVE_DNSE_REST_ADJUSTED_RETROSPECTIVE_RAW_AS_TRADED_NOT_PROMOTED",
+       "provider": "DNSE",
+       "session": "2026-10-14",
+       "source_identity": null,
+       "transformation_identity": "identity_provider_numeric_ohlc/v1"
+      },
+      {
+       "observation_identity": null,
+       "price_basis": "CURRENT_DESCRIPTIVE_DNSE_REST_ADJUSTED_RETROSPECTIVE_RAW_AS_TRADED_NOT_PROMOTED",
+       "provider": "DNSE",
+       "session": "2026-10-15",
+       "source_identity": null,
+       "transformation_identity": "identity_provider_numeric_ohlc/v1"
+      },
+      {
+       "observation_identity": null,
+       "price_basis": "CURRENT_DESCRIPTIVE_DNSE_REST_ADJUSTED_RETROSPECTIVE_RAW_AS_TRADED_NOT_PROMOTED",
+       "provider": "DNSE",
+       "session": "2026-10-16",
+       "source_identity": null,
+       "transformation_identity": "identity_provider_numeric_ohlc/v1"
+      },
+      {
+       "observation_identity": null,
+       "price_basis": "CURRENT_DESCRIPTIVE_DNSE_REST_ADJUSTED_RETROSPECTIVE_RAW_AS_TRADED_NOT_PROMOTED",
+       "provider": "DNSE",
+       "session": "2026-10-19",
+       "source_identity": null,
+       "transformation_identity": "identity_provider_numeric_ohlc/v1"
+      },
+      {
+       "observation_identity": null,
+       "price_basis": "CURRENT_DESCRIPTIVE_DNSE_REST_ADJUSTED_RETROSPECTIVE_RAW_AS_TRADED_NOT_PROMOTED",
+       "provider": "DNSE",
+       "session": "2026-10-20",
+       "source_identity": null,
+       "transformation_identity": "identity_provider_numeric_ohlc/v1"
+      },
+      {
+       "observation_identity": null,
+       "price_basis": "CURRENT_DESCRIPTIVE_DNSE_REST_ADJUSTED_RETROSPECTIVE_RAW_AS_TRADED_NOT_PROMOTED",
+       "provider": "DNSE",
+       "session": "2026-10-21",
+       "source_identity": null,
+       "transformation_identity": "identity_provider_numeric_ohlc/v1"
+      },
+      {
+       "observation_identity": null,
+       "price_basis": "CURRENT_DESCRIPTIVE_DNSE_REST_ADJUSTED_RETROSPECTIVE_RAW_AS_TRADED_NOT_PROMOTED",
+       "provider": "DNSE",
+       "session": "2026-10-22",
+       "source_identity": null,
+       "transformation_identity": "identity_provider_numeric_ohlc/v1"
+      },
+      {
+       "observation_identity": null,
+       "price_basis": "CURRENT_DESCRIPTIVE_DNSE_REST_ADJUSTED_RETROSPECTIVE_RAW_AS_TRADED_NOT_PROMOTED",
+       "provider": "DNSE",
+       "session": "2026-10-23",
+       "source_identity": null,
+       "transformation_identity": "identity_provider_numeric_ohlc/v1"
+      },
+      {
+       "observation_identity": null,
+       "price_basis": "CURRENT_DESCRIPTIVE_DNSE_REST_ADJUSTED_RETROSPECTIVE_RAW_AS_TRADED_NOT_PROMOTED",
+       "provider": "DNSE",
+       "session": "2026-10-26",
+       "source_identity": null,
+       "transformation_identity": "identity_provider_numeric_ohlc/v1"
+      },
+      {
+       "observation_identity": null,
+       "price_basis": "CURRENT_DESCRIPTIVE_DNSE_REST_ADJUSTED_RETROSPECTIVE_RAW_AS_TRADED_NOT_PROMOTED",
+       "provider": "DNSE",
+       "session": "2026-10-27",
+       "source_identity": null,
+       "transformation_identity": "identity_provider_numeric_ohlc/v1"
+      },
+      {
+       "observation_identity": null,
+       "price_basis": "CURRENT_DESCRIPTIVE_DNSE_REST_ADJUSTED_RETROSPECTIVE_RAW_AS_TRADED_NOT_PROMOTED",
+       "provider": "DNSE",
+       "session": "2026-10-28",
+       "source_identity": null,
+       "transformation_identity": "identity_provider_numeric_ohlc/v1"
+      },
+      {
+       "observation_identity": null,
+       "price_basis": "CURRENT_DESCRIPTIVE_DNSE_REST_ADJUSTED_RETROSPECTIVE_RAW_AS_TRADED_NOT_PROMOTED",
+       "provider": "DNSE",
+       "session": "2026-10-29",
+       "source_identity": null,
+       "transformation_identity": "identity_provider_numeric_ohlc/v1"
+      },
+      {
+       "observation_identity": null,
+       "price_basis": "CURRENT_DESCRIPTIVE_DNSE_REST_ADJUSTED_RETROSPECTIVE_RAW_AS_TRADED_NOT_PROMOTED",
+       "provider": "DNSE",
+       "session": "2026-10-30",
+       "source_identity": null,
+       "transformation_identity": "identity_provider_numeric_ohlc/v1"
+      },
+      {
+       "observation_identity": null,
+       "price_basis": "CURRENT_DESCRIPTIVE_DNSE_REST_ADJUSTED_RETROSPECTIVE_RAW_AS_TRADED_NOT_PROMOTED",
+       "provider": "DNSE",
+       "session": "2026-11-02",
+       "source_identity": null,
+       "transformation_identity": "identity_provider_numeric_ohlc/v1"
+      },
+      {
+       "observation_identity": null,
+       "price_basis": "CURRENT_DESCRIPTIVE_DNSE_REST_ADJUSTED_RETROSPECTIVE_RAW_AS_TRADED_NOT_PROMOTED",
+       "provider": "DNSE",
+       "session": "2026-11-03",
+       "source_identity": null,
+       "transformation_identity": "identity_provider_numeric_ohlc/v1"
+      },
+      {
+       "observation_identity": null,
+       "price_basis": "CURRENT_DESCRIPTIVE_DNSE_REST_ADJUSTED_RETROSPECTIVE_RAW_AS_TRADED_NOT_PROMOTED",
+       "provider": "DNSE",
+       "session": "2026-11-04",
+       "source_identity": null,
+       "transformation_identity": "identity_provider_numeric_ohlc/v1"
+      },
+      {
+       "observation_identity": null,
+       "price_basis": "CURRENT_DESCRIPTIVE_DNSE_REST_ADJUSTED_RETROSPECTIVE_RAW_AS_TRADED_NOT_PROMOTED",
+       "provider": "DNSE",
+       "session": "2026-11-05",
+       "source_identity": null,
+       "transformation_identity": "identity_provider_numeric_ohlc/v1"
+      },
+      {
+       "observation_identity": null,
+       "price_basis": "CURRENT_DESCRIPTIVE_DNSE_REST_ADJUSTED_RETROSPECTIVE_RAW_AS_TRADED_NOT_PROMOTED",
+       "provider": "DNSE",
+       "session": "2026-11-06",
+       "source_identity": null,
+       "transformation_identity": "identity_provider_numeric_ohlc/v1"
+      },
+      {
+       "observation_identity": null,
+       "price_basis": "CURRENT_DESCRIPTIVE_DNSE_REST_ADJUSTED_RETROSPECTIVE_RAW_AS_TRADED_NOT_PROMOTED",
+       "provider": "DNSE",
+       "session": "2026-11-09",
+       "source_identity": null,
+       "transformation_identity": "identity_provider_numeric_ohlc/v1"
+      }
+     ]
+    },
+    "tactical_rule_id": "R8_SELLING_PRESSURE_EASING",
+    "technical_structure_available": true
+   },
+   "method": "watchlist_tactical_entry_classifier/v1 + technical_structure_context/v1",
+   "reason": "Price reclaiming the 20-day moving average would upgrade this to an early reversal candidate.",
+   "source_metric": "ma_20",
+   "source_rule": "R8_SELLING_PRESSURE_EASING",
+   "status": "READY",
+   "unit": "UNVERIFIED_RESEARCH_PRICE",
+   "value": 17.775,
+   "warnings": []
+  },
+  "counter_thesis": {
+   "financial_analysis": {
+    "counter_thesis": [],
+    "current_financial_weakness": [],
+    "missing_dimensions": [
+     "FA_V2_CAPITAL_EFFICIENCY_UNAVAILABLE"
+    ]
+   },
+   "key_counter_thesis": [
+    "TECHNICAL_DETERIORATION"
+   ],
+   "unavailable_dimensions": [
+    "catalyst"
+   ],
+   "warnings": [
+    "EXECUTION_CAPACITY_EXACT_BLOCKED_NOT_A_STANCE_GATE",
+    "SHARE_BASIS_RESEARCH_PROXY",
+    "PIT_AUTHORITY_NOT_GRANTED"
+   ]
+  },
+  "current_corporate_knowledge": {
+   "events": [],
+   "forward_driver_context": {
+    "applicability": "CURRENT_RESEARCH_EXPLANATION_ONLY",
+    "as_of_session": "2026-11-09",
+    "authority_effect": "NONE",
+    "blocker_reason_codes": [
+     "NO_QUALIFIED_FORWARD_DRIVER"
+    ],
+    "context_identity": "forward_driver_context/v1:4372a714dd3807606c8dc887539f767abb9a190c8bbb062f52b14a4693872669",
+    "contract_version": "forward_driver_context/v1",
+    "drivers": [],
+    "evidence_session": "2026-11-09",
+    "qualified_driver_count": 0,
+    "session_fitness": "CURRENT_EVIDENCE_SESSION",
+    "ticker": "PAN"
+   },
+   "freshness_state": "CURRENT_CIVIL_DATE",
+   "historical_use_allowed": false,
+   "knowledge_observed_at": "2026-11-09T16:16:28+07:00",
+   "non_voting": true,
+   "source_overlay_identity": "current_corporate_knowledge_overlay:9c160376d5780121d890760294c1c15991f271b137f4858837a3794a7704c95a",
+   "status": "NO_RETAINED_EVENT_CONTEXT"
+  },
+  "decision_identity": "decision:PAN:ef494f1fcc79e042",
+  "display_metrics": {
+   "catalyst_event_context": {
+    "display_state": "TEMPORARILY_UNAVAILABLE",
+    "value": null
+   },
+   "debt_to_equity": {
+    "display_state": "INSUFFICIENT_DATA",
+    "value": null
+   },
+   "ebitda": {
+    "display_state": "INSUFFICIENT_DATA",
+    "value": null
+   },
+   "ev_ebitda": {
+    "display_state": "INSUFFICIENT_DATA",
+    "value": null
+   },
+   "ev_sales": {
+    "display_state": "AVAILABLE",
+    "value": 0.8050680588568203
+   },
+   "flow_persistence_5session": {
+    "display_state": "AVAILABLE",
+    "value": "INSUFFICIENT_HISTORY"
+   },
+   "flow_price_relationship": {
+    "display_state": "AVAILABLE",
+    "value": "PRICE_EVIDENCE_INSUFFICIENT"
+   },
+   "foreign_flow_state": {
+    "display_state": "AVAILABLE",
+    "value": "NET_FOREIGN_SELL"
+   },
+   "gross_margin": {
+    "display_state": "INSUFFICIENT_DATA",
+    "value": null
+   },
+   "leverage_state": {
+    "display_state": "INSUFFICIENT_DATA",
+    "value": null
+   },
+   "net_income_growth_yoy": {
+    "display_state": "INSUFFICIENT_DATA",
+    "value": null
+   },
+   "net_margin": {
+    "display_state": "INSUFFICIENT_DATA",
+    "value": null
+   },
+   "operating_cash_flow_sign": {
+    "display_state": "INSUFFICIENT_DATA",
+    "value": null
+   },
+   "pb": {
+    "display_state": "AVAILABLE",
+    "value": 0.4838348756323342
+   },
+   "pe_ttm": {
+    "display_state": "INSUFFICIENT_DATA",
+    "value": null
+   },
+   "ps_ttm": {
+    "display_state": "INSUFFICIENT_DATA",
+    "value": null
+   },
+   "revenue_growth_yoy": {
+    "display_state": "INSUFFICIENT_DATA",
+    "value": null
+   },
+   "roa": {
+    "display_state": "INSUFFICIENT_DATA",
+    "value": null
+   },
+   "roe": {
+    "display_state": "INSUFFICIENT_DATA",
+    "value": null
+   },
+   "sector_relative_momentum": {
+    "display_state": "AVAILABLE",
+    "value": 0.09259259259259259
+   },
+   "signal_velocity_state": {
+    "display_state": "INSUFFICIENT_DATA",
+    "value": null
+   },
+   "technical_confirmation_trigger": {
+    "display_state": "INSUFFICIENT_DATA",
+    "value": null
+   },
+   "technical_invalidation": {
+    "display_state": "AVAILABLE",
+    "value": "RENEWED_BREAKDOWN_RISK"
+   },
+   "technical_trend_entry_state": {
+    "display_state": "AVAILABLE",
+    "value": "SELLING_PRESSURE_EASING"
+   }
+  },
+  "entry_action": "WAIT",
+  "entry_state": "SELLING_PRESSURE_EASING",
+  "evidence_currency": "CURRENT_SESSION",
+  "flow_price": {
+   "cohort_membership": "IN_CURRENT_FLOW_RESEARCH_COHORT",
+   "contract_version": "flow_price_divergence_shadow/v1",
+   "evidence_quality": "INSUFFICIENT_RETAINED_EVIDENCE",
+   "flow_freshness": {
+    "latest_qualified_session_date": "2026-11-09",
+    "reason": null,
+    "reference_session_date": "2026-11-09",
+    "sessions_behind": 0,
+    "status": "current"
+   },
+   "flow_persistence": "INSUFFICIENT_HISTORY",
+   "foreign_flow_state": "NET_FOREIGN_SELL",
+   "is_actionable": false,
+   "latest_qualified_flow_session": "2026-11-09",
+   "limitations": [
+    "QUALIFIED_FOREIGN_VALUE_ONLY",
+    "NO_FLOW_NORMALIZATION",
+    "NO_CAUSAL_OR_INTENT_INTERPRETATION",
+    "NO_FORWARD_OUTCOME_CLAIM"
+   ],
+   "market_support": null,
+   "participation_context": "PARTICIPATION_UNAVAILABLE",
+   "price_state": "PRICE_EVIDENCE_INSUFFICIENT",
+   "price_velocity_state": null,
+   "reason_code": null,
+   "reference_session": "2026-11-09",
+   "relationship": "PRICE_EVIDENCE_INSUFFICIENT",
+   "sector_support": null,
+   "session_alignment": "UNAVAILABLE",
+   "source_artifact_identity": "flow_price_divergence_shadow:14970fa92008730d885f779972fed74191596c760bbf95a2d925c6d286f0f9ff"
+  },
+  "fundamental": {
+   "current_features": {
+    "cash_and_cash_equivalents_pit_trajectory": {
+     "blocker_reason_codes": [],
+     "categorical_state": "IMPROVING",
+     "compatibility_class": "POINT_IN_TIME_TRAJECTORY_COMPATIBLE",
+     "input_periods": [
+      "2025-Q4",
+      "2026-Q1"
+     ],
+     "method": "same_native_point_in_time_trajectory/v1",
+     "status": "READY_RESEARCH_PROXY",
+     "value": 0.38875746272896206
+    },
+    "cash_earnings_alignment": {
+     "blocker_reason_codes": [
+      "MISSING_SAME_NATIVE_PERIOD_SCOPE_SERIES"
+     ],
+     "categorical_state": "CASH_QUALITY_UNAVAILABLE",
+     "compatibility_class": "BLOCKED_INCOMPATIBLE",
+     "input_periods": [],
+     "method": "blocked_feature_contract/v1",
+     "status": "BLOCKED",
+     "value": null
+    },
+    "cash_to_assets": {
+     "blocker_reason_codes": [],
+     "categorical_state": null,
+     "compatibility_class": "SAME_NATIVE_SERIES_RESEARCH_COMPATIBLE",
+     "input_periods": [
+      "2026-Q1",
+      "2026-Q1"
+     ],
+     "method": "same_native_series_dimensionless_ratio/v1",
+     "status": "READY_RESEARCH_PROXY",
+     "value": 0.2397677154204011
+    },
+    "cfo_to_net_income": {
+     "blocker_reason_codes": [
+      "MISSING_SAME_NATIVE_PERIOD_SCOPE_SERIES"
+     ],
+     "categorical_state": null,
+     "compatibility_class": "BLOCKED_INCOMPATIBLE",
+     "input_periods": [],
+     "method": "blocked_feature_contract/v1",
+     "status": "BLOCKED",
+     "value": null
+    },
+    "debt_to_equity": {
+     "blocker_reason_codes": [
+      "MISSING_SAME_NATIVE_PERIOD_SCOPE_SERIES"
+     ],
+     "categorical_state": null,
+     "compatibility_class": "BLOCKED_INCOMPATIBLE",
+     "input_periods": [],
+     "method": "blocked_feature_contract/v1",
+     "status": "BLOCKED",
+     "value": null
+    },
+    "equity_to_assets": {
+     "blocker_reason_codes": [],
+     "categorical_state": null,
+     "compatibility_class": "SAME_NATIVE_SERIES_RESEARCH_COMPATIBLE",
+     "input_periods": [
+      "2026-Q1",
+      "2026-Q1"
+     ],
+     "method": "same_native_series_dimensionless_ratio/v1",
+     "status": "READY_RESEARCH_PROXY",
+     "value": 0.6332120096260495
+    },
+    "gross_margin": {
+     "blocker_reason_codes": [
+      "KBS_PERIOD_IDENTITY_UNVERIFIED"
+     ],
+     "categorical_state": null,
+     "compatibility_class": "BLOCKED_INCOMPATIBLE",
+     "input_periods": [
+      "2025-Q3",
+      "2025-Q3",
+      "2026-Q1",
+      "2026-Q1"
+     ],
+     "method": "blocked_feature_contract/v1",
+     "status": "BLOCKED",
+     "value": null
+    },
+    "net_income_same_period_yoy": {
+     "blocker_reason_codes": [
+      "KBS_PERIOD_IDENTITY_UNVERIFIED"
+     ],
+     "categorical_state": null,
+     "compatibility_class": "BLOCKED_INCOMPATIBLE",
+     "input_periods": [
+      "2025-Q3",
+      "2026-Q1"
+     ],
+     "method": "blocked_feature_contract/v1",
+     "status": "BLOCKED",
+     "value": null
+    },
+    "net_income_ttm_sum": {
+     "blocker_reason_codes": [
+      "KBS_PERIOD_IDENTITY_UNVERIFIED"
+     ],
+     "categorical_state": null,
+     "compatibility_class": "BLOCKED_INCOMPATIBLE",
+     "input_periods": [
+      "2025-Q3",
+      "2026-Q1"
+     ],
+     "method": "blocked_feature_contract/v1",
+     "status": "BLOCKED",
+     "value": null
+    },
+    "net_margin": {
+     "blocker_reason_codes": [
+      "KBS_PERIOD_IDENTITY_UNVERIFIED"
+     ],
+     "categorical_state": null,
+     "compatibility_class": "BLOCKED_INCOMPATIBLE",
+     "input_periods": [
+      "2025-Q3",
+      "2025-Q3",
+      "2026-Q1",
+      "2026-Q1"
+     ],
+     "method": "blocked_feature_contract/v1",
+     "status": "BLOCKED",
+     "value": null
+    },
+    "operating_cash_flow_sign": {
+     "blocker_reason_codes": [
+      "MISSING_STANDALONE_QUARTER_CFO"
+     ],
+     "categorical_state": null,
+     "compatibility_class": "BLOCKED_INCOMPATIBLE",
+     "input_periods": [],
+     "method": "blocked_feature_contract/v1",
+     "status": "BLOCKED",
+     "value": null
+    },
+    "operating_cash_flow_ttm_sum": {
+     "blocker_reason_codes": [
+      "MISSING_CONSECUTIVE_STANDALONE_QUARTER_INPUTS"
+     ],
+     "categorical_state": null,
+     "compatibility_class": "BLOCKED_INCOMPATIBLE",
+     "input_periods": [],
+     "method": "blocked_feature_contract/v1",
+     "status": "BLOCKED",
+     "value": null
+    },
+    "profit_state": {
+     "blocker_reason_codes": [
+      "KBS_PERIOD_IDENTITY_UNVERIFIED"
+     ],
+     "categorical_state": null,
+     "compatibility_class": "BLOCKED_INCOMPATIBLE",
+     "input_periods": [
+      "2025-Q3",
+      "2026-Q1"
+     ],
+     "method": "blocked_feature_contract/v1",
+     "status": "BLOCKED",
+     "value": null
+    },
+    "revenue_same_period_yoy": {
+     "blocker_reason_codes": [
+      "KBS_PERIOD_IDENTITY_UNVERIFIED"
+     ],
+     "categorical_state": null,
+     "compatibility_class": "BLOCKED_INCOMPATIBLE",
+     "input_periods": [
+      "2025-Q3",
+      "2026-Q1"
+     ],
+     "method": "blocked_feature_contract/v1",
+     "status": "BLOCKED",
+     "value": null
+    },
+    "revenue_ttm_sum": {
+     "blocker_reason_codes": [
+      "KBS_PERIOD_IDENTITY_UNVERIFIED"
+     ],
+     "categorical_state": null,
+     "compatibility_class": "BLOCKED_INCOMPATIBLE",
+     "input_periods": [
+      "2025-Q3",
+      "2026-Q1"
+     ],
+     "method": "blocked_feature_contract/v1",
+     "status": "BLOCKED",
+     "value": null
+    },
+    "roa_eop_proxy": {
+     "blocker_reason_codes": [
+      "CROSS_PROVIDER_OR_DURATION_INCOMPATIBLE"
+     ],
+     "categorical_state": null,
+     "compatibility_class": "BLOCKED_INCOMPATIBLE",
+     "input_periods": [],
+     "method": "blocked_feature_contract/v1",
+     "status": "BLOCKED",
+     "value": null
+    },
+    "roe_eop_proxy": {
+     "blocker_reason_codes": [
+      "CROSS_PROVIDER_OR_DURATION_INCOMPATIBLE"
+     ],
+     "categorical_state": null,
+     "compatibility_class": "BLOCKED_INCOMPATIBLE",
+     "input_periods": [],
+     "method": "blocked_feature_contract/v1",
+     "status": "BLOCKED",
+     "value": null
+    },
+    "shareholders_equity_pit_trajectory": {
+     "blocker_reason_codes": [],
+     "categorical_state": "IMPROVING",
+     "compatibility_class": "POINT_IN_TIME_TRAJECTORY_COMPATIBLE",
+     "input_periods": [
+      "2025-Q4",
+      "2026-Q1"
+     ],
+     "method": "same_native_point_in_time_trajectory/v1",
+     "status": "READY_RESEARCH_PROXY",
+     "value": 0.061307050363524684
+    },
+    "total_assets_pit_trajectory": {
+     "blocker_reason_codes": [],
+     "categorical_state": "WEAKENING",
+     "compatibility_class": "POINT_IN_TIME_TRAJECTORY_COMPATIBLE",
+     "input_periods": [
+      "2025-Q4",
+      "2026-Q1"
+     ],
+     "method": "same_native_point_in_time_trajectory/v1",
+     "status": "READY_RESEARCH_PROXY",
+     "value": -0.024409211639774164
+    }
+   },
+   "entity_applicability": "GENERIC_RESEARCH_PRIMITIVES_ALLOWED",
+   "entity_type": "corporate",
+   "financial_health": {
+    "balance_sheet": "WEAKENING",
+    "cash_quality": "CASH_QUALITY_UNAVAILABLE",
+    "leverage": "INSUFFICIENT_DATA",
+    "margin": "INSUFFICIENT_DATA",
+    "profitability": "INSUFFICIENT_DATA"
+   },
+   "freshness_status": "STALE_BUT_RESEARCH_USABLE",
+   "peer_relative": {
+    "equity_to_assets": {
+     "compatibility_class": "SAME_NATIVE_SERIES_RESEARCH_COMPATIBLE",
+     "input_periods": [
+      "2026-Q1",
+      "2026-Q1"
+     ],
+     "method": "same_native_series_dimensionless_ratio/v1",
+     "minimum_peer_count": 5,
+     "peer_count": 893,
+     "peer_median": 0.5343259665856147,
+     "percentile": 0.6366181410974244,
+     "percentile_formula": "(below + 0.5 * equal) / n",
+     "status": "READY_RESEARCH_ONLY",
+     "subject_value": 0.6332120096260495
+    },
+    "net_income_same_period_yoy": {
+     "compatibility_class": "BLOCKED_INCOMPATIBLE",
+     "method": "blocked_feature_contract/v1",
+     "peer_count": 0,
+     "reason": [
+      "KBS_PERIOD_IDENTITY_UNVERIFIED"
+     ],
+     "status": "NOT_COMPARABLE"
+    },
+    "net_margin": {
+     "compatibility_class": "BLOCKED_INCOMPATIBLE",
+     "method": "blocked_feature_contract/v1",
+     "peer_count": 0,
+     "reason": [
+      "KBS_PERIOD_IDENTITY_UNVERIFIED"
+     ],
+     "status": "NOT_COMPARABLE"
+    },
+    "revenue_same_period_yoy": {
+     "compatibility_class": "BLOCKED_INCOMPATIBLE",
+     "method": "blocked_feature_contract/v1",
+     "peer_count": 0,
+     "reason": [
+      "KBS_PERIOD_IDENTITY_UNVERIFIED"
+     ],
+     "status": "NOT_COMPARABLE"
+    }
+   },
+   "readiness": "PRODUCT_READY_RESEARCH_CONTEXT",
+   "research_fitness": "READY_RESEARCH_PROXY",
+   "source_period": "2026-Q1",
+   "state": "INSUFFICIENT_DATA",
+   "trajectory": "INSUFFICIENT_DATA",
+   "warnings_blockers": [
+    "CROSS_PROVIDER_OR_DURATION_INCOMPATIBLE",
+    "KBS_PERIOD_IDENTITY_UNVERIFIED",
+    "MISSING_CONSECUTIVE_STANDALONE_QUARTER_INPUTS",
+    "MISSING_SAME_NATIVE_PERIOD_SCOPE_SERIES",
+    "MISSING_STANDALONE_QUARTER_CFO"
+   ]
+  },
+  "invalidation": {
+   "fundamental": {
+    "as_of": "2026-Q1",
+    "baseline_state": "STRENGTHENING",
+    "comparison": "FUTURE_BALANCE_SHEET_STATE_EQUALS_DETERIORATING",
+    "method": "FA_V2_POSITIVE_STATE_REVERSAL_BOUNDARY/v1",
+    "reason": "BALANCE_SHEET is currently STRENGTHENING; a future retained balance_sheet_state=DETERIORATING would reverse this fundamental support for the thesis.",
+    "source_identity": "financial_analysis_lineage/v1:4252030f7e70bbe896509728b3e6e11bbfe906084e6babb0f09f27ae96d58854",
+    "status": "READY",
+    "thesis_dimension": "BALANCE_SHEET",
+    "trigger_type": "BALANCE_SHEET_STATE_REVERSAL",
+    "watch_state": "DETERIORATING"
+   },
+   "future_financial_invalidation_watch": [],
+   "technical": {
+    "as_of": "2026-11-09",
+    "baseline_period_session": null,
+    "baseline_value": null,
+    "boundary_type": "RENEWED_BREAKDOWN_RISK",
+    "comparison_operator": null,
+    "direction": "STATE_TRANSITION",
+    "evidence_lineage": {
+     "feature_as_of_session": "2026-11-09",
+     "price_basis_qualification": {
+      "comparability": "NOT_ESTABLISHED",
+      "factor_chain_status": "NOT_PROVIDED",
+      "historical_pit_eligible": false,
+      "limitations": [
+       "NO_QUALIFIED_CORPORATE_ACTION_FACTOR_CHAIN",
+       "AUTHENTICATED_FACTOR_CHAIN_INTERFACE_UNAVAILABLE",
+       "IDENTITY_TRANSFORM_IS_NOT_AN_ADJUSTMENT"
+      ],
+      "observed_price_basis": "CURRENT_DESCRIPTIVE_DNSE_REST_ADJUSTED_RETROSPECTIVE_RAW_AS_TRADED_NOT_PROMOTED",
+      "price_basis_verified": false,
+      "price_unit": "UNVERIFIED_RESEARCH_PRICE",
+      "raw_as_traded_authority": "NOT_PROMOTED",
+      "research_label": "ADJUSTED_RETROSPECTIVE",
+      "transformation_identity": "identity_provider_numeric_ohlc/v1",
+      "window_evidence": [
+       {
+        "observation_identity": null,
+        "price_basis": "CURRENT_DESCRIPTIVE_DNSE_REST_ADJUSTED_RETROSPECTIVE_RAW_AS_TRADED_NOT_PROMOTED",
+        "provider": "DNSE",
+        "session": "2026-10-13",
+        "source_identity": null,
+        "transformation_identity": "identity_provider_numeric_ohlc/v1"
+       },
+       {
+        "observation_identity": null,
+        "price_basis": "CURRENT_DESCRIPTIVE_DNSE_REST_ADJUSTED_RETROSPECTIVE_RAW_AS_TRADED_NOT_PROMOTED",
+        "provider": "DNSE",
+        "session": "2026-10-14",
+        "source_identity": null,
+        "transformation_identity": "identity_provider_numeric_ohlc/v1"
+       },
+       {
+        "observation_identity": null,
+        "price_basis": "CURRENT_DESCRIPTIVE_DNSE_REST_ADJUSTED_RETROSPECTIVE_RAW_AS_TRADED_NOT_PROMOTED",
+        "provider": "DNSE",
+        "session": "2026-10-15",
+        "source_identity": null,
+        "transformation_identity": "identity_provider_numeric_ohlc/v1"
+       },
+       {
+        "observation_identity": null,
+        "price_basis": "CURRENT_DESCRIPTIVE_DNSE_REST_ADJUSTED_RETROSPECTIVE_RAW_AS_TRADED_NOT_PROMOTED",
+        "provider": "DNSE",
+        "session": "2026-10-16",
+        "source_identity": null,
+        "transformation_identity": "identity_provider_numeric_ohlc/v1"
+       },
+       {
+        "observation_identity": null,
+        "price_basis": "CURRENT_DESCRIPTIVE_DNSE_REST_ADJUSTED_RETROSPECTIVE_RAW_AS_TRADED_NOT_PROMOTED",
+        "provider": "DNSE",
+        "session": "2026-10-19",
+        "source_identity": null,
+        "transformation_identity": "identity_provider_numeric_ohlc/v1"
+       },
+       {
+        "observation_identity": null,
+        "price_basis": "CURRENT_DESCRIPTIVE_DNSE_REST_ADJUSTED_RETROSPECTIVE_RAW_AS_TRADED_NOT_PROMOTED",
+        "provider": "DNSE",
+        "session": "2026-10-20",
+        "source_identity": null,
+        "transformation_identity": "identity_provider_numeric_ohlc/v1"
+       },
+       {
+        "observation_identity": null,
+        "price_basis": "CURRENT_DESCRIPTIVE_DNSE_REST_ADJUSTED_RETROSPECTIVE_RAW_AS_TRADED_NOT_PROMOTED",
+        "provider": "DNSE",
+        "session": "2026-10-21",
+        "source_identity": null,
+        "transformation_identity": "identity_provider_numeric_ohlc/v1"
+       },
+       {
+        "observation_identity": null,
+        "price_basis": "CURRENT_DESCRIPTIVE_DNSE_REST_ADJUSTED_RETROSPECTIVE_RAW_AS_TRADED_NOT_PROMOTED",
+        "provider": "DNSE",
+        "session": "2026-10-22",
+        "source_identity": null,
+        "transformation_identity": "identity_provider_numeric_ohlc/v1"
+       },
+       {
+        "observation_identity": null,
+        "price_basis": "CURRENT_DESCRIPTIVE_DNSE_REST_ADJUSTED_RETROSPECTIVE_RAW_AS_TRADED_NOT_PROMOTED",
+        "provider": "DNSE",
+        "session": "2026-10-23",
+        "source_identity": null,
+        "transformation_identity": "identity_provider_numeric_ohlc/v1"
+       },
+       {
+        "observation_identity": null,
+        "price_basis": "CURRENT_DESCRIPTIVE_DNSE_REST_ADJUSTED_RETROSPECTIVE_RAW_AS_TRADED_NOT_PROMOTED",
+        "provider": "DNSE",
+        "session": "2026-10-26",
+        "source_identity": null,
+        "transformation_identity": "identity_provider_numeric_ohlc/v1"
+       },
+       {
+        "observation_identity": null,
+        "price_basis": "CURRENT_DESCRIPTIVE_DNSE_REST_ADJUSTED_RETROSPECTIVE_RAW_AS_TRADED_NOT_PROMOTED",
+        "provider": "DNSE",
+        "session": "2026-10-27",
+        "source_identity": null,
+        "transformation_identity": "identity_provider_numeric_ohlc/v1"
+       },
+       {
+        "observation_identity": null,
+        "price_basis": "CURRENT_DESCRIPTIVE_DNSE_REST_ADJUSTED_RETROSPECTIVE_RAW_AS_TRADED_NOT_PROMOTED",
+        "provider": "DNSE",
+        "session": "2026-10-28",
+        "source_identity": null,
+        "transformation_identity": "identity_provider_numeric_ohlc/v1"
+       },
+       {
+        "observation_identity": null,
+        "price_basis": "CURRENT_DESCRIPTIVE_DNSE_REST_ADJUSTED_RETROSPECTIVE_RAW_AS_TRADED_NOT_PROMOTED",
+        "provider": "DNSE",
+        "session": "2026-10-29",
+        "source_identity": null,
+        "transformation_identity": "identity_provider_numeric_ohlc/v1"
+       },
+       {
+        "observation_identity": null,
+        "price_basis": "CURRENT_DESCRIPTIVE_DNSE_REST_ADJUSTED_RETROSPECTIVE_RAW_AS_TRADED_NOT_PROMOTED",
+        "provider": "DNSE",
+        "session": "2026-10-30",
+        "source_identity": null,
+        "transformation_identity": "identity_provider_numeric_ohlc/v1"
+       },
+       {
+        "observation_identity": null,
+        "price_basis": "CURRENT_DESCRIPTIVE_DNSE_REST_ADJUSTED_RETROSPECTIVE_RAW_AS_TRADED_NOT_PROMOTED",
+        "provider": "DNSE",
+        "session": "2026-11-02",
+        "source_identity": null,
+        "transformation_identity": "identity_provider_numeric_ohlc/v1"
+       },
+       {
+        "observation_identity": null,
+        "price_basis": "CURRENT_DESCRIPTIVE_DNSE_REST_ADJUSTED_RETROSPECTIVE_RAW_AS_TRADED_NOT_PROMOTED",
+        "provider": "DNSE",
+        "session": "2026-11-03",
+        "source_identity": null,
+        "transformation_identity": "identity_provider_numeric_ohlc/v1"
+       },
+       {
+        "observation_identity": null,
+        "price_basis": "CURRENT_DESCRIPTIVE_DNSE_REST_ADJUSTED_RETROSPECTIVE_RAW_AS_TRADED_NOT_PROMOTED",
+        "provider": "DNSE",
+        "session": "2026-11-04",
+        "source_identity": null,
+        "transformation_identity": "identity_provider_numeric_ohlc/v1"
+       },
+       {
+        "observation_identity": null,
+        "price_basis": "CURRENT_DESCRIPTIVE_DNSE_REST_ADJUSTED_RETROSPECTIVE_RAW_AS_TRADED_NOT_PROMOTED",
+        "provider": "DNSE",
+        "session": "2026-11-05",
+        "source_identity": null,
+        "transformation_identity": "identity_provider_numeric_ohlc/v1"
+       },
+       {
+        "observation_identity": null,
+        "price_basis": "CURRENT_DESCRIPTIVE_DNSE_REST_ADJUSTED_RETROSPECTIVE_RAW_AS_TRADED_NOT_PROMOTED",
+        "provider": "DNSE",
+        "session": "2026-11-06",
+        "source_identity": null,
+        "transformation_identity": "identity_provider_numeric_ohlc/v1"
+       },
+       {
+        "observation_identity": null,
+        "price_basis": "CURRENT_DESCRIPTIVE_DNSE_REST_ADJUSTED_RETROSPECTIVE_RAW_AS_TRADED_NOT_PROMOTED",
+        "provider": "DNSE",
+        "session": "2026-11-09",
+        "source_identity": null,
+        "transformation_identity": "identity_provider_numeric_ohlc/v1"
+       }
+      ]
+     },
+     "tactical_rule_id": "R8_SELLING_PRESSURE_EASING",
+     "technical_structure_available": true
+    },
+    "method": "watchlist_tactical_entry_classifier/v1 + technical_structure_context/v1",
+    "reason": "A renewed drop to bottom-quartile same-session relative momentum together with an elevated-volume down session invalidates the easing read.",
+    "semantic": "THESIS_INVALIDATION",
+    "source_metric": "momentum_bucket_and_relative_volume",
+    "source_rule": "R8_SELLING_PRESSURE_EASING",
+    "status": "CONDITIONAL",
+    "unit": null,
+    "value": null,
+    "warnings": [
+     "MULTI_SIGNAL_RULE_NOT_REDUCED_TO_A_SINGLE_THRESHOLD"
+    ]
+   }
+  },
+  "lineage": {
+   "blockers": [
+    {
+     "axis": "catalyst",
+     "freshness_status": "CURRENT",
+     "readiness": "UNAVAILABLE"
+    }
+   ],
+   "deep_evidence_availability": "DEEP_EVIDENCE_ARTIFACT_NOT_MATERIALIZED_LOCALLY",
+   "per_axis_freshness": {
+    "catalyst": "CURRENT",
+    "downside_invalidation": "CURRENT",
+    "fundamental": "STALE_BUT_RESEARCH_USABLE",
+    "liquidity": "CURRENT",
+    "market_sector": "CURRENT",
+    "tactical": "CURRENT",
+    "valuation": "CURRENT"
+   },
+   "per_axis_proxy_or_qualified_state": {
+    "fundamental": "READY_RESEARCH_PROXY",
+    "liquidity": "LIQUIDITY_RESEARCH_PROXY",
+    "valuation_share_basis": "CURRENT_SHARE_RESEARCH_PROXY"
+   },
+   "per_axis_source_session": {
+    "catalyst": "2026-11-09",
+    "downside_invalidation": "2026-11-09",
+    "fundamental": "2026-Q1",
+    "liquidity": "2026-11-09",
+    "market_sector": "2026-11-09",
+    "tactical": "2026-11-09",
+    "valuation": "2026-11-09"
+   }
+  },
+  "liquidity": {
+   "authority_boundary": "RESEARCH_PROXY_ONLY_NOT_EXECUTION_SIZING",
+   "current_session_volume": 485100,
+   "descriptive_research_state": "CURRENT_SESSION_DESCRIPTIVE_ELIGIBLE",
+   "exact_execution_capacity_status": "EXECUTION_CAPACITY_EXACT_BLOCKED",
+   "freshness_status": "CURRENT",
+   "readiness": "LIQUIDITY_RESEARCH_PROXY",
+   "research_usable": true,
+   "source_session": "2026-11-09"
+  },
+  "market_sector": {
+   "breadth_regime": "MIXED_BREADTH",
+   "freshness_status": "CURRENT",
+   "sector_diagnostic": {
+    "breadth_support_state": "ISOLATED_OR_MIXED_PARTICIPATION",
+    "coverage_limitations": [],
+    "group_coverage_ratio": 0.9642857142857143,
+    "market_relative_momentum": {
+     "momentum_percentile_descriptive": 0.18294117647058825,
+     "peer_median_momentum_20d": -0.00704848003179015,
+     "status": "AVAILABLE",
+     "valid_observation_count": 850
+    },
+    "sector_relative_momentum": {
+     "momentum_percentile_descriptive": 0.09259259259259259,
+     "peer_median_momentum_20d": -0.015492957746478742,
+     "status": "AVAILABLE",
+     "valid_observation_count": 27
+    }
+   },
+   "sector_relative_context": {
+    "leadership_state": "MIXED",
+    "market_relative_momentum_bucket": "LOWER_QUARTILE",
+    "sector_relative_momentum_bucket": "LOWER_QUARTILE"
+   }
+  },
+  "official_research_scope": {
+   "current_research_scope_fitness": "CURRENT_RESEARCH_SCOPE_ELIGIBLE",
+   "current_research_scope_reason": "FIRST_PARTY_CURRENT_HOSE_STOCK_MASTER_ROW",
+   "current_research_scope_state": "IN_CURRENT_OFFICIAL_RESEARCH_SCOPE",
+   "official_current_exchange_presence": true,
+   "official_security_status": "NORMAL_OR_NO_SPECIAL_STATUS",
+   "official_snapshot_observed_at": "2026-09-13T08:08:05Z",
+   "research_session": "2026-11-09",
+   "scope_bucket": "IN_CURRENT_OFFICIAL_RESEARCH_SCOPE"
+  },
+  "opportunity_priority": {
+   "authority": "INSPECTION_ORDER_ONLY_NOT_AN_ACTION_POSTURE",
+   "entry_relevant": false,
+   "research_priority_tier": "MONITOR",
+   "source_contract": "daily_opportunity_decision_queue/v1",
+   "status": "AVAILABLE"
+  },
+  "portfolio": {
+   "evaluated": false,
+   "reason": "NO_PORTFOLIO_RESEARCH_CONTEXT_SUPPLIED",
+   "status": "NOT_EVALUATED"
+  },
+  "position_context": {
+   "position_state": "UNKNOWN_POSITION_NOT_SUPPLIED",
+   "status": "NOT_SUPPLIED"
+  },
+  "posture_condition_class": "BEARISH_STRUCTURE_ADVERSE",
+  "prospective_case": {
+   "benchmark_relative_result": null,
+   "confirmation": null,
+   "forward_outcome_status": "PENDING_NOT_ENOUGH_FUTURE_SESSIONS",
+   "invalidation": null,
+   "mae": null,
+   "mfe": null,
+   "reason": "NO_PROSPECTIVE_LIFECYCLE_ARTIFACT_SUPPLIED",
+   "status": "CASE_DATA_UNAVAILABLE",
+   "t0_session": null,
+   "t0_stance": null,
+   "t0_tactical_setup": null,
+   "t_plus_20": null,
+   "t_plus_5": null,
+   "t_plus_60": null,
+   "thesis_lifecycle_state": null
+  },
+  "reference_trigger": {
+   "display_note": "Reference level only -- not a confirmed entry (điểm mua) unless trigger_condition_satisfied is true.",
+   "entry_authority": false,
+   "invalidation_level": 17.1,
+   "invalidation_method": "CONFIRMED_SWING_HIGH_BY_RULE_OR_V1_RESISTANCE_FALLBACK",
+   "status": "AVAILABLE",
+   "trigger_condition_attached": true,
+   "trigger_condition_satisfied": false,
+   "trigger_level": 17.1,
+   "trigger_level_exists": true,
+   "trigger_state": "APPROACHING",
+   "trigger_type": "PIVOT_BREAKOUT_TRIGGER"
+  },
+  "research_action_policy_version": "v2",
+  "research_action_posture": "AVOID",
+  "research_stance": "WAIT_FOR_CONFIRMATION",
+  "research_stance_readiness": "RESEARCH_CONDITIONAL",
+  "sector": "QUALIFIED_CLASSIFICATION|QUALIFIED_ENTITY_CLASS|corporate",
+  "setup_tags": [
+   "RANGE_EXPANSION",
+   "RELATIVE_STRENGTH_LAGGARD",
+   "TECHNICAL_DETERIORATION"
+  ],
+  "shareholder_economics_context": {
+   "authority_effect": "NONE",
+   "claims": [],
+   "context_identity": "shareholder_economics_context/v1:370aed0ea989f74a243f67e0889fab7a6dedf92050efef4a0f18b423d7f5d5b1",
+   "contract_version": "shareholder_economics_context/v1",
+   "coverage_kind": "REAL_RETAINED_INPUT",
+   "current_outstanding_shares": null,
+   "cutoff": "2026-11-09T15:00:00+07:00",
+   "explanations": [],
+   "historical_pit_eligible": false,
+   "is_actionable": false,
+   "limitations": [
+    "CLAIM_LOCAL_QUALIFICATION_NOT_GLOBAL_ISSUER_VERDICT",
+    "NO_VALUATION_OR_FACTOR_AUTHORITY",
+    "SOURCE_DATES_AND_KNOWLEDGE_TIMES_REMAIN_DISTINCT",
+    "TECHNICAL_AND_POSTURE_UNCHANGED"
+   ],
+   "price_adjustment_factor": null,
+   "prohibited_uses": [
+    "VALUATION_DENOMINATOR",
+    "PRICE_ADJUSTMENT_FACTOR",
+    "EPS_REPLACEMENT",
+    "PIT",
+    "POSTURE_OR_RISK_VETO",
+    "TRADING_SIGNAL",
+    "SIZING",
+    "SOURCE_PROMOTION"
+   ],
+   "prospective_outstanding_shares": null,
+   "rejected": [],
+   "share_basis_context": {
+    "authority": "provider_reported_lagged",
+    "blocked_reasons": [
+     "CURRENT_COMMON_OUTSTANDING_COVERAGE_NOT_PROVEN_THROUGH_PRICE_SESSION",
+     "observation predates the session; no ledger proves the absence of a share-changing event in between"
+    ],
+    "interpretation": "EXISTING_SHARE_VERDICT_ONLY_NOT_NEW_CURRENT_OUTSTANDING_AUTHORITY",
+    "observation_date": "2026-08-14",
+    "share_concept": "ISSUED_SHARES",
+    "status": "PROVIDER_REPORTED_LAGGED"
+   },
+   "share_capital_research": {
+    "continuity_authority": "UNCHANGED_EXISTING_SHARE_OWNER",
+    "denominator_risks": [
+     {
+      "code": "SHARE_DEFINITION_SCOPE_AND_DATE_MUST_MATCH",
+      "text": "Issued, outstanding, treasury, listed, tradeable, weighted EPS and diluted EPS are separate bases. Parent legal shares and consolidated treasury treatment may both be valid without being interchangeable."
+     },
+     {
+      "code": "STRICT_PER_SHARE_COMPARISON_BLOCKED",
+      "text": "A dated count or bonus-restated EPS cannot supply a current valuation denominator. Missing ex-date, executed lifecycle or coverage leaves price/share continuity UNKNOWN."
+     }
+    ],
+    "endpoint_changes": [],
+    "event_lifecycles": [],
+    "planned_executed_variances": [],
+    "share_observations": [],
+    "strict_per_share_use": "BLOCKED_RESEARCH_ONLY"
+   },
+   "status": "UNKNOWN",
+   "ticker": "PAN",
+   "unavailable_dimensions": [
+    "CONTRACTUAL_OBLIGATION",
+    "PROVISION",
+    "PROVISION_CASH_FLOW_ADJUSTMENT",
+    "PROFIT",
+    "OPERATING_CASH_FLOW",
+    "MATURED_UNPAID_DEBT",
+    "ISSUANCE",
+    "SUBSCRIPTION_RIGHTS",
+    "ISSUED_SHARES",
+    "TOTAL_SHARES",
+    "OUTSTANDING_SHARES",
+    "TREASURY_SHARES",
+    "VOTING_SHARES",
+    "LISTED_SHARES",
+    "TRADABLE_SHARES",
+    "EPS_WEIGHTED_AVERAGE_SHARES",
+    "DILUTED_EPS_SHARES",
+    "SHARE_REPURCHASE",
+    "SHARE_CANCELLATION",
+    "CHARTER_CAPITAL",
+    "FINANCING_PROCEEDS",
+    "DEBT_REPAYMENT"
+   ],
+   "vote_effect": "NONE"
+  },
+  "signal_velocity": {
+   "acceleration_state": null,
+   "continuity_state": null,
+   "contract_version": "multi_session_signal_velocity/v1.2",
+   "contradicting_axes": [],
+   "evidence_quality": "INSUFFICIENT_RETAINED_EVIDENCE",
+   "independent_supporting_axes": [],
+   "is_actionable": false,
+   "latest_transition": null,
+   "limitations": [
+    "RETAINED_EVIDENCE_TRAJECTORY_NOT_A_PRICE_FORECAST",
+    "NO_SCORE_OR_PROBABILITY",
+    "CATEGORICAL_ORDINAL_RANKS_NOT_CARDINAL_ACCELERATION"
+   ],
+   "overall_transition_state": "INSUFFICIENT_EVIDENCE",
+   "persistence": null,
+   "reason_code": "SIGNAL_VELOCITY_ARTIFACT_NOT_SUPPLIED_OR_UNSUPPORTED_CONTRACT",
+   "retained_session_span": null,
+   "source_artifact_identity": null,
+   "source_record_session": null,
+   "valid_observation_count": 0
+  },
+  "tactical": {
+   "entry_action": "WAIT",
+   "freshness_status": "CURRENT",
+   "primary_entry_state": "SELLING_PRESSURE_EASING",
+   "setup_tags": [
+    "RANGE_EXPANSION",
+    "RELATIVE_STRENGTH_LAGGARD",
+    "TECHNICAL_DETERIORATION"
+   ],
+   "source_session": "2026-11-09"
+  },
+  "ticker": "PAN",
+  "valuation": {
+   "earnings_state": null,
+   "entity_class": "corporate",
+   "freshness_status": "CURRENT",
+   "market_cap_semantic_guard_applied": false,
+   "market_cap_size_context": {
+    "peer_count": 745,
+    "percentile": 0.8355704697986577,
+    "status": "READY_RESEARCH_ONLY"
+   },
+   "method_diagnostics": {
+    "EV/EBITDA": {
+     "availability_state": "NOT_AVAILABLE",
+     "blocker_reason_codes": [
+      "EXACT_EBITDA_COMPARABILITY_NOT_RETAINED"
+     ],
+     "peer_relative": {
+      "methodology": "same_method_same_basis_peer_cohort/v1",
+      "minimum_peer_count": 5,
+      "peer_count": 0,
+      "peer_median": null,
+      "percentile": null,
+      "premium_or_discount_to_peer_median": null,
+      "reason": "INPUT_BLOCKED",
+      "status": "NOT_COMPARABLE"
+     },
+     "period_basis": "EXISTING_CURRENT_VALUATION_METHOD",
+     "share_basis": null,
+     "status": "INPUT_BLOCKED",
+     "value": null
+    },
+    "EV/EBITDA_CALC_READY": {
+     "availability_state": "NOT_AVAILABLE",
+     "blocker_reason_codes": [
+      "ebitda_not_ready"
+     ],
+     "peer_relative": {
+      "methodology": "same_method_same_basis_peer_cohort/v1",
+      "minimum_peer_count": 5,
+      "peer_count": 0,
+      "peer_median": null,
+      "percentile": null,
+      "premium_or_discount_to_peer_median": null,
+      "reason": "INPUT_BLOCKED",
+      "status": "NOT_COMPARABLE"
+     },
+     "period_basis": "2026-Q1",
+     "share_basis": null,
+     "status": "INPUT_BLOCKED",
+     "value": null
+    },
+    "EV/Sales": {
+     "availability_state": "AVAILABLE_QUALIFIED",
+     "blocker_reason_codes": [],
+     "peer_relative": {
+      "basis": {
+       "compatibility_class": null,
+       "entity_class": "corporate",
+       "method_id": "EV/Sales",
+       "period_basis": "2024",
+       "share_basis": "CURRENT_SHARE_RESEARCH_PROXY",
+       "ttm_method": null
+      },
+      "methodology": "same_method_same_basis_peer_cohort/v1",
+      "minimum_peer_count": 5,
+      "peer_count": 5,
+      "peer_median": 1.8186830713063822,
+      "percentile": 0.1,
+      "percentile_formula": "(below + 0.5 * equal) / n",
+      "premium_or_discount_to_peer_median": -0.5573346057053634,
+      "status": "READY_RESEARCH_ONLY"
+     },
+     "period_basis": "2024",
+     "share_basis": "CURRENT_SHARE_RESEARCH_PROXY",
+     "status": "RESEARCH_USABLE",
+     "value": 0.8050680588568203
+    },
+    "P/B": {
+     "availability_state": "AVAILABLE_QUALIFIED",
+     "blocker_reason_codes": [],
+     "peer_relative": {
+      "basis": {
+       "compatibility_class": null,
+       "entity_class": "corporate",
+       "method_id": "P/B",
+       "period_basis": "2024",
+       "share_basis": "CURRENT_SHARE_RESEARCH_PROXY",
+       "ttm_method": null
+      },
+      "methodology": "same_method_same_basis_peer_cohort/v1",
+      "minimum_peer_count": 5,
+      "peer_count": 5,
+      "peer_median": 1.1101718144311974,
+      "percentile": 0.1,
+      "percentile_formula": "(below + 0.5 * equal) / n",
+      "premium_or_discount_to_peer_median": -0.5641801842355099,
+      "status": "READY_RESEARCH_ONLY"
+     },
+     "period_basis": "2024",
+     "share_basis": "CURRENT_SHARE_RESEARCH_PROXY",
+     "status": "RESEARCH_USABLE",
+     "value": 0.4838348756323342
+    },
+    "P/B_CURRENT_RESEARCH": {
+     "availability_state": "AVAILABLE_QUALIFIED",
+     "blocker_reason_codes": [],
+     "book_period": "2026-Q1",
+     "book_period_lag_quarters": 3,
+     "common_shareholder_comparison": {
+      "cheapness_claim": "NOT_SUPPORTED",
+      "common_shareholder_pb": {
+       "knowledge_available_at": null,
+       "period": null,
+       "reason_codes": [
+        "PARENT_EQUITY_NOT_ADMITTED"
+       ],
+       "scope": null,
+       "status": "UNAVAILABLE",
+       "value": null
+      },
+      "contract_version": "common_shareholder_book_comparison/v1",
+      "earnings_quality": {
+       "normalized_eps": "NOT_COMPUTED",
+       "reason": "PRETAX_NONRECURRING_INCOME_IS_NOT_SUBTRACTED_FROM_NET_INCOME"
+      },
+      "label": "COMMON_SHAREHOLDER_RESEARCH",
+      "periods_comparable": false,
+      "proxy_pb": {
+       "book_period": "2026-Q1",
+       "denominator_vnd": null,
+       "equity_definition": "TOTAL_OWNERS_EQUITY_AS_REPORTED_INCLUDES_NCI_WHERE_PRESENT",
+       "numerator_vnd": null,
+       "scope": "CONSOLIDATED_TOTAL_EQUITY_INCLUDES_NCI_WHEN_PRESENT",
+       "status": "VERIFIED_DISPLAYED_MULTIPLE",
+       "value": 0.4449439078964548
+      }
+     },
+     "equity_definition": "TOTAL_OWNERS_EQUITY_AS_REPORTED_INCLUDES_NCI_WHERE_PRESENT",
+     "equity_monetary_basis": {
+      "basis_source": "provider_financial_monetary_basis_verdict/v1:d6bc37cab1c835d5d34dd2c4e6321d01994eca2601131de61473fa22fbc6492c:VCI:balance_sheet",
+      "basis_status": "RESEARCH_CONTRACT_QUALIFIED",
+      "contract_version": "monetary_basis_contract/v1",
+      "currency": "VND",
+      "multiplier_to_vnd": 1,
+      "native_scale": "units",
+      "normalized_unit": "VND"
+     },
+     "limitations": [
+      "CURRENT_RESEARCH_ONLY",
+      "NOT_AUTHORITATIVE",
+      "NOT_FOR_TARGET_PRICE",
+      "NCI_NOT_DEDUCTED",
+      "SHARE_BASIS=CURRENT_SHARE_RESEARCH_PROXY",
+      "PROVIDER_EQUITY_VALUE_NOT_INDEPENDENTLY_RECONCILED"
+     ],
+     "market_cap_monetary_basis": {
+      "basis_source": "price_representation='DNSE:ohlc_1D:VN_LISTED_EQUITY:kvnd_to_vnd/v1'; share_basis='ISSUED_SHARES'; share_authority='provider_reported_lagged'; share_unit='shares'",
+      "basis_status": "RESEARCH_CONTRACT_QUALIFIED",
+      "contract_version": "monetary_basis_contract/v1",
+      "currency": "VND",
+      "multiplier_to_vnd": 1,
+      "native_scale": "units",
+      "normalized_unit": "VND"
+     },
+     "peer_relative": {
+      "basis": {
+       "compatibility_class": "VCI_TOTAL_OWNERS_EQUITY_CURRENT_RESEARCH:consolidated",
+       "entity_class": "corporate",
+       "method_id": "P/B_CURRENT_RESEARCH",
+       "period_basis": "POINT_IN_TIME_BALANCE_SHEET",
+       "share_basis": "CURRENT_SHARE_RESEARCH_PROXY",
+       "ttm_method": null
+      },
+      "methodology": "same_method_same_basis_peer_cohort/v1",
+      "minimum_peer_count": 5,
+      "peer_count": 337,
+      "peer_median": 0.7929689344303588,
+      "percentile": 0.22106824925816024,
+      "percentile_formula": "(below + 0.5 * equal) / n",
+      "premium_or_discount_to_peer_median": -0.4388886013345693,
+      "status": "READY_RESEARCH_ONLY"
+     },
+     "period_basis": "POINT_IN_TIME_BALANCE_SHEET",
+     "share_basis": "CURRENT_SHARE_RESEARCH_PROXY",
+     "statement_scope": "consolidated",
+     "status": "RESEARCH_USABLE",
+     "value": 0.4449439078964548
+    },
+    "P/E": {
+     "availability_state": "AVAILABLE_REFERENCE_ONLY",
+     "blocker_reason_codes": [],
+     "peer_relative": {
+      "methodology": "same_method_same_basis_peer_cohort/v1",
+      "minimum_peer_count": 5,
+      "peer_count": 4,
+      "peer_median": null,
+      "percentile": null,
+      "percentile_formula": "(below + 0.5 * equal) / n",
+      "premium_or_discount_to_peer_median": null,
+      "reason": "BELOW_MIN_COHORT_MEMBERS",
+      "status": "INSUFFICIENT_PEER_COUNT"
+     },
+     "period_basis": "2024",
+     "share_basis": "CURRENT_SHARE_RESEARCH_PROXY",
+     "status": "RESEARCH_USABLE",
+     "value": 3.672888593009146
+    },
+    "P/E_TTM": {
+     "availability_state": "NOT_AVAILABLE",
+     "blocker_reason_codes": [
+      "TTM_INPUT_UNAVAILABLE"
+     ],
+     "market_cap_monetary_basis": {
+      "basis_source": "price_representation='DNSE:ohlc_1D:VN_LISTED_EQUITY:kvnd_to_vnd/v1'; share_basis='ISSUED_SHARES'; share_authority='provider_reported_lagged'; share_unit='shares'",
+      "basis_status": "RESEARCH_CONTRACT_QUALIFIED",
+      "contract_version": "monetary_basis_contract/v1",
+      "currency": "VND",
+      "multiplier_to_vnd": 1,
+      "native_scale": "units",
+      "normalized_unit": "VND"
+     },
+     "peer_relative": {
+      "methodology": "same_method_same_basis_peer_cohort/v1",
+      "minimum_peer_count": 5,
+      "peer_count": 0,
+      "peer_median": null,
+      "percentile": null,
+      "premium_or_discount_to_peer_median": null,
+      "reason": "INPUT_BLOCKED",
+      "status": "NOT_COMPARABLE"
+     },
+     "period_basis": "TTM_SUM",
+     "share_basis": "CURRENT_SHARE_RESEARCH_PROXY",
+     "status": "INPUT_BLOCKED",
+     "ttm_input_source": "NO_TTM",
+     "ttm_monetary_basis": {
+      "basis_source": "financial_analysis_engine_v2 feature='None' provider=None",
+      "basis_status": "UNKNOWN",
+      "contract_version": "monetary_basis_contract/v1",
+      "currency": null,
+      "multiplier_to_vnd": null,
+      "native_scale": null,
+      "normalized_unit": null
+     },
+     "ttm_periods": [],
+     "ttm_source_conflict": false,
+     "value": null
+    },
+    "P/S": {
+     "availability_state": "AVAILABLE_QUALIFIED",
+     "blocker_reason_codes": [],
+     "peer_relative": {
+      "basis": {
+       "compatibility_class": null,
+       "entity_class": "corporate",
+       "method_id": "P/S",
+       "period_basis": "2024",
+       "share_basis": "CURRENT_SHARE_RESEARCH_PROXY",
+       "ttm_method": null
+      },
+      "methodology": "same_method_same_basis_peer_cohort/v1",
+      "minimum_peer_count": 5,
+      "peer_count": 5,
+      "peer_median": 1.2708063517390167,
+      "percentile": 0.1,
+      "percentile_formula": "(below + 0.5 * equal) / n",
+      "premium_or_discount_to_peer_median": -0.791549832536675,
+      "status": "READY_RESEARCH_ONLY"
+     },
+     "period_basis": "2024",
+     "share_basis": "CURRENT_SHARE_RESEARCH_PROXY",
+     "status": "RESEARCH_USABLE",
+     "value": 0.26489979683345505
+    },
+    "P/S_TTM": {
+     "availability_state": "NOT_AVAILABLE",
+     "blocker_reason_codes": [
+      "TTM_INPUT_UNAVAILABLE"
+     ],
+     "market_cap_monetary_basis": {
+      "basis_source": "price_representation='DNSE:ohlc_1D:VN_LISTED_EQUITY:kvnd_to_vnd/v1'; share_basis='ISSUED_SHARES'; share_authority='provider_reported_lagged'; share_unit='shares'",
+      "basis_status": "RESEARCH_CONTRACT_QUALIFIED",
+      "contract_version": "monetary_basis_contract/v1",
+      "currency": "VND",
+      "multiplier_to_vnd": 1,
+      "native_scale": "units",
+      "normalized_unit": "VND"
+     },
+     "peer_relative": {
+      "methodology": "same_method_same_basis_peer_cohort/v1",
+      "minimum_peer_count": 5,
+      "peer_count": 0,
+      "peer_median": null,
+      "percentile": null,
+      "premium_or_discount_to_peer_median": null,
+      "reason": "INPUT_BLOCKED",
+      "status": "NOT_COMPARABLE"
+     },
+     "period_basis": "TTM_SUM",
+     "share_basis": "CURRENT_SHARE_RESEARCH_PROXY",
+     "status": "INPUT_BLOCKED",
+     "ttm_input_source": "NO_TTM",
+     "ttm_monetary_basis": {
+      "basis_source": "financial_analysis_engine_v2 feature='None' provider=None",
+      "basis_status": "UNKNOWN",
+      "contract_version": "monetary_basis_contract/v1",
+      "currency": null,
+      "multiplier_to_vnd": null,
+      "native_scale": null,
+      "normalized_unit": null
+     },
+     "ttm_periods": [],
+     "ttm_source_conflict": false,
+     "value": null
+    },
+    "market_cap": {
+     "availability_state": "AVAILABLE_QUALIFIED",
+     "blocker_reason_codes": [],
+     "monetary_basis": {
+      "basis_source": "price_representation='DNSE:ohlc_1D:VN_LISTED_EQUITY:kvnd_to_vnd/v1'; share_basis='ISSUED_SHARES'; share_authority='provider_reported_lagged'; share_unit='shares'",
+      "basis_status": "RESEARCH_CONTRACT_QUALIFIED",
+      "contract_version": "monetary_basis_contract/v1",
+      "currency": "VND",
+      "multiplier_to_vnd": 1,
+      "native_scale": "units",
+      "normalized_unit": "VND"
+     },
+     "peer_relative": {
+      "basis": {
+       "compatibility_class": null,
+       "entity_class": "corporate",
+       "method_id": "market_cap",
+       "period_basis": "EXISTING_CURRENT_VALUATION_METHOD",
+       "share_basis": "CURRENT_SHARE_RESEARCH_PROXY",
+       "ttm_method": null
+      },
+      "methodology": "same_method_same_basis_peer_cohort/v1",
+      "minimum_peer_count": 5,
+      "peer_count": 745,
+      "peer_median": 611246443200,
+      "percentile": 0.8355704697986577,
+      "percentile_formula": "(below + 0.5 * equal) / n",
+      "premium_or_discount_to_peer_median": 6.012737965654636,
+      "status": "READY_RESEARCH_ONLY"
+     },
+     "period_basis": "EXISTING_CURRENT_VALUATION_METHOD",
+     "share_basis": "CURRENT_SHARE_RESEARCH_PROXY",
+     "status": "RESEARCH_USABLE",
+     "value": 4286511138600
+    }
+   },
+   "raw_upstream_relative_research_state": "ATTRACTIVE_RELATIVE_RESEARCH",
+   "readiness": "READY_RESEARCH_PROXY",
+   "relative_research_state": "ATTRACTIVE_RELATIVE_RESEARCH",
+   "research_readiness": {
+    "intrinsic_value": {
+     "missing": "An admitted intrinsic method and its qualified inputs. No residual-income or target price is created here.",
+     "readiness": "BLOCKED",
+     "reason_code": "INTRINSIC_VALUE_METHOD_NOT_ADMITTED"
+    },
+    "methods": {
+     "EV/EBITDA": {
+      "blocker_reason_codes": [
+       "EXACT_EBITDA_COMPARABILITY_NOT_RETAINED"
+      ],
+      "period_basis": "EXISTING_CURRENT_VALUATION_METHOD",
+      "readiness": "BLOCKED",
+      "status": "INPUT_BLOCKED"
+     },
+     "EV/EBITDA_CALC_READY": {
+      "blocker_reason_codes": [
+       "ebitda_not_ready"
+      ],
+      "period_basis": "2026-Q1",
+      "readiness": "BLOCKED",
+      "status": "INPUT_BLOCKED"
+     },
+     "EV/Sales": {
+      "blocker_reason_codes": [],
+      "period_basis": "2024",
+      "readiness": "RESEARCH_PROXY",
+      "status": "RESEARCH_USABLE"
+     },
+     "P/B": {
+      "blocker_reason_codes": [],
+      "period_basis": "2024",
+      "readiness": "RESEARCH_PROXY",
+      "status": "RESEARCH_USABLE"
+     },
+     "P/B_CURRENT_RESEARCH": {
+      "blocker_reason_codes": [],
+      "period_basis": "POINT_IN_TIME_BALANCE_SHEET",
+      "readiness": "RESEARCH_PROXY",
+      "status": "RESEARCH_USABLE"
+     },
+     "P/E": {
+      "blocker_reason_codes": [],
+      "period_basis": "2024",
+      "readiness": "RESEARCH_PROXY",
+      "status": "RESEARCH_USABLE"
+     },
+     "P/E_TTM": {
+      "blocker_reason_codes": [
+       "TTM_INPUT_UNAVAILABLE"
+      ],
+      "period_basis": "TTM_SUM",
+      "readiness": "BLOCKED",
+      "status": "INPUT_BLOCKED"
+     },
+     "P/S": {
+      "blocker_reason_codes": [],
+      "period_basis": "2024",
+      "readiness": "RESEARCH_PROXY",
+      "status": "RESEARCH_USABLE"
+     },
+     "P/S_TTM": {
+      "blocker_reason_codes": [
+       "TTM_INPUT_UNAVAILABLE"
+      ],
+      "period_basis": "TTM_SUM",
+      "readiness": "BLOCKED",
+      "status": "INPUT_BLOCKED"
+     },
+     "market_cap": {
+      "blocker_reason_codes": [],
+      "period_basis": "EXISTING_CURRENT_VALUATION_METHOD",
+      "readiness": "RESEARCH_PROXY",
+      "status": "RESEARCH_USABLE"
+     }
+    },
+    "normalized_earnings": {
+     "missing": "A qualified recurring-earnings series and its period, scope, and publication time.",
+     "readiness": "BLOCKED",
+     "reason_code": "NORMALIZED_EARNINGS_CONTRACT_NOT_ADMITTED"
+    },
+    "official_target_price_status": "NOT_EMITTED",
+    "probability_status": "NOT_EMITTED",
+    "share_or_corporate_action_blockers": []
+   },
+   "share_basis": "CURRENT_SHARE_RESEARCH_PROXY",
+   "source_session": "2026-11-09",
+   "supporting_methods": [
+    {
+     "basis": {
+      "compatibility_class": null,
+      "entity_class": "corporate",
+      "method_id": "EV/Sales",
+      "period_basis": "2024",
+      "share_basis": "CURRENT_SHARE_RESEARCH_PROXY",
+      "ttm_method": null
+     },
+     "method": "EV/Sales",
+     "methodology": "same_method_same_basis_peer_cohort/v1",
+     "peer_count": 5,
+     "peer_median": 1.8186830713063822,
+     "percentile": 0.1,
+     "premium_or_discount_to_peer_median": -0.5573346057053634
+    },
+    {
+     "basis": {
+      "compatibility_class": null,
+      "entity_class": "corporate",
+      "method_id": "P/B",
+      "period_basis": "2024",
+      "share_basis": "CURRENT_SHARE_RESEARCH_PROXY",
+      "ttm_method": null
+     },
+     "method": "P/B",
+     "methodology": "same_method_same_basis_peer_cohort/v1",
+     "peer_count": 5,
+     "peer_median": 1.1101718144311974,
+     "percentile": 0.1,
+     "premium_or_discount_to_peer_median": -0.5641801842355099
+    },
+    {
+     "basis": {
+      "compatibility_class": "VCI_TOTAL_OWNERS_EQUITY_CURRENT_RESEARCH:consolidated",
+      "entity_class": "corporate",
+      "method_id": "P/B_CURRENT_RESEARCH",
+      "period_basis": "POINT_IN_TIME_BALANCE_SHEET",
+      "share_basis": "CURRENT_SHARE_RESEARCH_PROXY",
+      "ttm_method": null
+     },
+     "method": "P/B_CURRENT_RESEARCH",
+     "methodology": "same_method_same_basis_peer_cohort/v1",
+     "peer_count": 337,
+     "peer_median": 0.7929689344303588,
+     "percentile": 0.22106824925816024,
+     "premium_or_discount_to_peer_median": -0.4388886013345693
+    },
+    {
+     "basis": {
+      "compatibility_class": null,
+      "entity_class": "corporate",
+      "method_id": "P/S",
+      "period_basis": "2024",
+      "share_basis": "CURRENT_SHARE_RESEARCH_PROXY",
+      "ttm_method": null
+     },
+     "method": "P/S",
+     "methodology": "same_method_same_basis_peer_cohort/v1",
+     "peer_count": 5,
+     "peer_median": 1.2708063517390167,
+     "percentile": 0.1,
+     "premium_or_discount_to_peer_median": -0.791549832536675
+    }
+   ],
+   "usable_relative_method_count": 5,
+   "valuation_summary": {
+    "available_method_count": 5,
+    "display_note": "5 valuation method(s) available for research. Peer-relative valuation qualified.",
+    "missing_method_count": 4,
+    "not_dcf_or_target_price": true,
+    "not_intrinsic_fair_value": true,
+    "qualified_relative_method_count": 4,
+    "reference_only_method_count": 1,
+    "summary_reason_codes": [
+     "EXACT_EBITDA_COMPARABILITY_NOT_RETAINED",
+     "TTM_INPUT_UNAVAILABLE",
+     "ebitda_not_ready"
+    ],
+    "valuation_display_state": "PEER_RELATIVE_QUALIFIED"
+   }
+  },
+  "why": {
+   "catalyst_evidence": {
+    "event_count": 0,
+    "freshness_status": "CURRENT",
+    "pending_watch_items": [],
+    "qualified_current_catalysts": [],
+    "status": "UNAVAILABLE"
+   },
+   "counterbalancing_context": [],
+   "deterministic_reasons": [
+    "TACTICAL_STATE_AWAITING_CONFIRMATION",
+    "TECHNICAL_DETERIORATION",
+    "ATTRACTIVE_RELATIVE_RESEARCH"
+   ],
+   "financial_analysis": {
+    "compact": {
+     "analysis_family": "INDUSTRIAL_FINANCIAL_ANALYSIS",
+     "as_of_financial_period": "2026-Q1",
+     "balance_sheet_state": "STRENGTHENING",
+     "bank_asset_quality_state": "NOT_APPLICABLE",
+     "bank_efficiency_state": "NOT_APPLICABLE",
+     "bank_funding_state": "NOT_APPLICABLE",
+     "brokerage_mix_trajectory_state": "NOT_APPLICABLE",
+     "capital_efficiency_context": {
+      "same_provider_roa_avg_assets": {
+       "fitness": "BLOCKED_BY_EVIDENCE",
+       "method": "blocked_by_evidence/v2",
+       "period_identity": [],
+       "reason_codes": [
+        "MISSING_SAME_PROVIDER_CONSECUTIVE_PERIOD_BOUNDARY_BALANCES"
+       ],
+       "value": null,
+       "warnings": []
+      },
+      "same_provider_roa_eop_proxy": {
+       "fitness": "BLOCKED_BY_EVIDENCE",
+       "method": "blocked_by_evidence/v2",
+       "period_identity": [],
+       "reason_codes": [
+        "MISSING_SAME_PROVIDER_FLOW_AND_ENDING_BALANCE_SHEET_INPUT"
+       ],
+       "value": null,
+       "warnings": []
+      },
+      "same_provider_roe_avg_equity": {
+       "fitness": "BLOCKED_BY_EVIDENCE",
+       "method": "blocked_by_evidence/v2",
+       "period_identity": [],
+       "reason_codes": [
+        "MISSING_SAME_PROVIDER_CONSECUTIVE_PERIOD_BOUNDARY_BALANCES"
+       ],
+       "value": null,
+       "warnings": []
+      },
+      "same_provider_roe_eop_proxy": {
+       "fitness": "BLOCKED_BY_EVIDENCE",
+       "method": "blocked_by_evidence/v2",
+       "period_identity": [],
+       "reason_codes": [
+        "MISSING_SAME_PROVIDER_FLOW_AND_ENDING_BALANCE_SHEET_INPUT"
+       ],
+       "value": null,
+       "warnings": []
+      }
+     },
+     "capital_efficiency_state": "UNAVAILABLE",
+     "cash_conversion_state": "UNAVAILABLE",
+     "conflicting_evidence": [],
+     "contract_version": "financial_analysis_compact/v1",
+     "current_ratio_trajectory_state": "CURRENT_RATIO_IMPROVING",
+     "current_research_ready": true,
+     "deterministic_positive_evidence": [
+      "PAN: equity/assets strengthening",
+      "PAN: positive net working capital",
+      "PAN: leverage improving alongside working capital improving"
+     ],
+     "earnings_turnaround_state": "UNAVAILABLE",
+     "feature_fitness": {
+      "assets_yoy": {
+       "as_of_period": "2026-Q1",
+       "fitness": "READY",
+       "growth_basis": "POINT_IN_TIME_YOY",
+       "reason_codes": [],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "total_assets_yoy",
+        "method": "same_provider_point_in_time_yoy/v2",
+        "period_identity": [
+         "2025-Q1",
+         "2026-Q1"
+        ],
+        "period_semantics": [
+         "POINT_IN_TIME_BALANCE_SHEET"
+        ],
+        "scale": null,
+        "scope": [
+         "consolidated"
+        ],
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [
+         {
+          "fact_id": "e44507dadcbf205955bf400dd042cd793d79549e491278182b2ffe68860d6f41",
+          "provider": "VCI",
+          "source_observation_ids": null,
+          "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+         },
+         {
+          "fact_id": "240d6f9f21f3e8e1f8b40ae26bd7187a82cd62081c1d7b6909affc2046f9b72b",
+          "provider": "VCI",
+          "source_observation_ids": null,
+          "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+         }
+        ],
+        "source_tier": "PERIOD_SEMANTIC_FACTS",
+        "value": -0.411926023244646,
+        "warnings": []
+       }
+      },
+      "bank_cir": {
+       "fitness": "NOT_APPLICABLE",
+       "reason_codes": [
+        "ISSUER_NOT_BANK"
+       ],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "bank_cir",
+        "method": "bank_entity_applicability/v1",
+        "period_identity": [],
+        "period_semantics": null,
+        "scale": null,
+        "scope": null,
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [],
+        "source_tier": "PERIOD_SEMANTIC_FACTS",
+        "value": null,
+        "warnings": []
+       }
+      },
+      "bank_ldr": {
+       "fitness": "NOT_APPLICABLE",
+       "reason_codes": [
+        "ISSUER_NOT_BANK"
+       ],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "bank_ldr",
+        "method": "bank_entity_applicability/v1",
+        "period_identity": [],
+        "period_semantics": null,
+        "scale": null,
+        "scope": null,
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [],
+        "source_tier": "PERIOD_SEMANTIC_FACTS",
+        "value": null,
+        "warnings": []
+       }
+      },
+      "bank_loan_growth": {
+       "fitness": "NOT_APPLICABLE",
+       "reason_codes": [
+        "ISSUER_NOT_BANK"
+       ],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "bank_loan_growth",
+        "method": "bank_entity_applicability/v1",
+        "period_identity": [],
+        "period_semantics": null,
+        "scale": null,
+        "scope": null,
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [],
+        "source_tier": "PERIOD_SEMANTIC_FACTS",
+        "value": null,
+        "warnings": []
+       }
+      },
+      "bank_nim_provider_proxy": {
+       "fitness": "NOT_APPLICABLE",
+       "reason_codes": [
+        "ISSUER_NOT_BANK"
+       ],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "bank_nim_provider_proxy",
+        "method": "bank_entity_applicability/v1",
+        "period_identity": [],
+        "period_semantics": null,
+        "scale": null,
+        "scope": null,
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [],
+        "source_tier": "PERIOD_SEMANTIC_FACTS",
+        "value": null,
+        "warnings": []
+       }
+      },
+      "bank_npl_ratio": {
+       "fitness": "NOT_APPLICABLE",
+       "reason_codes": [
+        "ISSUER_NOT_BANK"
+       ],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "bank_npl_ratio",
+        "method": "bank_entity_applicability/v1",
+        "period_identity": [],
+        "period_semantics": null,
+        "scale": null,
+        "scope": null,
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [],
+        "source_tier": "PERIOD_SEMANTIC_FACTS",
+        "value": null,
+        "warnings": []
+       }
+      },
+      "bank_provision_coverage": {
+       "fitness": "NOT_APPLICABLE",
+       "reason_codes": [
+        "ISSUER_NOT_BANK"
+       ],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "bank_provision_coverage",
+        "method": "bank_entity_applicability/v1",
+        "period_identity": [],
+        "period_semantics": null,
+        "scale": null,
+        "scope": null,
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [],
+        "source_tier": "PERIOD_SEMANTIC_FACTS",
+        "value": null,
+        "warnings": []
+       }
+      },
+      "brokerage_revenue_mix": {
+       "fitness": "NOT_APPLICABLE",
+       "reason_codes": [
+        "ISSUER_NOT_SECURITIES"
+       ],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "brokerage_revenue_mix",
+        "method": "securities_entity_applicability/v1",
+        "period_identity": [],
+        "period_semantics": null,
+        "scale": null,
+        "scope": null,
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [],
+        "source_tier": "PERIOD_SEMANTIC_FACTS",
+        "value": null,
+        "warnings": []
+       }
+      },
+      "cash_to_assets": {
+       "as_of_period": "2026-Q1",
+       "fitness": "READY",
+       "reason_codes": [],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "cash_to_assets",
+        "method": "same_provider_same_period_cash_to_assets/v2",
+        "period_identity": [
+         "2026-Q1",
+         "2026-Q1"
+        ],
+        "period_semantics": [
+         "POINT_IN_TIME_BALANCE_SHEET"
+        ],
+        "scale": null,
+        "scope": [
+         "consolidated"
+        ],
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [
+         {
+          "fact_id": "3383377475bd27bde5e9b27d31d10828878b4b8664d5c12f1f2d8b3e9859c6ef",
+          "provider": "VCI",
+          "source_observation_ids": null,
+          "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+         },
+         {
+          "fact_id": "240d6f9f21f3e8e1f8b40ae26bd7187a82cd62081c1d7b6909affc2046f9b72b",
+          "provider": "VCI",
+          "source_observation_ids": null,
+          "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+         }
+        ],
+        "source_tier": "PERIOD_SEMANTIC_FACTS",
+        "value": 0.2397677154204011,
+        "warnings": []
+       }
+      },
+      "cash_yoy": {
+       "as_of_period": "2026-Q1",
+       "fitness": "READY",
+       "growth_basis": "POINT_IN_TIME_YOY",
+       "reason_codes": [],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "cash_and_cash_equivalents_yoy",
+        "method": "same_provider_point_in_time_yoy/v2",
+        "period_identity": [
+         "2025-Q1",
+         "2026-Q1"
+        ],
+        "period_semantics": [
+         "POINT_IN_TIME_BALANCE_SHEET"
+        ],
+        "scale": null,
+        "scope": [
+         "consolidated"
+        ],
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [
+         {
+          "fact_id": "a39f900598d3b6d3509a7a6ce25560c1f2a7dfb5d2d99c47ccd363bb7cacfb35",
+          "provider": "VCI",
+          "source_observation_ids": null,
+          "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+         },
+         {
+          "fact_id": "3383377475bd27bde5e9b27d31d10828878b4b8664d5c12f1f2d8b3e9859c6ef",
+          "provider": "VCI",
+          "source_observation_ids": null,
+          "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+         }
+        ],
+        "source_tier": "PERIOD_SEMANTIC_FACTS",
+        "value": 0.6210855852965937,
+        "warnings": []
+       }
+      },
+      "cfo_to_net_income": {
+       "fitness": "BLOCKED_BY_EVIDENCE",
+       "reason_codes": [
+        "MISSING_SAME_PROVIDER_CFO_AND_NET_INCOME"
+       ],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "cfo_to_net_income",
+        "method": "blocked_by_evidence/v2",
+        "period_identity": [],
+        "period_semantics": [],
+        "scale": null,
+        "scope": [],
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [],
+        "source_tier": "PERIOD_SEMANTIC_FACTS",
+        "value": null,
+        "warnings": []
+       }
+      },
+      "cfo_to_net_income_ttm": {
+       "fitness": "BLOCKED_BY_EVIDENCE",
+       "reason_codes": [
+        "MISSING_COMPATIBLE_TTM_INPUTS"
+       ],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "cfo_to_net_income_ttm",
+        "method": "blocked_by_evidence/v2",
+        "period_identity": [],
+        "period_semantics": [],
+        "scale": null,
+        "scope": [],
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [],
+        "source_tier": "ADVANCED_TTM_OR_STANDALONE",
+        "value": null,
+        "warnings": []
+       }
+      },
+      "current_ratio": {
+       "as_of_period": "2026-Q1",
+       "fitness": "READY",
+       "reason_codes": [],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "current_ratio",
+        "method": "same_provider_same_period_current_ratio/v2",
+        "period_identity": [
+         "2026-Q1",
+         "2026-Q1"
+        ],
+        "period_semantics": [
+         "POINT_IN_TIME_BALANCE_SHEET"
+        ],
+        "scale": null,
+        "scope": [
+         "consolidated"
+        ],
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [
+         {
+          "fact_id": "715f7bd4ff0b37751e194232a4922162f3f020499be0ed0fea042e37a9378508",
+          "provider": "VCI",
+          "source_observation_ids": null,
+          "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+         },
+         {
+          "fact_id": "7178020f28d3a4d844ff13be1e2c81fad780ae1226ddb6f1f8f39e380f17972f",
+          "provider": "VCI",
+          "source_observation_ids": null,
+          "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+         }
+        ],
+        "source_tier": "PERIOD_SEMANTIC_FACTS",
+        "value": 2.264685910121945,
+        "warnings": []
+       }
+      },
+      "current_ratio_direction": {
+       "as_of_period": "2026-Q1",
+       "fitness": "READY",
+       "growth_basis": "POINT_IN_TIME_YOY",
+       "reason_codes": [],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "current_ratio_direction",
+        "method": "same_provider_point_in_time_current_ratio_yoy/v2",
+        "period_identity": [
+         "2025-Q1",
+         "2025-Q1",
+         "2026-Q1",
+         "2026-Q1"
+        ],
+        "period_semantics": [
+         "POINT_IN_TIME_BALANCE_SHEET"
+        ],
+        "scale": null,
+        "scope": [
+         "consolidated"
+        ],
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [
+         {
+          "fact_id": "f9f3484c4d46cfb983f3b9aa37e752eb02ab817c8024c4c1b69b3c1c4cb7ecdd",
+          "provider": "VCI",
+          "source_observation_ids": null,
+          "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+         },
+         {
+          "fact_id": "e5b9e677441203026203f8c7442867221d679120abe18caf8e2913adf22bd004",
+          "provider": "VCI",
+          "source_observation_ids": null,
+          "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+         },
+         {
+          "fact_id": "715f7bd4ff0b37751e194232a4922162f3f020499be0ed0fea042e37a9378508",
+          "provider": "VCI",
+          "source_observation_ids": null,
+          "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+         },
+         {
+          "fact_id": "7178020f28d3a4d844ff13be1e2c81fad780ae1226ddb6f1f8f39e380f17972f",
+          "provider": "VCI",
+          "source_observation_ids": null,
+          "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+         }
+        ],
+        "source_tier": "PERIOD_SEMANTIC_FACTS",
+        "value": 1.0181677195604313,
+        "warnings": []
+       }
+      },
+      "debt_to_assets": {
+       "as_of_period": "2026-Q1",
+       "fitness": "READY",
+       "reason_codes": [],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "debt_to_assets",
+        "method": "same_provider_same_period_explicit_debt_to_assets/v2",
+        "period_identity": [
+         "2026-Q1",
+         "2026-Q1"
+        ],
+        "period_semantics": [
+         "POINT_IN_TIME_BALANCE_SHEET"
+        ],
+        "scale": null,
+        "scope": [
+         "consolidated"
+        ],
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [
+         {
+          "fact_id": "849522a57d5237fc024d52f9c5dc734a02bd668f0a2b3b3f503175c5d9c68300",
+          "provider": "VCI",
+          "source_observation_ids": null,
+          "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+         },
+         {
+          "fact_id": "240d6f9f21f3e8e1f8b40ae26bd7187a82cd62081c1d7b6909affc2046f9b72b",
+          "provider": "VCI",
+          "source_observation_ids": null,
+          "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+         }
+        ],
+        "source_tier": "PERIOD_SEMANTIC_FACTS",
+        "value": 0.1810772124716275,
+        "warnings": []
+       }
+      },
+      "debt_to_equity": {
+       "as_of_period": "2026-Q1",
+       "fitness": "READY",
+       "reason_codes": [],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "debt_to_equity",
+        "method": "same_provider_same_period_explicit_debt_to_equity/v2",
+        "period_identity": [
+         "2026-Q1",
+         "2026-Q1"
+        ],
+        "period_semantics": [
+         "POINT_IN_TIME_BALANCE_SHEET"
+        ],
+        "scale": null,
+        "scope": [
+         "consolidated"
+        ],
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [
+         {
+          "fact_id": "849522a57d5237fc024d52f9c5dc734a02bd668f0a2b3b3f503175c5d9c68300",
+          "provider": "VCI",
+          "source_observation_ids": null,
+          "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+         },
+         {
+          "fact_id": "36287a132e487625729c7fc95304b71a6504ebfee50d43161921b67ec3131a7c",
+          "provider": "VCI",
+          "source_observation_ids": null,
+          "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+         }
+        ],
+        "source_tier": "PERIOD_SEMANTIC_FACTS",
+        "value": 0.2859661688643029,
+        "warnings": []
+       }
+      },
+      "debt_to_equity_direction": {
+       "as_of_period": "2026-Q1",
+       "fitness": "READY",
+       "growth_basis": "POINT_IN_TIME_YOY",
+       "reason_codes": [],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "debt_to_equity_direction",
+        "method": "same_provider_point_in_time_explicit_debt_ratio_yoy/v2",
+        "period_identity": [
+         "2025-Q1",
+         "2025-Q1",
+         "2026-Q1",
+         "2026-Q1"
+        ],
+        "period_semantics": [
+         "POINT_IN_TIME_BALANCE_SHEET"
+        ],
+        "scale": null,
+        "scope": [
+         "consolidated"
+        ],
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [
+         {
+          "fact_id": "5024d5b2ff169da121e31a14dbc10b1f27b38de07ee4a535740f6bdb8d6d4a5c",
+          "provider": "VCI",
+          "source_observation_ids": null,
+          "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+         },
+         {
+          "fact_id": "ff4b8bd83bc9ec97daa3bab3ada22a187d0003edb023e47b5080edfe41f5d9f3",
+          "provider": "VCI",
+          "source_observation_ids": null,
+          "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+         },
+         {
+          "fact_id": "849522a57d5237fc024d52f9c5dc734a02bd668f0a2b3b3f503175c5d9c68300",
+          "provider": "VCI",
+          "source_observation_ids": null,
+          "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+         },
+         {
+          "fact_id": "36287a132e487625729c7fc95304b71a6504ebfee50d43161921b67ec3131a7c",
+          "provider": "VCI",
+          "source_observation_ids": null,
+          "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+         }
+        ],
+        "source_tier": "PERIOD_SEMANTIC_FACTS",
+        "value": -1.2880178204431172,
+        "warnings": []
+       }
+      },
+      "equity_to_assets": {
+       "as_of_period": "2026-Q1",
+       "fitness": "READY",
+       "reason_codes": [],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "equity_to_assets",
+        "method": "same_provider_same_period_equity_to_assets/v2",
+        "period_identity": [
+         "2026-Q1",
+         "2026-Q1"
+        ],
+        "period_semantics": [
+         "POINT_IN_TIME_BALANCE_SHEET"
+        ],
+        "scale": null,
+        "scope": [
+         "consolidated"
+        ],
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [
+         {
+          "fact_id": "36287a132e487625729c7fc95304b71a6504ebfee50d43161921b67ec3131a7c",
+          "provider": "VCI",
+          "source_observation_ids": null,
+          "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+         },
+         {
+          "fact_id": "240d6f9f21f3e8e1f8b40ae26bd7187a82cd62081c1d7b6909affc2046f9b72b",
+          "provider": "VCI",
+          "source_observation_ids": null,
+          "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+         }
+        ],
+        "source_tier": "PERIOD_SEMANTIC_FACTS",
+        "value": 0.6332120096260495,
+        "warnings": []
+       }
+      },
+      "equity_to_assets_direction": {
+       "as_of_period": "2026-Q1",
+       "fitness": "READY",
+       "growth_basis": "POINT_IN_TIME_YOY",
+       "reason_codes": [],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "equity_to_assets_direction",
+        "method": "same_provider_point_in_time_equity_to_assets_yoy/v2",
+        "period_identity": [
+         "2025-Q1",
+         "2025-Q1",
+         "2026-Q1",
+         "2026-Q1"
+        ],
+        "period_semantics": [
+         "POINT_IN_TIME_BALANCE_SHEET"
+        ],
+        "scale": null,
+        "scope": [
+         "consolidated"
+        ],
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [
+         {
+          "fact_id": "ff4b8bd83bc9ec97daa3bab3ada22a187d0003edb023e47b5080edfe41f5d9f3",
+          "provider": "VCI",
+          "source_observation_ids": null,
+          "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+         },
+         {
+          "fact_id": "e44507dadcbf205955bf400dd042cd793d79549e491278182b2ffe68860d6f41",
+          "provider": "VCI",
+          "source_observation_ids": null,
+          "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+         },
+         {
+          "fact_id": "36287a132e487625729c7fc95304b71a6504ebfee50d43161921b67ec3131a7c",
+          "provider": "VCI",
+          "source_observation_ids": null,
+          "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+         },
+         {
+          "fact_id": "240d6f9f21f3e8e1f8b40ae26bd7187a82cd62081c1d7b6909affc2046f9b72b",
+          "provider": "VCI",
+          "source_observation_ids": null,
+          "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+         }
+        ],
+        "source_tier": "PERIOD_SEMANTIC_FACTS",
+        "value": 0.28523044338048775,
+        "warnings": []
+       }
+      },
+      "equity_yoy": {
+       "as_of_period": "2026-Q1",
+       "fitness": "READY",
+       "growth_basis": "POINT_IN_TIME_YOY",
+       "reason_codes": [],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "shareholders_equity_yoy",
+        "method": "same_provider_point_in_time_yoy/v2",
+        "period_identity": [
+         "2025-Q1",
+         "2026-Q1"
+        ],
+        "period_semantics": [
+         "POINT_IN_TIME_BALANCE_SHEET"
+        ],
+        "scale": null,
+        "scope": [
+         "consolidated"
+        ],
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [
+         {
+          "fact_id": "ff4b8bd83bc9ec97daa3bab3ada22a187d0003edb023e47b5080edfe41f5d9f3",
+          "provider": "VCI",
+          "source_observation_ids": null,
+          "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+         },
+         {
+          "fact_id": "36287a132e487625729c7fc95304b71a6504ebfee50d43161921b67ec3131a7c",
+          "provider": "VCI",
+          "source_observation_ids": null,
+          "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+         }
+        ],
+        "source_tier": "PERIOD_SEMANTIC_FACTS",
+        "value": 0.07010123739504226,
+        "warnings": []
+       }
+      },
+      "free_cash_flow_proxy": {
+       "fitness": "BLOCKED_BY_EVIDENCE",
+       "reason_codes": [
+        "MISSING_SAME_PROVIDER_TICKER_PERIOD_SCOPE_REPRESENTATION"
+       ],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "free_cash_flow_proxy",
+        "method": "blocked_by_evidence/v2",
+        "period_identity": [],
+        "period_semantics": [],
+        "scale": null,
+        "scope": [],
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [],
+        "source_tier": "PERIOD_SEMANTIC_FACTS",
+        "value": null,
+        "warnings": []
+       }
+      },
+      "free_cash_flow_proxy_direction": {
+       "fitness": "BLOCKED_BY_EVIDENCE",
+       "reason_codes": [
+        "MISSING_SAME_PROVIDER_SAME_QUARTER_PRIOR_YEAR_FCF_PROXY_INPUTS"
+       ],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "free_cash_flow_proxy_direction",
+        "method": "blocked_by_evidence/v2",
+        "period_identity": [],
+        "period_semantics": [],
+        "scale": null,
+        "scope": [],
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [],
+        "source_tier": "PERIOD_SEMANTIC_FACTS",
+        "value": null,
+        "warnings": []
+       }
+      },
+      "fvtpl_asset_intensity": {
+       "fitness": "NOT_APPLICABLE",
+       "reason_codes": [
+        "ISSUER_NOT_SECURITIES"
+       ],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "fvtpl_asset_intensity",
+        "method": "securities_entity_applicability/v1",
+        "period_identity": [],
+        "period_semantics": null,
+        "scale": null,
+        "scope": null,
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [],
+        "source_tier": "PERIOD_SEMANTIC_FACTS",
+        "value": null,
+        "warnings": []
+       }
+      },
+      "gross_margin": {
+       "fitness": "BLOCKED_BY_EVIDENCE",
+       "reason_codes": [
+        "MISSING_SAME_PROVIDER_TICKER_PERIOD_SCOPE_REPRESENTATION"
+       ],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "gross_margin",
+        "method": "blocked_by_evidence/v2",
+        "period_identity": [],
+        "period_semantics": [],
+        "scale": null,
+        "scope": [],
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [],
+        "source_tier": "PERIOD_SEMANTIC_FACTS",
+        "value": null,
+        "warnings": []
+       }
+      },
+      "gross_margin_direction": {
+       "fitness": "BLOCKED_BY_EVIDENCE",
+       "reason_codes": [
+        "MISSING_SAME_POINT_IN_TIME_PRIOR_YEAR_RATIO_PAIR"
+       ],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "gross_margin_direction",
+        "method": "blocked_by_evidence/v2",
+        "period_identity": [],
+        "period_semantics": [],
+        "scale": null,
+        "scope": [],
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [],
+        "source_tier": "PERIOD_SEMANTIC_FACTS",
+        "value": null,
+        "warnings": []
+       }
+      },
+      "loan_interest_income_mix": {
+       "fitness": "NOT_APPLICABLE",
+       "reason_codes": [
+        "ISSUER_NOT_SECURITIES"
+       ],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "loan_interest_income_mix",
+        "method": "securities_entity_applicability/v1",
+        "period_identity": [],
+        "period_semantics": null,
+        "scale": null,
+        "scope": null,
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [],
+        "source_tier": "PERIOD_SEMANTIC_FACTS",
+        "value": null,
+        "warnings": []
+       }
+      },
+      "margin_lending_asset_intensity": {
+       "fitness": "NOT_APPLICABLE",
+       "reason_codes": [
+        "ISSUER_NOT_SECURITIES"
+       ],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "margin_lending_asset_intensity",
+        "method": "securities_entity_applicability/v1",
+        "period_identity": [],
+        "period_semantics": null,
+        "scale": null,
+        "scope": null,
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [],
+        "source_tier": "PERIOD_SEMANTIC_FACTS",
+        "value": null,
+        "warnings": []
+       }
+      },
+      "mixed_provider_asset_turnover_proxy": {
+       "fitness": "BLOCKED_BY_EVIDENCE",
+       "reason_codes": [
+        "MISSING_COMPATIBLE_FLOW_INPUT"
+       ],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "mixed_provider_asset_turnover_proxy",
+        "method": "blocked_by_evidence/v2",
+        "period_identity": [],
+        "period_semantics": [],
+        "scale": null,
+        "scope": [],
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [],
+        "source_tier": "PERIOD_SEMANTIC_FACTS",
+        "value": null,
+        "warnings": []
+       }
+      },
+      "mixed_provider_roa_proxy": {
+       "fitness": "BLOCKED_BY_EVIDENCE",
+       "reason_codes": [
+        "MISSING_COMPATIBLE_FLOW_INPUT"
+       ],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "mixed_provider_roa_proxy",
+        "method": "blocked_by_evidence/v2",
+        "period_identity": [],
+        "period_semantics": [],
+        "scale": null,
+        "scope": [],
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [],
+        "source_tier": "PERIOD_SEMANTIC_FACTS",
+        "value": null,
+        "warnings": []
+       }
+      },
+      "net_income_qoq": {
+       "fitness": "BLOCKED_BY_EVIDENCE",
+       "growth_basis": "QOQ_STANDALONE",
+       "reason_codes": [
+        "MISSING_COMPATIBLE_SERIES"
+       ],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "net_income_qoq",
+        "method": "blocked_by_evidence/v2",
+        "period_identity": [],
+        "period_semantics": [],
+        "scale": null,
+        "scope": [],
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [],
+        "source_tier": "ADVANCED_TTM_OR_STANDALONE",
+        "value": null,
+        "warnings": []
+       }
+      },
+      "net_income_same_quarter_yoy": {
+       "fitness": "BLOCKED_BY_EVIDENCE",
+       "growth_basis": "SAME_QUARTER_YOY",
+       "reason_codes": [
+        "MISSING_COMPATIBLE_SERIES"
+       ],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "net_income_same_quarter_yoy",
+        "method": "blocked_by_evidence/v2",
+        "period_identity": [],
+        "period_semantics": [],
+        "scale": null,
+        "scope": [],
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [],
+        "source_tier": "ADVANCED_TTM_OR_STANDALONE",
+        "value": null,
+        "warnings": []
+       }
+      },
+      "net_income_sign": {
+       "fitness": "BLOCKED_BY_EVIDENCE",
+       "reason_codes": [
+        "MISSING_STANDALONE_NET_INCOME"
+       ],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "net_income_sign",
+        "method": "blocked_by_evidence/v2",
+        "period_identity": [],
+        "period_semantics": [],
+        "scale": null,
+        "scope": [],
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [],
+        "source_tier": "PERIOD_SEMANTIC_FACTS",
+        "value": null,
+        "warnings": []
+       }
+      },
+      "net_income_ttm": {
+       "fitness": "BLOCKED_BY_EVIDENCE",
+       "reason_codes": [
+        "MISSING_CONSECUTIVE_STANDALONE_QUARTER_INPUTS"
+       ],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "net_income_ttm",
+        "method": "ttm_rolling_four/v2",
+        "period_identity": [],
+        "period_semantics": [],
+        "scale": null,
+        "scope": [],
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [],
+        "source_tier": "ADVANCED_TTM_OR_STANDALONE",
+        "value": null,
+        "warnings": []
+       }
+      },
+      "net_income_ttm_yoy": {
+       "fitness": "BLOCKED_BY_EVIDENCE",
+       "growth_basis": "TTM",
+       "reason_codes": [
+        "MISSING_CONSECUTIVE_STANDALONE_QUARTER_INPUTS"
+       ],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "net_income_ttm_yoy",
+        "method": "blocked_by_evidence/v2",
+        "period_identity": [],
+        "period_semantics": [],
+        "scale": null,
+        "scope": [],
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [],
+        "source_tier": "ADVANCED_TTM_OR_STANDALONE",
+        "value": null,
+        "warnings": []
+       }
+      },
+      "net_income_ytd_yoy": {
+       "fitness": "BLOCKED_BY_EVIDENCE",
+       "growth_basis": "YTD_YOY",
+       "reason_codes": [
+        "MISSING_COMPATIBLE_SERIES"
+       ],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "net_income_ytd_yoy",
+        "method": "blocked_by_evidence/v2",
+        "period_identity": [],
+        "period_semantics": [],
+        "scale": null,
+        "scope": [],
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [],
+        "source_tier": "PERIOD_SEMANTIC_FACTS",
+        "value": null,
+        "warnings": []
+       }
+      },
+      "net_margin": {
+       "fitness": "BLOCKED_BY_EVIDENCE",
+       "reason_codes": [
+        "MISSING_SAME_PROVIDER_TICKER_PERIOD_SCOPE_REPRESENTATION"
+       ],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "net_margin",
+        "method": "blocked_by_evidence/v2",
+        "period_identity": [],
+        "period_semantics": [],
+        "scale": null,
+        "scope": [],
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [],
+        "source_tier": "PERIOD_SEMANTIC_FACTS",
+        "value": null,
+        "warnings": []
+       }
+      },
+      "net_margin_direction": {
+       "fitness": "BLOCKED_BY_EVIDENCE",
+       "reason_codes": [
+        "MISSING_CONSECUTIVE_COMPATIBLE_MARGIN_PERIODS"
+       ],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "net_margin_direction",
+        "method": "blocked_by_evidence/v2",
+        "period_identity": [],
+        "period_semantics": [],
+        "scale": null,
+        "scope": [],
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [],
+        "source_tier": "PERIOD_SEMANTIC_FACTS",
+        "value": null,
+        "warnings": []
+       }
+      },
+      "net_working_capital": {
+       "as_of_period": "2026-Q1",
+       "fitness": "READY",
+       "reason_codes": [],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "net_working_capital",
+        "method": "same_provider_same_period_net_working_capital/v2",
+        "period_identity": [
+         "2026-Q1",
+         "2026-Q1"
+        ],
+        "period_semantics": [
+         "POINT_IN_TIME_BALANCE_SHEET"
+        ],
+        "scale": null,
+        "scope": [
+         "consolidated"
+        ],
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [
+         {
+          "fact_id": "715f7bd4ff0b37751e194232a4922162f3f020499be0ed0fea042e37a9378508",
+          "provider": "VCI",
+          "source_observation_ids": null,
+          "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+         },
+         {
+          "fact_id": "7178020f28d3a4d844ff13be1e2c81fad780ae1226ddb6f1f8f39e380f17972f",
+          "provider": "VCI",
+          "source_observation_ids": null,
+          "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+         }
+        ],
+        "source_tier": "PERIOD_SEMANTIC_FACTS",
+        "value": 6281538177810,
+        "warnings": []
+       }
+      },
+      "net_working_capital_direction": {
+       "as_of_period": "2026-Q1",
+       "fitness": "READY",
+       "growth_basis": "POINT_IN_TIME_YOY",
+       "reason_codes": [],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "net_working_capital_direction",
+        "method": "same_provider_point_in_time_component_difference_yoy/v2",
+        "period_identity": [
+         "2025-Q1",
+         "2025-Q1",
+         "2026-Q1",
+         "2026-Q1"
+        ],
+        "period_semantics": [
+         "POINT_IN_TIME_BALANCE_SHEET"
+        ],
+        "scale": null,
+        "scope": [
+         "consolidated"
+        ],
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [
+         {
+          "fact_id": "f9f3484c4d46cfb983f3b9aa37e752eb02ab817c8024c4c1b69b3c1c4cb7ecdd",
+          "provider": "VCI",
+          "source_observation_ids": null,
+          "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+         },
+         {
+          "fact_id": "e5b9e677441203026203f8c7442867221d679120abe18caf8e2913adf22bd004",
+          "provider": "VCI",
+          "source_observation_ids": null,
+          "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+         },
+         {
+          "fact_id": "715f7bd4ff0b37751e194232a4922162f3f020499be0ed0fea042e37a9378508",
+          "provider": "VCI",
+          "source_observation_ids": null,
+          "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+         },
+         {
+          "fact_id": "7178020f28d3a4d844ff13be1e2c81fad780ae1226ddb6f1f8f39e380f17972f",
+          "provider": "VCI",
+          "source_observation_ids": null,
+          "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+         }
+        ],
+        "source_tier": "PERIOD_SEMANTIC_FACTS",
+        "value": 2245416302977,
+        "warnings": []
+       }
+      },
+      "operating_cash_flow_qoq": {
+       "fitness": "BLOCKED_BY_EVIDENCE",
+       "growth_basis": "QOQ_STANDALONE",
+       "reason_codes": [
+        "MISSING_COMPATIBLE_SERIES"
+       ],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "operating_cash_flow_qoq",
+        "method": "blocked_by_evidence/v2",
+        "period_identity": [],
+        "period_semantics": [],
+        "scale": null,
+        "scope": [],
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [],
+        "source_tier": "ADVANCED_TTM_OR_STANDALONE",
+        "value": null,
+        "warnings": []
+       }
+      },
+      "operating_cash_flow_same_quarter_yoy": {
+       "fitness": "BLOCKED_BY_EVIDENCE",
+       "growth_basis": "SAME_QUARTER_YOY",
+       "reason_codes": [
+        "MISSING_COMPATIBLE_SERIES"
+       ],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "operating_cash_flow_same_quarter_yoy",
+        "method": "blocked_by_evidence/v2",
+        "period_identity": [],
+        "period_semantics": [],
+        "scale": null,
+        "scope": [],
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [],
+        "source_tier": "ADVANCED_TTM_OR_STANDALONE",
+        "value": null,
+        "warnings": []
+       }
+      },
+      "operating_cash_flow_sign": {
+       "fitness": "BLOCKED_BY_EVIDENCE",
+       "reason_codes": [
+        "MISSING_STANDALONE_OPERATING_CASH_FLOW"
+       ],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "operating_cash_flow_sign",
+        "method": "blocked_by_evidence/v2",
+        "period_identity": [],
+        "period_semantics": [],
+        "scale": null,
+        "scope": [],
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [],
+        "source_tier": "PERIOD_SEMANTIC_FACTS",
+        "value": null,
+        "warnings": []
+       }
+      },
+      "operating_cash_flow_ttm": {
+       "fitness": "BLOCKED_BY_EVIDENCE",
+       "reason_codes": [
+        "MISSING_CONSECUTIVE_STANDALONE_QUARTER_INPUTS"
+       ],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "operating_cash_flow_ttm",
+        "method": "ttm_rolling_four/v2",
+        "period_identity": [],
+        "period_semantics": [],
+        "scale": null,
+        "scope": [],
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [],
+        "source_tier": "ADVANCED_TTM_OR_STANDALONE",
+        "value": null,
+        "warnings": []
+       }
+      },
+      "operating_cash_flow_ttm_yoy": {
+       "fitness": "BLOCKED_BY_EVIDENCE",
+       "growth_basis": "TTM",
+       "reason_codes": [
+        "MISSING_CONSECUTIVE_STANDALONE_QUARTER_INPUTS"
+       ],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "operating_cash_flow_ttm_yoy",
+        "method": "blocked_by_evidence/v2",
+        "period_identity": [],
+        "period_semantics": [],
+        "scale": null,
+        "scope": [],
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [],
+        "source_tier": "ADVANCED_TTM_OR_STANDALONE",
+        "value": null,
+        "warnings": []
+       }
+      },
+      "pbt_margin": {
+       "fitness": "BLOCKED_BY_EVIDENCE",
+       "reason_codes": [
+        "MISSING_SAME_PROVIDER_TICKER_PERIOD_SCOPE_REPRESENTATION"
+       ],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "pbt_margin",
+        "method": "blocked_by_evidence/v2",
+        "period_identity": [],
+        "period_semantics": [],
+        "scale": null,
+        "scope": [],
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [],
+        "source_tier": "PERIOD_SEMANTIC_FACTS",
+        "value": null,
+        "warnings": []
+       }
+      },
+      "profit_before_tax_qoq": {
+       "fitness": "BLOCKED_BY_EVIDENCE",
+       "growth_basis": "QOQ_STANDALONE",
+       "reason_codes": [
+        "MISSING_COMPATIBLE_SERIES"
+       ],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "profit_before_tax_qoq",
+        "method": "blocked_by_evidence/v2",
+        "period_identity": [],
+        "period_semantics": [],
+        "scale": null,
+        "scope": [],
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [],
+        "source_tier": "ADVANCED_TTM_OR_STANDALONE",
+        "value": null,
+        "warnings": []
+       }
+      },
+      "profit_before_tax_same_quarter_yoy": {
+       "fitness": "BLOCKED_BY_EVIDENCE",
+       "growth_basis": "SAME_QUARTER_YOY",
+       "reason_codes": [
+        "MISSING_COMPATIBLE_SERIES"
+       ],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "profit_before_tax_same_quarter_yoy",
+        "method": "blocked_by_evidence/v2",
+        "period_identity": [],
+        "period_semantics": [],
+        "scale": null,
+        "scope": [],
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [],
+        "source_tier": "ADVANCED_TTM_OR_STANDALONE",
+        "value": null,
+        "warnings": []
+       }
+      },
+      "profit_before_tax_ttm": {
+       "fitness": "BLOCKED_BY_EVIDENCE",
+       "reason_codes": [
+        "MISSING_CONSECUTIVE_STANDALONE_QUARTER_INPUTS"
+       ],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "profit_before_tax_ttm",
+        "method": "ttm_rolling_four/v2",
+        "period_identity": [],
+        "period_semantics": [],
+        "scale": null,
+        "scope": [],
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [],
+        "source_tier": "ADVANCED_TTM_OR_STANDALONE",
+        "value": null,
+        "warnings": []
+       }
+      },
+      "profit_before_tax_ttm_yoy": {
+       "fitness": "BLOCKED_BY_EVIDENCE",
+       "growth_basis": "TTM",
+       "reason_codes": [
+        "MISSING_CONSECUTIVE_STANDALONE_QUARTER_INPUTS"
+       ],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "profit_before_tax_ttm_yoy",
+        "method": "blocked_by_evidence/v2",
+        "period_identity": [],
+        "period_semantics": [],
+        "scale": null,
+        "scope": [],
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [],
+        "source_tier": "ADVANCED_TTM_OR_STANDALONE",
+        "value": null,
+        "warnings": []
+       }
+      },
+      "revenue_qoq": {
+       "fitness": "BLOCKED_BY_EVIDENCE",
+       "growth_basis": "QOQ_STANDALONE",
+       "reason_codes": [
+        "MISSING_COMPATIBLE_SERIES"
+       ],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "revenue_qoq",
+        "method": "blocked_by_evidence/v2",
+        "period_identity": [],
+        "period_semantics": [],
+        "scale": null,
+        "scope": [],
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [],
+        "source_tier": "ADVANCED_TTM_OR_STANDALONE",
+        "value": null,
+        "warnings": []
+       }
+      },
+      "revenue_same_quarter_yoy": {
+       "fitness": "BLOCKED_BY_EVIDENCE",
+       "growth_basis": "SAME_QUARTER_YOY",
+       "reason_codes": [
+        "MISSING_COMPATIBLE_SERIES"
+       ],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "revenue_same_quarter_yoy",
+        "method": "blocked_by_evidence/v2",
+        "period_identity": [],
+        "period_semantics": [],
+        "scale": null,
+        "scope": [],
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [],
+        "source_tier": "ADVANCED_TTM_OR_STANDALONE",
+        "value": null,
+        "warnings": []
+       }
+      },
+      "revenue_ttm": {
+       "fitness": "BLOCKED_BY_EVIDENCE",
+       "reason_codes": [
+        "MISSING_CONSECUTIVE_STANDALONE_QUARTER_INPUTS"
+       ],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "revenue_ttm",
+        "method": "ttm_rolling_four/v2",
+        "period_identity": [],
+        "period_semantics": [],
+        "scale": null,
+        "scope": [],
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [],
+        "source_tier": "ADVANCED_TTM_OR_STANDALONE",
+        "value": null,
+        "warnings": []
+       }
+      },
+      "revenue_ttm_yoy": {
+       "fitness": "BLOCKED_BY_EVIDENCE",
+       "growth_basis": "TTM",
+       "reason_codes": [
+        "MISSING_CONSECUTIVE_STANDALONE_QUARTER_INPUTS"
+       ],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "revenue_ttm_yoy",
+        "method": "blocked_by_evidence/v2",
+        "period_identity": [],
+        "period_semantics": [],
+        "scale": null,
+        "scope": [],
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [],
+        "source_tier": "ADVANCED_TTM_OR_STANDALONE",
+        "value": null,
+        "warnings": []
+       }
+      },
+      "revenue_ytd_yoy": {
+       "fitness": "BLOCKED_BY_EVIDENCE",
+       "growth_basis": "YTD_YOY",
+       "reason_codes": [
+        "MISSING_COMPATIBLE_SERIES"
+       ],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "revenue_ytd_yoy",
+        "method": "blocked_by_evidence/v2",
+        "period_identity": [],
+        "period_semantics": [],
+        "scale": null,
+        "scope": [],
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [],
+        "source_tier": "PERIOD_SEMANTIC_FACTS",
+        "value": null,
+        "warnings": []
+       }
+      },
+      "same_provider_asset_turnover_eop_proxy": {
+       "fitness": "BLOCKED_BY_EVIDENCE",
+       "reason_codes": [
+        "MISSING_SAME_PROVIDER_FLOW_AND_ENDING_BALANCE_SHEET_INPUT"
+       ],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "same_provider_asset_turnover_eop_proxy",
+        "method": "blocked_by_evidence/v2",
+        "period_identity": [],
+        "period_semantics": [],
+        "scale": null,
+        "scope": [],
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [],
+        "source_tier": "PERIOD_SEMANTIC_FACTS",
+        "value": null,
+        "warnings": []
+       }
+      },
+      "same_provider_roa": {
+       "fitness": "BLOCKED_BY_EVIDENCE",
+       "reason_codes": [
+        "MISSING_SAME_PROVIDER_FLOW_AND_ENDING_BALANCE_SHEET_INPUT"
+       ],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "same_provider_roa",
+        "method": "blocked_by_evidence/v2",
+        "period_identity": [],
+        "period_semantics": [],
+        "scale": null,
+        "scope": [],
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [],
+        "source_tier": "PERIOD_SEMANTIC_FACTS",
+        "value": null,
+        "warnings": []
+       }
+      },
+      "same_provider_roa_avg_assets": {
+       "fitness": "BLOCKED_BY_EVIDENCE",
+       "reason_codes": [
+        "MISSING_SAME_PROVIDER_CONSECUTIVE_PERIOD_BOUNDARY_BALANCES"
+       ],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "same_provider_roa_avg_assets",
+        "method": "blocked_by_evidence/v2",
+        "period_identity": [],
+        "period_semantics": [],
+        "scale": null,
+        "scope": [],
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [],
+        "source_tier": "PERIOD_SEMANTIC_FACTS",
+        "value": null,
+        "warnings": []
+       }
+      },
+      "same_provider_roa_eop_proxy": {
+       "fitness": "BLOCKED_BY_EVIDENCE",
+       "reason_codes": [
+        "MISSING_SAME_PROVIDER_FLOW_AND_ENDING_BALANCE_SHEET_INPUT"
+       ],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "same_provider_roa_eop_proxy",
+        "method": "blocked_by_evidence/v2",
+        "period_identity": [],
+        "period_semantics": [],
+        "scale": null,
+        "scope": [],
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [],
+        "source_tier": "PERIOD_SEMANTIC_FACTS",
+        "value": null,
+        "warnings": []
+       }
+      },
+      "same_provider_roe": {
+       "fitness": "BLOCKED_BY_EVIDENCE",
+       "reason_codes": [
+        "MISSING_SAME_PROVIDER_FLOW_AND_ENDING_BALANCE_SHEET_INPUT"
+       ],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "same_provider_roe",
+        "method": "blocked_by_evidence/v2",
+        "period_identity": [],
+        "period_semantics": [],
+        "scale": null,
+        "scope": [],
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [],
+        "source_tier": "PERIOD_SEMANTIC_FACTS",
+        "value": null,
+        "warnings": []
+       }
+      },
+      "same_provider_roe_avg_equity": {
+       "fitness": "BLOCKED_BY_EVIDENCE",
+       "reason_codes": [
+        "MISSING_SAME_PROVIDER_CONSECUTIVE_PERIOD_BOUNDARY_BALANCES"
+       ],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "same_provider_roe_avg_equity",
+        "method": "blocked_by_evidence/v2",
+        "period_identity": [],
+        "period_semantics": [],
+        "scale": null,
+        "scope": [],
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [],
+        "source_tier": "PERIOD_SEMANTIC_FACTS",
+        "value": null,
+        "warnings": []
+       }
+      },
+      "same_provider_roe_eop_proxy": {
+       "fitness": "BLOCKED_BY_EVIDENCE",
+       "reason_codes": [
+        "MISSING_SAME_PROVIDER_FLOW_AND_ENDING_BALANCE_SHEET_INPUT"
+       ],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "same_provider_roe_eop_proxy",
+        "method": "blocked_by_evidence/v2",
+        "period_identity": [],
+        "period_semantics": [],
+        "scale": null,
+        "scope": [],
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [],
+        "source_tier": "PERIOD_SEMANTIC_FACTS",
+        "value": null,
+        "warnings": []
+       }
+      },
+      "ttm_net_margin": {
+       "fitness": "BLOCKED_BY_EVIDENCE",
+       "reason_codes": [
+        "MISSING_COMPATIBLE_TTM_INPUTS"
+       ],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "ttm_net_margin",
+        "method": "blocked_by_evidence/v2",
+        "period_identity": [],
+        "period_semantics": [],
+        "scale": null,
+        "scope": [],
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [],
+        "source_tier": "ADVANCED_TTM_OR_STANDALONE",
+        "value": null,
+        "warnings": []
+       }
+      },
+      "ttm_pbt_margin": {
+       "fitness": "BLOCKED_BY_EVIDENCE",
+       "reason_codes": [
+        "MISSING_COMPATIBLE_TTM_INPUTS"
+       ],
+       "source_feature_context": {
+        "currency": null,
+        "feature_id": "ttm_pbt_margin",
+        "method": "blocked_by_evidence/v2",
+        "period_identity": [],
+        "period_semantics": [],
+        "scale": null,
+        "scope": [],
+        "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+        "source_fact_refs": [],
+        "source_tier": "ADVANCED_TTM_OR_STANDALONE",
+        "value": null,
+        "warnings": []
+       }
+      }
+     },
+     "financial_content_identity": "71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+     "free_cash_flow_proxy": {
+      "feature_id": "free_cash_flow_proxy",
+      "fitness": "BLOCKED_BY_EVIDENCE",
+      "method": "blocked_by_evidence/v2",
+      "period_identity": [],
+      "reason_codes": [
+       "MISSING_SAME_PROVIDER_TICKER_PERIOD_SCOPE_REPRESENTATION"
+      ],
+      "warnings": []
+     },
+     "free_cash_flow_proxy_direction_state": "UNAVAILABLE",
+     "fvtpl_asset_intensity_trajectory_state": "NOT_APPLICABLE",
+     "gross_margin_trajectory_state": "UNAVAILABLE",
+     "growth_basis": null,
+     "growth_state": "UNAVAILABLE",
+     "history_context": {
+      "cash_to_assets": {
+       "as_of_period": "2026-Q1",
+       "authority": "CURRENT_RESEARCH_RETROSPECTIVE_ONLY_NOT_PIT_HISTORICAL_CLAIM",
+       "descriptive_bucket": "UPPER_QUARTILE",
+       "methodology": "retrospective_own_history_same_source_key_percentile/v1",
+       "minimum_available_sample": 6,
+       "minimum_partial_sample": 3,
+       "percentile": 1,
+       "percentile_formula": "(below + 0.5 * equal) / n",
+       "range_max": 0.16843486410554873,
+       "range_min": 0.04699392666882697,
+       "sample_count": 7,
+       "status": "AVAILABLE",
+       "subject_value": 0.2397677154204011,
+       "trajectory": {
+        "assessment": "RECOVERY",
+        "contiguous_periods": [
+         "2024-Q2",
+         "2024-Q3",
+         "2024-Q4",
+         "2025-Q1",
+         "2025-Q2",
+         "2025-Q3",
+         "2025-Q4",
+         "2026-Q1"
+        ],
+        "establishing_periods": [
+         "2025-Q3",
+         "2025-Q4",
+         "2026-Q1"
+        ],
+        "favorable_direction": "HIGHER",
+        "is_actionable": false,
+        "limitations": [
+         "CURRENT_RESEARCH_ONLY",
+         "NOT_PIT",
+         "NO_ANNUALIZATION",
+         "SEQUENTIAL_FLOW_CHANGES_MAY_BE_SEASONAL",
+         "SOURCE_MONETARY_BASIS_NOT_UPGRADED"
+        ],
+        "method": "source_anchored_ratio_trajectory/v1",
+        "observations": [
+         {
+          "period": "2024-Q2",
+          "period_end": [
+           "2024-06-30",
+           "2024-06-30"
+          ],
+          "period_identity_basis": "REPORTED_QUARTER_LABEL_NO_DATE_INFERENCE",
+          "period_semantic": "POINT_IN_TIME_BALANCE_SHEET",
+          "source_provenance": [
+           {
+            "fact_id": "602c2c58b75f4781a9408dd2ef918fd3e4226f12bd185551edae85b1941ba58b",
+            "provider": "VCI",
+            "source_file": "PAN_balance_sheet_quarter.parquet",
+            "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+           },
+           {
+            "fact_id": "7b6c5046b6ca2903873f0a7ca2af3cc41432c7a787a1038aea18122f7e3fd210",
+            "provider": "VCI",
+            "source_file": "PAN_balance_sheet_quarter.parquet",
+            "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+           }
+          ],
+          "value": 0.04699392666882697
+         },
+         {
+          "period": "2024-Q3",
+          "period_end": [
+           "2024-09-30",
+           "2024-09-30"
+          ],
+          "period_identity_basis": "REPORTED_QUARTER_LABEL_NO_DATE_INFERENCE",
+          "period_semantic": "POINT_IN_TIME_BALANCE_SHEET",
+          "source_provenance": [
+           {
+            "fact_id": "097eeaed35c073a57b8cfb15e38f3124ae5cff02cbc8923ccdb59c10f0a2d0de",
+            "provider": "VCI",
+            "source_file": "PAN_balance_sheet_quarter.parquet",
+            "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+           },
+           {
+            "fact_id": "43189d2cec51d620217dbaaa065338b6e1aea9ddbf0635530ee4b57d2210309c",
+            "provider": "VCI",
+            "source_file": "PAN_balance_sheet_quarter.parquet",
+            "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+           }
+          ],
+          "value": 0.05074732716757491
+         },
+         {
+          "period": "2024-Q4",
+          "period_end": [
+           "2024-12-31",
+           "2024-12-31"
+          ],
+          "period_identity_basis": "REPORTED_QUARTER_LABEL_NO_DATE_INFERENCE",
+          "period_semantic": "POINT_IN_TIME_BALANCE_SHEET",
+          "source_provenance": [
+           {
+            "fact_id": "bd4166ea0217a1252abde5d8884e6220f874fac57f00f922957752e8c613eb38",
+            "provider": "VCI",
+            "source_file": "PAN_balance_sheet_quarter.parquet",
+            "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+           },
+           {
+            "fact_id": "b4952a029926b163106ea66883040c5fd50ac4297ce1d9179c7e03199d67f3a8",
+            "provider": "VCI",
+            "source_file": "PAN_balance_sheet_quarter.parquet",
+            "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+           }
+          ],
+          "value": 0.12411045431002911
+         },
+         {
+          "period": "2025-Q1",
+          "period_end": [
+           "2025-03-31",
+           "2025-03-31"
+          ],
+          "period_identity_basis": "REPORTED_QUARTER_LABEL_NO_DATE_INFERENCE",
+          "period_semantic": "POINT_IN_TIME_BALANCE_SHEET",
+          "source_provenance": [
+           {
+            "fact_id": "a39f900598d3b6d3509a7a6ce25560c1f2a7dfb5d2d99c47ccd363bb7cacfb35",
+            "provider": "VCI",
+            "source_file": "PAN_balance_sheet_quarter.parquet",
+            "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+           },
+           {
+            "fact_id": "e44507dadcbf205955bf400dd042cd793d79549e491278182b2ffe68860d6f41",
+            "provider": "VCI",
+            "source_file": "PAN_balance_sheet_quarter.parquet",
+            "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+           }
+          ],
+          "value": 0.08697946313489903
+         },
+         {
+          "period": "2025-Q2",
+          "period_end": [
+           "2025-06-30",
+           "2025-06-30"
+          ],
+          "period_identity_basis": "REPORTED_QUARTER_LABEL_NO_DATE_INFERENCE",
+          "period_semantic": "POINT_IN_TIME_BALANCE_SHEET",
+          "source_provenance": [
+           {
+            "fact_id": "a4d1556b81f57271889d54f1d7f0d47931c4e1f0f793dd548f4afe849cd6fd0b",
+            "provider": "VCI",
+            "source_file": "PAN_balance_sheet_quarter.parquet",
+            "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+           },
+           {
+            "fact_id": "2f3f1f0f43e5ab489a83c2de2c965ed14e8bd05fd713c189314788f3dd3b3561",
+            "provider": "VCI",
+            "source_file": "PAN_balance_sheet_quarter.parquet",
+            "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+           }
+          ],
+          "value": 0.1255309102938636
+         },
+         {
+          "period": "2025-Q3",
+          "period_end": [
+           "2025-09-30",
+           "2025-09-30"
+          ],
+          "period_identity_basis": "REPORTED_QUARTER_LABEL_NO_DATE_INFERENCE",
+          "period_semantic": "POINT_IN_TIME_BALANCE_SHEET",
+          "source_provenance": [
+           {
+            "fact_id": "1c449e425d2d679d5c5cc0ff7120f547fb82ca1296e327003360b32b7f5a5725",
+            "provider": "VCI",
+            "source_file": "PAN_balance_sheet_quarter.parquet",
+            "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+           },
+           {
+            "fact_id": "315299659c489c09e2f358e3bd3b42bd915f4db93f4cdfe0fd45875650b30a4f",
+            "provider": "VCI",
+            "source_file": "PAN_balance_sheet_quarter.parquet",
+            "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+           }
+          ],
+          "value": 0.1529908981546167
+         },
+         {
+          "period": "2025-Q4",
+          "period_end": [
+           "2025-12-31",
+           "2025-12-31"
+          ],
+          "period_identity_basis": "REPORTED_QUARTER_LABEL_NO_DATE_INFERENCE",
+          "period_semantic": "POINT_IN_TIME_BALANCE_SHEET",
+          "source_provenance": [
+           {
+            "fact_id": "21370e8cfa2d69d72541284f96c641cce45ef05edfa08624aa890eba0aa4b999",
+            "provider": "VCI",
+            "source_file": "PAN_balance_sheet_quarter.parquet",
+            "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+           },
+           {
+            "fact_id": "063bc5ddc0e4b6786fcf0c4e8a5d096ecb5679627e0dd4d936268cc6cef99db0",
+            "provider": "VCI",
+            "source_file": "PAN_balance_sheet_quarter.parquet",
+            "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+           }
+          ],
+          "value": 0.16843486410554873
+         },
+         {
+          "period": "2026-Q1",
+          "period_end": [
+           "2026-03-31",
+           "2026-03-31"
+          ],
+          "period_identity_basis": "REPORTED_QUARTER_LABEL_NO_DATE_INFERENCE",
+          "period_semantic": "POINT_IN_TIME_BALANCE_SHEET",
+          "source_provenance": [
+           {
+            "fact_id": "3383377475bd27bde5e9b27d31d10828878b4b8664d5c12f1f2d8b3e9859c6ef",
+            "provider": "VCI",
+            "source_file": "PAN_balance_sheet_quarter.parquet",
+            "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+           },
+           {
+            "fact_id": "240d6f9f21f3e8e1f8b40ae26bd7187a82cd62081c1d7b6909affc2046f9b72b",
+            "provider": "VCI",
+            "source_file": "PAN_balance_sheet_quarter.parquet",
+            "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+           }
+          ],
+          "value": 0.2397677154204011
+         }
+        ],
+        "period_semantic": "POINT_IN_TIME_BALANCE_SHEET",
+        "reason_codes": [],
+        "recent_ratio_point_changes": [
+         0.015443965950932032,
+         0.07133285131485237
+        ],
+        "seasonal_confirmation": "YOY_CONTEXT_AVAILABLE",
+        "sequential_changes": [
+         {
+          "comparison_basis": "SEQUENTIAL_QUARTER",
+          "from_period": "2024-Q2",
+          "ratio_point_change": 0.003753400498747936,
+          "to_period": "2024-Q3"
+         },
+         {
+          "comparison_basis": "SEQUENTIAL_QUARTER",
+          "from_period": "2024-Q3",
+          "ratio_point_change": 0.0733631271424542,
+          "to_period": "2024-Q4"
+         },
+         {
+          "comparison_basis": "SEQUENTIAL_QUARTER",
+          "from_period": "2024-Q4",
+          "ratio_point_change": -0.03713099117513008,
+          "to_period": "2025-Q1"
+         },
+         {
+          "comparison_basis": "SEQUENTIAL_QUARTER",
+          "from_period": "2025-Q1",
+          "ratio_point_change": 0.038551447158964566,
+          "to_period": "2025-Q2"
+         },
+         {
+          "comparison_basis": "SEQUENTIAL_QUARTER",
+          "from_period": "2025-Q2",
+          "ratio_point_change": 0.0274599878607531,
+          "to_period": "2025-Q3"
+         },
+         {
+          "comparison_basis": "SEQUENTIAL_QUARTER",
+          "from_period": "2025-Q3",
+          "ratio_point_change": 0.015443965950932032,
+          "to_period": "2025-Q4"
+         },
+         {
+          "comparison_basis": "SEQUENTIAL_QUARTER",
+          "from_period": "2025-Q4",
+          "ratio_point_change": 0.07133285131485237,
+          "to_period": "2026-Q1"
+         }
+        ],
+        "series_identity": {
+         "currency": "unknown",
+         "provider": "VCI",
+         "scale": "unknown",
+         "statement_family": "balance_sheet",
+         "statement_scope": "consolidated",
+         "ticker": "PAN"
+        },
+        "status": "AVAILABLE",
+        "subject_period": "2026-Q1",
+        "yoy_changes": [
+         {
+          "comparison_basis": "SAME_QUARTER_YOY",
+          "from_period": "2024-Q2",
+          "ratio_point_change": 0.07853698362503662,
+          "to_period": "2025-Q2"
+         },
+         {
+          "comparison_basis": "SAME_QUARTER_YOY",
+          "from_period": "2024-Q3",
+          "ratio_point_change": 0.10224357098704179,
+          "to_period": "2025-Q3"
+         },
+         {
+          "comparison_basis": "SAME_QUARTER_YOY",
+          "from_period": "2024-Q4",
+          "ratio_point_change": 0.04432440979551962,
+          "to_period": "2025-Q4"
+         },
+         {
+          "comparison_basis": "SAME_QUARTER_YOY",
+          "from_period": "2025-Q1",
+          "ratio_point_change": 0.15278825228550208,
+          "to_period": "2026-Q1"
+         }
+        ]
+       }
+      },
+      "current_ratio": {
+       "as_of_period": "2026-Q1",
+       "authority": "CURRENT_RESEARCH_RETROSPECTIVE_ONLY_NOT_PIT_HISTORICAL_CLAIM",
+       "descriptive_bucket": "UPPER_QUARTILE",
+       "methodology": "retrospective_own_history_same_source_key_percentile/v1",
+       "minimum_available_sample": 6,
+       "minimum_partial_sample": 3,
+       "percentile": 1,
+       "percentile_formula": "(below + 0.5 * equal) / n",
+       "range_max": 1.8017418879522926,
+       "range_min": 1.238460565869321,
+       "sample_count": 7,
+       "status": "AVAILABLE",
+       "subject_value": 2.264685910121945
+      },
+      "debt_to_assets": {
+       "as_of_period": "2026-Q1",
+       "authority": "CURRENT_RESEARCH_RETROSPECTIVE_ONLY_NOT_PIT_HISTORICAL_CLAIM",
+       "descriptive_bucket": "LOWER_QUARTILE",
+       "methodology": "retrospective_own_history_same_source_key_percentile/v1",
+       "minimum_available_sample": 6,
+       "minimum_partial_sample": 3,
+       "percentile": 0,
+       "percentile_formula": "(below + 0.5 * equal) / n",
+       "range_max": 0.5477174138446336,
+       "range_min": 0.23704122597956073,
+       "sample_count": 7,
+       "status": "AVAILABLE",
+       "subject_value": 0.1810772124716275,
+       "trajectory": {
+        "assessment": "RECOVERY",
+        "contiguous_periods": [
+         "2024-Q2",
+         "2024-Q3",
+         "2024-Q4",
+         "2025-Q1",
+         "2025-Q2",
+         "2025-Q3",
+         "2025-Q4",
+         "2026-Q1"
+        ],
+        "establishing_periods": [
+         "2025-Q3",
+         "2025-Q4",
+         "2026-Q1"
+        ],
+        "favorable_direction": "LOWER",
+        "is_actionable": false,
+        "limitations": [
+         "CURRENT_RESEARCH_ONLY",
+         "NOT_PIT",
+         "NO_ANNUALIZATION",
+         "SEQUENTIAL_FLOW_CHANGES_MAY_BE_SEASONAL",
+         "SOURCE_MONETARY_BASIS_NOT_UPGRADED"
+        ],
+        "method": "source_anchored_ratio_trajectory/v1",
+        "observations": [
+         {
+          "period": "2024-Q2",
+          "period_end": [
+           "2024-06-30",
+           "2024-06-30"
+          ],
+          "period_identity_basis": "REPORTED_QUARTER_LABEL_NO_DATE_INFERENCE",
+          "period_semantic": "POINT_IN_TIME_BALANCE_SHEET",
+          "source_provenance": [
+           {
+            "fact_id": "5f585363d843c58e782492159c9b9a154d7f0b5b514f6c81c52835800d608900",
+            "lineage_method": "exact_component_observation_linkage/v1",
+            "operand_fact_ids": [
+             "cfb14cdf8ebb4df1278d8ec90bf6a62d40d1fabbf4d018c88e2e68576b239e59",
+             "5227c84829b2af30719d39ee7553fba2ccd782a2d666a2b47a2848c23f0bfed6"
+            ],
+            "provider": "VCI",
+            "source_file": "PAN_balance_sheet_quarter.parquet",
+            "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+           },
+           {
+            "fact_id": "7b6c5046b6ca2903873f0a7ca2af3cc41432c7a787a1038aea18122f7e3fd210",
+            "provider": "VCI",
+            "source_file": "PAN_balance_sheet_quarter.parquet",
+            "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+           }
+          ],
+          "value": 0.547685768550915
+         },
+         {
+          "period": "2024-Q3",
+          "period_end": [
+           "2024-09-30",
+           "2024-09-30"
+          ],
+          "period_identity_basis": "REPORTED_QUARTER_LABEL_NO_DATE_INFERENCE",
+          "period_semantic": "POINT_IN_TIME_BALANCE_SHEET",
+          "source_provenance": [
+           {
+            "fact_id": "6ec055286f1e48d030a38747f28c5e5ecb717f987fe2ed1b6cac58ec36ea110e",
+            "lineage_method": "exact_component_observation_linkage/v1",
+            "operand_fact_ids": [
+             "310b791fc6089233afd497b2dcb0a2f3b4c2401fd175295ea3ea36d2aa81091d",
+             "2f00d5c53ffef2cd4a930d86b603b045f83530e1617557520f41484032703c17"
+            ],
+            "provider": "VCI",
+            "source_file": "PAN_balance_sheet_quarter.parquet",
+            "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+           },
+           {
+            "fact_id": "43189d2cec51d620217dbaaa065338b6e1aea9ddbf0635530ee4b57d2210309c",
+            "provider": "VCI",
+            "source_file": "PAN_balance_sheet_quarter.parquet",
+            "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+           }
+          ],
+          "value": 0.5254694372227674
+         },
+         {
+          "period": "2024-Q4",
+          "period_end": [
+           "2024-12-31",
+           "2024-12-31"
+          ],
+          "period_identity_basis": "REPORTED_QUARTER_LABEL_NO_DATE_INFERENCE",
+          "period_semantic": "POINT_IN_TIME_BALANCE_SHEET",
+          "source_provenance": [
+           {
+            "fact_id": "eafad093a29192b9e3d8353d99eb8f998c56b1c2aa3ba315fae617f67b824017",
+            "lineage_method": "exact_component_observation_linkage/v1",
+            "operand_fact_ids": [
+             "9da22eb764c1835ee03cdfb2097b431fa4f568d59d158607e36af71d832dcd4d",
+             "4cd294ae34e4a54c5c3485f02511296367c19d5cc5279cafc90cbe1e98b31515"
+            ],
+            "provider": "VCI",
+            "source_file": "PAN_balance_sheet_quarter.parquet",
+            "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+           },
+           {
+            "fact_id": "b4952a029926b163106ea66883040c5fd50ac4297ce1d9179c7e03199d67f3a8",
+            "provider": "VCI",
+            "source_file": "PAN_balance_sheet_quarter.parquet",
+            "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+           }
+          ],
+          "value": 0.49074488715069725
+         },
+         {
+          "period": "2025-Q1",
+          "period_end": [
+           "2025-03-31",
+           "2025-03-31"
+          ],
+          "period_identity_basis": "REPORTED_QUARTER_LABEL_NO_DATE_INFERENCE",
+          "period_semantic": "POINT_IN_TIME_BALANCE_SHEET",
+          "source_provenance": [
+           {
+            "fact_id": "5024d5b2ff169da121e31a14dbc10b1f27b38de07ee4a535740f6bdb8d6d4a5c",
+            "lineage_method": "exact_component_observation_linkage/v1",
+            "operand_fact_ids": [
+             "f3966af5cf71caa3736c85e74e864ed930bb7610c4abec00426a0fb5119af262",
+             "72307f9192daafb04c7dc7872386d090199f74545be305844b2c811e4cbae999"
+            ],
+            "provider": "VCI",
+            "source_file": "PAN_balance_sheet_quarter.parquet",
+            "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+           },
+           {
+            "fact_id": "e44507dadcbf205955bf400dd042cd793d79549e491278182b2ffe68860d6f41",
+            "provider": "VCI",
+            "source_file": "PAN_balance_sheet_quarter.parquet",
+            "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+           }
+          ],
+          "value": 0.5477174138446336
+         },
+         {
+          "period": "2025-Q2",
+          "period_end": [
+           "2025-06-30",
+           "2025-06-30"
+          ],
+          "period_identity_basis": "REPORTED_QUARTER_LABEL_NO_DATE_INFERENCE",
+          "period_semantic": "POINT_IN_TIME_BALANCE_SHEET",
+          "source_provenance": [
+           {
+            "fact_id": "8612bbfe9cc2086ef2fe21d0958f2ecff18180531839ee989d74e423d27920a1",
+            "lineage_method": "exact_component_observation_linkage/v1",
+            "operand_fact_ids": [
+             "f47391f8f61c12b22201e548e96410201f1c0f026f2bfa60c919c04d3595eb8c",
+             "0005667807231cc7742955afd2e431729615136dc851eda61cac1a402c504eb9"
+            ],
+            "provider": "VCI",
+            "source_file": "PAN_balance_sheet_quarter.parquet",
+            "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+           },
+           {
+            "fact_id": "2f3f1f0f43e5ab489a83c2de2c965ed14e8bd05fd713c189314788f3dd3b3561",
+            "provider": "VCI",
+            "source_file": "PAN_balance_sheet_quarter.parquet",
+            "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+           }
+          ],
+          "value": 0.44241659938855055
+         },
+         {
+          "period": "2025-Q3",
+          "period_end": [
+           "2025-09-30",
+           "2025-09-30"
+          ],
+          "period_identity_basis": "REPORTED_QUARTER_LABEL_NO_DATE_INFERENCE",
+          "period_semantic": "POINT_IN_TIME_BALANCE_SHEET",
+          "source_provenance": [
+           {
+            "fact_id": "f199ce7ab628a9d256d0962d84e3f16ba96e1fe0641f77c884249d2a0ef5b5d2",
+            "lineage_method": "exact_component_observation_linkage/v1",
+            "operand_fact_ids": [
+             "425a2302dfd3b88544c0efad25587b52f1035eb8ad857a3006815c389de1b22a",
+             "cf12b146cbf5b26ccac9e7177610b1794e847e8a2799c36817abeaf199b9a87a"
+            ],
+            "provider": "VCI",
+            "source_file": "PAN_balance_sheet_quarter.parquet",
+            "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+           },
+           {
+            "fact_id": "315299659c489c09e2f358e3bd3b42bd915f4db93f4cdfe0fd45875650b30a4f",
+            "provider": "VCI",
+            "source_file": "PAN_balance_sheet_quarter.parquet",
+            "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+           }
+          ],
+          "value": 0.35849577565580043
+         },
+         {
+          "period": "2025-Q4",
+          "period_end": [
+           "2025-12-31",
+           "2025-12-31"
+          ],
+          "period_identity_basis": "REPORTED_QUARTER_LABEL_NO_DATE_INFERENCE",
+          "period_semantic": "POINT_IN_TIME_BALANCE_SHEET",
+          "source_provenance": [
+           {
+            "fact_id": "d17eab94a675d5c786ef19accf36e64f1f9b70fce6312a512bce90814fa2dc1f",
+            "lineage_method": "exact_component_observation_linkage/v1",
+            "operand_fact_ids": [
+             "1b7b3c1f893b75a0a371d0ceb1d27e4c6a947ff4257511db082d7169469051c9",
+             "2b937ff079cb488242ae600a96dfcfc39a678a2d3d06072c0574b283c86c2a08"
+            ],
+            "provider": "VCI",
+            "source_file": "PAN_balance_sheet_quarter.parquet",
+            "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+           },
+           {
+            "fact_id": "063bc5ddc0e4b6786fcf0c4e8a5d096ecb5679627e0dd4d936268cc6cef99db0",
+            "provider": "VCI",
+            "source_file": "PAN_balance_sheet_quarter.parquet",
+            "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+           }
+          ],
+          "value": 0.23704122597956073
+         },
+         {
+          "period": "2026-Q1",
+          "period_end": [
+           "2026-03-31",
+           "2026-03-31"
+          ],
+          "period_identity_basis": "REPORTED_QUARTER_LABEL_NO_DATE_INFERENCE",
+          "period_semantic": "POINT_IN_TIME_BALANCE_SHEET",
+          "source_provenance": [
+           {
+            "fact_id": "849522a57d5237fc024d52f9c5dc734a02bd668f0a2b3b3f503175c5d9c68300",
+            "lineage_method": "exact_component_observation_linkage/v1",
+            "operand_fact_ids": [
+             "3df7fcad864ce2589b7f2d2754b1f07ecb984e1806429613f59c4732bf4cd5fc",
+             "69a827d7d48402b55d884c7e8fb0250377fa3c0da74b7f64f88baed7dee43565"
+            ],
+            "provider": "VCI",
+            "source_file": "PAN_balance_sheet_quarter.parquet",
+            "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+           },
+           {
+            "fact_id": "240d6f9f21f3e8e1f8b40ae26bd7187a82cd62081c1d7b6909affc2046f9b72b",
+            "provider": "VCI",
+            "source_file": "PAN_balance_sheet_quarter.parquet",
+            "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+           }
+          ],
+          "value": 0.1810772124716275
+         }
+        ],
+        "period_semantic": "POINT_IN_TIME_BALANCE_SHEET",
+        "reason_codes": [],
+        "recent_ratio_point_changes": [
+         -0.1214545496762397,
+         -0.05596401350793323
+        ],
+        "seasonal_confirmation": "YOY_CONTEXT_AVAILABLE",
+        "sequential_changes": [
+         {
+          "comparison_basis": "SEQUENTIAL_QUARTER",
+          "from_period": "2024-Q2",
+          "ratio_point_change": -0.022216331328147598,
+          "to_period": "2024-Q3"
+         },
+         {
+          "comparison_basis": "SEQUENTIAL_QUARTER",
+          "from_period": "2024-Q3",
+          "ratio_point_change": -0.03472455007207015,
+          "to_period": "2024-Q4"
+         },
+         {
+          "comparison_basis": "SEQUENTIAL_QUARTER",
+          "from_period": "2024-Q4",
+          "ratio_point_change": 0.05697252669393632,
+          "to_period": "2025-Q1"
+         },
+         {
+          "comparison_basis": "SEQUENTIAL_QUARTER",
+          "from_period": "2025-Q1",
+          "ratio_point_change": -0.10530081445608303,
+          "to_period": "2025-Q2"
+         },
+         {
+          "comparison_basis": "SEQUENTIAL_QUARTER",
+          "from_period": "2025-Q2",
+          "ratio_point_change": -0.08392082373275012,
+          "to_period": "2025-Q3"
+         },
+         {
+          "comparison_basis": "SEQUENTIAL_QUARTER",
+          "from_period": "2025-Q3",
+          "ratio_point_change": -0.1214545496762397,
+          "to_period": "2025-Q4"
+         },
+         {
+          "comparison_basis": "SEQUENTIAL_QUARTER",
+          "from_period": "2025-Q4",
+          "ratio_point_change": -0.05596401350793323,
+          "to_period": "2026-Q1"
+         }
+        ],
+        "series_identity": {
+         "currency": "unknown",
+         "provider": "VCI",
+         "scale": "unknown",
+         "statement_family": "balance_sheet",
+         "statement_scope": "consolidated",
+         "ticker": "PAN"
+        },
+        "status": "AVAILABLE",
+        "subject_period": "2026-Q1",
+        "yoy_changes": [
+         {
+          "comparison_basis": "SAME_QUARTER_YOY",
+          "from_period": "2024-Q2",
+          "ratio_point_change": -0.10526916916236445,
+          "to_period": "2025-Q2"
+         },
+         {
+          "comparison_basis": "SAME_QUARTER_YOY",
+          "from_period": "2024-Q3",
+          "ratio_point_change": -0.16697366156696697,
+          "to_period": "2025-Q3"
+         },
+         {
+          "comparison_basis": "SAME_QUARTER_YOY",
+          "from_period": "2024-Q4",
+          "ratio_point_change": -0.2537036611711365,
+          "to_period": "2025-Q4"
+         },
+         {
+          "comparison_basis": "SAME_QUARTER_YOY",
+          "from_period": "2025-Q1",
+          "ratio_point_change": -0.36664020137300607,
+          "to_period": "2026-Q1"
+         }
+        ]
+       }
+      },
+      "debt_to_equity": {
+       "as_of_period": "2026-Q1",
+       "authority": "CURRENT_RESEARCH_RETROSPECTIVE_ONLY_NOT_PIT_HISTORICAL_CLAIM",
+       "descriptive_bucket": "LOWER_QUARTILE",
+       "methodology": "retrospective_own_history_same_source_key_percentile/v1",
+       "minimum_available_sample": 6,
+       "minimum_partial_sample": 3,
+       "percentile": 0,
+       "percentile_formula": "(below + 0.5 * equal) / n",
+       "range_max": 1.5739839893074201,
+       "range_min": 0.4072378160824399,
+       "sample_count": 7,
+       "status": "AVAILABLE",
+       "subject_value": 0.2859661688643029,
+       "trajectory": {
+        "assessment": "RECOVERY",
+        "contiguous_periods": [
+         "2024-Q2",
+         "2024-Q3",
+         "2024-Q4",
+         "2025-Q1",
+         "2025-Q2",
+         "2025-Q3",
+         "2025-Q4",
+         "2026-Q1"
+        ],
+        "establishing_periods": [
+         "2025-Q3",
+         "2025-Q4",
+         "2026-Q1"
+        ],
+        "favorable_direction": "LOWER",
+        "is_actionable": false,
+        "limitations": [
+         "CURRENT_RESEARCH_ONLY",
+         "NOT_PIT",
+         "NO_ANNUALIZATION",
+         "SEQUENTIAL_FLOW_CHANGES_MAY_BE_SEASONAL",
+         "SOURCE_MONETARY_BASIS_NOT_UPGRADED"
+        ],
+        "method": "source_anchored_ratio_trajectory/v1",
+        "observations": [
+         {
+          "period": "2024-Q2",
+          "period_end": [
+           "2024-06-30",
+           "2024-06-30"
+          ],
+          "period_identity_basis": "REPORTED_QUARTER_LABEL_NO_DATE_INFERENCE",
+          "period_semantic": "POINT_IN_TIME_BALANCE_SHEET",
+          "source_provenance": [
+           {
+            "fact_id": "5f585363d843c58e782492159c9b9a154d7f0b5b514f6c81c52835800d608900",
+            "lineage_method": "exact_component_observation_linkage/v1",
+            "operand_fact_ids": [
+             "cfb14cdf8ebb4df1278d8ec90bf6a62d40d1fabbf4d018c88e2e68576b239e59",
+             "5227c84829b2af30719d39ee7553fba2ccd782a2d666a2b47a2848c23f0bfed6"
+            ],
+            "provider": "VCI",
+            "source_file": "PAN_balance_sheet_quarter.parquet",
+            "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+           },
+           {
+            "fact_id": "73b3a6ffbb5114747d2da185e9dab418aa1c229f1d46646827b8540dc4f64b70",
+            "provider": "VCI",
+            "source_file": "PAN_balance_sheet_quarter.parquet",
+            "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+           }
+          ],
+          "value": 1.5269719325450972
+         },
+         {
+          "period": "2024-Q3",
+          "period_end": [
+           "2024-09-30",
+           "2024-09-30"
+          ],
+          "period_identity_basis": "REPORTED_QUARTER_LABEL_NO_DATE_INFERENCE",
+          "period_semantic": "POINT_IN_TIME_BALANCE_SHEET",
+          "source_provenance": [
+           {
+            "fact_id": "6ec055286f1e48d030a38747f28c5e5ecb717f987fe2ed1b6cac58ec36ea110e",
+            "lineage_method": "exact_component_observation_linkage/v1",
+            "operand_fact_ids": [
+             "310b791fc6089233afd497b2dcb0a2f3b4c2401fd175295ea3ea36d2aa81091d",
+             "2f00d5c53ffef2cd4a930d86b603b045f83530e1617557520f41484032703c17"
+            ],
+            "provider": "VCI",
+            "source_file": "PAN_balance_sheet_quarter.parquet",
+            "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+           },
+           {
+            "fact_id": "0d22b39d614d302dd18d38dd6c793a35492164cff2bb601621bf49ead23a78a1",
+            "provider": "VCI",
+            "source_file": "PAN_balance_sheet_quarter.parquet",
+            "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+           }
+          ],
+          "value": 1.432912560042935
+         },
+         {
+          "period": "2024-Q4",
+          "period_end": [
+           "2024-12-31",
+           "2024-12-31"
+          ],
+          "period_identity_basis": "REPORTED_QUARTER_LABEL_NO_DATE_INFERENCE",
+          "period_semantic": "POINT_IN_TIME_BALANCE_SHEET",
+          "source_provenance": [
+           {
+            "fact_id": "eafad093a29192b9e3d8353d99eb8f998c56b1c2aa3ba315fae617f67b824017",
+            "lineage_method": "exact_component_observation_linkage/v1",
+            "operand_fact_ids": [
+             "9da22eb764c1835ee03cdfb2097b431fa4f568d59d158607e36af71d832dcd4d",
+             "4cd294ae34e4a54c5c3485f02511296367c19d5cc5279cafc90cbe1e98b31515"
+            ],
+            "provider": "VCI",
+            "source_file": "PAN_balance_sheet_quarter.parquet",
+            "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+           },
+           {
+            "fact_id": "3c41cc96b9d9ddf3befb4decd60b0a17f1b7a554be8be25c68a75a2aa97653bd",
+            "provider": "VCI",
+            "source_file": "PAN_balance_sheet_quarter.parquet",
+            "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+           }
+          ],
+          "value": 1.320587377210487
+         },
+         {
+          "period": "2025-Q1",
+          "period_end": [
+           "2025-03-31",
+           "2025-03-31"
+          ],
+          "period_identity_basis": "REPORTED_QUARTER_LABEL_NO_DATE_INFERENCE",
+          "period_semantic": "POINT_IN_TIME_BALANCE_SHEET",
+          "source_provenance": [
+           {
+            "fact_id": "5024d5b2ff169da121e31a14dbc10b1f27b38de07ee4a535740f6bdb8d6d4a5c",
+            "lineage_method": "exact_component_observation_linkage/v1",
+            "operand_fact_ids": [
+             "f3966af5cf71caa3736c85e74e864ed930bb7610c4abec00426a0fb5119af262",
+             "72307f9192daafb04c7dc7872386d090199f74545be305844b2c811e4cbae999"
+            ],
+            "provider": "VCI",
+            "source_file": "PAN_balance_sheet_quarter.parquet",
+            "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+           },
+           {
+            "fact_id": "ff4b8bd83bc9ec97daa3bab3ada22a187d0003edb023e47b5080edfe41f5d9f3",
+            "provider": "VCI",
+            "source_file": "PAN_balance_sheet_quarter.parquet",
+            "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+           }
+          ],
+          "value": 1.5739839893074201
+         },
+         {
+          "period": "2025-Q2",
+          "period_end": [
+           "2025-06-30",
+           "2025-06-30"
+          ],
+          "period_identity_basis": "REPORTED_QUARTER_LABEL_NO_DATE_INFERENCE",
+          "period_semantic": "POINT_IN_TIME_BALANCE_SHEET",
+          "source_provenance": [
+           {
+            "fact_id": "8612bbfe9cc2086ef2fe21d0958f2ecff18180531839ee989d74e423d27920a1",
+            "lineage_method": "exact_component_observation_linkage/v1",
+            "operand_fact_ids": [
+             "f47391f8f61c12b22201e548e96410201f1c0f026f2bfa60c919c04d3595eb8c",
+             "0005667807231cc7742955afd2e431729615136dc851eda61cac1a402c504eb9"
+            ],
+            "provider": "VCI",
+            "source_file": "PAN_balance_sheet_quarter.parquet",
+            "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+           },
+           {
+            "fact_id": "253c74b6318e582ddcd27d924376c149f7df0b5a2491844feb3071ad834bb9b8",
+            "provider": "VCI",
+            "source_file": "PAN_balance_sheet_quarter.parquet",
+            "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+           }
+          ],
+          "value": 1.0208821409584048
+         },
+         {
+          "period": "2025-Q3",
+          "period_end": [
+           "2025-09-30",
+           "2025-09-30"
+          ],
+          "period_identity_basis": "REPORTED_QUARTER_LABEL_NO_DATE_INFERENCE",
+          "period_semantic": "POINT_IN_TIME_BALANCE_SHEET",
+          "source_provenance": [
+           {
+            "fact_id": "f199ce7ab628a9d256d0962d84e3f16ba96e1fe0641f77c884249d2a0ef5b5d2",
+            "lineage_method": "exact_component_observation_linkage/v1",
+            "operand_fact_ids": [
+             "425a2302dfd3b88544c0efad25587b52f1035eb8ad857a3006815c389de1b22a",
+             "cf12b146cbf5b26ccac9e7177610b1794e847e8a2799c36817abeaf199b9a87a"
+            ],
+            "provider": "VCI",
+            "source_file": "PAN_balance_sheet_quarter.parquet",
+            "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+           },
+           {
+            "fact_id": "91d0307db368d0eba1d0fab3e59678bf043ff1deae4ddd3ff868aa05b3072666",
+            "provider": "VCI",
+            "source_file": "PAN_balance_sheet_quarter.parquet",
+            "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+           }
+          ],
+          "value": 0.7408460852313101
+         },
+         {
+          "period": "2025-Q4",
+          "period_end": [
+           "2025-12-31",
+           "2025-12-31"
+          ],
+          "period_identity_basis": "REPORTED_QUARTER_LABEL_NO_DATE_INFERENCE",
+          "period_semantic": "POINT_IN_TIME_BALANCE_SHEET",
+          "source_provenance": [
+           {
+            "fact_id": "d17eab94a675d5c786ef19accf36e64f1f9b70fce6312a512bce90814fa2dc1f",
+            "lineage_method": "exact_component_observation_linkage/v1",
+            "operand_fact_ids": [
+             "1b7b3c1f893b75a0a371d0ceb1d27e4c6a947ff4257511db082d7169469051c9",
+             "2b937ff079cb488242ae600a96dfcfc39a678a2d3d06072c0574b283c86c2a08"
+            ],
+            "provider": "VCI",
+            "source_file": "PAN_balance_sheet_quarter.parquet",
+            "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+           },
+           {
+            "fact_id": "43109652921bc7963116878de565ac24ff26cde1e7330777506ae1e5c1473d24",
+            "provider": "VCI",
+            "source_file": "PAN_balance_sheet_quarter.parquet",
+            "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+           }
+          ],
+          "value": 0.4072378160824399
+         },
+         {
+          "period": "2026-Q1",
+          "period_end": [
+           "2026-03-31",
+           "2026-03-31"
+          ],
+          "period_identity_basis": "REPORTED_QUARTER_LABEL_NO_DATE_INFERENCE",
+          "period_semantic": "POINT_IN_TIME_BALANCE_SHEET",
+          "source_provenance": [
+           {
+            "fact_id": "849522a57d5237fc024d52f9c5dc734a02bd668f0a2b3b3f503175c5d9c68300",
+            "lineage_method": "exact_component_observation_linkage/v1",
+            "operand_fact_ids": [
+             "3df7fcad864ce2589b7f2d2754b1f07ecb984e1806429613f59c4732bf4cd5fc",
+             "69a827d7d48402b55d884c7e8fb0250377fa3c0da74b7f64f88baed7dee43565"
+            ],
+            "provider": "VCI",
+            "source_file": "PAN_balance_sheet_quarter.parquet",
+            "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+           },
+           {
+            "fact_id": "36287a132e487625729c7fc95304b71a6504ebfee50d43161921b67ec3131a7c",
+            "provider": "VCI",
+            "source_file": "PAN_balance_sheet_quarter.parquet",
+            "source_sha256": "eac574099ad65af128fb19960c7021f1b7fa14c6c5f72e5af1e62599e8329180"
+           }
+          ],
+          "value": 0.2859661688643029
+         }
+        ],
+        "period_semantic": "POINT_IN_TIME_BALANCE_SHEET",
+        "reason_codes": [],
+        "recent_ratio_point_changes": [
+         -0.3336082691488702,
+         -0.12127164721813699
+        ],
+        "seasonal_confirmation": "YOY_CONTEXT_AVAILABLE",
+        "sequential_changes": [
+         {
+          "comparison_basis": "SEQUENTIAL_QUARTER",
+          "from_period": "2024-Q2",
+          "ratio_point_change": -0.09405937250216212,
+          "to_period": "2024-Q3"
+         },
+         {
+          "comparison_basis": "SEQUENTIAL_QUARTER",
+          "from_period": "2024-Q3",
+          "ratio_point_change": -0.11232518283244808,
+          "to_period": "2024-Q4"
+         },
+         {
+          "comparison_basis": "SEQUENTIAL_QUARTER",
+          "from_period": "2024-Q4",
+          "ratio_point_change": 0.2533966120969331,
+          "to_period": "2025-Q1"
+         },
+         {
+          "comparison_basis": "SEQUENTIAL_QUARTER",
+          "from_period": "2025-Q1",
+          "ratio_point_change": -0.5531018483490153,
+          "to_period": "2025-Q2"
+         },
+         {
+          "comparison_basis": "SEQUENTIAL_QUARTER",
+          "from_period": "2025-Q2",
+          "ratio_point_change": -0.28003605572709467,
+          "to_period": "2025-Q3"
+         },
+         {
+          "comparison_basis": "SEQUENTIAL_QUARTER",
+          "from_period": "2025-Q3",
+          "ratio_point_change": -0.3336082691488702,
+          "to_period": "2025-Q4"
+         },
+         {
+          "comparison_basis": "SEQUENTIAL_QUARTER",
+          "from_period": "2025-Q4",
+          "ratio_point_change": -0.12127164721813699,
+          "to_period": "2026-Q1"
+         }
+        ],
+        "series_identity": {
+         "currency": "unknown",
+         "provider": "VCI",
+         "scale": "unknown",
+         "statement_family": "balance_sheet",
+         "statement_scope": "consolidated",
+         "ticker": "PAN"
+        },
+        "status": "AVAILABLE",
+        "subject_period": "2026-Q1",
+        "yoy_changes": [
+         {
+          "comparison_basis": "SAME_QUARTER_YOY",
+          "from_period": "2024-Q2",
+          "ratio_point_change": -0.5060897915866924,
+          "to_period": "2025-Q2"
+         },
+         {
+          "comparison_basis": "SAME_QUARTER_YOY",
+          "from_period": "2024-Q3",
+          "ratio_point_change": -0.692066474811625,
+          "to_period": "2025-Q3"
+         },
+         {
+          "comparison_basis": "SAME_QUARTER_YOY",
+          "from_period": "2024-Q4",
+          "ratio_point_change": -0.9133495611280471,
+          "to_period": "2025-Q4"
+         },
+         {
+          "comparison_basis": "SAME_QUARTER_YOY",
+          "from_period": "2025-Q1",
+          "ratio_point_change": -1.2880178204431172,
+          "to_period": "2026-Q1"
+         }
+        ]
+       }
+      },
+      "equity_to_assets": {
+       "as_of_period": "2026-Q1",
+       "authority": "CURRENT_RESEARCH_RETROSPECTIVE_ONLY_NOT_PIT_HISTORICAL_CLAIM",
+       "descriptive_bucket": "UPPER_QUARTILE",
+       "methodology": "retrospective_own_history_same_source_key_percentile/v1",
+       "minimum_available_sample": 6,
+       "minimum_partial_sample": 3,
+       "percentile": 1,
+       "percentile_formula": "(below + 0.5 * equal) / n",
+       "range_max": 0.5820707621405544,
+       "range_min": 0.34798156624556176,
+       "sample_count": 7,
+       "status": "AVAILABLE",
+       "subject_value": 0.6332120096260495
+      },
+      "gross_margin": {
+       "reason": "SUBJECT_VALUE_UNAVAILABLE",
+       "sample_count": 0,
+       "status": "UNAVAILABLE",
+       "trajectory": {
+        "assessment": "INSUFFICIENT_EVIDENCE",
+        "contiguous_periods": [],
+        "is_actionable": false,
+        "limitations": [
+         "CURRENT_RESEARCH_ONLY",
+         "NOT_PIT",
+         "NO_ANNUALIZATION",
+         "SEQUENTIAL_FLOW_CHANGES_MAY_BE_SEASONAL",
+         "SOURCE_MONETARY_BASIS_NOT_UPGRADED"
+        ],
+        "method": "source_anchored_ratio_trajectory/v1",
+        "observations": [],
+        "period_semantic": "STANDALONE_QUARTER",
+        "reason_codes": [
+         "QUALIFIED_SUBJECT_ANCHORED_QUARTER_SERIES_UNAVAILABLE"
+        ],
+        "sequential_changes": [],
+        "status": "UNKNOWN",
+        "subject_period": null,
+        "yoy_changes": []
+       }
+      },
+      "net_margin": {
+       "reason": "SUBJECT_VALUE_UNAVAILABLE",
+       "sample_count": 0,
+       "status": "UNAVAILABLE",
+       "trajectory": {
+        "assessment": "INSUFFICIENT_EVIDENCE",
+        "contiguous_periods": [],
+        "is_actionable": false,
+        "limitations": [
+         "CURRENT_RESEARCH_ONLY",
+         "NOT_PIT",
+         "NO_ANNUALIZATION",
+         "SEQUENTIAL_FLOW_CHANGES_MAY_BE_SEASONAL",
+         "SOURCE_MONETARY_BASIS_NOT_UPGRADED"
+        ],
+        "method": "source_anchored_ratio_trajectory/v1",
+        "observations": [],
+        "period_semantic": "STANDALONE_QUARTER",
+        "reason_codes": [
+         "QUALIFIED_SUBJECT_ANCHORED_QUARTER_SERIES_UNAVAILABLE"
+        ],
+        "sequential_changes": [],
+        "status": "UNKNOWN",
+        "subject_period": null,
+        "yoy_changes": []
+       }
+      },
+      "pbt_margin": {
+       "reason": "SUBJECT_VALUE_UNAVAILABLE",
+       "sample_count": 0,
+       "status": "UNAVAILABLE",
+       "trajectory": {
+        "assessment": "INSUFFICIENT_EVIDENCE",
+        "contiguous_periods": [],
+        "is_actionable": false,
+        "limitations": [
+         "CURRENT_RESEARCH_ONLY",
+         "NOT_PIT",
+         "NO_ANNUALIZATION",
+         "SEQUENTIAL_FLOW_CHANGES_MAY_BE_SEASONAL",
+         "SOURCE_MONETARY_BASIS_NOT_UPGRADED"
+        ],
+        "method": "source_anchored_ratio_trajectory/v1",
+        "observations": [],
+        "period_semantic": "STANDALONE_QUARTER",
+        "reason_codes": [
+         "QUALIFIED_SUBJECT_ANCHORED_QUARTER_SERIES_UNAVAILABLE"
+        ],
+        "sequential_changes": [],
+        "status": "UNKNOWN",
+        "subject_period": null,
+        "yoy_changes": []
+       }
+      },
+      "same_provider_roa_avg_assets": {
+       "reason": "SUBJECT_VALUE_UNAVAILABLE",
+       "sample_count": 0,
+       "status": "UNAVAILABLE"
+      },
+      "same_provider_roa_eop_proxy": {
+       "reason": "SUBJECT_VALUE_UNAVAILABLE",
+       "sample_count": 0,
+       "status": "UNAVAILABLE"
+      },
+      "same_provider_roe_avg_equity": {
+       "reason": "SUBJECT_VALUE_UNAVAILABLE",
+       "sample_count": 0,
+       "status": "UNAVAILABLE"
+      },
+      "same_provider_roe_eop_proxy": {
+       "reason": "SUBJECT_VALUE_UNAVAILABLE",
+       "sample_count": 0,
+       "status": "UNAVAILABLE"
+      }
+     },
+     "is_actionable": false,
+     "issuer_type": "corporate",
+     "leverage_state": "IMPROVING",
+     "lineage": {
+      "artifact_identity": "financial_analysis_lineage/v1:4252030f7e70bbe896509728b3e6e11bbfe906084e6babb0f09f27ae96d58854",
+      "artifact_sha256": "4252030f7e70bbe896509728b3e6e11bbfe906084e6babb0f09f27ae96d58854",
+      "contract_version": "financial_analysis_lineage/v1",
+      "local_only": true,
+      "published_path": null,
+      "source_context_contract": "financial_analysis_context/v2",
+      "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+      "source_identities": {
+       "classification_diagnostics_identity": "9306fa0ae7b04f04599aad41346babe6b82aee57ba2c444a89927a77863c469e",
+       "feature_store_artifact_identity": "market_wide_fundamental_feature_store/v1:3a2c6273cf23015140e87229d3f4c5875db75d52ddb8115a564227db1e2a969e",
+       "feature_store_contract": "market_wide_fundamental_feature_store/v1",
+       "period_semantics_contract": "market_wide_structured_financial_period_semantics/v1",
+       "period_semantics_identity": "market_wide_structured_financial_period_semantics/v1:ca7c2a28a9dd9e00774dcd10c2b9aa993a0fc4664e551236408287c830ad4457",
+       "period_semantics_knowledge_time": "2026-09-05T00:00:00+07:00",
+       "qualified_flow_artifact_identity": "financial_flow_semantics_and_ttm_bridge/v2:be2cfe3ac05014f0d6c1b0f3cef7ad634decf11aa22dbbbe03dcb1d0738bfe74"
+      }
+     },
+     "lineage_ref": "financial_analysis_lineage/v1:4252030f7e70bbe896509728b3e6e11bbfe906084e6babb0f09f27ae96d58854",
+     "margin_lending_intensity_trajectory_state": "NOT_APPLICABLE",
+     "margin_state": "UNAVAILABLE",
+     "missing_dimensions": [
+      "cfo_to_net_income:MISSING_SAME_PROVIDER_CFO_AND_NET_INCOME",
+      "cfo_to_net_income_ttm:MISSING_COMPATIBLE_TTM_INPUTS",
+      "free_cash_flow_proxy:MISSING_SAME_PROVIDER_TICKER_PERIOD_SCOPE_REPRESENTATION",
+      "free_cash_flow_proxy_direction:MISSING_SAME_PROVIDER_SAME_QUARTER_PRIOR_YEAR_FCF_PROXY_INPUTS",
+      "gross_margin:MISSING_SAME_PROVIDER_TICKER_PERIOD_SCOPE_REPRESENTATION",
+      "gross_margin_direction:MISSING_SAME_POINT_IN_TIME_PRIOR_YEAR_RATIO_PAIR",
+      "mixed_provider_asset_turnover_proxy:MISSING_COMPATIBLE_FLOW_INPUT",
+      "mixed_provider_roa_proxy:MISSING_COMPATIBLE_FLOW_INPUT",
+      "net_income_qoq:MISSING_COMPATIBLE_SERIES",
+      "net_income_same_quarter_yoy:MISSING_COMPATIBLE_SERIES",
+      "net_income_sign:MISSING_STANDALONE_NET_INCOME",
+      "net_income_ttm:MISSING_CONSECUTIVE_STANDALONE_QUARTER_INPUTS"
+     ],
+     "negative_evidence": [],
+     "pit_authority": "NOT_GRANTED",
+     "profitability_state": "UNAVAILABLE",
+     "raw_engine_record_exposed": false,
+     "resilience_state": "UNAVAILABLE",
+     "source_context_identity": "financial_analysis_context/v2:71967c8e50601772cee4ae2ca5f0963f9f53cee6c8458416606f9af3cfee5729",
+     "status": "AVAILABLE",
+     "ticker": "PAN",
+     "valuation_hints": [],
+     "warnings": [
+      "PIT_AUTHORITY_NOT_GRANTED"
+     ],
+     "working_capital_state": "POSITIVE_NET_WORKING_CAPITAL",
+     "working_capital_trajectory_state": "WORKING_CAPITAL_IMPROVING"
+    },
+    "status": "AVAILABLE",
+    "supporting": [
+     "FA_V2_BALANCE_SHEET_STRENGTHENING"
+    ]
+   },
+   "fundamental_evidence": {
+    "readiness": "PRODUCT_READY_RESEARCH_CONTEXT",
+    "research_fitness": "READY_RESEARCH_PROXY",
+    "state": "INSUFFICIENT_DATA",
+    "trajectory": "INSUFFICIENT_DATA"
+   },
+   "market_sector_evidence": {
+    "breadth_regime": "MIXED_BREADTH",
+    "sector_relative_context": {
+     "leadership_state": "MIXED",
+     "market_relative_momentum_bucket": "LOWER_QUARTILE",
+     "sector_relative_momentum_bucket": "LOWER_QUARTILE"
+    }
+   },
+   "tactical_evidence": {
+    "entry_action": "WAIT",
+    "primary_entry_state": "SELLING_PRESSURE_EASING",
+    "setup_tags": [
+     "RANGE_EXPANSION",
+     "RELATIVE_STRENGTH_LAGGARD",
+     "TECHNICAL_DETERIORATION"
+    ]
+   },
+   "valuation_evidence": {
+    "readiness": "READY_RESEARCH_PROXY",
+    "relative_research_state": "ATTRACTIVE_RELATIVE_RESEARCH",
+    "usable_relative_method_count": 5
+   }
+  }
+ }
+}

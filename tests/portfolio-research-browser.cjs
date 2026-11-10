@@ -149,8 +149,8 @@ async function main() {
         PNJ: document.querySelector('[data-holding="PNJ"]').dataset.posture
       })`);
       row.postures = postures;
-      row.checks.posturesMatch = postures.HPG === index.cards.HPG.research_action_posture
-        && postures.FPT === "AVOID" && postures.PNJ === "AVOID";
+      // Postures are the session's facts: each holding shows the published value verbatim.
+      row.checks.posturesMatch = ["HPG", "FPT", "PNJ"].every((t) => postures[t] === index.cards[t].research_action_posture);
       row.checks.dossierLink = await evaluate(`document.querySelector('[data-holding="HPG"] a[href*="view=dossier"]').href.includes("ticker=HPG")`);
       row.checks.fitsViewport = await evaluate("document.documentElement.scrollWidth <= window.innerWidth + 1");
       const detailStart = requests.length;
@@ -166,7 +166,8 @@ async function main() {
           text: document.querySelector('[data-holding="NVL"]').innerText
         })`);
         row.nvl = nvl;
-        row.checks.nvlAdverse = nvl.posture === "AVOID" && !nvl.text.includes("diễn giải là đã kích hoạt: đã có cờ");
+        row.checks.nvlAdverse = nvl.posture === index.cards.NVL.research_action_posture
+          && (nvl.posture !== "AVOID" || !nvl.text.includes("diễn giải là đã kích hoạt: đã có cờ"));
         const compareStart = requests.length;
         await evaluate(`document.querySelector('[data-compare-toggle="HPG"]').click(); document.querySelector('#pf-alternative').value='TCB'; document.querySelector('#pf-add-alternative').click(); document.querySelector('#pf-run-compare').click()`);
         await wait(`document.querySelector('[data-incompatible-count], [data-compare-refused]')`);
