@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "build_id": "2026-11-09-2c28551-8f514ca5a8",
-  "generated_at": "2026-11-09T18:55:39+07:00",
-  "published_at": "2026-11-09T18:55:39+07:00",
-  "market_session": "2026-11-09",
-  "git_commit": "2c28551d21b00197f189beb23ae8418f8173aa54",
+  "build_id": "2026-11-10-aa132ca-eacc369eca",
+  "generated_at": "2026-11-10T18:24:19+07:00",
+  "published_at": "2026-11-10T18:24:19+07:00",
+  "market_session": "2026-11-10",
+  "git_commit": "aa132cae0958fe3d42063c2f84016c926084c213",
   "git_commit_semantics": "pre_publication_source_head",
   "row_counts": {
     "screen_snapshot": 1683,
@@ -24,19 +24,19 @@
   },
   "files": {
     "screen_snapshot.csv": {
-      "sha256": "b57019bfc1364c4ec1e4a67ccf1f5fd8df81b3a7b3ae9a631e168892ba86b6e8",
-      "size": 551096,
-      "mtime": "2026-11-09T18:52:58+07:00"
+      "sha256": "38135d67b6a8a8beb28dc9832e43798cf1328b557c4c25d928b53bd0e6bed081",
+      "size": 551248,
+      "mtime": "2026-11-10T18:22:12+07:00"
     },
     "market_breadth.csv": {
-      "sha256": "e3052eb3bb532f9aecd1e4d3e3e546ff484f9f502605a9f245f66cfb1a85d7a9",
+      "sha256": "dfd4700aae9d1fcba72284c0512fe35570c491103bd61d6a34841360ac35a3de",
       "size": 142,
-      "mtime": "2026-11-09T18:52:58+07:00"
+      "mtime": "2026-11-10T18:22:12+07:00"
     },
     "analysis_latest.json": {
-      "sha256": "2315553a4d76131e87e659a30f1224ad3eab17155ea5c753c3dbf1dd7da4733e",
+      "sha256": "31328ce04940f5bbceb655088dce929d5ffad1caa770cc1bcb0c2c57888a0037",
       "size": 8889,
-      "mtime": "2026-11-09T18:52:58+07:00"
+      "mtime": "2026-11-10T18:22:12+07:00"
     },
     "ai_report_latest.md": {
       "sha256": "5ca7bad344ed82d9034c39c96a338a6ae988bb931e0127776782d516109cd0cf",
@@ -49,9 +49,9 @@
       "mtime": "2026-07-11T05:48:59+07:00"
     },
     "data/screener_data.js": {
-      "sha256": "2b2e326b0bc5020b71d48421694f7bb57bd07309747139cac9b6e058c6984834",
-      "size": 1934362,
-      "mtime": "2026-11-09T18:55:58+07:00"
+      "sha256": "b809bfec3f700cfdf56d6ee99ef1312a37bd329153ed0178587ce04532916f94",
+      "size": 1934478,
+      "mtime": "2026-11-10T18:24:33+07:00"
     }
   },
   "domains": {
@@ -74,13 +74,13 @@
   },
   "investment_workspace": {
     "status": "CURRENT",
-    "source_session": "2026-11-09",
-    "artifact_identity": "investment_decision_workspace_projection/v1:30ef01203c4f5fd301f419c217f0bc2916aa3a9d295632ddb90f44a5a3b6664b"
+    "source_session": "2026-11-10",
+    "artifact_identity": "investment_decision_workspace_projection/v1:ab549b9e424258b709b4047bcc5187bde616e18944d2bc2d6ead42e14ab80ac7"
   },
   "current_decision_cockpit": {
     "status": "CURRENT",
-    "source_session": "2026-11-09",
-    "projection_identity": "dashboard_decision_cockpit_projection:2e446935741e4807bafd860060cdca6ca9d9a317080f097f6befd4625b4a9f01",
-    "operation_identity": "daily_research_session_operation:e2fa29be53b107dca7f13128dfcdc3825a8630beaffcd1c7b71c4c8b2b08ed45"
+    "source_session": "2026-11-10",
+    "projection_identity": "dashboard_decision_cockpit_projection:fae809d234902ecc3ea862621663d13f70498258c86c49604d947d3c83bcccb5",
+    "operation_identity": "daily_research_session_operation:c1ebf5be37d29c39eab4b19cb1a00acd3f5c3f6648bce41ad147384237e12857"
   }
 }
