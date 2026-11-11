@@ -1,43 +1,43 @@
 {
   "schema_version": "1.0.0",
   "contract_version": "dashboard_home_summary/v1",
-  "requested_at": "2026-11-10T18:18:03+07:00",
-  "as_of_session": "2026-11-10",
-  "source_artifact_identity": "screener_master_projection/v1:e6525ec1e22125735c32add8ad2b2ba2b747d31e843c66822f96381d79b4c943",
+  "requested_at": "2026-11-11T17:48:08+07:00",
+  "as_of_session": "2026-11-11",
+  "source_artifact_identity": "screener_master_projection/v1:062616281e27a5aff4cfe228b5096695f128ae6eec94b5928cf76526f1c2022c",
   "denominator": 1683,
   "reference_ticker_count": 1683,
   "current_research_scope_count": 1504,
   "outside_current_official_scope_count": 179,
   "official_scope_observed_at": "2026-09-13T08:08:05Z",
-  "price_available_count": 852,
-  "price_unavailable_count": 831,
-  "tactical_available_count": 850,
-  "tactical_unavailable_count": 833,
+  "price_available_count": 844,
+  "price_unavailable_count": 839,
+  "tactical_available_count": 843,
+  "tactical_unavailable_count": 840,
   "session_breadth": {
     "available": true,
-    "priced": 850,
-    "up": 430,
-    "down": 222,
-    "flat": 198,
-    "price_available": 852,
-    "unpriced": 831,
-    "missing_session_return": 2,
-    "state": "NGHIENG_TANG"
+    "priced": 843,
+    "up": 288,
+    "down": 335,
+    "flat": 220,
+    "price_available": 844,
+    "unpriced": 839,
+    "missing_session_return": 1,
+    "state": "GIANG_CO"
   },
   "primary_decision_field": "research_action_posture",
   "research_action_posture": {
     "available": true,
     "coverage": 1683,
     "counts": {
-      "ACCUMULATE_ON_RETEST": 2,
-      "AVOID": 381,
+      "ACCUMULATE_ON_RETEST": 1,
+      "AVOID": 359,
       "EARLY_WATCH": 134,
       "HOLD": 0,
-      "HOLD_DO_NOT_ADD": 50,
-      "INITIATE_ON_BREAKOUT": 38,
-      "INSUFFICIENT_CURRENT_RESEARCH": 520,
-      "REDUCE": 0,
-      "WAIT_FOR_CONFIRMATION": 558
+      "HOLD_DO_NOT_ADD": 52,
+      "INITIATE_ON_BREAKOUT": 55,
+      "INSUFFICIENT_CURRENT_RESEARCH": 523,
+      "REDUCE": 2,
+      "WAIT_FOR_CONFIRMATION": 557
     },
     "order": [
       "INITIATE_ON_BREAKOUT",
@@ -50,13 +50,13 @@
       "AVOID",
       "INSUFFICIENT_CURRENT_RESEARCH"
     ],
-    "position_conditional_count": 50
+    "position_conditional_count": 54
   },
   "evidence_currency": {
     "counts": {
-      "CURRENT_SESSION": 850,
-      "LAST_TRADE_AS_OF": 595,
-      "NO_CURRENT_EVIDENCE": 238,
+      "CURRENT_SESSION": 843,
+      "LAST_TRADE_AS_OF": 603,
+      "NO_CURRENT_EVIDENCE": 237,
       "UNKNOWN": 0
     },
     "order": [
@@ -71,11 +71,11 @@
     "available": true,
     "counts": {
       "ACCUMULATE_RESEARCH_CANDIDATE": 0,
-      "AVOID_NEW_ENTRY": 211,
+      "AVOID_NEW_ENTRY": 252,
       "HIGH_RISK_SPECULATION_ONLY": 0,
       "INITIATE_RESEARCH_CANDIDATE": 0,
-      "INSUFFICIENT_EVIDENCE": 514,
-      "WAIT_FOR_CONFIRMATION": 958
+      "INSUFFICIENT_EVIDENCE": 502,
+      "WAIT_FOR_CONFIRMATION": 929
     },
     "order": [
       "INITIATE_RESEARCH_CANDIDATE",
@@ -88,17 +88,17 @@
   },
   "tactical": {
     "available": true,
-    "coverage": 850,
+    "coverage": 843,
     "counts": {
-      "BASE_BUILDING": 23,
-      "BREAKDOWN_RISK": 59,
-      "BREAKOUT_READY": 36,
-      "DISTRIBUTION_RISK": 15,
-      "DOWNTREND": 137,
-      "EARLY_REVERSAL_CANDIDATE": 28,
-      "SELLING_PRESSURE_EASING": 101,
-      "SIDEWAYS_NEUTRAL": 278,
-      "UPTREND_CONFIRMED": 173
+      "BASE_BUILDING": 6,
+      "BREAKDOWN_RISK": 72,
+      "BREAKOUT_READY": 27,
+      "DISTRIBUTION_RISK": 19,
+      "DOWNTREND": 161,
+      "EARLY_REVERSAL_CANDIDATE": 27,
+      "SELLING_PRESSURE_EASING": 72,
+      "SIDEWAYS_NEUTRAL": 271,
+      "UPTREND_CONFIRMED": 188
     },
     "order": [
       "DOWNTREND",
@@ -114,7 +114,7 @@
   },
   "liquidity": {
     "proxy_available": true,
-    "proxy_count": 846,
+    "proxy_count": 837,
     "execution_exact_ready": 0,
     "execution_exact_established": false
   },
@@ -166,15 +166,15 @@
   },
   "notable_cards": {
     "contract_version": "dashboard_home_notable_cards/v1",
-    "as_of_session": "2026-11-10",
+    "as_of_session": "2026-11-11",
     "source_contract_version": "workspace_index/v1",
-    "source_artifact_identity": "investment_decision_workspace_projection/v1:ab549b9e424258b709b4047bcc5187bde616e18944d2bc2d6ead42e14ab80ac7",
+    "source_artifact_identity": "investment_decision_workspace_projection/v1:c2902a26c126ac9982d49cffd25be1744483d312ebe80889aad259e06adfc50e",
     "selection": "PUBLISHED_INSERTION_ORDER_NOTABLE_MEMBERSHIP_V1",
     "selection_limit": 4,
     "cards": [
       {
         "ticker": "AAM",
-        "as_of_session": "2026-11-10",
+        "as_of_session": "2026-11-11",
         "research_action_posture": "EARLY_WATCH",
         "entry_state": "SIDEWAYS_NEUTRAL",
         "evidence_currency": "CURRENT_SESSION",
@@ -185,8 +185,7 @@
         "why": {
           "deterministic_reasons": [
             "TACTICAL_STATE_AWAITING_CONFIRMATION",
-            "PRICE_VOLUME_DISTRIBUTION_RISK",
-            "SECTOR_LEADERSHIP_LEADING"
+            "PRICE_VOLUME_DISTRIBUTION_RISK"
           ]
         },
         "reference_trigger": {
@@ -210,9 +209,9 @@
       },
       {
         "ticker": "AAT",
-        "as_of_session": "2026-11-10",
-        "research_action_posture": "EARLY_WATCH",
-        "entry_state": "EARLY_REVERSAL_CANDIDATE",
+        "as_of_session": "2026-11-11",
+        "research_action_posture": "INITIATE_ON_BREAKOUT",
+        "entry_state": "SIDEWAYS_NEUTRAL",
         "evidence_currency": "CURRENT_SESSION",
         "position_context": {
           "status": "NOT_SUPPLIED",
@@ -220,18 +219,17 @@
         },
         "why": {
           "deterministic_reasons": [
-            "CONSTRUCTIVE_TACTICAL_WITH_FUNDAMENTAL_EVIDENCE_UNAVAILABLE",
-            "ATTRACTIVE_RELATIVE_RESEARCH",
-            "SECTOR_LEADERSHIP_LEADING"
+            "TACTICAL_STATE_AWAITING_CONFIRMATION",
+            "ATTRACTIVE_RELATIVE_RESEARCH"
           ]
         },
         "reference_trigger": {
-          "trigger_level_exists": false,
-          "trigger_level": null,
-          "trigger_type": "NO_TRIGGER",
-          "trigger_condition_attached": false,
-          "trigger_condition_satisfied": false,
-          "trigger_state": "BELOW_TRIGGER",
+          "trigger_level_exists": true,
+          "trigger_level": 1.85,
+          "trigger_type": "PIVOT_BREAKOUT_TRIGGER",
+          "trigger_condition_attached": true,
+          "trigger_condition_satisfied": true,
+          "trigger_state": "TRIGGERED",
           "invalidation_level": 1.76,
           "invalidation_method": "CONFIRMED_SWING_LOW_BY_RULE_OR_V1_SUPPORT_FALLBACK",
           "entry_authority": false,
@@ -246,7 +244,7 @@
       },
       {
         "ticker": "ABT",
-        "as_of_session": "2026-11-10",
+        "as_of_session": "2026-11-11",
         "research_action_posture": "HOLD_DO_NOT_ADD",
         "entry_state": "BREAKOUT_READY",
         "evidence_currency": "CURRENT_SESSION",
@@ -256,8 +254,7 @@
         },
         "why": {
           "deterministic_reasons": [
-            "CONSTRUCTIVE_TACTICAL_WITH_FUNDAMENTAL_EVIDENCE_UNAVAILABLE",
-            "SECTOR_LEADERSHIP_LEADING"
+            "CONSTRUCTIVE_TACTICAL_WITH_FUNDAMENTAL_EVIDENCE_UNAVAILABLE"
           ]
         },
         "reference_trigger": {
@@ -281,7 +278,7 @@
       },
       {
         "ticker": "ACB",
-        "as_of_session": "2026-11-10",
+        "as_of_session": "2026-11-11",
         "research_action_posture": "INITIATE_ON_BREAKOUT",
         "entry_state": "SIDEWAYS_NEUTRAL",
         "evidence_currency": "CURRENT_SESSION",
@@ -292,7 +289,7 @@
         "why": {
           "deterministic_reasons": [
             "TACTICAL_STATE_AWAITING_CONFIRMATION",
-            "SECTOR_LEADERSHIP_LEADING"
+            "PRICE_VOLUME_DISTRIBUTION_RISK"
           ]
         },
         "reference_trigger": {
@@ -309,7 +306,9 @@
           "display_note": "Reference level only -- not a confirmed entry (điểm mua) unless trigger_condition_satisfied is true."
         },
         "counter_thesis": {
-          "key_counter_thesis": []
+          "key_counter_thesis": [
+            "PRICE_VOLUME_DISTRIBUTION_RISK"
+          ]
         }
       }
     ]
@@ -322,6 +321,6 @@
     "target_price": "NOT_EMITTED",
     "market_regime": "NOT_COMPUTED"
   },
-  "artifact_sha256": "5e7202ebf398ccaaf0487c793baa895ef4a706d1954c9b289cd9c33df873a542",
-  "artifact_identity": "dashboard_home_summary/v1:5e7202ebf398ccaaf0487c793baa895ef4a706d1954c9b289cd9c33df873a542"
+  "artifact_sha256": "0a34d244808c930306ba862092451df7fd6081d3c571c1a0c54182b204583560",
+  "artifact_identity": "dashboard_home_summary/v1:0a34d244808c930306ba862092451df7fd6081d3c571c1a0c54182b204583560"
 }
