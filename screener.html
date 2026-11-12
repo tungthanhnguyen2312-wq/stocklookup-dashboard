@@ -34,15 +34,15 @@
 <!-- CDN: Bootstrap 5 + DataTables 2 (bản tích hợp BS5) + PapaParse — script bên dưới cần, giữ nguyên -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.min.css" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=2026-11-11-7d03c87-fabb1f5ba6">
+<link rel="stylesheet" href="style.css?v=2026-11-12-4d9ac07-4cf91f5b65">
 
 <!-- Tailwind CSS build sẵn bằng CLI standalone (xem build_frontend.bat + tailwind.config.js)
      — thay cho Play CDN chạy JIT trong trình duyệt. Giữ NGUYÊN behavior cũ
      (corePlugins.preflight:false, theme.extend colors/fontFamily như cũ). -->
-<link rel="stylesheet" href="assets/css/tailwind.generated.css?v=2026-11-11-7d03c87-fabb1f5ba6">
-<link rel="stylesheet" href="assets/css/shell.css?v=2026-11-11-7d03c87-fabb1f5ba6">
-<link rel="stylesheet" href="assets/css/decision-cockpit.css?v=2026-11-11-7d03c87-fabb1f5ba6">
-<link rel="stylesheet" href="assets/css/investment-workspace.css?v=2026-11-11-7d03c87-fabb1f5ba6">
+<link rel="stylesheet" href="assets/css/tailwind.generated.css?v=2026-11-12-4d9ac07-4cf91f5b65">
+<link rel="stylesheet" href="assets/css/shell.css?v=2026-11-12-4d9ac07-4cf91f5b65">
+<link rel="stylesheet" href="assets/css/decision-cockpit.css?v=2026-11-12-4d9ac07-4cf91f5b65">
+<link rel="stylesheet" href="assets/css/investment-workspace.css?v=2026-11-12-4d9ac07-4cf91f5b65">
 <style>
   /* Lớp màu do script bảng bên dưới (giữ nguyên, không sửa) sinh ra trong HTML */
   .up { color: var(--success); }
@@ -191,20 +191,20 @@
      thứ tự xuất hiện, chạy ngay trước DOMContentLoaded — same timing như trước,
      khác mỗi cách tải, nên không đổi hành vi script bên dưới -->
 <script src="https://unpkg.com/lucide@1.24.0" defer></script>
-<script src="assets/js/shell.js?v=2026-11-11-7d03c87-fabb1f5ba6" defer></script>
+<script src="assets/js/shell.js?v=2026-11-12-4d9ac07-4cf91f5b65" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js" defer></script>
 <script src="https://cdn.datatables.net/2.1.8/js/dataTables.min.js" defer></script>
 <script src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js" defer></script>
-<script src="data/build_info.js?v=2026-11-11-7d03c87-fabb1f5ba6" defer></script>
-<script src="assets/js/value-format.js?v=2026-11-11-7d03c87-fabb1f5ba6" defer></script>
-<script src="assets/js/product-scope-format.js?v=2026-11-11-7d03c87-fabb1f5ba6" defer></script>
-<script src="assets/js/session-coherence.js?v=2026-11-11-7d03c87-fabb1f5ba6" defer></script>
-<script src="assets/js/workspace-read-model.js?v=2026-11-11-7d03c87-fabb1f5ba6" defer></script>
-<script src="assets/js/workspace-card-presentation.js?v=2026-11-11-7d03c87-fabb1f5ba6" defer></script>
-<script src="assets/js/investment-workspace.js?v=2026-11-11-7d03c87-fabb1f5ba6" defer></script>
-<script src="assets/js/screener-master.js?v=2026-11-11-7d03c87-fabb1f5ba6" defer></script>
+<script src="data/build_info.js?v=2026-11-12-4d9ac07-4cf91f5b65" defer></script>
+<script src="assets/js/value-format.js?v=2026-11-12-4d9ac07-4cf91f5b65" defer></script>
+<script src="assets/js/product-scope-format.js?v=2026-11-12-4d9ac07-4cf91f5b65" defer></script>
+<script src="assets/js/session-coherence.js?v=2026-11-12-4d9ac07-4cf91f5b65" defer></script>
+<script src="assets/js/workspace-read-model.js?v=2026-11-12-4d9ac07-4cf91f5b65" defer></script>
+<script src="assets/js/workspace-card-presentation.js?v=2026-11-12-4d9ac07-4cf91f5b65" defer></script>
+<script src="assets/js/investment-workspace.js?v=2026-11-12-4d9ac07-4cf91f5b65" defer></script>
+<script src="assets/js/screener-master.js?v=2026-11-12-4d9ac07-4cf91f5b65" defer></script>
 <script defer>
 // Ưu tiên fetch CSV thật (chạy qua http.server / GitHub Pages luôn tươi);
 // mở trực tiếp bằng double-click thì rơi về window.SCREEN_ROWS/BREADTH_ROWS trong .js
@@ -502,6 +502,6 @@ document.addEventListener("DOMContentLoaded", () => {
 })();
 });
 </script>
-<script src="assets/js/company-panel.js?v=2026-11-11-7d03c87-fabb1f5ba6" defer></script>
+<script src="assets/js/company-panel.js?v=2026-11-12-4d9ac07-4cf91f5b65" defer></script>
 </body>
 </html>
