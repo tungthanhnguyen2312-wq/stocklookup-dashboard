@@ -11,9 +11,9 @@ Repository (`stocklookup-dashboard`, thư mục cục bộ `market-dashboard`) l
 dữ liệu thị trường chứng khoán Việt Nam cá nhân. Repository được chủ động tách
 khỏi toàn bộ dự án:
 
-- Pipeline dữ liệu (bổ sung lịch sử giá, siêu dữ liệu, vĩ mô, tin tức, báo cáo
-  tài chính, sinh báo cáo AI — đều bằng Python) **chỉ chạy cục bộ** và không
-  được công bố tại đây.
+- Hệ thống tạo dữ liệu nghiên cứu (Producer) và phần nghiên cứu AI (Consumer) là
+  **hạ tầng riêng tư**: không được công bố tại đây và không nhận đóng góp bên ngoài.
+  Đóng góp công khai chỉ áp dụng cho Dashboard trong repository này.
 - Cơ sở dữ liệu nền và các tập dữ liệu sinh ra là tài sản dữ liệu cá nhân,
   được chủ động loại khỏi Git bằng gitignore
   (xem phân tách đầy đủ tại [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)).
@@ -40,8 +40,11 @@ chỉ các báo cáo tĩnh được lưu trữ (`playbook-*.html`, `report-*.htm
 ## Những nội dung ngoài phạm vi PR
 
 - Thay đổi pipeline dữ liệu, bộ xử lý báo cáo tài chính hoặc bộ phân tích cổ
-  phiếu — mã nguồn đó không nằm trong repository này, nên không có phần tương
-  ứng để gửi PR tại đây.
+  phiếu — mã nguồn đó thuộc hạ tầng riêng tư, không nằm trong repository này, nên
+  không có phần tương ứng để gửi PR tại đây. Nếu nghi ngờ dữ liệu hiển thị sai, hãy
+  mở issue mô tả trang, mã cổ phiếu và phiên dữ liệu.
+- Sửa trực tiếp các tệp dữ liệu đã phát hành (`data/*.json`, `data/*.js`) — các tệp
+  này do hệ thống riêng tạo và sẽ bị ghi đè ở lần phát hành sau.
 - Tư vấn đầu tư, tín hiệu giao dịch hoặc bất cứ nội dung nào hàm ý đầu ra của
   dashboard là khuyến nghị — dự án cung cấp công cụ dữ liệu, không phải tư vấn tài chính.
 
